@@ -69,7 +69,7 @@ that show how to use various features of the API.</p>
 <li>Call either <a href="ArchSession.html#startWithClientIdAndSecret"><code>startWithClientIdAndSecret</code></a> or <a href="ArchSession.html#startWithAuthToken"><code>startWithAuthToken</code></a> and provide a callback function that contains the runtime bits for what you want to do in scripting.</li>
 </ul>
 <p>If you are planning to use a client ID and secret, the following steps describe the process to create one for the organization if you don't already have one:</p>
-<ul>
+<h5>Using Directory</h5><ul>
 <li>Ensure that your user has the <code>'OAuth &gt; Client &gt; Add'</code> permission in PureCloud Admin</li>
 <li>Within PureCloud Admin, select <code>'Integrations'</code> and then <code>'OAuth'</code></li>
 <li>In the left menu, select <code>'Integrations'</code>, then <code>'OAuth'</code></li>
@@ -79,7 +79,34 @@ that show how to use various features of the API.</p>
 <li>Add <code>'http://localhost:9001/callback'</code> to the <code>'Authorized redirect URIs'</code> list</li>
 <li>Click <code>'Save'</code></li>
 </ul>
-<p>You will now have access to a <code>'Client ID'</code> and <code>'Client Secret'</code> which should be supplied to an <a href="ArchSession.html#startWithClientIdAndSecret"><code>startWithClientIdAndSecret</code></a> call.</p>
+<h5>Using PureCloud Public Api</h5><p>Make an authorized post to the public api endpoint <code>/api/v2/oauth/clients</code></p>
+<p>Headers</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content-Type</td>
+<td>application/json</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td><auth-token></td>
+</tr>
+</tbody>
+</table>
+<p>Body </p>
+<pre class="prettyprint source lang-json"><code> {
+    &quot;name&quot;: &quot;Architect Scripting &quot;,
+    &quot;accessTokenValiditySeconds&quot;: 86400,
+    &quot;description&quot;: &quot;This is an OAuth client for architect scripting&quot;,
+    &quot;registeredRedirectUri&quot;: [&quot;http://localhost:9001/callback&quot;],
+    &quot;authorizedGrantType&quot;: &quot;CODE&quot;
+ }</code></pre><p>You will now have access to a <code>'Client ID'</code> and <code>'Client Secret'</code> which should be supplied to an <a href="ArchSession.html#startWithClientIdAndSecret"><code>startWithClientIdAndSecret</code></a> call.</p>
 <h3>Factories</h3><p>There are lots of Architect scripting classes that you'll use when writing Architect scripting code.  One thing that
 is very important to know up front is that you should be using the Architect scripting factories to create flows,
 add actions, menu or tasks to flows.  Here is the list of factories and what they should be used for:</p>
