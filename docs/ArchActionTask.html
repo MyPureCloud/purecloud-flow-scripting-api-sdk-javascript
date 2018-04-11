@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Namespace: flows | Namespace: flows</title>
+    <title>Class: ArchActionTask | Class: ArchActionTask</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -28,7 +28,7 @@
         
     </div>
     <div class="title">
-        <h1><a href="index.html" class="link">Namespace: flows</a></h1>
+        <h1><a href="index.html" class="link">Class: ArchActionTask</a></h1>
         
     </div>
     <div class="search-container" id="search-container">
@@ -50,8 +50,7 @@
 
 <header>
     
-        <h2>
-            <span class="ancestors"><a href="scripting.viewModels.html">.viewModels</a>.</span>flows</h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ArchActionTask<span class="signature">(coreDisconnectActionViewModel)</span><span class="type-signature"></span></h2>
         
     
 </header>
@@ -62,7 +61,100 @@
         
             
 
+<dt>
+    
+        <h4 class="name" id="ArchActionTask">
             
+                new <span class="type-signature"></span>ArchActionTask<span class="signature">(coreDisconnectActionViewModel)</span><span class="type-signature"></span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Creates a new Architect Task action instance.  This is specific to the action that's referenced when you add a
+task menu item.  It is not a task itself but has a property where you can access the task that's contained in
+the menu.
+Instances of this action are not directly creatable.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>coreDisconnectActionViewModel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p><em>Internal</em> - Architect core task action action view model object.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 
 
 <dl class="details">
@@ -99,10 +191,24 @@
 </dl>
 
 
-            
+    
+
+</dd>
+
         
         </div>
     
+
+    
+        <h3 class="subsection-title">Extends</h3>
+
+        
+
+
+    <ul>
+        <li><a href="ArchBaseAction.html">ArchBaseAction</a></li>
+    </ul>
+
 
     
 
@@ -123,14 +229,19 @@
             
 
 <dt>
-<h4 class="name" id=".ArchFlowInboundCall">
-    <span class="type-signature"><span class="icon green">static</span> </span>ArchFlowInboundCall<span class="type-signature"> :<a href="ArchFlowInboundCall.html">ArchFlowInboundCall</a></span>
+<h4 class="name" id=".displayTypeName">
+    <span class="type-signature"><span class="icon green">static</span>, <span class="icon green">readonly</span> </span>displayTypeName<span class="type-signature"> :string</span>
     
 </h4>
 
 
 </dt>
 <dd>
+    
+    <div class="description">
+        <p>Implements override support for the display type name string for this
+Architect scripting object.</p>
+    </div>
     
 
     <!--
@@ -139,7 +250,7 @@
         <ul>
             <li>
                 
-<span class="param-type"><a href="ArchFlowInboundCall.html">ArchFlowInboundCall</a></span>
+<span class="param-type">string</span>
 
 
             </li>
@@ -193,14 +304,18 @@
             
 
 <dt>
-<h4 class="name" id=".ArchFlowInboundEmail">
-    <span class="type-signature"><span class="icon green">static</span> </span>ArchFlowInboundEmail<span class="type-signature"> :<a href="ArchFlowInboundEmail.html">ArchFlowInboundEmail</a></span>
+<h4 class="name" id=".isArchActionTask">
+    <span class="type-signature"><span class="icon green">static</span>, <span class="icon green">readonly</span> </span>isArchActionTask<span class="type-signature"> :boolean</span>
     
 </h4>
 
 
 </dt>
 <dd>
+    
+    <div class="description">
+        <p>Returns true indicating that this is an ArchActionTask instance.</p>
+    </div>
     
 
     <!--
@@ -209,7 +324,7 @@
         <ul>
             <li>
                 
-<span class="param-type"><a href="ArchFlowInboundEmail.html">ArchFlowInboundEmail</a></span>
+<span class="param-type">boolean</span>
 
 
             </li>
@@ -263,14 +378,18 @@
             
 
 <dt>
-<h4 class="name" id=".ArchFlowInboundShortMessage">
-    <span class="type-signature"><span class="icon green">static</span> </span>ArchFlowInboundShortMessage<span class="type-signature"> :<a href="ArchFlowInboundShortMessage.html">ArchFlowInboundShortMessage</a></span>
+<h4 class="name" id="displayTypeNameArchitect">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>displayTypeNameArchitect<span class="type-signature"> :string</span>
     
 </h4>
 
 
 </dt>
 <dd>
+    
+    <div class="description">
+        <p>The Architect action type label</p>
+    </div>
     
 
     <!--
@@ -279,7 +398,732 @@
         <ul>
             <li>
                 
-<span class="param-type"><a href="ArchFlowInboundShortMessage.html">ArchFlowInboundShortMessage</a></span>
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#displayTypeNameArchitect">ArchBaseAction#displayTypeNameArchitect</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="id">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>id<span class="type-signature"> :string</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The identifier string for this object.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseCoreObjectWithId.html#id">ArchBaseCoreObjectWithId#id</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="idMayBeBlank">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>idMayBeBlank<span class="type-signature"> :string</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns whether or not the id property may be blank or undefined for this object.  For example, the returned settnigs from <a href="ArchMenu.html#settingsMenu"><code>ArchMenu#settingsMenu</code></a>
+will have a blank identifier along with the settings returned from <a href="ArchMenu.html#settingsSpeechRec"><code>ArchMenu#settingsSpeechRec</code></a>.  Note that this is
+an extremely rare case.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseCoreObjectWithId.html#idMayBeBlank">ArchBaseCoreObjectWithId#idMayBeBlank</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="ArchBaseCoreObjectWithId.html#id">ArchBaseCoreObjectWithId#id</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="isReachable">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isReachable<span class="type-signature"> :boolean</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns whether or not this action is reachable at runtime.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#isReachable">ArchBaseAction#isReachable</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="isSecure">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isSecure<span class="type-signature"> :boolean</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Whether or not this action is secure which means either the action by its very nature
+is secure or it consumes secure data.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#isSecure">ArchBaseAction#isSecure</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="isUnreachable">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isUnreachable<span class="type-signature"> :boolean</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns whether or not this action is unreachable at runtime.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#isUnreachable">ArchBaseAction#isUnreachable</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="logStr">
+    <span class="type-signature"></span>logStr<span class="type-signature"> :string</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>A string suitable for logging that contains information about this audio.  This will contain parent
+information as well as the audio label which normally represents the property on the parent containing
+object.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#logStr">ArchBaseAction#logStr</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="logStrTypeOnly">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>logStrTypeOnly<span class="type-signature"> :string</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>This is a string suitable for logging information about this object where it's just the object's type.  This is normally used
+when logging errors that occur in constructor parameter checking becaue the scripting object isn't set up and the normal
+logging str contents wouldn't be set up.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseObject.html#logStrTypeOnly">ArchBaseObject#logStrTypeOnly</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="name">
+    <span class="type-signature"></span>name<span class="type-signature"> :string</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The name of the action</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#name">ArchBaseAction#name</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="task">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>task<span class="type-signature"> :<a href="ArchTask.html">ArchTask</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns the task associated with this action.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchTask.html">ArchTask</a></span>
 
 
             </li>
@@ -333,14 +1177,18 @@
             
 
 <dt>
-<h4 class="name" id=".ArchFlowInfo">
-    <span class="type-signature"><span class="icon green">static</span> </span>ArchFlowInfo<span class="type-signature"> :<a href="ArchFlowInfo.html">ArchFlowInfo</a></span>
+<h4 class="name" id="trackingId">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>trackingId<span class="type-signature"> :integer</span>
     
 </h4>
 
 
 </dt>
 <dd>
+    
+    <div class="description">
+        <p>The tracking identifier for this action.  This identifier is displayed in the Architect user interface.</p>
+    </div>
     
 
     <!--
@@ -349,7 +1197,7 @@
         <ul>
             <li>
                 
-<span class="param-type"><a href="ArchFlowInfo.html">ArchFlowInfo</a></span>
+<span class="param-type">integer</span>
 
 
             </li>
@@ -367,425 +1215,10 @@
     
 
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id=".ArchFlowInfoBasic">
-    <span class="type-signature"><span class="icon green">static</span> </span>ArchFlowInfoBasic<span class="type-signature"> :<a href="ArchFlowInfoBasic.html">ArchFlowInfoBasic</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchFlowInfoBasic.html">ArchFlowInfoBasic</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id=".ArchFlowInQueueCall">
-    <span class="type-signature"><span class="icon green">static</span> </span>ArchFlowInQueueCall<span class="type-signature"> :<a href="ArchFlowInQueueCall.html">ArchFlowInQueueCall</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchFlowInQueueCall.html">ArchFlowInQueueCall</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id=".ArchFlowOutboundCall">
-    <span class="type-signature"><span class="icon green">static</span> </span>ArchFlowOutboundCall<span class="type-signature"> :<a href="ArchFlowOutboundCall.html">ArchFlowOutboundCall</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchFlowOutboundCall.html">ArchFlowOutboundCall</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id=".ArchFlowSecureCall">
-    <span class="type-signature"><span class="icon green">static</span> </span>ArchFlowSecureCall<span class="type-signature"> :<a href="ArchFlowSecureCall.html">ArchFlowSecureCall</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchFlowSecureCall.html">ArchFlowSecureCall</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id=".ArchFlowSurveyInvite">
-    <span class="type-signature"><span class="icon green">static</span> </span>ArchFlowSurveyInvite<span class="type-signature"> :<a href="ArchFlowSurveyInvite.html">ArchFlowSurveyInvite</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchFlowSurveyInvite.html">ArchFlowSurveyInvite</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id=".ArchFlowWorkflow">
-    <span class="type-signature"><span class="icon green">static</span> </span>ArchFlowWorkflow<span class="type-signature"> :<a href="ArchFlowWorkflow.html">ArchFlowWorkflow</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchFlowWorkflow.html">ArchFlowWorkflow</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#trackingId">ArchBaseAction#trackingId</a>
+    </li></ul></dd>
     
 
     
@@ -823,6 +1256,1575 @@
     
 
     
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+                
+
+<dt>
+    
+        <h4 class="name" id="isValidBool">
+            
+                <span class="type-signature"></span>isValidBool<span class="signature">(valueToCheck, allowUndefinedOrNull<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Checks whether or not the specified is a JavaScript boolean type value.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>valueToCheck</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value to check to see if it's a boolean or not.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>allowUndefinedOrNull</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>whether or not undefined or null is considered valid.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">boolean</span>
+
+
+
+
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseObject.html#isValidBool">ArchBaseObject#isValidBool</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="isValidDateTime">
+            
+                <span class="type-signature"></span>isValidDateTime<span class="signature">(valueToCheck, allowUndefinedOrNull<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Checks whether or not the specified is a JavaScript Date type value.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>valueToCheck</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value to check to see if it's a JavaScript Date or not.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>allowUndefinedOrNull</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>whether or not undefined or null is considered valid.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">boolean</span>
+
+
+
+
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseObject.html#isValidDateTime">ArchBaseObject#isValidDateTime</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="isValidInt">
+            
+                <span class="type-signature"></span>isValidInt<span class="signature">(valueToCheck, allowUndefinedOrNull<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Checks whether or not the specified value is a JavaScript number with an integral value.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>valueToCheck</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value to check to see if it's an integer or not.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>allowUndefinedOrNull</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>whether or not undefined or null is considered valid.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">boolean</span>
+
+
+
+
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseObject.html#isValidInt">ArchBaseObject#isValidInt</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="isValidString">
+            
+                <span class="type-signature"></span>isValidString<span class="signature">(valueToCheck, allowUndefinedOrNull<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Checks whether or not the specified is a JavaScript string type value.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>valueToCheck</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value to check to see if it's a JavaScript string or not.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>allowUndefinedOrNull</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>whether or not undefined or null is considered valid.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">boolean</span>
+
+
+
+
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseObject.html#isValidString">ArchBaseObject#isValidString</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="isValidStringOrArchVariableString">
+            
+                <span class="type-signature"></span>isValidStringOrArchVariableString<span class="signature">(valueToCheck, allowUndefinedOrNull<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Checks whether or not the specified is a JavaScript string type value or ArchVariableString.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>valueToCheck</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The value to check to see if it's a JavaScript string or ArchVariableString.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>allowUndefinedOrNull</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>whether or not undefined or null is considered valid.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">boolean</span>
+
+
+
+
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseObject.html#isValidStringOrArchVariableString">ArchBaseObject#isValidStringOrArchVariableString</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="logError">
+            
+                <span class="type-signature"></span>logError<span class="signature">(errorStr)</span><span class="type-signature"></span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Logs an error to the logging service with a log header.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>errorStr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The error string to log.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseObject.html#logError">ArchBaseObject#logError</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="logErrorAndThrow">
+            
+                <span class="type-signature"></span>logErrorAndThrow<span class="signature">(errorStr)</span><span class="type-signature"></span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Logs an error to the logging service with a log header and throws.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>errorStr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The error string to log.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Throws:</h5>
+    
+            
+
+    <div class="param-desc">
+    
+        <ul>
+<li>Throws the submitted error string.</li>
+</ul>
+    
+    </div>
+
+
+        
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseObject.html#logErrorAndThrow">ArchBaseObject#logErrorAndThrow</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="logNote">
+            
+                <span class="type-signature"></span>logNote<span class="signature">(noteStr)</span><span class="type-signature"></span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Logs a note to the logging service with a log header.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>noteStr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The note string to log.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseObject.html#logNote">ArchBaseObject#logNote</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="logWarning">
+            
+                <span class="type-signature"></span>logWarning<span class="signature">(warningStr)</span><span class="type-signature"></span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Logs a warning to the logging service with a log header.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>warningStr</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The warning string to log.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseObject.html#logWarning">ArchBaseObject#logWarning</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            </dl>
+    
 
     
 
@@ -846,7 +2848,7 @@
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'scripting.viewModels.flows_sub'.replace(/"/g, '_');
+        var id = 'ArchActionTask_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
