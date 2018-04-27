@@ -305,7 +305,7 @@ Architect scripting object.</p>
 
 <dt>
 <h4 class="name" id=".isArchValueSettings">
-    <span class="type-signature"><span class="icon green">static</span> </span>isArchValueSettings<span class="type-signature"> :boolean</span>
+    <span class="type-signature"><span class="icon green">static</span>, <span class="icon green">readonly</span> </span>isArchValueSettings<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -379,7 +379,7 @@ Architect scripting object.</p>
 
 <dt>
 <h4 class="name" id="canBeExpression">
-    <span class="type-signature"></span>canBeExpression<span class="type-signature"> :boolean</span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>canBeExpression<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -453,7 +453,7 @@ Architect scripting object.</p>
 
 <dt>
 <h4 class="name" id="canBeLiteral">
-    <span class="type-signature"></span>canBeLiteral<span class="type-signature"> :boolean</span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>canBeLiteral<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -527,7 +527,7 @@ Architect scripting object.</p>
 
 <dt>
 <h4 class="name" id="canBeNoValue">
-    <span class="type-signature"></span>canBeNoValue<span class="type-signature"> :boolean</span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>canBeNoValue<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -601,7 +601,7 @@ Architect scripting object.</p>
 
 <dt>
 <h4 class="name" id="canBeVariable">
-    <span class="type-signature"></span>canBeVariable<span class="type-signature"> :boolean</span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>canBeVariable<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -675,7 +675,7 @@ Architect scripting object.</p>
 
 <dt>
 <h4 class="name" id="canUseSecureVariables">
-    <span class="type-signature"></span>canUseSecureVariables<span class="type-signature"> :boolean</span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>canUseSecureVariables<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -750,7 +750,7 @@ variables and be valid.</p>
 
 <dt>
 <h4 class="name" id="hasFlowLevelDefault">
-    <span class="type-signature"></span>hasFlowLevelDefault<span class="type-signature"> :boolean</span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>hasFlowLevelDefault<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -824,7 +824,7 @@ variables and be valid.</p>
 
 <dt>
 <h4 class="name" id="isOutput">
-    <span class="type-signature"></span>isOutput<span class="type-signature"> :boolean</span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isOutput<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -899,7 +899,7 @@ variables to the value.</p>
 
 <dt>
 <h4 class="name" id="isReadable">
-    <span class="type-signature"></span>isReadable<span class="type-signature"> :boolean</span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isReadable<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -973,7 +973,7 @@ variables to the value.</p>
 
 <dt>
 <h4 class="name" id="isWritable">
-    <span class="type-signature"></span>isWritable<span class="type-signature"> :boolean</span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isWritable<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -1047,7 +1047,7 @@ variables to the value.</p>
 
 <dt>
 <h4 class="name" id="logStr">
-    <span class="type-signature"></span>logStr<span class="type-signature"> :string</span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>logStr<span class="type-signature"> :string</span>
     
 </h4>
 
@@ -1056,8 +1056,7 @@ variables to the value.</p>
 <dd>
     
     <div class="description">
-        <p>This is a string suitable for logging information about this object.  Usually this contains stuff like the traciking ID, name,
-type information, etc. etc.  It will be used during scripting to show what's going on.</p>
+        <p>A string suitable for logging that contains information about this value settings object.</p>
     </div>
     
 
@@ -1085,12 +1084,12 @@ type information, etc. etc.  It will be used during scripting to show what's goi
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
         <a href="ArchBaseObject.html#logStr">ArchBaseObject#logStr</a>
     </li></ul></dd>
-    
-
     
 
     
@@ -1208,7 +1207,7 @@ logging str contents wouldn't be set up.</p>
 
 <dt>
 <h4 class="name" id="mustBeExpression">
-    <span class="type-signature"></span>mustBeExpression<span class="type-signature"> :boolean</span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>mustBeExpression<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -1282,7 +1281,7 @@ logging str contents wouldn't be set up.</p>
 
 <dt>
 <h4 class="name" id="mustBeLiteral">
-    <span class="type-signature"></span>mustBeLiteral<span class="type-signature"> :boolean</span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>mustBeLiteral<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -1356,7 +1355,7 @@ logging str contents wouldn't be set up.</p>
 
 <dt>
 <h4 class="name" id="mustBeVariable">
-    <span class="type-signature"></span>mustBeVariable<span class="type-signature"> :boolean</span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>mustBeVariable<span class="type-signature"> :boolean</span>
     
 </h4>
 

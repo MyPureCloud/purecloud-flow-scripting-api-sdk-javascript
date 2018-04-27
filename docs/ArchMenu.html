@@ -302,7 +302,7 @@ Architect scripting object.</p>
 
 <dt>
 <h4 class="name" id=".isArchMenu">
-    <span class="type-signature"><span class="icon green">static</span> </span>isArchMenu<span class="type-signature"> :boolean</span>
+    <span class="type-signature"><span class="icon green">static</span>, <span class="icon green">readonly</span> </span>isArchMenu<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -372,7 +372,7 @@ Architect scripting object.</p>
 
 <dt>
 <h4 class="name" id="audio">
-    <span class="type-signature"></span>audio<span class="type-signature"> :<a href="ArchAudio.html">ArchAudio</a></span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>audio<span class="type-signature"> :<a href="ArchAudio.html">ArchAudio</a></span>
     
 </h4>
 
@@ -687,7 +687,7 @@ an extremely rare case.</p>
 
 <dt>
 <h4 class="name" id="isReusableMenu">
-    <span class="type-signature"></span>isReusableMenu<span class="type-signature"> :boolean</span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isReusableMenu<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -762,7 +762,7 @@ the menu is in a menu choice directly.</p>
 
 <dt>
 <h4 class="name" id="logStr">
-    <span class="type-signature"></span>logStr<span class="type-signature"> :string</span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>logStr<span class="type-signature"> :string</span>
     
 </h4>
 
@@ -771,8 +771,7 @@ the menu is in a menu choice directly.</p>
 <dd>
     
     <div class="description">
-        <p>This is a string suitable for logging information about this object.  Usually this contains stuff like the traciking ID, name,
-type information, etc. etc.  It will be used during scripting to show what's going on.</p>
+        <p>A string suitable for logging that contains information about this menu</p>
     </div>
     
 
@@ -800,12 +799,12 @@ type information, etc. etc.  It will be used during scripting to show what's goi
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logStr">ArchBaseObject#logStr</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseMenu.html#logStr">ArchBaseMenu#logStr</a>
+    </li></ul></dd>
     
 
     
@@ -1073,7 +1072,7 @@ choice is specified, and the getter is called, undefined is returned.</p>
 
 <dt>
 <h4 class="name" id="parentFlow">
-    <span class="type-signature"></span>parentFlow<span class="type-signature"> :<a href="ArchBaseFlow.html">ArchBaseFlow</a></span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>parentFlow<span class="type-signature"> :<a href="ArchBaseFlow.html">ArchBaseFlow</a></span>
     
 </h4>
 
@@ -1093,80 +1092,6 @@ choice is specified, and the getter is called, undefined is returned.</p>
             <li>
                 
 <span class="param-type"><a href="ArchBaseFlow.html">ArchBaseFlow</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="settingsMenu">
-    <span class="type-signature"></span>settingsMenu<span class="type-signature"> :<a href="ArchSettingsMenu.html">ArchSettingsMenu</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The menu options / settings for this menu.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchSettingsMenu.html">ArchSettingsMenu</a></span>
 
 
             </li>
@@ -1294,8 +1219,82 @@ choice is specified, and the getter is called, undefined is returned.</p>
             
 
 <dt>
+<h4 class="name" id="settingsMenu">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>settingsMenu<span class="type-signature"> :<a href="ArchSettingsMenu.html">ArchSettingsMenu</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The menu options / settings for this menu.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchSettingsMenu.html">ArchSettingsMenu</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
 <h4 class="name" id="settingsSpeechRec">
-    <span class="type-signature"></span>settingsSpeechRec<span class="type-signature"> :<a href="ArchSettingsSpeechRec.html">ArchSettingsSpeechRec</a></span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>settingsSpeechRec<span class="type-signature"> :<a href="ArchSettingsSpeechRec.html">ArchSettingsSpeechRec</a></span>
     
 </h4>
 
@@ -1369,7 +1368,7 @@ choice is specified, and the getter is called, undefined is returned.</p>
 
 <dt>
 <h4 class="name" id="trackingId">
-    <span class="type-signature"></span>trackingId<span class="type-signature"> :integer</span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>trackingId<span class="type-signature"> :integer</span>
     
 </h4>
 
