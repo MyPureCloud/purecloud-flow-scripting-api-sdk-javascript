@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: ArchBaseMenu | Class: ArchBaseMenu</title>
+    <title>Class: ArchBaseActionFlowOutcome | Class: ArchBaseActionFlowOutcome</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -28,7 +28,7 @@
         
     </div>
     <div class="title">
-        <h1><a href="index.html" class="link">Class: ArchBaseMenu</a></h1>
+        <h1><a href="index.html" class="link">Class: ArchBaseActionFlowOutcome</a></h1>
         
     </div>
     <div class="search-container" id="search-container">
@@ -50,7 +50,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"><span class="icon green">abstract</span> </span></span>ArchBaseMenu<span class="signature">()</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"><span class="icon green">abstract</span> </span></span>ArchBaseActionFlowOutcome<span class="signature">(coreFlowOutcomeActionViewModel)</span><span class="type-signature"></span></h2>
         
     
 </header>
@@ -63,9 +63,9 @@
 
 <dt>
     
-        <h4 class="name" id="ArchBaseMenu">
+        <h4 class="name" id="ArchBaseActionFlowOutcome">
             
-                new <span class="type-signature"><span class="icon green">abstract</span> </span>ArchBaseMenu<span class="signature">()</span><span class="type-signature"></span>
+                new <span class="type-signature"><span class="icon green">abstract</span> </span>ArchBaseActionFlowOutcome<span class="signature">(coreFlowOutcomeActionViewModel)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -77,7 +77,7 @@
 
     
     <div class="description">
-        <p>The Architect Scripting class that provides internal support for Architect Scripting menu and menu choice objects.</p>
+        <p>Creates a new Architect Flow Outcome base action instance.</p>
     </div>
     
 
@@ -87,6 +87,56 @@
 
     
 
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>coreFlowOutcomeActionViewModel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p><em>Internal</em> - Architect core flow outcome action view model object.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
     
 
     
@@ -133,6 +183,15 @@
     
 
     
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="ArchFactoryActions.html#addActionInitializeFlowOutcome">ArchFactoryActions#addActionInitializeFlowOutcome</a></li>
+        
+            <li><a href="ArchFactoryActions.html#addActionSetFlowOutcome">ArchFactoryActions#addActionSetFlowOutcome</a></li>
+        </ul>
+    </dd>
+    
 
     
 </dl>
@@ -153,7 +212,7 @@
 
 
     <ul>
-        <li><a href="ArchBaseCoreObjectWithId.html">ArchBaseCoreObjectWithId</a></li>
+        <li><a href="ArchBaseAction.html">ArchBaseAction</a></li>
     </ul>
 
 
@@ -186,7 +245,8 @@
 <dd>
     
     <div class="description">
-        <p>Returns the display type name string 'ArchBaseMenu'.</p>
+        <p>Implements override support for the display type name string for this
+Architect scripting object.</p>
     </div>
     
 
@@ -250,8 +310,8 @@
             
 
 <dt>
-<h4 class="name" id=".isArchBaseMenu">
-    <span class="type-signature"><span class="icon green">static</span> </span>isArchBaseMenu<span class="type-signature"> :boolean</span>
+<h4 class="name" id=".isArchBaseActionFlowOutcome">
+    <span class="type-signature"><span class="icon green">static</span> </span>isArchBaseActionFlowOutcome<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -260,8 +320,7 @@
 <dd>
     
     <div class="description">
-        <p>Returns true indicating that this is an ArchBaseMenu which means it is either a top level menu, reusable menu
-or menu choice.</p>
+        <p>Returns true indicating that this is an ArchBaseActionFlowOutcome instance.</p>
     </div>
     
 
@@ -288,6 +347,85 @@ or menu choice.</p>
 
     
 
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="displayTypeNameArchitect">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>displayTypeNameArchitect<span class="type-signature"> :string</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The Architect action type label</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#displayTypeNameArchitect">ArchBaseAction#displayTypeNameArchitect</a>
+    </li></ul></dd>
     
 
     
@@ -492,6 +630,244 @@ an extremely rare case.</p>
             
 
 <dt>
+<h4 class="name" id="isReachable">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isReachable<span class="type-signature"> :boolean</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns whether or not this action is reachable at runtime.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#isReachable">ArchBaseAction#isReachable</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="isSecure">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isSecure<span class="type-signature"> :boolean</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Whether or not this action is secure which means either the action by its very nature
+is secure or it consumes secure data.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#isSecure">ArchBaseAction#isSecure</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="isUnreachable">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isUnreachable<span class="type-signature"> :boolean</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns whether or not this action is unreachable at runtime.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#isUnreachable">ArchBaseAction#isUnreachable</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
 <h4 class="name" id="logStr">
     <span class="type-signature"><span class="icon green">readonly</span> </span>logStr<span class="type-signature"> :string</span>
     
@@ -502,9 +878,9 @@ an extremely rare case.</p>
 <dd>
     
     <div class="description">
-        <p>This is a string suitable for logging information about this object which is generated by the Architect Scripting object itself.
-Usually this contains stuff like the tracking ID, name, type information, etc. etc.  This information will be used as the
-header for actual logging calls.</p>
+        <p>A string suitable for logging that contains information about this audio.  This will contain parent
+information as well as the audio label which normally represents the property on the parent containing
+object.</p>
     </div>
     
 
@@ -532,12 +908,12 @@ header for actual logging calls.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logStr">ArchBaseObject#logStr</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#logStr">ArchBaseAction#logStr</a>
+    </li></ul></dd>
     
 
     
@@ -616,6 +992,164 @@ logging str contents wouldn't be set up.</p>
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
         <a href="ArchBaseObject.html#logStrTypeOnly">ArchBaseObject#logStrTypeOnly</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="name">
+    <span class="type-signature"></span>name<span class="type-signature"> :string</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The name of the action</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#name">ArchBaseAction#name</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="trackingId">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>trackingId<span class="type-signature"> :integer</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The tracking identifier for this action.  This identifier is displayed in the Architect user interface.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">integer</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#trackingId">ArchBaseAction#trackingId</a>
     </li></ul></dd>
     
 
@@ -1391,7 +1925,7 @@ the string in the errorStr parameter.</p>
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'ArchBaseMenu_sub'.replace(/"/g, '_');
+        var id = 'ArchBaseActionFlowOutcome_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
