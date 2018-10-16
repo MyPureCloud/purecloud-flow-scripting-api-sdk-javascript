@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: ArchVariableSkillCollection | Class: ArchVariableSkillCollection</title>
+    <title>Class: ArchActionFindQueue | Class: ArchActionFindQueue</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -28,7 +28,7 @@
         
     </div>
     <div class="title">
-        <h1><a href="index.html" class="link">Class: ArchVariableSkillCollection</a></h1>
+        <h1><a href="index.html" class="link">Class: ArchActionFindQueue</a></h1>
         
     </div>
     <div class="search-container" id="search-container">
@@ -50,9 +50,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ArchVariableSkillCollection<span class="signature">(coreVariable)</span><span class="type-signature"></span></h2>
-        
-            <div class="class-description"><p>ArchVariableSkillCollection</p></div>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ArchActionFindQueue<span class="signature">(coreFindQueueActionViewModel)</span><span class="type-signature"></span></h2>
         
     
 </header>
@@ -65,9 +63,9 @@
 
 <dt>
     
-        <h4 class="name" id="ArchVariableSkillCollection">
+        <h4 class="name" id="ArchActionFindQueue">
             
-                new <span class="type-signature"></span>ArchVariableSkillCollection<span class="signature">(coreVariable)</span><span class="type-signature"></span>
+                new <span class="type-signature"></span>ArchActionFindQueue<span class="signature">(coreFindQueueActionViewModel)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -77,6 +75,11 @@
 </dt>
 <dd>
 
+    
+    <div class="description">
+        <p>The Architect Scripting class that represents the Find Queue action.
+Instances of this action should be created by calling <a href="ArchFactoryActions.html#addActionFindQueue"><code>ArchFactoryActions#addActionFindQueue</code></a></p>
+    </div>
     
 
     
@@ -111,10 +114,15 @@
 
         <tr>
             
-                <td class="name"><code>coreVariable</code></td>
+                <td class="name"><code>coreFindQueueActionViewModel</code></td>
             
 
             <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
             
             </td>
 
@@ -122,7 +130,7 @@
 
             
 
-            <td class="description last"><p>a variable from core.</p></td>
+            <td class="description last"><p><em>Internal</em> - Architect core Find Queue action view model object.</p></td>
         </tr>
 
     
@@ -176,6 +184,13 @@
     
 
     
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="ArchFactoryActions.html#addActionFindQueue">ArchFactoryActions#addActionFindQueue</a></li>
+        </ul>
+    </dd>
+    
 
     
 </dl>
@@ -196,7 +211,7 @@
 
 
     <ul>
-        <li><a href="ArchBaseVariableCollection.html">ArchBaseVariableCollection</a></li>
+        <li><a href="ArchBaseActionFindSystemObject.html">ArchBaseActionFindSystemObject</a></li>
     </ul>
 
 
@@ -229,7 +244,7 @@
 <dd>
     
     <div class="description">
-        <p>Returns the display type name string 'ArchVariableSkillCollection'.</p>
+        <p>Returns the display type name string 'ArchActionFindQueue'.</p>
     </div>
     
 
@@ -293,14 +308,18 @@
             
 
 <dt>
-<h4 class="name" id=".isArchVariableSkillCollection">
-    <span class="type-signature"><span class="icon green">static</span> </span>isArchVariableSkillCollection<span class="type-signature"> :boolean</span>
+<h4 class="name" id=".isArchActionFindQueue">
+    <span class="type-signature"><span class="icon green">static</span>, <span class="icon green">readonly</span> </span>isArchActionFindQueue<span class="type-signature"> :boolean</span>
     
 </h4>
 
 
 </dt>
 <dd>
+    
+    <div class="description">
+        <p>Returns true indicating that this is an ArchActionFindQueue instance.</p>
+    </div>
     
 
     <!--
@@ -363,14 +382,18 @@
             
 
 <dt>
-<h4 class="name" id="initialValue">
-    <span class="type-signature"></span>initialValue<span class="type-signature"> :<a href="ArchValueSkillCollection.html">ArchValueSkillCollection</a></span>
+<h4 class="name" id="displayTypeNameArchitect">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>displayTypeNameArchitect<span class="type-signature"> :string</span>
     
 </h4>
 
 
 </dt>
 <dd>
+    
+    <div class="description">
+        <p>The Architect action type label</p>
+    </div>
     
 
     <!--
@@ -379,7 +402,7 @@
         <ul>
             <li>
                 
-<span class="param-type"><a href="ArchValueSkillCollection.html">ArchValueSkillCollection</a></span>
+<span class="param-type">string</span>
 
 
             </li>
@@ -396,6 +419,576 @@
 
     
 
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#displayTypeNameArchitect">ArchBaseAction#displayTypeNameArchitect</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="findName">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>findName<span class="type-signature"> :<a href="ArchValueString.html">ArchValueString</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The name to look up.  Inheriting Find action instances will provide the context of the name.
+For example, in the <a href="ArchActionFindUserPrompt.html"><code>ArchActionFindUserPrompt</code></a> this would be the name of the user prompt
+that you wish to look up at runtime.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueString.html">ArchValueString</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionFindSystemObject.html#findName">ArchBaseActionFindSystemObject#findName</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="findResult">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>findResult<span class="type-signature"> :<a href="ArchValueQueue.html">ArchValueQueue</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The value that will hold the returned queue if found.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueQueue.html">ArchValueQueue</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionFindSystemObject.html#findResult">ArchBaseActionFindSystemObject#findResult</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="id">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>id<span class="type-signature"> :string</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The identifier string for this object.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseCoreObjectWithId.html#id">ArchBaseCoreObjectWithId#id</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="idMayBeBlank">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>idMayBeBlank<span class="type-signature"> :string</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns whether or not the id property may be blank or undefined for this object.  For example, the returned settings from <a href="ArchMenu.html#settingsMenu"><code>ArchMenu#settingsMenu</code></a>
+will have a blank identifier along with the settings returned from <a href="ArchMenu.html#settingsSpeechRec"><code>ArchMenu#settingsSpeechRec</code></a>.  Note that this is
+an extremely rare case.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseCoreObjectWithId.html#idMayBeBlank">ArchBaseCoreObjectWithId#idMayBeBlank</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="ArchBaseCoreObjectWithId.html#id">ArchBaseCoreObjectWithId#id</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="isReachable">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isReachable<span class="type-signature"> :boolean</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns whether or not this action is reachable at runtime.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#isReachable">ArchBaseAction#isReachable</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="isSecure">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isSecure<span class="type-signature"> :boolean</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Whether or not this action is secure which means either the action by its very nature
+is secure or it consumes secure data.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#isSecure">ArchBaseAction#isSecure</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="isUnreachable">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isUnreachable<span class="type-signature"> :boolean</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns whether or not this action is unreachable at runtime.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#isUnreachable">ArchBaseAction#isUnreachable</a>
+    </li></ul></dd>
     
 
     
@@ -443,9 +1036,9 @@
 <dd>
     
     <div class="description">
-        <p>This is a string suitable for logging information about this object which is generated by the Architect Scripting object itself.
-Usually this contains stuff like the tracking ID, name, type information, etc. etc.  This information will be used as the
-header for actual logging calls.</p>
+        <p>A string suitable for logging that contains information about this audio.  This will contain parent
+information as well as the audio label which normally represents the property on the parent containing
+object.</p>
     </div>
     
 
@@ -475,7 +1068,7 @@ header for actual logging calls.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logStr">ArchBaseObject#logStr</a>
+        <a href="ArchBaseAction.html#logStr">ArchBaseAction#logStr</a>
     </li></ul></dd>
     
 
@@ -591,6 +1184,402 @@ logging str contents wouldn't be set up.</p>
     
 </dd>
 
+        
+            
+
+<dt>
+<h4 class="name" id="name">
+    <span class="type-signature"></span>name<span class="type-signature"> :string</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The name of the action</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#name">ArchBaseAction#name</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="outputCount">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>outputCount<span class="type-signature"> :integer</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns the number of outputs on this action.  For actions that have a fake success output, that will
+be included in the count to be consistent with the Architect UI.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">integer</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputs.html#outputCount">ArchBaseActionWithOutputs#outputCount</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="outputFound">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>outputFound<span class="type-signature"> :<a href="ArchActionOutput.html">ArchActionOutput</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The found output for this action</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsFoundNotFound.html#outputFound">ArchBaseActionWithOutputsFoundNotFound#outputFound</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="outputNotFound">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>outputNotFound<span class="type-signature"> :<a href="ArchActionOutput.html">ArchActionOutput</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The not found output for this action</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsFoundNotFound.html#outputNotFound">ArchBaseActionWithOutputsFoundNotFound#outputNotFound</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="trackingId">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>trackingId<span class="type-signature"> :integer</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The tracking identifier for this action.  This identifier is displayed in the Architect user interface.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">integer</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#trackingId">ArchBaseAction#trackingId</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
         </dl>
     
 
@@ -598,6 +1587,283 @@ logging str contents wouldn't be set up.</p>
         <h3 class="subsection-title">Methods</h3>
 
         <dl>
+                
+
+<dt>
+    
+        <h4 class="name" id="getOutputById">
+            
+                <span class="type-signature"></span>getOutputById<span class="signature">(output)</span><span class="type-signature"> &rarr; {<a href="ArchActionOutput.html">ArchActionOutput</a>}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Gets an output by its identifier.  If it cannot be found, this method will throw.
+Normally you won't need to use this method and will use the helper methods available on inheriting classes
+when accessing pre-defined outputs like success, failure, timeout, etc. etc.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>output</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type"><a href="ArchBranch.html">ArchBranch</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Identifies output you want to obtain.  If output is an ArchBranch instance,
+                                        the <a href="ArchBranch.html#outputId"><code>ArchBranch#outputId</code></a> value will be used.  Otherwise valid string
+                                        identifier values can be found in <a href="ArchEnums.html#OUTPUT_IDS"><code>ArchEnums#OUTPUT_IDS</code></a> or can be a GUID.
+                                        Remember that requesting the 'success' output on an action with a
+                                        <a href="ArchBaseActionWithOutputsFakeSuccessFailure.html#hasFakeSuccessOutput"><code>fake success output</code></a> will return nothing.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
+
+
+
+
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputs.html#getOutputById">ArchBaseActionWithOutputs#getOutputById</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="getOutputByIndex">
+            
+                <span class="type-signature"></span>getOutputByIndex<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="ArchActionOutput.html">ArchActionOutput</a>}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns the output at the given index.  It's important to note that on actions that have a fake success
+output if you request the output at the index for the fake success, you will get nothing returned because
+the fake success output isn't something that you should do anything with.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
+
+
+
+
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputs.html#getOutputByIndex">ArchBaseActionWithOutputs#getOutputByIndex</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
                 
 
 <dt>
@@ -1307,97 +2573,6 @@ the string in the errorStr parameter.</p>
 
 </dd>
 
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="setInitialValueEmptyCollection">
-            
-                <span class="type-signature"></span>setInitialValueEmptyCollection<span class="signature">()</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Sets the initial value of the singleton variable to an empty collection.
-Note:  This is a wrapper around calling accessing the initialValue
-property and calling setNoValue() on it.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariableCollection.html#setInitialValueEmptyCollection">ArchBaseVariableCollection#setInitialValueEmptyCollection</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
             </dl>
     
 
@@ -1423,7 +2598,7 @@ property and calling setNoValue() on it.</p>
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'ArchVariableSkillCollection_sub'.replace(/"/g, '_');
+        var id = 'ArchActionFindQueue_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
