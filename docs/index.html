@@ -59,29 +59,35 @@
 
 
     <section>
-        <article class="readme"><h2>Architect Scripting</h2><p>Architect scripting lets you create flows using JavaScript.  This help will document the scripting API, provide
-installation instructions to get Architect scripting up and running on your machine along with example applications
-that show how to use various features of the API.</p>
-<h3>Getting Started</h3><h4>Installation</h4><p>Architect scripting is available for download on <a href="https://www.npmjs.com/package/purecloud-flow-scripting-api-sdk-javascript">npm</a> or install via the npm command with:</p>
-<pre class="prettyprint source lang-javascript"><code>npm install purecloud-flow-scripting-api-sdk-javascript </code></pre><h4>Changelog</h4><p> A changelog for architect-scripting can be found <a href="https://mypurecloud.github.io/purecloud-flow-scripting-api-sdk-javascript/changelog.html">here</a></p>
-<h4>Script startup</h4><p>The basic idea when you're writing an Architect script is that you will need to:</p>
+        <article class="readme"><h1>Architect Scripting</h1><p>Architect Scripting lets you create and manipulate PureCloud Architect flows using JavaScript.  This help documents the Architect Scripting JavaScript SDK, provides
+installation instructions to get Architect Scripting up and running on your machine and also has some example bits to help get you started.</p>
+<h3>Installation</h3><p>Before installing Architect Scripting, you'll want make sure you have Node Package Manager (npm) installed.
+If you don't have npm installed, you can install npm <a href="https://www.npmjs.com/">here</a> .</p>
+<p>Then to install Architect Scripting at the command line using npm, execute this:</p>
+<pre class="prettyprint source lang-javascript"><code>npm install purecloud-flow-scripting-api-sdk-javascript</code></pre><p>Here is the link to <a href="https://www.npmjs.com/package/purecloud-flow-scripting-api-sdk-javascript">Architect Scripting</a> in npm if you want it.</p>
+<h3>Changelog</h3><p>As newer versions of Architect Scripting are released, we have a <a href="https://mypurecloud.github.io/purecloud-flow-scripting-api-sdk-javascript/changelog.html">changelog</a> that describes version changes.</p>
+<h2>Getting Started</h2><p>When you write JavaScript code that uses the Architect Scripting SDK, the general process is that you'll call either the
+<a href="ArchSession.html#startWithClientIdAndSecret"><code>startWithClientIdAndSecret</code></a> or <a href="ArchSession.html#startWithAuthToken"><code>startWithAuthToken</code></a> method available on the <a href="ArchSession.html"><code>Architect Scripting session</code></a> object
+and provide a callback function that contains the runtime bits for what you want to do.  In order to do this, you'll either need to have a PureCloud authorization token (auth token) or
+configure a client ID and secret for the PureCloud organization where your scripting code will run.  In addition, you'll also
+need to know the <code>location</code> of the organization.  Outside of Genesys where internally we use development
+and test locations, you'll be using one of the production regions.</p>
+<h3>Configuring an OAuth Client to use with Architect Scripting</h3><p>If you plan to use an auth token for Architect Scripting, you don't need to go through these steps which sets up an OAuth client.  But if you want to use
+a client ID and secret which is needed for the <a href="ArchSession.html#startWithClientIdAndSecret"><code>startWithClientIdAndSecret</code></a> method, here are steps to get an OAuth client set up.
+You'll want to save off the client ID and secret values as they'll be used in your code later.</p>
+<h4>Using the PureCloud UI</h4><p>In PureCloud:</p>
 <ul>
-<li>Determine the organization location in which you're running the script.  <code>ArchEnums.LOCATIONS</code> has properties that will provide supported location strings.</li>
-<li>Call either <a href="ArchSession.html#startWithClientIdAndSecret"><code>startWithClientIdAndSecret</code></a> or <a href="ArchSession.html#startWithAuthToken"><code>startWithAuthToken</code></a> and provide a callback function that contains the runtime bits for what you want to do in scripting.</li>
-</ul>
-<p>If you are planning to use a client ID and secret, the following steps describe the process to create one for the organization if you don't already have one:</p>
-<h5>Using Directory</h5><ul>
-<li>Ensure that your user has the <code>'OAuth &gt; Client &gt; Add'</code> permission in PureCloud Admin</li>
+<li>Ensure that your user has the <code>'OAuth &gt; Client &gt; Add'</code> permission in PureCloud Admin.</li>
 <li>Within PureCloud Admin, select <code>'Integrations'</code> and then <code>'OAuth'</code></li>
 <li>In the left menu, select <code>'Integrations'</code>, then <code>'OAuth'</code></li>
 <li>Click the <code>'Add Client'</code></li>
-<li>Fill in a Name and Description for your Scripting OAuth client.  While it's not required, we recommend a descriptive name so you can identify your client ID later easily.</li>
+<li>Fill in a Name and Description for your Architect Scripting OAuth client.  While it's not required, we recommend a descriptive name so you can identify your client ID later easily.</li>
 <li>Select <code>'Code Authorization'</code> in <code>'Grant Types'</code></li>
 <li>Add <code>'http://localhost:9001/callback'</code> to the <code>'Authorized redirect URIs'</code> list</li>
 <li>Click <code>'Save'</code></li>
 </ul>
-<h5>Using PureCloud Public Api</h5><p>Make an authorized post to the public api endpoint <code>/api/v2/oauth/clients</code></p>
-<h6>Headers</h6><table>
+<h4>Using PureCloud Public Api</h4><p>If you want to use the PureCloud API to create a client, make an authorized POST to the public api endpoint <code>/api/v2/oauth/clients</code></p>
+<h5>Headers</h5><table>
 <thead>
 <tr>
 <th>key</th>
@@ -99,187 +105,20 @@ that show how to use various features of the API.</p>
 </tr>
 </tbody>
 </table>
-<h6>Body</h6><pre class="prettyprint source lang-json"><code> {
-    &quot;name&quot;: &quot;Architect Scripting &quot;,
+<h5>Body</h5><pre class="prettyprint source lang-json"><code> {
+    &quot;name&quot;:                       &quot;Architect Scripting &quot;,
     &quot;accessTokenValiditySeconds&quot;: 86400,
-    &quot;description&quot;: &quot;This is an OAuth client for architect scripting&quot;,
-    &quot;registeredRedirectUri&quot;: [&quot;http://localhost:9001/callback&quot;],
-    &quot;authorizedGrantType&quot;: &quot;CODE&quot;
+    &quot;description&quot;:                &quot;This is an OAuth client for Architect Scripting&quot;,
+    &quot;registeredRedirectUri&quot;:      [&quot;http://localhost:9001/callback&quot;],
+    &quot;authorizedGrantType&quot;:        &quot;CODE&quot;
  }</code></pre><p>You will now have access to a <code>'Client ID'</code> and <code>'Client Secret'</code> which should be supplied to an <a href="ArchSession.html#startWithClientIdAndSecret"><code>startWithClientIdAndSecret</code></a> call.</p>
-<h3>Factories</h3><p>There are lots of Architect scripting classes that you'll use when writing Architect scripting code.  One thing that
-is very important to know up front is that you should be using the Architect scripting factories to create flows,
-add actions, menu or tasks to flows.  Here is the list of factories and what they should be used for:</p>
-<ul>
-<li><p><a href="ArchFactoryFlows.html"><code>ArchFactoryFlows</code></a> - This factory lets you create flows.  When you create a flow, the returned <a href="ArchFlowInboundCall.html"><code>ArchFlowInboundCall</code></a>,
-<a href="ArchFlowInQueueCall.html"><code>ArchFlowInQueueCall</code></a> or <a href="ArchFlowOutboundCall.html"><code>ArchFlowOutboundCall</code></a> resides locally in memory.  An example method that creates an
-inbound call flow would be the <a href="ArchFactoryFlows.html#createFlowInboundCallAsync"><code>ArchFactoryFlows#createFlowInboundCallAsync</code></a> method.  It is when you call <a href="ArchBaseFlow.html#saveAsync"><code>saveAsync</code></a>,
-<a href="ArchBaseFlow.html#checkInAsync"><code>checkInAsync</code></a> or <a href="ArchBaseFlow.html#publishAsync"><code>publishAsync</code></a> on the returned flow from the create call that the
-flow gets created in PureCloud.  By doing this it makes local development go quickly so you can iterate with code
-changes and not have to create the flow on the server when it is initially created.</p>
-</li>
-<li><p><a href="ArchFactoryActions.html"><code>ArchFactoryActions</code></a> - The actions factory will let you add actions to a task or to an output on an action.  For
-each action that's support in Architect scripting, there will be an add method for it such as <a href="ArchFactoryActions.html#addActionDecision"><code>addActionDecision</code></a>.
-These add methods all have common parameters such as the name of the action you're adding and then there will be additional
-parameters on many of the add calls as well that let you specify additional settings on that action when it's created.
-These additional parameters are simple helpers that set properties on the action that you will have available to you in
-scripting.  The add methods all return the Architect scripting class for the newly added action.</p>
-</li>
-<li><p><a href="ArchFactoryMenus.html"><code>ArchFactoryMenus</code></a> - This factory lets you add menus and sub-menus to a flow.  The methods on this factory
-are similar to the actions factory in that the add methods will return instances of the newly added menu or sub-menu.  Many
-of the returned menu / sub-menu instances from the add methods will have a pointer to the action associated with that
-menu.  For example if you add a Transfer to ACD menu via. <a href="ArchFactoryMenus.html#addMenuTransferToAcd"><code>addMenuTransferToAcd</code></a>, it will return
-an <a href="ArchMenuTransferToAcd.html"><code>ArchMenuTransferToAcd</code></a> instance.  On that instance is an <code>actionTransferToAcd</code> property
-that contains the underlying <a href="ArchActionTransferToAcd.html"><code>ArchActionTransferToAcd</code></a> action associated with that menu choice.</p>
-</li>
-<li><p><a href="ArchFactoryPrompts.html"><code>ArchFactoryPrompts</code></a> - The prompt factory can be used to look up system or user prompts.  It currently does not have
-any way to add, delete or edit prompts.  If you wish to do that, please use the PureCloud SDK.</p>
-</li>
-<li><p><a href="ArchFactoryTasks.html"><code>ArchFactoryTasks</code></a> - This final factory lets you add tasks to a flow.  It's the most basic of all factories
-in that it only has one method called <code>ArchFactoryTasks.addTask</code> which will return a the newly added <a href="ArchTask.html"><code>ArchTask</code></a>
-to the flow.  Remember that tasks can only be added to <a href="ArchFlowInboundCall.html"><code>ArchFlowInboundCall</code></a> and <a href="ArchFlowOutboundCall.html"><code>ArchFlowOutboundCall</code></a> flow
-types.</p>
-</li>
-</ul>
-<h3>Values</h3><p>A value in Architect scripting such as ArchValueInteger has an Architect data type associated with it.  This
-data type tells you what kind of data is contained within the value.  Values typically reside on an Architect scripting
-object such as a setting on an action like the <code>condition</code> property where you would
-specify the boolean value to check at runtime to determine if the yes or no output should be taken.  Architect values
-are really at the core of a lot of what you'll configure and set up in flows.  Another example would be the values
-specified on flow settings, etc. etc.  We'll discuss some actual settings below but to look at meta data about a value
-and it's settings, you can access the <code>settings</code> property.  Here is what a value can be
-set to:</p>
-<ul>
-<li><p>Literal - Literal values are set on values with setLiteral calls such as <a href="ArchValueInteger.html#setLiteralInt"><code>setLiteralInt</code></a> on
-the integer data type.  If the data type supports methods for setting a literal you can call the method to set the value.  It's
-important to note that values do have the concept if being an output which can be viewed from the settings on a value.  If you attempt
-to assign a literal to a value that is set to an <a href="ArchValueSettings.html#isOutput"><code>isOutput</code></a>, the assignment will fail.  If
-you are curious if a literal can be assigned to a value, you can always check the <a href="ArchValueSettings.html#canBeLiteral"><code>canBeLiteral</code></a>
-property on the value's settings.  Some values like <a href="ArchValueUser.html"><code>ArchValueUser</code></a> will represent a value that is network based.
-For example, a user would be a PureCloud user set up for the organization that you're logged in to.  Setting literal
-values on network based objects is an asynchronous operation where a promise returned while the scripting layer looks up
-the literal value supplied.  An example of this would be the <a href="ArchValueUser.html#setLiteralByUserNameAsync"><code>setLiteralByUserNameAsync</code></a> method that would
-set the user value by their PureCloud username.</p>
-</li>
-<li><p>Variable - Assigning a variable to a value is done by calling the <a href="ArchBaseValue.html#setVariable"><code>setVariable</code></a> method
-on the variable.  You can assign variables by using an existing Architect <a href="ArchBaseVariable.html"><code>variable</code></a> or by passing
-in text that specifies the variable such as 'Flow.MyValue'.  One handy feature of setting a variable on a value is that
-if the variable you're trying to assign doesn't exist, the scripting framework will create it for you with a type appropriate
-for the value.  And lastly, you can check to see if a variable can be assigned to a value by checking the
-<code>canBeVariable</code> property on the value's settings.</p>
-</li>
-<li><p>Expression - When you assign an expression to a value, that's assigning expression text.  This would be the same
-expression text that you would assign in the Architect UI.  You can assign expression text by calling <a href="ArchBaseValue.html#setExpression"><code>setExpression</code></a>
-to set a value as an expression.  Similar to the variable and literal, there is a <a href="ArchValueSettings.html#canBeExpression"><code>canBeExpression</code></a>
-property on the value's settings that will tell you if setting an expression on the value is allowed.  Different value
-types will have other methods to set an expression on a value.  The <a href="ArchBaseValue.html#setExpression"><code>setExpression</code></a> is
-the most basic version available but as an example, there is a <a href="ArchValueInteger.html#setExpressionMaxInt"><code>setExpressionMaxInt</code></a> method
-on <a href="ArchValueInteger.html"><code>ArchValueInteger</code></a> which will set the maximum integer value allowed in Architect as an expression.  So when you're
-looking to set an expression, you can always use <a href="ArchBaseValue.html#setExpression"><code>setExpression</code></a> but there might be
-other setExpression<blah> helper methods available as well.  It will depend on the value you're working with.</p>
-</li>
-<li><p>No Value - You serious?  A &quot;no value&quot; value?  Yup.  This isn't something that you'll normally need to use but
-certain settings do allow having no value specified.  That is different than a NOT_SET value or a blank string.  It really
-does mean that no value is being specified.  To see if no value is allowed, there is a <a href="ArchValueSettings.html#canBeNoValue"><code>canBeNoValue</code></a> property.
-For values that are allowed to have no value specified, this is the case when it's optional for a flow author to specify a value
-as well as values that have defaults either at the flow action setting level or some other kind of default runtime handling.
-See <a href="ArchBaseValue.html#setNoValue"><code>setNoValue</code></a> for more information.</p>
-</li>
-</ul>
-<h3>Menu Choices</h3><p>Menu choices are pretty straightforward.  They are slightly different from top level menus in that they have DTMF
-settings that a top level menu would not.  If you've ever looked at menu choices in Architect's UI, outside of settings
-specific to a menu choice they have settings that match the action with the same type.  It probably makes sense because
-in the Architect UI users drag actions out to the menu are create menu choices.  As such, you'll see the action associated
-with the menu choide in scripting is available off of ArchBaseMenuChoice instances.  Menu choices are containers that
-have an underlying action associated with them.  For example, the <a href="ArchMenuDisconnect.html"><code>ArchMenuDisconnect</code></a> menu has an
-<a href="ArchMenuDisconnect.html#actionDisconnect"><code>actionDisconnect</code></a> property which returns the <a href="ArchActionDisconnect.html"><code>disconnect</code></a> action that's associated with the
-disconnect menu choice.  One thing to remember is that when an action is part of a menu choice, you cannot add
-any new actions to the outputs.  You'll notice that in Architect's UI we don't allow that and the same restriction
-exists in scripting.  It's fine to add actions to an action's output when the action exists within a task.</p>
-<h3>Using the PureCloud SDK with Architect Scripting</h3><p>If you want to use both the PureCloud SDK and Architect Scripting in the same file, an easy way to do this is like the following:</p>
-<pre class="prettyprint source lang-javascript"><code>
-// --------------------------------------------------------------------------------
-// Require in the PureCloud Platform SDK and Architect Scripting SDK
-// --------------------------------------------------------------------------------
-const architectScripting = require('purecloud-flow-scripting-api-sdk-javascript');
-const platformApi        = require('purecloud-platform-client-v2');
-
-// --------------------------------------------------------------------------------
-// See above in the readme for information on creating a client id / secret.
-// We will use these when starting the Architect Scripting session.
-// --------------------------------------------------------------------------------
-const clientId           = '&lt;your client id>';
-const clientSecret       = '&lt;your client secret>>';
-
-// --------------------------------------------------------------------------------
-// Helpers to make sample code more readable.
-// --------------------------------------------------------------------------------
-const archEnums          = architectScripting.enums.archEnums;
-const archSession        = architectScripting.environment.archSession;
-const platformApiClient  = platformApi.ApiClient.instance;
-
-// --------------------------------------------------------------------------------
-// This function will be what is called by Architect Scripting since it is
-// specified in the start call at the bottom.
-// --------------------------------------------------------------------------------
-function doWork(session) {
-
-    // Once the session starts you can do this to assign the authToken from
-    // the Architect session object to the platform API client.
-    platformApiClient.setAccessToken(session.authToken);
-
-    // Now you can make calls using the PureCloud Platform client calls as well
-    // as well as Architect Scripting calls because we've assigned the autorization
-    // token.  :)
-
-}
-
-// This will start off the Architect Scripting code and call the doWork function
-archSession.startWithClientIdAndSecret(archEnums.LOCATIONS.prod_us_east_1, doWork, clientId, clientSecret);
-</code></pre><p>Obviously there are other ways to accomplish this but the above shows how
-to get at the authorization token and then use it with the platform SDK when
-using the <a href="ArchSession.html#startWithClientIdAndSecret"><code>ArchSession#startWithClientIdAndSecret</code></a> call.  If you are using
-<a href="ArchSession.html#startWithAuthToken"><code>ArchSession#startWithAuthToken</code></a>, you already have the authorization token
-and, if needed, can set it on the ApiClient if needed.</p>
-<h4>Running JavaScript that uses Architect Scripting and the console</h4><p>The Architect scripting code will trace out lots of information to the console when you're creating flows, adding
-tasks, menus, setting values, etc. etc.  It's probably obvious but when you encounter errors or unexpected behavior
-please take a look at the console tracing.  It will often times hold the information you'll need to troubleshoot
-what happened when your JavaScript code ran.  :)</p>
-<h4>Asynchronous methods</h4><p>Asynchronous methods in Architect scripting take a callback function for most calls.  Asynchronous methods end with
-&quot;Async&quot; in their name. The rule for asynchronous method calls is that they will return the object on which the asynchronous
-method was called back to the callback function if specified.  For example, if you have code like this:</p>
-<pre class="prettyprint source lang-javascript"><code>actionFactory.addActionCallBridge(archTask, 'Lookup a Contact').setBridgeActionByNameAsync('Contact Lookup', function(newCallBridgeAction) {
-    // do work here - presumably set values on inputs / outputs for the bridge action
-    // remember this gets called asynchronously after the bridge action is looked up successfully  
-})</code></pre><p>The first line calls the action factory to add a new call bridge action to a task.  The {@ArchActionCallBridge}
-instance is returned from the <a href="ArchFactoryActions.html#addActionCallBridge"><code>addActionCallBridge</code></a> method and the <a href="ArchActionCallBridge.html#setBridgeActionByNameAsync"><code>setBridgeActionByNameAsync</code></a>
-method is called on that.  This is an asynchronous operation because the bridge action name 'Contact Lookup'
-needs to be looked up.  Once it is successfully resolved, your callback function will be called and the
-newCallBridgeAction parameter above would have the action returned by the addActionCallBridge call.</p>
-<p>The one exception to this is the <a href="ArchBaseFlow.html#validateAsync"><code>validateAsync</code></a> function which is called on a flow when the promise
-resolves it will return the validation results from that call.  Note that you can get back to the flow from the
-validation results by accessing the <a href="ArchValidationResults.html#parentFlow"><code>parentFlow</code></a> property on it.
-( yes, this will be updated to a callback function eventually )</p>
-<h4>The 'is' identity properties</h4><p>If you're ever wondering what the is properties are for on Scripting objects like <a href="ArchMenuSubMenu.html#.isArchMenuSubMenu"><code>isArchMenuSubMenu</code></a> for a sub menu, their
-purpose is to give script authors a quick and easy way to check if an object is a particular Architect scripting type.  It's used
-extensively within the Scripting framework to do parameter validation.  It may not seem all that useful but you might need it.
-For example, when you validate a flow, the validation results that come back will give you access to the validation issues.  If you
-look at a validation issue, there is an <a href="ArchValidationIssue.html#archObject"><code>archObject</code></a> property that returns the item
-that has the error or warning associated with it.  You could ask the returned object for its <a href="ArchBaseObject.html#.displayTypeName"><code>displayTypeName</code></a>
-or use one of these is properties to determine what kind of object it is that has the warning or error.</p>
-<h4>Object properties marked as readonly</h4><p>Within Architect scripting we're making improvements in the documentation to address properties that have only a getter
-to mark them as readonly.  One thing to keep in mind is that the property itself is readonly but if the property returns
-an object you will be able to call methods on it and update values contained within it.  For example, the <a href="ArchActionPlayPositionInQueue.html#positionInQueue"><code>positionInQueue</code></a>
-property on the play position in queue action returns an <a href="ArchValueInteger.html"><code>ArchValueInteger</code></a> object.  You cannot change the <a href="ArchValueInteger.html"><code>ArchValueInteger</code></a> object itself
-to a different <a href="ArchValueInteger.html"><code>ArchValueInteger</code></a> instance on the action so it's marked as readonly but you can call methods on it like
-<a href="ArchValueInteger.html#setLiteralInt"><code>setLiteralInt</code></a> to set the literal integer contained in that <a href="ArchValueInteger.html"><code>ArchValueInteger</code></a> instance.
-We wanted to point this out so you don't mistake the readonly setting in documentation to mean you can't call methods on
-properties that return objects.</p>
-<h4>Flow-level action defaults</h4><p>Certain action or menu properties have flow-level defaults. To set a flow-level default, access the
-<a href="ArchBaseValue.html#flowLevelDefault"><code>flowLevelDefault</code></a> property off of the ArchBaseValue associated with the property like this:</p>
-<pre class="prettyprint source lang-javascript"><code> collectInputAction.interDigitTimeout.flowLevelDefault.setLiteralTimeParts(0, 0, 0, 6); </code></pre><p>To query an ArchBaseValue to see if it has a flow level default, you can use the <a href="ArchValueSettings.html#hasFlowLevelDefault"><code>hasFlowLevelDefault</code></a> property.</p>
-<h4>Basic JavaScript Example</h4><p>And here is some very basic example Architect Scripting code which shows a basic inbound call flow creation.
-If you actually try to run it, the code below requires modification to specify client ID, secret and location
-constants as needed but we hope will give a nice starting point.  Enjoy!  :)</p>
+<h2>Overview</h2><p>When you start looking at the help, you'll see that Architect Scripting has a lot of functionality for working with flows.
+While we could talk about some of the overall design of Architect Scripting, we'll actually start off with some example code
+that demonstrates some basic principles along with comments.</p>
+<h3>Basic JavaScript Example</h3><p>This example code shows how to create an inbound call flow using Architect Scripting, add a task with a disconnect
+action in it, configure some speech rec settings, validate it and if there are no errors or warnings then publish
+it.  Do note that if you actually try to run the code below, it won't run because the code below requires modification
+to specify client ID, secret and organization location constants as needed but we hope will give a nice starting point.  :)</p>
 <pre class="prettyprint source lang-javascript"><code>// --------------------------------------------------------------------------------
 // Require in the PureCloud Architect Scripting SDK
 // --------------------------------------------------------------------------------
@@ -357,10 +196,21 @@ function doWork(scriptSession)  {
         // by setting true at the end of this call.
         const startupTask = scriptingTaskFactory.addTask(archInboundCallFlow, 'startup task', true);
 
-        // Now we'll add a disconnect action to the task using the action factory.
-        // As you can see, factories are used when creating various things like
-        // menus, actions, tasks or even flows themselves.
-        scriptingActionFactory.addActionDisconnect(startupTask, 'all done');
+        // Add a decision action that checks to see if 5 is greater than 3 using an expression.
+        // You could assign the expression on this call but we'll show how to do it by accessing
+        // the condition property.
+        const decisionAction = scriptingActionFactory.addActionDecision(startupTask, 'greater than check');
+
+        // The expression text we assign is like you'd enter in the Architect UI but escaped for
+        // JavaScript since we're assigning the expression text in code.
+        decisionAction.condition.setExpression('5 > 3');
+
+        // For the fun of it, we'll add a disconnect action to the yes output on the decision action.
+        scriptingActionFactory.addActionDisconnect(decisionAction.outputYes, 'yes output disconnect');
+
+        // Now we'll add a disconnect action to the end of the task.  As you can see, factories are
+        // used when creating various things like menus, actions, tasks or even flows themselves.
+        scriptingActionFactory.addActionDisconnect(startupTask, 'end of task disconnect');
 
         // This flow doesn't really do anything but the above code shows how
         // to interact with Architect Scripting.
@@ -403,7 +253,182 @@ function doWork(scriptSession)  {
 }
 
 // This will start off the Architect Scripting code and call the doWork function.
-scriptingSession.startWithClientIdAndSecret(location, doWork, clientId, clientSecret);</code></pre></article>
+scriptingSession.startWithClientIdAndSecret(location, doWork, clientId, clientSecret);</code></pre><h3>Factories</h3><p>There are lots of Architect scripting classes that you'll use when writing Architect scripting code.  One thing that
+is very important to know up front is that you should be using the Architect scripting factories to create flows,
+add actions, menu or tasks to flows.  Notice in the sample code above that we use the flow factory to create the inbound
+call flow, a task factory to create a task and the action factory to add an action to the task.</p>
+<p>Here is the list of various factories and what they should be used for:</p>
+<ul>
+<li><p><a href="ArchFactoryFlows.html"><code>ArchFactoryFlows</code></a> - This factory lets you create flows.  When you create a flow, the returned <a href="ArchFlowInboundCall.html"><code>ArchFlowInboundCall</code></a>,
+<a href="ArchFlowInQueueCall.html"><code>ArchFlowInQueueCall</code></a> or <a href="ArchFlowOutboundCall.html"><code>ArchFlowOutboundCall</code></a> resides locally in memory.  An example method that creates an
+inbound call flow would be the <a href="ArchFactoryFlows.html#createFlowInboundCallAsync"><code>createFlowInboundCallAsync</code></a> method.  It is when you call <a href="ArchBaseFlow.html#saveAsync"><code>saveAsync</code></a>,
+<a href="ArchBaseFlow.html#checkInAsync"><code>checkInAsync</code></a> or <a href="ArchBaseFlow.html#publishAsync"><code>publishAsync</code></a> on the returned flow from the create call that the
+flow gets created in PureCloud.  By doing this it makes local development go quickly so you can iterate with code
+changes and not have to create the flow on the server when it is initially created.</p>
+</li>
+<li><p><a href="ArchFactoryActions.html"><code>ArchFactoryActions</code></a> - The actions factory will let you add actions to a task or to an output on an action.  For
+each action that's support in Architect scripting, there will be an add method for it such as <a href="ArchFactoryActions.html#addActionDecision"><code>addActionDecision</code></a>.
+These add methods all have common parameters such as the name of the action you're adding and then there will be additional
+parameters on many of the add calls as well that let you specify additional settings on that action when it's created.
+These additional parameters are simple helpers that set properties on the action that you will have available to you in
+scripting.  The add methods all return the Architect scripting class for the newly added action.</p>
+</li>
+<li><p><a href="ArchFactoryMenus.html"><code>ArchFactoryMenus</code></a> - This factory lets you add menus and sub-menus to a flow.  The methods on this factory
+are similar to the actions factory in that the add methods will return instances of the newly added menu or sub-menu.  Many
+of the returned menu / sub-menu instances from the add methods will have a pointer to the action associated with that
+menu.  For example if you add a Transfer to ACD menu via. <a href="ArchFactoryMenus.html#addMenuTransferToAcd"><code>addMenuTransferToAcd</code></a>, it will return
+an <a href="ArchMenuTransferToAcd.html"><code>ArchMenuTransferToAcd</code></a> instance.  On that instance is an <code>actionTransferToAcd</code> property
+that contains the underlying <a href="ArchActionTransferToAcd.html"><code>ArchActionTransferToAcd</code></a> action associated with that menu choice.</p>
+</li>
+<li><p><a href="ArchFactoryPrompts.html"><code>ArchFactoryPrompts</code></a> - The prompt factory can be used to look up system or user prompts.  It currently does not have
+any way to add, delete or edit prompts.  If you wish to do that, please use the PureCloud Platform SDK itself.</p>
+</li>
+<li><p><a href="ArchFactoryTasks.html"><code>ArchFactoryTasks</code></a> - This final factory lets you add tasks to a flow.  It's the most basic of all factories
+in that it only has one method called <code>ArchFactoryTasks.addTask</code> which will return a the newly added <a href="ArchTask.html"><code>ArchTask</code></a>
+to the flow.  Remember that tasks can be added to all flow types except the <a href="ArchFlowInQueueCall.html"><code>ArchFlowInQueueCall</code></a> flow type.</p>
+</li>
+</ul>
+<h3>Values</h3><p>Values in Architect Scripting are very important.  They are pretty much the core of what you see in the Architect UI
+when you specify a value on a setting such as the <code>condition</code> property where you would
+specify the boolean value to check at runtime to determine if execution should take the yes or no output.</p>
+<p>A value in Architect scripting such as <a href="ArchValueInteger.html"><code>ArchValueInteger</code></a> has an Architect data type associated with it.  This
+data type tells you what kind of data is contained within the value.  They also have a <code>settings</code> property
+that will provide meta data to let you know how they can be configured if you're not sure.</p>
+<p>Lets look at what can be specified for a value:</p>
+<ul>
+<li><p>Literal - Literal values are set on values with setLiteral calls such as <a href="ArchValueInteger.html#setLiteralInt"><code>setLiteralInt</code></a> on
+the integer data type.  If the data type supports methods for setting a literal you can call the method to set the value.  It's
+important to note that values do have the concept if being an output which can be viewed from the settings on a value.  If you attempt
+to assign a literal to a value that is set to an <a href="ArchValueSettings.html#isOutput"><code>isOutput</code></a>, the assignment will fail.  If
+you are curious if a literal can be assigned to a value, you can always check the <a href="ArchValueSettings.html#canBeLiteral"><code>canBeLiteral</code></a>
+property on the value's settings.  Some values like <a href="ArchValueUser.html"><code>ArchValueUser</code></a> will represent a value that is network based.
+For example, a user would be a PureCloud user set up for the organization that you're logged in to.  Setting literal
+values on network based objects is an asynchronous operation where a promise returned while the scripting layer looks up
+the literal value supplied.  An example of this would be the <a href="ArchValueUser.html#setLiteralByUserNameAsync"><code>setLiteralByUserNameAsync</code></a> method that would
+set the user value by their PureCloud username.</p>
+</li>
+<li><p>Variable - Assigning a variable to a value is done by calling the <a href="ArchBaseValue.html#setVariable"><code>setVariable</code></a> method
+on the variable.  You can assign variables by using an existing Architect <a href="ArchBaseVariable.html"><code>variable</code></a> or by passing
+in text that specifies the variable such as 'Flow.MyValue'.  One handy feature of setting a variable on a value is that
+if the variable you're trying to assign doesn't exist, the scripting framework will create it for you with a type appropriate
+for the value.  And lastly, you can check to see if a variable can be assigned to a value by checking the
+<code>canBeVariable</code> property on the value's settings.</p>
+</li>
+<li><p>Expression - When you assign an expression to a value, that's assigning expression text.  This would be the same
+expression text that you would assign in the Architect UI.  You can assign expression text by calling <a href="ArchBaseValue.html#setExpression"><code>setExpression</code></a>
+to set a value as an expression.  Similar to the variable and literal, there is a <a href="ArchValueSettings.html#canBeExpression"><code>canBeExpression</code></a>
+property on the value's settings that will tell you if setting an expression on the value is allowed.  Different value
+types will have other methods to set an expression on a value.  The <a href="ArchBaseValue.html#setExpression"><code>setExpression</code></a> is
+the most basic version available but as an example, there is a <a href="ArchValueInteger.html#setExpressionMaxInt"><code>setExpressionMaxInt</code></a> method
+on <a href="ArchValueInteger.html"><code>ArchValueInteger</code></a> which will set the maximum integer value allowed in Architect as an expression.  So when you're
+looking to set an expression, you can always use <a href="ArchBaseValue.html#setExpression"><code>setExpression</code></a> but there might be
+other setExpression<blah> helper methods available as well.  It will depend on the value you're working with.</p>
+</li>
+<li><p>No Value - You serious?  A &quot;no value&quot; value?  Yup.  This isn't something that you'll normally need to use but
+certain settings do allow having no value specified.  That is different than a NOT_SET value or a blank string.  It really
+does mean that no value is being specified.  To see if no value is allowed, there is a <a href="ArchValueSettings.html#canBeNoValue"><code>canBeNoValue</code></a> property.
+For values that are allowed to have no value specified, this is the case when it's optional for a flow author to specify a value
+as well as values that have defaults either at the flow action setting level or some other kind of default runtime handling.
+See <a href="ArchBaseValue.html#setNoValue"><code>setNoValue</code></a> for more information.</p>
+</li>
+</ul>
+<h3>Menu Choices</h3><p>Menu choices are pretty straightforward.  They are slightly different from top level menus in that they have DTMF
+settings that a top level menu would not.  If you've ever looked at menu choices in Architect's UI, outside of settings
+specific to a menu choice they have settings that match the action with the same type.  It probably makes sense because
+in the Architect UI users drag actions out to the menu are create menu choices.  As such, you'll see the action associated
+with the menu choide in scripting is available off of ArchBaseMenuChoice instances.  Menu choices are containers that
+have an underlying action associated with them.  For example, the <a href="ArchMenuDisconnect.html"><code>ArchMenuDisconnect</code></a> menu has an
+<a href="ArchMenuDisconnect.html#actionDisconnect"><code>actionDisconnect</code></a> property which returns the <a href="ArchActionDisconnect.html"><code>disconnect</code></a> action that's associated with the
+disconnect menu choice.  One thing to remember is that when an action is part of a menu choice, you cannot add
+any new actions to the outputs.  You'll notice that in Architect's UI we don't allow that and the same restriction
+exists in scripting.  It's fine to add actions to an action's output when the action exists within a task.</p>
+<h2>Other Stuff</h2><h3>The 'is' identity properties</h3><p>If you're ever wondering what the various read-only is properties are for on Scripting objects like <a href="ArchMenuSubMenu.html#.isArchMenuSubMenu"><code>isArchMenuSubMenu</code></a> for a sub menu, their
+purpose is to give script authors a quick and easy way to check if an object is a particular Architect scripting type.  It's used
+extensively within the Scripting framework to do parameter validation.  It may not seem all that useful but you might need it.
+For example, when you validate a flow, the validation results that come back will give you access to the validation issues.  If you
+look at a validation issue, there is an <a href="ArchValidationIssue.html#archObject"><code>archObject</code></a> property that returns the item
+that has the error or warning associated with it.  You could ask the returned object for its <a href="ArchBaseObject.html#.displayTypeName"><code>displayTypeName</code></a>
+or use one of these is properties to determine what kind of object it is that has the warning or error.</p>
+<h3>What's the deal with all the read-only properties on objects in this documentation?</h3><p>Within Architect scripting we're making improvements in the documentation to address properties that have only a getter
+and mark them as readonly.  For example, many of the value properties are marked as read-only.  Don't fret.  This doesn't
+mean that the values can't be configured to a literal, expression or whatever.  It only means that you can't assign the
+underlying value instance itself.  That management is handled by Architect Scripting.  You can think of it more like
+the value you interact with in code as a pointer where you can call methods / properties off it but not change out
+the pointer itself.   For example, the <a href="ArchActionPlayPositionInQueue.html#positionInQueue"><code>positionInQueue</code></a>
+property on the play position in queue action returns an <a href="ArchValueInteger.html"><code>ArchValueInteger</code></a> object.  You cannot change the <a href="ArchValueInteger.html"><code>ArchValueInteger</code></a> object itself
+to a different <a href="ArchValueInteger.html"><code>ArchValueInteger</code></a> instance on the action so it's marked as readonly but you can call methods on it like
+<a href="ArchValueInteger.html#setLiteralInt"><code>setLiteralInt</code></a> to set a literal integer value of 5.
+We wanted to point this out up front so you don't mistake the readonly setting in documentation to mean you
+can't call methods on properties that return objects.</p>
+<h3>Running JavaScript that uses Architect Scripting and the console</h3><p>The Architect scripting code will trace out lots of information to the console when you're creating flows, adding
+tasks, menus, setting values, etc. etc.  It's probably obvious but when you encounter errors or unexpected behavior
+please take a look at the console tracing.  It will often times hold the information you'll need to troubleshoot
+what happened when your JavaScript code ran.  :)</p>
+<p>Also remember that you can turn on <code>verbose logging</code> by setting it to true to get more console output.</p>
+<h3>Asynchronous methods</h3><p>Asynchronous methods in Architect scripting take a callback function for most calls.  Asynchronous methods end with
+&quot;Async&quot; in their name. The rule for asynchronous method calls is that they will return the object on which the asynchronous
+method was called back to the callback function if specified.  For example, if you have code like this:</p>
+<pre class="prettyprint source lang-javascript"><code>actionFactory.addActionCallBridge(archTask, 'Lookup a Contact').setBridgeActionByNameAsync('Contact Lookup', function(newCallBridgeAction) {
+    // do work here - presumably set values on inputs / outputs for the bridge action
+    // remember this gets called asynchronously after the bridge action is looked up successfully  
+})</code></pre><p>The first line calls the action factory to add a new call bridge action to a task.  The {@ArchActionCallBridge}
+instance is returned from the <a href="ArchFactoryActions.html#addActionCallBridge"><code>addActionCallBridge</code></a> method and the <a href="ArchActionCallBridge.html#setBridgeActionByNameAsync"><code>setBridgeActionByNameAsync</code></a>
+method is called on that.  This is an asynchronous operation because the bridge action name 'Contact Lookup'
+needs to be looked up.  Once it is successfully resolved, your callback function will be called and the
+newCallBridgeAction parameter above would have the action returned by the addActionCallBridge call.</p>
+<p>The one exception to this is the <a href="ArchBaseFlow.html#validateAsync"><code>validateAsync</code></a> function which is called on a flow when the promise
+resolves it will return the validation results from that call.  Note that you can get back to the flow from the
+validation results by accessing the <a href="ArchValidationResults.html#parentFlow"><code>parentFlow</code></a> property on it.
+( yes, this will be updated to a callback function eventually )</p>
+<h3>Flow-level action defaults</h3><p>Certain action or menu properties have flow-level defaults. To set a flow-level default, access the
+<a href="ArchBaseValue.html#flowLevelDefault"><code>flowLevelDefault</code></a> property off of the ArchBaseValue associated with the property like this:</p>
+<pre class="prettyprint source lang-javascript"><code> collectInputAction.interDigitTimeout.flowLevelDefault.setLiteralTimeParts(0, 0, 0, 6); </code></pre><p>To query an ArchBaseValue to see if it has a flow level default, you can use the <a href="ArchValueSettings.html#hasFlowLevelDefault"><code>hasFlowLevelDefault</code></a> property.</p>
+<h2>More Sample Code</h2><h3>Using the PureCloud SDK with Architect Scripting</h3><p>If you want to use both the <a href="https://%3Ca">PureCloud Platform API JavaScript SDK</a>">www.npmjs.com/package/purecloud-platform-client-v2}</a>
+and Architect Scripting together, below shows an example on how you can do it:</p>
+<pre class="prettyprint source lang-javascript"><code>
+// --------------------------------------------------------------------------------
+// Require in the PureCloud Platform SDK and Architect Scripting SDK
+// --------------------------------------------------------------------------------
+const architectScripting = require('purecloud-flow-scripting-api-sdk-javascript');
+const platformApi        = require('purecloud-platform-client-v2');
+
+// --------------------------------------------------------------------------------
+// See above in the readme for information on creating a client id / secret.
+// We will use these when starting the Architect Scripting session.
+// --------------------------------------------------------------------------------
+const clientId           = '&lt;your client id>';
+const clientSecret       = '&lt;your client secret>>';
+
+// --------------------------------------------------------------------------------
+// Helpers to make sample code more readable.
+// --------------------------------------------------------------------------------
+const archEnums          = architectScripting.enums.archEnums;
+const archSession        = architectScripting.environment.archSession;
+const platformApiClient  = platformApi.ApiClient.instance;
+
+// --------------------------------------------------------------------------------
+// This function will be what is called by Architect Scripting since it is
+// specified in the start call at the bottom.
+// --------------------------------------------------------------------------------
+function doWork(session) {
+
+    // Once the session starts you can do this to assign the authToken from
+    // the Architect session object to the platform API client.
+    platformApiClient.setAccessToken(session.authToken);
+
+    // Now you can make calls using the PureCloud Platform client calls as well
+    // as well as Architect Scripting calls because we've assigned the autorization
+    // token.  :)
+
+}
+
+// This will start off the Architect Scripting code and call the doWork function
+archSession.startWithClientIdAndSecret(archEnums.LOCATIONS.prod_us_east_1, doWork, clientId, clientSecret);
+</code></pre><p>Obviously there are other ways to accomplish this but the above shows how
+to get at the authorization token and then use it with the platform SDK when
+using the <a href="ArchSession.html#startWithClientIdAndSecret"><code>startWithClientIdAndSecret</code></a> call.  If you are using
+<a href="ArchSession.html#startWithAuthToken"><code>startWithAuthToken</code></a>, you already have the authorization token
+and, if needed, can set it on the ApiClient if needed.</p></article>
     </section>
 
 
