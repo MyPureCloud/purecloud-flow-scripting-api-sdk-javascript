@@ -49,6 +49,7 @@ footer img {
 .lnb {
     bottom: 35px;
     background-color: #36a3c8;
+    overflow-wrap: break-word;
 }
 .lnb .lnb-api h3 a,
 .lnb h3 {
@@ -75,6 +76,10 @@ footer img {
     color: lightgrey;
 }
 
+.lnb .title .link {
+    font-style: normal;
+}
+
 .main {
     background: #f6f6f6;
 }
@@ -82,7 +87,7 @@ footer img {
     color: #56aac6;
 }
 .main section article table td.name, .main section article table td.type, .main section article table td.attributes, .main section article table td.default {
-    max-width: 150px;
+    max-width: 300px;
 }
 
 #resizer {
