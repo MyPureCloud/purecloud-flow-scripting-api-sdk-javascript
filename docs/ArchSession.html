@@ -1683,7 +1683,7 @@ lists valid values.</p>
     
         <h4 class="name" id="end">
             
-                <span class="type-signature"></span>end<span class="signature">()</span><span class="type-signature"></span>
+                <span class="type-signature"></span>end<span class="signature">(processPendingAsyncWork<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -1707,6 +1707,76 @@ authenticated user out, see <a href="ArchSession.html#endWithLogout"><code>ArchS
 
     
 
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>processPendingAsyncWork</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>whether or not to process all pending async work before ending.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
     
 
     
@@ -2745,7 +2815,9 @@ values in <a href="ArchEnums.html#LOCATIONS"><code>ArchEnums#LOCATIONS</code></a
                                                     the currently logged in user, this method will be called prior
                                                     to logging out the user.  Any unhandled exceptions encountered
                                                     during execution of the callback function will not change the
-                                                    exit code set on this session instance.</p></td>
+                                                    exit code set on this session instance.  We do not recommend
+                                                    returning a promise from this callback as the session's status
+                                                    will be set to ended at this time.</p></td>
         </tr>
 
     

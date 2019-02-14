@@ -59,7 +59,13 @@
 
 
     <section>
-        <article class="readme"><h2>Change Log</h2><h1>0.2.1</h1><h4>Improvements</h4><ul>
+        <article class="readme"><h2>Change Log</h2><h1>0.2.2</h1><h4>New Features</h4><ul>
+<li>Since we use Architect Scripting internally when developing new features and/or beta testing, you'll see that Architect Scripting has a new <a href="ArchFlowInboundChat.html"><code>inbound chat flow</code></a> type.  Please note that inbound chat flows are not generally available for use as of 2/13/19.</li>
+</ul>
+<h4>Improvements</h4><ul>
+<li>We added an optional boolean parameter to the <a href="ArchSession.html#end"><code>ArchSession#end</code></a> function which lets you specify whether or not to wait for any pending asynchronous work to complete before Architect Scripting ends the session.  If your code calls the end method directly, current behavior is maintained in that end does not wait for pending work to complete but you can enable that behavior by passing in a true.  If Architect Scripting itself is ending the current session, the behavior is that it will wait for any pending work to complete prior to ending the session.</li>
+</ul>
+<h1>0.2.1</h1><h4>Improvements</h4><ul>
 <li><p>We added a new <a href="ArchValuePrompt.html#setLiteralByPromptIdAsync"><code>ArchValuePrompt#setLiteralByPromptIdAsync</code></a> function which will let you assign a prompt literal to a prompt value by a prompt's identifier.  This works for both user and system prompt identifiers.</p>
 </li>
 <li><p>We added the <a href="ArchFlowInQueueCall.html#settingsInQueueCall"><code>ArchFlowInQueueCall#settingsInQueueCall</code></a> property to in-queue call flows that provides access to a <a href="ArchSettingsInQueueCallFlow.html"><code>ArchSettingsInQueueCallFlow</code></a> instance which has a <a href="ArchSettingsInQueueCallFlow.html#holdMusic"><code>hold music</code></a> property where you can set the hold music configured for an in-queue call flow via Scripting now.</p>
