@@ -59,7 +59,10 @@
 
 
     <section>
-        <article class="readme"><h2>Change Log</h2><h1>0.2.4</h1><h4>Improvements</h4><ul>
+        <article class="readme"><h2>Change Log</h2><h1>0.2.5</h1><h4>Bug Fixes</h4><ul>
+<li>Miscellaneous documentation updates</li>
+</ul>
+<h1>0.2.4</h1><h4>Improvements</h4><ul>
 <li><p><a href="ArchSession.html#startWithClientIdAndSecret"><code>startWithClientIdAndSecret</code></a> and <a href="ArchSession.html#startWithAuthToken"><code>startWithAuthToken</code></a> now return a promise that will resolve when the session's end processing is complete.  If the <a href="ArchSession.html#endTerminatesProcess"><code>endTerminatesProcess</code></a> property is true, this promise will not resolve since the process will be terminated by Architect Scripting during session end processing.</p>
 </li>
 <li><p>While it's possible to write your own code to iterate over objects within a flow and may be what you want to do, we wanted to let you know we've added a <a href="ArchBaseCoreObject.html#traverse"><code>ArchBaseCoreObject#traverse</code></a> helper method that will iterate over an object and contents within it in a generic fashion.  There is additional <a href="ArchFactoryFilters.html#createFilterObject"><code>filtering</code></a> capabilities that optionally can be used with traversal or on its own to see if an object <a href="ArchBaseObjectFilterCommon.html#isMatch"><code>matches</code></a> filter criteria.</p>
