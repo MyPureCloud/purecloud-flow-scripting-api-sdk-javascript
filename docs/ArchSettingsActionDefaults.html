@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: ArchActionJumpToTask | Architect Scripting</title>
+    <title>Class: ArchSettingsActionDefaults | Architect Scripting</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -50,7 +50,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ArchActionJumpToTask<span class="signature">(coreDecisionActionViewModel)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ArchSettingsActionDefaults<span class="signature">(coreDefaultSettingsViewModel)</span><span class="type-signature"></span></h2>
         
     
 </header>
@@ -63,9 +63,9 @@
 
 <dt>
     
-        <h4 class="name" id="ArchActionJumpToTask">
+        <h4 class="name" id="ArchSettingsActionDefaults">
             
-                new <span class="type-signature"></span>ArchActionJumpToTask<span class="signature">(coreDecisionActionViewModel)</span><span class="type-signature"></span>
+                new <span class="type-signature"></span>ArchSettingsActionDefaults<span class="signature">(coreDefaultSettingsViewModel)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -75,11 +75,6 @@
 </dt>
 <dd>
 
-    
-    <div class="description">
-        <p>The Architect Scripting class for the Jump To Task action.
-Instances of this action should be created by calling <a href="ArchFactoryActions.html#addActionJumpToTask"><code>ArchFactoryActions#addActionJumpToTask</code></a></p>
-    </div>
     
 
     
@@ -114,15 +109,10 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 
         <tr>
             
-                <td class="name"><code>coreDecisionActionViewModel</code></td>
+                <td class="name"><code>coreDefaultSettingsViewModel</code></td>
             
 
             <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
             
             </td>
 
@@ -130,7 +120,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 
             
 
-            <td class="description last"><p>( <em>Internal</em> ) an Architect core jump to task action view model.</p></td>
+            <td class="description last"><p>( <em>Internal</em> ) an Architect DefaultSettingsViewModel.</p></td>
         </tr>
 
     
@@ -184,13 +174,6 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
     
 
     
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="ArchFactoryActions.html#addActionJumpToTask">ArchFactoryActions#addActionJumpToTask</a></li>
-        </ul>
-    </dd>
-    
 
     
 </dl>
@@ -211,7 +194,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 
 
     <ul>
-        <li><a href="ArchBaseAction.html">ArchBaseAction</a></li>
+        <li><a href="ArchBaseCoreObject.html">ArchBaseCoreObject</a></li>
     </ul>
 
 
@@ -244,7 +227,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 <dd>
     
     <div class="description">
-        <p>Returns the display type name string 'ArchActionJumpToTask'.</p>
+        <p>Returns the display type name string 'ArchSettingsActionDefaults'.</p>
     </div>
     
 
@@ -255,326 +238,6 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
             <li>
                 
 <span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="displayTypeNameArchitect">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>displayTypeNameArchitect<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The Architect action type label</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseAction.html#displayTypeNameArchitect">ArchBaseAction#displayTypeNameArchitect</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="id">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>id<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The identifier string for this object.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseCoreObjectWithId.html#id">ArchBaseCoreObjectWithId#id</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="idMayBeBlank">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>idMayBeBlank<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not the id property may be blank or undefined for this object.  For example, the returned settings from <a href="ArchMenu.html#settingsMenu"><code>ArchMenu#settingsMenu</code></a>
-will have a blank identifier along with the settings returned from <a href="ArchMenu.html#settingsSpeechRec"><code>ArchMenu#settingsSpeechRec</code></a>.  Note that this is
-an extremely rare case.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseCoreObjectWithId.html#idMayBeBlank">ArchBaseCoreObjectWithId#idMayBeBlank</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="ArchBaseCoreObjectWithId.html#id">ArchBaseCoreObjectWithId#id</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isArchActionJumpToTask">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isArchActionJumpToTask<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns true indicating that this is an ArchActionJumpToTask instance.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
 
 
             </li>
@@ -666,8 +329,10 @@ an extremely rare case.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
         <a href="ArchBaseCoreObject.html#isArchBaseCoreObject">ArchBaseCoreObject#isArchBaseCoreObject</a>
     </li></ul></dd>
     
@@ -693,8 +358,6 @@ an extremely rare case.</p>
     
 
     
-
-    
 </dl>
 
 
@@ -707,8 +370,8 @@ an extremely rare case.</p>
             
 
 <dt>
-<h4 class="name" id="isMenuChoiceAction">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isMenuChoiceAction<span class="type-signature"> :boolean</span>
+<h4 class="name" id="isArchSettingsActionDefaults">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isArchSettingsActionDefaults<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -717,9 +380,7 @@ an extremely rare case.</p>
 <dd>
     
     <div class="description">
-        <p>Returns whether or not this action is the action property for a <a href="ArchBaseMenuChoice.html"><code>menu choice</code></a>.
-For example, the <code>ArchMenuDisconnect@actionDisconnect</code> property on an <a href="ArchMenuDisconnect.html"><code>ArchMenuDisconnect</code></a>
-instance.</p>
+        <p>Returns true indicating that this is an ArchSettingsActionDefaults instance.</p>
     </div>
     
 
@@ -746,249 +407,6 @@ instance.</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseAction.html#isMenuChoiceAction">ArchBaseAction#isMenuChoiceAction</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isReachable">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isReachable<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this action is reachable at runtime.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseAction.html#isReachable">ArchBaseAction#isReachable</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isSecure">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isSecure<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this action is secure which means either the action by its very nature
-is secure or it consumes secure data.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseAction.html#isSecure">ArchBaseAction#isSecure</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isUnreachable">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isUnreachable<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this action is unreachable at runtime.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseAction.html#isUnreachable">ArchBaseAction#isUnreachable</a>
-    </li></ul></dd>
     
 
     
@@ -1036,9 +454,7 @@ is secure or it consumes secure data.</p>
 <dd>
     
     <div class="description">
-        <p>A string suitable for logging that contains information about this audio.  This will contain parent
-information as well as the audio label which normally represents the property on the parent containing
-object.</p>
+        <p>A string suitable for logging that contains information about this definition.</p>
     </div>
     
 
@@ -1070,7 +486,7 @@ object.</p>
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="ArchBaseAction.html#logStr">ArchBaseAction#logStr</a>
+        <a href="ArchBaseCoreObject.html#logStr">ArchBaseCoreObject#logStr</a>
     </li></ul></dd>
     
 
@@ -1147,324 +563,12 @@ logging str contents wouldn't be set up.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logStrTypeOnly">ArchBaseObject#logStrTypeOnly</a>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseCoreObject.html#logStrTypeOnly">ArchBaseCoreObject#logStrTypeOnly</a>
     </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="name">
-    <span class="type-signature"></span>name<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The name of the action</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseAction.html#name">ArchBaseAction#name</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="parentMenuChoice">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>parentMenuChoice<span class="type-signature"> :<a href="ArchBaseMenuChoice.html">ArchBaseMenuChoice</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns the parent menu choice if this action is the action for a <a href="ArchBaseMenuChoice.html"><code>menu choice</code></a>,
-otherwise it returns nothing.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchBaseMenuChoice.html">ArchBaseMenuChoice</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseAction.html#parentMenuChoice">ArchBaseAction#parentMenuChoice</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="targetTask">
-    <span class="type-signature"></span>targetTask<span class="type-signature"> :<a href="ArchTask.html">ArchTask</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The target task for this jump to task action.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchTask.html">ArchTask</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="trackingId">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>trackingId<span class="type-signature"> :integer</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The tracking identifier for this action.  This identifier is displayed in the Architect user interface.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">integer</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseAction.html#trackingId">ArchBaseAction#trackingId</a>
-    </li></ul></dd>
-    
-
     
 
     
@@ -1503,6 +607,159 @@ otherwise it returns nothing.</p>
         <h3 class="subsection-title">Methods</h3>
 
         <dl>
+                
+
+<dt>
+    
+        <h4 class="name" id="getDefaultSettingsForActionDefinition">
+            
+                <span class="type-signature"></span>getDefaultSettingsForActionDefinition<span class="signature">(archDefinitionAction)</span><span class="type-signature"> &rarr; {Array.&lt;<a href="ArchSettingActionPropertyDefault.html">ArchSettingActionPropertyDefault</a>>}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Gets a list of all default settings for the specified action definition.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>archDefinitionAction</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="ArchDefinitionAction.html">ArchDefinitionAction</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the action whose defaults you wish to retrieve.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type">Array.&lt;<a href="ArchSettingActionPropertyDefault.html">ArchSettingActionPropertyDefault</a>></span>
+
+
+
+
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
                 
 
 <dt>
@@ -1625,12 +882,12 @@ for the supplied ArchFilterObject instance.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#isFilterMatch">ArchBaseObject#isFilterMatch</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseCoreObject.html#isFilterMatch">ArchBaseCoreObject#isFilterMatch</a>
+    </li></ul></dd>
     
 
     
@@ -1764,12 +1021,12 @@ for the supplied ArchFilterObject instance.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logError">ArchBaseObject#logError</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseCoreObject.html#logError">ArchBaseCoreObject#logError</a>
+    </li></ul></dd>
     
 
     
@@ -1918,12 +1175,12 @@ the string in the errorStr parameter.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logErrorAndThrow">ArchBaseObject#logErrorAndThrow</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseCoreObject.html#logErrorAndThrow">ArchBaseCoreObject#logErrorAndThrow</a>
+    </li></ul></dd>
     
 
     
@@ -2057,12 +1314,12 @@ the string in the errorStr parameter.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logNote">ArchBaseObject#logNote</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseCoreObject.html#logNote">ArchBaseCoreObject#logNote</a>
+    </li></ul></dd>
     
 
     
@@ -2196,12 +1453,12 @@ the string in the errorStr parameter.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logNoteVerbose">ArchBaseObject#logNoteVerbose</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseCoreObject.html#logNoteVerbose">ArchBaseCoreObject#logNoteVerbose</a>
+    </li></ul></dd>
     
 
     
@@ -2335,12 +1592,12 @@ the string in the errorStr parameter.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logWarning">ArchBaseObject#logWarning</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseCoreObject.html#logWarning">ArchBaseCoreObject#logWarning</a>
+    </li></ul></dd>
     
 
     
@@ -2615,12 +1872,12 @@ use that traversal default filter.  The wantArchBaseValues parameter on that cal
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
         <a href="ArchBaseCoreObject.html#traverse">ArchBaseCoreObject#traverse</a>
     </li></ul></dd>
-    
-
     
 
     
@@ -2676,7 +1933,7 @@ use that traversal default filter.  The wantArchBaseValues parameter on that cal
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'ArchActionJumpToTask_sub'.replace(/"/g, '_');
+        var id = 'ArchSettingsActionDefaults_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
