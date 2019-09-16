@@ -1,3 +1,8 @@
+
+html, body {
+    font-family: 'Roboto', sans-serif;
+}
+
 article > h2 {
     font-size: 35px!important;
     padding-bottom: 10px!important;
@@ -48,7 +53,7 @@ footer img {
 
 .lnb {
     bottom: 35px;
-    background-color: #36a3c8;
+    background-color: #6b7178;
     overflow-wrap: break-word;
 }
 .lnb .lnb-api h3 a,
@@ -65,7 +70,7 @@ footer img {
 }
 
 .lnb .lnb-api li, .lnb .lnb-examples li {
-    border-bottom: 1px solid rgba(239, 238, 234, 0.75);
+    border-bottom: 1px solid gray;
 }
 
 .lnb .inner li {
@@ -78,10 +83,11 @@ footer img {
 
 .lnb .title .link {
     font-style: normal;
+    font-size: 30px;
 }
 
 .main {
-    background: #f6f6f6;
+    background: #fff;
 }
 .main section article h3.subsection-title {
     color: #56aac6;
@@ -91,30 +97,92 @@ footer img {
 }
 
 #resizer {
-    background-color: #56aac6;
+    background-color: white;
 }
 
 footer {
-    background-color: #36a3c8;
+    background-color: white;
 }
 
 .search-container ul {
     opacity: 1;
     z-index: 2;
     border: none;
+    background: white;
 }
 
 .search-container input {
     color: black;
     border: .5px solid transparent;
-    background-color: #f6f6f6;
+    background-color: white;
     border-radius: 10px;
 }
 
-.search-container strong {
-    color: lightgrey!important;
+.search-container input:focus {
+    outline: none;
+}
+
+.search-container ul {
+    margin-top: -8px;
+}
+
+.search-container ul li:hover,
+.search-container ul li a {
+    color: #FF4F1F!important;
+}
+
+.search-container ul li:hover {
+    background: lightgray;
+}
+
+.search-container ul li a strong {
+    color: #FF4F1F;
+    font-weight: bold;
+}
+
+.search-container ul li .group {
+    color: gray;
+    display: block;
+    font-weight: lighter;
+    margin-left: 0;
+}
+
+.readme h1 {
+    border-bottom-color: #FF4F1F;
+}
+.main section header h2 {
+    border-left: 5px solid #FF4F1F;
+}
+
+a,
+.readme p a {
+    color: #FF4F1F;
+}
+code {
+    color: #FF4F1F;
+}
+
+/* taken from https://github.com/google/code-prettify/blob/master/styles/sunburst.css but changed what I could to match devcenter*/
+pre .str, code .str { color: #7ec699; } /* string  */
+pre .kwd, code .kwd { color: #cc99cd; } /* keyword */
+pre .com, code .com { color: #999999; font-style: italic; } /* comment */
+pre .typ, code .typ { color: #6196cc; } /* type */
+pre .lit, code .lit { color: #67cdcc; } /* literal */
+pre .pun, code .pun { color: #cccccc; } /* punctuation */
+pre .pln, code .pln { color: #ffffff; } /* plaintext */
+pre .tag, code .tag { color: #6196cc; } /* html/xml tag */
+pre .atn, code .atn { color: #bdb76b; } /* html/xml attribute name */
+pre .atv, code .atv { color: #7ec699; } /* html/xml attribute value */
+pre .dec, code .dec { color: #6196cc; } /* decimal - blue */
+
+pre.prettyprint, code.prettyprint {
+	background-color: #2d2d2d;
+	border-radius: 8px;
 }
 
 pre.prettyprint {
-    background: white;
+	width: 95%;
+	margin: 1em auto;
+	padding: 1em;
+	white-space: pre-wrap;
 }
