@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: ArchFlowInfoBasic | Architect Scripting</title>
+    <title>Class: ArchVariableSettings | Architect Scripting</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -50,7 +50,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ArchFlowInfoBasic<span class="signature">(flowIdNameTypeObject)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ArchVariableSettings<span class="signature">(archBaseVariable)</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description"><p>ArchVariableSettings</p></div>
         
     
 </header>
@@ -63,9 +65,9 @@
 
 <dt>
     
-        <h4 class="name" id="ArchFlowInfoBasic">
+        <h4 class="name" id="ArchVariableSettings">
             
-                new <span class="type-signature"></span>ArchFlowInfoBasic<span class="signature">(flowIdNameTypeObject)</span><span class="type-signature"></span>
+                new <span class="type-signature"></span>ArchVariableSettings<span class="signature">(archBaseVariable)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -77,10 +79,12 @@
 
     
     <div class="description">
-        <p>The Architect Scripting class that is used for target flow information on a Transfer to Flow action
-and exposes a flow id, name and type.
-Architect Scripting will create instances of this class by calling the getter for the <a href="ArchActionTransferToFlow.html#targetFlowInfo"><code>ArchActionTransferToFlow#targetFlowInfo</code></a>
-property.</p>
+        <p>This class reports meta data about Architect variable classes in Architect Scripting
+such as if the variable can be configured as an input or output.  Since variables
+exist at a particular scope in a flow such as flow scoped, task scoped or state scoped
+the meta data reported for a variable can change.
+Note:  Do not attempt to create instances of this class directly.  They will be created
+automatically as needed by Architect Scripting.</p>
     </div>
     
 
@@ -116,13 +120,13 @@ property.</p>
 
         <tr>
             
-                <td class="name"><code>flowIdNameTypeObject</code></td>
+                <td class="name"><code>archBaseVariable</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Object</span>
+<span class="param-type"><a href="ArchBaseVariable.html">ArchBaseVariable</a></span>
 
 
             
@@ -132,7 +136,7 @@ property.</p>
 
             
 
-            <td class="description last"><p>( <em>Internal</em> ) a raw JSON object with an id, name and type property that gets saved off here.</p></td>
+            <td class="description last"><p>An Architect base variable instance.</p></td>
         </tr>
 
     
@@ -239,7 +243,7 @@ property.</p>
 <dd>
     
     <div class="description">
-        <p>Returns the display type name string 'ArchFlowInfoBasic'.</p>
+        <p>Returns the display type name string 'ArchVariableSettings'.</p>
     </div>
     
 
@@ -303,8 +307,8 @@ property.</p>
             
 
 <dt>
-<h4 class="name" id=".isArchFlowInfoBasic">
-    <span class="type-signature"><span class="icon green">static</span>, <span class="icon green">readonly</span> </span>isArchFlowInfoBasic<span class="type-signature"> :boolean</span>
+<h4 class="name" id="canSetIsInput">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>canSetIsInput<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -313,7 +317,8 @@ property.</p>
 <dd>
     
     <div class="description">
-        <p>Returns true indicating that this is an ArchFlowInfo instance.</p>
+        <p>Returns whether or not you can set a boolean value on the <a href="ArchBaseVariable.html#isInput"><code>ArchBaseVariable#isInput</code></a> property
+for the variable.</p>
     </div>
     
 
@@ -377,8 +382,8 @@ property.</p>
             
 
 <dt>
-<h4 class="name" id="id">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>id<span class="type-signature"> :string</span>
+<h4 class="name" id="canSetIsOutput">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>canSetIsOutput<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -387,7 +392,8 @@ property.</p>
 <dd>
     
     <div class="description">
-        <p>The flow identifier</p>
+        <p>Returns whether or not you can set a boolean value on the <a href="ArchBaseVariable.html#isOutput"><code>ArchBaseVariable#isOutput</code></a> property
+for the variable.</p>
     </div>
     
 
@@ -397,7 +403,7 @@ property.</p>
         <ul>
             <li>
                 
-<span class="param-type">string</span>
+<span class="param-type">boolean</span>
 
 
             </li>
@@ -461,7 +467,7 @@ property.</p>
 <dd>
     
     <div class="description">
-        <p>A string suitable for logging that contains information about this flow info basic.</p>
+        <p>A string suitable for logging that contains information about this value settings object.</p>
     </div>
     
 
@@ -607,155 +613,6 @@ logging str contents wouldn't be set up.</p>
     
 </dd>
 
-        
-            
-
-<dt>
-<h4 class="name" id="name">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>name<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Gets name for the flow contained in this flow info instance.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="type">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>type<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns the flow type associated with this flow info.  The string values in <a href="ArchEnums.html#FLOW_TYPES"><code>ArchEnums#FLOW_TYPES</code></a>
-lists valid values.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
         </dl>
     
 
@@ -763,152 +620,6 @@ lists valid values.</p>
         <h3 class="subsection-title">Methods</h3>
 
         <dl>
-                
-
-<dt>
-    
-        <h4 class="name" id="getFlowInfoAsync">
-            
-                <span class="type-signature"></span>getFlowInfoAsync<span class="signature">(callbackFunction<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Looks up the flow information from this flow info basic instance by the flow identifier.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>callbackFunction</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#callbackArchFlowInfo">callbackArchFlowInfo</a></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>the function to call back if successfully converted.  The callback will be passed the looked up ArchFlowInfo instance.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
                 
 
 <dt>
@@ -1802,7 +1513,7 @@ the string in the errorStr parameter.</p>
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'ArchFlowInfoBasic_sub'.replace(/"/g, '_');
+        var id = 'ArchVariableSettings_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
