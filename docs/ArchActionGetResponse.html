@@ -3644,7 +3644,7 @@ Architect get response instance.</p></td>
     
         <h4 class="name" id="setResponseByNameAsync">
             
-                <span class="type-signature"></span>setResponseByNameAsync<span class="signature">(responseName, callbackFunction<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+                <span class="type-signature"></span>setResponseByNameAsync<span class="signature">(responseName, callbackFunction<span class="signature-attributes">opt</span>, responseLibraryName<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -3656,7 +3656,7 @@ Architect get response instance.</p></td>
 
     
     <div class="description">
-        <p>This sets the response to get at runtime by its name.</p>
+        <p>This sets the response to get at runtime by its name and optionally a containing response library name.</p>
     </div>
     
 
@@ -3754,6 +3754,44 @@ Architect get response instance.</p></td>
             <td class="description last"><p>a callback function to call if the response is successfully
 looked up and configured on this action. The first parameter passed to the
 callback function will be this Architect Get Response action instance.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>responseLibraryName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>if a non-blank string is supplied for the response library name,
+the response will be set only if it belongs to the specified library.
+Library name lookups are performed case insensitively.  Additionally
+if you have a scenario where multiple responses are named the same
+but reside in different libraries, use this parameter to specify
+the library to disambiguate the response you want.</p></td>
         </tr>
 
     

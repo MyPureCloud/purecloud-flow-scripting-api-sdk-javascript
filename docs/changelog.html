@@ -60,6 +60,15 @@
 
     <section>
         <article class="readme"><h2>Change Log</h2>
+<h1>0.5.3</h1>
+<h4>Improvements</h4>
+<ul>
+<li>We added the ability on the <a href="ArchActionGetResponse.html#setResponseByNameAsync"><code>ArchActionGetResponse#setResponseByNameAsync</code></a> to specify a response library via. a new optional string responseLibraryName parameter.  If a library name is specified, the named response must belong to that library.  This additional functionality provides the ability to disambiguate responses that have the same name but reside in different response libraries for an organization.</li>
+</ul>
+<h4>Bug Fixes</h4>
+<ul>
+<li>The <a href="ArchEnums.html#ERROR_TYPE_LEX_BOT_VALUES"><code>ArchEnums#ERROR_TYPE_LEX_BOT_VALUES</code></a> object had an incorrect noLexBotResourceError key value pair.  The entry is now corrected to a noResourceValue key value pair.</li>
+</ul>
 <h1>0.5.2</h1>
 <h4>Bug Fixes</h4>
 <ul>
