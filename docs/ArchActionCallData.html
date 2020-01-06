@@ -3772,7 +3772,7 @@ Architect call data action instance.</p></td>
     
         <h4 class="name" id="setDataActionByNameAsync">
             
-                <span class="type-signature"></span>setDataActionByNameAsync<span class="signature">(dataActionName, callbackFunction<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+                <span class="type-signature"></span>setDataActionByNameAsync<span class="signature">(dataActionName, callbackFunction<span class="signature-attributes">opt</span>, categoryName<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -3882,6 +3882,44 @@ Architect call data action instance.</p></td>
             <td class="description last"><p>a callback function to call if the Data Action is successfully
 looked up and configured on this action. The first parameter passed to the
 callback function will be this Architect call data action instance.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>categoryName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>if a non-blank string is supplied for the category name,
+the data action will be set only if it belongs to the specified category.
+Category name lookups are performed case insensitively.  Additionally
+if you have a scenario where multiple data actions are named the same
+but reside in different categories, use this parameter to specify
+the category to disambiguate the data action you want.</p></td>
         </tr>
 
     
