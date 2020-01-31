@@ -52,7 +52,7 @@ footer img {
 }
 
 .lnb {
-    bottom: 35px;
+    bottom: 0px; /* This helps hide the footer */
     background-color: #6b7178;
     overflow-wrap: break-word;
 }
@@ -88,6 +88,10 @@ footer img {
 
 .main {
     background: #fff;
+
+    /* These help hide the footer */
+    bottom: 0px;
+    margin-bottom: auto;
 }
 .main section article h3.subsection-title {
     color: #56aac6;
@@ -101,6 +105,8 @@ footer img {
 }
 
 footer {
+    height: 0px;
+    width:  0px;
     background-color: white;
 }
 
