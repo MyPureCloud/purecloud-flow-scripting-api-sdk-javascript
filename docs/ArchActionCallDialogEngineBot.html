@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: ArchActionSetUUIData | Architect Scripting</title>
+    <title>Class: ArchActionCallDialogEngineBot | Architect Scripting</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -50,7 +50,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ArchActionSetUUIData<span class="signature">(coreSetUUIDataViewModel)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ArchActionCallDialogEngineBot<span class="signature">(coreDialogEngineActionViewModel)</span><span class="type-signature"></span></h2>
         
     
 </header>
@@ -63,9 +63,9 @@
 
 <dt>
     
-        <h4 class="name" id="ArchActionSetUUIData">
+        <h4 class="name" id="ArchActionCallDialogEngineBot">
             
-                new <span class="type-signature"></span>ArchActionSetUUIData<span class="signature">(coreSetUUIDataViewModel)</span><span class="type-signature"></span>
+                new <span class="type-signature"></span>ArchActionCallDialogEngineBot<span class="signature">(coreDialogEngineActionViewModel)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -77,8 +77,8 @@
 
     
     <div class="description">
-        <p>The Architect Scripting class for the Set UUI Data action.
-Instances of this action should be created by calling <a href="ArchFactoryActions.html#addActionSetUUIData"><code>ArchFactoryActions#addActionSetUUIData</code></a></p>
+        <p>The Architect Scripting class that represents the Call Dialog Engine Bot action.
+Instances of this action should be created by calling <a href="ArchFactoryActions.html#addActionCallDialogEngineBot"><code>ArchFactoryActions#addActionCallDialogEngineBot</code></a></p>
     </div>
     
 
@@ -114,7 +114,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 
         <tr>
             
-                <td class="name"><code>coreSetUUIDataViewModel</code></td>
+                <td class="name"><code>coreDialogEngineActionViewModel</code></td>
             
 
             <td class="type">
@@ -130,7 +130,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 
             
 
-            <td class="description last"><p>( <em>Internal</em> ) an Architect core set uuidata action view model.</p></td>
+            <td class="description last"><p>( <em>Internal</em> ) an Architect core Call Dialog Engine action view model.</p></td>
         </tr>
 
     
@@ -187,7 +187,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="ArchFactoryActions.html#addActionSetUUIData">ArchFactoryActions#addActionSetUUIData</a></li>
+            <li><a href="ArchFactoryActions.html#addActionCallDialogEngineBot">ArchFactoryActions#addActionCallDialogEngineBot</a></li>
         </ul>
     </dd>
     
@@ -211,7 +211,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 
 
     <ul>
-        <li><a href="ArchBaseAction.html">ArchBaseAction</a></li>
+        <li><a href="ArchBaseActionBot.html">ArchBaseActionBot</a></li>
     </ul>
 
 
@@ -234,8 +234,8 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
             
 
 <dt>
-<h4 class="name" id=".displayTypeName">
-    <span class="type-signature"><span class="icon green">static</span>, <span class="icon green">readonly</span> </span>displayTypeName<span class="type-signature"> :string</span>
+<h4 class="name" id="._actionTypeId">
+    <span class="type-signature"><span class="icon green">static</span>, <span class="icon green">readonly</span> </span>_actionTypeId<span class="type-signature"> :string</span>
     
 </h4>
 
@@ -244,7 +244,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 <dd>
     
     <div class="description">
-        <p>Returns the display type name string 'ArchActionSetUUIData'.</p>
+        <p>Returns the action type identifier string from actionTypes.js</p>
     </div>
     
 
@@ -255,6 +255,155 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
             <li>
                 
 <span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id=".displayTypeName">
+    <span class="type-signature"><span class="icon green">static</span>, <span class="icon green">readonly</span> </span>displayTypeName<span class="type-signature"> :string</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns the display type name string 'ArchActionCallDialogEngineBot'.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="dialogEngineOutputsFailure">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>dialogEngineOutputsFailure<span class="type-signature"> :<a href="ArchNamedValueList.html">ArchNamedValueList</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The contents of this named value list come from the Failure Outputs schema. It will contain two values: errorType and errorMessage.
+These values will be returned by the server if the action takes the Failure path.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchNamedValueList.html">ArchNamedValueList</a></span>
 
 
             </li>
@@ -349,6 +498,86 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
         <a href="ArchBaseAction.html#displayTypeNameArchitect">ArchBaseAction#displayTypeNameArchitect</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="followupResponseTimeout">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>followupResponseTimeout<span class="type-signature"> :<a href="ArchValueDuration.html">ArchValueDuration</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Specifies the amount of time to wait for a user's response to a bot prompt.
+A negative or NOT_SET duration will be treated as immediate.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueDuration.html">ArchValueDuration</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionBot.html#followupResponseTimeout">ArchBaseActionBot#followupResponseTimeout</a>
     </li></ul></dd>
     
 
@@ -554,8 +783,8 @@ an extremely rare case.</p>
             
 
 <dt>
-<h4 class="name" id="isArchActionSetUUIData">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isArchActionSetUUIData<span class="type-signature"> :boolean</span>
+<h4 class="name" id="inputText">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>inputText<span class="type-signature"> :<a href="ArchValueString.html">ArchValueString</a></span>
     
 </h4>
 
@@ -564,7 +793,163 @@ an extremely rare case.</p>
 <dd>
     
     <div class="description">
-        <p>Returns true indicating that this is an ArchActionCallData instance.</p>
+        <p>The input text for the bot.  This is usually only set in flows when chaining
+bot actions together.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueString.html">ArchValueString</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionBot.html#inputText">ArchBaseActionBot#inputText</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="intentParameters">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>intentParameters<span class="type-signature"> :<a href="ArchNamedValueList.html">ArchNamedValueList</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The collection of intents and their parameters into which variables can be assigned. To access an intent, you can use
+the getNamedValueByName function on this property and pass in the name of the intent you want to access.
+That intent will contain its parameters, which you can access also via getNamedValueByName.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchNamedValueList.html">ArchNamedValueList</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="isArchActionCallDialogEngineBot">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isArchActionCallDialogEngineBot<span class="type-signature"> :boolean</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns true indicating that this is an ArchActionCallDialogEngineBot instance.</p>
     </div>
     
 
@@ -1187,82 +1572,6 @@ logging str contents wouldn't be set up.</p>
             
 
 <dt>
-<h4 class="name" id="mode">
-    <span class="type-signature"></span>mode<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Specifies the when the UUI data should be set.  If the mode is set to transfer, this specifies the outbound UUI data to
-set if the call is transferred.  If the mode is set to disconnect, this specifies the outbound UUI data to set if the call
-disconnects.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
 <h4 class="name" id="name">
     <span class="type-signature"></span>name<span class="type-signature"> :string</span>
     
@@ -1304,6 +1613,249 @@ disconnects.</p>
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
         <a href="ArchBaseAction.html#name">ArchBaseAction#name</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="outputCount">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>outputCount<span class="type-signature"> :number</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns the number of outputs on this action.  For actions that have a fake success output like what you
+see on the various transfer actions, that will be included in the count to be consistent with the Architect UI.
+Attempting to get the output count on a menu choice's action such as such as the <a href="ArchMenuTransferToAcd.html#actionTransferToAcd"><code>ArchMenuTransferToAcd#actionTransferToAcd</code></a>
+action on an <a href="ArchMenuTransferToAcd.html"><code>ArchMenuTransferToAcd</code></a> menu will return 0.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputs.html#outputCount">ArchBaseActionWithOutputs#outputCount</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="outputFailure">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>outputFailure<span class="type-signature"> :<a href="ArchActionOutput.html">ArchActionOutput</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The failure output for this action</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#outputFailure">ArchBaseActionWithOutputFailure#outputFailure</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="outputs">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>outputs<span class="type-signature"> :Array.&lt;<a href="ArchActionOutput.html">ArchActionOutput</a>></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns an array of action outputs for this action.  Remember that it is possible to have an
+undefined item in the returned ArchActionOutput array.  This is true when the output is &quot;fake&quot;.
+Accessing the outputs on a menu choice's action such as <a href="ArchMenuTransferToAcd.html#actionTransferToAcd"><code>ArchMenuTransferToAcd#actionTransferToAcd</code></a>
+will return an empty array.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Array.&lt;<a href="ArchActionOutput.html">ArchActionOutput</a>></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputs.html#outputs">ArchBaseActionWithOutputs#outputs</a>
     </li></ul></dd>
     
 
@@ -1664,6 +2216,85 @@ Otherwise, nothing is returned.</p>
             
 
 <dt>
+<h4 class="name" id="sessionVariables">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>sessionVariables<span class="type-signature"> :<a href="ArchBaseNameValuePairs.html">ArchBaseNameValuePairs</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns the input Session Variables configured on the action.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchBaseNameValuePairs.html">ArchBaseNameValuePairs</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionBot.html#sessionVariables">ArchBaseActionBot#sessionVariables</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
 <h4 class="name" id="trackingId">
     <span class="type-signature"><span class="icon green">readonly</span> </span>trackingId<span class="type-signature"> :number</span>
     
@@ -1739,37 +2370,174 @@ Otherwise, nothing is returned.</p>
     
 </dd>
 
-        
-            
+        </dl>
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+                
 
 <dt>
-<h4 class="name" id="uuiData">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>uuiData<span class="type-signature"> :<a href="ArchValueString.html">ArchValueString</a></span>
     
-</h4>
+        <h4 class="name" id="addSessionVariableNameValuePair">
+            
+                <span class="type-signature"></span>addSessionVariableNameValuePair<span class="signature">(nameLiteral<span class="signature-attributes">opt</span>, valueExpression<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="ArchBaseNameValuePair.html">ArchBaseNameValuePair</a>}</span>
+                
+            
+        </h4>
 
-
+        
+    
 </dt>
 <dd>
+
     
     <div class="description">
-        <p>The outbound UUI data to set on the call.</p>
+        <p>This adds a session variable name value pair to the Base Bot action that can be used to specify
+the session variable's name and corresponding value that should be assigned to it.  On the returned
+<a href="ArchBaseNameValuePair.html"><code>ArchBaseNameValuePair</code></a> pair:</p>
+<ul>
+<li>the <a href="ArchBaseNameValuePair.html#name"><code>name</code></a> property specifies the name of the session variable whose value you want to set</li>
+<li>the <a href="ArchBaseNameValuePair.html#value"><code>value</code></a> property is the value to set on the session variable at runtime.</li>
+</ul>
     </div>
     
 
-    <!--
     
-        <h5>Type:</h5>
-        <ul>
-            <li>
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>nameLiteral</code></td>
+            
+
+            <td class="type">
+            
                 
-<span class="param-type"><a href="ArchValueString.html">ArchValueString</a></span>
+<span class="param-type">string</span>
 
 
-            </li>
-        </ul>
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>a string that specifies the name of the session variable to set.</p></td>
+        </tr>
+
     
-    -->
+
+        <tr>
+            
+                <td class="name"><code>valueExpression</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>a string expression that specifies the value to set on the session variable.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type"><a href="ArchBaseNameValuePair.html">ArchBaseNameValuePair</a></span>
+
+
+
+
+
+
+
+
+            
+    </div>
+    
 
     
 
@@ -1780,6 +2548,11 @@ Otherwise, nothing is returned.</p>
 
     
 
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionBot.html#addSessionVariableNameValuePair">ArchBaseActionBot#addSessionVariableNameValuePair</a>
+    </li></ul></dd>
     
 
     
@@ -1810,16 +2583,728 @@ Otherwise, nothing is returned.</p>
 
     
 
-    
 </dd>
 
-        </dl>
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="getOutputById">
+            
+                <span class="type-signature"></span>getOutputById<span class="signature">(output)</span><span class="type-signature"> &rarr; {<a href="ArchActionOutput.html">ArchActionOutput</a>}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Gets an output by its identifier.  If it cannot be found, this method will throw.
+Normally you won't need to use this method and will use the helper methods available on inheriting classes
+when accessing pre-defined outputs like success, failure, timeout, etc. etc.  Attempting to
+get an output by id on a menu choice's action such as the <a href="ArchMenuTransferToAcd.html#actionTransferToAcd"><code>ArchMenuTransferToAcd#actionTransferToAcd</code></a>
+action on an <a href="ArchMenuTransferToAcd.html"><code>ArchMenuTransferToAcd</code></a> menu will return nothing.</p>
+    </div>
     
 
     
-        <h3 class="subsection-title">Methods</h3>
 
-        <dl>
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>output</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type"><a href="ArchBranch.html">ArchBranch</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>identifies output you want to obtain.  If output is an ArchBranch instance,
+the <a href="ArchBranch.html#outputId"><code>ArchBranch#outputId</code></a> value will be used.  Otherwise valid string
+identifier values can be found in <a href="ArchEnums.html#OUTPUT_IDS"><code>ArchEnums#OUTPUT_IDS</code></a> or can be a guid.
+Remember that requesting the 'success' output on an action with a
+<a href="ArchBaseActionWithOutputsFakeSuccessFailure.html#hasFakeSuccessOutput"><code>fake success output</code></a> will return nothing.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
+
+
+
+
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputs.html#getOutputById">ArchBaseActionWithOutputs#getOutputById</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="getOutputByIndex">
+            
+                <span class="type-signature"></span>getOutputByIndex<span class="signature">(index)</span><span class="type-signature"> &rarr; {<a href="ArchActionOutput.html">ArchActionOutput</a>}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns the output at the given index.  It's important to note that on actions that have a fake success
+output if you request the output at the index for the fake success, you will get nothing returned because
+the fake success output isn't something that you should do anything with.  Attempting to
+access an output by index on a menu choice's action such as <a href="ArchMenuTransferToAcd.html#actionTransferToAcd"><code>ArchMenuTransferToAcd#actionTransferToAcd</code></a>
+will return nothing.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the index of the output to retrieve.  This value should be a non-negative integer.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
+
+
+
+
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputs.html#getOutputByIndex">ArchBaseActionWithOutputs#getOutputByIndex</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="getOutputByIntentName">
+            
+                <span class="type-signature"></span>getOutputByIntentName<span class="signature">(intentName)</span><span class="type-signature"> &rarr; {<a href="ArchActionOutput.html">ArchActionOutput</a>}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>This gets an action output for this action that matches an intent name. It will not return the built-in Failure output.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>intentName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the name of the intent whose matching output to find</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
+
+
+
+
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionBot.html#getOutputByIntentName">ArchBaseActionBot#getOutputByIntentName</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="getOutputByName">
+            
+                <span class="type-signature"></span>getOutputByName<span class="signature">(output, wantDynamicOutput<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="ArchActionOutput.html">ArchActionOutput</a>}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Gets an output by its identifier.  If it cannot be found, this method will throw.
+Normally you won't need to use this method and will use the helper methods available on inheriting classes
+when accessing pre-defined outputs like success, failure, timeout, etc. etc.  Attempting to
+get an output by id on a menu choice's action such as the <a href="ArchMenuTransferToAcd.html#actionTransferToAcd"><code>ArchMenuTransferToAcd#actionTransferToAcd</code></a>
+action on an <a href="ArchMenuTransferToAcd.html"><code>ArchMenuTransferToAcd</code></a> menu will return nothing.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>output</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type"><a href="ArchBranch.html">ArchBranch</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>identifies output you want to obtain by name.  If output is an ArchBranch instance,
+the <a href="ArchBranch.html#name"><code>ArchBranch#name</code></a> value will be used.
+Remember that requesting the 'Success' output on an action with a
+<a href="ArchBaseActionWithOutputsFakeSuccessFailure.html#hasFakeSuccessOutput"><code>fake success output</code></a> will return nothing.
+For non-dynamic outputs, the name should be specified in English.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>wantDynamicOutput</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>because it is possible for some actions to have both a non-dynamic output
+and a dynamic output with the same name, this boolean will let you specify
+which output you want.  An example of this would be the built in Failure
+output on a call bot action but that bot also has an intent named Failure
+so the action has two outputs with the same name of 'Failure'.  Only one
+of those would be a dynamic output and that's the output for the Failure
+intent, not the built-in Failure action output.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
+
+
+
+
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputs.html#getOutputByName">ArchBaseActionWithOutputs#getOutputByName</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
                 
 
 <dt>
@@ -2993,7 +4478,7 @@ use that traversal default filter.  The wantArchBaseValues parameter on that cal
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'ArchActionSetUUIData_sub'.replace(/"/g, '_');
+        var id = 'ArchActionCallDialogEngineBot_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
