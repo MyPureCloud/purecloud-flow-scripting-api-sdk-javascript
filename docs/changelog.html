@@ -60,6 +60,11 @@
 
     <section>
         <article class="readme"><h2>Change Log</h2>
+<h1>0.12.1</h1>
+<h4>Bug Fixes</h4>
+<ul>
+<li>We removed some instances where customer data could have been included when making calls to Genesys Cloud's logging endpoints. Architect Scripting is built on top of the Architect core framework, which calls these endpoints. This change does not impact <a href="ArchLogging.html"><code>Architect Scripting's logging</code></a> functionality, which by default writes to the console.</li>
+</ul>
 <h1>0.12.0</h1>
 <h4>Improvements</h4>
 <ul>
