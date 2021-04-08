@@ -60,6 +60,20 @@
 
     <section>
         <article class="readme"><h2>Change Log</h2>
+<h1>0.13.0</h1>
+<h4>Improvements</h4>
+<ul>
+<li>We updated the minimum Node version required to use Architect Scripting to 12.0.0. This is reflected in Architect Scripting's package.json file. Node Package Manager (npm) will use this to check your installed Node version when installing the Architect Scripting SDK so when using Node be sure to have 12.0.0 or higher installed. Thanks!</li>
+</ul>
+<h4>Bug Fixes</h4>
+<ul>
+<li>
+<p>We fixed a problem with the <a href="ArchEnums.html#FLOW_TYPES"><code>ArchEnums#FLOW_TYPES</code></a> map documentation which incorrectly listed the inboundCall and secureCall keys twice.  There were no changes made to the actual enum itself as it was just a documentation fix.</p>
+</li>
+<li>
+<p>We fixed an issue with the <a href="ArchBaseActionFlowOutcome.html#setFlowOutcomeByNameAsync"><code>ArchBaseActionFlowOutcome#setFlowOutcomeByNameAsync</code></a> function that could cause it to error out when searching for a flow outcome by name, saying there are multiple flow outcomes with the same name configured for the organization when there is actually only one flow outcome with that name.</p>
+</li>
+</ul>
 <h1>0.12.2</h1>
 <h4>Bug Fixes</h4>
 <ul>
