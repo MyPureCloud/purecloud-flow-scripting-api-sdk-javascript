@@ -1778,7 +1778,7 @@ declare type callbackArchFlowSurveyInvite = (archFlowSurveyInvite: ArchFlowSurve
 
 /**
  * This callback function type is invoked by Architect Scripting where the callback function is passed an Architect
- * survey invite flow such as {@link ArchFactoryFlows#createFlowWorkflow}
+ * workflow flow such as {@link ArchFactoryFlows#createFlowWorkflow}
  * @param archFlowWorkflow - the Architect workflow flow.
  */
 declare type callbackArchFlowWorkflow = (archFlowWorkflow: ArchFlowWorkflow) => void;
@@ -2212,15 +2212,6 @@ declare class ArchFactoryFlows extends ArchBaseFactory {
      */
     createFlowFromDefinitionAsync(archDefinitionFlow: ArchDefinitionFlow, flowName: string, flowDescription?: string, defaultSupportedLanguage?: ArchLanguage, callbackFunction?: callbackArchBaseFlow, flowDivision?: ArchDivision, creationData?: any, compatibleFlowTypes?: string[]): Promise<any>;
 }
-
-/**
- * For an NLU domain version, slot names need to adhere to Architect identifier naming standards.
- * This verification routine currently verifies slot names when configured off of intents.  Slot
- * names are really entity names in JSON.  Note that this verification does not cover global slots
- * as that will be coming in a future effort and need to be updated then.
- * @param nluConfigurationCreationData - NLU configuration data passed in by a caller.
- */
-declare function verifyNluCreationDataSlotNames(nluConfigurationCreationData: any): void;
 
 /**
  * A factory instance that lets you add Architect menus to flows.
@@ -7690,6 +7681,20 @@ declare class ArchBaseFlow extends ArchBaseCoreObjectWithId {
      * values in {@link ArchEnums#FLOW_TYPES} lists valid flow type values.
      */
     readonly flowType: string;
+    /**
+     * This function will return the file path where a flow export will be written when calling the {@link ArchBaseFlow#exportToDirAsync}
+     * method for the supplied destination directory and export flow format.  A typical use case for this function would be
+     * to get the export file path prior to calling the {@link ArchBaseFlow#exportToDirAsync} so you could see if the file already exists
+     * and decide if you want to perform an export or not since {@link ArchBaseFlow#exportToDirAsync} will attempt to overwrite
+     * a file if it already exists. Note that this uses the file system and should not be used when running in a
+     * browser.
+     * @param [destinationDir] - the directory where the flow export should be written. If no directory path is given, this method uses the
+     *                                    current working directory.  If a relative path is supplied, it will be resolved relative to the current
+     *                                    working directory.
+     * @param [flowFormat = ArchEnums.FLOW_FORMAT_TYPES.architect] - the desired flow format to use for the export. See {@link ArchEnums.FLOW_FORMAT_TYPES} for allowable export
+     *                                                                      formats. If no format is supplied, it will use the Architect format.
+     */
+    getExportFilePath(destinationDir?: string, flowFormat?: string): string;
     /**
      * Returns the flow scoped variable for the supplied fully scoped variable name ( if it exists ).  Remember, looking
      * up variables by name is case insensitive.  If the variable name cannot be found, nothing is returned;
