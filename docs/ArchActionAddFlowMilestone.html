@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: ArchValueTime | Architect Scripting</title>
+    <title>Class: ArchActionAddFlowMilestone | Architect Scripting</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -50,9 +50,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ArchValueTime<span class="signature">(coreExpressionViewModel)</span><span class="type-signature"></span></h2>
-        
-            <div class="class-description"><p>ArchValueTime</p></div>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ArchActionAddFlowMilestone<span class="signature">(coreAddFlowMilestoneViewModel)</span><span class="type-signature"></span></h2>
         
     
 </header>
@@ -65,9 +63,9 @@
 
 <dt>
     
-        <h4 class="name" id="ArchValueTime">
+        <h4 class="name" id="ArchActionAddFlowMilestone">
             
-                new <span class="type-signature"></span>ArchValueTime<span class="signature">(coreExpressionViewModel)</span><span class="type-signature"></span>
+                new <span class="type-signature"></span>ArchActionAddFlowMilestone<span class="signature">(coreAddFlowMilestoneViewModel)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -79,12 +77,8 @@
 
     
     <div class="description">
-        <p>This class holds a value in Architect Scripting.
-Data Type:  Time
-Note:  Do not attempt to create instances of this class directly.  They will be created
-automatically as needed by Architect Scripting.
-Maximum value allowed: 00:00:00
-Minimum value allowed: 23:59:59.999</p>
+        <p>Creates a new Architect Add Flow Milestone action instance.
+Instances of this class should not be created directly.</p>
     </div>
     
 
@@ -120,10 +114,15 @@ Minimum value allowed: 23:59:59.999</p>
 
         <tr>
             
-                <td class="name"><code>coreExpressionViewModel</code></td>
+                <td class="name"><code>coreAddFlowMilestoneViewModel</code></td>
             
 
             <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
             
             </td>
 
@@ -131,7 +130,7 @@ Minimum value allowed: 23:59:59.999</p>
 
             
 
-            <td class="description last"><p>( <em>Internal</em> ) an expression view model from core.</p></td>
+            <td class="description last"><p>( <em>Internal</em> ) an Architect core AddFlowMilestone view model.</p></td>
         </tr>
 
     
@@ -185,6 +184,13 @@ Minimum value allowed: 23:59:59.999</p>
     
 
     
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="ArchFactoryActions.html#addActionAddFlowMilestone">ArchFactoryActions#addActionAddFlowMilestone</a></li>
+        </ul>
+    </dd>
+    
 
     
 </dl>
@@ -205,7 +211,7 @@ Minimum value allowed: 23:59:59.999</p>
 
 
     <ul>
-        <li><a href="ArchBaseValueBasic.html">ArchBaseValueBasic</a></li>
+        <li><a href="ArchBaseActionFlowOutcome.html">ArchBaseActionFlowOutcome</a></li>
     </ul>
 
 
@@ -303,8 +309,8 @@ Architect Scripting object.</p>
             
 
 <dt>
-<h4 class="name" id="consumesSecureData">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>consumesSecureData<span class="type-signature"> :boolean</span>
+<h4 class="name" id="displayTypeNameArchitect">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>displayTypeNameArchitect<span class="type-signature"> :string</span>
     
 </h4>
 
@@ -313,8 +319,403 @@ Architect Scripting object.</p>
 <dd>
     
     <div class="description">
-        <p>Returns whether or not this value uses secure data.  For this to be the case, the
-value must use a secure variable either in an expression or as the configured variable.</p>
+        <p>The Architect action type label</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#displayTypeNameArchitect">ArchBaseAction#displayTypeNameArchitect</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="flowMilestoneId">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>flowMilestoneId<span class="type-signature"> :string</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns the flow milestone identifier if there is one set on this ArchActionAddFlowMilestone instance. If there is not one set,
+nothing is returned.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="flowMilestoneName">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>flowMilestoneName<span class="type-signature"> :string</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns the flow milestone name if there is one set on this ArchActionAddFlowMilestone instance. If there is not one set,
+nothing is returned.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="id">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>id<span class="type-signature"> :string</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The identifier string for this object.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseCoreObjectWithId.html#id">ArchBaseCoreObjectWithId#id</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="idMayBeBlank">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>idMayBeBlank<span class="type-signature"> :string</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns whether or not the id property may be blank or undefined for this object.  For example, the returned settings from <a href="ArchMenu.html#settingsMenu"><code>ArchMenu#settingsMenu</code></a>
+will have a blank identifier along with the settings returned from <a href="ArchMenu.html#settingsSpeechRec"><code>ArchMenu#settingsSpeechRec</code></a>.  Note that this is
+an extremely rare case.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseCoreObjectWithId.html#idMayBeBlank">ArchBaseCoreObjectWithId#idMayBeBlank</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="ArchBaseCoreObjectWithId.html#id">ArchBaseCoreObjectWithId#id</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="isArchActionAddFlowMilestone">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isArchActionAddFlowMilestone<span class="type-signature"> :boolean</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns true indicating that this is an ArchActionAddFlowMilestone instance.</p>
     </div>
     
 
@@ -341,438 +742,6 @@ value must use a secure variable either in an expression or as the configured va
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#consumesSecureData">ArchBaseValue#consumesSecureData</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="dataType">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>dataType<span class="type-signature"> :<a href="ArchDataType.html">ArchDataType</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The Architect data type associated with this value.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchDataType.html">ArchDataType</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#dataType">ArchBaseValue#dataType</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="flowLevelDefault">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>flowLevelDefault<span class="type-signature"> :<a href="ArchBaseValue.html">ArchBaseValue</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>If this value has a flow-level default setting value available, this method will return the value
-for that setting.  Otherwise, null will be returned.  To see if a value has a flow level default,
-you can check the <a href="ArchValueSettings.html#hasFlowLevelDefault"><code>ArchValueSettings#hasFlowLevelDefault</code></a> property.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchBaseValue.html">ArchBaseValue</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#flowLevelDefault">ArchBaseValue#flowLevelDefault</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="hasError">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>hasError<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this value currently has an error.  While this is certainly useful,
-please note the following:</p>
-<ul>
-<li>Any asynchronous methods that have been called on this value that are still pending will not update
-the error state until the asynchronous method completes.</li>
-<li>This property will reflect the value's view of itself and lots of times you'll want to look at
-validation results themselves in that the errors or warnings there will have informational strings that specify
-more information on what's wrong within the context of a containing object.  This object can also identify
-issues between the relationship of multiple values within the object which an individual value cannot.
-An example of an &quot;object&quot; would be an action within a flow.</li>
-</ul>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#hasError">ArchBaseValue#hasError</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="hasErrorOrWarning">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>hasErrorOrWarning<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this value currently has an error or warning.  While this is certainly useful,
-please note the following:</p>
-<ul>
-<li>Any asynchronous methods that have been called on this value that are still pending will not update
-the error or warning state until the asynchronous method completes.</li>
-<li>This property will reflect the value's view of itself and lots of times you'll want to look at
-validation results themselves in that the errors or warnings there will have informational strings that specify
-more information on what's wrong within the context of a containing object.  This object can also identify
-issues between the relationship of multiple values within the object which an individual value cannot.
-An example of an &quot;object&quot; would be an action within a flow.</li>
-</ul>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#hasErrorOrWarning">ArchBaseValue#hasErrorOrWarning</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="hasWarning">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>hasWarning<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this value currently has a warning.  While this is certainly useful,
-please note the following:</p>
-<ul>
-<li>Any asynchronous methods that have been called on this value that are still pending will not update
-the warning state until the asynchronous method completes.</li>
-<li>This property will reflect the value's view of itself and lots of times you'll want to look at
-validation results themselves in that the warnings there will have informational strings that specify
-more information on what's wrong within the context of a containing object.  This object can also identify
-issues between the relationship of multiple values within the object which an individual value cannot.
-An example of an &quot;object&quot; would be an action within a flow.</li>
-</ul>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#hasWarning">ArchBaseValue#hasWarning</a>
-    </li></ul></dd>
     
 
     
@@ -889,8 +858,8 @@ An example of an &quot;object&quot; would be an action within a flow.</li>
             
 
 <dt>
-<h4 class="name" id="isArchValueTime">
-    <span class="type-signature"></span>isArchValueTime<span class="type-signature"> :boolean</span>
+<h4 class="name" id="isMenuChoiceAction">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isMenuChoiceAction<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -899,86 +868,9 @@ An example of an &quot;object&quot; would be an action within a flow.</li>
 <dd>
     
     <div class="description">
-        <p>Returns true indicating that this is an ArchValueTime instance.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isBuilder">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isBuilder<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this value is set to a builder value. While builders end up generating
-expression text that specifies how the value should be calculated, they cannot be changed
-in Architect Scripting. You can call different methods on an <a href="ArchBaseValue.html"><code>ArchBaseValue</code></a> instance
-such as <a href="ArchBaseValue.html#setExpression"><code>ArchBaseValue#setExpression</code></a> to set this to an expression or value type specific
-literal setter such as <a href="ArchValueString.html#setLiteralString"><code>ArchValueString#setLiteralString</code></a> on a <a href="ArchValueString.html"><code>ArchValueString</code></a> instance
-to set this to a literal.</p>
+        <p>Returns whether or not this action is the action property for a <a href="ArchBaseMenuChoice.html"><code>menu choice</code></a>.
+For example, the <a href="ArchMenuDisconnect.html#actionDisconnect"><code>ArchMenuDisconnect#actionDisconnect</code></a> property on an <a href="ArchMenuDisconnect.html"><code>ArchMenuDisconnect</code></a>
+instance.</p>
     </div>
     
 
@@ -1008,7 +900,7 @@ to set this to a literal.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#isBuilder">ArchBaseValue#isBuilder</a>
+        <a href="ArchBaseAction.html#isMenuChoiceAction">ArchBaseAction#isMenuChoiceAction</a>
     </li></ul></dd>
     
 
@@ -1047,8 +939,8 @@ to set this to a literal.</p>
             
 
 <dt>
-<h4 class="name" id="isExpression">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isExpression<span class="type-signature"> :boolean</span>
+<h4 class="name" id="isReachable">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isReachable<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -1057,7 +949,7 @@ to set this to a literal.</p>
 <dd>
     
     <div class="description">
-        <p>Returns whether or not this value is set to a expression value.</p>
+        <p>Returns whether or not this action is reachable at runtime.</p>
     </div>
     
 
@@ -1087,7 +979,7 @@ to set this to a literal.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#isExpression">ArchBaseValue#isExpression</a>
+        <a href="ArchBaseAction.html#isReachable">ArchBaseAction#isReachable</a>
     </li></ul></dd>
     
 
@@ -1126,8 +1018,8 @@ to set this to a literal.</p>
             
 
 <dt>
-<h4 class="name" id="isLiteral">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isLiteral<span class="type-signature"> :boolean</span>
+<h4 class="name" id="isSecure">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isSecure<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -1136,7 +1028,8 @@ to set this to a literal.</p>
 <dd>
     
     <div class="description">
-        <p>Returns whether or not this value is set to a literal value.</p>
+        <p>Returns whether or not this action is secure which means either the action by its very nature
+is secure or it consumes secure data.</p>
     </div>
     
 
@@ -1166,7 +1059,7 @@ to set this to a literal.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#isLiteral">ArchBaseValue#isLiteral</a>
+        <a href="ArchBaseAction.html#isSecure">ArchBaseAction#isSecure</a>
     </li></ul></dd>
     
 
@@ -1205,8 +1098,8 @@ to set this to a literal.</p>
             
 
 <dt>
-<h4 class="name" id="isNoValue">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isNoValue<span class="type-signature"> :boolean</span>
+<h4 class="name" id="isUnreachable">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isUnreachable<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -1215,9 +1108,7 @@ to set this to a literal.</p>
 <dd>
     
     <div class="description">
-        <p>Returns whether or not this value is set to <a href="ArchBaseValue.html#setNoValue"><code>no value</code></a>.
-Note that this does not mean the value is NOT_SET.  It means there is no value specified
-for this value.</p>
+        <p>Returns whether or not this action is unreachable at runtime.</p>
     </div>
     
 
@@ -1247,167 +1138,7 @@ for this value.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#isNoValue">ArchBaseValue#isNoValue</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isVariable">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isVariable<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this value is set to a variable value.  Note that this is true when the value is
-set by calling <a href="ArchBaseValue.html#setVariable"><code>ArchBaseValue#setVariable</code></a>.  If you set the value with an expression, the return
-value will be false even if the expression is only a variable reference.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#isVariable">ArchBaseValue#isVariable</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isVariableInitialValue">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isVariableInitialValue<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this value is the initial value for a variable.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#isVariableInitialValue">ArchBaseValue#isVariableInitialValue</a>
+        <a href="ArchBaseAction.html#isUnreachable">ArchBaseAction#isUnreachable</a>
     </li></ul></dd>
     
 
@@ -1456,7 +1187,8 @@ value will be false even if the expression is only a variable reference.</p>
 <dd>
     
     <div class="description">
-        <p>Returns a logging string that describes this Architect value.</p>
+        <p>A string suitable for logging that contains information about this action.  This will contain the action
+tracking id, name and scripting type name.</p>
     </div>
     
 
@@ -1486,7 +1218,7 @@ value will be false even if the expression is only a variable reference.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#logStr">ArchBaseValue#logStr</a>
+        <a href="ArchBaseAction.html#logStr">ArchBaseAction#logStr</a>
     </li></ul></dd>
     
 
@@ -1606,8 +1338,8 @@ logging str contents wouldn't be set up.</p>
             
 
 <dt>
-<h4 class="name" id="overridesDefaultValue">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>overridesDefaultValue<span class="type-signature"> :boolean</span>
+<h4 class="name" id="name">
+    <span class="type-signature"></span>name<span class="type-signature"> :string</span>
     
 </h4>
 
@@ -1616,8 +1348,7 @@ logging str contents wouldn't be set up.</p>
 <dd>
     
     <div class="description">
-        <p>Returns whether or not this value is overriding another default value.  For example, this is true when this
-a value overrides a flow level setting value.</p>
+        <p>The name of the action</p>
     </div>
     
 
@@ -1627,7 +1358,7 @@ a value overrides a flow level setting value.</p>
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type">string</span>
 
 
             </li>
@@ -1647,86 +1378,7 @@ a value overrides a flow level setting value.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#overridesDefaultValue">ArchBaseValue#overridesDefaultValue</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="parent">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>parent<span class="type-signature"> :<a href="ArchBaseObject.html">ArchBaseObject</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The parent Architect Scripting object associated with this value.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchBaseObject.html">ArchBaseObject</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#parent">ArchBaseValue#parent</a>
+        <a href="ArchBaseAction.html#name">ArchBaseAction#name</a>
     </li></ul></dd>
     
 
@@ -1775,7 +1427,7 @@ a value overrides a flow level setting value.</p>
 <dd>
     
     <div class="description">
-        <p>Returns the parent flow for this value.</p>
+        <p>Returns the parent flow for this action.</p>
     </div>
     
 
@@ -1805,7 +1457,7 @@ a value overrides a flow level setting value.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#parentFlow">ArchBaseValue#parentFlow</a>
+        <a href="ArchBaseAction.html#parentFlow">ArchBaseAction#parentFlow</a>
     </li></ul></dd>
     
 
@@ -1844,8 +1496,8 @@ a value overrides a flow level setting value.</p>
             
 
 <dt>
-<h4 class="name" id="settings">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>settings<span class="type-signature"> :<a href="ArchValueSettings.html">ArchValueSettings</a></span>
+<h4 class="name" id="parentMenuChoice">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>parentMenuChoice<span class="type-signature"> :<a href="ArchBaseMenuChoice.html">ArchBaseMenuChoice</a></span>
     
 </h4>
 
@@ -1854,8 +1506,8 @@ a value overrides a flow level setting value.</p>
 <dd>
     
     <div class="description">
-        <p>Returns the settings associated with this value which provides meta data about this value like
-whether it is an output, can be set to a literal, can be set to an expression, etc. etc.</p>
+        <p>Returns the parent menu choice if this action is the action for a <a href="ArchBaseMenuChoice.html"><code>menu choice</code></a>.
+Otherwise, nothing is returned.</p>
     </div>
     
 
@@ -1865,7 +1517,7 @@ whether it is an output, can be set to a literal, can be set to an expression, e
         <ul>
             <li>
                 
-<span class="param-type"><a href="ArchValueSettings.html">ArchValueSettings</a></span>
+<span class="param-type"><a href="ArchBaseMenuChoice.html">ArchBaseMenuChoice</a></span>
 
 
             </li>
@@ -1885,7 +1537,7 @@ whether it is an output, can be set to a literal, can be set to an expression, e
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#settings">ArchBaseValue#settings</a>
+        <a href="ArchBaseAction.html#parentMenuChoice">ArchBaseAction#parentMenuChoice</a>
     </li></ul></dd>
     
 
@@ -1924,8 +1576,8 @@ whether it is an output, can be set to a literal, can be set to an expression, e
             
 
 <dt>
-<h4 class="name" id="valueText">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>valueText<span class="type-signature"> :string</span>
+<h4 class="name" id="parentState">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>parentState<span class="type-signature"> :<a href="ArchState.html">ArchState</a></span>
     
 </h4>
 
@@ -1934,22 +1586,8 @@ whether it is an output, can be set to a literal, can be set to an expression, e
 <dd>
     
     <div class="description">
-        <p>Returns a JavaScript string representing the value specified on this ArchBaseValueBasic instance.
-If this value is an expression, it returns the expression text.  If this value is a variable, it
-returns the variable text.  If this value is a literal, it will return a string that represents
-the value.  Overall this property is meant to be a quick and easy way to look at a &quot;value&quot; string
-but it is not meant to be some kind of fully inclusive description of this ArchBaseValueBasic instance
-overall. For most values that inherit from this class, it's pretty obvious what to expect as the returned
-string but there are a couple worth mentioning:</p>
-<pre class="prettyprint source"><code>ArchValueCurrency - a string formatted with '&lt;amount>|&lt;code>&quot; where code is an ISO 4217 string.
-ArchValueDate     - a string formatted as 'YYYY-MM-DD' where YYYY is 4 digit year, MM is 2 digit month and DD is two digit day.
-ArchValueDateTime - an ISO 8601 formatted string.
-ArchValueDuration - an XSD formatted duration string.
-ArchValueTime     - a string formatted as 'hh:mm:ss' where hh is 2 digit hour, mm is 2 digit minute and ss is 2 digit second.
-</code></pre>
-<p>While we don't guarantee it in Scripting because this isn't the same runtime function evaluation
-engine that flows use, when accessing this property on a singleton value will be very similar to
-calling the ToString function in expressions at runtime.</p>
+        <p>Returns the parent state that contains this action if this action is in a <a href="ArchState.html"><code>state</code></a>.
+Otherwise, nothing is returned.</p>
     </div>
     
 
@@ -1959,7 +1597,7 @@ calling the ToString function in expressions at runtime.</p>
         <ul>
             <li>
                 
-<span class="param-type">string</span>
+<span class="param-type"><a href="ArchState.html">ArchState</a></span>
 
 
             </li>
@@ -1979,7 +1617,169 @@ calling the ToString function in expressions at runtime.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValueBasic.html#valueText">ArchBaseValueBasic#valueText</a>
+        <a href="ArchBaseAction.html#parentState">ArchBaseAction#parentState</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="parentTask">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>parentTask<span class="type-signature"> :<a href="ArchTask.html">ArchTask</a>|<a href="ArchTaskLoop.html">ArchTaskLoop</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns the parent task that contains this action if this action is in a <a href="ArchTask.html"><code>task</code></a> or <a href="ArchTaskLoop.html"><code>looping task</code></a>.
+Otherwise, nothing is returned.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchTask.html">ArchTask</a></span>
+|
+
+<span class="param-type"><a href="ArchTaskLoop.html">ArchTaskLoop</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#parentTask">ArchBaseAction#parentTask</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="trackingId">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>trackingId<span class="type-signature"> :number</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The integer tracking identifier for this action.  This is the numeric identifier is displayed in the Architect user interface.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#trackingId">ArchBaseAction#trackingId</a>
     </li></ul></dd>
     
 
@@ -2021,222 +1821,6 @@ calling the ToString function in expressions at runtime.</p>
         <h3 class="subsection-title">Methods</h3>
 
         <dl>
-                
-
-<dt>
-    
-        <h4 class="name" id="getExpressionText">
-            
-                <span class="type-signature"></span>getExpressionText<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>If this value is an expression, this method will return the expression text.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">string</span>
-
-
-
-
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#getExpressionText">ArchBaseValue#getExpressionText</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="getVariable">
-            
-                <span class="type-signature"></span>getVariable<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="ArchBaseVariable.html">ArchBaseVariable</a>}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>If this value is a variable reference, this method will return the variable that is being referenced.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type"><a href="ArchBaseVariable.html">ArchBaseVariable</a></span>
-
-
-
-
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#getVariable">ArchBaseValue#getVariable</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
                 
 
 <dt>
@@ -3110,9 +2694,9 @@ the string in the errorStr parameter.</p>
 
 <dt>
     
-        <h4 class="name" id="setExpression">
+        <h4 class="name" id="setFlowMilestoneByIdAsync">
             
-                <span class="type-signature"></span>setExpression<span class="signature">(expressionText)</span><span class="type-signature"></span>
+                <span class="type-signature"></span>setFlowMilestoneByIdAsync<span class="signature">(flowMilestoneId, callbackFunction)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -3124,14 +2708,7 @@ the string in the errorStr parameter.</p>
 
     
     <div class="description">
-        <p>This sets the expression text on this value.  If the expression cannot be set because the expression
-text is invalid, you're trying to set an expression on an output, etc. etc. the call will fail.
-If you wish to have the ability to set syntactically invalid expression text on an <a href="ArchBaseValue.html"><code>ArchBaseValue</code></a> object
-and not have this method throw, you can set the <a href="ArchValueSettings.html#.allowInvalidExpressionText"><code>ArchValueSettings.allowInvalidExpressionText</code></a> property
-to true prior to calling the setExpression function and Scripting will not throw an error if the expression
-text is invalid.
-Remember, output values are required to be variables so you should use setVariable on those calls
-instead of passing in expression text that references a variable.</p>
+        <p>This sets the flow milestone to use at runtime by its identifier.</p>
     </div>
     
 
@@ -3167,7 +2744,7 @@ instead of passing in expression text that references a variable.</p>
 
         <tr>
             
-                <td class="name"><code>expressionText</code></td>
+                <td class="name"><code>flowMilestoneId</code></td>
             
 
             <td class="type">
@@ -3183,7 +2760,33 @@ instead of passing in expression text that references a variable.</p>
 
             
 
-            <td class="description last"><p>the expression to set on this value.</p></td>
+            <td class="description last"><p>the identifier of the flow milestone.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callbackFunction</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>a callback function to call if the flow milestone
+is successfully looked up and configured on this action.
+The first parameter passed to the callback function will be this
+action instance.</p></td>
         </tr>
 
     
@@ -3202,20 +2805,345 @@ instead of passing in expression text that references a variable.</p>
     
 
     
-    <h5>Throws:</h5>
+
     
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
             
+                
 
-    <div class="param-desc">
+<dt>
     
-        <ul>
-<li>This method will throw if it is unable to set the supplied expression text with an error describing why.</li>
-</ul>
-    
-    </div>
-
+        <h4 class="name" id="setFlowMilestoneByNameAsync">
+            
+                <span class="type-signature"></span>setFlowMilestoneByNameAsync<span class="signature">(flowMilestoneName, callbackFunction<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+                
+            
+        </h4>
 
         
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>This sets the flow milestone that will be used for use at runtime by the flow milestone name.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>flowMilestoneName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>the name of the  Flow Milestone to set. Flow milestone names are looked up case insensitively.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callbackFunction</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>a callback function to call if the Flow Milestone is successfully
+looked up and configured on this action. The first parameter passed to the
+callback function will be this Architect flow milestone action instance.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="setFlowOutcomeByIdAsync">
+            
+                <span class="type-signature"></span>setFlowOutcomeByIdAsync<span class="signature">(flowOutcomeId, callbackFunction)</span><span class="type-signature"></span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>This sets the flow outcome to use at runtime by its identifier.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>flowOutcomeId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the identifier of the flow outcome.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callbackFunction</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>a callback function to call if the flow outcome
+is successfully looked up and configured on this action.
+The first parameter passed to the callback function will be this
+action instance.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 
     
 
@@ -3231,7 +3159,7 @@ instead of passing in expression text that references a variable.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#setExpression">ArchBaseValue#setExpression</a>
+        <a href="ArchBaseActionFlowOutcome.html#setFlowOutcomeByIdAsync">ArchBaseActionFlowOutcome#setFlowOutcomeByIdAsync</a>
     </li></ul></dd>
     
 
@@ -3270,9 +3198,9 @@ instead of passing in expression text that references a variable.</p>
 
 <dt>
     
-        <h4 class="name" id="setExpressionFromVariable">
+        <h4 class="name" id="setFlowOutcomeByNameAsync">
             
-                <span class="type-signature"></span>setExpressionFromVariable<span class="signature">(variableToAssign)</span><span class="type-signature"></span>
+                <span class="type-signature"></span>setFlowOutcomeByNameAsync<span class="signature">(flowOutcomeName, callbackFunction<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -3284,7 +3212,7 @@ instead of passing in expression text that references a variable.</p>
 
     
     <div class="description">
-        <p>This method sets the value to an expression and assigns the variable's name as the expression text.</p>
+        <p>This sets the flow outcome that will be used for use at runtime by the flow outcome name.</p>
     </div>
     
 
@@ -3308,152 +3236,7 @@ instead of passing in expression text that references a variable.</p>
         <th>Type</th>
 
         
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>variableToAssign</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-|
-
-<span class="param-type"><a href="ArchBaseVariable.html">ArchBaseVariable</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>the variable to assign passed in either by a string
-like 'Flow.myInteger' or an Architect variable.  If the value
-is a string, this function will attempt to look up the variable
-and if it doesn't exist then create it.  Next it will assign the
-variable name as the expression text.  If you pass in an <a href="ArchBaseVariable.html"><code>ArchBaseVariable</code></a>
-reference, it needs to be in scope for this value.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#setExpressionFromVariable">ArchBaseValue#setExpressionFromVariable</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="setLiteralTime">
-            
-                <span class="type-signature"></span>setLiteralTime<span class="signature">(time)</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>This sets the time as a literal using a 24 hour time notation.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
+        <th>Attributes</th>
         
 
         
@@ -3467,7 +3250,7 @@ reference, it needs to be in scope for this value.</p></td>
 
         <tr>
             
-                <td class="name"><code>time</code></td>
+                <td class="name"><code>flowOutcomeName</code></td>
             
 
             <td class="type">
@@ -3480,524 +3263,53 @@ reference, it needs to be in scope for this value.</p></td>
             </td>
 
             
-
-            
-
-            <td class="description last"><p>the string value for the time formatted as 'HH:MM:SS' where HH is a two digit hour, MM is a two digit minute, and SS is a two digit second (ex: '14:33:05').</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
+                <td class="attributes">
                 
 
-<dt>
-    
-        <h4 class="name" id="setLiteralTimeParts">
-            
-                <span class="type-signature"></span>setLiteralTimeParts<span class="signature">(hours, minutes, seconds)</span><span class="type-signature"></span>
                 
-            
-        </h4>
 
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>This sets the time literal value from the specified hours, minutes, and seconds parts using a 24 hour time notation.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>hours</code></td>
-            
-
-            <td class="type">
-            
                 
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
+                </td>
             
 
             
 
-            <td class="description last"><p>the hours for the time. This value should be an integer &gt;= 0 and &lt;= 23.</p></td>
+            <td class="description last"><p>the name of the  Flow Outcome to set. The name is not case sensitive on the lookup.</p></td>
         </tr>
 
     
 
         <tr>
             
-                <td class="name"><code>minutes</code></td>
+                <td class="name"><code>callbackFunction</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">number</span>
+<span class="param-type">function</span>
 
 
             
             </td>
 
             
-
-            
-
-            <td class="description last"><p>the minutes for the time. This value should be an integer &gt;= 0 and &lt;= 59.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>seconds</code></td>
-            
-
-            <td class="type">
-            
+                <td class="attributes">
                 
-<span class="param-type">number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>the seconds for the time. This value should be an integer &gt;= 0 and &lt;= 59.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
+                    &lt;optional><br>
                 
 
-<dt>
-    
-        <h4 class="name" id="setNoValue">
-            
-                <span class="type-signature"></span>setNoValue<span class="signature">()</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>This method sets the value to no value.  Note that this is different from setting NOT_SET or something like a
-blank string.  Setting a value to contain no value is something which is rather internal to Architect but we're
-exposing it in scripting.  In a nutshell, setting no value means to take advantage of default runtime handling.
-The default runtime handling can change based on where this is used.  For example, setting no value for a variable
-initial value means that the runtime will set a non-collection variable to NOT_SET or a collection variable to
-an empty collection.  On a value that has a flow level default, setting it to no value means that the runtime
-should pick up the value to use from the flow level default.  And if a flow level default allows no value,
-that means that the runtime will pick up the value from somewhere else normally defined in Admin.  An example
-of this is that the connect timeout specified for a Transfer to Number action that it would use the Edge trunk
-connect timeout.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#setNoValue">ArchBaseValue#setNoValue</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
                 
 
-<dt>
-    
-        <h4 class="name" id="setNoValueNoFallback">
-            
-                <span class="type-signature"></span>setNoValueNoFallback<span class="signature">()</span><span class="type-signature"></span>
                 
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>This method sets the value to no value but with no fallback. This is different that setNoValue in that you are
-explicitly setting the expression to no value and you do not want to use the flows default value for this setting.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#setNoValueNoFallback">ArchBaseValue#setNoValueNoFallback</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="setVariable">
-            
-                <span class="type-signature"></span>setVariable<span class="signature">(variableToAssign)</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>This method sets the value to a variable and assigns the supplied variable to it.  One thing to be aware of
-is when a value reports that it is an <a href="ArchValueSettings.html#isInput"><code>input</code></a>, the value may not allow you to call this
-method to configure a variable if the value's <a href="ArchValueSettings.html#canBeVariable"><code>can be variable</code></a> setting reports false.
-Assuming that the value reports it <a href="ArchValueSettings.html#canBeExpression"><code>can be an expression</code></a>, please look at using
-the <a href="ArchBaseValue.html#setExpressionFromVariable"><code>ArchBaseValue#setExpressionFromVariable</code></a> method instead.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>variableToAssign</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-|
-
-<span class="param-type"><a href="ArchBaseVariable.html">ArchBaseVariable</a></span>
-
-
-            
-            </td>
-
+                </td>
             
 
             
 
-            <td class="description last"><p>the variable to assign passed in either by a string
-like 'Flow.myInteger' or an Architect variable.  If the value
-is a string, this function will attempt to look up the variable
-and if it doesn't exist then create it.  Next it will assign the
-variable name as the expression text.  If you pass in an <a href="ArchBaseVariable.html"><code>ArchBaseVariable</code></a>
-reference, it needs to be in scope for this value.</p></td>
+            <td class="description last"><p>a callback function to call if the Flow Outcome is successfully
+looked up and configured on this action. The first parameter passed to the
+callback function will be this Architect flow outcome action instance.</p></td>
         </tr>
 
     
@@ -4031,7 +3343,7 @@ reference, it needs to be in scope for this value.</p></td>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#setVariable">ArchBaseValue#setVariable</a>
+        <a href="ArchBaseActionFlowOutcome.html#setFlowOutcomeByNameAsync">ArchBaseActionFlowOutcome#setFlowOutcomeByNameAsync</a>
     </li></ul></dd>
     
 
@@ -4370,7 +3682,7 @@ use that traversal default filter.  The wantArchBaseValues parameter on that cal
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'ArchValueTime_sub'.replace(/"/g, '_');
+        var id = 'ArchActionAddFlowMilestone_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
