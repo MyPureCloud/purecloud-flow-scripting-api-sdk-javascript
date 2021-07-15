@@ -1650,7 +1650,7 @@ declare class ArchFactoryActions extends ArchBaseFactory {
      * @param [targetBranch] - the branch to use.
      * @param [previousArchAction] - the previous Architect action in the archBaseMultiActionContainer after which the new action should be added.  If not specified, the new action will be appended to the end of the action container.
      */
-    addActionEndTask(archMultiActionContainer: ArchBaseMultiActionContainer, name?: string, targetBranch?: ArchBranch, previousArchAction?: ArchBaseAction): ArchActionCallTask;
+    addActionEndTask(archMultiActionContainer: ArchBaseMultiActionContainer, name?: string, targetBranch?: ArchBranch, previousArchAction?: ArchBaseAction): ArchActionEndTask;
     /**
      * Adds a wait action to a task, state or action output.
      * @param archMultiActionContainer - the Architect task, state or action output where the new action should be added.
@@ -5198,6 +5198,10 @@ declare class ArchActionJumpToTask extends ArchBaseAction {
      * The target task for this jump to task action.
      */
     targetTask: ArchTask;
+    /**
+     * Inputs for the jump to task action, only accessible after the targetTask has been set successfully. Otherwise, undefined.
+     */
+    readonly taskInputs: ArchNamedValueList;
 }
 
 /**
@@ -6072,7 +6076,10 @@ declare class ArchActionTransferToAcd extends ArchBaseActionTransfer {
     /**
      * The in-queue flow that should be used while the call is in the target queue.
      * Note that the setter will also accept an {ArchFlowInfo} instance as well as
-     * an {ArchFlowInfoBasic} instance.
+     * an {ArchFlowInfoBasic} instance.  The in-queue flow needs to be the appropriate
+     * in-queue type for the parent flow of this action.  For example, if this action
+     * was in an inbound call flow, you'd want to use an in-queue call flow info object
+     * when calling the setter.
      */
     inQueueHandlingFlowInfo: ArchFlowInfoBasic;
 }
