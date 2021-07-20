@@ -8110,13 +8110,16 @@ declare class ArchBaseFlow extends ArchBaseCoreObjectWithId {
      * Exports the current flow to a file in the specified directory.  This destination directory *must* exist
      * for the export to succeed.  Note that this uses the file system and should not be used when running in a
      * browser.
-     * @param [destinationDir] - = the directory where the flow export should be saved.
+     * @param [destinationDir] - the directory where the flow export should be saved.
      * @param [callbackFunction] - the function to call back and pass in the full path where the
      *                                                      flow export was saved.
      * @param [flowFormat = ArchEnums.FLOW_FORMAT_TYPES.architect] - the desired flow format to use for the export. See {@link ArchEnums.FLOW_FORMAT_TYPES} for allowable export formats. If no format is used,
      *                                                                      it will default to the Architect format.
+     * @param [fileName] - the file name to use for the exported flow. If a file extension is not added to the file name, it will use the default file extension for the desired export type. If an extension
+     * is found on the file name other than what is expected, the correct extension will be appended to the end of the exported file. To find the correct file extension for the Architect format, you can either export a flow
+     * from the Architect UI or use {@link ArchDefinitionFlow.fileExtension}.
      */
-    exportToDirAsync(destinationDir?: string, callbackFunction?: callbackExportFullPath, flowFormat?: string): Promise<any>;
+    exportToDirAsync(destinationDir?: string, callbackFunction?: callbackExportFullPath, flowFormat?: string, fileName?: string): Promise<any>;
     /**
      * Exports the flow to a JSON object.  The object passed back in the callback function
      * will be a JSON object with a content and fileName property where the content holds
@@ -10083,13 +10086,16 @@ declare class ArchFlowCommonModule extends ArchBaseFlow {
      * Exports the current flow to a file in the specified directory.  This destination directory *must* exist
      * for the export to succeed.  Note that this uses the file system and should not be used when running in a
      * browser.
-     * @param [destinationDir] - = the directory where the flow export should be saved.
+     * @param [destinationDir] - the directory where the flow export should be saved.
      * @param [callbackFunction] - the function to call back and pass in the full path where the
      *                                                      flow export was saved.
      * @param [flowFormat = ArchEnums.FLOW_FORMAT_TYPES.architect] - the desired flow format to use for the export. See {@link ArchEnums.FLOW_FORMAT_TYPES} for allowable export formats. If no format is used,
      *                                                                      it will default to the Architect format.
+     * @param [fileName] - the file name to use for the exported flow. If a file extension is not added to the file name, it will use the default file extension for the desired export type. If an extension
+     * is found on the file name other than what is expected, the correct extension will be appended to the end of the exported file. To find the correct file extension for the Architect format, you can either export a flow
+     * from the Architect UI or use {@link ArchDefinitionFlow.fileExtension}.
      */
-    exportToDirAsync(destinationDir?: string, callbackFunction?: callbackExportFullPath, flowFormat?: string): Promise<any>;
+    exportToDirAsync(destinationDir?: string, callbackFunction?: callbackExportFullPath, flowFormat?: string, fileName?: string): Promise<any>;
     /**
      * Exports the flow to a JSON object.  The object passed back in the callback function
      * will be a JSON object with a content and fileName property where the content holds

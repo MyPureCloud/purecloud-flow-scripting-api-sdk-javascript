@@ -3676,7 +3676,7 @@ property on the specified task instance is true.</p></td>
     
         <h4 class="name" id="exportToDirAsync">
             
-                <span class="type-signature"></span>exportToDirAsync<span class="signature">(destinationDir<span class="signature-attributes">opt</span>, callbackFunction<span class="signature-attributes">opt</span>, flowFormat<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span>
+                <span class="type-signature"></span>exportToDirAsync<span class="signature">(destinationDir<span class="signature-attributes">opt</span>, callbackFunction<span class="signature-attributes">opt</span>, flowFormat<span class="signature-attributes">opt</span>, fileName<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span>
                 
             
         </h4>
@@ -3760,7 +3760,7 @@ browser.</p>
                 </td>
             
 
-            <td class="description last"><p>= the directory where the flow export should be saved.</p></td>
+            <td class="description last"><p>the directory where the flow export should be saved.</p></td>
         </tr>
 
     
@@ -3839,6 +3839,45 @@ flow export was saved.</p></td>
 
             <td class="description last"><p>the desired flow format to use for the export. See <code>ArchEnums.FLOW_FORMAT_TYPES</code> for allowable export formats. If no format is used,
 it will default to the Architect format.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fileName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>the file name to use for the exported flow. If a file extension is not added to the file name, it will use the default file extension for the desired export type. If an extension
+is found on the file name other than what is expected, the correct extension will be appended to the end of the exported file. To find the correct file extension for the Architect format, you can either export a flow
+from the Architect UI or use <code>ArchDefinitionFlow.fileExtension</code>.</p></td>
         </tr>
 
     
