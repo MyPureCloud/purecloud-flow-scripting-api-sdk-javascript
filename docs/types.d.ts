@@ -8115,9 +8115,11 @@ declare class ArchBaseFlow extends ArchBaseCoreObjectWithId {
      *                                                      flow export was saved.
      * @param [flowFormat = ArchEnums.FLOW_FORMAT_TYPES.architect] - the desired flow format to use for the export. See {@link ArchEnums.FLOW_FORMAT_TYPES} for allowable export formats. If no format is used,
      *                                                                      it will default to the Architect format.
-     * @param [fileName] - the file name to use for the exported flow. If a file extension is not added to the file name, it will use the default file extension for the desired export type. If an extension
-     * is found on the file name other than what is expected, the correct extension will be appended to the end of the exported file. To find the correct file extension for the Architect format, you can either export a flow
-     * from the Architect UI or use {@link ArchDefinitionFlow.fileExtension}.
+     * @param [fileName] - the file name to use for the exported flow. If a file extension is not added to the file name, it will use the default file extension for the desired export type for
+     * the desired export format and flow that you are exporting. If the format is YAML, the extension is always '.yaml' regardless of flow type. However, if it is the Architect format, the extension is unique per flow-type.
+     * To find the correct file extension for the Architect format, you can either export a flow from the Architect UI or look at the [flow definition]{@link ArchBaseFlow#definition}
+     * for a flow type and access the [fileExtension]{@link ArchDefinitionFlow.fileExtension} property to get the value. If an extension is found on the file name other than what is
+     * expected, the correct extension will be appended to the end of the exported file as per the logic described previously.
      */
     exportToDirAsync(destinationDir?: string, callbackFunction?: callbackExportFullPath, flowFormat?: string, fileName?: string): Promise<any>;
     /**
@@ -8148,8 +8150,13 @@ declare class ArchBaseFlow extends ArchBaseCoreObjectWithId {
      *                                    working directory.
      * @param [flowFormat = ArchEnums.FLOW_FORMAT_TYPES.architect] - the desired flow format to use for the export. See {@link ArchEnums.FLOW_FORMAT_TYPES} for allowable export
      *                                                                      formats. If no format is supplied, it will use the Architect format.
+     * @param [fileName] - the file name to use for the exported flow. If a file extension is not added to the file name, it will use the default file extension for the desired export type for
+     * the desired export format and flow that you are exporting. If the format is YAML, the extension is always '.yaml' regardless of flow type. However, if it is the Architect format, the extension is unique per flow-type.
+     * To find the correct file extension for the Architect format, you can either export a flow from the Architect UI or look at the [flow definition]{@link ArchBaseFlow#definition}
+     * for a flow type and access the [fileExtension]{@link ArchDefinitionFlow.fileExtension} property to get the value. If an extension is found on the file name other than what is
+     * expected, the correct extension will be appended to the end of the exported file as per the logic described previously.
      */
-    getExportFilePath(destinationDir?: string, flowFormat?: string): string;
+    getExportFilePath(destinationDir?: string, flowFormat?: string, fileName?: string): string;
     /**
      * Returns the flow scoped variable for the supplied fully scoped variable name ( if it exists ).  Remember, looking
      * up variables by name is case insensitive.  If the variable name cannot be found, nothing is returned;
@@ -9553,7 +9560,7 @@ declare class ArchDefinitionFlow extends ArchBaseDefinition {
      */
     readonly displayTypeName: string;
     /**
-     * Returns the file extension for this flow type.
+     * Returns the file extension for this flow type that's used when exporting a flow of this type to an [Architect format]{@link ArchEnums#FLOW_FORMAT_TYPES} export file.
      */
     readonly fileExtension: string;
     /**
@@ -10091,9 +10098,11 @@ declare class ArchFlowCommonModule extends ArchBaseFlow {
      *                                                      flow export was saved.
      * @param [flowFormat = ArchEnums.FLOW_FORMAT_TYPES.architect] - the desired flow format to use for the export. See {@link ArchEnums.FLOW_FORMAT_TYPES} for allowable export formats. If no format is used,
      *                                                                      it will default to the Architect format.
-     * @param [fileName] - the file name to use for the exported flow. If a file extension is not added to the file name, it will use the default file extension for the desired export type. If an extension
-     * is found on the file name other than what is expected, the correct extension will be appended to the end of the exported file. To find the correct file extension for the Architect format, you can either export a flow
-     * from the Architect UI or use {@link ArchDefinitionFlow.fileExtension}.
+     * @param [fileName] - the file name to use for the exported flow. If a file extension is not added to the file name, it will use the default file extension for the desired export type for
+     * the desired export format and flow that you are exporting. If the format is YAML, the extension is always '.yaml' regardless of flow type. However, if it is the Architect format, the extension is unique per flow-type.
+     * To find the correct file extension for the Architect format, you can either export a flow from the Architect UI or look at the [flow definition]{@link ArchBaseFlow#definition}
+     * for a flow type and access the [fileExtension]{@link ArchDefinitionFlow.fileExtension} property to get the value. If an extension is found on the file name other than what is
+     * expected, the correct extension will be appended to the end of the exported file as per the logic described previously.
      */
     exportToDirAsync(destinationDir?: string, callbackFunction?: callbackExportFullPath, flowFormat?: string, fileName?: string): Promise<any>;
     /**
@@ -10124,8 +10133,13 @@ declare class ArchFlowCommonModule extends ArchBaseFlow {
      *                                    working directory.
      * @param [flowFormat = ArchEnums.FLOW_FORMAT_TYPES.architect] - the desired flow format to use for the export. See {@link ArchEnums.FLOW_FORMAT_TYPES} for allowable export
      *                                                                      formats. If no format is supplied, it will use the Architect format.
+     * @param [fileName] - the file name to use for the exported flow. If a file extension is not added to the file name, it will use the default file extension for the desired export type for
+     * the desired export format and flow that you are exporting. If the format is YAML, the extension is always '.yaml' regardless of flow type. However, if it is the Architect format, the extension is unique per flow-type.
+     * To find the correct file extension for the Architect format, you can either export a flow from the Architect UI or look at the [flow definition]{@link ArchBaseFlow#definition}
+     * for a flow type and access the [fileExtension]{@link ArchDefinitionFlow.fileExtension} property to get the value. If an extension is found on the file name other than what is
+     * expected, the correct extension will be appended to the end of the exported file as per the logic described previously.
      */
-    getExportFilePath(destinationDir?: string, flowFormat?: string): string;
+    getExportFilePath(destinationDir?: string, flowFormat?: string, fileName?: string): string;
     /**
      * Returns the flow scoped variable for the supplied fully scoped variable name ( if it exists ).  Remember, looking
      * up variables by name is case insensitive.  If the variable name cannot be found, nothing is returned;

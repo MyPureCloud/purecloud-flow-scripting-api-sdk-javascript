@@ -4046,9 +4046,11 @@ it will default to the Architect format.</p></td>
                 </td>
             
 
-            <td class="description last"><p>the file name to use for the exported flow. If a file extension is not added to the file name, it will use the default file extension for the desired export type. If an extension
-is found on the file name other than what is expected, the correct extension will be appended to the end of the exported file. To find the correct file extension for the Architect format, you can either export a flow
-from the Architect UI or use <code>ArchDefinitionFlow.fileExtension</code>.</p></td>
+            <td class="description last"><p>the file name to use for the exported flow. If a file extension is not added to the file name, it will use the default file extension for the desired export type for
+the desired export format and flow that you are exporting. If the format is YAML, the extension is always '.yaml' regardless of flow type. However, if it is the Architect format, the extension is unique per flow-type.
+To find the correct file extension for the Architect format, you can either export a flow from the Architect UI or look at the <code>flow definition</code>
+for a flow type and access the <code>fileExtension</code> property to get the value. If an extension is found on the file name other than what is
+expected, the correct extension will be appended to the end of the exported file as per the logic described previously.</p></td>
         </tr>
 
     
@@ -4374,7 +4376,7 @@ it will default to the Architect format.</p></td>
     
         <h4 class="name" id="getExportFilePath">
             
-                <span class="type-signature"></span>getExportFilePath<span class="signature">(destinationDir<span class="signature-attributes">opt</span>, flowFormat<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span>
+                <span class="type-signature"></span>getExportFilePath<span class="signature">(destinationDir<span class="signature-attributes">opt</span>, flowFormat<span class="signature-attributes">opt</span>, fileName<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span>
                 
             
         </h4>
@@ -4504,6 +4506,47 @@ working directory.</p></td>
 
             <td class="description last"><p>the desired flow format to use for the export. See <code>ArchEnums.FLOW_FORMAT_TYPES</code> for allowable export
 formats. If no format is supplied, it will use the Architect format.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fileName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>the file name to use for the exported flow. If a file extension is not added to the file name, it will use the default file extension for the desired export type for
+the desired export format and flow that you are exporting. If the format is YAML, the extension is always '.yaml' regardless of flow type. However, if it is the Architect format, the extension is unique per flow-type.
+To find the correct file extension for the Architect format, you can either export a flow from the Architect UI or look at the <code>flow definition</code>
+for a flow type and access the <code>fileExtension</code> property to get the value. If an extension is found on the file name other than what is
+expected, the correct extension will be appended to the end of the exported file as per the logic described previously.</p></td>
         </tr>
 
     
