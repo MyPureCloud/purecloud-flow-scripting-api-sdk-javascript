@@ -60,6 +60,15 @@
 
     <section>
         <article class="readme"><h2>Change Log</h2>
+<h1>0.18.0</h1>
+<h4>Improvements</h4>
+<ul>
+<li>We added better <code>async</code>/<code>await</code> support to Architect Scripting functions that return a Promise and take a callback as a parameter. Before, some of these functions wouldn't return a value when you used <code>await</code> to call it and assign the promise's return value to a variable. Now, the return value of the promise is assigned correctly.</li>
+</ul>
+<h4>Bug Fixes</h4>
+<ul>
+<li>We have added additional logic to provide better error handling for the <code>fileName</code> parameter on the <a href="ArchBaseFlow.html#getExportFilePath"><code>ArchBaseFlow#getExportFilePath</code></a> and <a href="ArchBaseFlow.html#exportToDirAsync"><code>ArchBaseFlow#exportToDirAsync</code></a> methods to ensure no file path information is specified for the file name.</li>
+</ul>
 <h1>0.17.2</h1>
 <h4>Improvements</h4>
 <ul>
