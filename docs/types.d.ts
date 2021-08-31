@@ -1781,6 +1781,7 @@ declare type callbackArchFlowOutboundCall = (archFlowOutboundCall: ArchFlowOutbo
 /**
  * This callback function type is invoked by Architect Scripting where the callback function is passed an Architect
  * in-queue call flow such as {@link ArchFactoryFlows#createFlowInQueueCallAsync}
+ * or {@link ArchFactoryFlows#loadFlowDefaultInQueueCallAsync}.
  * @param archFlowInQueueCall - the Architect in-queue call flow.
  */
 declare type callbackArchFlowInQueueCall = (archFlowInQueueCall: ArchFlowInQueueCall) => void;
@@ -1798,6 +1799,13 @@ declare type callbackArchFlowSecureCall = (archFlowSecureCall: ArchFlowSecureCal
  * @param archFlowSurveyInvite - the Architect survey invite flow.
  */
 declare type callbackArchFlowSurveyInvite = (archFlowSurveyInvite: ArchFlowSurveyInvite) => void;
+
+/**
+ * This callback function type is invoked by Architect Scripting where the callback function is passed an Architect
+ * voicemail flow such as {@link ArchFactoryFlows#loadFlowDefaultVoicemailAsync}
+ * @param archFlowVoicemail - the Architect voicemail flow.
+ */
+declare type callbackArchFlowVoicemail = (archFlowVoicemail: ArchFlowVoicemail) => void;
 
 /**
  * This callback function type is invoked by Architect Scripting where the callback function is passed an Architect
@@ -2088,6 +2096,16 @@ declare class ArchFactoryFlows extends ArchBaseFactory {
      * @returns - while this method returns a promise, you should use the callback function to perform any processing because that callback will be passed the ArchBaseFlow instance.
      */
     loadFlowByFlowIdAsync(flowId: string, flowType: string, flowVersion?: string, callbackFunction?: callbackArchBaseFlow): Promise<any>;
+    /**
+     * Loads the default in-queue call flow and if successful returns an ArchFlowInQueueCall instance for it to the supplied callback function.
+     * @param [flowVersion = "latest"] - the version of the default in-queue flow to get.  Valid values are "latest" to get the latest saved configuration of a flow or
+     * a version value such as "2.0" or "2".  If you do not specify a version, then the latest saved configuration will be loaded.
+     * @param [callbackFunction] - a callback function to call if the flow can be loaded.
+     *                                                     The first parameter passed to the callback function will be the Architect Scripting
+     *                                                     flow instance.
+     * @returns - while this method returns a promise, you should use the callback function to perform any processing because that callback will be passed the ArchFlowInQueueCall instance.
+     */
+    loadFlowDefaultInQueueCallAsync(flowVersion?: string, callbackFunction?: callbackArchFlowInQueueCall): Promise<any>;
     /**
      * Loads a flow given an ArchFlowInfo and returns an ArchBaseFlow instance for it to the supplied callback function.
      * @param archFlowInfo - flow information for the flow which you wish to load.
@@ -6005,7 +6023,13 @@ declare class ArchActionTransferToAcd extends ArchBaseActionTransfer {
      */
     static readonly isArchActionTransferToAcd: boolean;
     /**
-     * The integer priority for this transfer to acd action.  The value should be >=0 and <=10.
+     * The integer priority for this transfer to acd action.  When specifying a literal value, the
+     * value should be >= 0 and <= 10.  The available range of priority values is >= -25000000 and
+     * <= 25000000 which, if you need to set a value <0 or > 10 then you can do it with an expression
+     * where the expression text must call a function or operator so '10 + 5' would let you set a
+     * priority of 15 but setting expression text of '15' would be in error since it's specifying
+     * just a literal value in the expression text and it would then be validated similarly to the
+     * way a literal integer value is.
      */
     readonly priority: ArchValueInteger;
     /**
@@ -8158,8 +8182,14 @@ declare class ArchBaseFlow extends ArchBaseCoreObjectWithId {
      */
     getExportFilePath(destinationDir?: string, flowFormat?: string, fileName?: string): string;
     /**
+     * Returns the flow scoped variable for the supplied variable identifier ( if it exists ).
+     * If the variable name cannot be found, nothing is returned.
+     * @param variableId - the supllied variable identifier to look up such as __CALL_ANI__.
+     */
+    getVariableById(variableId: string): ArchBaseVariable;
+    /**
      * Returns the flow scoped variable for the supplied fully scoped variable name ( if it exists ).  Remember, looking
-     * up variables by name is case insensitive.  If the variable name cannot be found, nothing is returned;
+     * up variables by name is case insensitive.  If the variable name cannot be found, nothing is returned.
      * @param variableName - the fully scoped variable name to look up such as Flow.MyVar.
      */
     getVariableByName(variableName: string): ArchBaseVariable;
@@ -9325,6 +9355,12 @@ declare class ArchBaseVariable extends ArchBaseCoreObjectWithId {
      */
     readonly dataType: ArchDataType;
     /**
+     * The description of the variable. Calling the description setter with "", null or undefined
+     * are all treated as if you are setting the description string to undefined so if you were
+     * to call the description getter in that case, nothing is returned.
+     */
+    description: string;
+    /**
      * Returns true indicating that this is an ArchBaseVariable instance.
      */
     static readonly isArchBaseVariable: boolean;
@@ -10141,8 +10177,14 @@ declare class ArchFlowCommonModule extends ArchBaseFlow {
      */
     getExportFilePath(destinationDir?: string, flowFormat?: string, fileName?: string): string;
     /**
+     * Returns the flow scoped variable for the supplied variable identifier ( if it exists ).
+     * If the variable name cannot be found, nothing is returned.
+     * @param variableId - the supllied variable identifier to look up such as __CALL_ANI__.
+     */
+    getVariableById(variableId: string): ArchBaseVariable;
+    /**
      * Returns the flow scoped variable for the supplied fully scoped variable name ( if it exists ).  Remember, looking
-     * up variables by name is case insensitive.  If the variable name cannot be found, nothing is returned;
+     * up variables by name is case insensitive.  If the variable name cannot be found, nothing is returned.
      * @param variableName - the fully scoped variable name to look up such as Flow.MyVar.
      */
     getVariableByName(variableName: string): ArchBaseVariable;
@@ -15404,6 +15446,48 @@ declare class ArchValueUserCollection extends ArchBaseNetworkValueCollection {
 }
 
 /**
+ * + This class holds a value in Architect Scripting.
+ * + Data Type:  VoiceSnippet
+ * + At this time, no properties specific to the data type are being exposed in Architect Scripting.
+ * Note: Do not attempt to create an instance of this class directly.
+ * Instances of this class will be created automatically by Architect
+ * Scripting as needed.
+ * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
+ */
+declare class ArchValueVoiceSnippet extends ArchBaseValueSingleton {
+    // constructor(coreExpressionViewModel: any);
+    /**
+     * Returns the display type name string 'ArchValueVoiceSnippet'.
+     */
+    static readonly displayTypeName: string;
+    /**
+     * Returns true indicating that this is an ArchValueVoiceSnippet instance.
+     */
+    static readonly isArchValueVoiceSnippet: boolean;
+}
+
+/**
+ * + This class holds a value in Architect Scripting.
+ * + Data Type:  VoicemailSnippet
+ * + At this time, no properties specific to the data type are being exposed in Architect Scripting.
+ * Note: Do not attempt to create an instance of this class directly.
+ * Instances of this class will be created automatically by Architect
+ * Scripting as needed.
+ * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
+ */
+declare class ArchValueVoicemailSnippet extends ArchBaseValueSingleton {
+    // constructor(coreExpressionViewModel: any);
+    /**
+     * Returns the display type name string 'ArchValueVoicemailSnippet'.
+     */
+    static readonly displayTypeName: string;
+    /**
+     * Returns true indicating that this is an ArchValueVoicemailSnippet instance.
+     */
+    static readonly isArchValueVoicemailSnippet: boolean;
+}
+
+/**
  * This callback function type is invoked by Architect Scripting where the callback function is passed an Architect
  * wrapup code value instance such as {@link ArchValueWrapupCode#setLiteralByWrapupCodeIdAsync} or {@link ArchValueWrapupCode#setLiteralByWrapupCodeNameAsync}
  * @param archValueWrapupCode - the Architect wrapup code value instance.
@@ -16556,10 +16640,27 @@ declare class ArchVariableUserCollection extends ArchBaseVariableCollection {
 }
 
 /**
+ * + This class represents a variable in Architect Scripting.
+ * + Data Type:  VoiceSnippet
+ * Note: Do not attempt to create an instance of this class directly.
+ * Instances of this class will be created automatically by Architect
+ * Scripting as needed.
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
 declare class ArchVariableVoiceSnippet extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
+    /**
+     * The initial VoiceSnippet value for the variable at runtime.  If the {@link ArchValueVoiceSnippet} is set to [no value]{@link ArchBaseValue#isNoValue}, this will be a NOT_SET VoiceSnippet at runtime.
+     */
+    readonly initialValue: ArchValueVoiceSnippet;
+    /**
+     * Returns the display type name string 'ArchVariableVoiceSnippet'.
+     */
+    static readonly displayTypeName: string;
+    /**
+     * Returns true indicating that this is an ArchVariableVoiceSnippet instance.
+     */
+    static readonly isArchVariableVoiceSnippet: boolean;
 }
 
 /**
