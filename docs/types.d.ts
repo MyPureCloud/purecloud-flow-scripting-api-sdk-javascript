@@ -206,6 +206,7 @@ declare class ArchEnums {
      * &nbsp;&nbsp;changeState:     'state',
      * &nbsp;&nbsp;disconnect:      'disconnect',
      * &nbsp;&nbsp;endWorkflow:     'endWorkflow',
+     * &nbsp;&nbsp;endWorkflow:     'exit',
      * &nbsp;&nbsp;jumpToMenu:      'menu',
      * &nbsp;&nbsp;transferToQueue: 'queue',
      * &nbsp;&nbsp;jumpToTask:      'task'
@@ -331,6 +332,7 @@ declare class ArchEnums {
      * {
      * &nbsp;&nbsp;dev:                 'dev',                 // used internally by Genesys
      * &nbsp;&nbsp;test:                'test',                // used internally by Genesys
+     * &nbsp;&nbsp;maximus_us_east_2:   'maximus_us_east_2',
      * &nbsp;&nbsp;prod_ap_northeast_1: 'prod_ap_northeast_1',
      * &nbsp;&nbsp;prod_ap_northeast_2: 'prod_ap_northeast_2',
      * &nbsp;&nbsp;prod_ap_southeast_2: 'prod_ap_southeast_2',
@@ -6106,6 +6108,13 @@ declare class ArchActionTransferToAcd extends ArchBaseActionTransfer {
      * when calling the setter.
      */
     inQueueHandlingFlowInfo: ArchFlowInfoBasic;
+    /**
+     * This reflects the [flow type]{@link ArchEnums#FLOW_TYPES} that should be used when specifying the flow info supplied
+     * to the {@link ArchActionTransferToAcd#inQueueHandlingFlowInfo} property. If no in-queue override flow type is
+     * applicable in this action instance, nothing is returned. An example of when an override flow type is not available
+     * is when a Transfer to ACD action is used in an Inbound Chat flow since there isn't any In-Queue Chat flow type.
+     */
+    readonly inQueueHandlingFlowType: string;
 }
 
 /**
@@ -8556,12 +8565,12 @@ declare class ArchBaseMultiActionContainer extends ArchBaseCoreObjectWithId {
     readonly actionCount: number;
     /**
      * Returns the first / starting action in this container's action list.  For a task or
-     * state, this would be the starting action.  If there is no first action, undefined is returned.
+     * state, this would be the starting action.  If there is no first action, nothing is returned.
      */
     readonly actionFirst: ArchBaseAction;
     /**
      * Returns the last action in this container's action list.  If there is no last
-     * action, undefined is returned.  Remember, this does not mean this would be the last action
+     * action, nothing is returned.  Remember, this does not mean this would be the last action
      * to execute at runtime because the last action may have outputs with actions contained
      * underneath them.
      */
@@ -10780,7 +10789,7 @@ declare class ArchMenu extends ArchBaseMenu {
     /**
      * Gets or sets the default menu choice for this menu.  To be a valid default menu choice, the menu choice must be
      * a child of this menu.  To clear the default menu choice, set the value to null or undefined.  If no default menu
-     * choice is specified, and the getter is called, undefined is returned.
+     * choice is specified, and the getter is called, nothing is returned.
      */
     menuDefault: ArchBaseMenuChoice;
     /**
@@ -10980,7 +10989,7 @@ declare class ArchMenuSubMenu extends ArchBaseMenuChoice {
     /**
      * Gets or sets the default menu choice for this sub menu.  To be a valid default menu choice, the menu choice must be
      * a child of this sub menu.  To clear the default menu choice, set the value to null or undefined.  If no default menu
-     * choice is specified, and the getter is called, undefined is returned.
+     * choice is specified, and the getter is called, nothing is returned.
      */
     menuDefault: ArchBaseMenuChoice;
     /**
@@ -11809,6 +11818,11 @@ declare class ArchSettingsEventErrorFlowBot extends ArchSettingsEventErrorFlow {
      */
     readonly agentEscalationHandover: ArchValueCommunication;
     /**
+     * A boolean value which lets you configure whether or not the bot listening to requests to speak to a human.
+     * When creating a new bot flow this will be set to true by default.
+     */
+    readonly enableAgentEscalation: ArchValueBoolean;
+    /**
      * Wording the bot will use Bot when there is an error encountered during the execution of the flow. Examples of
      * such an error include a divide-by-zero error or submitting a NOT_SET value to a function that does not allow it.
      */
@@ -12395,6 +12409,79 @@ declare class ArchSettingsUserInput extends ArchBaseCoreObject {
      */
     static readonly displayTypeName: string;
     /**
+     * Returns true indicating that this is an ArchSettingsUserInput instance.
+     */
+    readonly isArchSettingsUserInput: boolean;
+    /**
+     * The minimum confidence level percentage (score) that an input phrase must receive to be accepted without
+     * triggering a confirmation question.
+     */
+    readonly collectionHighConfidenceThreshold: ArchValueInteger;
+    /**
+     * The minimum confidence level percentage (score) that an input phrase must receive to avoid a No Match. If the
+     * confidence level of an input phrase is above this threshold then the bot will either accept it or confirm it
+     * with the participant, depending on the value of the collectionHighConfidenceThreshold property.
+     */
+    readonly collectionLowConfidenceThreshold: ArchValueInteger;
+    /**
+     * The minimum confidence level percentage (score) that an input phrase must receive to be accepted without
+     * triggering a confirmation question.
+     */
+    readonly confirmationLowConfidenceThreshold: ArchValueInteger;
+    /**
+     * This Communication is output prior to the bot repeating the current confirmation question whenever the bot does
+     * not receive any input during a confirmation.
+     */
+    readonly confirmationNoInputApology: ArchValueCommunication;
+    /**
+     * Wording the bot will output prior to the bot repeating the current confirmation question whenever the bot
+     * receives input that is neither a yes nor a no during a confirmation.
+     */
+    readonly confirmationNoMatchApology: ArchValueCommunication;
+    /**
+     * For the current 'Ask for ...' action, this is the maximum number of times that the bot will allow the
+     * participant to say no while the bot is confirming an input. If the number exceeds this maximum then the
+     * rules in the flow's Event Handling 'Recognition Failure Event' section will be followed, or if the action
+     * has a 'No Intent' path then that path will be taken at runtime instead.
+     */
+    readonly confirmationRejectionsMax: ArchValueInteger;
+    /**
+     * This Communication is output prior to the current 'Ask for ...' action's 'No Input' Communication whenever the
+     * bot does not receive any input from the participant.
+     */
+    readonly noInputApology: ArchValueCommunication;
+    /**
+     * For the current 'Ask for ...' action, this is the maximum number of times that the bot will allow no input
+     * (i.e. silence) from the participant. If the number exceeds this maximum then the rules in the flow's Event
+     * Handling 'Recognition Failure Event' section will be followed, or if the action has a 'No Intent' path then
+     * that path will be taken at runtime instead. No Input in both the 'Normal' and 'Confirmation' phases of the
+     * 'Ask for ...' action will count towards this maximum.
+     */
+    readonly noInputsMax: ArchValueInteger;
+    /**
+     * Once the current Communication has finished playing, this is the maximum length of time to wait for the
+     * participant to start speaking.  If no speech is detected within this time then a No Input will be triggered.
+     */
+    readonly noInputsTimeout: ArchValueDuration;
+    /**
+     * Wording the bot will output prior to the current 'Ask for ...' action's 'No Match' Communication whenever the bot
+     * receives input from the participant that is not a valid match.
+     */
+    readonly noMatchApology: ArchValueCommunication;
+    /**
+     * For the current 'Ask for ...' action, this is the maximum number of times that the bot will expect to receive
+     * input that is not a valid match.  If the number exceeds this maximum then the rules in the flow's Event Handling
+     * 'Recognition Failure Event' section will be followed, or if the action has a 'No Intent' path then that path
+     * will be taken at runtime instead.  No Match in both the 'Normal' and 'Confirmation' phases of the 'Ask for ...'
+     * action will count towards this maximum.
+     */
+    readonly noMatchesMax: ArchValueInteger;
+    /**
+     * Wording the bot will output prior to the current 'Ask for ...' action's 'No Match' Communication whenever the
+     * participant says no while the bot is confirming the participant's last input.
+     */
+    readonly noToConfirmationApology: ArchValueCommunication;
+    /**
      * Returns true indicating that this is an ArchBaseCoreObject instance.
      */
     readonly isArchBaseCoreObject: boolean;
@@ -12884,12 +12971,12 @@ declare class ArchTaskCommonModule extends ArchTask {
     readonly actionCount: number;
     /**
      * Returns the first / starting action in this container's action list.  For a task or
-     * state, this would be the starting action.  If there is no first action, undefined is returned.
+     * state, this would be the starting action.  If there is no first action, nothing is returned.
      */
     readonly actionFirst: ArchBaseAction;
     /**
      * Returns the last action in this container's action list.  If there is no last
-     * action, undefined is returned.  Remember, this does not mean this would be the last action
+     * action, nothing is returned.  Remember, this does not mean this would be the last action
      * to execute at runtime because the last action may have outputs with actions contained
      * underneath them.
      */
