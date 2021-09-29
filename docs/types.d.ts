@@ -555,14 +555,18 @@ declare class ArchEnums {
      * Returns a JSON object with these properties whose values are valid variable scopes:
      * ```
      * {
-     * &nbsp;&nbsp;common:      'common',
+     * &nbsp;&nbsp;bot:         'bot',
      * &nbsp;&nbsp;call:        'call',
      * &nbsp;&nbsp;chat:        'chat',
      * &nbsp;&nbsp;common:      'common'
+     * &nbsp;&nbsp;email:       'email',
      * &nbsp;&nbsp;flow:        'flow',
      * &nbsp;&nbsp;interaction: 'interaction',
+     * &nbsp;&nbsp;interaction: 'message',
+     * &nbsp;&nbsp;session:     'session',
      * &nbsp;&nbsp;slot:        'slot',
      * &nbsp;&nbsp;state:       'state',
+     * &nbsp;&nbsp;survey:      'survey'
      * &nbsp;&nbsp;task:        'task',
      * &nbsp;&nbsp;workflow:    'workflow'
      * }
