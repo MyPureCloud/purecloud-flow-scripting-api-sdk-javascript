@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: ArchVariableExternalContact | Architect Scripting</title>
+    <title>Class: ArchSettingsNluKnowledge | Architect Scripting</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -50,7 +50,11 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ArchVariableExternalContact<span class="signature">(coreVariableViewModel)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ArchSettingsNluKnowledge<span class="signature">(coreKnowledgeSettingsViewModel)</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description"><p>Creates an instance of an ArchSettingsNluKnowledge.  This is the Scripting class that handles the natural
+language understanding knowledge settings which includes the ability to pick a knowledge base for a bot
+to use.</p></div>
         
     
 </header>
@@ -63,9 +67,9 @@
 
 <dt>
     
-        <h4 class="name" id="ArchVariableExternalContact">
+        <h4 class="name" id="ArchSettingsNluKnowledge">
             
-                new <span class="type-signature"></span>ArchVariableExternalContact<span class="signature">(coreVariableViewModel)</span><span class="type-signature"></span>
+                new <span class="type-signature"></span>ArchSettingsNluKnowledge<span class="signature">(coreKnowledgeSettingsViewModel)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -75,16 +79,6 @@
 </dt>
 <dd>
 
-    
-    <div class="description">
-        <ul>
-<li>This class represents a variable in Architect Scripting.</li>
-<li>Data Type:  ExternalContact
-Note: Do not attempt to create an instance of this class directly.
-Instances of this class will be created automatically by Architect
-Scripting as needed.</li>
-</ul>
-    </div>
     
 
     
@@ -119,10 +113,15 @@ Scripting as needed.</li>
 
         <tr>
             
-                <td class="name"><code>coreVariableViewModel</code></td>
+                <td class="name"><code>coreKnowledgeSettingsViewModel</code></td>
             
 
             <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
             
             </td>
 
@@ -130,7 +129,7 @@ Scripting as needed.</li>
 
             
 
-            <td class="description last"><p>( <em>Internal</em> ) an Architect core variable view model.</p></td>
+            <td class="description last"><p>( <em>Internal</em> ) an Architect core error knowledge settings view model.</p></td>
         </tr>
 
     
@@ -204,7 +203,7 @@ Scripting as needed.</li>
 
 
     <ul>
-        <li><a href="ArchBaseVariableSingleton.html">ArchBaseVariableSingleton</a></li>
+        <li><a href="ArchBaseCoreObject.html">ArchBaseCoreObject</a></li>
     </ul>
 
 
@@ -237,7 +236,7 @@ Scripting as needed.</li>
 <dd>
     
     <div class="description">
-        <p>Returns the display type name string 'ArchVariableExternalContact'.</p>
+        <p>Returns the display type name string 'ArchSettingsNluKnowledge'.</p>
     </div>
     
 
@@ -248,560 +247,6 @@ Scripting as needed.</li>
             <li>
                 
 <span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id=".isArchVariableExternalContact">
-    <span class="type-signature"><span class="icon green">static</span>, <span class="icon green">readonly</span> </span>isArchVariableExternalContact<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns true indicating that this is an ArchVariableExternalContact instance.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="dataType">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>dataType<span class="type-signature"> :<a href="ArchDataType.html">ArchDataType</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns the Architect Scripting data type for this variable.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchDataType.html">ArchDataType</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#dataType">ArchBaseVariable#dataType</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="description">
-    <span class="type-signature"></span>description<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The description of the variable. Calling the description setter with &quot;&quot;, null or undefined
-are all treated as if you are setting the description string to undefined so if you were
-to call the description getter in that case, nothing is returned.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#description">ArchBaseVariable#description</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="hasUsages">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>hasUsages<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not the variable consumed by the flow.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#hasUsages">ArchBaseVariable#hasUsages</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="id">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>id<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The identifier string for this object.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseCoreObjectWithId.html#id">ArchBaseCoreObjectWithId#id</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="idMayBeBlank">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>idMayBeBlank<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not the id property may be blank or undefined for this object.  For example, the returned settings from <a href="ArchMenu.html#settingsMenu"><code>ArchMenu#settingsMenu</code></a>
-will have a blank identifier along with the settings returned from <a href="ArchMenu.html#settingsSpeechRec"><code>ArchMenu#settingsSpeechRec</code></a>.  Note that this is
-an extremely rare case.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseCoreObjectWithId.html#idMayBeBlank">ArchBaseCoreObjectWithId#idMayBeBlank</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="ArchBaseCoreObjectWithId.html#id">ArchBaseCoreObjectWithId#id</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="initialValue">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>initialValue<span class="type-signature"> :<a href="ArchValueExternalContact.html">ArchValueExternalContact</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The initial ExternalContact value for the variable at runtime.  If the <a href="ArchValueExternalContact.html"><code>ArchValueExternalContact</code></a> is set to <a href="ArchBaseValue.html#isNoValue"><code>no value</code></a>, this will be a NOT_SET ExternalContact at runtime.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchValueExternalContact.html">ArchValueExternalContact</a></span>
 
 
             </li>
@@ -893,8 +338,10 @@ an extremely rare case.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
         <a href="ArchBaseCoreObject.html#isArchBaseCoreObject">ArchBaseCoreObject#isArchBaseCoreObject</a>
     </li></ul></dd>
     
@@ -920,8 +367,6 @@ an extremely rare case.</p>
     
 
     
-
-    
 </dl>
 
 
@@ -934,8 +379,8 @@ an extremely rare case.</p>
             
 
 <dt>
-<h4 class="name" id="isFlowVariable">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isFlowVariable<span class="type-signature"> :boolean</span>
+<h4 class="name" id="isArchSettingsNluKnowledge">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isArchSettingsNluKnowledge<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -944,7 +389,7 @@ an extremely rare case.</p>
 <dd>
     
     <div class="description">
-        <p>Returns whether or not this variable is a flow variable.</p>
+        <p>Returns true indicating that this is an ArchSettingsNluKnowledge instance.</p>
     </div>
     
 
@@ -971,94 +416,6 @@ an extremely rare case.</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#isFlowVariable">ArchBaseVariable#isFlowVariable</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isInput">
-    <span class="type-signature"></span>isInput<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Whether or not this variable is an input variable.  Remember that the ability to be an input
-variable depends on whether the variable is a flow, state or task variable and what type of
-flow it is in.  You can use the <a href="ArchBaseVariable.html#settings"><code>ArchBaseVariable#settings</code></a> property to get at a settings
-object and access the <a href="ArchVariableSettings.html#canSetIsInput"><code>ArchVariableSettings#canSetIsInput</code></a> to know whether or not it is valid
-to configure this property.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#isInput">ArchBaseVariable#isInput</a>
-    </li></ul></dd>
     
 
     
@@ -1096,8 +453,8 @@ to configure this property.</p>
             
 
 <dt>
-<h4 class="name" id="isOutput">
-    <span class="type-signature"></span>isOutput<span class="type-signature"> :boolean</span>
+<h4 class="name" id="knowledgeBaseId">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>knowledgeBaseId<span class="type-signature"> :string</span>
     
 </h4>
 
@@ -1106,11 +463,8 @@ to configure this property.</p>
 <dd>
     
     <div class="description">
-        <p>Whether or not this variable is an output variable.  Remember that the ability to be an output
-variable depends on whether the variable is a flow, state or task variable and what type of
-flow it is in.  You can use the <a href="ArchBaseVariable.html#settings"><code>ArchBaseVariable#settings</code></a> property to get at a settings
-object and access the <a href="ArchVariableSettings.html#canSetIsOutput"><code>ArchVariableSettings#canSetIsOutput</code></a> to know whether or not it is valid
-to configure this property.</p>
+        <p>Returns the knowledge base id if there is one set on this ArchActionSettingsNluKnowledge instance. If there is not one set,
+nothing is returned.</p>
     </div>
     
 
@@ -1120,7 +474,7 @@ to configure this property.</p>
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type">string</span>
 
 
             </li>
@@ -1137,11 +491,6 @@ to configure this property.</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#isOutput">ArchBaseVariable#isOutput</a>
-    </li></ul></dd>
     
 
     
@@ -1179,8 +528,8 @@ to configure this property.</p>
             
 
 <dt>
-<h4 class="name" id="isSecure">
-    <span class="type-signature"></span>isSecure<span class="type-signature"> :boolean</span>
+<h4 class="name" id="knowledgeBaseName">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>knowledgeBaseName<span class="type-signature"> :string</span>
     
 </h4>
 
@@ -1189,7 +538,8 @@ to configure this property.</p>
 <dd>
     
     <div class="description">
-        <p>Whether or not this variable is secure.</p>
+        <p>Returns the knowledge base name if there is one set on this ArchActionSettingsNluKnowledge instance. If there is not one set,
+nothing is returned.</p>
     </div>
     
 
@@ -1199,7 +549,7 @@ to configure this property.</p>
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type">string</span>
 
 
             </li>
@@ -1216,11 +566,6 @@ to configure this property.</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#isSecure">ArchBaseVariable#isSecure</a>
-    </li></ul></dd>
     
 
     
@@ -1258,8 +603,8 @@ to configure this property.</p>
             
 
 <dt>
-<h4 class="name" id="isStateVariable">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isStateVariable<span class="type-signature"> :boolean</span>
+<h4 class="name" id="knowledgeConfirmation">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>knowledgeConfirmation<span class="type-signature"> :<a href="ArchValueCommunication.html">ArchValueCommunication</a></span>
     
 </h4>
 
@@ -1268,7 +613,7 @@ to configure this property.</p>
 <dd>
     
     <div class="description">
-        <p>Returns whether or not this variable is a state variable.</p>
+        <p>Wording the bot will use after playing back one or more knowledge base answers.  For example, 'Does this answer your question?'</p>
     </div>
     
 
@@ -1278,7 +623,7 @@ to configure this property.</p>
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type"><a href="ArchValueCommunication.html">ArchValueCommunication</a></span>
 
 
             </li>
@@ -1295,11 +640,6 @@ to configure this property.</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#isStateVariable">ArchBaseVariable#isStateVariable</a>
-    </li></ul></dd>
     
 
     
@@ -1337,8 +677,8 @@ to configure this property.</p>
             
 
 <dt>
-<h4 class="name" id="isTaskVariable">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isTaskVariable<span class="type-signature"> :boolean</span>
+<h4 class="name" id="knowledgeInitialResponseMulti">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>knowledgeInitialResponseMulti<span class="type-signature"> :<a href="ArchValueCommunication.html">ArchValueCommunication</a></span>
     
 </h4>
 
@@ -1347,7 +687,8 @@ to configure this property.</p>
 <dd>
     
     <div class="description">
-        <p>Returns whether or not this variable is a task variable.</p>
+        <p>Wording the bot will use to introduce a numbered list of matching Knowledge answers, in the case
+where multiple good matches are found in the Knowledge Base. For example, 'This is what I found'</p>
     </div>
     
 
@@ -1357,7 +698,7 @@ to configure this property.</p>
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type"><a href="ArchValueCommunication.html">ArchValueCommunication</a></span>
 
 
             </li>
@@ -1374,11 +715,6 @@ to configure this property.</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#isTaskVariable">ArchBaseVariable#isTaskVariable</a>
-    </li></ul></dd>
     
 
     
@@ -1416,8 +752,8 @@ to configure this property.</p>
             
 
 <dt>
-<h4 class="name" id="isUnavailable">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isUnavailable<span class="type-signature"> :boolean</span>
+<h4 class="name" id="knowledgeInitialResponseMultiRetry">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>knowledgeInitialResponseMultiRetry<span class="type-signature"> :<a href="ArchValueCommunication.html">ArchValueCommunication</a></span>
     
 </h4>
 
@@ -1426,8 +762,9 @@ to configure this property.</p>
 <dd>
     
     <div class="description">
-        <p>Returns whether or not the variable is available for use.  Sometimes variables are feature toggled
-off and are not available for use in a flow.</p>
+        <p>Wording the bot will use to re-introduce a numbered list of matching Knowledge answers, in the case
+where the user's first attempt to choose a number was unsuccessful.
+For example, 'I didn't understand that. Please pick one of the following:'</p>
     </div>
     
 
@@ -1437,7 +774,7 @@ off and are not available for use in a flow.</p>
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type"><a href="ArchValueCommunication.html">ArchValueCommunication</a></span>
 
 
             </li>
@@ -1455,10 +792,153 @@ off and are not available for use in a flow.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#isUnavailable">ArchBaseVariable#isUnavailable</a>
-    </li></ul></dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="knowledgeInitialResponseSingle">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>knowledgeInitialResponseSingle<span class="type-signature"> :<a href="ArchValueCommunication.html">ArchValueCommunication</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Wording the bot will use prior to playing back a single knowledge base answer. For example, 'This is what I found'</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueCommunication.html">ArchValueCommunication</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="knowledgeNoMatch">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>knowledgeNoMatch<span class="type-signature"> :<a href="ArchValueCommunication.html">ArchValueCommunication</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Wording the bot will use to represent the 'no match' option.  For example, 'None of the above'</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueCommunication.html">ArchValueCommunication</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
     
 
     
@@ -1506,7 +986,9 @@ off and are not available for use in a flow.</p>
 <dd>
     
     <div class="description">
-        <p>A string suitable for logging that contains information about this variable.</p>
+        <p>This is a string suitable for logging information about this object which is generated by the Architect Scripting object itself.
+Usually this contains stuff like the tracking ID, name, type information, etc. etc.  This information will be used as the
+header for actual logging calls.</p>
     </div>
     
 
@@ -1534,12 +1016,12 @@ off and are not available for use in a flow.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#logStr">ArchBaseVariable#logStr</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseCoreObject.html#logStr">ArchBaseCoreObject#logStr</a>
+    </li></ul></dd>
     
 
     
@@ -1615,10 +1097,84 @@ logging str contents wouldn't be set up.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logStrTypeOnly">ArchBaseObject#logStrTypeOnly</a>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseCoreObject.html#logStrTypeOnly">ArchBaseCoreObject#logStrTypeOnly</a>
     </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="maxNumOfAnswersReturned">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>maxNumOfAnswersReturned<span class="type-signature"> :<a href="ArchValueInteger.html">ArchValueInteger</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The maximum number of knowledge base answers to be returned by the bot from the selected knowledge base.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueInteger.html">ArchValueInteger</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
     
 
     
@@ -1656,8 +1212,8 @@ logging str contents wouldn't be set up.</p>
             
 
 <dt>
-<h4 class="name" id="name">
-    <span class="type-signature"></span>name<span class="type-signature"> :string</span>
+<h4 class="name" id="responseBias">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>responseBias<span class="type-signature"> :<a href="ArchValueString.html">ArchValueString</a></span>
     
 </h4>
 
@@ -1666,7 +1222,9 @@ logging str contents wouldn't be set up.</p>
 <dd>
     
     <div class="description">
-        <p>The name of the variable</p>
+        <p>The bias the bot should use when interpreting participant input to prefer knowledge base answers, other
+natural language understanding settings such as intents, or weight input equally.  The string values in <code>ArchEnums#NLU_RESPONSE_BIAS_MODES</code>
+lists valid values.</p>
     </div>
     
 
@@ -1676,7 +1234,7 @@ logging str contents wouldn't be set up.</p>
         <ul>
             <li>
                 
-<span class="param-type">string</span>
+<span class="param-type"><a href="ArchValueString.html">ArchValueString</a></span>
 
 
             </li>
@@ -1693,11 +1251,6 @@ logging str contents wouldn't be set up.</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#name">ArchBaseVariable#name</a>
-    </li></ul></dd>
     
 
     
@@ -1735,8 +1288,8 @@ logging str contents wouldn't be set up.</p>
             
 
 <dt>
-<h4 class="name" id="parentFlow">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>parentFlow<span class="type-signature"> :<a href="ArchBaseFlow.html">ArchBaseFlow</a></span>
+<h4 class="name" id="sendKnowledgeFeedback">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>sendKnowledgeFeedback<span class="type-signature"> :<a href="ArchValueBoolean.html">ArchValueBoolean</a></span>
     
 </h4>
 
@@ -1745,7 +1298,8 @@ logging str contents wouldn't be set up.</p>
 <dd>
     
     <div class="description">
-        <p>Returns the parent flow for this variable.</p>
+        <p>A boolean value which, if it evaluates to true, will send knowledge confirmation feedback to the knowledge service
+which will be used to improve the performance of your knowledge base.</p>
     </div>
     
 
@@ -1755,7 +1309,7 @@ logging str contents wouldn't be set up.</p>
         <ul>
             <li>
                 
-<span class="param-type"><a href="ArchBaseFlow.html">ArchBaseFlow</a></span>
+<span class="param-type"><a href="ArchValueBoolean.html">ArchValueBoolean</a></span>
 
 
             </li>
@@ -1772,250 +1326,6 @@ logging str contents wouldn't be set up.</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#parentFlow">ArchBaseVariable#parentFlow</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="scope">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>scope<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns the scope of the variable.  The string values in <a href="ArchEnums.html#VARIABLE_SCOPES"><code>ArchEnums#VARIABLE_SCOPES</code></a>
-lists valid values.  The scope is the prefix you will see on variable names.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#scope">ArchBaseVariable#scope</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="settings">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>settings<span class="type-signature"> :<a href="ArchVariableSettings.html">ArchVariableSettings</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns the settings associated with this variable which provides meta data about this variable like
-whether it can be configured as an input or output.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchVariableSettings.html">ArchVariableSettings</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#settings">ArchBaseVariable#settings</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="type">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>type<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The core type for this variable</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#type">ArchBaseVariable#type</a>
-    </li></ul></dd>
     
 
     
@@ -2178,12 +1488,12 @@ for the supplied ArchFilterObject instance.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#isFilterMatch">ArchBaseObject#isFilterMatch</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseCoreObject.html#isFilterMatch">ArchBaseCoreObject#isFilterMatch</a>
+    </li></ul></dd>
     
 
     
@@ -2317,12 +1627,12 @@ for the supplied ArchFilterObject instance.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logError">ArchBaseObject#logError</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseCoreObject.html#logError">ArchBaseCoreObject#logError</a>
+    </li></ul></dd>
     
 
     
@@ -2471,12 +1781,12 @@ the string in the errorStr parameter.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logErrorAndThrow">ArchBaseObject#logErrorAndThrow</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseCoreObject.html#logErrorAndThrow">ArchBaseCoreObject#logErrorAndThrow</a>
+    </li></ul></dd>
     
 
     
@@ -2610,12 +1920,12 @@ the string in the errorStr parameter.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logNote">ArchBaseObject#logNote</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseCoreObject.html#logNote">ArchBaseCoreObject#logNote</a>
+    </li></ul></dd>
     
 
     
@@ -2749,12 +2059,12 @@ the string in the errorStr parameter.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logNoteVerbose">ArchBaseObject#logNoteVerbose</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseCoreObject.html#logNoteVerbose">ArchBaseCoreObject#logNoteVerbose</a>
+    </li></ul></dd>
     
 
     
@@ -2888,12 +2198,12 @@ the string in the errorStr parameter.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logWarning">ArchBaseObject#logWarning</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseCoreObject.html#logWarning">ArchBaseCoreObject#logWarning</a>
+    </li></ul></dd>
     
 
     
@@ -2929,9 +2239,9 @@ the string in the errorStr parameter.</p>
 
 <dt>
     
-        <h4 class="name" id="rename">
+        <h4 class="name" id="setKnowledgeBaseByIdAsync">
             
-                <span class="type-signature"></span>rename<span class="signature">(newName)</span><span class="type-signature"></span>
+                <span class="type-signature"></span>setKnowledgeBaseByIdAsync<span class="signature">(knowledgeBaseId, callbackFunction<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -2943,7 +2253,7 @@ the string in the errorStr parameter.</p>
 
     
     <div class="description">
-        <p>Renames the variable to a new name.</p>
+        <p>This sets the knowledge base that will be used for use at runtime by the knowledge base id.</p>
     </div>
     
 
@@ -2967,6 +2277,8 @@ the string in the errorStr parameter.</p>
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -2979,7 +2291,7 @@ the string in the errorStr parameter.</p>
 
         <tr>
             
-                <td class="name"><code>newName</code></td>
+                <td class="name"><code>knowledgeBaseId</code></td>
             
 
             <td class="type">
@@ -2992,13 +2304,53 @@ the string in the errorStr parameter.</p>
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
-            <td class="description last"><p>the new name to assign to the variable.  This should be just the new variable name
-with no scope prefix like Flow., Task. or State.  Variable names need to be at least
-one character long and start with a letter.  Subsequent characters must either be a
-letter, underscore or digit.</p></td>
+            <td class="description last"><p>the id of the  Knowledge Base to set.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callbackFunction</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>a callback function to call if the Knowledge Base is successfully
+looked up and configured on this action. The first parameter passed to the
+callback function will be this Architect NLU Knowledge Settings instance.</p></td>
         </tr>
 
     
@@ -3030,11 +2382,6 @@ letter, underscore or digit.</p></td>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#rename">ArchBaseVariable#rename</a>
-    </li></ul></dd>
-    
 
     
 
@@ -3071,9 +2418,9 @@ letter, underscore or digit.</p></td>
 
 <dt>
     
-        <h4 class="name" id="setInitialValueNotSet">
+        <h4 class="name" id="setKnowledgeBaseByNameAsync">
             
-                <span class="type-signature"></span>setInitialValueNotSet<span class="signature">()</span><span class="type-signature"></span>
+                <span class="type-signature"></span>setKnowledgeBaseByNameAsync<span class="signature">(knowledgeBaseName, callbackFunction<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -3085,9 +2432,7 @@ letter, underscore or digit.</p></td>
 
     
     <div class="description">
-        <p>Sets the initial value of the singleton variable to NOT_SET.
-Note:  This is a wrapper around calling accessing the initialValue
-property and calling setNoValue() on it.</p>
+        <p>This sets the knowledge base that will be used for use at runtime by the knowledge base name.</p>
     </div>
     
 
@@ -3097,6 +2442,101 @@ property and calling setNoValue() on it.</p>
 
     
 
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>knowledgeBaseName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>the name of the Knowledge Base to set. Knowledge Base names are looked up case insensitively.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callbackFunction</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>a callback function to call if the Knowledge Base is successfully
+looked up and configured on this action. The first parameter passed to the
+callback function will be this Architect NLU Knowledge Settings instance.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
     
 
     
@@ -3120,11 +2560,6 @@ property and calling setNoValue() on it.</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariableSingleton.html#setInitialValueNotSet">ArchBaseVariableSingleton#setInitialValueNotSet</a>
-    </li></ul></dd>
     
 
     
@@ -3401,12 +2836,12 @@ use that traversal default filter.  The wantArchBaseValues parameter on that cal
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
         <a href="ArchBaseCoreObject.html#traverse">ArchBaseCoreObject#traverse</a>
     </li></ul></dd>
-    
-
     
 
     
@@ -3462,7 +2897,7 @@ use that traversal default filter.  The wantArchBaseValues parameter on that cal
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'ArchVariableExternalContact_sub'.replace(/"/g, '_');
+        var id = 'ArchSettingsNluKnowledge_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
