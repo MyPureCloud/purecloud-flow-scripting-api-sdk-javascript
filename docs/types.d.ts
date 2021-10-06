@@ -10140,7 +10140,24 @@ declare class ArchFlowCommonModule extends ArchBaseFlow {
     /**
      * Returns the display type name string 'ArchFlowCommonModule'.
      */
-    readonly displayTypeName: string;
+    static readonly displayTypeName: string;
+    /**
+     * Returns true indicating that this is an ArchFlowCommonModule instance.
+     */
+    isArchFlowCommonModule: boolean;
+    /**
+     * The common module settings for the flow where you can set the compatible flow types.
+     */
+    readonly settingsCommonModule: ArchSettingsCommonModuleFlow;
+    /**
+     * The prompt settings for the flow. If no destination flow types configured on this Common Module flow support prompt settings,
+     * nothing is returned.
+     */
+    readonly settingsPrompts: ArchSettingsPromptsFlow;
+    /**
+     * Returns the starting task for this common module flow.
+     */
+    readonly startUpObject: ArchTask;
     /**
      * This adds a new variable to the flow.
      * @param name - the name of the variable to add.  Remember that variable names must
@@ -12744,6 +12761,10 @@ declare class ArchSettingsUserInput extends ArchBaseCoreObject {
      * has a 'No Intent' path then that path will be taken at runtime instead.
      */
     readonly confirmationRejectionsMax: ArchValueInteger;
+    /**
+     * A Boolean value which enables or disables barge-in functionality in the Bot Flow at runtime.
+     */
+    readonly enableBargeIn: ArchValueBoolean;
     /**
      * This Communication is output prior to the current 'Ask for ...' action's 'No Input' Communication whenever the
      * bot does not receive any input from the participant.
