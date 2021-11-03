@@ -206,7 +206,7 @@ declare class ArchEnums {
      * &nbsp;&nbsp;changeState:     'state',
      * &nbsp;&nbsp;disconnect:      'disconnect',
      * &nbsp;&nbsp;endWorkflow:     'endWorkflow',
-     * &nbsp;&nbsp;endWorkflow:     'exit',
+     * &nbsp;&nbsp;exit:            'exit',
      * &nbsp;&nbsp;jumpToMenu:      'menu',
      * &nbsp;&nbsp;transferToQueue: 'queue',
      * &nbsp;&nbsp;jumpToTask:      'task'
@@ -367,6 +367,23 @@ declare class ArchEnums {
      * Returns a string array that contains all valid log types.
      */
     readonly LOG_TYPES_ALL: string[];
+    /**
+     * Returns a JSON object with these properties whose values can be used for natural language
+     * understanding response modes.
+     * ```
+     * {
+     * &nbsp;&nbsp;intents: 'intents',
+     * &nbsp;&nbsp;knowledge: 'knowledge',
+     * &nbsp;&nbsp;neutral: 'neutral'
+     * }
+     * ```
+     */
+    readonly NLU_RESPONSE_BIAS_MODES: any;
+    /**
+     * Returns a string array that contains all valid natural language understanding response
+     * bias modes.
+     */
+    readonly NLU_RESPONSE_BIAS_MODES_ALL: string[];
     /**
      * Returns a JSON object with these properties whose values are valid output identifier strings:
      * ```
@@ -9678,7 +9695,8 @@ declare class ArchDefinitionFlow extends ArchBaseDefinition {
      */
     readonly availableMenus: ArchBaseMenu[];
     /**
-     * Returns whether or not flow instances can be created from this flow definition.
+     * Returns whether or not flow instances can be created in memory using create methods from {@link ArchFactoryFlows} such as
+     * {@link ArchFactoryFlows#createFlowFromDefinitionAsync} or {@link ArchFactoryFlows#createFlowInboundCallAsync}.
      */
     readonly canCreateFromDefinition: boolean;
     /**
@@ -10719,6 +10737,15 @@ declare class ArchFlowInfo extends ArchBaseCoreObjectWithId {
      * Returns whether or not this flow is published.
      */
     readonly isPublished: boolean;
+    /**
+     * Returns whether or not this is a built-in system flow such as
+     * the 'Default In-Queue Flow'. A system flow in Architect is
+     * one whose version 1.0 logic is pre-configured by Architect
+     * and while it can be customized by flow authors, deleting a
+     * system flow is different from deleting a non-system flow in
+     * that the flow will revert back the default version 1.0 configuration.
+     */
+    readonly isSystem: boolean;
     /**
      * Gets name for the flow contained in this flow info instance.
      */
