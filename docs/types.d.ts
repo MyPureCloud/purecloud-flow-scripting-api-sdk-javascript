@@ -9767,6 +9767,10 @@ declare class ArchDefinitionFlow extends ArchBaseDefinition {
      */
     readonly supportsAudio: boolean;
     /**
+     * Returns whether or not this flow type supports default languages.
+     */
+    readonly supportsDefaultLanguage: boolean;
+    /**
      * Returns whether or not this flow type supports secure variables.
      */
     readonly supportsSecureVariables: boolean;
@@ -16130,6 +16134,24 @@ declare class ArchVariableCommunication extends ArchBaseVariableSingleton {
 }
 
 /**
+ * ArchVariableCommunicationCollection
+ * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
+ */
+declare class ArchVariableCommunicationCollection extends ArchBaseVariableCollection {
+    // constructor(coreVariableViewModel: any);
+    /**
+     * Returns the display type name string 'ArchVariableCommunicationCollection'.
+     */
+    static readonly displayTypeName: string;
+    /**
+     * The initial communication collection value for the variable at runtime.  If the {@link ArchValueCommunicationCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
+     * this will be an empty communication collection at runtime.
+     */
+    initialValue: ArchValueCommunicationCollection;
+    static isArchVariableCommunicationCollection: boolean;
+}
+
+/**
  * ArchVariableCurrency
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
@@ -17606,6 +17628,7 @@ declare namespace scripting {
             let ArchVariableBoolean: ArchVariableBoolean;
             let ArchVariableBooleanCollection: ArchVariableBooleanCollection;
             let ArchVariableCommunication: ArchVariableCommunication;
+            let ArchVariableCommunicationCollection: ArchVariableCommunicationCollection;
             let ArchVariableCurrency: ArchVariableCurrency;
             let ArchVariableCurrencyCollection: ArchVariableCurrencyCollection;
             let ArchVariableDate: ArchVariableDate;
