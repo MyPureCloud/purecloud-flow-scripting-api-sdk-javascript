@@ -1838,13 +1838,6 @@ declare type callbackArchFlowSurveyInvite = (archFlowSurveyInvite: ArchFlowSurve
 
 /**
  * This callback function type is invoked by Architect Scripting where the callback function is passed an Architect
- * voicemail flow such as {@link ArchFactoryFlows#loadFlowDefaultVoicemailAsync}
- * @param archFlowVoicemail - the Architect voicemail flow.
- */
-declare type callbackArchFlowVoicemail = (archFlowVoicemail: ArchFlowVoicemail) => void;
-
-/**
- * This callback function type is invoked by Architect Scripting where the callback function is passed an Architect
  * workflow flow such as {@link ArchFactoryFlows#createFlowWorkflowAsync}
  * @param archFlowWorkflow - the Architect workflow flow.
  */
@@ -5117,6 +5110,10 @@ declare class ArchActionGetParticipantData extends ArchBaseAction {
      * Returns true indicating that this is an ArchActionGetParticipantData instance.
      */
     readonly isArchActionGetParticipantData: boolean;
+    /**
+     * Returns the name value attribute pairs configured on this Get Participant Data action.
+     */
+    readonly attributeNameOutputValuePairs: ArchBaseNameValuePairs;
 }
 
 /**
@@ -5843,6 +5840,10 @@ declare class ArchActionSetParticipantData extends ArchBaseAction {
      * Returns true indicating that this is an ArchActionSetParticipantData instance.
      */
     readonly isArchActionSetParticipantData: boolean;
+    /**
+     * Returns the name value attribute pairs configured on this Set Participant Data action.
+     */
+    readonly attributeNameValuePairs: ArchBaseNameValuePairs;
 }
 
 /**
@@ -8214,6 +8215,11 @@ declare class ArchBaseFlow extends ArchBaseCoreObjectWithId {
      */
     addFlowSupportedLanguage(archLanguage: ArchLanguage, setAsDefaultLanguage?: boolean): ArchSettingsSupportedLanguage;
     /**
+     * Checks flow to see if a language can be added in its current state. Some flows may have restrictions
+     * if any or more than one can be added.
+     */
+    canAddSupportedLanguage(): boolean;
+    /**
      * Checks in and unlocks the flow for the current user, does a save first
      * Assumes the flow has been created, throws if not
      * @param [ensureSearchable] - whether or not to poll after successful checkin to ensure that the flow is available for flow
@@ -9488,6 +9494,15 @@ declare class ArchBaseVariable extends ArchBaseCoreObjectWithId {
      */
     isOutput: boolean;
     /**
+     * Returns whether or not this variable is read only at flow runtime.  Read only in this context
+     * means that thevariable cannot have a value assigned to it by the flow at runtime.  Examples
+     * include assigning a value to it using an Update Data action or binding the variable to an output
+     * of a Call DataAction.  Please note that some variables that return true for this property do
+     * allow for assignment of an initial value at flow startup which can be checked by accessing the
+     * [canAssignInitialValue]{@link ArchBaseVariable#canAssignInitialValue} property.
+     */
+    readonly isReadOnly: boolean;
+    /**
      * Whether or not this variable is secure.
      */
     isSecure: boolean;
@@ -9533,6 +9548,11 @@ declare class ArchBaseVariable extends ArchBaseCoreObjectWithId {
      * lists valid values.  The scope is the prefix you will see on variable names.
      */
     readonly scope: string;
+    /**
+     * Returns whether or not this variable can have an initial value configured for it
+     * in the flow.
+     */
+    readonly canAssignInitialValue: boolean;
     /**
      * The core type for this variable
      */
@@ -9787,6 +9807,18 @@ declare class ArchDefinitionFlow extends ArchBaseDefinition {
      */
     readonly supportsStates: boolean;
     /**
+     * Returns whether or not the flow type for a given language supports knowledge functionality such as
+     * knowledge bases. If you do not pass in a specific language to check, this function will check the
+     * flow type in general but remember that it's only specific languages that will support knowledge
+     * functionality within a given flow type so you'd need to check a language specifically to see if
+     * it's supported in a given flow instance.  And obviously, if a flow doesn't support supported languages
+     * then this function returns false.
+     * @param [archLanguage] - the language to check to see if knowledge functionality is supported.  If no language
+     *                                        is specified, this will perform the check against the flow type itself as an overall
+     *                                        check to indicate if one or more supported languages support knowledge.
+     */
+    getSupportsKnowledge(archLanguage?: ArchLanguage): boolean;
+    /**
      * Returns whether or not this flow type supports reusable tasks.
      */
     readonly supportsTasksReusable: boolean;
@@ -9796,19 +9828,6 @@ declare class ArchDefinitionFlow extends ArchBaseDefinition {
      */
     readonly type: string;
 }
-
-/**
- * Returns whether or not the flow type for a given language supports knowledge functionality such as
- * knowledge bases. If you do not pass in a specific language to check, this function will check the
- * flow type in general but remember that it's only specific languages that will support knowledge
- * functionality within a given flow type so you'd need to check a language specifically to see if
- * it's supported in a given flow instance.  And obviously, if a flow doesn't support supported languages
- * then this function returns false.
- * @param [archLanguage] - the language to check to see if knowledge functionality is supported.  If no language
- *                                        is specified, this will perform the check against the flow type itself as an overall
- *                                        check to indicate if one or more supported languages support knowledge.
- */
-declare function getSupportsKnowledge(archLanguage?: ArchLanguage): boolean;
 
 /**
  * The Architect Scripting class that supplies menu object definition meta data.  For example,
@@ -10250,6 +10269,11 @@ declare class ArchFlowCommonModule extends ArchBaseFlow {
      * @param [setAsDefaultLanguage] - if true, the language will be set as the default language on the flow.
      */
     addFlowSupportedLanguage(archLanguage: ArchLanguage, setAsDefaultLanguage?: boolean): ArchSettingsSupportedLanguage;
+    /**
+     * Checks flow to see if a language can be added in its current state. Some flows may have restrictions
+     * if any or more than one can be added.
+     */
+    canAddSupportedLanguage(): boolean;
     /**
      * Checks in and unlocks the flow for the current user, does a save first
      * Assumes the flow has been created, throws if not
@@ -12719,6 +12743,11 @@ declare class ArchSettingsSupportedLanguage extends ArchBaseCoreObject {
  */
 declare class ArchSettingsSupportedLanguagesFlow extends ArchBaseCoreObjectWithId {
     // constructor(coreLanguageSelectionViewModel: any);
+    /**
+     * Checks flow to see if a language can be added in its current state. Some flows may have restrictions
+     * if any or more than one can be added.
+     */
+    canAddSupportedLanguage(): boolean;
     /**
      * Adds a supported language to a flow for a specified [language]{@link ArchLanguage}.
      * @param archLanguage - the language to add to supported languages on the flow.  Note that any language used as a supported
