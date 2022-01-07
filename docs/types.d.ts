@@ -8772,6 +8772,17 @@ declare class ArchBaseNameValuePairs extends ArchBaseValueContainer {
      * Returns true indicating that this is an ArchBaseNameValuePairs instance.
      */
     static readonly isArchBaseNameValuePairs: boolean;
+    /**
+     * Returns the number of name value pairs contained within this ArchBaseNameValuePairs.
+     */
+    length: number;
+    /**
+     * Gets the name value pair at the given index.
+     * @param index - the zero based index of the name value pair to retrieve.  This value should be a non-negative integer.
+     *                         For example, to retrieve the first name value pair, pass in 0 assuming there is at least one name
+     *                         value pair in this instance.
+     */
+    getNamedValueByIndex(index: number): ArchBaseNameValuePair;
 }
 
 /**
@@ -9483,6 +9494,7 @@ declare class ArchBaseVariable extends ArchBaseCoreObjectWithId {
      * flow it is in.  You can use the {@link ArchBaseVariable#settings} property to get at a settings
      * object and access the {@link ArchVariableSettings#canSetIsInput} to know whether or not it is valid
      * to configure this property.
+     * Remember that if a variable is secure that it cannot be used as a flow input.
      */
     isInput: boolean;
     /**
@@ -9491,6 +9503,7 @@ declare class ArchBaseVariable extends ArchBaseCoreObjectWithId {
      * flow it is in.  You can use the {@link ArchBaseVariable#settings} property to get at a settings
      * object and access the {@link ArchVariableSettings#canSetIsOutput} to know whether or not it is valid
      * to configure this property.
+     * Remember that if a variable is secure that it cannot be used as a flow output.
      */
     isOutput: boolean;
     /**
@@ -11730,8 +11743,8 @@ declare class ArchSettingsBotFlow extends ArchBaseCoreObjectWithId {
      */
     readonly isArchSettingsBotFlow: boolean;
     /**
-     * Given an intent name, returns the ArchSettingsNluIntent object for that intent.
-     * This name lookup is case-sensitive.
+     * Given an intent name, this returns the ArchSettingsNluIntent object for that intent.
+     * This name lookup is case sensitive.  If the intent cannot be found, nothing is returned.
      */
     getIntentSettingsByIntentName: any;
 }
@@ -12755,6 +12768,16 @@ declare class ArchSettingsSupportedLanguagesFlow extends ArchBaseCoreObjectWithI
      * @param [setAsDefaultLanguage] - if true, the language will be set as the default language on the flow.
      */
     addSupportedLanguage(archLanguage: ArchLanguage, setAsDefaultLanguage?: boolean): ArchSettingsSupportedLanguage;
+    /**
+     * Asynchronously adds a supported language to a flow for a specified [language]{@link ArchLanguage} and then validates the flow.
+     * Use this function instead of addSupportedLanguage if you plan to do additional flow configuration work referencing prompts because the prompt
+     * meta data needs to be updated for the newly added language.  If it’s not updated, Scripting might throw errors on different
+     * operations and end the current {@link ArchSession} instance.
+     * @param archLanguage - the language to add to supported languages on the flow.  Note that any language used as a supported
+     * language must have at least one region sub-tag.
+     * @param [setAsDefaultLanguage] - if true, the language will be set as the default language on the flow.
+     */
+    addSupportedLanguageAsync(archLanguage: ArchLanguage, setAsDefaultLanguage?: boolean): ArchSettingsSupportedLanguage;
     /**
      * This gets the supported language settings for the supported language set as default on the flow.
      * While this should not happen, if for some reason the default supported language cannot be determined,
@@ -14197,7 +14220,9 @@ declare class ArchNamedValueList extends ArchBaseValueContainer {
     length: number;
     /**
      * Gets a data pair at the given index.
-     * @param index - the index of the data pair to retrieve.  This value should be a non-negative integer.
+     * @param index - the zero based index of the data pair to retrieve.  This value should be a non-negative integer.
+     *                         For example, to retrieve the first named value, pass in 0 assuming there is at least one named
+     *                         value in this instance.
      */
     getNamedValueByIndex(index: number): ArchNamedValue;
     /**
@@ -17682,8 +17707,8 @@ declare namespace scripting {
             let ArchVariableJourneySegmentCollection: ArchVariableJourneySegmentCollection;
             let ArchVariableJourneySession: ArchVariableJourneySession;
             let ArchVariableJourneySessionCollection: ArchVariableJourneySessionCollection;
-            let ArchVariableLanguageSkill: ArchVariableSkill;
-            let ArchVariableLanguageSkillCollection: ArchVariableSkillCollection;
+            let ArchVariableLanguageSkill: ArchVariableLanguageSkill;
+            let ArchVariableLanguageSkillCollection: ArchVariableLanguageSkillCollection;
             let ArchVariablePhoneNumber: ArchVariablePhoneNumber;
             let ArchVariablePhoneNumberCollection: ArchVariablePhoneNumberCollection;
             let ArchVariablePrompt: ArchVariablePrompt;
