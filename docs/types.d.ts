@@ -7404,6 +7404,27 @@ declare class ArchBaseActionWithOutputsDefault extends ArchBaseActionWithOutputs
 }
 
 /**
+ * Creates a new ArchBaseActionWithOutputsFailureNoInput base action instance.
+ * Instances of this action have No Input and Failure outputs.
+ * @param coreActionWithFailureAndNoInputOutputsViewModel - ( *Internal* ) an Architect core action with Failure and No Input outputs view model.
+ */
+declare class ArchBaseActionWithOutputsFailureNoInput extends ArchBaseActionWithOutputFailure {
+    // constructor(coreActionWithFailureAndNoInputOutputsViewModel: any);
+    /**
+     * Returns the display type name string 'ArchBaseActionWithOutputsFailureNoInput'.
+     */
+    static readonly displayTypeName: string;
+    /**
+     * Returns true indicating that this is an ArchBaseActionWithOutputsFailureNoInput instance.
+     */
+    static readonly isArchBaseActionWithOutputsFailureNoInput: boolean;
+    /**
+     * The No Input output for this action
+     */
+    readonly outputNoInput: ArchActionOutput;
+}
+
+/**
  * Creates a new ArchBaseActionWithOutputsFakeDisconnect base action instance.
  * Instances of this action have a fake Disconnect output.  Since disconnect is
  * fake, there is no disconnect output to query on this action.
@@ -17423,10 +17444,12 @@ declare namespace scripting {
             let ArchBaseActionLex: ArchBaseActionLex;
             let ArchBaseActionTransfer: ArchBaseActionTransfer;
             let ArchBaseActionTransferWithConnectTimeout: ArchBaseActionTransferWithConnectTimeout;
+            let ArchBaseActionWithOutputFailure: ArchBaseActionWithOutputFailure;
             let ArchBaseActionWithOutputLoop: ArchBaseActionWithOutputLoop;
             let ArchBaseActionWithOutputLoopMaxLoopsNextLoop: ArchBaseActionWithOutputLoopMaxLoopsNextLoop;
             let ArchBaseActionWithOutputs: ArchBaseActionWithOutputs;
             let ArchBaseActionWithOutputsDefaults: ArchBaseActionWithOutputsDefault;
+            let ArchBaseActionWithOutputsFailureNoInput: ArchBaseActionWithOutputsFailureNoInput;
             let ArchBaseActionWithOutputsFakeSuccessFailure: ArchBaseActionWithOutputsFakeSuccessFailure;
             let ArchBaseActionWithOutputsFakeSuccessFailureTimeout: ArchBaseActionWithOutputsFakeSuccessFailureTimeout;
             let ArchBaseActionWithOutputsFoundNotFoundFailure: ArchBaseActionWithOutputsFoundNotFoundFailure;
