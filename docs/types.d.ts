@@ -483,6 +483,22 @@ declare class ArchEnums {
      */
     readonly SEND_AUTO_REPLY_MODES_ALL: string[];
     /**
+     * Returns a JSON object with these properties whose values are valid prompt media types:
+     * ```
+     * {
+     * &nbsp;&nbsp;audio: 'audio',
+     * &nbsp;&nbsp;none:  'none',
+     * &nbsp;&nbsp;text:  'text'
+     * &nbsp;&nbsp;tts:   'tts'
+     * }
+     * ```
+     */
+    readonly PROMPT_MEDIA_TYPES: any;
+    /**
+     * Returns a string array that contains all valid prompt media type strings.
+     */
+    readonly PROMPT_MEDIA_TYPES_ALL: string[];
+    /**
      * Returns a JSON object with these properties whose values are valid session end mode strings:
      * ```
      * {
@@ -8411,18 +8427,22 @@ declare class ArchBaseFlow extends ArchBaseCoreObjectWithId {
      */
     readonly settingsSupportedLanguages: ArchSettingsSupportedLanguagesFlow;
     /**
-     * Returns whether or not this flow type supports error handling.
+     * Returns whether or not this flow supports audio channel.
+     */
+    readonly supportsAudio: boolean;
+    /**
+     * Returns whether or not this flow supports error handling.
      */
     readonly supportsErrorHandling: boolean;
     /**
-     * Returns whether or not this flow type supports languages.  If false, that means you have to configure the flow
+     * Returns whether or not this flow supports languages.  If false, that means you have to configure the flow
      * when creating it to use English United States.
      * Note:  At this time this functionality is available while we're determining the needs of workflow and
      * inbound email flow types.  This property may go away in a future release of Architect Scripting.
      */
     readonly supportsLanguages: boolean;
     /**
-     * Returns whether or not this flow type supports setting a supported language as the default.
+     * Returns whether or not this flow supports setting a supported language as the default.
      */
     readonly supportsDefaultLanguage: boolean;
     /**
@@ -9736,6 +9756,17 @@ declare class ArchDefinitionFlow extends ArchBaseDefinition {
      */
     readonly availableActions: ArchBaseAction[];
     /**
+     * Returns an array of prompt media type string values that are available for
+     * this flow type.  {@link ArchEnums#PROMPT_MEDIA_TYPES} list valid values that
+     * can be returned in the array.  If no prompt media types are available for a
+     * flow type because the flow doesn't support prompts, an empty array is returned.
+     * Remember too that at the definition level for a common module we'll report
+     * that all prompt media types are available minus text which is currently reserved
+     * but until you have consuming flow types defined on a common module that's when
+     * it has context to know if specific prompt media types are available.
+     */
+    readonly availablePromptMediaTypes: string[];
+    /**
      * Returns an array of data type *classes* that are available for this flow type.
      */
     readonly availableDataTypes: ArchDataType[];
@@ -10475,18 +10506,22 @@ declare class ArchFlowCommonModule extends ArchBaseFlow {
      */
     readonly settingsSupportedLanguages: ArchSettingsSupportedLanguagesFlow;
     /**
-     * Returns whether or not this flow type supports error handling.
+     * Returns whether or not this flow supports audio channel.
+     */
+    readonly supportsAudio: boolean;
+    /**
+     * Returns whether or not this flow supports error handling.
      */
     readonly supportsErrorHandling: boolean;
     /**
-     * Returns whether or not this flow type supports languages.  If false, that means you have to configure the flow
+     * Returns whether or not this flow supports languages.  If false, that means you have to configure the flow
      * when creating it to use English United States.
      * Note:  At this time this functionality is available while we're determining the needs of workflow and
      * inbound email flow types.  This property may go away in a future release of Architect Scripting.
      */
     readonly supportsLanguages: boolean;
     /**
-     * Returns whether or not this flow type supports setting a supported language as the default.
+     * Returns whether or not this flow supports setting a supported language as the default.
      */
     readonly supportsDefaultLanguage: boolean;
     /**
@@ -12482,8 +12517,23 @@ declare class ArchSettingsPromptsFlow extends ArchBaseCoreObjectWithId {
     readonly isArchSettingsPromptsFlow: boolean;
     /**
      * Whether or not to ensure audio is present on prompts used for all supported languages in a flow for validation.
+     * Please replace calls to this property with {@link ArchBaseFlow#promptMediaToValidate} instead.
      */
     ensureAudioInPrompts: boolean;
+    /**
+     * Returns a snapshot of the prompt media that's being used for validation purposes. The string values
+     * in {@link ArchEnums#PROMPT_MEDIA_TYPES} list valid values that can be in the array.  Remember, modifying
+     * items in this returned array will not change what is set in the flow.  You must call the promptMediaToValidate
+     * property setter to make changes in the flow itself.
+     */
+    promptMediaToValidate: string[];
+    /**
+     * Returns a snapshot of the prompt media that's being used for validation purposes. The string values
+     * in {@link ArchEnums#PROMPT_MEDIA_TYPES} list valid values that can be in the array.  Remember, modifying
+     * items in this returned array will not change what is set in the flow.  You must call the promptMediaToValidate
+     * property setter to make changes in the flow itself.
+     */
+    promptMediaToValidate: string[];
     /**
      * The identifier string for this object.
      */
