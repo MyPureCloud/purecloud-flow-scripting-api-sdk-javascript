@@ -5826,9 +5826,16 @@ declare class ArchActionSetLanguage extends ArchBaseAction {
     readonly isArchActionSetLanguage: boolean;
     /**
      * The runtime language to set on the flow.  Note that valid languages to use for this action must be a language
-     * with a region sub-tag.
+     * with a region sub-tag. This is a legacy helper property for setting via an {@link ArchLanguage} and {@link ArchActionSetLanguage.languageValue} should be
+     * used instead. If the language was set via {@link ArchActionSetLanguage.languageValue}, the {@link ArchLanguage} will only be returned if
+     * the value is a string literal and is a valid language code. Otherwise, this will return null.
      */
     language: ArchLanguage;
+    /**
+     * The runtime language to set on the flow. Any language string used when setting this value must be a valid language
+     * with a region sub-tag. If setting a literal string value, be sure to use a lowercase string.
+     */
+    readonly languageValue: ArchValueString;
 }
 
 /**
@@ -10250,6 +10257,10 @@ declare class ArchFlowBot extends ArchBaseFlowWorkflow {
      * will return null.
      */
     readonly knowledgeSettings: ArchSettingsNluKnowledge;
+    /**
+     * The prompt settings for the flow.
+     */
+    readonly settingsPrompts: ArchSettingsPromptsFlow;
     /**
      * The user input settings for the flow.
      */
