@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: ArchActionPlayAudioOnSilence | Architect Scripting</title>
+    <title>Class: ArchActionSetSkills | Architect Scripting</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -50,7 +50,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ArchActionPlayAudioOnSilence<span class="signature">(corePlayAudioOnSilenceViewModel)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ArchActionSetSkills<span class="signature">(coreSetSkillsActionViewModel)</span><span class="type-signature"></span></h2>
         
     
 </header>
@@ -63,9 +63,9 @@
 
 <dt>
     
-        <h4 class="name" id="ArchActionPlayAudioOnSilence">
+        <h4 class="name" id="ArchActionSetSkills">
             
-                new <span class="type-signature"></span>ArchActionPlayAudioOnSilence<span class="signature">(corePlayAudioOnSilenceViewModel)</span><span class="type-signature"></span>
+                new <span class="type-signature"></span>ArchActionSetSkills<span class="signature">(coreSetSkillsActionViewModel)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -77,8 +77,8 @@
 
     
     <div class="description">
-        <p>The Architect Scripting class that represents the Play Audio on Silence action
-Instances of this action should be created by calling <a href="ArchFactoryActions.html#addActionPlayAudioOnSilence"><code>ArchFactoryActions#addActionPlayAudioOnSilence</code></a></p>
+        <p>The Architect Scripting class that represents the Set Skills action
+Instances of this action should be created by calling <a href="ArchFactoryActions.html#addActionSetSkills"><code>ArchFactoryActions#addActionSetSkills</code></a></p>
     </div>
     
 
@@ -114,13 +114,13 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 
         <tr>
             
-                <td class="name"><code>corePlayAudioOnSilenceViewModel</code></td>
+                <td class="name"><code>coreSetSkillsActionViewModel</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">PlayAudioOnSilenceActionViewModel</span>
+<span class="param-type">SetSkillsActionViewModel</span>
 
 
             
@@ -130,7 +130,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 
             
 
-            <td class="description last"><p>( <em>Internal</em> ) an Architect core Play Audio on Silence action view model.</p></td>
+            <td class="description last"><p>( <em>Internal</em> ) an Architect core Set Skills action view model.</p></td>
         </tr>
 
     
@@ -187,7 +187,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="ArchFactoryActions.html#addActionPlayAudioOnSilence">ArchFactoryActions#addActionPlayAudioOnSilence</a></li>
+            <li><a href="ArchFactoryActions.html#addActionSetSkills">ArchFactoryActions#addActionSetSkills</a></li>
         </ul>
     </dd>
     
@@ -211,7 +211,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 
 
     <ul>
-        <li><a href="ArchBaseActionWithSilenceDetection.html">ArchBaseActionWithSilenceDetection</a></li>
+        <li><a href="ArchBaseActionWithOutputsSuccessFailure.html">ArchBaseActionWithOutputsSuccessFailure</a></li>
     </ul>
 
 
@@ -244,7 +244,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 <dd>
     
     <div class="description">
-        <p>Returns the display type name string 'archActionPlayAudioOnSilence'.</p>
+        <p>Returns the display type name string 'ArchActionSetSkills'.</p>
     </div>
     
 
@@ -308,8 +308,8 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
             
 
 <dt>
-<h4 class="name" id="actualRepeatCount">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>actualRepeatCount<span class="type-signature"> :<a href="ArchValueInteger.html">ArchValueInteger</a></span>
+<h4 class="name" id="acdSkills">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>acdSkills<span class="type-signature"> :<a href="ArchValueSkillCollection.html">ArchValueSkillCollection</a></span>
     
 </h4>
 
@@ -318,7 +318,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 <dd>
     
     <div class="description">
-        <p>The number of the times the audio had to repeat because it was interrupted.</p>
+        <p>The ACD skills set on the conversation.</p>
     </div>
     
 
@@ -328,155 +328,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
         <ul>
             <li>
                 
-<span class="param-type"><a href="ArchValueInteger.html">ArchValueInteger</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="allowedRepeatCount">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>allowedRepeatCount<span class="type-signature"> :<a href="ArchValueInteger.html">ArchValueInteger</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The number of the times the audio can be restarted if it's interrupted while playing</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchValueInteger.html">ArchValueInteger</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="audio">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>audio<span class="type-signature"> :<a href="ArchAudio.html">ArchAudio</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The audio expression for the audio to play after waiting for silence</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchAudio.html">ArchAudio</a></span>
+<span class="param-type"><a href="ArchValueSkillCollection.html">ArchValueSkillCollection</a></span>
 
 
             </li>
@@ -776,8 +628,8 @@ an extremely rare case.</p>
             
 
 <dt>
-<h4 class="name" id="isArchActionPlayAudioOnSilence">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isArchActionPlayAudioOnSilence<span class="type-signature"> :boolean</span>
+<h4 class="name" id="isArchActionSetSkills">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isArchActionSetSkills<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -786,7 +638,7 @@ an extremely rare case.</p>
 <dd>
     
     <div class="description">
-        <p>Returns true indicating that this is an archActionPlayAudioOnSilence instance.</p>
+        <p>Returns true indicating that this is an ArchActionSetSkills instance.</p>
     </div>
     
 
@@ -813,85 +665,6 @@ an extremely rare case.</p>
 
     
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isArchBaseActionWithSilenceDetection">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isArchBaseActionWithSilenceDetection<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns true indicating that this is an ArchBaseActionWithSilenceDetection instance.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseActionWithSilenceDetection.html#isArchBaseActionWithSilenceDetection">ArchBaseActionWithSilenceDetection#isArchBaseActionWithSilenceDetection</a>
-    </li></ul></dd>
     
 
     
@@ -1327,6 +1100,80 @@ is secure or it consumes secure data.</p>
             
 
 <dt>
+<h4 class="name" id="languageSkill">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>languageSkill<span class="type-signature"> :<a href="ArchValueLanguageSkill.html">ArchValueLanguageSkill</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The language skill on the conversation.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueLanguageSkill.html">ArchValueLanguageSkill</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
 <h4 class="name" id="logStr">
     <span class="type-signature"><span class="icon green">readonly</span> </span>logStr<span class="type-signature"> :string</span>
     
@@ -1649,6 +1496,85 @@ action on an <a href="ArchMenuTransferToAcd.html"><code>ArchMenuTransferToAcd</c
             
 
 <dt>
+<h4 class="name" id="outputFailure">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>outputFailure<span class="type-signature"> :<a href="ArchActionOutput.html">ArchActionOutput</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The failure output for this action</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#outputFailure">ArchBaseActionWithOutputFailure#outputFailure</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
 <h4 class="name" id="outputs">
     <span class="type-signature"><span class="icon green">readonly</span> </span>outputs<span class="type-signature"> :Array.&lt;<a href="ArchActionOutput.html">ArchActionOutput</a>></span>
     
@@ -1771,86 +1697,7 @@ will return an empty array.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseActionWithOutputsSuccessTimeout.html#outputSuccess">ArchBaseActionWithOutputsSuccessTimeout#outputSuccess</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="outputTimeout">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>outputTimeout<span class="type-signature"> :<a href="ArchActionOutput.html">ArchActionOutput</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The timeout output for this action</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseActionWithOutputsSuccessTimeout.html#outputTimeout">ArchBaseActionWithOutputsSuccessTimeout#outputTimeout</a>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#outputSuccess">ArchBaseActionWithOutputsSuccessFailure#outputSuccess</a>
     </li></ul></dd>
     
 
@@ -2173,164 +2020,6 @@ Otherwise, nothing is returned.</p>
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
         <a href="ArchBaseAction.html#parentTask">ArchBaseAction#parentTask</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="silenceDuration">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>silenceDuration<span class="type-signature"> :<a href="ArchValueDuration.html">ArchValueDuration</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The duration for the amount of silence to wait for</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchValueDuration.html">ArchValueDuration</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseActionWithSilenceDetection.html#silenceDuration">ArchBaseActionWithSilenceDetection#silenceDuration</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="timeout">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>timeout<span class="type-signature"> :<a href="ArchValueDuration.html">ArchValueDuration</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The total timeout before the action fails and takes the timeout path.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchValueDuration.html">ArchValueDuration</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseActionWithSilenceDetection.html#timeout">ArchBaseActionWithSilenceDetection#timeout</a>
     </li></ul></dd>
     
 
@@ -4185,7 +3874,7 @@ use that traversal default filter.  The wantArchBaseValues parameter on that cal
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'ArchActionPlayAudioOnSilence_sub'.replace(/"/g, '_');
+        var id = 'ArchActionSetSkills_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
