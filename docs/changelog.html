@@ -60,6 +60,24 @@
 
     <section>
         <article class="readme"><h2>Change Log</h2>
+<h1>0.26.0</h1>
+<h4>New Features</h4>
+<ul>
+<li>We added support for the <a href="ArchActionFlushAudio.html"><code>ArchActionFlushAudio</code></a> action.</li>
+</ul>
+<h4>Improvements</h4>
+<ul>
+<li>We added some additional error tracing if fetching the service discovery properties fails during <a href="ArchSession.html#startWithAuthToken"><code>ArchSession#startWithAuthToken</code></a> or <a href="ArchSession.html#startWithClientIdAndSecret"><code>ArchSession#startWithClientIdAndSecret</code></a> function calls.</li>
+</ul>
+<h4>Bug Fixes</h4>
+<ul>
+<li>
+<p>We fixed an issue where an error would not be handled correctly when fetching roles and permissions for an OAuth Client when using the <a href="ArchSession.html#startWithClientIdAndSecret"><code>ArchSession#startWithClientIdAndSecret</code></a> function.</p>
+</li>
+<li>
+<p>We fixed an issue with YAML export where a string value of Null was not being wrapped with quotes.</p>
+</li>
+</ul>
 <h1>0.25.0</h1>
 <h4>New Features</h4>
 <ul>
