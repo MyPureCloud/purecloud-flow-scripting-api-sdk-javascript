@@ -115,7 +115,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly ABORT_SURVEY_INVITE_DISPOSITIONS: any;
+    readonly ABORT_SURVEY_INVITE_DISPOSITIONS: {"error":"error","optOut":"optOut"};
     /**
      * Returns a string array that contains all valid abort survey invite dispositions.
      */
@@ -129,7 +129,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly AUTO_GENERATED_EMAIL_HANDLING: any;
+    readonly AUTO_GENERATED_EMAIL_HANDLING: {"continue":"continue","disconnect":"disconnect"};
     /**
      * Returns a string array that contains all valid flow auto generated email handling strings.
      */
@@ -143,7 +143,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly BOT_CONFIRMATION_MODES: any;
+    readonly BOT_CONFIRMATION_MODES: {"always":"always","never":"never"};
     /**
      * Returns a string array that contains all valid bot confirmation modes.
      */
@@ -158,7 +158,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly ENVIRONMENTS: any;
+    readonly ENVIRONMENTS: {"dev":"dev","test":"test","prod":"prod"};
     /**
      * Returns a string array that contains all valid environment strings.
      */
@@ -175,7 +175,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly ERROR_TYPE_DATA_TABLE_VALUES: any;
+    readonly ERROR_TYPE_DATA_TABLE_VALUES: {"nternalServerError":"DataTablesInternalServerError","erverTooBusyException":"DataTablesServerTooBusyException","yntaxError":"DataTablesSyntaxError","ableNotFoundException":"DataTablesTableNotFoundException"};
     /**
      * Returns a string array that contains all possible data table lookup errorType failure output string values.
      */
@@ -194,7 +194,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly ERROR_TYPE_LEX_BOT_VALUES: any;
+    readonly ERROR_TYPE_LEX_BOT_VALUES: {"featureNotEnabledError":"FeatureNotEnabledError","internalServerError":"InternalServerError","noInputError":"NoInputError","noMatchError":"NoMatchError","noResourceError":"NoResourceError","versionMismatchError":"VersionMismatchError"};
     /**
      * Returns a string array that contains all possible call lex bot errorType failure output string values.
      */
@@ -215,7 +215,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly EVENTS_FLOW_ERROR_HANDLING: any;
+    readonly EVENTS_FLOW_ERROR_HANDLING: {"changeState":"state","disconnect":"disconnect","endFlow":"endFlow","endInQueueState":"endInQueueState","endWorkflow":"endWorkflow","exit":"exit","jumpToMenu":"menu","transferToQueue":"queue","jumpToTask":"task"};
     /**
      * Returns a string array that contains all valid flow error event handling strings.
      */
@@ -269,7 +269,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly FLOW_TYPES: any;
+    readonly FLOW_TYPES: {"bot":"bot","digitalBot":"digitalbot","commonModule":"commonmodule","inboundCall":"inboundcall","inboundChat":"inboundchat","inboundEmail":"inboundemail","inboundShortMessage":"inboundshortmessage","inqueueCall":"inqueuecall","inqueueEmail":"inqueueemail","inqueueShortMessage":"inqueueshortmessage","outboundCall":"outboundcall","secureCall":"securecall","surveyInvite":"surveyinvite","voice":"voice","voicemail":"voicemail","workflow":"workflow","workitem":"workitem"};
     /**
      * Returns a string array that contains all valid flow type strings.
      */
@@ -283,7 +283,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly FLOW_VERSIONS: any;
+    readonly FLOW_VERSIONS: {"debug":"debug","latest":"latest"};
     /**
      * Returns a string array that contains all valid versions for flows.
      */
@@ -297,7 +297,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly FLOW_FORMAT_TYPES: any;
+    readonly FLOW_FORMAT_TYPES: {"architect":"architect","yaml":"yaml"};
     /**
      * Returns a string array that contains all valid flow format types.
      */
@@ -311,7 +311,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly HOLD_MUSIC_PLAY_STYLES: any;
+    readonly HOLD_MUSIC_PLAY_STYLES: {"prompt":"prompt","duration":"duration"};
     /**
      * Returns a string array that contains all hold music play style strings.
      */
@@ -326,7 +326,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly INPUT_VERIFICATION_TYPES: any;
+    readonly INPUT_VERIFICATION_TYPES: {"individualDigits":"individualDigits","none":"none","numeric":"numeric"};
     /**
      * Returns a string array that contains all valid collect input verification type strings.
      */
@@ -351,7 +351,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly LOCATIONS: any;
+    readonly LOCATIONS: {"dev":"dev","test":"test","prod_ap_northeast_1":"prod_ap_northeast_1","prod_ap_northeast_2":"prod_ap_northeast_2","prod_ap_southeast_2":"prod_ap_southeast_2","prod_ap_south_1":"prod_ap_south_1","prod_ca_central_1":"prod_ca_central_1","prod_eu_central_1":"prod_eu_central_1","prod_eu_west_1":"prod_eu_west_1","prod_eu_west_2":"prod_eu_west_2","prod_sa_east_1":"prod_sa_east_1","prod_us_east_1":"prod_us_east_1","prod_us_east_2":"prod_us_east_2","prod_us_west_2":"prod_us_west_2"};
     /**
      * Returns a string array that contains all valid location strings.
      */
@@ -366,7 +366,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly LOG_TYPES: any;
+    readonly LOG_TYPES: {"error":"error","info":"info","warning":"warning"};
     /**
      * Returns a string array that contains all valid log types.
      */
@@ -382,7 +382,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly NLU_RESPONSE_BIAS_MODES: any;
+    readonly NLU_RESPONSE_BIAS_MODES: {"intents":"intents","knowledge":"knowledge","neutral":"neutral"};
     /**
      * Returns a string array that contains all valid natural language understanding response
      * bias modes.
@@ -423,7 +423,7 @@ declare class ArchEnums {
      * Remember some actions like {@link ArchActionSwitch} will have dynamic outputs and dynamically
      * added outputs will have identifiers that are not in the enum above.
      */
-    readonly OUTPUT_IDS: any;
+    readonly OUTPUT_IDS: {"active":"active","closed":"closed","default":"default","disconnect":"disconnect","emergency":"emergency","error":"error","event":"event","failure":"failure","found":"found","holiday":"holiday","inactive":"inactive","knowledge":"knowledge","loop":"loop","loopNext":"loopNext","loopsMax":"loopsMax","matchExact":"matchExact","matchMultiple":"matchMultiple","no":"no","noInput":"noInput","noIntent":"noIntent","notFound":"notFound","open":"open","partiallyFound":"partiallyFound","success":"success","timeout":"timeout","voicemail":"voicemail","yes":"yes"};
     /**
      * Returns a string array that contains all valid output identifier strings.
      */
@@ -439,7 +439,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly PLAY_ESTIMATED_WAIT_STYLES: any;
+    readonly PLAY_ESTIMATED_WAIT_STYLES: {"about":"about","exact":"exact","lessThan":"lessThan","range":"range"};
     /**
      * Returns a string array that contains all valid play estimated wait time style strings.
      */
@@ -454,7 +454,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly PLAY_POSITION_STYLES: any;
+    readonly PLAY_POSITION_STYLES: {"ahead":"ahead","number":"number","ordinal":"ordinal"};
     /**
      * Returns a string array that contains all valid play position in queue style strings.
      */
@@ -468,7 +468,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly SCHEDULE_EVALUATION_TYPES: any;
+    readonly SCHEDULE_EVALUATION_TYPES: {"emergencyGroup":"emergencyGroup","schedule":"schedule"};
     /**
      * Returns a string array that contains all valid evaluation types for EvaluateSchedule actions.
      */
@@ -482,7 +482,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly SEND_AUTO_REPLY_MODES: any;
+    readonly SEND_AUTO_REPLY_MODES: {"replyToAll":"replyToAll","replyToSender":"replyToSender"};
     /**
      * Returns a string array that contains all valid session end mode strings.
      */
@@ -498,7 +498,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly PROMPT_MEDIA_TYPES: any;
+    readonly PROMPT_MEDIA_TYPES: {"audio":"audio","none":"none","tts":"tts","text":"text"};
     /**
      * Returns a string array that contains all valid prompt media type strings.
      */
@@ -512,7 +512,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly SESSION_END_MODES: any;
+    readonly SESSION_END_MODES: {"end":"end","endWithLogout":"endWithLogout"};
     /**
      * Returns a string array that contains all valid session end mode strings.
      */
@@ -527,7 +527,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly SESSION_STATUSES: any;
+    readonly SESSION_STATUSES: {"ended":"ended","notStarted":"notStarted","running":"running"};
     /**
      * Returns a string array that contains all valid session status strings.
      */
@@ -542,7 +542,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly SPEECH_REC_COMPANY_MODES: any;
+    readonly SPEECH_REC_COMPANY_MODES: {"entireFlow":"entireFlow","none":"none","startUpObject":"startUpObject"};
     /**
      * Returns a string array that contains all valid speech rec company mode strings.
      */
@@ -556,7 +556,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly MESSAGE_BODY_STYLES: any;
+    readonly MESSAGE_BODY_STYLES: {"notice":"notice","standard":"standard"};
     /**
      * Returns a string array that contains all valid message body style strings.
      */
@@ -570,7 +570,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly SET_UUI_DATA_MODES: any;
+    readonly SET_UUI_DATA_MODES: {"transfer":"transfer","disconnect":"disconnect"};
     /**
      * Returns a string array that contains all whose values are valid for a SetUUIData Action
      */
@@ -584,7 +584,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly SWITCH_EVALUATION_STYLES: any;
+    readonly SWITCH_EVALUATION_STYLES: {"matchExpression":"matchExpression","matchFirstTrue":"matchFirstTrue"};
     /**
      * Returns a string array that contains all valid switch evaluation style strings.
      */
@@ -611,7 +611,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly VARIABLE_SCOPES: any;
+    readonly VARIABLE_SCOPES: {"bot":"bot","call":"call","chat":"chat","common":"common","email":"email","flow":"flow","interaction":"interaction","menu":"menu","message":"message","session":"session","slot":"slot","state":"state","survey":"survey","task":"task","workflow":"workflow","workitem":"workitem"};
     /**
      * Returns a string array that contains all valid variable scopes.
      */
@@ -626,7 +626,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly VOICEMAIL_TRANSFER_TARGET_TYPES: any;
+    readonly VOICEMAIL_TRANSFER_TARGET_TYPES: {"queue":"queue","group":"group","user":"user"};
     /**
      * Returns a string array that contains all valid voicemail transfer targets.
      */
@@ -1304,6 +1304,13 @@ declare class ArchFactoryActions extends ArchBaseFactory {
      */
     addActionFindUsersById(archMultiActionContainer: ArchBaseMultiActionContainer, name?: string, previousArchAction?: ArchBaseAction): ArchActionFindUsersById;
     /**
+     * Adds a Flush Audio action to an {@link ArchBaseMultiActionContainer} such as an [action output]{@link ArchActionOutput} or [task]{@link ArchTask}.
+     * @param archMultiActionContainer - the Architect multi-action container where the new action should be added.  For example, an Architect Scripting task or action output where you want the action added.
+     * @param [name] - the name for the new action.  If not specified, a name will be auto-generated by Architect Scripting based on the action type being created.
+     * @param [previousArchAction] - the previous Architect action in the archBaseMultiActionContainer after which the new action should be added.  If not specified, the new action will be appended to the end of the action container.
+     */
+    addActionFlushAudio(archMultiActionContainer: ArchBaseMultiActionContainer, name?: string, previousArchAction?: ArchBaseAction): ArchActionFlushAudio;
+    /**
      * Adds a Get External Contact action to an {@link ArchBaseMultiActionContainer} such as an [action output]{@link ArchActionOutput}, [task]{@link ArchTask} or [state]{@link ArchState}.
      * @param archMultiActionContainer - the Architect multi-action container where the new action should be added.  For example, an Architect Scripting state, task or action output where you want the action added.
      * @param [name] - the name for the new action.  If not specified, a name will be auto-generated by Architect Scripting based on the action type being created.
@@ -1352,6 +1359,13 @@ declare class ArchFactoryActions extends ArchBaseFactory {
      * @param [previousArchAction] - the previous Architect action in the archBaseMultiActionContainer after which the new action should be added.  If not specified, the new action will be appended to the end of the action container.
      */
     addActionGetJourneySessionsByExternalContact(archMultiActionContainer: ArchBaseMultiActionContainer, name?: string, previousArchAction?: ArchBaseAction): ArchActionGetJourneySessionsByExternalContact;
+    /**
+     * Adds a get participant data action to an {@link ArchBaseMultiActionContainer} such as an [action output]{@link ArchActionOutput}, [task]{@link ArchTask} or [state]{@link ArchState}.
+     * @param archMultiActionContainer - the Architect multi-action container where the new action should be added.  For example, an Architect Scripting state, task or action output where you want the action added.
+     * @param [name] - the name for the new action.  If not specified, a name will be auto-generated by Architect Scripting based on the action type being created.
+     * @param [previousArchAction] - the previous Architect action in the archBaseMultiActionContainer after which the new action should be added.  If not specified, the new action will be appended to the end of the action container.
+     */
+    addActionGetParticipantData(archMultiActionContainer: ArchBaseMultiActionContainer, name?: string, previousArchAction?: ArchBaseAction): ArchActionGetParticipantData;
     /**
      * Adds a Get Response action to an {@link ArchBaseMultiActionContainer} such as an [action output]{@link ArchActionOutput}, [task]{@link ArchTask} or [state]{@link ArchState}.
      * @param archMultiActionContainer - the Architect multi-action container where the new action should be added.  For example, an Architect Scripting state, task or action output where you want the action added.
@@ -1969,7 +1983,7 @@ declare class ArchFactoryFlows extends ArchBaseFactory {
      * creation up front.
      * @param flowName - the name for the new flow.
      * @param [flowDescription] - the description for the new flow.
-     * @param [defaultSupportedLanguage] - = {@link ArchLanguages#englishUnitedStates}] - the default language to use for the flow.
+     * @param [defaultSupportedLanguage = {@link ArchLanguages#englishUnitedStates}] - the default language to use for the flow.
      * @param [callbackFunction] - a callback function to call if the bot flow is successfully
      *                                                       created.  The first parameter passed to the callback function will
      *                                                       be the created in-memory flow.
@@ -2066,7 +2080,7 @@ declare class ArchFactoryFlows extends ArchBaseFactory {
      * property to see if the flow is created within Genesys Cloud.
      * @param flowName - the name for the new flow.
      * @param [flowDescription] - the description for the new flow.
-     * @param [defaultSupportedLanguage] - = {@link ArchLanguages#englishUnitedStates}] - the default language to use for the flow.
+     * @param [defaultSupportedLanguage = {@link ArchLanguages#englishUnitedStates}] - the default language to use for the flow.
      * @param [callbackFunction] - a callback function to call if the workItem is successfully
      *                                                       created.  The first parameter passed to the callback function will
      *                                                       be the created in-memory flow.
@@ -2084,7 +2098,7 @@ declare class ArchFactoryFlows extends ArchBaseFactory {
      * property to see if the flow is created within Genesys Cloud.
      * @param flowName - the name for the new flow.
      * @param [flowDescription] - the description for the new flow.
-     * @param [defaultSupportedLanguage] - = {@link ArchLanguages#englishUnitedStates}] - the default language to use for the flow.
+     * @param [defaultSupportedLanguage = {@link ArchLanguages#englishUnitedStates}] - the default language to use for the flow.
      * @param [callbackFunction] - a callback function to call if the workItem is successfully
      *                                                       created.  The first parameter passed to the callback function will
      *                                                       be the created in-memory flow.
@@ -2145,8 +2159,8 @@ declare class ArchFactoryFlows extends ArchBaseFactory {
      * @param [flowDescription] - the description for the new flow.
      * @param [defaultSupportedLanguage = {@link ArchLanguages#englishUnitedStates}] - the default language to use for the flow.
      * @param [callbackFunction] - a callback function to call if the inbound message flow is successfully
-     *                                                            created.  The first parameter passed to the callback function will
-     *                                                            be the created in-memory flow.
+     *                                                                   created.  The first parameter passed to the callback function will
+     *                                                                   be the created in-memory flow.
      * @param [flowDivision] - if specified, the division in which to create the flow.  This must be a division where
      *                                        the division's {@link ArchDivision#canAddFlow} property returns true.  If not specified,
      *                                        the division stored in the {@link ArchFactoryFlows#defaultFlowCreationDivision} will be used.
@@ -2163,7 +2177,7 @@ declare class ArchFactoryFlows extends ArchBaseFactory {
      * the [startUpObject]{@link ArchBaseFlowWorkflow#startUpObject} property off of the flow.
      * @param flowName - the name for the new flow.
      * @param [flowDescription] - the description for the new flow.
-     * @param [defaultSupportedLanguage] - = {@link ArchLanguages#englishUnitedStates}] - the default language to use for the flow.
+     * @param [defaultSupportedLanguage = {@link ArchLanguages#englishUnitedStates}] - the default language to use for the flow.
      * @param [callbackFunction] - a callback function to call if the in survey invite flow is successfully
      *                                                            created.  The first parameter passed to the callback function will
      *                                                            be the created in-memory flow.
@@ -2186,8 +2200,8 @@ declare class ArchFactoryFlows extends ArchBaseFactory {
      * @param [flowDescription] - the description for the new flow.
      * @param [defaultSupportedLanguage = {@link ArchLanguages#englishUnitedStates}] - the default language to use for the flow.
      * @param [callbackFunction] - a callback function to call if the inbound chat flow is successfully
-     *                                                            created.  The first parameter passed to the callback function will
-     *                                                            be the created in-memory flow.
+     *                                                           created.  The first parameter passed to the callback function will
+     *                                                           be the created in-memory flow.
      * @param [flowDivision] - if specified, the division in which to create the flow.  This must be a division where
      *                                        the division's {@link ArchDivision#canAddFlow} property returns true.  If not specified,
      *                                        the division stored in the {@link ArchFactoryFlows#defaultFlowCreationDivision} will be used.
@@ -2203,10 +2217,10 @@ declare class ArchFactoryFlows extends ArchBaseFactory {
      * returns whether a flow type is creatable in the cloud.
      * @param flowName - the name for the new flow.
      * @param [flowDescription] - the description for the new flow.
-     * @param [defaultSupportedLanguage] - = {@link ArchLanguages#englishUnitedStates}] - the default language to use for the flow.
+     * @param [defaultSupportedLanguage = {@link ArchLanguages#englishUnitedStates}] - the default language to use for the flow.
      * @param [callbackFunction] - a callback function to call if the voicemail flow is successfully
-     *                                                       created.  The first parameter passed to the callback function will
-     *                                                       be the created in-memory flow.
+     *                                                         created.  The first parameter passed to the callback function will
+     *                                                         be the created in-memory flow.
      * @param [flowDivision] - if specified, the division in which to create the flow.  This must be a division where
      *                                        the division's {@link ArchDivision#canAddFlow} property returns true.  If not specified,
      *                                        the division stored in the {@link ArchFactoryFlows#defaultFlowCreationDivision} will be used.
@@ -2223,7 +2237,7 @@ declare class ArchFactoryFlows extends ArchBaseFactory {
      * the [startUpObject]{@link ArchBaseFlowWorkflow#startUpObject} property off of the flow.
      * @param flowName - the name for the new flow.
      * @param [flowDescription] - the description for the new flow.
-     * @param [defaultSupportedLanguage] - = {@link ArchLanguages#englishUnitedStates}] - the default language to use for the flow.
+     * @param [defaultSupportedLanguage = {@link ArchLanguages#englishUnitedStates}] - the default language to use for the flow.
      * @param [callbackFunction] - a callback function to call if the workflow is successfully
      *                                                       created.  The first parameter passed to the callback function will
      *                                                       be the created in-memory flow.
@@ -5633,7 +5647,7 @@ declare class ArchActionLoopUntil extends ArchBaseActionWithOutputLoop {
      * boolean false literal value.
      * @param untilCaseName - this should be a non-blank string that specifies an Until Case name.  Until case names must be
      *                                 unique.  If you are not sure if you are adding an until case with a name that already exists,
-     *                                 you can call {@link ArchActionWithOutputs#getOutputByName} and check.  Remember if you decide
+     *                                 you can call {@link ArchBaseActionWithOutputs#getOutputByName} and check.  Remember if you decide
      *                                 to use this method that until case outputs are dynamic so specify true for the isDynamic parameter
      *                                 on the GetOutputByName call.
      * @param [untilCaseExpression = 'false'] - this is the boolean expression to assign to the newly added Until Case.  If no
@@ -5757,10 +5771,50 @@ declare class ArchActionPlayEstimatedWaitTime extends ArchBaseAction {
      */
     readonly isArchActionPlayEstimatedWaitTime: boolean;
     /**
-     * The playback mode for the estimated wait time action.  The string values in {@link ArchEnums#PLAY_ESTIMATED_WAIT_STYLES}
+     * The playback mode for the estimated wait time.  The string values in {@link ArchEnums#PLAY_ESTIMATED_WAIT_STYLES}
      * lists valid values.
      */
     playbackMode: string;
+    /**
+     * This option is available if the [playback mode]{@link ArchActionPlayEstimatedWaitTime#playbackMode} is
+     * set to either ${@link ArchEnums#PLAY_ESTIMATED_WAIT_STYLES.about} or {@link ArchEnums#PLAY_ESTIMATED_WAIT_STYLES.lessThan}
+     * modes. Select the amount of time in which to calculate estimated wait time and return approximate or less than
+     * calculations. Architect rounds up the estimated wait time to the selected threshold in even minutes. This property
+     * is the same as either the "Padding" or "Round Up Interval" in the Architect UI.
+     */
+    readonly roundingInterval: ArchValueDuration;
+    /**
+     * A snapshot of the specific rounding intervals for the play estimated wait time action. Each item contained within this array is an {@link ArchValueDuration}. Items in this
+     * array can be modified and the changes will be reflected appropriately for the action. To add a new specific rounding interval to
+     * the play estimated wait time action, use the {@link addSpecificRoundingInterval} function. {@link ArchActionPlayEstimatedWaitTime#getSpecificRoundingIntervalByIndex}
+     * can also be called to get a specific rounding interval which can then be modified. To remove a specific rounding interval from this array, use the {@link ArchActionPlayEstimatedWaitTime#deleteSpecificRoundingIntervalByIndex}
+     * function. Remember, this is a snapshot of intervals returned at the time this was called and modifying the array itself will not reflect changes on the action.
+     */
+    readonly specificRoundingIntervals: ArchValueDuration[];
+    /**
+     * The number of specific rounding intervals configured for the play estimated wait time action.
+     */
+    readonly specificRoundingIntervalsCount: number;
+    /**
+     * Adds a new rounding interval to the play estimated wait time action. This function will throw an error
+     * if the playback mode is set to {@link ArchEnums.PLAY_ESTIMATED_WAIT_STYLES.range} or {@link ArchEnums.PLAY_ESTIMATED_WAIT_STYLES.exact}
+     * since specific rounding intervals are not supported on those playback modes. The returned value is the new specific rounding interval of type {@link ArchValueDuration} which can then be modified.
+     */
+    addSpecificRoundingInterval(): ArchValueDuration;
+    /**
+     * Returns a specific rounding interval from the play estimated wait time action at the specified index.
+     * @param index - the zero based index of the specific rounding interval to delete. This value should be a non-negative integer. For example: for the first specific rounding interval, pass in 0.
+     */
+    getSpecificRoundingIntervalByIndex(index: number): ArchValueDuration;
+    /**
+     * Removes a specific rounding interval from the play estimated wait time action at the specified index.
+     * @param index - the zero based index of the specific rounding interval to delete. This value should be a non-negative integer. For example: for the first specific rounding interval, pass in 0.
+     */
+    deleteSpecificRoundingIntervalByIndex(index: number): void;
+    /**
+     * Returns whether the play estimated wait time action supports specific rounding intervals based on the playback mode that is set.
+     */
+    readonly supportsSpecificRoundingIntervals: boolean;
 }
 
 /**
@@ -5826,9 +5880,17 @@ declare class ArchActionProcessVoicemailInput extends ArchBaseActionWithOutputsF
      */
     static readonly displayTypeName: string;
     /**
+     * Returns true indicating that this action has a fake fax processed action output.
+     */
+    readonly hasFakeFaxProcessedOutput: boolean;
+    /**
      * Returns true indicating that this is an ArchActionProcessVoicemailInput instance.
      */
     readonly isArchActionProcessVoicemailInput: boolean;
+    /**
+     * The Voicemail output for this action.
+     */
+    readonly outputVoicemail: ArchActionOutput;
 }
 
 /**
@@ -6304,7 +6366,7 @@ declare class ArchActionSwitch extends ArchBaseActionWithOutputsDefault {
      * Deletes a case from the switch action at the specified index.
      * @param index - the zero based index of the case to delete. This value should be a non-negative integer.  For example: for Case 1, pass in 0.
      */
-    deleteCaseByIndex(index: number): ArchBaseValue;
+    deleteCaseByIndex(index: number): void;
     /**
      * Returns the display type name string 'ArchActionSwitch'.
      */
@@ -7220,6 +7282,11 @@ declare class ArchBaseActionCallBotFlow extends ArchBaseAction {
      * from the bot flow instance invoked by this action.
      */
     readonly exitReason: ArchValueString;
+    /**
+     * The input text for the bot flow. Supplies an initial utterance to the bot that will be processed
+     * by the first Ask action executed in the bot flow.
+     */
+    readonly inputText: ArchValueString;
     /**
      * The output value where you can set a string variable that will hold the intent string returned
      * from the bot flow instance invoked by this action.  Remember that when invoking a bot flow
@@ -8863,8 +8930,8 @@ declare class ArchBaseFlow extends ArchBaseCoreObjectWithId {
 }
 
 /**
- * The Architect Scripting class for the Digital Bot flow class.
- * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows#createFlowDigitalBotAsync}
+ * The Architect Scripting class for the Base Bot flow class.
+ * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows#createFlowBotAsync}
  * @param coreBotViewModel - ( *Internal* ) an Architect core Bot view model.
  */
 declare class ArchBaseFlowBot extends ArchBaseFlowWorkflow {
@@ -11385,7 +11452,7 @@ declare class ArchFlowInfoBasic extends ArchBaseObject {
      * Looks up the flow information from this flow info basic instance by the flow identifier.
      * @param [callbackFunction] - the function to call back if successfully converted.  The callback will be passed the looked up ArchFlowInfo instance.
      */
-    getFlowInfoAsync(callbackFunction?: callbackArchFlowInfo): void;
+    getFlowInfoAsync(callbackFunction?: (...params: any[]) => any): Promise<ArchFlowInfoBasic>;
     /**
      * The flow identifier
      */
@@ -11481,8 +11548,25 @@ declare class ArchFlowSurveyInvite extends ArchBaseFlowWorkflow {
 }
 
 /**
- * The Architect Scripting class for the Inbound Call flow type.
- * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows#createFlowInboundCallAsync}
+ * The Architect Scripting class for the Voice flow type.
+ * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows#createFlowVoiceAsync}
+ * @param coreVoiceFlowViewModel - ( *Internal* ) an Architect core voice flow view model.
+ */
+declare class ArchFlowVoice extends ArchBaseFlowWorkflow {
+    // constructor(coreVoiceFlowViewModel: any);
+    /**
+     * Returns the display type name string 'ArchFlowVoice'.
+     */
+    static readonly displayTypeName: string;
+    /**
+     * Returns true indicating that this is an ArchFlowVoice instance.
+     */
+    static isArchFlowVoice: boolean;
+}
+
+/**
+ * The Architect Scripting class for the Voicemail flow type.
+ * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows#loadFlowDefaultVoicemailAsync}
  * @param coreVoicemailFlowViewModel - ( *Internal* ) an Architect core inbound call view model.
  */
 declare class ArchFlowVoicemail extends ArchBaseFlowInboundOutboundSecureCall {
@@ -12731,7 +12815,11 @@ declare class ArchSettingsNluIntent extends ArchBaseObject {
      */
     readonly isArchSettingsNluIntent: boolean;
     /**
-     * A string suitable for logging that contains information about this definition.
+     * The parent {@link ArchFlowBot} that this {@link ArchSettingsNluIntent} belongs to.
+     */
+    parentFlow: ArchFlowBot;
+    /**
+     * A string suitable for logging that contains information about this ArchSettingsNluIntent.
      */
     readonly logStr: string;
     /**
@@ -14581,7 +14669,7 @@ declare class ArchValidationIssue extends ArchBaseCoreObject {
     /**
      * Returns a string array of rollup validation errors.  If there are no rollup errors, no value is returned.
      */
-    readonly rollupErrors: object[];
+    readonly rollupErrors: any[];
     /**
      * The count of rollup warnings for this issue.
      */
@@ -14589,7 +14677,7 @@ declare class ArchValidationIssue extends ArchBaseCoreObject {
     /**
      * Returns a string array of rollup validation warnings.  If there are no rollup warnings, no value is returned.
      */
-    readonly rollupWarnings: object[];
+    readonly rollupWarnings: any[];
     /**
      * The count of warnings in this issue.
      */
@@ -17813,7 +17901,7 @@ declare class ArchVariableWrapupCodeCollection extends ArchBaseVariableCollectio
 /**
  * The top level Architect Scripting SDK namespace.
  */
-declare namespace scripting {
+declare module 'purecloud-flow-scripting-api-sdk-javascript' {
     /**
      * The namespace for Architect Scripting data type support.
      */
