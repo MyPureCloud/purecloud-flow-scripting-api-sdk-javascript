@@ -13093,6 +13093,10 @@ declare class ArchSettingsOutboundCallFlow extends ArchBaseCoreObjectWithId {
      */
     static readonly displayTypeName: string;
     /**
+     * The contact list set for the outbound call flow.
+     */
+    readonly contactList: ArchValueContactList;
+    /**
      * The default wrapup code set for the outbound call flow.
      */
     readonly defaultWrapupCode: ArchValueWrapupCode;
