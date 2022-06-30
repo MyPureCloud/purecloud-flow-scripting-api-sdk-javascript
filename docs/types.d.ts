@@ -10330,6 +10330,10 @@ declare class ArchDefinitionFlow extends ArchBaseDefinition {
      */
     readonly canCreateFromDefinition: boolean;
     /**
+     * Returns whether the flow can suppress voice recording or not
+     */
+    static readonly canSuppressRecording: boolean;
+    /**
      * Returns the display type name string 'ArchDefinitionFlow'.
      */
     readonly displayTypeName: string;
@@ -12417,6 +12421,11 @@ declare class ArchSettingsBotFlow extends ArchBaseCoreObjectWithId {
      */
     readonly isArchSettingsBotFlow: boolean;
     /**
+     * Given a dynamic slot type name, this returns the ArchSettingsNluDynamicSlotType object for that dynamic slot type.
+     * This name lookup is case insensitive.  If the dynamic slot type cannot be found, nothing is returned.
+     */
+    getDynamicSlotTypeSettingsByName: any;
+    /**
      * Given an intent name, this returns the ArchSettingsNluIntent object for that intent.
      * This name lookup is case sensitive.  If the intent cannot be found, nothing is returned.
      * @param intentName - the name of the intent to find.  This method will throw if the
@@ -12823,6 +12832,72 @@ declare class ArchSettingsMenuFlow extends ArchSettingsMenu {
      * Returns true indicating that this is an ArchSettingsMenuFlow instance.
      */
     readonly isArchSettingsMenuFlow: boolean;
+}
+
+declare class ArchSettingsNluDynamicSlotType extends ArchBaseObject {
+    // constructor(coreDynamicSlotTypeViewModel: any);
+    /**
+     * Returns the display type name string 'ArchSettingsNluDynamicSlotType'.
+     */
+    static readonly displayTypeName: string;
+    /**
+     * Returns true indicating that this is an ArchSettingsNluDynamicSlotType instance.
+     */
+    readonly isArchSettingsNluDynamicSlotType: boolean;
+    /**
+     * A string suitable for logging that contains information about this definition.
+     */
+    readonly logStr: string;
+    /**
+     * A collection whose items supply possible String values for the slot type.
+     */
+    readonly values: ArchValueStringCollection;
+    /**
+     * A collection whose String items supply one or more synonyms for values in the 'Synonyms' collection.
+     * To specify a synonym for a value, add the synonym String value to the same
+     * index in this collection that the value has in the 'Synonyms' collection. To specify more than synonym
+     * for an individual slot type value, assign a String value at the appropriate index in this collection but
+     * separate the individual synonyms with a ',' character.
+     */
+    readonly synonyms: ArchValueStringCollection;
+    /**
+     * This is a string suitable for logging information about this object where it's just the object's type.  This is normally used
+     * when logging errors that occur in constructor parameter checking because the scripting object isn't set up and the normal
+     * logging str contents wouldn't be set up.
+     */
+    readonly logStrTypeOnly: string;
+    /**
+     * Logs an error to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logErrors} is true.
+     * @param errorStr - the error string to log.
+     */
+    logError(errorStr: string): void;
+    /**
+     * Logs an error to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logErrors} is true and then throws
+     * the string in the errorStr parameter.
+     * @param errorStr - the error string to log.  This should be a non-blank string.
+     */
+    logErrorAndThrow(errorStr: string): void;
+    /**
+     * Logs a note to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logNotes} is true.
+     * @param noteStr - the note string to log.  This should be a non-blank string.
+     */
+    logNote(noteStr: string): void;
+    /**
+     * Logs a note to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logNotesVerbose} is true.
+     * @param noteStr - the note string to log.  This should be a non-blank string.
+     */
+    logNoteVerbose(noteStr: string): void;
+    /**
+     * Logs a warning to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logWarnings} is true.
+     * @param warningStr - the warning string to log.  This should be a non-blank string.
+     */
+    logWarning(warningStr: string): void;
+    /**
+     * Returns whether or not this Architect Scripting object is a match
+     * for the supplied ArchFilterObject instance.
+     * @param archFilterObject - the object filter to use to determine if it's a match.
+     */
+    isFilterMatch(archFilterObject: ArchFilterObject): boolean;
 }
 
 declare class ArchSettingsNluIntent extends ArchBaseObject {
@@ -17960,6 +18035,24 @@ declare class ArchVariableQueueCollection extends ArchBaseVariableCollection {
 }
 
 /**
+ * ArchVariableSchedule
+ * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
+ */
+declare class ArchVariableSchedule extends ArchBaseVariableSingleton {
+    // constructor(coreVariableViewModel: any);
+    /**
+     * Returns the display type name string 'ArchVariableSchedule'.
+     */
+    static readonly displayTypeName: string;
+    /**
+     * The initial schedule value for the variable at runtime.  If the {@link ArchValueSchedule} is set to [no value]{@link ArchBaseValue#isNoValue},
+     * this will be a NOT_SET schedule at runtime.
+     */
+    initialValue: ArchValueSchedule;
+    static isArchVariableSchedule: boolean;
+}
+
+/**
  * ArchVariableScheduleCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
@@ -18614,6 +18707,7 @@ declare module 'purecloud-flow-scripting-api-sdk-javascript' {
             let ArchSettingsEventErrorFlowBot: ArchSettingsEventErrorFlowBot;
             let ArchSettingsInboundEmailFlow: ArchSettingsOutboundCallFlow;
             let ArchSettingsInQueueCallFlow: ArchSettingsInQueueCallFlow;
+            let ArchSettingsNluDynamicSlotType: ArchSettingsNluDynamicSlotType;
             let ArchSettingsNluIntent: ArchSettingsNluIntent;
             let ArchSettingsNluKnowledge: ArchSettingsNluKnowledge;
             let ArchSettingsMenu: ArchSettingsMenu;

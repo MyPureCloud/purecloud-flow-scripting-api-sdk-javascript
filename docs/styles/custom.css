@@ -192,3 +192,15 @@ pre.prettyprint {
 	padding: 1em;
 	white-space: pre-wrap;
 }
+
+.signature-attributes {
+    color: #aaa;
+}
+
+.signature-attributes:before {
+    content: ' <';
+}
+
+.signature-attributes:after {
+    content: '>';
+}
