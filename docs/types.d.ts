@@ -7389,12 +7389,12 @@ declare class ArchBaseActionDataAction extends ArchBaseActionWithOutputsSuccessF
 }
 
 /**
- * The Architect Scripting class for the base Lex Action instance.
+ * The Architect Scripting class for the base Dialogflow Action instance.
  * Instances of this class will be created automatically by Architect Scripting as needed.
- * @param coreBaseIntegrationActionViewModel - ( *Internal* ) an Architect core Lex action view model.
+ * @param coreDialogflowActionViewModel - ( *Internal* ) an Architect core Dialogflow action view model.
  */
 declare class ArchBaseActionDialogflow extends ArchBaseActionBot {
-    // constructor(coreBaseIntegrationActionViewModel: any);
+    // constructor(coreDialogflowActionViewModel: any);
     /**
      * Returns the string 'Draft', which is the name for the Draft environment on a Dialogflow agent
      */
@@ -8674,7 +8674,7 @@ declare class ArchBaseFlow extends ArchBaseCoreObjectWithId {
     /**
      * This adds a new variable to the flow.
      * @param name - the name of the variable to add.  Remember that variable names must
-     *                        start with a letter and can then be followed by one ore more letters, numbers
+     *                        start with a letter and can then be followed by one or more letters, numbers
      *                        or underscore characters to be valid.  Submitting the variable scope on the name
      *                        is optional.  If specified, it must be 'Flow.' in order to be valid since you're
      *                        adding the variable to a flow.
@@ -10330,10 +10330,6 @@ declare class ArchDefinitionFlow extends ArchBaseDefinition {
      */
     readonly canCreateFromDefinition: boolean;
     /**
-     * Returns whether the flow can suppress voice recording or not
-     */
-    static readonly canSuppressRecording: boolean;
-    /**
      * Returns the display type name string 'ArchDefinitionFlow'.
      */
     readonly displayTypeName: string;
@@ -10403,6 +10399,11 @@ declare class ArchDefinitionFlow extends ArchBaseDefinition {
      * whether or not individual supported languages can support TTS or ASR at runtime.  Otherwise, false.
      */
     readonly languagesSupportTtsAndAsrRuntime: boolean;
+    /**
+     * If a flow type [supports supported languages]{@link ArchDefinitionFlow#supportsSupportedLanguages}, this returns
+     * whether or not individual supported languages can support Speech To Text settings at runtime.  Otherwise, false.
+     */
+    readonly languagesSupportSpeechToText: boolean;
     /**
      * Returns whether or not audio is supported for this flow type.
      */
@@ -10829,7 +10830,7 @@ declare class ArchFlowCommonModule extends ArchBaseFlow {
     /**
      * This adds a new variable to the flow.
      * @param name - the name of the variable to add.  Remember that variable names must
-     *                        start with a letter and can then be followed by one ore more letters, numbers
+     *                        start with a letter and can then be followed by one or more letters, numbers
      *                        or underscore characters to be valid.  Submitting the variable scope on the name
      *                        is optional.  If specified, it must be 'Flow.' in order to be valid since you're
      *                        adding the variable to a flow.
@@ -11570,23 +11571,6 @@ declare class ArchFlowSurveyInvite extends ArchBaseFlowWorkflow {
      * Returns true indicating that this is an ArchFlowSurveyInvite instance.
      */
     readonly isArchFlowSurveyInvite: boolean;
-}
-
-/**
- * The Architect Scripting class for the Voice flow type.
- * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows#createFlowVoiceAsync}
- * @param coreVoiceFlowViewModel - ( *Internal* ) an Architect core voice flow view model.
- */
-declare class ArchFlowVoice extends ArchBaseFlowWorkflow {
-    // constructor(coreVoiceFlowViewModel: any);
-    /**
-     * Returns the display type name string 'ArchFlowVoice'.
-     */
-    static readonly displayTypeName: string;
-    /**
-     * Returns true indicating that this is an ArchFlowVoice instance.
-     */
-    static isArchFlowVoice: boolean;
 }
 
 /**
@@ -12424,7 +12408,7 @@ declare class ArchSettingsBotFlow extends ArchBaseCoreObjectWithId {
      * Given a dynamic slot type name, this returns the ArchSettingsNluDynamicSlotType object for that dynamic slot type.
      * This name lookup is case insensitive.  If the dynamic slot type cannot be found, nothing is returned.
      */
-    getDynamicSlotTypeSettingsByName: any;
+    getDynamicSlotTypeSettingsByName: ArchSettingsNluDynamicSlotType;
     /**
      * Given an intent name, this returns the ArchSettingsNluIntent object for that intent.
      * This name lookup is case sensitive.  If the intent cannot be found, nothing is returned.
@@ -13005,6 +12989,13 @@ declare class ArchSettingsNluKnowledge extends ArchBaseCoreObject {
      */
     readonly knowledgeConfirmation: ArchValueCommunication;
     /**
+     * Follow-up wording the bot will use after presenting a knowledge article.
+     * For example, 'Is there anything else I can help with?'
+     * This property maps to the Answer Follow-up setting you would see in the Knowledge settings
+     * within a Digital Bot Flow.
+     */
+    readonly knowledgeInitialResponseFollowup: ArchValueCommunication;
+    /**
      * Wording the bot will use to introduce a numbered list of matching Knowledge answers, in the case
      * where multiple good matches are found in the Knowledge Base. For example, 'This is what I found'
      */
@@ -13524,6 +13515,10 @@ declare class ArchSettingsSupportedLanguage extends ArchBaseCoreObject {
      */
     setTtsVoiceDefaultForCurrentEngine(): ArchTtsVoice;
     /**
+     * The speech to text engine currently set for this supported language setting. If the parent flow does not support speech to text, it will return null.
+     */
+    readonly speechToTextEngine: ArchSpeechToTextEngine;
+    /**
      * The text to speech engine currently set for this supported language setting. If the parent flow does not support audio, it will return null.
      */
     readonly ttsEngine: ArchTtsEngine;
@@ -13531,6 +13526,22 @@ declare class ArchSettingsSupportedLanguage extends ArchBaseCoreObject {
      * The text to speech voice currently set for this supported language setting. If the parent flow does not support audio, it will return null.
      */
     readonly ttsVoice: ArchTtsVoice;
+    /**
+     * Sets the speech to text engine with the specified name for this supported language setting.
+     * @param engineName - the name of the speech to text engine to set. Speech to text engine name lookups are performed case insensitively.
+     * @param [callbackFunction] - a function to call if the speech to text engine
+     *                                        is successfully looked up and configured on this language. The first parameter
+     *                                        passed to the callback function will be this supported language instance.
+     */
+    setSpeechToTextEngineByNameAsync(engineName: string, callbackFunction?: (...params: any[]) => any): Promise<ArchSettingsSupportedLanguage>;
+    /**
+     * Sets the speech to text engine with the specified id for this supported language setting.
+     * @param engineId - the identifier of the speech to text engine to set.
+     * @param [callbackFunction] - a function to call if the speech to text engine
+     *                                        is successfully looked up and configured on this language. The first parameter
+     *                                        passed to the callback function will be this supported language instance.
+     */
+    setSpeechToTextEngineByIdAsync(engineId: string, callbackFunction?: (...params: any[]) => any): Promise<ArchSettingsSupportedLanguage>;
 }
 
 /**
@@ -13879,6 +13890,36 @@ declare class ArchSpeechRecTermContainers extends ArchBaseCoreObject {
 }
 
 /**
+ * Creates an instance of an ArchSpeechToTextEngine object which represents a speech to text engine.  This represents
+ * a speech to text engine that you can configure in [bot flows]{@link ArchFlowBot}.
+ * Instances of this class will be created by Scripting as needed.
+ * @param coreSpeechToTextEngineViewModel - ( *Internal* ) an Architect core speech to text engine view model.
+ */
+declare class ArchSpeechToTextEngine extends ArchBaseCoreObjectWithId {
+    // constructor(coreSpeechToTextEngineViewModel: any);
+    /**
+     * Returns the display type name string 'ArchSpeechToTextEngine'.
+     */
+    static readonly displayTypeName: string;
+    /**
+     * Returns true indicating that this is an ArchSpeechToTextEngine instance.
+     */
+    static readonly isArchSpeechToTextEngine: boolean;
+    /**
+     * A string suitable for logging
+     */
+    readonly logStr: string;
+    /**
+     * The name of this speech to text engine.
+     */
+    readonly name: string;
+    /**
+     * The id of this speech to text engine.
+     */
+    readonly id: string;
+}
+
+/**
  * Creates an Architect state.
  * @param coreStateViewModel - ( *Internal* ) an Architect core state view model.
  */
@@ -13887,7 +13928,7 @@ declare class ArchState extends ArchBaseMultiActionContainer {
     /**
      * This adds a new variable to the state.
      * @param name - the name of the variable to add.  Remember that variable names must
-     *                        start with a letter and can then be followed by one ore more letters, numbers
+     *                        start with a letter and can then be followed by one or more letters, numbers
      *                        or underscore characters to be valid.  Submitting the variable scope on the name
      *                        is optional.  If specified, it must be 'State.' in order to be valid since you're
      *                        adding the variable to a state.
@@ -13960,7 +14001,7 @@ declare class ArchTask extends ArchBaseMultiActionContainer {
     /**
      * This adds a new variable to the task.
      * @param name - the name of the variable to add.  Remember that variable names must
-     *                        start with a letter and can then be followed by one ore more letters, numbers
+     *                        start with a letter and can then be followed by one or more letters, numbers
      *                        or underscore characters to be valid.  Submitting the variable scope on the name
      *                        is optional.  If specified, it must be 'Task.' in order to be valid since you're
      *                        adding the variable to a task.
@@ -14078,7 +14119,7 @@ declare class ArchTaskCommonModule extends ArchTask {
     /**
      * This adds a new variable to the task.
      * @param name - the name of the variable to add.  Remember that variable names must
-     *                        start with a letter and can then be followed by one ore more letters, numbers
+     *                        start with a letter and can then be followed by one or more letters, numbers
      *                        or underscore characters to be valid.  Submitting the variable scope on the name
      *                        is optional.  If specified, it must be 'Task.' in order to be valid since you're
      *                        adding the variable to a task.
@@ -18726,6 +18767,12 @@ declare module 'purecloud-flow-scripting-api-sdk-javascript' {
         namespace speechRec {
             let ArchSpeechRecTermContainer: ArchSpeechRecTermContainer;
             let ArchSpeechRecTermContainers: ArchSpeechRecTermContainers;
+        }
+        /**
+         * This namespace contains Architect Scripting flow speech to text related view models.
+         */
+        namespace speechToText {
+            let ArchSpeechToTextEngine: ArchSpeechToTextEngine;
         }
         /**
          * This namespace contains Architect Scripting task related view models.
