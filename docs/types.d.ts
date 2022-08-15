@@ -345,6 +345,7 @@ declare class ArchEnums {
      * &nbsp;&nbsp;prod_eu_central_1:   'prod_eu_central_1',
      * &nbsp;&nbsp;prod_eu_west_1:      'prod_eu_west_1',
      * &nbsp;&nbsp;prod_eu_west_2:      'prod_eu_west_2',
+     * &nbsp;&nbsp;prod_sa_east_1:      'prod_sa_east_1',
      * &nbsp;&nbsp;prod_us_east_1:      'prod_us_east_1',
      * &nbsp;&nbsp;prod_us_east_2:      'prod_us_east_2',
      * &nbsp;&nbsp;prod_us_west_2:      'prod_us_west_2'
