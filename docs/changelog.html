@@ -60,6 +60,11 @@
 
     <section>
         <article class="readme"><h2>Change Log</h2>
+<h1>0.32.1</h1>
+<h4>Bug Fixes</h4>
+<ul>
+<li>We fixed an issue where calling <a href="ArchActionCallData.html#setDataActionByNameAsync"><code>ArchActionCallData#setDataActionByNameAsync</code></a> and <a href="ArchActionCallDataSecure.html#setDataSecureActionByNameAsync"><code>ArchActionCallDataSecure#setDataSecureActionByNameAsync</code></a> would not correctly use the <code>categoryName</code> parameter to filter down results by the category name provided when multiple data actions had the same name and multiple categories included the category name that was being used for the function call.</li>
+</ul>
 <h1>0.32.0</h1>
 <h4>New Features</h4>
 <ul>
