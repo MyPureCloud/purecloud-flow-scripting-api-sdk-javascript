@@ -215,7 +215,7 @@ declare class ArchEnums {
      * }
      * ```
      */
-    readonly EVENTS_FLOW_ERROR_HANDLING: {"changeState":"state","disconnect":"disconnect","endFlow":"endFlow","endInQueueState":"endInQueueState","endWorkflow":"endWorkflow","exit":"exit","jumpToMenu":"menu","transferToQueue":"queue","jumpToTask":"task"};
+    readonly EVENTS_FLOW_ERROR_HANDLING: {"changeState":"state","continue":"continue","disconnect":"disconnect","endFlow":"endFlow","endInQueueState":"endInQueueState","endWorkflow":"endWorkflow","exit":"exit","jumpToMenu":"menu","transferToQueue":"queue","jumpToTask":"task"};
     /**
      * Returns a string array that contains all valid flow error event handling strings.
      */
@@ -3075,9 +3075,9 @@ declare class ArchAsyncPolling extends ArchBaseObject {
     // constructor();
     /**
      * Call this method to begin asynchronous polling.  It will return a promise that will either resolve or be rejected
-     * based on the callback function's return value.  The total time allowed for an operation is 40 seconds so when you
-     * multiply the maxTries * intervalMs parameters, the value cannot exceed 40000 ms.  Each instance of this class can
-     * only have one polling operation going on at a time.  Attempting to call this function with an polling promise that's
+     * based on the callback function's return value.  The total time allowed for an operation is 80 seconds so when you
+     * multiply the maxTries * intervalMs parameters, the value cannot exceed 80000 ms.  Each instance of this class can
+     * only have one polling operation going on at a time.  Attempting to call this function with a polling promise that's
      * already been started will result in a failure.
      * @param maxTries - the maximum number of times to call the callback function before failing the promise
      *                            returned by this function.  This value should be an integer.  The supported value range is >=1 and <=100.
@@ -10813,6 +10813,10 @@ declare class ArchDefinitionFlow extends ArchBaseDefinition {
      */
     readonly supportsStates: boolean;
     /**
+     * Returns whether or not this flow type supports multiple states.
+     */
+    readonly supportsMultipleStates: boolean;
+    /**
      * Returns whether or not the flow type for a given language supports knowledge functionality such as
      * knowledge bases. If you do not pass in a specific language to check, this function will check the
      * flow type in general but remember that it's only specific languages that will support knowledge
@@ -15853,7 +15857,7 @@ declare class ArchValueCurrency {
     static readonly displayTypeName: string;
     static isArchValueCurrency: boolean;
     /**
-     * Sets the curreny value to a literal from the supplied amount and optional ISO 4217 currency code.
+     * Sets the currency value to a literal from the supplied amount and optional ISO 4217 currency code.
      * @param amount - this value is assigned to the amount property on the currency value.  It must be a JavaScript number that when converted to a string does not have e notation.
      * @param [code] - this optional value is assigned to the code property on the currency value.  If specified, it must be a valid ISO 4217 code.  Currency codes are processed case insensitively.  If the supplied value is undefined or null, the currency value will have a NOT_SET String value for the code property.
      */
