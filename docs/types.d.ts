@@ -13652,9 +13652,10 @@ declare class ArchSettingsNluKnowledge extends ArchBaseCoreObject {
     readonly knowledgeConfirmation: ArchValueCommunication;
     /**
      * Follow-up wording the bot will use after presenting a knowledge article.
-     * For example, 'Is there anything else I can help with?'
+     * For example, 'I hope I answered your question.  You can ask anything else you might want to know.'
      * This property maps to the Answer Follow-up setting you would see in the Knowledge settings
-     * within a Digital Bot Flow.
+     * within a Digital Bot Flow.  What you want to do here is have the participant ask their next
+     * question as a result of this wording.
      */
     readonly knowledgeInitialResponseFollowup: ArchValueCommunication;
     /**
@@ -16651,7 +16652,7 @@ declare class ArchValueImageCollection extends ArchBaseValueCollectionBasic {
     /**
      * Returns true indicating this is an ArchValueImageCollection instance.
      */
-    static isArchValueImageCollection: boolean;
+    isArchValueImageCollection: boolean;
 }
 
 /**
