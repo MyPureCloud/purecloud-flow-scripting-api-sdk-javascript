@@ -5728,7 +5728,7 @@ declare class ArchActionGetResponse extends ArchBaseActionWithOutputsSuccessFail
      *                                        callback function will be this Architect Get Response action instance.
      * @param [responseLibraryName] - if a non-blank string is supplied for the response library name,
      *                                         the response will be set only if it belongs to the specified library.
-     *                                         Library name lookups are performed case insensitively.  Additionally
+     *                                         Library name lookups are performed case sensitively.  Additionally,
      *                                         if you have a scenario where multiple responses are named the same
      *                                         but reside in different libraries, use this parameter to specify
      *                                         the library to disambiguate the response you want.
@@ -9972,6 +9972,14 @@ declare class ArchBaseNetworkValueCollection extends ArchBaseNetworkValue {
      * @param index - the index of the collection item to retrieve.  This value should be a non-negative integer.
      */
     getItemByIndex(index: number): ArchBaseValue;
+    /**
+     * This changes the value to a literal, creates a new {@link ArchBaseValue} instance, adds it to the end of the collection
+     * and returns it.  The returned value will be the appropriate type for items contained in the collection.  As such,
+     * if you added an item to an {@link ArchValueQueueCollection}, the returned item would be an
+     * {@link ArchValueQueue} value.
+     * @returns - the newly created ArchBaseValue that was added.
+     */
+    addItemToCollection(): ArchBaseValue;
     /**
      * Returns the number of Architect value items in this collection if this value [is a literal]{@link ArchBaseValue#isLiteral}.
      * Remember that asynchronous calls to add items to literal collection values will not add the item to the collection
