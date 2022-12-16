@@ -204,6 +204,7 @@ declare class ArchEnums {
      * ```
      * {
      * &nbsp;&nbsp;changeState:     'state',
+     * &nbsp;&nbsp;continue:        'continue',
      * &nbsp;&nbsp;disconnect:      'disconnect',
      * &nbsp;&nbsp;endFlow:         'endFlow',
      * &nbsp;&nbsp;endInQueueState: 'endInQueueState',
@@ -10987,6 +10988,10 @@ declare class ArchDefinitionFlow extends ArchBaseDefinition {
      */
     readonly supportsSupportedLanguages: boolean;
     /**
+     * Returns whether this flow type supports the ability to add more than one supported language.
+     */
+    readonly supportsMoreThanOneSupportedLanguage: boolean;
+    /**
      * Returns whether or not this flow type supports reusable menus.
      */
     readonly supportsMenusReusable: boolean;
@@ -14358,6 +14363,10 @@ declare class ArchSettingsUserInput extends ArchBaseCoreObject {
      */
     readonly noInputApology: ArchValueCommunication;
     /**
+     * This Communication is output prior to the bot session ending
+     */
+    readonly endOfSessionMessage: ArchValueCommunication;
+    /**
      * For the current 'Ask for ...' action, this is the maximum number of times that the bot will allow no input
      * (i.e. silence) from the participant. If the number exceeds this maximum then the rules in the flow's Event
      * Handling 'Recognition Failure Event' section will be followed, or if the action has a 'No Intent' path then
@@ -14365,6 +14374,12 @@ declare class ArchSettingsUserInput extends ArchBaseCoreObject {
      * 'Ask for ...' action will count towards this maximum.
      */
     readonly noInputsMax: ArchValueInteger;
+    /**
+     * The no inputs maximum count exceeded count handling configured for the flow.
+     *
+     * Specifies the bots behavior when no input is received after the count configured in {@link ArchSettingsUserInput#noInputsMax}
+     */
+    readonly noInputsMaxExceededHandling: string;
     /**
      * Once the current Communication has finished playing, this is the maximum length of time to wait for the
      * participant to start speaking.  If no speech is detected within this time then a No Input will be triggered.
