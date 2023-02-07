@@ -8192,7 +8192,7 @@ export class ArchBaseActionLex extends ArchBaseActionBot {
  * Instances of this action have one or more outputs.
  * @param coreActionViewModel - ( *Internal* ) an Architect core action with NoInput NoMatch view model.
  */
-export class ArchBaseActionNoInputNoMatch extends ArchBaseAction {
+export class ArchBaseActionNoInputNoMatch extends ArchBaseActionWithOutputs {
     // constructor(coreActionViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionNoInputNoMatch'.
