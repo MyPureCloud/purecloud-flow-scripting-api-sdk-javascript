@@ -7,7 +7,7 @@
  *                                         Collection will be automatically appended if the data type
  *                                         is a collection and not a singleton.
  */
-declare class ArchDataType extends ArchBaseCoreObject {
+export class ArchDataType extends ArchBaseCoreObject {
     // constructor(coreExpressionType: any, baseDataTypeNameToUse: string);
     /**
      * A string suitable for logging that contains information about this data type.
@@ -16,7 +16,7 @@ declare class ArchDataType extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchDataType'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns whether or not this data type is considered to be an Architect Any type.  You will see Any types
      * listed in Architect's Expression Help like the implementation of the == operator that takes a valueToCompare
@@ -87,12 +87,12 @@ declare class ArchDataType extends ArchBaseCoreObject {
  * The ArchDataTypes class holds available data types for a flow.
  * Instances of this class will be created by Architect Scripting as needed.
  */
-declare class ArchDataTypes extends ArchBaseObject {
+export class ArchDataTypes extends ArchBaseObject {
     // constructor();
     /**
      * Returns the display type name string 'ArchDataTypes'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
 }
 
 /**
@@ -100,12 +100,12 @@ declare class ArchDataTypes extends ArchBaseObject {
  * returned by or passed in to calls.  There are corresponding _ALL properties that contain a string
  * array of each of the supported values for a particular enum in this service.
  */
-declare class ArchEnums {
+export class ArchEnums {
     // constructor();
     /**
      * Returns the display name string of 'ArchEnums'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns a JSON object with these properties whose values are valid abort survey invite dispositions:
      * ```
@@ -640,7 +640,7 @@ declare class ArchEnums {
  * This provides organization information for the current [session]{@link ArchSession}.
  * It is accessible from the session's [orgInfo]{@link ArchSession#orgInfo} property.
  */
-declare class ArchOrganizationInfo extends ArchBaseObject {
+export class ArchOrganizationInfo extends ArchBaseObject {
     // constructor();
     /**
      * Returns a string suitable for logging information about this organization info instance.
@@ -649,7 +649,7 @@ declare class ArchOrganizationInfo extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchOrganizationInfo'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns whether or not divisions are available for this organization.
      * If the Architect Scripting session is not [connected]{@link ArchSession#isConnected}, accessing this property will return false.
@@ -690,13 +690,13 @@ declare class ArchOrganizationInfo extends ArchBaseObject {
     /**
      * Returns true indicating that this is an ArchOrganizationInfo instance.
      */
-    static readonly isArchOrganizationInfo: boolean;
+    readonly isArchOrganizationInfo: boolean;
 }
 
 /**
  * This provides information about Architect Scripting itself.
  */
-declare class ArchScriptingInfo extends ArchBaseObject {
+export class ArchScriptingInfo extends ArchBaseObject {
     /**
      * Returns the version of Architect Scripting as a string.
      */
@@ -754,7 +754,7 @@ declare type callbackSessionEnd = (archSession: ArchSession) => void;
  * is used to figure out the environment (dev, test, or prod), host uri and region for scripting calls.  The locations
  * of dev and test are reserved for internal use by Genesys.
  */
-declare class ArchSession extends ArchBaseObject {
+export class ArchSession extends ArchBaseObject {
     // constructor();
     /**
      * The organization's identifier.
@@ -782,7 +782,7 @@ declare class ArchSession extends ArchBaseObject {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * This function will end the current scripting session.  It does not attempt to log the currently authenticated user out.
      * If you wish to log the currently authenticated user out, see {@link ArchSession#endWithLogout}.
@@ -853,7 +853,7 @@ declare class ArchSession extends ArchBaseObject {
     /**
      * Returns true indicating that this is an ArchSession instance.
      */
-    static readonly isArchSession: boolean;
+    readonly isArchSession: boolean;
     /**
      * Returns whether or not the session is connected / authenticated.
      */
@@ -953,7 +953,7 @@ declare class ArchSession extends ArchBaseObject {
  * Architect Scripting as needed.
  * @param coreDivisionViewModel - ( *Internal* ) an Architect core division view model.
  */
-declare class ArchDivision extends ArchBaseCoreObjectWithId {
+export class ArchDivision extends ArchBaseCoreObjectWithId {
     // constructor(coreDivisionViewModel: any);
     /**
      * Returns whether or not the currently logged in user can add a flow to this division.  In order for a
@@ -964,11 +964,11 @@ declare class ArchDivision extends ArchBaseCoreObjectWithId {
     /**
      * Returns the display type name string 'ArchDivision'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchDivision instance.
      */
-    static readonly isArchDivision: boolean;
+    readonly isArchDivision: boolean;
     /**
      * Returns whether or not this division is the home division.
      */
@@ -987,12 +987,12 @@ declare class ArchDivision extends ArchBaseCoreObjectWithId {
  * A class that provides internal support for Architect factory instances.  All factory singleton instances inherit
  * from this class.
  */
-declare class ArchBaseFactory extends ArchBaseObject {
+export class ArchBaseFactory extends ArchBaseObject {
     // constructor();
     /**
      * Returns the display type name string 'ArchBaseFactory'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns a string suitable for logging.
      */
@@ -1000,7 +1000,7 @@ declare class ArchBaseFactory extends ArchBaseObject {
     /**
      * Returns true indicating that this is an ArchBaseFactory instance.
      */
-    static readonly isArchBaseFactory: boolean;
+    readonly isArchBaseFactory: boolean;
 }
 
 /**
@@ -1008,12 +1008,12 @@ declare class ArchBaseFactory extends ArchBaseObject {
  * Do not attempt to create an instance of this class.  Architect Scripting will
  * create the factory instance as needed.
  */
-declare class ArchFactoryActions extends ArchBaseFactory {
+export class ArchFactoryActions extends ArchBaseFactory {
     // constructor();
     /**
      * Returns the display type name string 'ArchFactoryActions'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * A logging string for the Architect Factory Actions instance.
      */
@@ -1021,7 +1021,7 @@ declare class ArchFactoryActions extends ArchBaseFactory {
     /**
      * Returns true indicating that this is an ArchFactoryActions instance.
      */
-    static readonly isArchFactoryActions: boolean;
+    readonly isArchFactoryActions: boolean;
     /**
      * Adds an Add Flow Milestone action to a task, state, bot or action output.
      * @param archMultiActionContainer - the Architect task, state, bot or action output where the new action should be added.
@@ -1824,12 +1824,12 @@ declare class ArchFactoryActions extends ArchBaseFactory {
  * Do not attempt to create an instance of this class.  Architect Scripting will
  * create the factory instance as needed.
  */
-declare class ArchFactoryFilters extends ArchBaseFactory {
+export class ArchFactoryFilters extends ArchBaseFactory {
     // constructor();
     /**
      * Returns the display type name string 'ArchFactoryFilters'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * A logging string for the Architect Factory Filters instance.
      */
@@ -1837,7 +1837,7 @@ declare class ArchFactoryFilters extends ArchBaseFactory {
     /**
      * Returns true indicating that this is an ArchFactoryFilters instance.
      */
-    static readonly isArchFactoryFilters: boolean;
+    readonly isArchFactoryFilters: boolean;
     /**
      * This method creates a new filter object.
      * @param [matchStyle] - this specifies whether the new filter object should use logical and'ing or logical or'ing
@@ -1997,7 +1997,7 @@ declare type callbackVoid = () => void;
  * Do not attempt to create an instance of this class.  Architect Scripting will
  * create the factory instance as needed.
  */
-declare class ArchFactoryFlows extends ArchBaseFactory {
+export class ArchFactoryFlows extends ArchBaseFactory {
     // constructor();
     /**
      * The default division to use for flow creation calls like {@link ArchFactoryFlows#createFlowInboundCallAsync} if no division
@@ -2011,7 +2011,7 @@ declare class ArchFactoryFlows extends ArchBaseFactory {
     /**
      * Returns the display type name string 'ArchFactoryFlows'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * A logging string for the Architect Factory Flows instance.
      */
@@ -2019,7 +2019,7 @@ declare class ArchFactoryFlows extends ArchBaseFactory {
     /**
      * Returns true indicating that this is an ArchFactoryFlows instance.
      */
-    static readonly isArchFactoryFlows: boolean;
+    readonly isArchFactoryFlows: boolean;
     /**
      * Creates a new [bot flow]{@link ArchFlowBot} flow in memory.
      * Upon successful creation the callback function that's passed in will be called with the newly
@@ -2541,17 +2541,17 @@ declare class ArchFactoryFlows extends ArchBaseFactory {
  * Do not attempt to create an instance of this class.  Architect Scripting will
  * create the factory instance as needed.
  */
-declare class ArchFactoryMenus extends ArchBaseFactory {
+export class ArchFactoryMenus extends ArchBaseFactory {
     // constructor();
     /**
      * Returns the display type name string 'ArchFactoryMenus'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * A logging string for the Architect Factory Menus instance.
      */
     readonly logStr: string;
-    static readonly isArchFactoryMenus: boolean;
+    readonly isArchFactoryMenus: boolean;
     /**
      * Adds a menu to an inbound or outbound call flow.
      * @param archBaseFlow - the flow where the menu will be added.  The flow type must support menus.
@@ -2720,7 +2720,7 @@ declare class ArchFactoryMenus extends ArchBaseFactory {
  * Do not attempt to create an instance of this class.  Architect Scripting will
  * create the factory instance as needed.
  */
-declare class ArchFactoryPromise extends ArchBaseFactory {
+export class ArchFactoryPromise extends ArchBaseFactory {
     // constructor();
     /**
      * Creates an Architect Scripting promise that wraps a Promise or an array of Promises.
@@ -2730,11 +2730,11 @@ declare class ArchFactoryPromise extends ArchBaseFactory {
     /**
      * Returns the display type name string 'ArchFactoryPromise'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchFactoryPromise instance.
      */
-    static readonly isArchFactoryPromise: boolean;
+    readonly isArchFactoryPromise: boolean;
     /**
      * A logging string for the Architect Factory Promise instance.
      */
@@ -2755,12 +2755,12 @@ declare type callbackArchBasePrompt = (archBasePrompt: ArchBasePrompt) => void;
  * Do not attempt to create an instance of this class.  Architect Scripting will
  * create the factory instance as needed.
  */
-declare class ArchFactoryPrompts extends ArchBaseFactory {
+export class ArchFactoryPrompts extends ArchBaseFactory {
     // constructor();
     /**
      * Returns the display type name string 'ArchFactoryPrompts'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * A logging string for the Architect Factory Task instance.
      */
@@ -2768,7 +2768,7 @@ declare class ArchFactoryPrompts extends ArchBaseFactory {
     /**
      * Returns true indicating that this is an ArchFactoryPrompts instance.
      */
-    static readonly isArchFactoryPrompts: boolean;
+    readonly isArchFactoryPrompts: boolean;
     /**
      * Returns the prompt for the supplied prefixed prompt name.  A prefixed prompt name has either 'Prompt.'
      * or 'PromptSystem.' in front of the name.  If the prompt cannot be found, nothing is returned;
@@ -2785,12 +2785,12 @@ declare class ArchFactoryPrompts extends ArchBaseFactory {
  * Do not attempt to create an instance of this class.  Architect Scripting will
  * create the factory instance as needed.
  */
-declare class ArchFactoryStates extends ArchBaseFactory {
+export class ArchFactoryStates extends ArchBaseFactory {
     // constructor();
     /**
      * Returns the display type name string 'ArchFactoryStates'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * A logging string for the Architect Factory State instance.
      */
@@ -2798,7 +2798,7 @@ declare class ArchFactoryStates extends ArchBaseFactory {
     /**
      * Returns true indicating that this is an ArchFactoryStates instance.
      */
-    static readonly isArchFactoryStates: boolean;
+    readonly isArchFactoryStates: boolean;
     /**
      * This method will create and add a state to a flow.
      * @param archBaseFlow - the flow where the state will be added.
@@ -2814,12 +2814,12 @@ declare class ArchFactoryStates extends ArchBaseFactory {
  * Do not attempt to create an instance of this class.  Architect Scripting will
  * create the factory instance as needed.
  */
-declare class ArchFactoryTasks extends ArchBaseFactory {
+export class ArchFactoryTasks extends ArchBaseFactory {
     // constructor();
     /**
      * Returns the display type name string 'ArchFactoryTasks'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * A logging string for the Architect Factory Task instance.
      */
@@ -2827,7 +2827,7 @@ declare class ArchFactoryTasks extends ArchBaseFactory {
     /**
      * Returns true indicating that this is an ArchFactoryTasks instance.
      */
-    static readonly isArchFactoryTasks: boolean;
+    readonly isArchFactoryTasks: boolean;
     /**
      * This method will create and add a reusable task to a flow.
      * @param archBaseFlow - the flow where the task will be added.
@@ -2843,12 +2843,12 @@ declare class ArchFactoryTasks extends ArchBaseFactory {
  * Instances of this class will be created as needed by Architect Scripting.
  * @param coreIsoLanguageViewModel - ( *Internal* ) an Architect core ISO language view model.
  */
-declare class ArchLanguage extends ArchBaseCoreObject {
+export class ArchLanguage extends ArchBaseCoreObject {
     // constructor(coreIsoLanguageViewModel: any);
     /**
      * Returns the display type name string 'ArchLanguage'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns an array of text to speech engines that are valid for this language and the supplied flow type.
      * If the supplied flow type is not available for the organization, an empty array will be returned.
@@ -2873,7 +2873,7 @@ declare class ArchLanguage extends ArchBaseCoreObject {
     /**
      * Returns true indicating that this is an ArchLanguage instance.
      */
-    static readonly isArchLanguage: boolean;
+    readonly isArchLanguage: boolean;
     /**
      * Returns whether or not the language has runtime data playback support.
      * @param flowType - the flow type to check.  {@link ArchEnums#FLOW_TYPES} lists valid flow type strings.
@@ -2971,12 +2971,12 @@ declare class ArchLanguage extends ArchBaseCoreObject {
  * Represents the collection of Architect supported languages.  This service will return {@link ArchLanguage} instances
  * from various methods as they'll represent actual language instances.
  */
-declare class ArchLanguages extends ArchBaseObject {
+export class ArchLanguages extends ArchBaseObject {
     // constructor();
     /**
      * Returns the display type name string 'ArchLanguages'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * A string suitable for logging
      */
@@ -3086,7 +3086,7 @@ declare class ArchLanguages extends ArchBaseObject {
  * promise when a callback function completes successfully.  The normal use case is for the polling callback
  * function to return a promise that when it resolves will resolve the polling promise.
  */
-declare class ArchAsyncPolling extends ArchBaseObject {
+export class ArchAsyncPolling extends ArchBaseObject {
     // constructor();
     /**
      * Call this method to begin asynchronous polling.  It will return a promise that will either resolve or be rejected
@@ -3120,7 +3120,7 @@ declare class ArchAsyncPolling extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchAsyncPolling'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * A logging string for this ArchAsyncPolling instance.
      */
@@ -3138,12 +3138,12 @@ declare class ArchAsyncPolling extends ArchBaseObject {
  * Instances of this class will be created automatically by Architect Scripting
  * as needed.
  */
-declare class ArchAsyncTracker extends ArchBaseObject {
+export class ArchAsyncTracker extends ArchBaseObject {
     // constructor();
     /**
      * Returns the display type name string 'ArchAsyncTracker'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * A logging string for the Async Tracker instance.
      */
@@ -3151,7 +3151,7 @@ declare class ArchAsyncTracker extends ArchBaseObject {
     /**
      * Returns true indicating that this is an ArchAsyncTracker instance.
      */
-    static readonly isArchAsyncTracker: boolean;
+    readonly isArchAsyncTracker: boolean;
     /**
      * Adds a promise to be tracked to prevent operations like save from starting till its resolved.
      * @param promise - the JavaScript promise to track.  Promises are returned from async
@@ -3174,7 +3174,7 @@ declare type callbackArchLoggingHook = (logInfo: any) => boolean;
 /**
  * The singleton ArchLogging instance that is used for logging with Architect Scripting.
  */
-declare class ArchLogging {
+export class ArchLogging {
     // constructor();
     /**
      * Holds the last error that was written out.
@@ -3207,7 +3207,7 @@ declare class ArchLogging {
     /**
      * Returns the display type name string 'ArchLogging'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Logs an error.  This accepts parameters similar to how you would call console.log.
      */
@@ -3245,12 +3245,12 @@ declare class ArchLogging {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionAbortSurveyInvite}
  * @param coreAbortSurveyInviteViewModel - ( *Internal* ) an Architect core AbortSurveyInvite action view model.
  */
-declare class ArchActionAbortSurveyInvite extends ArchBaseAction {
+export class ArchActionAbortSurveyInvite extends ArchBaseAction {
     // constructor(coreAbortSurveyInviteViewModel: AbortSurveyInviteAction);
     /**
      * Returns the display type name string 'ArchActionAbortSurveyInvite'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionAbortSurveyInvite instance.
      */
@@ -3272,13 +3272,13 @@ declare class ArchActionAbortSurveyInvite extends ArchBaseAction {
  * Instances of this class should not be created directly.
  * @param coreAddFlowMilestoneViewModel - ( *Internal* ) an Architect core AddFlowMilestone view model.
  */
-declare class ArchActionAddFlowMilestone extends ArchBaseActionFlowOutcome {
+export class ArchActionAddFlowMilestone extends ArchBaseActionFlowOutcome {
     // constructor(coreAddFlowMilestoneViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionAddFlowMilestone instance.
      */
@@ -3317,12 +3317,12 @@ declare class ArchActionAddFlowMilestone extends ArchBaseActionFlowOutcome {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionAskForBoolean}
  * @param coreAskForBooleanActionViewModel - ( *Internal* ) an Architect core Ask For Boolean action view model.
  */
-declare class ArchActionAskForBoolean extends ArchBaseActionAsk {
+export class ArchActionAskForBoolean extends ArchBaseActionAsk {
     // constructor(coreAskForBooleanActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionAskForBoolean'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionAskForBoolean instance.
      */
@@ -3334,12 +3334,12 @@ declare class ArchActionAskForBoolean extends ArchBaseActionAsk {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionAskForIntent}
  * @param coreAskForNLUIntentAction - ( *Internal* ) an Architect core Ask For Natural Language Understanding (NLU) Intent action.
  */
-declare class ArchActionAskForIntent extends ArchBaseActionAsk {
+export class ArchActionAskForIntent extends ArchBaseActionAsk {
     // constructor(coreAskForNLUIntentAction: any);
     /**
      * Returns the display type name string 'ArchActionAskForIntent'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionAskForIntent instance.
      */
@@ -3364,16 +3364,16 @@ declare class ArchActionAskForIntent extends ArchBaseActionAsk {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionAskForSlot}
  * @param coreAskForSlotAction - ( *Internal* ) an Architect core Ask For Slot action.
  */
-declare class ArchActionAskForSlot extends ArchBaseActionNoInputNoMatch {
+export class ArchActionAskForSlot extends ArchBaseActionNoInputNoMatch {
     // constructor(coreAskForSlotAction: any);
     /**
      * Returns the action type identifier string from actionTypes.js
      */
-    static readonly _actionTypeId: string;
+    readonly _actionTypeId: string;
     /**
      * Returns the display type name string 'ArchActionAskForSlot'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionAskForSlot instance.
      */
@@ -3442,12 +3442,12 @@ declare type callbackArchActionCallBotConnector = (ArchActionCallBotConnector: A
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionCallBotConnector}
  * @param coreBotConnectorActionViewModel - ( *Internal* ) an Architect core Call Bot Connector action view model.
  */
-declare class ArchActionCallBotConnector extends ArchBaseActionBot {
+export class ArchActionCallBotConnector extends ArchBaseActionBot {
     // constructor(coreBotConnectorActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionCallBotConnector'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * This adds an output session name value pair to the Call Bot Connector action that is used to specify
      * the output session property name to retrieve and the corresponding output variable where the value should be stored at runtime.
@@ -3507,16 +3507,16 @@ declare class ArchActionCallBotConnector extends ArchBaseActionBot {
 /**
  * @param coreCallBotFlowAction - ( *Internal* ) an Architect core Call Bot Flow action.
  */
-declare class ArchActionCallBotFlow extends ArchBaseActionCallBotFlow {
+export class ArchActionCallBotFlow extends ArchBaseActionCallBotFlow {
     // constructor(coreCallBotFlowAction: any);
     /**
      * Returns the enum of the type of bot flow you can assign using {@link ArchBaseActionCallBotFlow#setTargetFlowInfoAsync}
      */
-    static readonly botFlowTypeEnum: string;
+    readonly botFlowTypeEnum: string;
     /**
      * Returns the display type name string 'ArchActionCallBotFlow'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionCallBotFlow instance.
      */
@@ -3535,12 +3535,12 @@ declare type callbackArchActionCallCommonModule = (ArchActionCallCommonModule: A
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionCallCommonModule}
  * @param coreCallCommonModuleAction - ( *Internal* ) an Architect core call common module action.
  */
-declare class ArchActionCallCommonModule extends ArchBaseAction {
+export class ArchActionCallCommonModule extends ArchBaseAction {
     // constructor(coreCallCommonModuleAction: any);
     /**
      * Returns the display type name string 'ArchActionCallCommonModule'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionCallCommonModule instance.
      */
@@ -3587,12 +3587,12 @@ declare type callbackArchActionCallData = (ArchActionCallData: ArchActionCallDat
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionCallData}
  * @param coreDataActionViewModel - ( *Internal* ) an Architect core call data action view model.
  */
-declare class ArchActionCallData extends ArchBaseActionDataAction {
+export class ArchActionCallData extends ArchBaseActionDataAction {
     // constructor(coreDataActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionCallData'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionCallData instance.
      */
@@ -3634,12 +3634,12 @@ declare type callbackArchActionCallDataSecure = (ArchActionCallDataSecure: ArchA
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionCallDataSecure}
  * @param coreSecureActionViewModel - ( *Internal* ) an Architect core call secure action view model.
  */
-declare class ArchActionCallDataSecure extends ArchBaseActionDataAction {
+export class ArchActionCallDataSecure extends ArchBaseActionDataAction {
     // constructor(coreSecureActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionCallDataSecure'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionCallDataSecure instance.
      */
@@ -3674,16 +3674,16 @@ declare class ArchActionCallDataSecure extends ArchBaseActionDataAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionCallDialogEngineBot}
  * @param coreDialogEngineActionViewModel - ( *Internal* ) an Architect core Call Dialog Engine action view model.
  */
-declare class ArchActionCallDialogEngineBot extends ArchBaseActionBot {
+export class ArchActionCallDialogEngineBot extends ArchBaseActionBot {
     // constructor(coreDialogEngineActionViewModel: any);
     /**
      * Returns the action type identifier string from actionTypes.js
      */
-    static readonly _actionTypeId: string;
+    readonly _actionTypeId: string;
     /**
      * Returns the display type name string 'ArchActionCallDialogEngineBot'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionCallDialogEngineBot instance.
      */
@@ -3717,7 +3717,7 @@ declare class ArchActionCallDialogEngineBot extends ArchBaseActionBot {
     setDialogEngineBotByNameAsync(botName: string, callbackFunction?: (...params: any[]) => any): Promise<ArchActionCallDialogEngineBot>;
 }
 
-declare class ArchActionCallDialogflowBot extends ArchBaseActionDialogflow {
+export class ArchActionCallDialogflowBot extends ArchBaseActionDialogflow {
     // constructor(coreDialogflowActionViewModel: any);
     /**
      * Returns the action type identifier string from actionTypes.js
@@ -3738,7 +3738,7 @@ declare class ArchActionCallDialogflowBot extends ArchBaseActionDialogflow {
     /**
      * Returns the display type name string 'ArchActionCallDialogflowBot'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The collection of intents and their parameters into which variables can be assigned. To access an intent, you can use
      * the getNamedValueByName function on this property and pass in the name of the intent you want to access.
@@ -4143,12 +4143,12 @@ declare class ArchActionCallDialogflowBot extends ArchBaseActionDialogflow {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionCallDialogflowCxBot}
  * @param coreDialogflowCxActionViewModel - ( *Internal* ) an Architect core Call Dialogflow Cx Bot action view model.
  */
-declare class ArchActionCallDialogflowCxBot extends ArchBaseActionDialogflow {
+export class ArchActionCallDialogflowCxBot extends ArchBaseActionDialogflow {
     // constructor(coreDialogflowCxActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionCallDialogflowCxBot'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionCallDialogflowCxBot instance.
      */
@@ -4191,16 +4191,16 @@ declare class ArchActionCallDialogflowCxBot extends ArchBaseActionDialogflow {
 /**
  * @param coreCallDigitalBotFlowAction - ( *Internal* ) an Architect core Call Digital Bot Flow action.
  */
-declare class ArchActionCallDigitalBotFlow extends ArchBaseActionCallBotFlow {
+export class ArchActionCallDigitalBotFlow extends ArchBaseActionCallBotFlow {
     // constructor(coreCallDigitalBotFlowAction: any);
     /**
      * Returns the enum of the type of bot flow you can assign using {@link ArchBaseActionCallBotFlow#setTargetFlowInfoAsync}
      */
-    static readonly botFlowTypeEnum: string;
+    readonly botFlowTypeEnum: string;
     /**
      * Returns the display type name string 'ArchActionCallDigitalBotFlow'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionCallDigitalBotFlow instance.
      */
@@ -4212,12 +4212,12 @@ declare class ArchActionCallDigitalBotFlow extends ArchBaseActionCallBotFlow {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionCallLexBot}
  * @param coreLexActionViewModel - ( *Internal* ) an Architect core Call Lex Bot action view model.
  */
-declare class ArchActionCallLexBot extends ArchBaseActionLex {
+export class ArchActionCallLexBot extends ArchBaseActionLex {
     // constructor(coreLexActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionCallLexBot'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionCallLexBot instance.
      */
@@ -4257,12 +4257,12 @@ declare class ArchActionCallLexBot extends ArchBaseActionLex {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionCallLexV2Bot}
  * @param coreLexActionViewModel - ( *Internal* ) an Architect core Call Lex V2 Bot action view model.
  */
-declare class ArchActionCallLexV2Bot extends ArchBaseActionLex {
+export class ArchActionCallLexV2Bot extends ArchBaseActionLex {
     // constructor(coreLexActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionCallLexV2Bot'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionCallLexV2Bot instance.
      */
@@ -4288,7 +4288,7 @@ declare class ArchActionCallLexV2Bot extends ArchBaseActionLex {
      * Returns the output Session Variables configured on the action.  If you are looking for
      * the input Session Variables, see {@link ArchBaseActionBot#sessionVariables}.
      */
-    static readonly sessionVariableOutputs: ArchBaseNameValuePairs;
+    readonly sessionVariableOutputs: ArchBaseNameValuePairs;
     /**
      * This sets the Lex V2 bot alias to call at runtime by its identifier.
      * @param lexBotAliasId - the identifier of the Lex bot alias.
@@ -4333,12 +4333,12 @@ declare type callbackArchActionCallNuanceMixBot = (ArchActionCallNuanceMixBot: A
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionCallNuanceMixBot}
  * @param coreNuanceMixBotActionViewModel - ( *Internal* ) an Architect core Call NuanceMixBot action view model.
  */
-declare class ArchActionCallNuanceMixBot extends ArchBaseActionBot {
+export class ArchActionCallNuanceMixBot extends ArchBaseActionBot {
     // constructor(coreNuanceMixBotActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionCallNuanceMixBot'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns the channel ID to be used when calling the bot.
      */
@@ -4397,12 +4397,12 @@ declare class ArchActionCallNuanceMixBot extends ArchBaseActionBot {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionCallTask}
  * @param coreCallTaskActionViewModel - ( *Internal* ) an Architect core call task action view model.
  */
-declare class ArchActionCallTask extends ArchBaseActionWithOutputsDefault {
+export class ArchActionCallTask extends ArchBaseActionWithOutputsDefault {
     // constructor(coreCallTaskActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionCallTask'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionCallTask instance.
      */
@@ -4425,16 +4425,16 @@ declare class ArchActionCallTask extends ArchBaseActionWithOutputsDefault {
 /**
  * @param coreCallVoiceFlowAction - ( *Internal* ) an Architect core Call Voice Flow action.
  */
-declare class ArchActionCallVoiceFlow extends ArchBaseActionCallBotFlow {
+export class ArchActionCallVoiceFlow extends ArchBaseActionCallBotFlow {
     // constructor(coreCallVoiceFlowAction: any);
     /**
      * Returns the enum of the type of bot flow you can assign using {@link ArchBaseActionCallBotFlow#setTargetFlowInfoAsync}
      */
-    static readonly botFlowTypeEnum: string;
+    readonly botFlowTypeEnum: string;
     /**
      * Returns the display type name string 'ArchActionCallVoiceFlow'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionCallVoiceFlow instance.
      */
@@ -4446,12 +4446,12 @@ declare class ArchActionCallVoiceFlow extends ArchBaseActionCallBotFlow {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionChangeState}
  * @param coreChangeStateActionViewModel - ( *Internal* ) an Architect core change state action view model.
  */
-declare class ArchActionChangeState extends ArchBaseAction {
+export class ArchActionChangeState extends ArchBaseAction {
     // constructor(coreChangeStateActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionChangeState'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionChangeState instance.
      */
@@ -4468,12 +4468,12 @@ declare class ArchActionChangeState extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionClearActiveIntent}
  * @param coreClearActiveIntentActionViewModel - ( *Internal* ) an Architect core clear active intent action view model.
  */
-declare class ArchActionClearActiveIntent extends ArchBaseAction {
+export class ArchActionClearActiveIntent extends ArchBaseAction {
     // constructor(coreClearActiveIntentActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionClearActiveIntent'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionClearActiveIntent instance.
      */
@@ -4485,12 +4485,12 @@ declare class ArchActionClearActiveIntent extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionClearSlot}
  * @param coreClearSlotActionViewModel - ( *Internal* ) an Architect core clear slot action view model.
  */
-declare class ArchActionClearSlot extends ArchBaseAction {
+export class ArchActionClearSlot extends ArchBaseAction {
     // constructor(coreClearSlotActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionClearSlot'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionClearSlot instance.
      */
@@ -4516,12 +4516,12 @@ declare class ArchActionClearSlot extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionClearVoicemailSnippet}
  * @param coreClearVoicemailSnippetActionViewModel - ( *Internal* ) an Architect core Record action view model.
  */
-declare class ArchActionClearVoicemailSnippet extends ArchBaseAction {
+export class ArchActionClearVoicemailSnippet extends ArchBaseAction {
     // constructor(coreClearVoicemailSnippetActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionClearVoicemailSnippet'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionClearVoicemailSnippet instance.
      */
@@ -4533,12 +4533,12 @@ declare class ArchActionClearVoicemailSnippet extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionCollectInput}
  * @param coreCollectInputAction - ( *Internal* ) an Architect core collect input action.
  */
-declare class ArchActionCollectInput extends ArchBaseActionWithOutputsSuccessFailure {
+export class ArchActionCollectInput extends ArchBaseActionWithOutputsSuccessFailure {
     // constructor(coreCollectInputAction: any);
     /**
      * Returns the display type name string 'ArchActionCollectInput'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The input audio for the collect input action.  This is the audio that will be
      * used to prompt the caller for their input.
@@ -4605,12 +4605,12 @@ declare class ArchActionCollectInput extends ArchBaseActionWithOutputsSuccessFai
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionCommunicate}
  * @param coreCommunicateActionViewModel - ( *Internal* ) an Architect core communicate action view model.
  */
-declare class ArchActionCommunicate extends ArchBaseAction {
+export class ArchActionCommunicate extends ArchBaseAction {
     // constructor(coreCommunicateActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionCommunicate'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The boolean condition for the Communicate action.  At runtime if the boolean condition evaluates to true, execution
      * will take the Yes output on this action.  Otherwise the No output will be taken.
@@ -4627,7 +4627,7 @@ declare class ArchActionCommunicate extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionCompleteSurveyInvite}
  * @param coreCompleteSurveyInviteViewModel - ( *Internal* ) an Architect core transfer to user action view model.
  */
-declare class ArchActionCompleteSurveyInvite extends ArchBaseAction {
+export class ArchActionCompleteSurveyInvite extends ArchBaseAction {
     // constructor(coreCompleteSurveyInviteViewModel: TransferVoicemailAction);
     /**
      * The target address to use for the survey invite.
@@ -4652,7 +4652,7 @@ declare class ArchActionCompleteSurveyInvite extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionCompleteSurveyInvite'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionCompleteSurveyInvite instance.
      */
@@ -4671,12 +4671,12 @@ declare type callbackArchActionCreateCallback = (archActionCreateCallback: ArchA
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionCreateCallback}
  * @param coreCreateCallbackActionViewModel - ( *Internal* ) an Architect core create callback action view model.
  */
-declare class ArchActionCreateCallback extends ArchBaseAction {
+export class ArchActionCreateCallback extends ArchBaseAction {
     // constructor(coreCreateCallbackActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionCreateCallback'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns the callback number value for this Create Callback instance.
      */
@@ -4729,12 +4729,12 @@ declare type callbackArchActionDataTableLookup = (ArchActionDataTableLookup: Arc
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionDataTableLookup}
  * @param coreDataTableLookupActionViewModel - ( *Internal* ) an Architect core call data table view model.
  */
-declare class ArchActionDataTableLookup extends ArchBaseActionWithOutputsFoundNotFoundFailure {
+export class ArchActionDataTableLookup extends ArchBaseActionWithOutputsFoundNotFoundFailure {
     // constructor(coreDataTableLookupActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionDataTableLookup'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * This is the the value you wish to look up at runtime and will be the key field of the data table inputs schema. Please note
      * that this value cannot be assigned a value until the data table is configured on this action using the
@@ -4781,12 +4781,12 @@ declare class ArchActionDataTableLookup extends ArchBaseActionWithOutputsFoundNo
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionDecision}
  * @param coreDecisionActionViewModel - ( *Internal* ) an Architect core decision action view model.
  */
-declare class ArchActionDecision extends ArchBaseActionWithOutputsYesNo {
+export class ArchActionDecision extends ArchBaseActionWithOutputsYesNo {
     // constructor(coreDecisionActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionDecision'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The boolean condition for the decision action.  At runtime if the boolean condition evaluates to true, execution
      * will take the Yes output on this action.  Otherwise the No output will be taken.
@@ -4803,12 +4803,12 @@ declare class ArchActionDecision extends ArchBaseActionWithOutputsYesNo {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionDetectSilence}
  * @param coreDetectSilenceViewModel - ( *Internal* ) an Architect core Detect Silence action view model.
  */
-declare class ArchActionDetectSilence extends ArchBaseActionWithSilenceDetection {
+export class ArchActionDetectSilence extends ArchBaseActionWithSilenceDetection {
     // constructor(coreDetectSilenceViewModel: DetectSilenceActionViewModel);
     /**
      * Returns the display type name string 'ArchActionDetectSilence'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionDetectSilence instance.
      */
@@ -4820,12 +4820,12 @@ declare class ArchActionDetectSilence extends ArchBaseActionWithSilenceDetection
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionDialByExtension}
  * @param coreDialByExtensionAction - ( *Internal* ) an Architect core decision action view model.
  */
-declare class ArchActionDialByExtension extends ArchBaseActionWithOutputsFakeSuccessFailureTimeout {
+export class ArchActionDialByExtension extends ArchBaseActionWithOutputsFakeSuccessFailureTimeout {
     // constructor(coreDialByExtensionAction: any);
     /**
      * Returns the display type name string 'ArchActionDialByExtension'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The value that holds the variable for the caller entered extension.
      */
@@ -4854,12 +4854,12 @@ declare class ArchActionDialByExtension extends ArchBaseActionWithOutputsFakeSuc
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionDigitalMenu}
  * @param coreDigitalMenuActionViewModel - ( *Internal* ) an Architect core Digital Menu action view model.
  */
-declare class ArchActionDigitalMenu extends ArchBaseActionWithOutputs {
+export class ArchActionDigitalMenu extends ArchBaseActionWithOutputs {
     // constructor(coreDigitalMenuActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionDigitalMenu'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionDigitalMenu instance.
      */
@@ -4899,12 +4899,12 @@ declare class ArchActionDigitalMenu extends ArchBaseActionWithOutputs {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionDisconnect}
  * @param coreDisconnectActionViewModel - ( *Internal* ) an Architect core disconnect action view model.
  */
-declare class ArchActionDisconnect extends ArchBaseAction {
+export class ArchActionDisconnect extends ArchBaseAction {
     // constructor(coreDisconnectActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionDisconnect'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionDisconnect instance.
      */
@@ -4916,12 +4916,12 @@ declare class ArchActionDisconnect extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionEnableParticipantRecord}
  * @param coreEnableParticipantRecordActionViewModel - ( *Internal* ) an Architect core enable Participant Record action view model.
  */
-declare class ArchActionEnableParticipantRecord extends ArchBaseAction {
+export class ArchActionEnableParticipantRecord extends ArchBaseAction {
     // constructor(coreEnableParticipantRecordActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionEnableParticipantRecord'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionEnableParticipantRecord instance.
      */
@@ -4933,12 +4933,12 @@ declare class ArchActionEnableParticipantRecord extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionEndState}
  * @param coreEndStateActionViewModel - ( *Internal* ) an Architect core Set External Tag action view model.
  */
-declare class ArchActionEndState extends ArchBaseAction {
+export class ArchActionEndState extends ArchBaseAction {
     // constructor(coreEndStateActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionEndState'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionEndState instance.
      */
@@ -4950,12 +4950,12 @@ declare class ArchActionEndState extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionEndTask}
  * @param coreEndTaskActionViewModel - ( *Internal* ) an Architect core end task action view model.
  */
-declare class ArchActionEndTask extends ArchBaseAction {
+export class ArchActionEndTask extends ArchBaseAction {
     // constructor(coreEndTaskActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionEndTask'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionEndTask instance.
      */
@@ -4972,12 +4972,12 @@ declare class ArchActionEndTask extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionEndWorkflow}
  * @param coreEndWorkflowActionViewModel - ( *Internal* ) an Architect core end workflow action view model.
  */
-declare class ArchActionEndWorkflow extends ArchBaseAction {
+export class ArchActionEndWorkflow extends ArchBaseAction {
     // constructor(coreEndWorkflowActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionEndWorkflow'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * This property lets you specify an exit reason string for the workflow at runtime.
      */
@@ -5000,12 +5000,12 @@ declare type callbackArchActionEvaluateSchedule = (ArchActionEvaluateSchedule: A
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionEvaluateSchedule}
  * @param coreEvaluateScheduleViewModel - ( *Internal* ) an Architect core schedule view model.
  */
-declare class ArchActionEvaluateSchedule extends ArchBaseActionSchedule {
+export class ArchActionEvaluateSchedule extends ArchBaseActionSchedule {
     // constructor(coreEvaluateScheduleViewModel: any);
     /**
      * Returns the display type name string 'ArchActionEvaluateSchedule'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionEvaluateSchedule instance.
      */
@@ -5071,12 +5071,12 @@ declare type callbackArchActionEvaluateScheduleGroup = (ArchActionEvaluateSchedu
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionEvaluateSchedule}
  * @param coreEvaluateScheduleGroupViewModel - ( *Internal* ) an Architect core schedule group view model.
  */
-declare class ArchActionEvaluateScheduleGroup extends ArchBaseActionSchedule {
+export class ArchActionEvaluateScheduleGroup extends ArchBaseActionSchedule {
     // constructor(coreEvaluateScheduleGroupViewModel: any);
     /**
      * Returns the display type name string 'ArchActionEvaluateScheduleGroup'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionEvaluateScheduleGroup instance.
      */
@@ -5130,12 +5130,12 @@ declare class ArchActionEvaluateScheduleGroup extends ArchBaseActionSchedule {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionExitBotFlow}
  * @param coreDisconnectActionViewModel - ( *Internal* ) an Architect core exit bot flow action view model.
  */
-declare class ArchActionExitBotFlow extends ArchBaseAction {
+export class ArchActionExitBotFlow extends ArchBaseAction {
     // constructor(coreDisconnectActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionExitBotFlow'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionExitBotFlow instance.
      */
@@ -5147,7 +5147,7 @@ declare class ArchActionExitBotFlow extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionExtractSecureData}
  * @param coreExtractSecureDataActionViewModel - ( *Internal* ) an Architect core extract secure data action view model.
  */
-declare class ArchActionExtractSecureData extends ArchBaseAction {
+export class ArchActionExtractSecureData extends ArchBaseAction {
     // constructor(coreExtractSecureDataActionViewModel: any);
     /**
      * Call this function to acknowledge the insecuring of secure data with the logged in user and current date. This
@@ -5164,7 +5164,7 @@ declare class ArchActionExtractSecureData extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionExtractSecureData'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns whether or not the secure data extraction warning has been acknowledged for this action.
      */
@@ -5172,7 +5172,7 @@ declare class ArchActionExtractSecureData extends ArchBaseAction {
     /**
      * Returns true indicating that this is an ArchActionExtractSecureData instance.
      */
-    static readonly isArchActionExtractSecureData: boolean;
+    readonly isArchActionExtractSecureData: boolean;
     /**
      * Returns an array of update statements currently configured on this extract secure data action.  If there are no
      * update statements configured, an empty array will be returned.
@@ -5185,12 +5185,12 @@ declare class ArchActionExtractSecureData extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionFindEmergencyGroup}
  * @param coreFindEmergencyGroupActionViewModel - ( *Internal* ) an Architect core Find Emergency Group action view model.
  */
-declare class ArchActionFindEmergencyGroup extends ArchBaseActionFindSystemObjectByName {
+export class ArchActionFindEmergencyGroup extends ArchBaseActionFindSystemObjectByName {
     // constructor(coreFindEmergencyGroupActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionFindEmergencyGroup'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionFindEmergencyGroup instance.
      */
@@ -5206,12 +5206,12 @@ declare class ArchActionFindEmergencyGroup extends ArchBaseActionFindSystemObjec
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionFindGroup}
  * @param coreFindGroupActionViewModel - ( *Internal* ) an Architect core Find Group action view model.
  */
-declare class ArchActionFindGroup extends ArchBaseActionFindSystemObjectByName {
+export class ArchActionFindGroup extends ArchBaseActionFindSystemObjectByName {
     // constructor(coreFindGroupActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionFindGroup'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionFindGroup instance.
      */
@@ -5227,12 +5227,12 @@ declare class ArchActionFindGroup extends ArchBaseActionFindSystemObjectByName {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionFindLanguageSkill}
  * @param coreFindLanguageSkillActionViewModel - ( *Internal* ) an Architect core Find Language Skill action view model.
  */
-declare class ArchActionFindLanguageSkill extends ArchBaseActionFindSystemObjectByName {
+export class ArchActionFindLanguageSkill extends ArchBaseActionFindSystemObjectByName {
     // constructor(coreFindLanguageSkillActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionFindLanguageSkill'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionFindLanguageSkill instance.
      */
@@ -5248,12 +5248,12 @@ declare class ArchActionFindLanguageSkill extends ArchBaseActionFindSystemObject
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionFindQueue}
  * @param coreFindQueueActionViewModel - ( *Internal* ) an Architect core Find Queue action view model.
  */
-declare class ArchActionFindQueue extends ArchBaseActionFindSystemObjectByName {
+export class ArchActionFindQueue extends ArchBaseActionFindSystemObjectByName {
     // constructor(coreFindQueueActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionFindQueue'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionFindQueue instance.
      */
@@ -5269,12 +5269,12 @@ declare class ArchActionFindQueue extends ArchBaseActionFindSystemObjectByName {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionFindQueueById}
  * @param coreFindQueueByIdActionViewModel - ( *Internal* ) an Architect core Find Queue By Id action view model.
  */
-declare class ArchActionFindQueueById extends ArchBaseActionFindSystemObjectById {
+export class ArchActionFindQueueById extends ArchBaseActionFindSystemObjectById {
     // constructor(coreFindQueueByIdActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionFindQueueById'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionFindQueueById instance.
      */
@@ -5290,12 +5290,12 @@ declare class ArchActionFindQueueById extends ArchBaseActionFindSystemObjectById
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionFindSchedule}
  * @param coreFindScheduleActionViewModel - ( *Internal* ) an Architect core Find Schedule action view model.
  */
-declare class ArchActionFindSchedule extends ArchBaseActionFindSystemObjectByName {
+export class ArchActionFindSchedule extends ArchBaseActionFindSystemObjectByName {
     // constructor(coreFindScheduleActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionFindSchedule'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionFindSchedule instance.
      */
@@ -5311,12 +5311,12 @@ declare class ArchActionFindSchedule extends ArchBaseActionFindSystemObjectByNam
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionFindScheduleGroup}
  * @param coreFindScheduleGroupActionViewModel - ( *Internal* ) an Architect core Find ScheduleGroup action view model.
  */
-declare class ArchActionFindScheduleGroup extends ArchBaseActionFindSystemObjectByName {
+export class ArchActionFindScheduleGroup extends ArchBaseActionFindSystemObjectByName {
     // constructor(coreFindScheduleGroupActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionFindScheduleGroup'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionFindScheduleGroup instance.
      */
@@ -5332,12 +5332,12 @@ declare class ArchActionFindScheduleGroup extends ArchBaseActionFindSystemObject
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionFindSkill}
  * @param coreFindSkillActionViewModel - ( *Internal* ) an Architect core Find Skill action view model.
  */
-declare class ArchActionFindSkill extends ArchBaseActionFindSystemObjectByName {
+export class ArchActionFindSkill extends ArchBaseActionFindSystemObjectByName {
     // constructor(coreFindSkillActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionFindSkill'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionFindSkill instance.
      */
@@ -5353,12 +5353,12 @@ declare class ArchActionFindSkill extends ArchBaseActionFindSystemObjectByName {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionFindSystemPrompt}
  * @param coreFindSystemPromptActionViewModel - ( *Internal* ) an Architect core Find System Prompt action view model.
  */
-declare class ArchActionFindSystemPrompt extends ArchBaseActionFindSystemObjectByName {
+export class ArchActionFindSystemPrompt extends ArchBaseActionFindSystemObjectByName {
     // constructor(coreFindSystemPromptActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionFindSystemPrompt'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionFindSystemPrompt instance.
      */
@@ -5374,12 +5374,12 @@ declare class ArchActionFindSystemPrompt extends ArchBaseActionFindSystemObjectB
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionFindUser}
  * @param coreFindUserActionViewModel - ( *Internal* ) an Architect core Find User action view model.
  */
-declare class ArchActionFindUser extends ArchBaseActionFindSystemObjectByName {
+export class ArchActionFindUser extends ArchBaseActionFindSystemObjectByName {
     // constructor(coreFindUserActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionFindUser'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionFindUser instance.
      */
@@ -5395,12 +5395,12 @@ declare class ArchActionFindUser extends ArchBaseActionFindSystemObjectByName {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionFindUserById}
  * @param coreFindUserByIdActionViewModel - ( *Internal* ) an Architect core Find User By Id action view model.
  */
-declare class ArchActionFindUserById extends ArchBaseActionFindSystemObjectById {
+export class ArchActionFindUserById extends ArchBaseActionFindSystemObjectById {
     // constructor(coreFindUserByIdActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionFindUserById'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionFindUserById instance.
      */
@@ -5416,12 +5416,12 @@ declare class ArchActionFindUserById extends ArchBaseActionFindSystemObjectById 
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionFindUserPrompt}
  * @param coreFindUserPromptActionViewModel - ( *Internal* ) an Architect core Find User Prompt action view model.
  */
-declare class ArchActionFindUserPrompt extends ArchBaseActionFindSystemObjectByName {
+export class ArchActionFindUserPrompt extends ArchBaseActionFindSystemObjectByName {
     // constructor(coreFindUserPromptActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionFindUserPrompt'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionFindUserPrompt instance.
      */
@@ -5437,12 +5437,12 @@ declare class ArchActionFindUserPrompt extends ArchBaseActionFindSystemObjectByN
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionFindUsersById}
  * @param coreFindUsersByIdActionViewModel - ( *Internal* ) an Architect core Find Users By Id action view model.
  */
-declare class ArchActionFindUsersById extends ArchBaseActionFindSystemObjectsById {
+export class ArchActionFindUsersById extends ArchBaseActionFindSystemObjectsById {
     // constructor(coreFindUsersByIdActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionFindUsersById'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionFindUsersById instance.
      */
@@ -5460,12 +5460,12 @@ declare class ArchActionFindUsersById extends ArchBaseActionFindSystemObjectsByI
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionFlushAudio}
  * @param coreFlushAudioActionViewModel - ( *Internal* ) an Architect core flush audio action view model.
  */
-declare class ArchActionFlushAudio extends ArchBaseAction {
+export class ArchActionFlushAudio extends ArchBaseAction {
     // constructor(coreFlushAudioActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionFlushAudio'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionFlushAudio instance.
      */
@@ -5477,12 +5477,12 @@ declare class ArchActionFlushAudio extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionGetExternalContact}
  * @param coreGetExternalContactActionViewModel - ( *Internal* ) an Architect core Get External Contact action view model.
  */
-declare class ArchActionGetExternalContact extends ArchBaseActionWithOutputsFoundNotFound {
+export class ArchActionGetExternalContact extends ArchBaseActionWithOutputsFoundNotFound {
     // constructor(coreGetExternalContactActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionGetExternalContact'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionGetExternalContact instance.
      */
@@ -5502,12 +5502,12 @@ declare class ArchActionGetExternalContact extends ArchBaseActionWithOutputsFoun
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionGetExternalOrganization}
  * @param coreGetExternalOrganizationActionViewModel - ( *Internal* ) an Architect core Get External Organization action view model.
  */
-declare class ArchActionGetExternalOrganization extends ArchBaseActionWithOutputsFoundNotFound {
+export class ArchActionGetExternalOrganization extends ArchBaseActionWithOutputsFoundNotFound {
     // constructor(coreGetExternalOrganizationActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionGetExternalOrganization'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionGetExternalOrganization instance.
      */
@@ -5529,12 +5529,12 @@ declare class ArchActionGetExternalOrganization extends ArchBaseActionWithOutput
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionGetJourneyOutcome}
  * @param coreGetJourneySessionActionViewModel - ( *Internal* ) an Architect core Get Journey Outcome action view model.
  */
-declare class ArchActionGetJourneyOutcome extends ArchBaseActionFindSystemObjectById {
+export class ArchActionGetJourneyOutcome extends ArchBaseActionFindSystemObjectById {
     // constructor(coreGetJourneySessionActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionGetJourneyOutcome'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionGetJourneyOutcome instance.
      */
@@ -5552,12 +5552,12 @@ declare class ArchActionGetJourneyOutcome extends ArchBaseActionFindSystemObject
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionGetJourneyOutcomeScoresBySession}
  * @param coreGetJourneySessionsByExternalContactActionViewModel - ( *Internal* ) an Architect core Get Journey Session action view model.
  */
-declare class ArchActionGetJourneyOutcomeScoresBySession extends ArchBaseActionFindSystemObjectById {
+export class ArchActionGetJourneyOutcomeScoresBySession extends ArchBaseActionFindSystemObjectById {
     // constructor(coreGetJourneySessionsByExternalContactActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionGetJourneyOutcomeScoresBySession'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionGetJourneyOutcomeScoresBySession instance.
      */
@@ -5577,12 +5577,12 @@ declare class ArchActionGetJourneyOutcomeScoresBySession extends ArchBaseActionF
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionGetJourneySegment}
  * @param coreGetJourneySessionActionViewModel - ( *Internal* ) an Architect core Get Journey Session action view model.
  */
-declare class ArchActionGetJourneySegment extends ArchBaseActionFindSystemObjectById {
+export class ArchActionGetJourneySegment extends ArchBaseActionFindSystemObjectById {
     // constructor(coreGetJourneySessionActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionGetJourneySegment'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionGetJourneySegment instance.
      */
@@ -5600,12 +5600,12 @@ declare class ArchActionGetJourneySegment extends ArchBaseActionFindSystemObject
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionGetJourneySession}
  * @param coreGetJourneySessionActionViewModel - ( *Internal* ) an Architect core Get Journey Session action view model.
  */
-declare class ArchActionGetJourneySession extends ArchBaseActionFindSystemObjectById {
+export class ArchActionGetJourneySession extends ArchBaseActionFindSystemObjectById {
     // constructor(coreGetJourneySessionActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionGetJourneySession'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionGetJourneySession instance.
      */
@@ -5623,12 +5623,12 @@ declare class ArchActionGetJourneySession extends ArchBaseActionFindSystemObject
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionGetJourneySessionsByExternalContact}
  * @param coreGetJourneySessionsByExternalContactActionViewModel - ( *Internal* ) an Architect core Get Journey Session action view model.
  */
-declare class ArchActionGetJourneySessionsByExternalContact extends ArchBaseActionFindSystemObjectById {
+export class ArchActionGetJourneySessionsByExternalContact extends ArchBaseActionFindSystemObjectById {
     // constructor(coreGetJourneySessionsByExternalContactActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionGetJourneySessionsByExternalContact'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionGetJourneySessionsByExternalContact instance.
      */
@@ -5646,12 +5646,12 @@ declare class ArchActionGetJourneySessionsByExternalContact extends ArchBaseActi
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionGetParticipantData}
  * @param coreGetParticipantDataActionViewModel - ( *Internal* ) an Architect core get participant data action view model.
  */
-declare class ArchActionGetParticipantData extends ArchBaseAction {
+export class ArchActionGetParticipantData extends ArchBaseAction {
     // constructor(coreGetParticipantDataActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionGetParticipantData'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * This adds an attribute name value pair to the Get Participant Data action that is used to specify
      * the attribute name to retrieve and the corresponding output variable where the value should be stored at runtime.
@@ -5686,12 +5686,12 @@ declare type callbackArchActionGetResponse = (ArchActionGetResponse: ArchActionG
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionGetResponse}
  * @param coreGetResponseViewModel - ( *Internal* ) an Architect core response view model.
  */
-declare class ArchActionGetResponse extends ArchBaseActionWithOutputsSuccessFailure {
+export class ArchActionGetResponse extends ArchBaseActionWithOutputsSuccessFailure {
     // constructor(coreGetResponseViewModel: any);
     /**
      * Returns the display type name string 'ArchActionGetResponse'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The contents of this named value list come from the selected response's reported substitution schema.  The
      * name value pair items in this list will let you assign values that will be used as substitutions to the response at runtime.
@@ -5760,7 +5760,7 @@ declare class ArchActionGetResponse extends ArchBaseActionWithOutputsSuccessFail
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionHoldMusic}
  * @param coreHoldMusicActionViewModel - ( *Internal* ) an Architect core play hold music action view model.
  */
-declare class ArchActionHoldMusic extends ArchBaseAction {
+export class ArchActionHoldMusic extends ArchBaseAction {
     // constructor(coreHoldMusicActionViewModel: any);
     /**
      * Whether or not the action should accept barge-in input while the hold music is playing.
@@ -5769,7 +5769,7 @@ declare class ArchActionHoldMusic extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionHoldMusic'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionHoldMusic instance.
      */
@@ -5795,13 +5795,13 @@ declare class ArchActionHoldMusic extends ArchBaseAction {
  * Instances of this class should not be created directly.
  * @param coreInitializeFlowOutcomeActionViewModel - ( *Internal* ) an Architect core InitializeFlowOutcome view model.
  */
-declare class ArchActionInitializeFlowOutcome extends ArchBaseActionFlowOutcome {
+export class ArchActionInitializeFlowOutcome extends ArchBaseActionFlowOutcome {
     // constructor(coreInitializeFlowOutcomeActionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionInitializeFlowOutcome instance.
      */
@@ -5813,12 +5813,12 @@ declare class ArchActionInitializeFlowOutcome extends ArchBaseActionFlowOutcome 
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionJumpToMenu}
  * @param coreDecisionActionViewModel - ( *Internal* ) an Architect core jump to menu action view model.
  */
-declare class ArchActionJumpToMenu extends ArchBaseAction {
+export class ArchActionJumpToMenu extends ArchBaseAction {
     // constructor(coreDecisionActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionJumpToMenu'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionJumpToMenu instance.
      */
@@ -5835,12 +5835,12 @@ declare class ArchActionJumpToMenu extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionJumpToTask}
  * @param coreDecisionActionViewModel - ( *Internal* ) an Architect core jump to task action view model.
  */
-declare class ArchActionJumpToTask extends ArchBaseAction {
+export class ArchActionJumpToTask extends ArchBaseAction {
     // constructor(coreDecisionActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionJumpToTask'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionJumpToTask instance.
      */
@@ -5860,12 +5860,12 @@ declare class ArchActionJumpToTask extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionLoop}
  * @param coreLoopActionViewModel - ( *Internal* ) an Architect core loop action view model.
  */
-declare class ArchActionLoop extends ArchBaseActionWithOutputLoop {
+export class ArchActionLoop extends ArchBaseActionWithOutputLoop {
     // constructor(coreLoopActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionLoop'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * A value that contains the variable that holds the current loop index.
      */
@@ -5885,7 +5885,7 @@ declare class ArchActionLoop extends ArchBaseActionWithOutputLoop {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionLoopAnythingElse}
  * @param coreAskForNextIntentActionViewModel - ( *Internal* ) an Architect core Ask For Next Intent action view model.
  */
-declare class ArchActionLoopAnythingElse extends ArchBaseActionAsk {
+export class ArchActionLoopAnythingElse extends ArchBaseActionAsk {
     // constructor(coreAskForNextIntentActionViewModel: any);
     /**
      * A value that contains the variable that holds the current loop index.
@@ -5894,7 +5894,7 @@ declare class ArchActionLoopAnythingElse extends ArchBaseActionAsk {
     /**
      * Returns the display type name string 'ArchActionLoopAnythingElse'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionLoopAnythingElse instance.
      */
@@ -5913,12 +5913,12 @@ declare class ArchActionLoopAnythingElse extends ArchBaseActionAsk {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionLoopExit}
  * @param coreLoopExitActionViewModel - ( *Internal* ) an Architect core loop exit action view model.
  */
-declare class ArchActionLoopExit extends ArchBaseAction {
+export class ArchActionLoopExit extends ArchBaseAction {
     // constructor(coreLoopExitActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionLoopExit'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionLoopExit instance.
      */
@@ -5930,12 +5930,12 @@ declare class ArchActionLoopExit extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionLoopNext}
  * @param coreLoopActionNextViewModel - ( *Internal* ) an Architect core loop next action view model.
  */
-declare class ArchActionLoopNext extends ArchBaseAction {
+export class ArchActionLoopNext extends ArchBaseAction {
     // constructor(coreLoopActionNextViewModel: any);
     /**
      * Returns the display type name string 'ArchActionLoopNext'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionLoopNext instance.
      */
@@ -5947,12 +5947,12 @@ declare class ArchActionLoopNext extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionLoopUntil}
  * @param coreLoopUntilActionViewModel - ( *Internal* ) an Architect core loop until action view model.
  */
-declare class ArchActionLoopUntil extends ArchBaseActionWithOutputLoop {
+export class ArchActionLoopUntil extends ArchBaseActionWithOutputLoop {
     // constructor(coreLoopUntilActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionLoopUntil'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Adds an Until Case to a Loop Until action.  You need to specify a name
      * for the until case which will be available as an output on the action
@@ -5997,12 +5997,12 @@ declare class ArchActionLoopUntil extends ArchBaseActionWithOutputLoop {
  * {@link ArchFactoryMenus#addMenuSubMenu} method is called.
  * @param coreMenuActionViewModel - ( *Internal* ) an Architect core menu action view model.
  */
-declare class ArchActionMenu extends ArchBaseAction {
+export class ArchActionMenu extends ArchBaseAction {
     // constructor(coreMenuActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionMenu'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionMenu instance.
      */
@@ -6014,12 +6014,12 @@ declare class ArchActionMenu extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionPlayAudio}
  * @param corePlayAudioActionViewModel - ( *Internal* ) an Architect core play audio action view model.
  */
-declare class ArchActionPlayAudio extends ArchBaseAction {
+export class ArchActionPlayAudio extends ArchBaseAction {
     // constructor(corePlayAudioActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionPlayAudio'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The audio to play
      */
@@ -6035,12 +6035,12 @@ declare class ArchActionPlayAudio extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionPlayAudioOnSilence}
  * @param corePlayAudioOnSilenceViewModel - ( *Internal* ) an Architect core Play Audio on Silence action view model.
  */
-declare class ArchActionPlayAudioOnSilence extends ArchBaseActionWithSilenceDetection {
+export class ArchActionPlayAudioOnSilence extends ArchBaseActionWithSilenceDetection {
     // constructor(corePlayAudioOnSilenceViewModel: PlayAudioOnSilenceActionViewModel);
     /**
      * Returns the display type name string 'archActionPlayAudioOnSilence'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an archActionPlayAudioOnSilence instance.
      */
@@ -6064,12 +6064,12 @@ declare class ArchActionPlayAudioOnSilence extends ArchBaseActionWithSilenceDete
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionPlayEstimatedWaitTime}
  * @param corePlayEstimatedWaitTimeActionViewModel - ( *Internal* ) an Architect core play estimated wait time action view model.
  */
-declare class ArchActionPlayEstimatedWaitTime extends ArchBaseAction {
+export class ArchActionPlayEstimatedWaitTime extends ArchBaseAction {
     // constructor(corePlayEstimatedWaitTimeActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionPlayEstimatedWaitTime'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The duration value that specifies the estimated wait time for the caller in the queue.
      */
@@ -6136,12 +6136,12 @@ declare class ArchActionPlayEstimatedWaitTime extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionPlayPositionInQueue}
  * @param corePlayPositionInQueueActionViewModel - ( *Internal* ) an Architect core play position in queue action view model.
  */
-declare class ArchActionPlayPositionInQueue extends ArchBaseAction {
+export class ArchActionPlayPositionInQueue extends ArchBaseAction {
     // constructor(corePlayPositionInQueueActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionPlayPositionInQueue'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The integer value that specifies the position for the caller in the queue that will be read back.
      * Remember, if this value is a NOT_SET integer then no audio will be played back to the caller.
@@ -6170,12 +6170,12 @@ declare class ArchActionPlayPositionInQueue extends ArchBaseAction {
  * This action will be available from the ArchMenuPreviousMenu actionPreviousMenu property.
  * @param corePreviousMenuActionViewModel - ( *Internal* ) an Architect core previous menu action view model.
  */
-declare class ArchActionPreviousMenu extends ArchBaseAction {
+export class ArchActionPreviousMenu extends ArchBaseAction {
     // constructor(corePreviousMenuActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionPreviousMenu'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionPreviousMenu instance.
      */
@@ -6187,12 +6187,12 @@ declare class ArchActionPreviousMenu extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionProcessVoicemailInput}
  * @param coreProcessVoicemailInputActionViewModel - ( *Internal* ) an Architect core Process Voicemail Input action view model.
  */
-declare class ArchActionProcessVoicemailInput extends ArchBaseActionWithOutputsFailureNoInput {
+export class ArchActionProcessVoicemailInput extends ArchBaseActionWithOutputsFailureNoInput {
     // constructor(coreProcessVoicemailInputActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionProcessVoicemailInput'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this action has a fake fax processed action output.
      */
@@ -6213,12 +6213,12 @@ declare class ArchActionProcessVoicemailInput extends ArchBaseActionWithOutputsF
  * This action will be available from the ArchMenuRepeatMenu actionRepeatMenu property.
  * @param coreRepeatMenuActionViewModel - ( *Internal* ) an Architect core repeat menu action view model.
  */
-declare class ArchActionRepeatMenu extends ArchBaseAction {
+export class ArchActionRepeatMenu extends ArchBaseAction {
     // constructor(coreRepeatMenuActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionRepeatMenu'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this object is an ArchActionRepeatMenu instance.
      */
@@ -6230,12 +6230,12 @@ declare class ArchActionRepeatMenu extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionReturnToAgent}
  * @param coreReturnToAgentActionViewModel - ( *Internal* ) an Architect core Return To Agent action view model.
  */
-declare class ArchActionReturnToAgent extends ArchBaseAction {
+export class ArchActionReturnToAgent extends ArchBaseAction {
     // constructor(coreReturnToAgentActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionReturnToAgent'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionReturnToAgent instance.
      */
@@ -6247,12 +6247,12 @@ declare class ArchActionReturnToAgent extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionSearchExternalContacts}
  * @param coreSearchExternalContactsActionViewModel - ( *Internal* ) an Architect core Search External Contacts action view model.
  */
-declare class ArchActionSearchExternalContacts extends ArchBaseActionWithOutputsMatchExactMatchMultipleNotFound {
+export class ArchActionSearchExternalContacts extends ArchBaseActionWithOutputsMatchExactMatchMultipleNotFound {
     // constructor(coreSearchExternalContactsActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionSearchExternalContacts'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionSearchExternalContacts instance.
      */
@@ -6272,12 +6272,12 @@ declare class ArchActionSearchExternalContacts extends ArchBaseActionWithOutputs
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionSendAutoReply}
  * @param coreSendAutoReplyAction - ( *Internal* ) an Architect core collect input action.
  */
-declare class ArchActionSendAutoReply extends ArchBaseActionWithOutputsSuccessFailure {
+export class ArchActionSendAutoReply extends ArchBaseActionWithOutputsSuccessFailure {
     // constructor(coreSendAutoReplyAction: any);
     /**
      * Returns the display type name string 'ArchActionSendAutoReply'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionSendAutoReply instance.
      */
@@ -6319,12 +6319,12 @@ declare class ArchActionSendAutoReply extends ArchBaseActionWithOutputsSuccessFa
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionSendResponse}
  * @param coreSendResponseAction - ( *Internal* ) an Architect core send response action.
  */
-declare class ArchActionSendResponse extends ArchBaseActionWithOutputsSuccessFailure {
+export class ArchActionSendResponse extends ArchBaseActionWithOutputsSuccessFailure {
     // constructor(coreSendResponseAction: any);
     /**
      * Returns the display type name string 'ArchActionSendResponse'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionSendResponse instance.
      */
@@ -6356,12 +6356,12 @@ declare class ArchActionSendResponse extends ArchBaseActionWithOutputsSuccessFai
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionSetExternalTag}
  * @param coreSetExternalTagActionViewModel - ( *Internal* ) an Architect core Set External Tag action view model.
  */
-declare class ArchActionSetExternalTag extends ArchBaseActionWithOutputsFakeSuccessFailure {
+export class ArchActionSetExternalTag extends ArchBaseActionWithOutputsFakeSuccessFailure {
     // constructor(coreSetExternalTagActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionSetExternalTag'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionSetExternalTag instance.
      */
@@ -6378,13 +6378,13 @@ declare class ArchActionSetExternalTag extends ArchBaseActionWithOutputsFakeSucc
  * Instances of this class should not be created directly.
  * @param coreSetFlowOutcomeActionViewModel - ( *Internal* ) an Architect core SetFlowOutcome view model.
  */
-declare class ArchActionSetFlowOutcome extends ArchBaseActionFlowOutcome {
+export class ArchActionSetFlowOutcome extends ArchBaseActionFlowOutcome {
     // constructor(coreSetFlowOutcomeActionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionSetFlowOutcome instance.
      */
@@ -6407,12 +6407,12 @@ declare class ArchActionSetFlowOutcome extends ArchBaseActionFlowOutcome {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionSetIntent}
  * @param coreSetIntentActionViewModel - ( *Internal* ) an Architect core set intent action view model.
  */
-declare class ArchActionSetIntent extends ArchBaseAction {
+export class ArchActionSetIntent extends ArchBaseAction {
     // constructor(coreSetIntentActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionSetIntent'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The active intent for the set active intent action.  This should be an string that case sensitively matches the
      * name of an intent for this bot.
@@ -6429,12 +6429,12 @@ declare class ArchActionSetIntent extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionSetLanguage}
  * @param coreSetLocaleActionViewModel - ( *Internal* ) an Architect core set locale action view model.
  */
-declare class ArchActionSetLanguage extends ArchBaseAction {
+export class ArchActionSetLanguage extends ArchBaseAction {
     // constructor(coreSetLocaleActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionSetLanguage'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionSetLanguage instance.
      */
@@ -6458,12 +6458,12 @@ declare class ArchActionSetLanguage extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionSetParticipantData}
  * @param coreSetParticipantDataActionViewModel - ( *Internal* ) an Architect core set participant data action view model.
  */
-declare class ArchActionSetParticipantData extends ArchBaseAction {
+export class ArchActionSetParticipantData extends ArchBaseAction {
     // constructor(coreSetParticipantDataActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionSetParticipantData'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * This adds an attribute name value pair to the Set Participant Data action that can be used to specify
      * the attribute name and corresponding value that should be assigned to it.  On the returned {@link ArchBaseNameValuePair}
@@ -6489,12 +6489,12 @@ declare class ArchActionSetParticipantData extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionSetPriority}
  * @param coreSetPriorityActionViewModel - ( *Internal* ) an Architect core Set Priority action view model.
  */
-declare class ArchActionSetPriority extends ArchBaseActionWithOutputsSuccessFailure {
+export class ArchActionSetPriority extends ArchBaseActionWithOutputsSuccessFailure {
     // constructor(coreSetPriorityActionViewModel: SetPriorityActionViewModel);
     /**
      * Returns the display type name string 'ArchActionSetPriority'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionSetPriority instance.
      */
@@ -6517,12 +6517,12 @@ declare type callbackArchActionSetScreenPop = (archActionSetScreenPop: ArchActio
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionSetScreenPop}
  * @param coreScreenPopActionViewModel - ( *Internal* ) an Architect core set screen pop action view model.
  */
-declare class ArchActionSetScreenPop extends ArchBaseAction {
+export class ArchActionSetScreenPop extends ArchBaseAction {
     // constructor(coreScreenPopActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionSetScreenPop'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionSetScreenPop instance.
      */
@@ -6556,12 +6556,12 @@ declare class ArchActionSetScreenPop extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionSetSkills}
  * @param coreSetSkillsActionViewModel - ( *Internal* ) an Architect core Set Skills action view model.
  */
-declare class ArchActionSetSkills extends ArchBaseActionWithOutputsSuccessFailure {
+export class ArchActionSetSkills extends ArchBaseActionWithOutputsSuccessFailure {
     // constructor(coreSetSkillsActionViewModel: SetSkillsActionViewModel);
     /**
      * Returns the display type name string 'ArchActionSetSkills'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionSetSkills instance.
      */
@@ -6581,12 +6581,12 @@ declare class ArchActionSetSkills extends ArchBaseActionWithOutputsSuccessFailur
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionSetUUIData}
  * @param coreSetUUIDataViewModel - ( *Internal* ) an Architect core set uuidata action view model.
  */
-declare class ArchActionSetUUIData extends ArchBaseAction {
+export class ArchActionSetUUIData extends ArchBaseAction {
     // constructor(coreSetUUIDataViewModel: any);
     /**
      * Returns the display type name string 'ArchActionSetUUIData'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionCallData instance.
      */
@@ -6608,12 +6608,12 @@ declare class ArchActionSetUUIData extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionSetWhisperAudio}
  * @param coreSetWhisperAudioActionViewModel - ( *Internal* ) an Architect core Set Whisper Audio action view model.
  */
-declare class ArchActionSetWhisperAudio extends ArchBaseActionWithOutputsSuccessFailure {
+export class ArchActionSetWhisperAudio extends ArchBaseActionWithOutputsSuccessFailure {
     // constructor(coreSetWhisperAudioActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionSetWhisperAudio'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * This is a helper function to set no value mode on the {@link ArchActionSetWhisperAudio#whisperAudio} property.
      * If whisper is to be played to an agent, this will use the queue's configured
@@ -6635,12 +6635,12 @@ declare class ArchActionSetWhisperAudio extends ArchBaseActionWithOutputsSuccess
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionSetWrapupCode}
  * @param coreSetWrapupCodeActionViewModel - ( *Internal* ) an Architect core set wrapup code action view model.
  */
-declare class ArchActionSetWrapupCode extends ArchBaseActionWithOutputsSuccessFailure {
+export class ArchActionSetWrapupCode extends ArchBaseActionWithOutputsSuccessFailure {
     // constructor(coreSetWrapupCodeActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionSetWrapupCode'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this object is an ArchActionSetWrapupCode instance.
      */
@@ -6663,12 +6663,12 @@ declare type callbackArchActionShowKnowledgeArticle = (ArchActionShowKnowledgeAr
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionShowKnowledgeArticle}
  * @param coreShowKnowledgeArticleActionViewModel - ( *Internal* ) an Architect core Show Knowledge Article action view model.
  */
-declare class ArchActionShowKnowledgeArticle extends ArchBaseAction {
+export class ArchActionShowKnowledgeArticle extends ArchBaseAction {
     // constructor(coreShowKnowledgeArticleActionViewModel: ShowKnowledgeArticleActionViewModel);
     /**
      * Returns the display type name string 'ArchActionShowKnowledgeArticle'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionShowKnowledgeArticle instance.
      */
@@ -6708,7 +6708,7 @@ declare class ArchActionShowKnowledgeArticle extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionSwitch}
  * @param coreSwitchActionViewModel - ( *Internal* ) an Architect core switch action view model.
  */
-declare class ArchActionSwitch extends ArchBaseActionWithOutputsDefault {
+export class ArchActionSwitch extends ArchBaseActionWithOutputsDefault {
     // constructor(coreSwitchActionViewModel: any);
     /**
      * Adds a case to the switch action and returns the value associated with the case.
@@ -6736,7 +6736,7 @@ declare class ArchActionSwitch extends ArchBaseActionWithOutputsDefault {
     /**
      * Returns the display type name string 'ArchActionSwitch'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The evaluation style to use on the switch action.  The string values in {@link ArchEnums#SWITCH_EVALUATION_STYLES}
      * lists valid values.
@@ -6787,13 +6787,13 @@ declare class ArchActionSwitch extends ArchBaseActionWithOutputsDefault {
  * {@link ArchFactoryMenus#addMenuTask} method is called.
  * @param coreDisconnectActionViewModel - ( *Internal* ) an Architect core task action action view model.
  */
-declare class ArchActionTask extends ArchBaseAction {
+export class ArchActionTask extends ArchBaseAction {
     // constructor(coreDisconnectActionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionTask instance.
      */
@@ -6809,12 +6809,12 @@ declare class ArchActionTask extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionTranscription}
  * @param coreTranscriptionViewModel - ( *Internal* ) an Architect core Transcription action view model.
  */
-declare class ArchActionTranscription extends ArchBaseAction {
+export class ArchActionTranscription extends ArchBaseAction {
     // constructor(coreTranscriptionViewModel: AbortSurveyInviteAction);
     /**
      * Returns the display type name string 'ArchActionTranscription'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionTranscription instance.
      */
@@ -6841,12 +6841,12 @@ declare type callbackArchActionTransferToAcd = (archArchActionTransferToAcd: Arc
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionTransferToAcd}
  * @param coreTransferToAcdActionViewModel - ( *Internal* ) an Architect core transfer to acd action view model.
  */
-declare class ArchActionTransferToAcd extends ArchBaseActionTransfer {
+export class ArchActionTransferToAcd extends ArchBaseActionTransfer {
     // constructor(coreTransferToAcdActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionTransferToAcd'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * This adds a skill by name to this Transfer to Acd action.
      * @param skillName - the name of the skill to add. Skill name lookups are performed case sensitively.
@@ -6858,7 +6858,7 @@ declare class ArchActionTransferToAcd extends ArchBaseActionTransfer {
     /**
      * Returns true indicating that this is an ArchActionTransferToAcd instance.
      */
-    static readonly isArchActionTransferToAcd: boolean;
+    readonly isArchActionTransferToAcd: boolean;
     /**
      * The integer priority for this transfer to acd action.  The available range of priority values
      * is >= -25000000 and <= 25000000.
@@ -6952,16 +6952,16 @@ declare class ArchActionTransferToAcd extends ArchBaseActionTransfer {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionTransferToFlow}
  * @param coreTransferToFlowActionViewModel - ( *Internal* ) an Architect core transfer to flow action view model.
  */
-declare class ArchActionTransferToFlow extends ArchBaseActionTransfer {
+export class ArchActionTransferToFlow extends ArchBaseActionTransfer {
     // constructor(coreTransferToFlowActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionTransferToFlow'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionTransferToFlow instance.
      */
-    static readonly isArchActionTransferToFlow: boolean;
+    readonly isArchActionTransferToFlow: boolean;
     /**
      * The target flow for the transfer.  Note that the setter will also accept an {@link ArchFlowInfo} instance
      * or an {@link ArchFlowInfoBasic} instance.
@@ -6974,7 +6974,7 @@ declare class ArchActionTransferToFlow extends ArchBaseActionTransfer {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionTransferToFlowSecure}
  * @param coreTransferToFlowSecureViewModel - ( *Internal* ) an Architect core transfer to secure flow action view model.
  */
-declare class ArchActionTransferToFlowSecure extends ArchActionTransferToFlow {
+export class ArchActionTransferToFlowSecure extends ArchActionTransferToFlow {
     // constructor(coreTransferToFlowSecureViewModel: any);
     /**
      * The value to use as a timeout when attempting to connect to the transfer target.
@@ -6984,7 +6984,7 @@ declare class ArchActionTransferToFlowSecure extends ArchActionTransferToFlow {
     /**
      * Returns the display type name string 'ArchActionTransferToFlowSecure'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * This is the invocation string data that can be used when launching a secure call flow.  It is not required
      * that you specify a string value.  If you do, it will be available via. the Flow.InvocationData built in variable
@@ -7002,7 +7002,7 @@ declare class ArchActionTransferToFlowSecure extends ArchActionTransferToFlow {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionTransferToGroup}
  * @param coreTransferToGroupActionViewModel - ( *Internal* ) an Architect core transfer to group action view model.
  */
-declare class ArchActionTransferToGroup extends ArchBaseActionTransferWithConnectTimeout {
+export class ArchActionTransferToGroup extends ArchBaseActionTransferWithConnectTimeout {
     // constructor(coreTransferToGroupActionViewModel: any);
     /**
      * Whether or not transfer should allow rollover to voicemail or fail the transfer.
@@ -7011,11 +7011,11 @@ declare class ArchActionTransferToGroup extends ArchBaseActionTransferWithConnec
     /**
      * Returns the display type name string 'ArchActionTransferToGroup'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionTransferToGroup instance.
      */
-    static readonly isArchActionTransferToGroup: boolean;
+    readonly isArchActionTransferToGroup: boolean;
     /**
      * The target group for this transfer action
      */
@@ -7027,16 +7027,16 @@ declare class ArchActionTransferToGroup extends ArchBaseActionTransferWithConnec
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionTransferToNumber}
  * @param coreTransferToNumberActionViewModel - ( *Internal* ) an Architect core transfer to number action view model.
  */
-declare class ArchActionTransferToNumber extends ArchBaseActionTransferWithConnectTimeout {
+export class ArchActionTransferToNumber extends ArchBaseActionTransferWithConnectTimeout {
     // constructor(coreTransferToNumberActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionTransferToNumber'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this object is an ArchActionTransferToNumber instance.
      */
-    static readonly isArchActionTransferToNumber: boolean;
+    readonly isArchActionTransferToNumber: boolean;
     /**
      * Returns whether or not to perform a release link transfer.  A value of true will perform
      * a release link transfer and a value of false or NOT_SET boolean will not perform
@@ -7058,7 +7058,7 @@ declare class ArchActionTransferToNumber extends ArchBaseActionTransferWithConne
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionTransferToUser}
  * @param coreTransferToUserActionViewModel - ( *Internal* ) an Architect core transfer to user action view model.
  */
-declare class ArchActionTransferToUser extends ArchBaseActionTransferWithConnectTimeout {
+export class ArchActionTransferToUser extends ArchBaseActionTransferWithConnectTimeout {
     // constructor(coreTransferToUserActionViewModel: any);
     /**
      * Whether or not transfer should allow rollover to voicemail or fail the transfer.
@@ -7067,11 +7067,11 @@ declare class ArchActionTransferToUser extends ArchBaseActionTransferWithConnect
     /**
      * Returns the display type name string 'ArchActionTransferToUser'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionTransferToUser instance.
      */
-    static readonly isArchActionTransferToUser: boolean;
+    readonly isArchActionTransferToUser: boolean;
     /**
      * The target user for the transfer
      */
@@ -7095,7 +7095,7 @@ declare type callbackArchActionTransferToVoicemail = (archActionTransferToVoicem
  * property on how to configure this action to transfer to a user's voicemail or a queue's voicemail.
  * @param coreTransferToVoiceMailViewModel - ( *Internal* ) an Architect core transfer to user action view model.
  */
-declare class ArchActionTransferToVoicemail extends ArchBaseActionTransfer {
+export class ArchActionTransferToVoicemail extends ArchBaseActionTransfer {
     // constructor(coreTransferToVoiceMailViewModel: TransferVoicemailAction);
     /**
      * The suggested phone number to use for the voicemail callback.
@@ -7116,11 +7116,11 @@ declare class ArchActionTransferToVoicemail extends ArchBaseActionTransfer {
     /**
      * Returns the display type name string 'ArchActionTransferToVoicemail'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionTransferToVoicemail instance.
      */
-    static readonly isArchActionTransferToVoicemail: boolean;
+    readonly isArchActionTransferToVoicemail: boolean;
     /**
      * The inputs for the Composer script configured on this action.  See {@link ArchActionTransferToVoicemail#setScriptByNameAsync} or
      * {@link ArchActionTransferToVoicemail#setScriptByIdAsync} to set the script.
@@ -7273,12 +7273,12 @@ declare class ArchActionTransferToVoicemail extends ArchBaseActionTransfer {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionUpdateData}
  * @param coreUpdateDataActionViewModel - ( *Internal* ) an Architect core update data action view model.
  */
-declare class ArchActionUpdateData extends ArchBaseAction {
+export class ArchActionUpdateData extends ArchBaseAction {
     // constructor(coreUpdateDataActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionUpdateData'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * This adds an update data statement to an update data action.
      * @param archDataType - the data type for this update statement.  The data type must be script creatable.
@@ -7302,12 +7302,12 @@ declare class ArchActionUpdateData extends ArchBaseAction {
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionWait}
  * @param coreWaitAction - ( *Internal* ) an Architect core wait action.
  */
-declare class ArchActionWait extends ArchBaseAction {
+export class ArchActionWait extends ArchBaseAction {
     // constructor(coreWaitAction: any);
     /**
      * Returns the display type name string 'ArchActionWait'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionWait instance.
      */
@@ -7324,12 +7324,12 @@ declare class ArchActionWait extends ArchBaseAction {
     readonly trimDurationNearMaxRunningTime: ArchValueBoolean;
 }
 
-declare class ArchActionWaitForInput extends ArchBaseAction {
+export class ArchActionWaitForInput extends ArchBaseAction {
     // constructor(coreWaitForInputActionViewModel: any);
     /**
      * Returns the display type name string 'ArchActionWaitForInput'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchActionWaitForInput instance.
      */
@@ -7541,13 +7541,13 @@ declare class ArchActionWaitForInput extends ArchBaseAction {
  * case on the audio.
  * @param coreAudioViewModel - ( *Internal* ) an Architect core audio view model.
  */
-declare class ArchAudio extends ArchBaseCoreObject {
+export class ArchAudio extends ArchBaseCoreObject {
     // constructor(coreAudioViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * A string suitable for logging that contains information about this audio.  This will contain parent
      * information as well as the audio label which normally represents the property on the parent containing
@@ -7615,12 +7615,12 @@ declare class ArchAudio extends ArchBaseCoreObject {
  * retrieved by accessing an audio case off of an ArchAudio object.
  * @param coreAudioCaseViewModel - ( *Internal* ) an Architect core audio case view model.
  */
-declare class ArchAudioCase extends ArchBaseCoreObject {
+export class ArchAudioCase extends ArchBaseCoreObject {
     // constructor(coreAudioCaseViewModel: any);
     /**
      * Returns the display type name string 'ArchAudioCase'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The audio value for this case.
      */
@@ -7632,7 +7632,7 @@ declare class ArchAudioCase extends ArchBaseCoreObject {
     /**
      * Returns true indicating that this is an ArchAudioCase instance.
      */
-    static readonly isArchAudioCase: boolean;
+    readonly isArchAudioCase: boolean;
     /**
      * Returns whether or not this ArchAudioCase instance can be written to.
      */
@@ -7662,12 +7662,12 @@ declare class ArchAudioCase extends ArchBaseCoreObject {
  * The Architect Scripting class that is used by actions in Architect Scripting.
  * @param coreActionViewModel - ( *Internal* ) an Architect core action view model.
  */
-declare class ArchBaseAction extends ArchBaseCoreObjectWithId {
+export class ArchBaseAction extends ArchBaseCoreObjectWithId {
     // constructor(coreActionViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseAction'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * A string suitable for logging that contains information about this action.  This will contain the action
      * tracking id, name and scripting type name.
@@ -7680,7 +7680,7 @@ declare class ArchBaseAction extends ArchBaseCoreObjectWithId {
     /**
      * A property that can be checked to verify the scripting object is a type of ArchBaseAction
      */
-    static readonly isArchBaseAction: boolean;
+    readonly isArchBaseAction: boolean;
     /**
      * Returns whether or not this action is the action property for a [menu choice]{@link ArchBaseMenuChoice}.
      * For example, the {@link ArchMenuDisconnect#actionDisconnect} property on an {@link ArchMenuDisconnect}
@@ -7737,7 +7737,7 @@ declare class ArchBaseAction extends ArchBaseCoreObjectWithId {
      *
      * ```
      */
-    static readonly definition: ArchDefinitionAction;
+    readonly definition: ArchDefinitionAction;
 }
 
 /**
@@ -7746,16 +7746,16 @@ declare class ArchBaseAction extends ArchBaseCoreObjectWithId {
  * automatically as needed by Architect Scripting.
  * @param coreActionViewModel - ( *Internal* ) an Architect core action view model
  */
-declare class ArchBaseActionAsk extends ArchBaseAction {
+export class ArchBaseActionAsk extends ArchBaseAction {
     // constructor(coreActionViewModel: NodeInformation);
     /**
      * Returns the display type name string 'ArchBaseActionAsk'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionAsk instance.
      */
-    static readonly isArchBaseActionAsk: boolean;
+    readonly isArchBaseActionAsk: boolean;
     /**
      * The communication to use when no input is received
      */
@@ -7775,7 +7775,7 @@ declare class ArchBaseActionAsk extends ArchBaseAction {
  * Instances of this class will be created automatically by Architect Scripting as needed.
  * @param coreBaseBotActionViewModel - ( *Internal* ) an Architect core bot action view model.
  */
-declare class ArchBaseActionBot extends ArchBaseActionWithOutputFailure {
+export class ArchBaseActionBot extends ArchBaseActionWithOutputFailure {
     // constructor(coreBaseBotActionViewModel: any);
     /**
      * This adds a session parameter name value pair to the Call Dialogflow CX Bot action that is used to specify
@@ -7792,11 +7792,11 @@ declare class ArchBaseActionBot extends ArchBaseActionWithOutputFailure {
     /**
      * Returns the display type name string 'ArchBaseActionBot'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionBot instance.
      */
-    static readonly isArchBaseActionBot: boolean;
+    readonly isArchBaseActionBot: boolean;
     /**
      * Returns a unique array of names of intents that are configured for the selected bot. This array contains intent
      * names for the bot that will be executed at flow runtime. As such, for some bots like Lex bots, this requires selecting
@@ -7839,7 +7839,7 @@ declare class ArchBaseActionBot extends ArchBaseActionWithOutputFailure {
  * Instances of this class will be created automatically by Architect Scripting as needed.
  * @param coreBaseIntegrationActionViewModel - ( *Internal* ) an Architect core call bot action view model.
  */
-declare class ArchBaseActionCallBotFlow extends ArchBaseAction {
+export class ArchBaseActionCallBotFlow extends ArchBaseAction {
     // constructor(coreBaseIntegrationActionViewModel: any);
     /**
      * Returns true indicating that this is an ArchBaseActionCallBotFlow instance.
@@ -7898,12 +7898,12 @@ declare type callbackArchBaseActionDataAction = (ArchBaseActionDataAction: ArchB
  * Instances of this class will be created automatically by Architect Scripting as needed.
  * @param coreBaseIntegrationActionViewModel - ( *Internal* ) an Architect core call data action view model.
  */
-declare class ArchBaseActionDataAction extends ArchBaseActionWithOutputsSuccessFailureTimeout {
+export class ArchBaseActionDataAction extends ArchBaseActionWithOutputsSuccessFailureTimeout {
     // constructor(coreBaseIntegrationActionViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionDataAction'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The contents of this named value list come from the selected data action's reported input schema.  The
      * name value pair items in this list will let you assign values that will be used as inputs to the data action at runtime.
@@ -7928,7 +7928,7 @@ declare class ArchBaseActionDataAction extends ArchBaseActionWithOutputsSuccessF
     /**
      * Returns true indicating that this is an ArchBaseActionDataAction instance.
      */
-    static readonly isArchBaseActionDataAction: boolean;
+    readonly isArchBaseActionDataAction: boolean;
     /**
      * Specifies the amount of time to wait for the data action invocation to complete execution at runtime.  Note that
      * this value only applies if {@link ArchBaseActionDataAction#useSuggestedTimeout} is false.
@@ -7956,12 +7956,12 @@ declare class ArchBaseActionDataAction extends ArchBaseActionWithOutputsSuccessF
  * Instances of this class will be created automatically by Architect Scripting as needed.
  * @param coreDialogflowActionViewModel - ( *Internal* ) an Architect core Dialogflow action view model.
  */
-declare class ArchBaseActionDialogflow extends ArchBaseActionBot {
+export class ArchBaseActionDialogflow extends ArchBaseActionBot {
     // constructor(coreDialogflowActionViewModel: any);
     /**
      * Returns the string 'Draft', which is the name for the Draft environment on a Dialogflow agent
      */
-    static readonly draftEnvironmentName: string;
+    readonly draftEnvironmentName: string;
     /**
      * Returns the environment selected to be used when calling the selected Agent.
      */
@@ -8021,16 +8021,16 @@ declare class ArchBaseActionDialogflow extends ArchBaseActionBot {
  * The base class for actions that find single a system object.
  * @param coreFindSystemObjectActionViewModel - ( *Internal* ) an Architect core find system object actions
  */
-declare class ArchBaseActionFindSystemObject extends ArchBaseActionWithOutputsFoundNotFound {
+export class ArchBaseActionFindSystemObject extends ArchBaseActionWithOutputsFoundNotFound {
     // constructor(coreFindSystemObjectActionViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionFindSystemObject'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionFindSystemObject instance.
      */
-    static readonly isArchBaseActionFindSystemObject: boolean;
+    readonly isArchBaseActionFindSystemObject: boolean;
     /**
      * The value that holds the returned system object which was found at runtime.  Inheriting Find action instances will override
      * this property and assign a type to it appropriate to the type of object they're finding.
@@ -8044,16 +8044,16 @@ declare class ArchBaseActionFindSystemObject extends ArchBaseActionWithOutputsFo
  * The base class for actions that find a single system object by identifier.
  * @param coreFindSystemObjectActionViewModel - ( *Internal* ) an Architect core find system object actions
  */
-declare class ArchBaseActionFindSystemObjectById extends ArchBaseActionFindSystemObject {
+export class ArchBaseActionFindSystemObjectById extends ArchBaseActionFindSystemObject {
     // constructor(coreFindSystemObjectActionViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionFindSystemObject'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionFindSystemObject instance.
      */
-    static readonly isArchBaseActionFindSystemObjectById: boolean;
+    readonly isArchBaseActionFindSystemObjectById: boolean;
     /**
      * The identifier of the object to look up.  While it is always a string, inheriting Find action
      * classes will provide the context of the identifier.  For example, in the {@link ArchActionFindUserById} action
@@ -8066,16 +8066,16 @@ declare class ArchBaseActionFindSystemObjectById extends ArchBaseActionFindSyste
  * The base class for actions that find a single system object by name.
  * @param coreFindSystemObjectActionViewModel - ( *Internal* ) an Architect core find system object action view model.
  */
-declare class ArchBaseActionFindSystemObjectByName extends ArchBaseActionFindSystemObject {
+export class ArchBaseActionFindSystemObjectByName extends ArchBaseActionFindSystemObject {
     // constructor(coreFindSystemObjectActionViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionFindSystemObject'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionFindSystemObject instance.
      */
-    static readonly isArchBaseActionFindSystemObjectByName: boolean;
+    readonly isArchBaseActionFindSystemObjectByName: boolean;
     /**
      * The name of the object to look up.  Inheriting Find action instances will provide the context
      * for the name string.  For example, in the {@link ArchActionFindUserPrompt} action this would be
@@ -8088,16 +8088,16 @@ declare class ArchBaseActionFindSystemObjectByName extends ArchBaseActionFindSys
  * The base class for actions that find multiple system objects.
  * @param coreFindSystemObjectActionViewModel - ( *Internal* ) an Architect core find system object actions
  */
-declare class ArchBaseActionFindSystemObjects extends ArchBaseActionWithOutputsFoundNotFoundPartiallyFound {
+export class ArchBaseActionFindSystemObjects extends ArchBaseActionWithOutputsFoundNotFoundPartiallyFound {
     // constructor(coreFindSystemObjectActionViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionFindSystemObjects'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionFindSystemObjects instance.
      */
-    static readonly isArchBaseActionFindSystemObjects: boolean;
+    readonly isArchBaseActionFindSystemObjects: boolean;
     /**
      * The value that holds the returned system object which was found at runtime.  Inheriting Find action instances will override
      * this property and assign a type to it appropriate to the type of object they're finding.
@@ -8111,16 +8111,16 @@ declare class ArchBaseActionFindSystemObjects extends ArchBaseActionWithOutputsF
  * The base class for actions that find multiple system objects by identifier.
  * @param coreFindSystemObjectActionViewModel - ( *Internal* ) an Architect core find system object actions
  */
-declare class ArchBaseActionFindSystemObjectsById extends ArchBaseActionFindSystemObjects {
+export class ArchBaseActionFindSystemObjectsById extends ArchBaseActionFindSystemObjects {
     // constructor(coreFindSystemObjectActionViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionFindSystemObject'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionFindSystemObject instance.
      */
-    static readonly isArchBaseActionFindSystemObjectsById: boolean;
+    readonly isArchBaseActionFindSystemObjectsById: boolean;
     /**
      * The identifiers to look up.  While the identifiers to look up are always in a string collection, inheriting Find action
      * classes will provide the context of the identifiers.  For example, for the {@link ArchActionFindUsersById} this would be
@@ -8133,17 +8133,17 @@ declare class ArchBaseActionFindSystemObjectsById extends ArchBaseActionFindSyst
  * Creates a new Architect Flow Outcome base action instance.
  * @param coreFlowOutcomeActionViewModel - ( *Internal* ) an Architect core flow outcome action view model.
  */
-declare class ArchBaseActionFlowOutcome extends ArchBaseAction {
+export class ArchBaseActionFlowOutcome extends ArchBaseAction {
     // constructor(coreFlowOutcomeActionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionFlowOutcome instance.
      */
-    static readonly isArchBaseActionFlowOutcome: boolean;
+    readonly isArchBaseActionFlowOutcome: boolean;
     /**
      * This sets the flow outcome to use at runtime by its identifier.
      * @param flowOutcomeId - the identifier of the flow outcome.
@@ -8168,7 +8168,7 @@ declare class ArchBaseActionFlowOutcome extends ArchBaseAction {
  * Instances of this class will be created automatically by Architect Scripting as needed.
  * @param coreBaseIntegrationActionViewModel - ( *Internal* ) an Architect core Lex action view model.
  */
-declare class ArchBaseActionLex extends ArchBaseActionBot {
+export class ArchBaseActionLex extends ArchBaseActionBot {
     // constructor(coreBaseIntegrationActionViewModel: any);
     /**
      * Returns true indicating that this is an ArchBaseActionLex instance.
@@ -8192,16 +8192,16 @@ declare class ArchBaseActionLex extends ArchBaseActionBot {
  * Instances of this action have one or more outputs.
  * @param coreActionViewModel - ( *Internal* ) an Architect core action with NoInput NoMatch view model.
  */
-declare class ArchBaseActionNoInputNoMatch extends ArchBaseAction {
+export class ArchBaseActionNoInputNoMatch extends ArchBaseAction {
     // constructor(coreActionViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionNoInputNoMatch'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionNoInputNoMatch instance.
      */
-    static readonly isArchBaseActionNoInputNoMatch: boolean;
+    readonly isArchBaseActionNoInputNoMatch: boolean;
     /**
      * The NoInput text for the action.
      */
@@ -8233,16 +8233,16 @@ declare type callbackArchBaseActionSchedule = (ArchBaseActionSchedule: ArchBaseA
  * or ArchFactoryActions#addActionEvaluateScheduleGroup.
  * @param coreBaseScheduleViewModel - ( *Internal* ) an Architect core schedule view model.
  */
-declare class ArchBaseActionSchedule extends ArchBaseActionWithOutputs {
+export class ArchBaseActionSchedule extends ArchBaseActionWithOutputs {
     // constructor(coreBaseScheduleViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionSchedule'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionSchedule instance.
      */
-    static readonly isArchBaseActionSchedule: boolean;
+    readonly isArchBaseActionSchedule: boolean;
     /**
      * The evaluate now boolean to determine if the base schedule should be evaluated at execution time or a specified datetime.
      */
@@ -8280,16 +8280,16 @@ declare class ArchBaseActionSchedule extends ArchBaseActionWithOutputs {
  * Instances of this class will be created automatically by Architect Scripting as needed.
  * @param coreTransferActionViewModel - ( *Internal* ) an Architect core transfer action view model.
  */
-declare class ArchBaseActionTransfer extends ArchBaseActionWithOutputsFakeSuccessFailure {
+export class ArchBaseActionTransfer extends ArchBaseActionWithOutputsFakeSuccessFailure {
     // constructor(coreTransferActionViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionTransfer'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionTransfer instance.
      */
-    static readonly isArchBaseActionTransfer: boolean;
+    readonly isArchBaseActionTransfer: boolean;
     /**
      * The failure transfer audio to play on the call in the even the transfer fails at runtime.
      */
@@ -8308,16 +8308,16 @@ declare class ArchBaseActionTransfer extends ArchBaseActionWithOutputsFakeSucces
  * Creates a new Architect Transfer With Connect Timeout base action instance.
  * @param coreTransferActionViewModel - ( *Internal* ) an Architect core transfer action view model.
  */
-declare class ArchBaseActionTransferWithConnectTimeout extends ArchBaseActionTransfer {
+export class ArchBaseActionTransferWithConnectTimeout extends ArchBaseActionTransfer {
     // constructor(coreTransferActionViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionTransferWithConnectTimeout'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionTransferWithConnectTimeout instance.
      */
-    static readonly isArchBaseActionTransferWithConnectTimeout: boolean;
+    readonly isArchBaseActionTransferWithConnectTimeout: boolean;
     /**
      * The value to use as a timeout when attempting to connect to the transfer target.
      * This property has a flow-level default.
@@ -8329,16 +8329,16 @@ declare class ArchBaseActionTransferWithConnectTimeout extends ArchBaseActionTra
  * Creates a new ArchBaseActionWithOutputFailure base action instance.
  * @param coreActionWithFailOutputViewModel - ( *Internal* ) an Architect core action with failure output view model.
  */
-declare class ArchBaseActionWithOutputFailure extends ArchBaseActionWithOutputs {
+export class ArchBaseActionWithOutputFailure extends ArchBaseActionWithOutputs {
     // constructor(coreActionWithFailOutputViewModel: any);
     /**
      * Returns the display type name string 'ArchBAseActionWithOutputFailure'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an action with a failure output.
      */
-    static readonly isArchBaseActionWithOutputFailure: boolean;
+    readonly isArchBaseActionWithOutputFailure: boolean;
     /**
      * The failure output for this action
      */
@@ -8349,16 +8349,16 @@ declare class ArchBaseActionWithOutputFailure extends ArchBaseActionWithOutputs 
  * Creates a new ArchBaseActionWithOutputLoop base action instance.
  * @param coreLoopActionViewModel - ( *Internal* ) an Architect core loop action view model.
  */
-declare class ArchBaseActionWithOutputLoop extends ArchBaseActionWithOutputs {
+export class ArchBaseActionWithOutputLoop extends ArchBaseActionWithOutputs {
     // constructor(coreLoopActionViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionWithOutputLoop'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an action with a loop output.
      */
-    static readonly isArchBaseActionWithOutputLoop: boolean;
+    readonly isArchBaseActionWithOutputLoop: boolean;
     /**
      * The loop output for this action where actions to be performed during the loop
      * iteration should be added.
@@ -8371,16 +8371,16 @@ declare class ArchBaseActionWithOutputLoop extends ArchBaseActionWithOutputs {
  * Instances of this action have one or more outputs.
  * @param coreActionViewModel - ( *Internal* ) an Architect core action with outputs view model.
  */
-declare class ArchBaseActionWithOutputs extends ArchBaseAction {
+export class ArchBaseActionWithOutputs extends ArchBaseAction {
     // constructor(coreActionViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionWithOutputs'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionWithOutputs instance.
      */
-    static readonly isArchBaseActionWithOutputs: boolean;
+    readonly isArchBaseActionWithOutputs: boolean;
     /**
      * Gets an output by its identifier.  If it cannot be found, this method will throw.
      * Normally you won't need to use this method and will use the helper methods available on inheriting classes
@@ -8444,13 +8444,13 @@ declare class ArchBaseActionWithOutputs extends ArchBaseAction {
  * that have a Default output such as the Switch action.
  * @param coreActionWithDefaultOutputViewModel - ( *Internal* ) an Architect core action with a default output view model.
  */
-declare class ArchBaseActionWithOutputsDefault extends ArchBaseActionWithOutputs {
+export class ArchBaseActionWithOutputsDefault extends ArchBaseActionWithOutputs {
     // constructor(coreActionWithDefaultOutputViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionWithOutputsDefault instance.
      */
@@ -8466,16 +8466,16 @@ declare class ArchBaseActionWithOutputsDefault extends ArchBaseActionWithOutputs
  * Instances of this action have No Input and Failure outputs.
  * @param coreActionWithFailureAndNoInputOutputsViewModel - ( *Internal* ) an Architect core action with Failure and No Input outputs view model.
  */
-declare class ArchBaseActionWithOutputsFailureNoInput extends ArchBaseActionWithOutputFailure {
+export class ArchBaseActionWithOutputsFailureNoInput extends ArchBaseActionWithOutputFailure {
     // constructor(coreActionWithFailureAndNoInputOutputsViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionWithOutputsFailureNoInput'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionWithOutputsFailureNoInput instance.
      */
-    static readonly isArchBaseActionWithOutputsFailureNoInput: boolean;
+    readonly isArchBaseActionWithOutputsFailureNoInput: boolean;
     /**
      * The No Input output for this action
      */
@@ -8488,12 +8488,12 @@ declare class ArchBaseActionWithOutputsFailureNoInput extends ArchBaseActionWith
  * fake, there is no disconnect output to query on this action.
  * @param coreActionViewModel - ( *Internal* ) an Architect core action with fake disconnect view model.
  */
-declare class ArchBaseActionWithOutputsFakeDisconnect extends ArchBaseActionWithOutputs {
+export class ArchBaseActionWithOutputsFakeDisconnect extends ArchBaseActionWithOutputs {
     // constructor(coreActionViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionWithOutputsFakeDisconnect'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this action has a fake disconnect output.
      */
@@ -8501,7 +8501,7 @@ declare class ArchBaseActionWithOutputsFakeDisconnect extends ArchBaseActionWith
     /**
      * Returns true indicating that this object is an ArchBaseActionWithOutputsFakeDisconnect instance.
      */
-    static readonly isArchBaseActionWithOutputsFakeDisconnect: boolean;
+    readonly isArchBaseActionWithOutputsFakeDisconnect: boolean;
 }
 
 /**
@@ -8510,12 +8510,12 @@ declare class ArchBaseActionWithOutputsFakeDisconnect extends ArchBaseActionWith
  * fake, there is no success output to query on this action.
  * @param coreActionViewModel - ( *Internal* ) an Architect core action with fake success and failure view model.
  */
-declare class ArchBaseActionWithOutputsFakeSuccessFailure extends ArchBaseActionWithOutputFailure {
+export class ArchBaseActionWithOutputsFakeSuccessFailure extends ArchBaseActionWithOutputFailure {
     // constructor(coreActionViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionWithOutputsFakeSuccessFailure'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this action has a fake success output.
      */
@@ -8523,7 +8523,7 @@ declare class ArchBaseActionWithOutputsFakeSuccessFailure extends ArchBaseAction
     /**
      * Returns true indicating that this object is an ArchBaseActionWithOutputsFakeSuccessFailure instance.
      */
-    static readonly isArchBaseActionWithOutputsFakeSuccessFailure: boolean;
+    readonly isArchBaseActionWithOutputsFakeSuccessFailure: boolean;
 }
 
 /**
@@ -8532,16 +8532,16 @@ declare class ArchBaseActionWithOutputsFakeSuccessFailure extends ArchBaseAction
  * fake, there is no success output to query on this action.
  * @param coreActionWithFakeSuccessFailTimeoutViewModel - ( *Internal* ) an Architect core action with fake success, failure and timeout outputs view model.
  */
-declare class ArchBaseActionWithOutputsFakeSuccessFailureTimeout extends ArchBaseActionWithOutputsFakeSuccessFailure {
+export class ArchBaseActionWithOutputsFakeSuccessFailureTimeout extends ArchBaseActionWithOutputsFakeSuccessFailure {
     // constructor(coreActionWithFakeSuccessFailTimeoutViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionWithOutputsFakeSuccessFailureTimeout'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionWithOutputsFakeSuccessFailureTimeout instance.
      */
-    static readonly isArchBaseActionWithOutputsFakeSuccessFailureTimeout: boolean;
+    readonly isArchBaseActionWithOutputsFakeSuccessFailureTimeout: boolean;
     /**
      * The timeout output for this action
      */
@@ -8553,16 +8553,16 @@ declare class ArchBaseActionWithOutputsFakeSuccessFailureTimeout extends ArchBas
  * Instances of this action have Found and Not Found outputs.
  * @param coreActionWithOutputsFoundNotFoundViewModel - ( *Internal* ) an Architect core action with found and not found outputs view model.
  */
-declare class ArchBaseActionWithOutputsFoundNotFound extends ArchBaseActionWithOutputs {
+export class ArchBaseActionWithOutputsFoundNotFound extends ArchBaseActionWithOutputs {
     // constructor(coreActionWithOutputsFoundNotFoundViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionWithOutputsFoundNotFound'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionWithOutputsFoundNotFound instance.
      */
-    static readonly isArchBaseActionWithOutputsFoundNotFound: boolean;
+    readonly isArchBaseActionWithOutputsFoundNotFound: boolean;
     /**
      * The found output for this action
      */
@@ -8578,16 +8578,16 @@ declare class ArchBaseActionWithOutputsFoundNotFound extends ArchBaseActionWithO
  * Instances of this action have a Found, Not Found and Failure outputs.
  * @param coreActionWithOutputsFoundNotFoundFailViewModel - ( *Internal* ) an Architect core action with found, not found and failure outputs view model.
  */
-declare class ArchBaseActionWithOutputsFoundNotFoundFailure extends ArchBaseActionWithOutputFailure {
+export class ArchBaseActionWithOutputsFoundNotFoundFailure extends ArchBaseActionWithOutputFailure {
     // constructor(coreActionWithOutputsFoundNotFoundFailViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionWithOutputsFoundNotFoundFailure'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionWithOutputsFoundNotFoundFailure instance.
      */
-    static readonly isArchBaseActionWithOutputsFoundNotFoundFailure: boolean;
+    readonly isArchBaseActionWithOutputsFoundNotFoundFailure: boolean;
     /**
      * The found output for this action
      */
@@ -8603,16 +8603,16 @@ declare class ArchBaseActionWithOutputsFoundNotFoundFailure extends ArchBaseActi
  * Instances of this action have a Found, Partially Found and Not Found outputs.
  * @param coreActionWithOutputsFoundNotFoundPartiallyFoundViewModel - ( *Internal* ) an Architect core action with found, not found and partially found outputs view model.
  */
-declare class ArchBaseActionWithOutputsFoundNotFoundPartiallyFound extends ArchBaseActionWithOutputsFoundNotFound {
+export class ArchBaseActionWithOutputsFoundNotFoundPartiallyFound extends ArchBaseActionWithOutputsFoundNotFound {
     // constructor(coreActionWithOutputsFoundNotFoundPartiallyFoundViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionWithOutputsFoundNotFoundPartiallyFound'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionWithOutputsFoundNotFoundPartiallyFound instance.
      */
-    static readonly isArchBaseActionWithOutputsFoundNotFoundPartiallyFound: boolean;
+    readonly isArchBaseActionWithOutputsFoundNotFoundPartiallyFound: boolean;
     /**
      * The partially found output for this action
      */
@@ -8624,16 +8624,16 @@ declare class ArchBaseActionWithOutputsFoundNotFoundPartiallyFound extends ArchB
  * Instances of this action have Loop, Max Loops, and Next Loop outputs.
  * @param coreActionWithOutputsLoopMaxLoopsNextLoopViewModel - ( *Internal* ) an Architect core action with fake success, failure and timeout outputs view model.
  */
-declare class ArchBaseActionWithOutputLoopMaxLoopsNextLoop extends ArchBaseActionWithOutputLoop {
+export class ArchBaseActionWithOutputLoopMaxLoopsNextLoop extends ArchBaseActionWithOutputLoop {
     // constructor(coreActionWithOutputsLoopMaxLoopsNextLoopViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionWithOutputLoopMaxLoopsNextLoop'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionWithOutputLoopMaxLoopsNextLoop instance.
      */
-    static readonly isArchBaseActionWithOutputLoopMaxLoopsNextLoop: boolean;
+    readonly isArchBaseActionWithOutputLoopMaxLoopsNextLoop: boolean;
     /**
      * The Next Loop output on this action.  Execution takes this output at runtime after
      * actions in the {@link ArchBaseActionWithOutputLoop#outputLoop} have been run and no
@@ -8655,16 +8655,16 @@ declare class ArchBaseActionWithOutputLoopMaxLoopsNextLoop extends ArchBaseActio
  * Instances of this action have Found and Not Found outputs.
  * @param coreActionWithOutputsMatchExactMatchMultipleNotFound - ( *Internal* ) an Architect core action with found and not found outputs view model.
  */
-declare class ArchBaseActionWithOutputsMatchExactMatchMultipleNotFound extends ArchBaseActionWithOutputs {
+export class ArchBaseActionWithOutputsMatchExactMatchMultipleNotFound extends ArchBaseActionWithOutputs {
     // constructor(coreActionWithOutputsMatchExactMatchMultipleNotFound: any);
     /**
      * Returns the display type name string 'ArchBaseActionWithOutputsFoundNotFound'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionWithOutputsFoundNotFound instance.
      */
-    static readonly isArchBaseActionWithOutputsMatchExactMatchMultipleNotFound: boolean;
+    readonly isArchBaseActionWithOutputsMatchExactMatchMultipleNotFound: boolean;
     /**
      * The exact match output for this action
      */
@@ -8684,16 +8684,16 @@ declare class ArchBaseActionWithOutputsMatchExactMatchMultipleNotFound extends A
  * Instances of this action have Success and Failure outputs.
  * @param coreActionWithSuccessFailOutputsViewModel - ( *Internal* ) an Architect core action with success and failure outputs view model.
  */
-declare class ArchBaseActionWithOutputsSuccessFailure extends ArchBaseActionWithOutputFailure {
+export class ArchBaseActionWithOutputsSuccessFailure extends ArchBaseActionWithOutputFailure {
     // constructor(coreActionWithSuccessFailOutputsViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionWithOutputsSuccessFailure'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionWithOutputsSuccessFailure instance.
      */
-    static readonly isArchBaseActionWithOutputsSuccessFailure: boolean;
+    readonly isArchBaseActionWithOutputsSuccessFailure: boolean;
     /**
      * The success output for this action
      */
@@ -8705,16 +8705,16 @@ declare class ArchBaseActionWithOutputsSuccessFailure extends ArchBaseActionWith
  * Instances of this action have a Success, Failure and NoInput outputs.
  * @param coreActionWithSuccessFailNoInputOutputsViewModel - ( *Internal* ) an Architect core action with success, failure and noInput outputs view model.
  */
-declare class ArchBaseActionWithOutputsSuccessFailureNoInput extends ArchBaseActionWithOutputsSuccessFailure {
+export class ArchBaseActionWithOutputsSuccessFailureNoInput extends ArchBaseActionWithOutputsSuccessFailure {
     // constructor(coreActionWithSuccessFailNoInputOutputsViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionWithOutputsSuccessFailureNoInput'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionWithOutputsSuccessFailureNoInput instance.
      */
-    static readonly isArchBaseActionWithOutputsSuccessFailureNoInput: boolean;
+    readonly isArchBaseActionWithOutputsSuccessFailureNoInput: boolean;
     /**
      * The noInput output for this action
      */
@@ -8726,16 +8726,16 @@ declare class ArchBaseActionWithOutputsSuccessFailureNoInput extends ArchBaseAct
  * Instances of this action have a Success, Failure and Timeout outputs.
  * @param coreActionWithSuccessFailTimeoutOutputsViewModel - ( *Internal* ) an Architect core action with success, failure and timeout outputs view model.
  */
-declare class ArchBaseActionWithOutputsSuccessFailureTimeout extends ArchBaseActionWithOutputsSuccessFailure {
+export class ArchBaseActionWithOutputsSuccessFailureTimeout extends ArchBaseActionWithOutputsSuccessFailure {
     // constructor(coreActionWithSuccessFailTimeoutOutputsViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionWithOutputsSuccessFailureTimeout'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionWithOutputsSuccessFailureTimeout instance.
      */
-    static readonly isArchBaseActionWithOutputsSuccessFailureTimeout: boolean;
+    readonly isArchBaseActionWithOutputsSuccessFailureTimeout: boolean;
     /**
      * The timeout output for this action
      */
@@ -8747,16 +8747,16 @@ declare class ArchBaseActionWithOutputsSuccessFailureTimeout extends ArchBaseAct
  * Instances of this action have Success and Failure outputs.
  * @param coreActionWithSuccessFailOutputsViewModel - ( *Internal* ) an Architect core action with success and failure outputs view model.
  */
-declare class ArchBaseActionWithOutputsSuccessTimeout extends ArchBaseActionWithOutputs {
+export class ArchBaseActionWithOutputsSuccessTimeout extends ArchBaseActionWithOutputs {
     // constructor(coreActionWithSuccessFailOutputsViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionWithOutputsSuccessTimeout'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionWithOutputsSuccessTimeout instance.
      */
-    static readonly isArchBaseActionWithOutputsSuccessTimeout: boolean;
+    readonly isArchBaseActionWithOutputsSuccessTimeout: boolean;
     /**
      * The success output for this action
      */
@@ -8772,16 +8772,16 @@ declare class ArchBaseActionWithOutputsSuccessTimeout extends ArchBaseActionWith
  * Instances of this action have Yes and No outputs.
  * @param coreActionWithYesNoOutputsViewModel - ( *Internal* ) an Architect core action with success, failure and timeout outputs view model.
  */
-declare class ArchBaseActionWithOutputsYesNo extends ArchBaseActionWithOutputs {
+export class ArchBaseActionWithOutputsYesNo extends ArchBaseActionWithOutputs {
     // constructor(coreActionWithYesNoOutputsViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseActionWithOutputsYesNo'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseActionWithOutputsYesNo which means it has yes and no outputs.
      */
-    static readonly isArchBaseActionWithOutputsYesNo: boolean;
+    readonly isArchBaseActionWithOutputsYesNo: boolean;
     /**
      * The no output for this action
      */
@@ -8796,7 +8796,7 @@ declare class ArchBaseActionWithOutputsYesNo extends ArchBaseActionWithOutputs {
  * The Architect Scripting base for Detect Silence actions
  * @param coreDetectSilenceViewModel - ( *Internal* ) an Architect core BaseDetectSilence action view model.
  */
-declare class ArchBaseActionWithSilenceDetection extends ArchBaseActionWithOutputsSuccessTimeout {
+export class ArchBaseActionWithSilenceDetection extends ArchBaseActionWithOutputsSuccessTimeout {
     // constructor(coreDetectSilenceViewModel: BaseDetectSilenceActionViewModel);
     /**
      * Returns true indicating that this is an ArchBaseActionWithSilenceDetection instance.
@@ -8826,12 +8826,12 @@ declare type callbackTraverseInfo = (archCallbackTraverseContext: ArchTraverseIn
  * with them.  It supports Scripting classes internally and does not expose methods or properties
  * available to Architect Scripting.
  */
-declare class ArchBaseCoreObject extends ArchBaseObject {
+export class ArchBaseCoreObject extends ArchBaseObject {
     // constructor();
     /**
      * Returns the display type name string 'ArchBaseCoreObject'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseCoreObject instance.
      */
@@ -8926,12 +8926,12 @@ declare class ArchBaseCoreObject extends ArchBaseObject {
  * that support an identifier string.  Note:  There are some cases where an ID may be blank.
  * @param coreViewModelWithId - ( *Internal* ) an Architect core object view model.
  */
-declare class ArchBaseCoreObjectWithId extends ArchBaseCoreObject {
+export class ArchBaseCoreObjectWithId extends ArchBaseCoreObject {
     // constructor(coreViewModelWithId: any);
     /**
      * Returns the display type name string 'ArchBaseCoreObjectWithId'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The identifier string for this object.
      */
@@ -8945,15 +8945,15 @@ declare class ArchBaseCoreObjectWithId extends ArchBaseCoreObject {
     /**
      * A property that can be checked to verify the scripting object is of type ArchBaseCoreObjectWithId
      */
-    static readonly isArchBaseObjectWithId: boolean;
+    readonly isArchBaseObjectWithId: boolean;
 }
 
-declare class ArchBaseDefinition extends ArchBaseCoreObject {
+export class ArchBaseDefinition extends ArchBaseCoreObject {
     // constructor(coreDefinitionInfo: any);
     /**
      * Returns the display type name string 'ArchBaseDefinition'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseDefinition instance.
      */
@@ -9095,12 +9095,12 @@ declare class ArchBaseDefinition extends ArchBaseCoreObject {
  * automatically as needed by Architect Scripting.
  * @param coreDefinitionInformation - ( *Internal* ) an Architect core node information.
  */
-declare class ArchBaseDefinitionActionMenu extends ArchBaseDefinition {
+export class ArchBaseDefinitionActionMenu extends ArchBaseDefinition {
     // constructor(coreDefinitionInformation: NodeInformation);
     /**
      * Returns an array of flow type strings in which the action or menu is available.
      */
-    readonly displayTypeName: string[];
+    readonly availableFlowTypes: string[];
     /**
      * Returns whether or not instances can be created from this action or menu
      * definition.  Remember that there are other factors that contribute
@@ -9112,15 +9112,15 @@ declare class ArchBaseDefinitionActionMenu extends ArchBaseDefinition {
     /**
      * Returns the display type name string 'ArchBaseDefinitionActionMenu'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns the display label for this action or menu type.
      */
-    static readonly label: string;
+    readonly label: string;
     /**
      * Returns true indicating that this is an ArchBaseDefinitionActionMenu instance.
      */
-    static readonly isArchBaseDefinitionActionMenu: boolean;
+    readonly isArchBaseDefinitionActionMenu: boolean;
     /**
      * A string suitable for logging that contains information about this definition.
      */
@@ -9141,11 +9141,11 @@ declare class ArchBaseDefinitionActionMenu extends ArchBaseDefinition {
  * Instances of this class will be created automatically by Architect
  * Scripting as needed.
  */
-declare class ArchBaseFilterClause extends ArchBaseObjectFilterCommon {
+export class ArchBaseFilterClause extends ArchBaseObjectFilterCommon {
     /**
      * Returns the display type name string 'ArchBaseFilterClause'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseFilterClause instance.
      */
@@ -9161,11 +9161,11 @@ declare class ArchBaseFilterClause extends ArchBaseObjectFilterCommon {
  * Instances of this class will be created automatically by Architect
  * Scripting as needed.
  */
-declare class ArchBaseFilterClauseProperty extends ArchBaseFilterClause {
+export class ArchBaseFilterClauseProperty extends ArchBaseFilterClause {
     /**
      * Returns the display type name string 'ArchBaseFilterClauseProperty'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseFilterClauseProperty instance.
      */
@@ -9194,12 +9194,12 @@ declare class ArchBaseFilterClauseProperty extends ArchBaseFilterClause {
  * @param value - the value to compare against
  * @param propertyMustExist - whether or not the property must exist on the object being checked when evaluating the clause
  */
-declare class ArchBaseFilterClausePropertyValue extends ArchBaseFilterClause {
+export class ArchBaseFilterClausePropertyValue extends ArchBaseFilterClause {
     // constructor(propertyName: string, value: any, propertyMustExist: boolean);
     /**
      * Returns the display type name string 'ArchBaseFilterClausePropertyValue'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseFilterClausePropertyValue instance.
      */
@@ -9232,7 +9232,7 @@ declare type callbackExportFullPath = (exportFullPath: string) => void;
  * available to create flows.
  * @param coreFlowViewModel - ( *Internal* ) an Architect core flow view model.
  */
-declare class ArchBaseFlow extends ArchBaseCoreObjectWithId {
+export class ArchBaseFlow extends ArchBaseCoreObjectWithId {
     // constructor(coreFlowViewModel: any);
     /**
      * This adds a new variable to the flow.
@@ -9258,7 +9258,7 @@ declare class ArchBaseFlow extends ArchBaseCoreObjectWithId {
     /**
      * Returns the display type name string 'ArchBaseFlow'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns the division associated with this flow.
      * This method first calls {@link ArchOrganizationInfo#areDivisionsAvailable} to ensure that divisions are available.
@@ -9410,7 +9410,7 @@ declare class ArchBaseFlow extends ArchBaseCoreObjectWithId {
     /**
      * Returns true indicating that this is an ArchBaseFlow instance.
      */
-    static readonly isArchBaseFlow: boolean;
+    readonly isArchBaseFlow: boolean;
     /**
      * Returns whether or not the flow is created in Genesys Cloud.
      */
@@ -9511,7 +9511,7 @@ declare class ArchBaseFlow extends ArchBaseCoreObjectWithId {
      * let archIncomingCallFlowDefinition = archInboundCallFlowInstance.definition;
      * ```
      */
-    static readonly definition: ArchDefinitionFlow;
+    readonly definition: ArchDefinitionFlow;
 }
 
 /**
@@ -9519,12 +9519,12 @@ declare class ArchBaseFlow extends ArchBaseCoreObjectWithId {
  * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows#createFlowBotAsync}
  * @param coreBotViewModel - ( *Internal* ) an Architect core Bot view model.
  */
-declare class ArchBaseFlowBot extends ArchBaseFlowWorkflow {
+export class ArchBaseFlowBot extends ArchBaseFlowWorkflow {
     // constructor(coreBotViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseFlowBot'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseFlowBot instance.
      */
@@ -9550,17 +9550,17 @@ declare class ArchBaseFlowBot extends ArchBaseFlowWorkflow {
  * The Architect Scripting class for the base workflow instance.
  * @param coreInQueueDigitalFlow - ( *Internal* ) an Architect core in-queue email or short message flow.
  */
-declare class ArchBaseFlowInQueueWorkflow extends ArchBaseFlowWithTasks {
+export class ArchBaseFlowInQueueWorkflow extends ArchBaseFlowWithTasks {
     // constructor(coreInQueueDigitalFlow: any);
     /**
      * Returns the display type name string 'ArchBaseFlowInQueueWorkflow'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseFlowInQueueWorkflow object.
      * This will be true for in-queue email and in-queue short message flows.
      */
-    static readonly isArchBaseFlowInQueueWorkflow: boolean;
+    readonly isArchBaseFlowInQueueWorkflow: boolean;
     /**
      * Sets the specified state to be the periodic state on the in-queue
      * email or short message flow.  Remember the same state cannot be used
@@ -9578,12 +9578,12 @@ declare class ArchBaseFlowInQueueWorkflow extends ArchBaseFlowWithTasks {
  * Creates an instance of an ArchBaseFlowInboundOutboundSecureCall.  This is the base class for inbound / outbound / secure call flows.
  * @param coreInboundOutboundSecureFlowViewModel - ( *Internal* ) an Architect core inbound, outbound or secure call flow view model.
  */
-declare class ArchBaseFlowInboundOutboundSecureCall extends ArchBaseFlowWithMenus {
+export class ArchBaseFlowInboundOutboundSecureCall extends ArchBaseFlowWithMenus {
     // constructor(coreInboundOutboundSecureFlowViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseFlowInboundOutboundSecureCall'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial audio set on the flow.
      */
@@ -9591,7 +9591,7 @@ declare class ArchBaseFlowInboundOutboundSecureCall extends ArchBaseFlowWithMenu
     /**
      * Returns true indicating that this is an ArchBaseFlowInboundOutboundSecureCall object.
      */
-    static readonly isArchBaseFlowInboundOutboundSecureCall: boolean;
+    readonly isArchBaseFlowInboundOutboundSecureCall: boolean;
     /**
      * Sets the specified menu to be the starting task on the flow.
      * @param archMenu - An Architect Scripting menu object.
@@ -9629,7 +9629,7 @@ declare class ArchBaseFlowInboundOutboundSecureCall extends ArchBaseFlowWithMenu
  * Creates an instance of an ArchBaseFlowWithMenus.  This is the base class for flows that contain menus.
  * @param coreFlowViewModel - ( *Internal* ) an Architect core flow view model object that contains menus.
  */
-declare class ArchBaseFlowWithMenus extends ArchBaseFlowWithTasks {
+export class ArchBaseFlowWithMenus extends ArchBaseFlowWithTasks {
     // constructor(coreFlowViewModel: any);
     /**
      * This function deletes the specified reusable menu from this flow.
@@ -9648,7 +9648,7 @@ declare class ArchBaseFlowWithMenus extends ArchBaseFlowWithTasks {
  * as the repeating task in an in-queue call flow.
  * @param coreFlowViewModel - ( *Internal* ) an Architect core flow view model object that contains tasks.
  */
-declare class ArchBaseFlowWithTasks extends ArchBaseFlow {
+export class ArchBaseFlowWithTasks extends ArchBaseFlow {
     // constructor(coreFlowViewModel: any);
     /**
      * This function deletes the specified reusable task from this flow.
@@ -9666,7 +9666,7 @@ declare class ArchBaseFlowWithTasks extends ArchBaseFlow {
  * The Architect Scripting class for the base workflow instance.
  * @param coreBaseWorkflowViewModel - ( *Internal* ) an Architect core base workflow view model.
  */
-declare class ArchBaseFlowWorkflow extends ArchBaseFlowWithTasks {
+export class ArchBaseFlowWorkflow extends ArchBaseFlowWithTasks {
     // constructor(coreBaseWorkflowViewModel: any);
     /**
      * This function deletes the specified state from this flow.
@@ -9676,11 +9676,11 @@ declare class ArchBaseFlowWorkflow extends ArchBaseFlowWithTasks {
     /**
      * Returns the display type name string 'ArchBaseFlowWorkflow'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseFlowWorkflow object.
      */
-    static readonly isArchBaseFlowWorkflow: boolean;
+    readonly isArchBaseFlowWorkflow: boolean;
     /**
      * Sets the specified state to be the starting state on the flow.
      * @param archState - An Architect Scripting state object.
@@ -9700,12 +9700,12 @@ declare class ArchBaseFlowWorkflow extends ArchBaseFlowWithTasks {
 /**
  * The Architect Scripting class that provides internal support for Architect Scripting menu and menu choice objects.
  */
-declare class ArchBaseMenu extends ArchBaseCoreObjectWithId {
+export class ArchBaseMenu extends ArchBaseCoreObjectWithId {
     // constructor();
     /**
      * Returns the display type name string 'ArchBaseMenu'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseMenu which means it is either a top level menu, reusable menu
      * or menu choice.
@@ -9724,7 +9724,7 @@ declare class ArchBaseMenu extends ArchBaseCoreObjectWithId {
      * let archDisconnectMenuDefinition = archDisconnectMenuInstance.definition;
      * ```
      */
-    static readonly definition: ArchDefinitionMenu;
+    readonly definition: ArchDefinitionMenu;
 }
 
 /**
@@ -9735,13 +9735,13 @@ declare class ArchBaseMenu extends ArchBaseCoreObjectWithId {
  * choices like ArchFactoryMenus.addMenuDisconnect
  * @param coreMenuChoiceViewModel - ( *Internal* ) an Architect core menu choice view model.
  */
-declare class ArchBaseMenuChoice extends ArchBaseMenu {
+export class ArchBaseMenuChoice extends ArchBaseMenu {
     // constructor(coreMenuChoiceViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Adds a new speech rec term to a container for a specified language.  This is a helper method that calls
      * [getSpeechRecTermContainer]{@link ArchBaseMenuChoice#getSpeechRecTermContainer} and then on the returned
@@ -9778,7 +9778,7 @@ declare class ArchBaseMenuChoice extends ArchBaseMenu {
      * Returns true indicating that this is an ArchBaseMenuChoice which means it is a menu choice and not a top
      * level menu.
      */
-    static readonly isArchBaseMenuChoice: boolean;
+    readonly isArchBaseMenuChoice: boolean;
     /**
      * The name of the menu choice
      */
@@ -9804,7 +9804,7 @@ declare class ArchBaseMenuChoice extends ArchBaseMenu {
  * or [action outputs]{@link ArchActionOutput}.
  * @param coreActionContainerViewModel - ( *Internal* ) an Architect core action container view model.
  */
-declare class ArchBaseMultiActionContainer extends ArchBaseCoreObjectWithId {
+export class ArchBaseMultiActionContainer extends ArchBaseCoreObjectWithId {
     // constructor(coreActionContainerViewModel: any);
     /**
      * Returns the number of actions in this multi action container.
@@ -9843,11 +9843,11 @@ declare class ArchBaseMultiActionContainer extends ArchBaseCoreObjectWithId {
     /**
      * Returns the display type name string 'ArchBaseMultiActionContainer'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseMultiActionContainer instance.
      */
-    static readonly isArchBaseMultiActionContainer: boolean;
+    readonly isArchBaseMultiActionContainer: boolean;
     /**
      * Returns whether or not this action container is in a menu choice.  If so, you cannot
      * add actions to it.  Actions are added to menu choices when menu choices are created by different
@@ -9877,12 +9877,12 @@ declare class ArchBaseMultiActionContainer extends ArchBaseCoreObjectWithId {
  * actions.
  * @param coreNameValuePair - ( *Internal* ) an Architect core name value pair object.
  */
-declare class ArchBaseNameValuePair extends ArchBaseCoreObject {
+export class ArchBaseNameValuePair extends ArchBaseCoreObject {
     // constructor(coreNameValuePair: any);
     /**
      * Returns the display type name string 'ArchBaseNameValuePair'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseNameValuePair instance.
      */
@@ -9905,16 +9905,16 @@ declare class ArchBaseNameValuePair extends ArchBaseCoreObject {
  * Creates a new ArchBaseNameValuePairs instance.
  * @param coreNameValuePairs - ( *Internal* ) an Architect core name value pair object.
  */
-declare class ArchBaseNameValuePairs extends ArchBaseValueContainer {
+export class ArchBaseNameValuePairs extends ArchBaseValueContainer {
     // constructor(coreNameValuePairs: any);
     /**
      * Returns the display type name string 'ArchBaseNameValuePairs'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseNameValuePairs instance.
      */
-    static readonly isArchBaseNameValuePairs: boolean;
+    readonly isArchBaseNameValuePairs: boolean;
     /**
      * Returns the number of name value pairs contained within this ArchBaseNameValuePairs.
      */
@@ -9935,16 +9935,16 @@ declare class ArchBaseNameValuePairs extends ArchBaseValueContainer {
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  * @param coreConfigurationListManager - ( *Internal* ) an Architect core configuration list manager used for network lookups.
  */
-declare class ArchBaseNetworkValue extends ArchBaseValue {
+export class ArchBaseNetworkValue extends ArchBaseValue {
     // constructor(coreExpressionViewModel: any, coreConfigurationListManager: any);
     /**
      * Returns the display type name string 'ArchBaseNetworkValue'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseNetworkValue instance.
      */
-    static readonly isArchBaseNetworkValue: boolean;
+    readonly isArchBaseNetworkValue: boolean;
 }
 
 /**
@@ -9954,16 +9954,16 @@ declare class ArchBaseNetworkValue extends ArchBaseValue {
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  * @param coreConfigurationListManager - ( *Internal* ) an Architect core configuration list manager.
  */
-declare class ArchBaseNetworkValueCollection extends ArchBaseNetworkValue {
+export class ArchBaseNetworkValueCollection extends ArchBaseNetworkValue {
     // constructor(coreExpressionViewModel: any, coreConfigurationListManager: any);
     /**
      * Returns the display type name string 'ArchBaseNetworkValueCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseNetworkValueCollection instance.
      */
-    static readonly isArchBaseNetworkValueCollection: boolean;
+    readonly isArchBaseNetworkValueCollection: boolean;
     /**
      * Returns true indicating that this is a collection.
      */
@@ -10010,12 +10010,12 @@ declare class ArchBaseNetworkValueCollection extends ArchBaseNetworkValue {
  * Note:  Do not attempt to create instances of this class directly.  They will be created
  * automatically as needed by Architect Scripting.
  */
-declare class ArchBaseNetworkValueContainer extends ArchBaseNetworkValue {
+export class ArchBaseNetworkValueContainer extends ArchBaseNetworkValue {
     // constructor();
     /**
      * Returns the display type name string 'ArchBaseNetworkValueContainer'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseNetworkValueContainer instance.
      */
@@ -10027,17 +10027,17 @@ declare class ArchBaseNetworkValueContainer extends ArchBaseNetworkValue {
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  * @param configListManager - ( *Internal* ) an Architect core configuration list manager to use for this network value.
  */
-declare class ArchBaseNetworkValueSingleton extends ArchBaseNetworkValue {
+export class ArchBaseNetworkValueSingleton extends ArchBaseNetworkValue {
     // constructor(coreExpressionViewModel: any, configListManager: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseNetworkValueSingleton instance.
      */
-    static readonly isArchBaseNetworkValueSingleton: boolean;
+    readonly isArchBaseNetworkValueSingleton: boolean;
     /**
      * Returns false indicating that this value is not a collection value.
      */
@@ -10069,12 +10069,12 @@ declare class ArchBaseNetworkValueSingleton extends ArchBaseNetworkValue {
  * logging and parameter checking functionality.
  * Architect Scripting will create instances of this class as needed.
  */
-declare class ArchBaseObject {
+export class ArchBaseObject {
     // constructor();
     /**
      * Returns a display string that reflects the type for this Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * This is a string suitable for logging information about this object which is generated by the Architect Scripting object itself.
      * Usually this contains stuff like the tracking ID, name, type information, etc. etc.  This information will be used as the
@@ -10090,7 +10090,7 @@ declare class ArchBaseObject {
     /**
      * Returns true indicating this object is an instance of ArchBaseObject.
      */
-    static readonly isArchBaseObject: boolean;
+    readonly isArchBaseObject: boolean;
     /**
      * Logs an error to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logErrors} is true.
      * @param errorStr - the error string to log.
@@ -10131,11 +10131,11 @@ declare class ArchBaseObject {
  * Note:  Do not attempt to create instances of this class directly.  They will be created
  * automatically as needed by Architect Scripting.
  */
-declare class ArchBaseObjectFilterCommon extends ArchBaseObject {
+export class ArchBaseObjectFilterCommon extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchBaseObjectFilterCommon'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseObjectFilterCommon instance.
      */
@@ -10153,12 +10153,12 @@ declare class ArchBaseObjectFilterCommon extends ArchBaseObject {
 /**
  * The Architect Scripting class that provides internal support for Architect Scripting prompt objects.
  */
-declare class ArchBasePrompt extends ArchBaseCoreObjectWithId {
+export class ArchBasePrompt extends ArchBaseCoreObjectWithId {
     // constructor();
     /**
      * Returns the display type name string 'ArchBasePrompt'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBasePrompt which means it is either a top level menu, reusable menu
      * or menu choice.
@@ -10191,12 +10191,12 @@ declare class ArchBasePrompt extends ArchBaseCoreObjectWithId {
  * effectively behave just like an ArchValueSkill.
  * @param coreSkillValuePair - ( *Internal* ) an Architect core skill value pair instance.
  */
-declare class ArchBaseSkillValuePair extends ArchBaseNetworkValueSingleton {
+export class ArchBaseSkillValuePair extends ArchBaseNetworkValueSingleton {
     // constructor(coreSkillValuePair: any);
     /**
      * Returns the display type name string 'ArchBaseSkillValuePair'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The ArchValueSkill associated with this skill value pair.
      */
@@ -10204,7 +10204,7 @@ declare class ArchBaseSkillValuePair extends ArchBaseNetworkValueSingleton {
     /**
      * Returns true indicating that this is an ArchBaseSkillValuePair instance.
      */
-    static readonly isArchBaseSkillValuePair: boolean;
+    readonly isArchBaseSkillValuePair: boolean;
 }
 
 /**
@@ -10218,13 +10218,13 @@ declare type callbackArchBaseSkillValuePairs = (archBaseSkillValuePairs: ArchBas
  * Creates a new ArchBaseSkillValuePairs used to represent update data statements on an update data action.
  * @param coreSkillValuePairs - ( *Internal* ) an Architect core skill value pairs instance.
  */
-declare class ArchBaseSkillValuePairs extends ArchBaseNetworkValueContainer {
+export class ArchBaseSkillValuePairs extends ArchBaseNetworkValueContainer {
     // constructor(coreSkillValuePairs: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * This adds a skill value pair to this collection of pairs.  At this time all that is supported is specifying a skill
      * on the pair.
@@ -10253,7 +10253,7 @@ declare class ArchBaseSkillValuePairs extends ArchBaseNetworkValueContainer {
     /**
      * Returns true indicating that this is an ArchBaseSkillValuePairs instance.
      */
-    static readonly isArchBaseSkillValuePairs: boolean;
+    readonly isArchBaseSkillValuePairs: boolean;
 }
 
 /**
@@ -10261,7 +10261,7 @@ declare class ArchBaseSkillValuePairs extends ArchBaseNetworkValueContainer {
  * values.  Instances of this class will be automatically created by the scripting framework as necessary.
  * @param coreExpression - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchBaseValue extends ArchBaseCoreObject {
+export class ArchBaseValue extends ArchBaseCoreObject {
     // constructor(coreExpression: any);
     /**
      * Returns whether or not this value uses secure data.  For this to be the case, the
@@ -10271,7 +10271,7 @@ declare class ArchBaseValue extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchBaseValue'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns a logging string that describes this Architect value.
      */
@@ -10333,7 +10333,7 @@ declare class ArchBaseValue extends ArchBaseCoreObject {
     /**
      * Returns true indicating that is an ArchBaseValue instance.
      */
-    static readonly isArchBaseValue: boolean;
+    readonly isArchBaseValue: boolean;
     /**
      * Returns whether or not this value is set to a builder value. While builders end up generating
      * expression text that specifies how the value should be calculated, they cannot be changed
@@ -10447,7 +10447,7 @@ declare class ArchBaseValue extends ArchBaseCoreObject {
      * let archValueStringDefinition = scripting.viewModels.values.ArchValueString.definition;
      * ```
      */
-    static readonly definition: ArchDefinitionValue;
+    readonly definition: ArchDefinitionValue;
 }
 
 /**
@@ -10457,16 +10457,16 @@ declare class ArchBaseValue extends ArchBaseCoreObject {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchBaseValueBasic extends ArchBaseValue {
+export class ArchBaseValueBasic extends ArchBaseValue {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseValueBasic'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that is an ArchBaseValueBasic instance.
      */
-    static readonly isArchBaseValueBasic: boolean;
+    readonly isArchBaseValueBasic: boolean;
 }
 
 /**
@@ -10475,7 +10475,7 @@ declare class ArchBaseValueBasic extends ArchBaseValue {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression object.
  */
-declare class ArchBaseValueCollection extends ArchBaseValue {
+export class ArchBaseValueCollection extends ArchBaseValue {
     // constructor(coreExpressionViewModel: any);
     /**
      * This changes the value to a literal, creates a new {@link ArchBaseValue} instance, adds it to the end of the collection
@@ -10494,7 +10494,7 @@ declare class ArchBaseValueCollection extends ArchBaseValue {
     /**
      * Returns the display type name string 'ArchBaseValueCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns the number of Architect value items in this collection if this value [is a literal]{@link ArchBaseValue#isLiteral}.
      */
@@ -10507,7 +10507,7 @@ declare class ArchBaseValueCollection extends ArchBaseValue {
     /**
      * Returns true indicating that this object is an ArchBaseValueCollection instance.
      */
-    static readonly isArchBaseValueCollection: boolean;
+    readonly isArchBaseValueCollection: boolean;
     /**
      * Returns true indicating that this object is a collection.
      */
@@ -10521,16 +10521,16 @@ declare class ArchBaseValueCollection extends ArchBaseValue {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchBaseValueCollectionBasic extends ArchBaseValueCollection {
+export class ArchBaseValueCollectionBasic extends ArchBaseValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseValueCollectionBasic'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that is an ArchBaseValueCollectionBasic instance.
      */
-    static readonly isArchBaseValueCollectionBasic: boolean;
+    readonly isArchBaseValueCollectionBasic: boolean;
     /**
      * Returns a JavaScript string or string array for this collection value.
      * If this value is an expression, it returns the expression text.  If this value is a variable, it
@@ -10551,12 +10551,12 @@ declare class ArchBaseValueCollectionBasic extends ArchBaseValueCollection {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionContainerViewModel - ( *Internal* ) an Architect core expression container object.
  */
-declare class ArchBaseValueContainer extends ArchBaseValue {
+export class ArchBaseValueContainer extends ArchBaseValue {
     // constructor(coreExpressionContainerViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseValueContainer'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseValueContainer instance.
      */
@@ -10569,16 +10569,16 @@ declare class ArchBaseValueContainer extends ArchBaseValue {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchBaseValueSingleton extends ArchBaseValue {
+export class ArchBaseValueSingleton extends ArchBaseValue {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseValueSingleton'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this value is a singleton non-network object based value.
      */
-    static readonly isArchBaseValueSingleton: boolean;
+    readonly isArchBaseValueSingleton: boolean;
     /**
      * Returns false indicating that this value is a singleton value and not a collection value.
      */
@@ -10614,12 +10614,12 @@ declare class ArchBaseValueSingleton extends ArchBaseValue {
  * to all Architect Scripting variable types.
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model
  */
-declare class ArchBaseVariable extends ArchBaseCoreObjectWithId {
+export class ArchBaseVariable extends ArchBaseCoreObjectWithId {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseVariable'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns whether or not the variable consumed by the flow.
      */
@@ -10637,7 +10637,7 @@ declare class ArchBaseVariable extends ArchBaseCoreObjectWithId {
     /**
      * Returns true indicating that this is an ArchBaseVariable instance.
      */
-    static readonly isArchBaseVariable: boolean;
+    readonly isArchBaseVariable: boolean;
     /**
      * Whether or not this variable is an input variable.  Remember that the ability to be an input
      * variable depends on whether the variable is a flow, state or task variable and what type of
@@ -10733,19 +10733,19 @@ declare class ArchBaseVariable extends ArchBaseCoreObjectWithId {
      * let archVariableStringDefinition = scripting.viewModels.variables.ArchVariableString.definition;
      * ```
      */
-    static readonly definition: ArchDefinitionVariable;
+    readonly definition: ArchDefinitionVariable;
 }
 
 /**
  * The Architect Scripting class for used by variables whose runtime value is a collection.
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchBaseVariableCollection extends ArchBaseVariable {
+export class ArchBaseVariableCollection extends ArchBaseVariable {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseVariableCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Sets the initial value of the singleton variable to an empty collection.
      * Note:  This is a wrapper around calling accessing the initialValue
@@ -10758,12 +10758,12 @@ declare class ArchBaseVariableCollection extends ArchBaseVariable {
  * Creates an instance of an ArchBaseVariableSingleton which is a base class for variables that are not collections.
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model
  */
-declare class ArchBaseVariableSingleton extends ArchBaseVariable {
+export class ArchBaseVariableSingleton extends ArchBaseVariable {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchBaseVariableSingleton'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Sets the initial value of the singleton variable to NOT_SET.
      * Note:  This is a wrapper around calling accessing the initialValue
@@ -10776,16 +10776,16 @@ declare class ArchBaseVariableSingleton extends ArchBaseVariable {
  * Creates a new ArchBaseVariableValuePair instance.
  * @param coreVariableValuePair - ( *Internal* ) an Architect core variable value pair object.
  */
-declare class ArchBaseVariableValuePair extends ArchBaseCoreObject {
+export class ArchBaseVariableValuePair extends ArchBaseCoreObject {
     // constructor(coreVariableValuePair: any);
     /**
      * Returns the display type name string 'ArchBaseVariableValuePair'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseVariableValuePair instance.
      */
-    static readonly isArchBaseVariableValuePair: boolean;
+    readonly isArchBaseVariableValuePair: boolean;
     /**
      * Returns a string suitable for logging for this base variable value pair instance.
      */
@@ -10811,16 +10811,16 @@ declare class ArchBaseVariableValuePair extends ArchBaseCoreObject {
  * Instances of this class will be created as needed by Architect Scripting.
  * @param coreVariableValuePairs - ( *Internal* ) an Architect core variable value pairs object.
  */
-declare class ArchBaseVariableValuePairs extends ArchBaseValueContainer {
+export class ArchBaseVariableValuePairs extends ArchBaseValueContainer {
     // constructor(coreVariableValuePairs: any);
     /**
      * Returns the display type name string 'ArchBaseVariableValuePairs'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBaseVariableValuePairs instance.
      */
-    static readonly isArchBaseVariableValuePairs: boolean;
+    readonly isArchBaseVariableValuePairs: boolean;
 }
 
 /**
@@ -10830,20 +10830,16 @@ declare class ArchBaseVariableValuePairs extends ArchBaseValueContainer {
  * automatically as needed by Architect Scripting.
  * @param coreNodeInformation - ( *Internal* ) an Architect core node information.
  */
-declare class ArchDefinitionAction extends ArchBaseDefinitionActionMenu {
+export class ArchDefinitionAction extends ArchBaseDefinitionActionMenu {
     // constructor(coreNodeInformation: NodeInformation);
     /**
      * Returns the display type name string 'ArchDefinitionAction'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchDefinitionAction instance.
      */
     readonly isArchDefinitionAction: boolean;
-    /**
-     * Returns an array of flow type strings in which the action or menu is available.
-     */
-    readonly displayTypeName: string[];
 }
 
 /**
@@ -10854,7 +10850,7 @@ declare class ArchDefinitionAction extends ArchBaseDefinitionActionMenu {
  * automatically as needed by Architect Scripting.
  * @param coreFlowDefinition - ( *Internal* ) an Architect core flow definition.
  */
-declare class ArchDefinitionFlow extends ArchBaseDefinition {
+export class ArchDefinitionFlow extends ArchBaseDefinition {
     // constructor(coreFlowDefinition: FlowDefinition);
     /**
      * Returns an array of action *classes* that are available for this flow type.
@@ -11043,20 +11039,16 @@ declare class ArchDefinitionFlow extends ArchBaseDefinition {
  * automatically as needed by Architect Scripting.
  * @param coreNodeInformation - ( *Internal* ) an Architect core node information.
  */
-declare class ArchDefinitionMenu extends ArchBaseDefinitionActionMenu {
+export class ArchDefinitionMenu extends ArchBaseDefinitionActionMenu {
     // constructor(coreNodeInformation: NodeInformation);
     /**
      * Returns the display type name string 'ArchDefinitionMenu'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchDefinitionMenu instance.
      */
     readonly isArchDefinitionMenu: boolean;
-    /**
-     * Returns an array of flow type strings in which the action or menu is available.
-     */
-    readonly displayTypeName: string[];
 }
 
 /**
@@ -11065,16 +11057,16 @@ declare class ArchDefinitionMenu extends ArchBaseDefinitionActionMenu {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionType - ( *Internal* ) an Architect core expression type.
  */
-declare class ArchDefinitionValue extends ArchBaseDefinition {
+export class ArchDefinitionValue extends ArchBaseDefinition {
     // constructor(coreExpressionType: ExpressionType);
     /**
      * Returns the ArchDataType for the ArchValue type.
      */
-    static readonly dataType: ArchDataType;
+    readonly dataType: ArchDataType;
     /**
      * Returns the display type name string 'ArchDefinitionValue'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchDefinitionValue instance.
      */
@@ -11087,16 +11079,16 @@ declare class ArchDefinitionValue extends ArchBaseDefinition {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionType - ( *Internal* ) an Architect core expression type.
  */
-declare class ArchDefinitionVariable extends ArchBaseDefinition {
+export class ArchDefinitionVariable extends ArchBaseDefinition {
     // constructor(coreExpressionType: ExpressionType);
     /**
      * Returns the ArchDataType for the ArchVariable type.
      */
-    static readonly dataType: ArchDataType;
+    readonly dataType: ArchDataType;
     /**
      * Returns the display type name string 'ArchDefinitionVariable'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchDefinitionVariable instance.
      */
@@ -11109,7 +11101,7 @@ declare class ArchDefinitionVariable extends ArchBaseDefinition {
  * functionality when performing filtering operations.
  * @param clauseOperator - JSON for initial configuration.
  */
-declare class ArchFilterClauseContainer extends ArchBaseObjectFilterCommon {
+export class ArchFilterClauseContainer extends ArchBaseObjectFilterCommon {
     // constructor(clauseOperator: string);
     /**
      * This method will add a property value callback filter clause to this
@@ -11181,7 +11173,7 @@ declare class ArchFilterClauseContainer extends ArchBaseObjectFilterCommon {
     /**
      * Returns the display type name string 'ArchFilterClauseContainer'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchFilterClauseContainer instance.
      */
@@ -11274,12 +11266,12 @@ declare type callbackFilterClauseProperty = (propertyValue: any, archBaseCoreObj
  * @param value - the value to compare against
  * @param propertyMustExist - whether or not the property must exist on the object being checked when evaluating the clause
  */
-declare class ArchFilterClausePropertyCallback extends ArchBaseFilterClausePropertyValue {
+export class ArchFilterClausePropertyCallback extends ArchBaseFilterClausePropertyValue {
     // constructor(propertyName: string, value: any, propertyMustExist: boolean);
     /**
      * Returns the display type name string 'ArchFilterClausePropertyCallback'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchFilterClausePropertyCallback instance.
      */
@@ -11303,12 +11295,12 @@ declare class ArchFilterClausePropertyCallback extends ArchBaseFilterClausePrope
  * @param value - the value to compare against
  * @param propertyMustExist - whether or not the property must exist on the object being checked when evaluating the clause
  */
-declare class ArchFilterClausePropertyValueEquals extends ArchBaseFilterClausePropertyValue {
+export class ArchFilterClausePropertyValueEquals extends ArchBaseFilterClausePropertyValue {
     // constructor(propertyName: string, value: any, propertyMustExist: boolean);
     /**
      * Returns the display type name string 'ArchFilterClausePropertyValueEquals'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchFilterClausePropertyValueEquals instance.
      */
@@ -11328,12 +11320,12 @@ declare class ArchFilterClausePropertyValueEquals extends ArchBaseFilterClausePr
  * @param value - the value to compare against
  * @param propertyMustExist - whether or not the property must exist on the object being checked when evaluating the clause
  */
-declare class ArchFilterClausePropertyValueNotEquals extends ArchBaseFilterClausePropertyValue {
+export class ArchFilterClausePropertyValueNotEquals extends ArchBaseFilterClausePropertyValue {
     // constructor(propertyName: string, value: any, propertyMustExist: boolean);
     /**
      * Returns the display type name string 'ArchFilterClausePropertyValueNotEquals'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchFilterClausePropertyValueNotEquals instance.
      */
@@ -11347,12 +11339,12 @@ declare class ArchFilterClausePropertyValueNotEquals extends ArchBaseFilterClaus
  * automatically as needed by Architect Scripting.
  * @param coreNodeInformation - ( *Internal* ) an Architect core node information.
  */
-declare class ArchFilterObject extends ArchFilterClauseContainer {
+export class ArchFilterObject extends ArchFilterClauseContainer {
     // constructor(coreNodeInformation: NodeInformation);
     /**
      * Returns the display type name string 'ArchFilterObject'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchFilterObject instance.
      */
@@ -11371,12 +11363,12 @@ declare class ArchFilterObject extends ArchFilterClauseContainer {
  * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows#createFlowBotAsync}
  * @param coreBotViewModel - ( *Internal* ) an Architect core Bot view model.
  */
-declare class ArchFlowBot extends ArchBaseFlowBot {
+export class ArchFlowBot extends ArchBaseFlowBot {
     // constructor(coreBotViewModel: any);
     /**
      * Returns the display type name string 'ArchFlowBot'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchFlowBot instance.
      */
@@ -11387,12 +11379,12 @@ declare class ArchFlowBot extends ArchBaseFlowBot {
     readonly settingsPrompts: ArchSettingsPromptsFlow;
 }
 
-declare class ArchFlowCommonModule extends ArchBaseFlow {
+export class ArchFlowCommonModule extends ArchBaseFlow {
     // constructor(coreCommonModuleCallFlowViewModel: any);
     /**
      * Returns the display type name string 'ArchFlowCommonModule'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchFlowCommonModule instance.
      */
@@ -11812,12 +11804,12 @@ declare class ArchFlowCommonModule extends ArchBaseFlow {
  * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows#createFlowDigitalBotAsync}
  * @param coreBotViewModel - ( *Internal* ) an Architect core Bot view model.
  */
-declare class ArchFlowDigitalBot extends ArchBaseFlowBot {
+export class ArchFlowDigitalBot extends ArchBaseFlowBot {
     // constructor(coreBotViewModel: any);
     /**
      * Returns the display type name string 'ArchFlowDigitalBot'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchFlowDigitalBot instance.
      */
@@ -11829,12 +11821,12 @@ declare class ArchFlowDigitalBot extends ArchBaseFlowBot {
  * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows.createFlowInQueueCallAsync}
  * @param coreInQueueCallFlowViewModel - ( *Internal* ) an Architect core in-queue call view model.
  */
-declare class ArchFlowInQueueCall extends ArchBaseFlow {
+export class ArchFlowInQueueCall extends ArchBaseFlow {
     // constructor(coreInQueueCallFlowViewModel: any);
     /**
      * Returns the display type name string 'ArchFlowInQueueCall'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchFlowInQueueCall instance.
      */
@@ -11858,12 +11850,12 @@ declare class ArchFlowInQueueCall extends ArchBaseFlow {
  * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows#createFlowInQueueEmailAsync}
  * @param coreInQueueEmailFlowViewModel - ( *Internal* ) an Architect core in-queue email flow view model.
  */
-declare class ArchFlowInQueueEmail extends ArchBaseFlowWorkflow {
+export class ArchFlowInQueueEmail extends ArchBaseFlowWorkflow {
     // constructor(coreInQueueEmailFlowViewModel: any);
     /**
      * Returns the display type name string 'ArchFlowInQueueEmail'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchFlowInQueueEmail instance.
      */
@@ -11875,12 +11867,12 @@ declare class ArchFlowInQueueEmail extends ArchBaseFlowWorkflow {
  * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows#createFlowInQueueShortMessageAsync}
  * @param coreInQueueShortMessageFlowViewModel - ( *Internal* ) an Architect core in-queue shortMessage flow view model.
  */
-declare class ArchFlowInQueueShortMessage extends ArchBaseFlowWorkflow {
+export class ArchFlowInQueueShortMessage extends ArchBaseFlowWorkflow {
     // constructor(coreInQueueShortMessageFlowViewModel: any);
     /**
      * Returns the display type name string 'ArchFlowInQueueShortMessage'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchFlowInQueueShortMessage instance.
      */
@@ -11892,12 +11884,12 @@ declare class ArchFlowInQueueShortMessage extends ArchBaseFlowWorkflow {
  * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows#createFlowInboundCallAsync}
  * @param coreInboundCallFlowViewModel - ( *Internal* ) an Architect core inbound call view model.
  */
-declare class ArchFlowInboundCall extends ArchBaseFlowInboundOutboundSecureCall {
+export class ArchFlowInboundCall extends ArchBaseFlowInboundOutboundSecureCall {
     // constructor(coreInboundCallFlowViewModel: any);
     /**
      * Returns the display type name string 'ArchFlowInboundCall'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchFlowInboundCall instance.
      */
@@ -11910,12 +11902,12 @@ declare class ArchFlowInboundCall extends ArchBaseFlowInboundOutboundSecureCall 
  * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows#createFlowInboundChatAsync}
  * @param coreInboundChatViewModel - ( *Internal* ) an Architect core inbound chat view model.
  */
-declare class ArchFlowInboundChat extends ArchBaseFlowWorkflow {
+export class ArchFlowInboundChat extends ArchBaseFlowWorkflow {
     // constructor(coreInboundChatViewModel: any);
     /**
      * Returns the display type name string 'ArchFlowInboundChat'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchFlowInboundChat instance.
      */
@@ -11927,12 +11919,12 @@ declare class ArchFlowInboundChat extends ArchBaseFlowWorkflow {
  * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows.createFlowInboundEmailAsync}
  * @param coreInboundEmailViewModel - ( *Internal* ) an Architect core inbound email view model.
  */
-declare class ArchFlowInboundEmail extends ArchBaseFlowWorkflow {
+export class ArchFlowInboundEmail extends ArchBaseFlowWorkflow {
     // constructor(coreInboundEmailViewModel: any);
     /**
      * Returns the display type name string 'ArchFlowInboundEmail'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchFlowInboundEmail instance.
      */
@@ -11953,12 +11945,12 @@ declare class ArchFlowInboundEmail extends ArchBaseFlowWorkflow {
  * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows#createFlowInboundShortMessageAsync}
  * @param coreInboundShortMessageViewModel - ( *Internal* ) an Architect core inbound short message view model.
  */
-declare class ArchFlowInboundShortMessage extends ArchBaseFlowWorkflow {
+export class ArchFlowInboundShortMessage extends ArchBaseFlowWorkflow {
     // constructor(coreInboundShortMessageViewModel: any);
     /**
      * Returns the display type name string 'ArchFlowInboundShortMessage'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchFlowInboundShortMessage instance.
      */
@@ -11971,12 +11963,12 @@ declare class ArchFlowInboundShortMessage extends ArchBaseFlowWorkflow {
  * or ArchFactoryFlows.getFlowInfoByFlowNameAsync.
  * @param coreFlowInfoViewModel - ( *Internal* ) an Architect core flow info view model.
  */
-declare class ArchFlowInfo extends ArchBaseCoreObjectWithId {
+export class ArchFlowInfo extends ArchBaseCoreObjectWithId {
     // constructor(coreFlowInfoViewModel: any);
     /**
      * Returns the display type name string 'ArchFlowInfo'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * A string suitable for logging that contains information about this flow info basic.
      */
@@ -11992,7 +11984,7 @@ declare class ArchFlowInfo extends ArchBaseCoreObjectWithId {
     /**
      * Returns true indicating that this is an ArchFlowInfo instance.
      */
-    static readonly isArchFlowInfo: boolean;
+    readonly isArchFlowInfo: boolean;
     /**
      * Returns whether or not this flow is checked in.
      */
@@ -12060,12 +12052,12 @@ declare type callbackArchFlowInfo = (archFlowInfo: ArchFlowInfo) => void;
  * property.
  * @param flowIdNameTypeObject - ( *Internal* ) a raw JSON object with an id, name and type property that gets saved off here.
  */
-declare class ArchFlowInfoBasic extends ArchBaseObject {
+export class ArchFlowInfoBasic extends ArchBaseObject {
     // constructor(flowIdNameTypeObject: any);
     /**
      * Returns the display type name string 'ArchFlowInfoBasic'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * A string suitable for logging that contains information about this flow info basic.
      */
@@ -12073,7 +12065,7 @@ declare class ArchFlowInfoBasic extends ArchBaseObject {
     /**
      * Returns true indicating that this is an ArchFlowInfo instance.
      */
-    static readonly isArchFlowInfoBasic: boolean;
+    readonly isArchFlowInfoBasic: boolean;
     /**
      * Looks up the flow information from this flow info basic instance by the flow identifier.
      * @param [callbackFunction] - the function to call back if successfully converted.  The callback will be passed the looked up ArchFlowInfo instance.
@@ -12102,12 +12094,12 @@ declare class ArchFlowInfoBasic extends ArchBaseObject {
  * {@link ArchFlowInfoVersion#versionPublished} property.
  * @param coreFlowVersionModel - ( *Internal* ) an Architect core flow version manager view model.
  */
-declare class ArchFlowInfoVersion extends ArchBaseObject {
+export class ArchFlowInfoVersion extends ArchBaseObject {
     // constructor(coreFlowVersionModel: any);
     /**
      * Returns the display type name string 'ArchFlowInfoVersion'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * A string suitable for logging that contains information about this flow info basic.
      */
@@ -12115,7 +12107,7 @@ declare class ArchFlowInfoVersion extends ArchBaseObject {
     /**
      * Returns true indicating that this is an ArchFlowInfoVersion instance.
      */
-    static readonly isArchFlowInfoVersion: boolean;
+    readonly isArchFlowInfoVersion: boolean;
     /**
      * Returns the flow version string such as '1.0'.
      */
@@ -12127,16 +12119,16 @@ declare class ArchFlowInfoVersion extends ArchBaseObject {
  * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows.createFlowOutboundCallAsync}
  * @param coreOutboundCallFlowViewModel - ( *Internal* ) an Architect core outbound call view model.
  */
-declare class ArchFlowOutboundCall extends ArchBaseFlowInboundOutboundSecureCall {
+export class ArchFlowOutboundCall extends ArchBaseFlowInboundOutboundSecureCall {
     // constructor(coreOutboundCallFlowViewModel: any);
     /**
      * Returns the display type name string 'ArchFlowOutboundCall'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchFlowOutboundCall instance.
      */
-    static readonly isArchFlowOutboundCall: boolean;
+    readonly isArchFlowOutboundCall: boolean;
 }
 
 /**
@@ -12144,16 +12136,16 @@ declare class ArchFlowOutboundCall extends ArchBaseFlowInboundOutboundSecureCall
  * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows.createFlowSecureCallAsync}
  * @param coreSecureCallFlowViewModel - ( *Internal* ) an Architect core secure call view model.
  */
-declare class ArchFlowSecureCall extends ArchBaseFlowInboundOutboundSecureCall {
+export class ArchFlowSecureCall extends ArchBaseFlowInboundOutboundSecureCall {
     // constructor(coreSecureCallFlowViewModel: any);
     /**
      * Returns the display type name string 'ArchFlowSecureCall'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchFlowSecureCall instance.
      */
-    static readonly isArchFlowSecureCall: boolean;
+    readonly isArchFlowSecureCall: boolean;
 }
 
 /**
@@ -12161,12 +12153,12 @@ declare class ArchFlowSecureCall extends ArchBaseFlowInboundOutboundSecureCall {
  * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows#createFlowSurveyInviteAsync}
  * @param coreSurveyInviteViewModel - ( *Internal* ) an Architect core Survey Invite view model.
  */
-declare class ArchFlowSurveyInvite extends ArchBaseFlowWorkflow {
+export class ArchFlowSurveyInvite extends ArchBaseFlowWorkflow {
     // constructor(coreSurveyInviteViewModel: any);
     /**
      * Returns the display type name string 'ArchFlowSurveyInvite'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchFlowSurveyInvite instance.
      */
@@ -12178,12 +12170,12 @@ declare class ArchFlowSurveyInvite extends ArchBaseFlowWorkflow {
  * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows#loadFlowDefaultVoicemailAsync}
  * @param coreVoicemailFlowViewModel - ( *Internal* ) an Architect core inbound call view model.
  */
-declare class ArchFlowVoicemail extends ArchBaseFlowInboundOutboundSecureCall {
+export class ArchFlowVoicemail extends ArchBaseFlowInboundOutboundSecureCall {
     // constructor(coreVoicemailFlowViewModel: any);
     /**
      * Returns the display type name string 'ArchFlowVoicemail'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchFlowVoicemail instance.
      */
@@ -12195,12 +12187,12 @@ declare class ArchFlowVoicemail extends ArchBaseFlowInboundOutboundSecureCall {
  * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows#createFlowWorkflowAsync}
  * @param coreWorkflowViewModel - ( *Internal* ) an Architect core workflow view model.
  */
-declare class ArchFlowWorkflow extends ArchBaseFlowWorkflow {
+export class ArchFlowWorkflow extends ArchBaseFlowWorkflow {
     // constructor(coreWorkflowViewModel: any);
     /**
      * Returns the display type name string 'ArchFlowWorkflow'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchFlowWorkflow instance.
      */
@@ -12213,7 +12205,7 @@ declare class ArchFlowWorkflow extends ArchBaseFlowWorkflow {
  * Instances of this action should be created by calling {@link ArchFactoryMenus#addMenu}
  * @param coreMenuViewModel - the core menu associated with this ArchMenu
  */
-declare class ArchMenu extends ArchBaseMenu {
+export class ArchMenu extends ArchBaseMenu {
     // constructor(coreMenuViewModel: any);
     /**
      * Returns a array of menus for this menu.
@@ -12222,7 +12214,7 @@ declare class ArchMenu extends ArchBaseMenu {
     /**
      * Returns the display type name string 'ArchMenu'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * A string suitable for logging that contains information about this menu
      */
@@ -12240,7 +12232,7 @@ declare class ArchMenu extends ArchBaseMenu {
     /**
      * Returns true indicating this is an ArchMenu instance.
      */
-    static readonly isArchMenu: boolean;
+    readonly isArchMenu: boolean;
     /**
      * Returns whether or not this menu is a reusable menu.  An example of a non-reusable menu is when
      * the menu is in a menu choice directly.
@@ -12273,13 +12265,13 @@ declare class ArchMenu extends ArchBaseMenu {
  * Instances of this action should be created by calling {@link ArchFactoryMenus#addMenuDialByExtension}
  * @param coreMenuChoiceViewModel - ( *Internal* ) an Architect core menu choice associated with this menu choice.
  */
-declare class ArchMenuDialByExtension extends ArchBaseMenuChoice {
+export class ArchMenuDialByExtension extends ArchBaseMenuChoice {
     // constructor(coreMenuChoiceViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The Architect dial by extension action associated with this menu.
      */
@@ -12295,12 +12287,12 @@ declare class ArchMenuDialByExtension extends ArchBaseMenuChoice {
  * Instances of this action should be created by calling {@link ArchFactoryMenus#addMenuDisconnect}
  * @param coreMenuChoiceViewModel - ( *Internal* ) an Architect core menu choice associated with this menu choice.
  */
-declare class ArchMenuDisconnect extends ArchBaseMenuChoice {
+export class ArchMenuDisconnect extends ArchBaseMenuChoice {
     // constructor(coreMenuChoiceViewModel: any);
     /**
      * Returns the display type name string 'ArchMenuDisconnect'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The Architect disconnect action associated with this menu.
      */
@@ -12308,7 +12300,7 @@ declare class ArchMenuDisconnect extends ArchBaseMenuChoice {
     /**
      * Returns true indicating that this is an ArchMenuDisconnect instance.
      */
-    static readonly isArchMenuDisconnect: boolean;
+    readonly isArchMenuDisconnect: boolean;
 }
 
 /**
@@ -12316,12 +12308,12 @@ declare class ArchMenuDisconnect extends ArchBaseMenuChoice {
  * Instances of this action should be created by calling {@link ArchFactoryMenus#addMenuJumpToMenu}
  * @param coreMenuChoiceViewModel - ( *Internal* ) an Architect core menu choice view model associated with this menu choice.
  */
-declare class ArchMenuJumpToMenu extends ArchBaseMenuChoice {
+export class ArchMenuJumpToMenu extends ArchBaseMenuChoice {
     // constructor(coreMenuChoiceViewModel: any);
     /**
      * Returns the display type name string 'ArchMenuJumpToMenu'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The Architect jump to menu action for this menu.
      */
@@ -12337,12 +12329,12 @@ declare class ArchMenuJumpToMenu extends ArchBaseMenuChoice {
  * Instances of this action should be created by calling {@link ArchFactoryMenus#addMenuJumpToTask}
  * @param coreMenuChoiceViewModel - ( *Internal* ) an Architect core menu choice associated with this menu.
  */
-declare class ArchMenuJumpToTask extends ArchBaseMenuChoice {
+export class ArchMenuJumpToTask extends ArchBaseMenuChoice {
     // constructor(coreMenuChoiceViewModel: any);
     /**
      * Returns the display type name string 'ArchMenuJumpToTask'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The Architect jump to task action associated with this menu choice.
      */
@@ -12350,7 +12342,7 @@ declare class ArchMenuJumpToTask extends ArchBaseMenuChoice {
     /**
      * Returns true indicating that this is an ArchMenuJumpToTask instance.
      */
-    static readonly isArchMenuJumpToTask: boolean;
+    readonly isArchMenuJumpToTask: boolean;
 }
 
 /**
@@ -12358,12 +12350,12 @@ declare class ArchMenuJumpToTask extends ArchBaseMenuChoice {
  * Instances of this action should be created by calling {@link ArchFactoryMenus#addMenuPreviousMenu}
  * @param coreMenuChoiceViewModel - ( *Internal* ) an Architect core menu choice associated with this menu choice.
  */
-declare class ArchMenuPreviousMenu extends ArchBaseMenuChoice {
+export class ArchMenuPreviousMenu extends ArchBaseMenuChoice {
     // constructor(coreMenuChoiceViewModel: any);
     /**
      * Returns the display type name string 'ArchMenuPreviousMenu'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The previous menu action associated with this menu choice.
      */
@@ -12379,12 +12371,12 @@ declare class ArchMenuPreviousMenu extends ArchBaseMenuChoice {
  * Instances of this action should be created by calling {@link ArchFactoryMenus#addMenuRepeatMenu}
  * @param coreMenuChoiceViewModel - ( *Internal* ) an Architect core menu choice associated with this menu choice.
  */
-declare class ArchMenuRepeatMenu extends ArchBaseMenuChoice {
+export class ArchMenuRepeatMenu extends ArchBaseMenuChoice {
     // constructor(coreMenuChoiceViewModel: any);
     /**
      * Returns the display type name string 'ArchMenuRepeatMenu'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The Architect repeat menu action for this menu.
      */
@@ -12392,7 +12384,7 @@ declare class ArchMenuRepeatMenu extends ArchBaseMenuChoice {
     /**
      * Returns true indicating that this is an ArchMenuRepeatMenu instance.
      */
-    static readonly isArchMenuRepeatMenu: boolean;
+    readonly isArchMenuRepeatMenu: boolean;
 }
 
 /**
@@ -12400,12 +12392,12 @@ declare class ArchMenuRepeatMenu extends ArchBaseMenuChoice {
  * Instances of this action should be created by calling {@link ArchFactoryMenus#addMenuReturnToAgent}
  * @param coreMenuChoiceViewModel - ( *Internal* ) an Architect core menu choice associated with this menu choice.
  */
-declare class ArchMenuReturnToAgent extends ArchBaseMenuChoice {
+export class ArchMenuReturnToAgent extends ArchBaseMenuChoice {
     // constructor(coreMenuChoiceViewModel: any);
     /**
      * Returns the display type name string 'ArchMenuReturnToAgent'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The Architect returnToAgent action associated with this menu.
      */
@@ -12413,7 +12405,7 @@ declare class ArchMenuReturnToAgent extends ArchBaseMenuChoice {
     /**
      * Returns true indicating that this is an ArchMenuReturnToAgent instance.
      */
-    static readonly isArchMenuReturnToAgent: boolean;
+    readonly isArchMenuReturnToAgent: boolean;
 }
 
 /**
@@ -12421,7 +12413,7 @@ declare class ArchMenuReturnToAgent extends ArchBaseMenuChoice {
  * Instances of this action should be created by calling {@link ArchFactoryMenus#addMenuSubMenu}
  * @param coreMenuChoiceViewModel - ( *Internal* ) an Architect core menu choice view model.
  */
-declare class ArchMenuSubMenu extends ArchBaseMenuChoice {
+export class ArchMenuSubMenu extends ArchBaseMenuChoice {
     // constructor(coreMenuChoiceViewModel: any);
     /**
      * Returns a array of menus for this sub menu.
@@ -12437,7 +12429,7 @@ declare class ArchMenuSubMenu extends ArchBaseMenuChoice {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The ArchActionMenu action associated with this sub menu.
      */
@@ -12449,7 +12441,7 @@ declare class ArchMenuSubMenu extends ArchBaseMenuChoice {
     /**
      * Returns true indicating that this is an ArchMenuSubMenu instance.
      */
-    static readonly isArchMenuSubMenu: boolean;
+    readonly isArchMenuSubMenu: boolean;
     /**
      * The menu options / settings for this sub menu.
      */
@@ -12465,13 +12457,13 @@ declare class ArchMenuSubMenu extends ArchBaseMenuChoice {
  * Instances of this action should be created by calling {@link ArchFactoryMenus#addMenuTask}
  * @param coreMenuChoiceViewModel - ( *Internal* ) an Architect core menu choice associated with this menu choice.
  */
-declare class ArchMenuTask extends ArchBaseMenuChoice {
+export class ArchMenuTask extends ArchBaseMenuChoice {
     // constructor(coreMenuChoiceViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The task associated with this menu.
      */
@@ -12479,7 +12471,7 @@ declare class ArchMenuTask extends ArchBaseMenuChoice {
     /**
      * Returns true indicating that this is an ArchMenuTask instance.
      */
-    static readonly isArchMenuTask: boolean;
+    readonly isArchMenuTask: boolean;
 }
 
 /**
@@ -12487,13 +12479,13 @@ declare class ArchMenuTask extends ArchBaseMenuChoice {
  * Instances of this action should be created by calling {@link ArchFactoryMenus#addMenuTransferToAcd}
  * @param coreMenuChoiceViewModel - ( *Internal* ) an Architect core menu choice associated with this menu.
  */
-declare class ArchMenuTransferToAcd extends ArchBaseMenuChoice {
+export class ArchMenuTransferToAcd extends ArchBaseMenuChoice {
     // constructor(coreMenuChoiceViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The Architect transfer to acd action for this menu.
      */
@@ -12509,13 +12501,13 @@ declare class ArchMenuTransferToAcd extends ArchBaseMenuChoice {
  * Instances of this action should be created by calling {@link ArchFactoryMenus#addMenuTransferToFlow}
  * @param coreMenuChoiceViewModel - ( *Internal* ) an Architect core menu choice associated with this menu.
  */
-declare class ArchMenuTransferToFlow extends ArchBaseMenuChoice {
+export class ArchMenuTransferToFlow extends ArchBaseMenuChoice {
     // constructor(coreMenuChoiceViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The Architect transfer to flow action associated with this menu.
      */
@@ -12531,12 +12523,12 @@ declare class ArchMenuTransferToFlow extends ArchBaseMenuChoice {
  * Instances of this action should be created by calling {@link ArchFactoryMenus#addMenuTransferToFlowSecure}
  * @param coreMenuChoiceViewModel - ( *Internal* ) an Architect core menu choice associated with this menu.
  */
-declare class ArchMenuTransferToFlowSecure extends ArchMenuTransferToFlow {
+export class ArchMenuTransferToFlowSecure extends ArchMenuTransferToFlow {
     // constructor(coreMenuChoiceViewModel: any);
     /**
      * Returns the display type name string 'ArchMenuTransferToFlowSecure'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The Architect transfer to flow action associated with this menu.
      */
@@ -12544,7 +12536,7 @@ declare class ArchMenuTransferToFlowSecure extends ArchMenuTransferToFlow {
     /**
      * Returns true indicating that this is an ArchMenuTransferToFlowSecure instance.
      */
-    static readonly isArchMenuTransferToFlowSecure: boolean;
+    readonly isArchMenuTransferToFlowSecure: boolean;
 }
 
 /**
@@ -12552,12 +12544,12 @@ declare class ArchMenuTransferToFlowSecure extends ArchMenuTransferToFlow {
  * Instances of this action should be created by calling {@link ArchFactoryMenus#addMenuTransferToGroup}
  * @param coreMenuChoiceViewModel - ( *Internal* ) an Architect core menu choice associated with this menu.
  */
-declare class ArchMenuTransferToGroup extends ArchBaseMenuChoice {
+export class ArchMenuTransferToGroup extends ArchBaseMenuChoice {
     // constructor(coreMenuChoiceViewModel: any);
     /**
      * Returns the display type name string 'ArchMenuTransferToGroup'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The Architect transfer to group action associated with this menu.
      */
@@ -12573,13 +12565,13 @@ declare class ArchMenuTransferToGroup extends ArchBaseMenuChoice {
  * Instances of this action should be created by calling {@link ArchFactoryMenus#addMenuTransferToNumber}
  * @param coreMenuChoiceViewModel - ( *Internal* ) an Architect core menu choice associated with this menu.
  */
-declare class ArchMenuTransferToNumber extends ArchBaseMenuChoice {
+export class ArchMenuTransferToNumber extends ArchBaseMenuChoice {
     // constructor(coreMenuChoiceViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The Architect transfer to number action associated with this menu.
      */
@@ -12595,13 +12587,13 @@ declare class ArchMenuTransferToNumber extends ArchBaseMenuChoice {
  * Instances of this action should be created by calling {@link ArchFactoryMenus#addMenuTransferToUser}
  * @param coreMenuChoiceViewModel - ( *Internal* ) an Architect core menu choice associated with this menu.
  */
-declare class ArchMenuTransferToUser extends ArchBaseMenuChoice {
+export class ArchMenuTransferToUser extends ArchBaseMenuChoice {
     // constructor(coreMenuChoiceViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The Architect transfer to user action associated with this menu.
      */
@@ -12617,12 +12609,12 @@ declare class ArchMenuTransferToUser extends ArchBaseMenuChoice {
  * Instances of this action should be created by calling {@link ArchFactoryMenus#addMenuTransferToVoicemail}
  * @param coreMenuChoiceViewModel - ( *Internal* ) an Architect core menu choice associated with this menu.
  */
-declare class ArchMenuTransferToVoicemail extends ArchBaseMenuChoice {
+export class ArchMenuTransferToVoicemail extends ArchBaseMenuChoice {
     // constructor(coreMenuChoiceViewModel: any);
     /**
      * Returns the display type name string 'ArchMenuTransferToVoicemail'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The Architect Transfer to Voicemail action associated with this menu.
      */
@@ -12630,7 +12622,7 @@ declare class ArchMenuTransferToVoicemail extends ArchBaseMenuChoice {
     /**
      * Returns true indicating that this is an ArchMenuTransferToVoicemail instance.
      */
-    static readonly isArchMenuTransferToVoicemail: boolean;
+    readonly isArchMenuTransferToVoicemail: boolean;
 }
 
 /**
@@ -12638,12 +12630,12 @@ declare class ArchMenuTransferToVoicemail extends ArchBaseMenuChoice {
  * Instances of this class will be created automatically as needed by Architect Scripting.
  * @param coreActionPathViewModel - ( *Internal* ) an Architect core action path view model.
  */
-declare class ArchActionOutput extends ArchBaseMultiActionContainer {
+export class ArchActionOutput extends ArchBaseMultiActionContainer {
     // constructor(coreActionPathViewModel: any);
     /**
      * Returns the display type name string 'ArchActionOutput'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Whether or not the output is enabled for runtime execution.  An enabled action
      * output will be displayed in the UI.  If it's disabled and there are no actions
@@ -12718,12 +12710,12 @@ declare class ArchActionOutput extends ArchBaseMultiActionContainer {
  * made available via. ArchBranch instances in {@link ArchTask#branches}.
  * @param coreBranchItem - ( *Internal* ) the Architect core branch item associated with this ArchBranch wrapper
  */
-declare class ArchBranch extends ArchBaseCoreObject {
+export class ArchBranch extends ArchBaseCoreObject {
     // constructor(coreBranchItem: any);
     /**
      * Returns the display type name string 'ArchBranch'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchBranch instance.
      */
@@ -12745,12 +12737,12 @@ declare class ArchBranch extends ArchBaseCoreObject {
 /**
  * The Architect Scripting class that provides internal support for Architect Scripting system prompt objects.
  */
-declare class ArchPromptSystem extends ArchBasePrompt {
+export class ArchPromptSystem extends ArchBasePrompt {
     // constructor();
     /**
      * Returns the display type name string 'ArchPromptSystem'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchPromptSystem instance which means
      * this is a system prompt instance.
@@ -12761,12 +12753,12 @@ declare class ArchPromptSystem extends ArchBasePrompt {
 /**
  * The Architect Scripting class that provides internal support for Architect Scripting user prompt objects.
  */
-declare class ArchPromptUser extends ArchBasePrompt {
+export class ArchPromptUser extends ArchBasePrompt {
     // constructor();
     /**
      * Returns the display type name string 'ArchPromptUser'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchPromptUser instance which means
      * this is a user prompt instance.
@@ -12774,12 +12766,12 @@ declare class ArchPromptUser extends ArchBasePrompt {
     readonly isArchPromptUser: boolean;
 }
 
-declare class ArchSettingActionPropertyDefault extends ArchBaseObject {
+export class ArchSettingActionPropertyDefault extends ArchBaseObject {
     // constructor(archDefinitionAction: ArchDefinitionAction, propertyName: string, propertyDefaultValue: ArchBaseValue);
     /**
      * Returns the display type name string 'ArchSettingActionPropertyDefault'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchSettingActionPropertyDefault instance.
      */
@@ -12840,12 +12832,12 @@ declare class ArchSettingActionPropertyDefault extends ArchBaseObject {
     isFilterMatch(archFilterObject: ArchFilterObject): boolean;
 }
 
-declare class ArchSettingsActionDefaults extends ArchBaseCoreObject {
+export class ArchSettingsActionDefaults extends ArchBaseCoreObject {
     // constructor(coreDefaultSettingsViewModel: any);
     /**
      * Returns the display type name string 'ArchSettingsActionDefaults'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchSettingsActionDefaults instance.
      */
@@ -12990,12 +12982,12 @@ declare class ArchSettingsActionDefaults extends ArchBaseCoreObject {
  * Creates an instance of an ArchSettingsBotFlow.  This is the Scripting class that handles flow error event handling settings.
  * @param coreBotSettingsViewModel - ( *Internal* ) an Architect core bot flow settings view model.
  */
-declare class ArchSettingsBotFlow extends ArchBaseCoreObjectWithId {
+export class ArchSettingsBotFlow extends ArchBaseCoreObjectWithId {
     // constructor(coreBotSettingsViewModel: any);
     /**
      * Returns the display type name string 'ArchSettingsBotFlow'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns a string suitable for logging that describes this inbound email settings instance.
      */
@@ -13022,12 +13014,12 @@ declare class ArchSettingsBotFlow extends ArchBaseCoreObjectWithId {
  * Creates an instance of an ArchSettingsCommonModuleFlow.  This is the Scripting class that handles common module flow settings.
  * @param coreCommonModuleSettingsViewModel - ( *Internal* ) an Architect core error handling settings view model.
  */
-declare class ArchSettingsCommonModuleFlow extends ArchBaseCoreObject {
+export class ArchSettingsCommonModuleFlow extends ArchBaseCoreObject {
     // constructor(coreCommonModuleSettingsViewModel: any);
     /**
      * Returns the display type name string 'ArchSettingsCommonModuleFlow'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchSettingsCommonModuleFlow instance.
      */
@@ -13202,12 +13194,12 @@ declare class ArchSettingsCommonModuleFlow extends ArchBaseCoreObject {
  * Creates an instance of an ArchSettingsEventErrorFlow.  This is the Scripting class that handles flow error event handling settings.
  * @param coreErrorHandlingSettingsViewModel - ( *Internal* ) an Architect core error handling settings view model.
  */
-declare class ArchSettingsEventErrorFlow extends ArchBaseCoreObjectWithId {
+export class ArchSettingsEventErrorFlow extends ArchBaseCoreObjectWithId {
     // constructor(coreErrorHandlingSettingsViewModel: any);
     /**
      * Returns the display type name string 'ArchSettingsEventErrorFlow'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns a string suitable for logging that describes this menu settings instance.
      */
@@ -13262,12 +13254,12 @@ declare class ArchSettingsEventErrorFlow extends ArchBaseCoreObjectWithId {
  * Creates an instance of an ArchSettingsEventErrorFlowBot.  This is the Scripting class that handles bot flow error event handling settings.
  * @param coreBotErrorHandlingSettingsViewModel - ( *Internal* ) an Architect core bot error handling settings view model.
  */
-declare class ArchSettingsEventErrorFlowBot extends ArchSettingsEventErrorFlow {
+export class ArchSettingsEventErrorFlowBot extends ArchSettingsEventErrorFlow {
     // constructor(coreBotErrorHandlingSettingsViewModel: any);
     /**
      * Returns the display type name string 'ArchSettingsEventErrorFlow'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchSettingsEventErrorFlowBot instance.
      */
@@ -13316,12 +13308,12 @@ declare class ArchSettingsEventErrorFlowBot extends ArchSettingsEventErrorFlow {
  * setting for an in-queue call flow.
  * @param coreInQueueCallFlowSettingsViewModel - ( *Internal* ) an Architect core menu settings view model.
  */
-declare class ArchSettingsInQueueCallFlow extends ArchBaseCoreObjectWithId {
+export class ArchSettingsInQueueCallFlow extends ArchBaseCoreObjectWithId {
     // constructor(coreInQueueCallFlowSettingsViewModel: any);
     /**
      * Returns the display type name string 'ArchSettingsInQueueCallFlow'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns the hold music prompt value for the in-queue call flow.
      */
@@ -13340,12 +13332,12 @@ declare class ArchSettingsInQueueCallFlow extends ArchBaseCoreObjectWithId {
  * Creates an instance of an ArchSettingsInboundEmailFlow.  This is the Scripting class that handles flow error event handling settings.
  * @param coreInboundEmailSettingsViewModel - ( *Internal* ) an Architect core error handling settings view model.
  */
-declare class ArchSettingsInboundEmailFlow extends ArchBaseCoreObjectWithId {
+export class ArchSettingsInboundEmailFlow extends ArchBaseCoreObjectWithId {
     // constructor(coreInboundEmailSettingsViewModel: any);
     /**
      * Returns the display type name string 'ArchSettingsInboundEmailFlow'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns a string suitable for logging that describes this inbound email settings instance.
      */
@@ -13365,12 +13357,12 @@ declare class ArchSettingsInboundEmailFlow extends ArchBaseCoreObjectWithId {
  * Creates an instance of an ArchSettingsMenu.  This is the Scripting class that handles menu settings / options.
  * @param coreMenuSettingsViewModel - ( *Internal* ) an Architect core menu settings view model.
  */
-declare class ArchSettingsMenu extends ArchBaseCoreObjectWithId {
+export class ArchSettingsMenu extends ArchBaseCoreObjectWithId {
     // constructor(coreMenuSettingsViewModel: any);
     /**
      * Returns the display type name string 'ArchSettingsMenu'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The maximum delay for extension dialing.  This cannot be less than 1 second.
      */
@@ -13402,12 +13394,12 @@ declare class ArchSettingsMenu extends ArchBaseCoreObjectWithId {
  * for a flow.  This will still be created for flow level menu settings but not settings on individual menu instances.
  * @param coreMenuSettingsViewModel - ( *Internal* ) an Architect core menu settings view model.
  */
-declare class ArchSettingsMenuFlow extends ArchSettingsMenu {
+export class ArchSettingsMenuFlow extends ArchSettingsMenu {
     // constructor(coreMenuSettingsViewModel: any);
     /**
      * Returns the display type name string 'ArchSettingsMenuFlow'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns a string suitable for logging that describes this menu settings instance.
      */
@@ -13418,12 +13410,12 @@ declare class ArchSettingsMenuFlow extends ArchSettingsMenu {
     readonly isArchSettingsMenuFlow: boolean;
 }
 
-declare class ArchSettingsNluDynamicSlotType extends ArchBaseObject {
+export class ArchSettingsNluDynamicSlotType extends ArchBaseObject {
     // constructor(coreDynamicSlotTypeViewModel: any);
     /**
      * Returns the display type name string 'ArchSettingsNluDynamicSlotType'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchSettingsNluDynamicSlotType instance.
      */
@@ -13484,12 +13476,12 @@ declare class ArchSettingsNluDynamicSlotType extends ArchBaseObject {
     isFilterMatch(archFilterObject: ArchFilterObject): boolean;
 }
 
-declare class ArchSettingsNluIntent extends ArchBaseObject {
+export class ArchSettingsNluIntent extends ArchBaseObject {
     // constructor(coreIntentSettingsViewModel: any);
     /**
      * Returns the display type name string 'ArchSettingsNluIntent'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchSettingsNluIntent instance.
      */
@@ -13558,12 +13550,12 @@ declare class ArchSettingsNluIntent extends ArchBaseObject {
     isFilterMatch(archFilterObject: ArchFilterObject): boolean;
 }
 
-declare class ArchSettingsNluIntents extends ArchBaseObject {
+export class ArchSettingsNluIntents extends ArchBaseObject {
     // constructor(coreIntentsSettingsViewModel: any);
     /**
      * Returns the display type name string 'ArchSettingsNluIntents'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchSettingsNluIntents instance.
      */
@@ -13618,12 +13610,12 @@ declare class ArchSettingsNluIntents extends ArchBaseObject {
  * to use.
  * @param coreKnowledgeSettingsViewModel - ( *Internal* ) an Architect core error knowledge settings view model.
  */
-declare class ArchSettingsNluKnowledge extends ArchBaseCoreObject {
+export class ArchSettingsNluKnowledge extends ArchBaseCoreObject {
     // constructor(coreKnowledgeSettingsViewModel: any);
     /**
      * Returns the display type name string 'ArchSettingsNluKnowledge'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchSettingsNluKnowledge instance.
      */
@@ -13870,12 +13862,12 @@ declare class ArchSettingsNluKnowledge extends ArchBaseCoreObject {
  * [settingsOutboundCall]{@link ArchFlowOutboundCall#settingsOutboundCall} property to get at these settings.
  * @param coreOutboundCallSettingsViewModel - ( *Internal* ) an Architect core outbound flow settings.
  */
-declare class ArchSettingsOutboundCallFlow extends ArchBaseCoreObjectWithId {
+export class ArchSettingsOutboundCallFlow extends ArchBaseCoreObjectWithId {
     // constructor(coreOutboundCallSettingsViewModel: any);
     /**
      * Returns the display type name string 'ArchSettingsOutboundCallFlow'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The contact list set for the outbound call flow.
      */
@@ -13910,7 +13902,7 @@ declare class ArchSettingsOutboundCallFlow extends ArchBaseCoreObjectWithId {
     setContactListLiteralByContactListNameAsync(contactListName: string, callbackFunction?: callbackArchValueContactList): Promise<ArchSettingsOutboundCallFlow>;
 }
 
-declare class ArchSettingsPromptsFlow extends ArchBaseCoreObjectWithId {
+export class ArchSettingsPromptsFlow extends ArchBaseCoreObjectWithId {
     // constructor(corePromptSettingsViewModel: any);
     /**
      * Returns the display type name string 'ArchSettingsPromptsFlow'.
@@ -14084,12 +14076,12 @@ declare class ArchSettingsPromptsFlow extends ArchBaseCoreObjectWithId {
  * Creates an instance of an ArchSettingsSpeechRec.  This is the Scripting class that handles speech rec settings.
  * @param coreSpeechRecSettingsViewModel - ( *Internal* ) an Architect core speech rec settings view model.
  */
-declare class ArchSettingsSpeechRec extends ArchBaseCoreObjectWithId {
+export class ArchSettingsSpeechRec extends ArchBaseCoreObjectWithId {
     // constructor(coreSpeechRecSettingsViewModel: any);
     /**
      * Returns the display type name string 'ArchSettingsSpeechRec'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The complete match timeout duration value.  This value can range from 100ms to 20000ms.
      */
@@ -14121,12 +14113,12 @@ declare class ArchSettingsSpeechRec extends ArchBaseCoreObjectWithId {
  * for a flow.  This will still be created for flow level speech rec settings but not settings on individual menu instances.
  * @param coreSpeechRecSettingsViewModel - ( *Internal* ) an Architect core speech rec settings view model.
  */
-declare class ArchSettingsSpeechRecFlow extends ArchSettingsSpeechRec {
+export class ArchSettingsSpeechRecFlow extends ArchSettingsSpeechRec {
     // constructor(coreSpeechRecSettingsViewModel: any);
     /**
      * Returns the display type name string 'ArchSettingsSpeechRecFlow'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Whether or not speech rec is enabled on the flow.  If speech rec is turned off for then any other speech rec
      * settings like the company directory support or speech rec terms on menu items will not be used at runtime.
@@ -14155,7 +14147,7 @@ declare class ArchSettingsSpeechRecFlow extends ArchSettingsSpeechRec {
  * created by Architect Scripting.
  * @param coreLanguageOptionsViewModel - ( *Internal* ) an Architect core language options object.
  */
-declare class ArchSettingsSupportedLanguage extends ArchBaseCoreObject {
+export class ArchSettingsSupportedLanguage extends ArchBaseCoreObject {
     // constructor(coreLanguageOptionsViewModel: any);
     /**
      * A logging string for the ArchSettingsSupportedLanguage instance.
@@ -14172,7 +14164,7 @@ declare class ArchSettingsSupportedLanguage extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchSettingsSupportedLanguage'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchSettingsSupportedLanguage instance.
      */
@@ -14248,7 +14240,7 @@ declare class ArchSettingsSupportedLanguage extends ArchBaseCoreObject {
  * Instances of this action should be created by accessing the [settingsSupportedLanguages]{@link ArchBaseFlow#settingsSupportedLanguages} property on a flow.
  * @param coreLanguageSelectionViewModel - ( *Internal* ) an Architect core language selection view model.
  */
-declare class ArchSettingsSupportedLanguagesFlow extends ArchBaseCoreObjectWithId {
+export class ArchSettingsSupportedLanguagesFlow extends ArchBaseCoreObjectWithId {
     // constructor(coreLanguageSelectionViewModel: any);
     /**
      * Checks flow to see if a language can be added in its current state. Some flows may have restrictions
@@ -14281,7 +14273,7 @@ declare class ArchSettingsSupportedLanguagesFlow extends ArchBaseCoreObjectWithI
     /**
      * Returns the display type name string 'ArchSettingsSupportedLanguagesFlow'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Looks through the supported languages on this flow for the language
      * specified by the language parameter and if found, returns the ArchSettingsSupportedLanguage
@@ -14310,12 +14302,12 @@ declare class ArchSettingsSupportedLanguagesFlow extends ArchBaseCoreObjectWithI
     readonly languagesSettings: ArchSettingsSupportedLanguage[];
 }
 
-declare class ArchSettingsUserInput extends ArchBaseCoreObject {
+export class ArchSettingsUserInput extends ArchBaseCoreObject {
     // constructor(coreUserInputSettingsViewModel: any);
     /**
      * Returns the display type name string 'ArchSettingsUserInput'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchSettingsUserInput instance.
      */
@@ -14536,12 +14528,12 @@ declare class ArchSettingsUserInput extends ArchBaseCoreObject {
  * which are on menu choices.
  * @param coreSpeechRecTermContainerViewModel - ( *Internal* ) an Architect core speech rec term container view model.
  */
-declare class ArchSpeechRecTermContainer extends ArchBaseCoreObject {
+export class ArchSpeechRecTermContainer extends ArchBaseCoreObject {
     // constructor(coreSpeechRecTermContainerViewModel: any);
     /**
      * Returns the display type name string 'ArchSpeechRecTermContainer'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns a string suitable for logging for this speech rec term container.
      */
@@ -14573,12 +14565,12 @@ declare class ArchSpeechRecTermContainer extends ArchBaseCoreObject {
  * instances that are per language.  These are used in menu choices to hold
  * @param coreSpeechRecViewModel - ( *Internal* ) an Architect core speech rec view model.
  */
-declare class ArchSpeechRecTermContainers extends ArchBaseCoreObject {
+export class ArchSpeechRecTermContainers extends ArchBaseCoreObject {
     // constructor(coreSpeechRecViewModel: any);
     /**
      * Returns the display type name string 'ArchSpeechRecTermContainers'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns a string suitable for logging for this speech rec term containers object.
      */
@@ -14602,16 +14594,16 @@ declare class ArchSpeechRecTermContainers extends ArchBaseCoreObject {
  * Instances of this class will be created by Scripting as needed.
  * @param coreSpeechToTextEngineViewModel - ( *Internal* ) an Architect core speech to text engine view model.
  */
-declare class ArchSpeechToTextEngine extends ArchBaseCoreObjectWithId {
+export class ArchSpeechToTextEngine extends ArchBaseCoreObjectWithId {
     // constructor(coreSpeechToTextEngineViewModel: any);
     /**
      * Returns the display type name string 'ArchSpeechToTextEngine'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchSpeechToTextEngine instance.
      */
-    static readonly isArchSpeechToTextEngine: boolean;
+    readonly isArchSpeechToTextEngine: boolean;
     /**
      * A string suitable for logging
      */
@@ -14630,7 +14622,7 @@ declare class ArchSpeechToTextEngine extends ArchBaseCoreObjectWithId {
  * Creates an Architect state.
  * @param coreStateViewModel - ( *Internal* ) an Architect core state view model.
  */
-declare class ArchState extends ArchBaseMultiActionContainer {
+export class ArchState extends ArchBaseMultiActionContainer {
     // constructor(coreStateViewModel: any);
     /**
      * This adds a new variable to the state.
@@ -14649,11 +14641,11 @@ declare class ArchState extends ArchBaseMultiActionContainer {
     /**
      * Returns the display type name string 'ArchState'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchState instance.
      */
-    static readonly isArchState: boolean;
+    readonly isArchState: boolean;
     /**
      * A string suitable for logging
      */
@@ -14686,16 +14678,16 @@ declare class ArchState extends ArchBaseMultiActionContainer {
  * Creates an Architect Bot state.
  * @param coreStateViewModel - ( *Internal* ) an Architect core state view model.
  */
-declare class ArchStateBot extends ArchBaseMultiActionContainer {
+export class ArchStateBot extends ArchBaseMultiActionContainer {
     // constructor(coreStateViewModel: any);
     /**
      * Returns the display type name string 'ArchStateBot'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchStateBot instance.
      */
-    static readonly isArchStateBot: boolean;
+    readonly isArchStateBot: boolean;
 }
 
 /**
@@ -14703,7 +14695,7 @@ declare class ArchStateBot extends ArchBaseMultiActionContainer {
  * Instances of this class should be created by calling {@link ArchFactoryTasks#addTask}
  * @param coreTaskViewModel - ( *Internal* ) an Architect core task view model.
  */
-declare class ArchTask extends ArchBaseMultiActionContainer {
+export class ArchTask extends ArchBaseMultiActionContainer {
     // constructor(coreTaskViewModel: any);
     /**
      * This adds a new variable to the task.
@@ -14722,7 +14714,7 @@ declare class ArchTask extends ArchBaseMultiActionContainer {
     /**
      * Returns the display type name string 'ArchTask'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchTask instance.
      */
@@ -14809,12 +14801,12 @@ declare class ArchTask extends ArchBaseMultiActionContainer {
     readonly supportsBranches: boolean;
 }
 
-declare class ArchTaskCommonModule extends ArchTask {
+export class ArchTaskCommonModule extends ArchTask {
     // constructor(coreCommonModuleTaskViewModel: any);
     /**
      * Returns the display type name string 'ArchTaskCommonModule'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchTaskCommonModule instance.
      */
@@ -15114,16 +15106,16 @@ declare class ArchTaskCommonModule extends ArchTask {
  * for the actions defined in the task, the task will start over.
  * @param coreLoopingTaskViewModel - ( *Internal* ) an Architect core looping task view model.
  */
-declare class ArchTaskLoop extends ArchTask {
+export class ArchTaskLoop extends ArchTask {
     // constructor(coreLoopingTaskViewModel: any);
     /**
      * Returns the display type name string 'ArchTaskLoop'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchTaskLoop instance.
      */
-    static readonly isArchTaskLoop: boolean;
+    readonly isArchTaskLoop: boolean;
     /**
      * A string suitable for logging
      */
@@ -15136,16 +15128,16 @@ declare class ArchTaskLoop extends ArchTask {
  * Instances of this class will be created by Scripting as needed.
  * @param coreTtsEngineViewModel - ( *Internal* ) an Architect core TTS engine view model.
  */
-declare class ArchTtsEngine extends ArchBaseCoreObjectWithId {
+export class ArchTtsEngine extends ArchBaseCoreObjectWithId {
     // constructor(coreTtsEngineViewModel: any);
     /**
      * Returns the display type name string 'ArchTtsEngine'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchTtsEngine instance.
      */
-    static readonly isArchTtsEngine: boolean;
+    readonly isArchTtsEngine: boolean;
     /**
      * Returns whether or not this text to speech engine is secure.
      */
@@ -15190,7 +15182,7 @@ declare class ArchTtsEngine extends ArchBaseCoreObjectWithId {
  * Before attempting to work with text to speech engines, be sure to check the [areTtsEnginesAndVoicesAvailable]{@link ArchOrganizationInfo#areTtsEnginesAndVoicesAvailable}
  * property to see if your organization supports this functionality.
  */
-declare class ArchTtsEngines extends ArchBaseObject {
+export class ArchTtsEngines extends ArchBaseObject {
     // constructor();
     /**
      * A logging string for the ArchTtsEngines instance.
@@ -15199,7 +15191,7 @@ declare class ArchTtsEngines extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchTtsEngines'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Gets the text to speech engine by its name in a case insensitive manner.
      * @param engineName - the name of the text to speech engine to retrieve.
@@ -15221,16 +15213,16 @@ declare class ArchTtsEngines extends ArchBaseObject {
  * Instances of this class will be created automatically by Architect Scripting as needed.
  * @param coreTtsVoiceViewModel - ( *Internal* ) an Architect core text to speech voice view model.
  */
-declare class ArchTtsVoice extends ArchBaseCoreObjectWithId {
+export class ArchTtsVoice extends ArchBaseCoreObjectWithId {
     // constructor(coreTtsVoiceViewModel: any);
     /**
      * Returns the display type name string 'ArchTtsVoice'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchTtsVoice instance.
      */
-    static readonly isArchTtsVoice: boolean;
+    readonly isArchTtsVoice: boolean;
     /**
      * A string suitable for logging for this text to speech engine voice.
      */
@@ -15249,7 +15241,7 @@ declare class ArchTtsVoice extends ArchBaseCoreObjectWithId {
     readonly supportedLanguage: ArchLanguage;
 }
 
-declare class ArchTraverseContext extends ArchBaseObject {
+export class ArchTraverseContext extends ArchBaseObject {
     /**
      * Returns the current traversal hierarchy for the traverse callback as an array of {@link ArchTraverseHierarchyItem} instances.
      * For example, if you called [traverse]{@link ArchBaseCoreObject#traverse} on a [task]{@link ArchTask} and the traversal code was
@@ -15270,7 +15262,7 @@ declare class ArchTraverseContext extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchTraverseContext'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchTraverseContext instance.
      */
@@ -15319,11 +15311,11 @@ declare class ArchTraverseContext extends ArchBaseObject {
     isFilterMatch(archFilterObject: ArchFilterObject): boolean;
 }
 
-declare class ArchTraverseHierarchyItem extends ArchBaseObject {
+export class ArchTraverseHierarchyItem extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchTraverseHierarchyItem'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns the Architect Scripting object associated with this hierarchy item.
      */
@@ -15368,7 +15360,7 @@ declare class ArchTraverseHierarchyItem extends ArchBaseObject {
     readonly propertyName: string;
 }
 
-declare class ArchTraverseInfo {
+export class ArchTraverseInfo {
     // constructor(matchArchBaseCoreObject: ArchBaseCoreObject, archTraverseContext: ArchTraverseContext, archTraverseSettings: ArchTraverseSettings);
     /**
      * Returns the Architect Scripting object for which the callback on the [traverse]{@link ArchBaseCoreObject#traverse} call was made.
@@ -15377,7 +15369,7 @@ declare class ArchTraverseInfo {
     /**
      * Returns the display type name string 'ArchTraverseInfo'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchTraverseInfo instance.
      */
@@ -15399,7 +15391,7 @@ declare class ArchTraverseInfo {
     readonly settings: ArchTraverseSettings;
 }
 
-declare class ArchTraverseSettings {
+export class ArchTraverseSettings {
     /**
      * Returns the traverse info callback function being used for the traversal operation.
      */
@@ -15413,7 +15405,7 @@ declare class ArchTraverseSettings {
     /**
      * Returns the display type name string 'ArchTraverseSettings'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns the filter being used for the traversal operation.
      */
@@ -15441,12 +15433,12 @@ declare class ArchTraverseSettings {
  * is called and will be returned in the [validation results]{@link ArchValidationResults} returned from that call.
  * @param coreValidationIssue - ( *Internal* ) an Architect core validation issue object
  */
-declare class ArchValidationIssue extends ArchBaseCoreObject {
+export class ArchValidationIssue extends ArchBaseCoreObject {
     // constructor(coreValidationIssue: any);
     /**
      * Returns the display type name string 'ArchValidationIssue'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns a logging string for this validation result that will show information
      * about the referenced Architect Scripting object and the error / warning count.
@@ -15509,7 +15501,7 @@ declare class ArchValidationIssue extends ArchBaseCoreObject {
      * @param [prefix] - a string to prefix before each line in the returned string.
      */
     getSummaryStr(wantDetails: boolean, prefix?: string): string;
-    static readonly isArchValidationIssue: boolean;
+    readonly isArchValidationIssue: boolean;
     /**
      * The count of rollup errors for this issue.
      */
@@ -15543,12 +15535,12 @@ declare class ArchValidationIssue extends ArchBaseCoreObject {
  * errors, warnings and the Architect Scripting objects they're associated with.
  * @param coreValidationResultsViewModel - *Internal* The core validation results object
  */
-declare class ArchValidationResults extends ArchBaseCoreObject {
+export class ArchValidationResults extends ArchBaseCoreObject {
     // constructor(coreValidationResultsViewModel: any);
     /**
      * Returns the display type name string 'ArchValidationResults'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns a logging string for this validation result that will show information
      * about the referenced Architect Scripting object and the error / warning count.
@@ -15710,19 +15702,19 @@ declare class ArchValidationResults extends ArchBaseCoreObject {
      * and adding up the warningCount property for each validation issue.
      */
     readonly warningCountTotal: number;
-    static readonly isArchValidationResults: boolean;
+    readonly isArchValidationResults: boolean;
 }
 
 /**
  * Creates a new ArchChoice instance.
  * @param coreChoiceViewModel - ( *Internal* ) an Architect core choice instance.
  */
-declare class ArchChoice extends ArchBaseCoreObject {
+export class ArchChoice extends ArchBaseCoreObject {
     // constructor(coreChoiceViewModel: any);
     /**
      * Returns the display type name string 'ArchChoice'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * A string suitable for logging that contains information about this ArchChoice.
      */
@@ -15746,12 +15738,12 @@ declare class ArchChoice extends ArchBaseCoreObject {
  * Creates a new ArchNamedValue instance.
  * @param coreDataPair - ( *Internal* ) an Architect core data pair instance.
  */
-declare class ArchNamedValue extends ArchBaseCoreObject {
+export class ArchNamedValue extends ArchBaseCoreObject {
     // constructor(coreDataPair: any);
     /**
      * Returns the display type name string 'ArchNamedValue'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns the name for this named value instance.
      */
@@ -15770,13 +15762,13 @@ declare class ArchNamedValue extends ArchBaseCoreObject {
  * Creates a new ArchNamedValueList used to represent a list of Data Pairs
  * @param coreDataPairList - ( *Internal* ) an Architect core data pairs list object
  */
-declare class ArchNamedValueList extends ArchBaseValueContainer {
+export class ArchNamedValueList extends ArchBaseValueContainer {
     // constructor(coreDataPairList: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns the number of pairs in this list.
      */
@@ -15809,16 +15801,16 @@ declare class ArchNamedValueList extends ArchBaseValueContainer {
  * Scripting as needed.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueAgentScorePair extends ArchBaseValueSingleton {
+export class ArchValueAgentScorePair extends ArchBaseValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueAgentScorePair'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueAgentScorePair instance.
      */
-    static readonly isArchValueAgentScorePair: boolean;
+    readonly isArchValueAgentScorePair: boolean;
 }
 
 /**
@@ -15830,16 +15822,16 @@ declare class ArchValueAgentScorePair extends ArchBaseValueSingleton {
  * Scripting as needed.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueAgentScorePairCollection extends ArchBaseValueCollection {
+export class ArchValueAgentScorePairCollection extends ArchBaseValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueAgentScorePairCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueAgentScorePairCollection instance.
      */
-    static readonly isArchValueAgentScorePairCollection: boolean;
+    readonly isArchValueAgentScorePairCollection: boolean;
 }
 
 /**
@@ -15849,13 +15841,13 @@ declare class ArchValueAgentScorePairCollection extends ArchBaseValueCollection 
  * automatically by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueAny extends ArchBaseValueSingleton {
+export class ArchValueAny extends ArchBaseValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueAny instance.
      */
@@ -15870,12 +15862,12 @@ declare class ArchValueAny extends ArchBaseValueSingleton {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueAnyCollection extends ArchBaseValueCollection {
+export class ArchValueAnyCollection extends ArchBaseValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueAnyCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueAnyCollection instance.
      */
@@ -15888,13 +15880,13 @@ declare class ArchValueAnyCollection extends ArchBaseValueCollection {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression audio view model.
  */
-declare class ArchValueAudio extends ArchBaseValueSingleton {
+export class ArchValueAudio extends ArchBaseValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueAudio instance.
      */
@@ -15936,13 +15928,13 @@ declare class ArchValueAudio extends ArchBaseValueSingleton {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an expression view model from core.
  */
-declare class ArchValueBoolean extends ArchBaseValueBasic {
+export class ArchValueBoolean extends ArchBaseValueBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueBoolean instance.
      */
@@ -15977,12 +15969,12 @@ declare class ArchValueBoolean extends ArchBaseValueBasic {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueBooleanCollection extends ArchBaseValueCollectionBasic {
+export class ArchValueBooleanCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueBooleanCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueBooleanCollection instance.
      */
@@ -15996,13 +15988,13 @@ declare class ArchValueBooleanCollection extends ArchBaseValueCollectionBasic {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an expression view model from core.
  */
-declare class ArchValueCommunication extends ArchBaseValueBasic {
+export class ArchValueCommunication extends ArchBaseValueBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
 }
 
 /**
@@ -16019,12 +16011,12 @@ declare type callbackArchValueContactList = (ArchValueContactList: ArchValueCont
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueContactList extends ArchBaseNetworkValueSingleton {
+export class ArchValueContactList extends ArchBaseNetworkValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueContactList'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueContactList instance.
      */
@@ -16054,13 +16046,13 @@ declare class ArchValueContactList extends ArchBaseNetworkValueSingleton {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueCurrency {
+export class ArchValueCurrency {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     static isArchValueCurrency: boolean;
     /**
      * Sets the currency value to a literal from the supplied amount and optional ISO 4217 currency code.
@@ -16077,13 +16069,13 @@ declare class ArchValueCurrency {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueCurrencyCollection extends ArchBaseValueCollectionBasic {
+export class ArchValueCurrencyCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating this is an ArchValueCurrencyCollection instance.
      */
@@ -16099,13 +16091,13 @@ declare class ArchValueCurrencyCollection extends ArchBaseValueCollectionBasic {
  * Minimum value allowed: January 1, 1800
  * @param coreExpressionViewModel - ( *Internal* ) an expression view model from core.
  */
-declare class ArchValueDate extends ArchBaseValueBasic {
+export class ArchValueDate extends ArchBaseValueBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * This sets the date as a literal.
      * @param date - the string value for the date formatted as 'YYYY-MM-DD' where YYYY is a four digit year, MM is a two digit month, and DD is a two digit day (ex: '2020-12-05').
@@ -16131,13 +16123,13 @@ declare class ArchValueDate extends ArchBaseValueBasic {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueDateCollection extends ArchBaseValueCollectionBasic {
+export class ArchValueDateCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating this is an ArchValueDateCollection instance.
      */
@@ -16153,13 +16145,13 @@ declare class ArchValueDateCollection extends ArchBaseValueCollectionBasic {
  * Minimum value allowed:  January 01, 1800 at 00:00:00 UTC ( JavaScript Date -> Date.UTC(1800, 0, 1, 0, 0, 0) )
  * @param coreExpressionViewModel - ( *Internal* ) an expression view model from core.
  */
-declare class ArchValueDateTime extends ArchBaseValueBasic {
+export class ArchValueDateTime extends ArchBaseValueBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueDateTime instance.
      */
@@ -16197,13 +16189,13 @@ declare class ArchValueDateTime extends ArchBaseValueBasic {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueDateTimeCollection extends ArchBaseValueCollectionBasic {
+export class ArchValueDateTimeCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating this is an ArchValueDateTimeCollection instance.
      */
@@ -16219,13 +16211,13 @@ declare class ArchValueDateTimeCollection extends ArchBaseValueCollectionBasic {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an expression view model from core.
  */
-declare class ArchValueDecimal extends ArchBaseValueBasic {
+export class ArchValueDecimal extends ArchBaseValueBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueDecimal instance.
      */
@@ -16252,13 +16244,13 @@ declare class ArchValueDecimal extends ArchBaseValueBasic {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueDecimalCollection extends ArchBaseValueCollectionBasic {
+export class ArchValueDecimalCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueDecimalCollection instance.
      */
@@ -16274,13 +16266,13 @@ declare class ArchValueDecimalCollection extends ArchBaseValueCollectionBasic {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an expression view model from core.
  */
-declare class ArchValueDuration extends ArchBaseValueBasic {
+export class ArchValueDuration extends ArchBaseValueBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueDuration instance.
      */
@@ -16316,12 +16308,12 @@ declare class ArchValueDuration extends ArchBaseValueBasic {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueDurationCollection extends ArchBaseValueCollectionBasic {
+export class ArchValueDurationCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueDurationCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueDurationCollection instance.
      */
@@ -16337,16 +16329,16 @@ declare class ArchValueDurationCollection extends ArchBaseValueCollectionBasic {
  * Scripting as needed.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueEmailAddress extends ArchBaseValueSingleton {
+export class ArchValueEmailAddress extends ArchBaseValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueEmailAddress'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueEmailAddress instance.
      */
-    static readonly isArchValueEmailAddress: boolean;
+    readonly isArchValueEmailAddress: boolean;
 }
 
 /**
@@ -16358,16 +16350,16 @@ declare class ArchValueEmailAddress extends ArchBaseValueSingleton {
  * Scripting as needed.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueEmailAddressCollection extends ArchBaseValueCollection {
+export class ArchValueEmailAddressCollection extends ArchBaseValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueEmailAddressCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueEmailAddressCollection instance.
      */
-    static readonly isArchValueEmailAddressCollection: boolean;
+    readonly isArchValueEmailAddressCollection: boolean;
 }
 
 /**
@@ -16384,12 +16376,12 @@ declare type callbackArchValueEmergencyGroup = (archValueEmergencyGroup: ArchVal
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueEmergencyGroup extends ArchBaseNetworkValueSingleton {
+export class ArchValueEmergencyGroup extends ArchBaseNetworkValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueEmergencyGroup'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueEmergencyGroup instance.
      */
@@ -16426,7 +16418,7 @@ declare type callbackArchValueEmergencyGroupCollection = (archValueEmergencyGrou
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueEmergencyGroupCollection extends ArchBaseNetworkValueCollection {
+export class ArchValueEmergencyGroupCollection extends ArchBaseNetworkValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the core expression type name
@@ -16463,16 +16455,16 @@ declare class ArchValueEmergencyGroupCollection extends ArchBaseNetworkValueColl
  * Scripting as needed.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueExternalContact extends ArchBaseValueSingleton {
+export class ArchValueExternalContact extends ArchBaseValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueExternalContact'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueExternalContact instance.
      */
-    static readonly isArchValueExternalContact: boolean;
+    readonly isArchValueExternalContact: boolean;
 }
 
 /**
@@ -16484,16 +16476,16 @@ declare class ArchValueExternalContact extends ArchBaseValueSingleton {
  * Scripting as needed.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueExternalContactCollection extends ArchBaseValueCollection {
+export class ArchValueExternalContactCollection extends ArchBaseValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueExternalContactCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueExternalContactCollection instance.
      */
-    static readonly isArchValueExternalContactCollection: boolean;
+    readonly isArchValueExternalContactCollection: boolean;
 }
 
 /**
@@ -16505,16 +16497,16 @@ declare class ArchValueExternalContactCollection extends ArchBaseValueCollection
  * Scripting as needed.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueExternalOrganization extends ArchBaseValueSingleton {
+export class ArchValueExternalOrganization extends ArchBaseValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueExternalOrganization'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueExternalOrganization instance.
      */
-    static readonly isArchValueExternalOrganization: boolean;
+    readonly isArchValueExternalOrganization: boolean;
 }
 
 /**
@@ -16526,16 +16518,16 @@ declare class ArchValueExternalOrganization extends ArchBaseValueSingleton {
  * Scripting as needed.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueExternalOrganizationCollection extends ArchBaseValueCollection {
+export class ArchValueExternalOrganizationCollection extends ArchBaseValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueExternalOrganizationCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueExternalOrganizationCollection instance.
      */
-    static readonly isArchValueExternalOrganizationCollection: boolean;
+    readonly isArchValueExternalOrganizationCollection: boolean;
 }
 
 /**
@@ -16552,13 +16544,13 @@ declare type callbackArchValueGroup = (archValueGroup: ArchValueGroup) => void;
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueGroup extends ArchBaseNetworkValueSingleton {
+export class ArchValueGroup extends ArchBaseNetworkValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueGroup instance.
      */
@@ -16595,13 +16587,13 @@ declare type callbackArchValueGroupCollection = (archValueGroupCollection: ArchV
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueGroupCollection extends ArchBaseNetworkValueCollection {
+export class ArchValueGroupCollection extends ArchBaseNetworkValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Adds a group to this collection looking up the group to add by the group by id
      * @param groupId - the identifier of the group.
@@ -16638,7 +16630,7 @@ declare type callbackArchValueImage = (archValueImage: ArchValueImage) => void;
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an expression view model from core.
  */
-declare class ArchValueImage extends ArchBaseValueBasic {
+export class ArchValueImage extends ArchBaseValueBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Sets the value of this image to the image with the specified guid identifier.
@@ -16665,13 +16657,13 @@ declare class ArchValueImage extends ArchBaseValueBasic {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueImageCollection extends ArchBaseValueCollectionBasic {
+export class ArchValueImageCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating this is an ArchValueImageCollection instance.
      */
@@ -16687,12 +16679,12 @@ declare class ArchValueImageCollection extends ArchBaseValueCollectionBasic {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an expression view model from core.
  */
-declare class ArchValueInteger extends ArchBaseValueBasic {
+export class ArchValueInteger extends ArchBaseValueBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueInteger'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueInteger instance.
      */
@@ -16727,13 +16719,13 @@ declare class ArchValueInteger extends ArchBaseValueBasic {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueIntegerCollection extends ArchBaseValueCollectionBasic {
+export class ArchValueIntegerCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating this is an ArchValueIntegerCollection instance.
      */
@@ -16749,16 +16741,16 @@ declare class ArchValueIntegerCollection extends ArchBaseValueCollectionBasic {
  * Scripting as needed.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueJourneyOutcome extends ArchBaseValueSingleton {
+export class ArchValueJourneyOutcome extends ArchBaseValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueJourneyOutcome'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueJourneyOutcome instance.
      */
-    static readonly isArchValueJourneyOutcome: boolean;
+    readonly isArchValueJourneyOutcome: boolean;
 }
 
 /**
@@ -16770,16 +16762,16 @@ declare class ArchValueJourneyOutcome extends ArchBaseValueSingleton {
  * Scripting as needed.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueJourneyOutcomeCollection extends ArchBaseValueCollection {
+export class ArchValueJourneyOutcomeCollection extends ArchBaseValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueJourneyOutcomeCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueJourneyOutcomeCollection instance.
      */
-    static readonly isArchValueJourneyOutcomeCollection: boolean;
+    readonly isArchValueJourneyOutcomeCollection: boolean;
 }
 
 /**
@@ -16791,16 +16783,16 @@ declare class ArchValueJourneyOutcomeCollection extends ArchBaseValueCollection 
  * Scripting as needed.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueJourneyOutcomeScore extends ArchBaseValueSingleton {
+export class ArchValueJourneyOutcomeScore extends ArchBaseValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueJourneyOutcomeScore'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueJourneyOutcomeScore instance.
      */
-    static readonly isArchValueJourneyOutcomeScore: boolean;
+    readonly isArchValueJourneyOutcomeScore: boolean;
 }
 
 /**
@@ -16812,16 +16804,16 @@ declare class ArchValueJourneyOutcomeScore extends ArchBaseValueSingleton {
  * Scripting as needed.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueJourneyOutcomeScoreCollection extends ArchBaseValueCollection {
+export class ArchValueJourneyOutcomeScoreCollection extends ArchBaseValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueJourneyOutcomeScoreCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueJourneyOutcomeScoreCollection instance.
      */
-    static readonly isArchValueJourneyOutcomeScoreCollection: boolean;
+    readonly isArchValueJourneyOutcomeScoreCollection: boolean;
 }
 
 /**
@@ -16833,16 +16825,16 @@ declare class ArchValueJourneyOutcomeScoreCollection extends ArchBaseValueCollec
  * Scripting as needed.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueJourneySegment extends ArchBaseValueSingleton {
+export class ArchValueJourneySegment extends ArchBaseValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueJourneySegment'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueJourneySegment instance.
      */
-    static readonly isArchValueJourneySegment: boolean;
+    readonly isArchValueJourneySegment: boolean;
 }
 
 /**
@@ -16854,16 +16846,16 @@ declare class ArchValueJourneySegment extends ArchBaseValueSingleton {
  * Scripting as needed.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueJourneySegmentCollection extends ArchBaseValueCollection {
+export class ArchValueJourneySegmentCollection extends ArchBaseValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueJourneySegmentCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueJourneySegmentCollection instance.
      */
-    static readonly isArchValueJourneySegmentCollection: boolean;
+    readonly isArchValueJourneySegmentCollection: boolean;
 }
 
 /**
@@ -16875,16 +16867,16 @@ declare class ArchValueJourneySegmentCollection extends ArchBaseValueCollection 
  * Scripting as needed.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueJourneySession extends ArchBaseValueSingleton {
+export class ArchValueJourneySession extends ArchBaseValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueJourneySession'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueJourneySession instance.
      */
-    static readonly isArchValueJourneySession: boolean;
+    readonly isArchValueJourneySession: boolean;
 }
 
 /**
@@ -16896,16 +16888,16 @@ declare class ArchValueJourneySession extends ArchBaseValueSingleton {
  * Scripting as needed.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueJourneySessionCollection extends ArchBaseValueCollection {
+export class ArchValueJourneySessionCollection extends ArchBaseValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueJourneySessionCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueJourneySessionCollection instance.
      */
-    static readonly isArchValueJourneySessionCollection: boolean;
+    readonly isArchValueJourneySessionCollection: boolean;
 }
 
 /**
@@ -16922,12 +16914,12 @@ declare type callbackArchValueKnowledgeBaseDocument = (archValueKnowledgeBaseDoc
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueKnowledgeBaseDocument extends ArchBaseNetworkValueSingleton {
+export class ArchValueKnowledgeBaseDocument extends ArchBaseNetworkValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueKnowledgeBaseDocument'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueKnowledgeBaseDocument instance.
      */
@@ -16968,12 +16960,12 @@ declare type callbackArchValueKnowledgeBaseDocumentCollection = (archValueKnowle
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueKnowledgeBaseDocumentCollection extends ArchBaseNetworkValueCollection {
+export class ArchValueKnowledgeBaseDocumentCollection extends ArchBaseNetworkValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueKnowledgeBaseDocumentCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Adds an {@link ArchValueKnowledgeBaseDocument} instance to this collection for the knowledge base document if it can be looked up by
      * its guid identifier.  If the knowledge base document cannot be found, nothing is added to the collection.
@@ -17013,16 +17005,16 @@ declare type callbackArchValueLanguageSkill = (ArchValueLanguageSkill: ArchValue
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueLanguageSkill extends ArchBaseNetworkValueSingleton {
+export class ArchValueLanguageSkill extends ArchBaseNetworkValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueLanguageSkill'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueLanguageSkill instance.
      */
-    static readonly isArchValueLanguageSkill: boolean;
+    readonly isArchValueLanguageSkill: boolean;
     /**
      * Sets the value of this languageSkill to the languageSkill with the specified identifier.
      * @param languageSkillId - the identifier of the language skill.
@@ -17056,12 +17048,12 @@ declare type callbackArchValueLanguageSkillCollection = (archValueLanguageSkillC
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueLanguageSkillCollection extends ArchBaseNetworkValueCollection {
+export class ArchValueLanguageSkillCollection extends ArchBaseNetworkValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueLanguageSkillCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Adds an {@link ArchValueLanguageSkill} instance to this collection for the language skill if it can be looked up by
      * its guid identifier.  If the language skill cannot be found, nothing is added to the collection.
@@ -17106,13 +17098,13 @@ declare class ArchValueLanguageSkillCollection extends ArchBaseNetworkValueColle
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValuePhoneNumber extends ArchBaseValueBasic {
+export class ArchValuePhoneNumber extends ArchBaseValueBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValuePhoneNumber instance.
      */
@@ -17177,13 +17169,13 @@ declare class ArchValuePhoneNumber extends ArchBaseValueBasic {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValuePhoneNumberCollection extends ArchBaseValueCollectionBasic {
+export class ArchValuePhoneNumberCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     static isArchValuePhoneNumberCollection: boolean;
 }
 
@@ -17201,12 +17193,12 @@ declare type callbackArchValuePrompt = (archValuePrompt: ArchValuePrompt) => voi
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValuePrompt extends ArchBaseValueSingleton {
+export class ArchValuePrompt extends ArchBaseValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValuePrompt'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValuePrompt instance.
      */
@@ -17256,13 +17248,13 @@ declare type callbackArchValuePromptCollection = (archValuePromptCollection: Arc
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValuePromptCollection extends ArchBaseValueCollection {
+export class ArchValuePromptCollection extends ArchBaseValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Adds a prompt to this collection looking up the prompt to add by the prompt name
      * @param promptName - the name of the Architect prompt.
@@ -17291,12 +17283,12 @@ declare type callbackArchValueQueue = (archValueQueue: ArchValueQueue) => void;
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueQueue extends ArchBaseNetworkValueSingleton {
+export class ArchValueQueue extends ArchBaseNetworkValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueQueue'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueQueue instance.
      */
@@ -17333,13 +17325,13 @@ declare type callbackArchValueQueueCollection = (archValueQueueCollection: ArchV
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueQueueCollection extends ArchBaseNetworkValueCollection {
+export class ArchValueQueueCollection extends ArchBaseNetworkValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Adds a queue to this collection looking up the queue to add by the queue by id
      * @param queueId - the identifier of the queue.
@@ -17376,12 +17368,12 @@ declare type callbackArchValueSchedule = (archValueSchedule: ArchValueSchedule) 
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueSchedule extends ArchBaseNetworkValueSingleton {
+export class ArchValueSchedule extends ArchBaseNetworkValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueSchedule'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueSchedule instance.
      */
@@ -17418,13 +17410,13 @@ declare type callbackArchValueScheduleCollection = (archValueScheduleCollection:
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueScheduleCollection extends ArchBaseNetworkValueCollection {
+export class ArchValueScheduleCollection extends ArchBaseNetworkValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Adds a schedule to this collection looking up the schedule to add by the schedule by id
      * @param scheduleId - the identifier of the schedule.
@@ -17461,12 +17453,12 @@ declare type callbackArchValueScheduleGroup = (archValueScheduleGroup: ArchValue
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueScheduleGroup extends ArchBaseNetworkValueSingleton {
+export class ArchValueScheduleGroup extends ArchBaseNetworkValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueScheduleGroup'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueScheduleGroup instance.
      */
@@ -17504,13 +17496,13 @@ declare type callbackArchValueScheduleGroupCollection = (archValueScheduleGroupC
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueScheduleGroupCollection extends ArchBaseNetworkValueCollection {
+export class ArchValueScheduleGroupCollection extends ArchBaseNetworkValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Adds a schedule group to this collection looking up the schedule group to add by the scheduleGroup by id
      * @param scheduleGroupId - the identifier of the scheduleGroup.
@@ -17541,12 +17533,12 @@ declare class ArchValueScheduleGroupCollection extends ArchBaseNetworkValueColle
  * automatically as needed by Architect Scripting.
  * @param archBaseValue - An Architect base value instance.
  */
-declare class ArchValueSettings extends ArchBaseObject {
+export class ArchValueSettings extends ArchBaseObject {
     // constructor(archBaseValue: ArchBaseValue);
     /**
      * Returns the display type name string 'ArchValueSettings'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * A string suitable for logging that contains information about this value settings object.
      */
@@ -17649,13 +17641,13 @@ declare type callbackArchValueSkill = (archValueSkill: ArchValueSkill) => void;
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueSkill extends ArchBaseNetworkValueSingleton {
+export class ArchValueSkill extends ArchBaseNetworkValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueSkill instance.
      */
@@ -17693,13 +17685,13 @@ declare type callbackArchValueSkillCollection = (archValueSkillCollection: ArchV
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueSkillCollection extends ArchBaseNetworkValueCollection {
+export class ArchValueSkillCollection extends ArchBaseNetworkValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Adds an {@link ArchValueSkill} instance to this collection for the skill if it can be looked up by
      * its guid identifier.  If the skill cannot be found, nothing is added to the collection.
@@ -17732,12 +17724,12 @@ declare class ArchValueSkillCollection extends ArchBaseNetworkValueCollection {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueString extends ArchBaseValueBasic {
+export class ArchValueString extends ArchBaseValueBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueString'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueString instance.
      */
@@ -17764,12 +17756,12 @@ declare class ArchValueString extends ArchBaseValueBasic {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueStringCollection extends ArchBaseValueCollectionBasic {
+export class ArchValueStringCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueStringCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueStringCollection instance.
      */
@@ -17785,13 +17777,13 @@ declare class ArchValueStringCollection extends ArchBaseValueCollectionBasic {
  * Minimum value allowed: 23:59:59.999
  * @param coreExpressionViewModel - ( *Internal* ) an expression view model from core.
  */
-declare class ArchValueTime extends ArchBaseValueBasic {
+export class ArchValueTime extends ArchBaseValueBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * This sets the time as a literal using a 24 hour time notation.
      * @param time - the string value for the time formatted as 'HH:MM:SS' where HH is a two digit hour, MM is a two digit minute, and SS is a two digit second (ex: '14:33:05').
@@ -17817,13 +17809,13 @@ declare class ArchValueTime extends ArchBaseValueBasic {
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueTimeCollection extends ArchBaseValueCollectionBasic {
+export class ArchValueTimeCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating this is an ArchValueTimeCollection instance.
      */
@@ -17844,12 +17836,12 @@ declare type callbackArchValueUser = (archValueUser: ArchValueUser) => void;
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueUser extends ArchBaseNetworkValueSingleton {
+export class ArchValueUser extends ArchBaseNetworkValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueUser'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueUser instance.
      */
@@ -17886,13 +17878,13 @@ declare type callbackArchValueUserCollection = (archValueUserCollection: ArchVal
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an expression from core.
  */
-declare class ArchValueUserCollection extends ArchBaseNetworkValueCollection {
+export class ArchValueUserCollection extends ArchBaseNetworkValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Adds a user to this collection looking up the user to add by the user by id
      * @param userId - the identifier of the user.
@@ -17924,16 +17916,16 @@ declare class ArchValueUserCollection extends ArchBaseNetworkValueCollection {
  * Scripting as needed.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueVoiceSnippet extends ArchBaseValueSingleton {
+export class ArchValueVoiceSnippet extends ArchBaseValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueVoiceSnippet'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueVoiceSnippet instance.
      */
-    static readonly isArchValueVoiceSnippet: boolean;
+    readonly isArchValueVoiceSnippet: boolean;
 }
 
 /**
@@ -17945,16 +17937,16 @@ declare class ArchValueVoiceSnippet extends ArchBaseValueSingleton {
  * Scripting as needed.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueVoicemailSnippet extends ArchBaseValueSingleton {
+export class ArchValueVoicemailSnippet extends ArchBaseValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Returns the display type name string 'ArchValueVoicemailSnippet'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueVoicemailSnippet instance.
      */
-    static readonly isArchValueVoicemailSnippet: boolean;
+    readonly isArchValueVoicemailSnippet: boolean;
 }
 
 /**
@@ -17971,13 +17963,13 @@ declare type callbackArchValueWrapupCode = (archValueWrapupCode: ArchValueWrapup
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueWrapupCode extends ArchBaseNetworkValueSingleton {
+export class ArchValueWrapupCode extends ArchBaseNetworkValueSingleton {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueWrapupCode instance.
      */
@@ -18014,13 +18006,13 @@ declare type callbackArchValueWrapupCodeCollection = (archValueWrapupCodeCollect
  * automatically as needed by Architect Scripting.
  * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
  */
-declare class ArchValueWrapupCodeCollection extends ArchBaseNetworkValueCollection {
+export class ArchValueWrapupCodeCollection extends ArchBaseNetworkValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Adds a wrapupCode to this collection looking up the wrapup code to add by id
      * @param wrapupCodeId - the identifier of the wrapup code.
@@ -18051,7 +18043,7 @@ declare class ArchValueWrapupCodeCollection extends ArchBaseNetworkValueCollecti
  * Scripting as needed.
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableAgentScorePair extends ArchBaseVariableSingleton {
+export class ArchVariableAgentScorePair extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * The initial AgentScorePair value for the variable at runtime.  If the {@link ArchValueAgentScorePair} is set to [no value]{@link ArchBaseValue#isNoValue}, this will be a NOT_SET AgentScorePair at runtime.
@@ -18060,11 +18052,11 @@ declare class ArchVariableAgentScorePair extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableAgentScorePair'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchVariableAgentScorePair instance.
      */
-    static readonly isArchVariableAgentScorePair: boolean;
+    readonly isArchVariableAgentScorePair: boolean;
 }
 
 /**
@@ -18075,7 +18067,7 @@ declare class ArchVariableAgentScorePair extends ArchBaseVariableSingleton {
  * Scripting as needed.
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableAgentScorePairCollection extends ArchBaseVariableCollection {
+export class ArchVariableAgentScorePairCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * The initial AgentScorePair collection value for the variable at runtime.  If the {@link ArchValueAgentScorePair} is set to [no value]{@link ArchBaseValue#isNoValue}, this will be an empty AgentScorePair collection at runtime.
@@ -18084,23 +18076,23 @@ declare class ArchVariableAgentScorePairCollection extends ArchBaseVariableColle
     /**
      * Returns the display type name string 'ArchVariableAgentScorePairCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchVariableAgentScorePairCollection instance.
      */
-    static readonly isArchVariableAgentScorePairCollection: boolean;
+    readonly isArchVariableAgentScorePairCollection: boolean;
 }
 
 /**
  * ArchVariableBoolean
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableBoolean extends ArchBaseVariableSingleton {
+export class ArchVariableBoolean extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableBoolean'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial boolean value for the variable at runtime.  If the {@link ArchValueBoolean} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET boolean at runtime.
@@ -18116,12 +18108,12 @@ declare class ArchVariableBoolean extends ArchBaseVariableSingleton {
  * ArchVariableBooleanCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableBooleanCollection extends ArchBaseVariableCollection {
+export class ArchVariableBooleanCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableBooleanCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial boolean collection value for the variable at runtime.  If the {@link ArchValueBooleanCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty boolean collection at runtime.
@@ -18133,12 +18125,12 @@ declare class ArchVariableBooleanCollection extends ArchBaseVariableCollection {
 /**
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableCommunication extends ArchBaseVariableSingleton {
+export class ArchVariableCommunication extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableCommunication'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial Communication value for the variable at runtime.  If the {@link ArchValueCommunication} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET Communication at runtime.
@@ -18154,12 +18146,12 @@ declare class ArchVariableCommunication extends ArchBaseVariableSingleton {
  * ArchVariableCurrency
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableCurrency extends ArchBaseVariableSingleton {
+export class ArchVariableCurrency extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableCurrency'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial currency value for the variable at runtime.  If the {@link ArchValueCurrency} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET currency at runtime.
@@ -18175,12 +18167,12 @@ declare class ArchVariableCurrency extends ArchBaseVariableSingleton {
  * ArchVariableCurrencyCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableCurrencyCollection extends ArchBaseVariableCollection {
+export class ArchVariableCurrencyCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableCurrencyCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial currency collection value for the variable at runtime.  If the {@link ArchValueCurrencyCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty currency collection at runtime.
@@ -18193,12 +18185,12 @@ declare class ArchVariableCurrencyCollection extends ArchBaseVariableCollection 
  * ArchVariableDate
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableDate extends ArchBaseVariableSingleton {
+export class ArchVariableDate extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableDate'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial Date value for the variable at runtime.  If the {@link ArchValueDate} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET Date at runtime.
@@ -18214,12 +18206,12 @@ declare class ArchVariableDate extends ArchBaseVariableSingleton {
  * ArchVariableDateCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableDateCollection extends ArchBaseVariableCollection {
+export class ArchVariableDateCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableDateCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial Date collection value for the variable at runtime.  If the {@link ArchValueDateCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty Date collection at runtime.
@@ -18235,12 +18227,12 @@ declare class ArchVariableDateCollection extends ArchBaseVariableCollection {
  * ArchVariableDateTime
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableDateTime extends ArchBaseVariableSingleton {
+export class ArchVariableDateTime extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableDateTime'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial DateTime value for the variable at runtime.  If the {@link ArchValueDateTime} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET DateTime at runtime.
@@ -18253,12 +18245,12 @@ declare class ArchVariableDateTime extends ArchBaseVariableSingleton {
  * ArchVariableDateTimeCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableDateTimeCollection extends ArchBaseVariableCollection {
+export class ArchVariableDateTimeCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableDateTimeCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial DateTime collection value for the variable at runtime.  If the {@link ArchValueDateTimeCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty DateTime collection at runtime.
@@ -18271,12 +18263,12 @@ declare class ArchVariableDateTimeCollection extends ArchBaseVariableCollection 
  * ArchVariableDecimal
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableDecimal extends ArchBaseVariableSingleton {
+export class ArchVariableDecimal extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableDecimal'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial decimal value for the variable at runtime.  If the {@link ArchValueDecimal} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET decimal at runtime.
@@ -18289,12 +18281,12 @@ declare class ArchVariableDecimal extends ArchBaseVariableSingleton {
  * ArchVariableDecimalCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableDecimalCollection extends ArchBaseVariableCollection {
+export class ArchVariableDecimalCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableDecimalCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial decimal collection value for the variable at runtime.  If the {@link ArchValueDecimalCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty decimal collection at runtime.
@@ -18307,12 +18299,12 @@ declare class ArchVariableDecimalCollection extends ArchBaseVariableCollection {
  * ArchVariableDuration
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableDuration extends ArchBaseVariableSingleton {
+export class ArchVariableDuration extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableDuration'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial duration value for the variable at runtime.  If the {@link ArchValueDuration} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET duration at runtime.
@@ -18325,12 +18317,12 @@ declare class ArchVariableDuration extends ArchBaseVariableSingleton {
  * ArchVariableDurationCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableDurationCollection extends ArchBaseVariableCollection {
+export class ArchVariableDurationCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableDurationCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial duration collection value for the variable at runtime.  If the {@link ArchValueDurationCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty duration collection at runtime.
@@ -18346,12 +18338,12 @@ declare class ArchVariableDurationCollection extends ArchBaseVariableCollection 
  * ArchVariableEmailAddress
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableEmailAddress extends ArchBaseVariableSingleton {
+export class ArchVariableEmailAddress extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableEmailAddress'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial EmailAddress value for the variable at runtime.  If the {@link ArchValueEmailAddress} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET EmailAddress at runtime.
@@ -18367,12 +18359,12 @@ declare class ArchVariableEmailAddress extends ArchBaseVariableSingleton {
  * ArchVariableEmailAddressCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableEmailAddressCollection extends ArchBaseVariableCollection {
+export class ArchVariableEmailAddressCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableEmailAddressCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial EmailAddress collection value for the variable at runtime.  If the {@link ArchValueEmailAddressCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty EmailAddress collection at runtime.
@@ -18385,12 +18377,12 @@ declare class ArchVariableEmailAddressCollection extends ArchBaseVariableCollect
  * ArchVariableEmergencyGroup
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableEmergencyGroup extends ArchBaseVariableSingleton {
+export class ArchVariableEmergencyGroup extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableEmergencyGroup'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial emergencyGroup value for the variable at runtime.  If the {@link ArchValueEmergencyGroup} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET emergencyGroup at runtime.
@@ -18403,12 +18395,12 @@ declare class ArchVariableEmergencyGroup extends ArchBaseVariableSingleton {
  * ArchVariableEmergencyGroupCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableEmergencyGroupCollection extends ArchBaseVariableCollection {
+export class ArchVariableEmergencyGroupCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableEmergencyGroupCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial emergencyGroup collection value for the variable at runtime.  If the {@link ArchValueEmergencyGroupCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty emergencyGroup collection at runtime.
@@ -18428,7 +18420,7 @@ declare class ArchVariableEmergencyGroupCollection extends ArchBaseVariableColle
  * Scripting as needed.
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableExternalContact extends ArchBaseVariableSingleton {
+export class ArchVariableExternalContact extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * The initial ExternalContact value for the variable at runtime.  If the {@link ArchValueExternalContact} is set to [no value]{@link ArchBaseValue#isNoValue}, this will be a NOT_SET ExternalContact at runtime.
@@ -18437,11 +18429,11 @@ declare class ArchVariableExternalContact extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableExternalContact'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchVariableExternalContact instance.
      */
-    static readonly isArchVariableExternalContact: boolean;
+    readonly isArchVariableExternalContact: boolean;
 }
 
 /**
@@ -18452,7 +18444,7 @@ declare class ArchVariableExternalContact extends ArchBaseVariableSingleton {
  * Scripting as needed.
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableExternalContactCollection extends ArchBaseVariableCollection {
+export class ArchVariableExternalContactCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * The initial ExternalContact collection value for the variable at runtime.  If the {@link ArchValueExternalContact} is set to [no value]{@link ArchBaseValue#isNoValue}, this will be an empty ExternalContact collection at runtime.
@@ -18461,11 +18453,11 @@ declare class ArchVariableExternalContactCollection extends ArchBaseVariableColl
     /**
      * Returns the display type name string 'ArchVariableExternalContactCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchVariableExternalContactCollection instance.
      */
-    static readonly isArchVariableExternalContactCollection: boolean;
+    readonly isArchVariableExternalContactCollection: boolean;
 }
 
 /**
@@ -18476,7 +18468,7 @@ declare class ArchVariableExternalContactCollection extends ArchBaseVariableColl
  * Scripting as needed.
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableExternalOrganization extends ArchBaseVariableSingleton {
+export class ArchVariableExternalOrganization extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * The initial ExternalOrganization value for the variable at runtime.  If the {@link ArchValueExternalOrganization} is set to [no value]{@link ArchBaseValue#isNoValue}, this will be a NOT_SET ExternalOrganization at runtime.
@@ -18485,11 +18477,11 @@ declare class ArchVariableExternalOrganization extends ArchBaseVariableSingleton
     /**
      * Returns the display type name string 'ArchVariableExternalOrganization'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchVariableExternalOrganization instance.
      */
-    static readonly isArchVariableExternalOrganization: boolean;
+    readonly isArchVariableExternalOrganization: boolean;
 }
 
 /**
@@ -18500,7 +18492,7 @@ declare class ArchVariableExternalOrganization extends ArchBaseVariableSingleton
  * Scripting as needed.
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableExternalOrganizationCollection extends ArchBaseVariableCollection {
+export class ArchVariableExternalOrganizationCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * The initial ExternalOrganization collection value for the variable at runtime.  If the {@link ArchValueExternalOrganization} is set to [no value]{@link ArchBaseValue#isNoValue}, this will be an empty ExternalOrganization collection at runtime.
@@ -18509,23 +18501,23 @@ declare class ArchVariableExternalOrganizationCollection extends ArchBaseVariabl
     /**
      * Returns the display type name string 'ArchVariableExternalOrganizationCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchVariableExternalOrganizationCollection instance.
      */
-    static readonly isArchVariableExternalOrganizationCollection: boolean;
+    readonly isArchVariableExternalOrganizationCollection: boolean;
 }
 
 /**
  * ArchVariableGroup
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableGroup extends ArchBaseVariableSingleton {
+export class ArchVariableGroup extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableGroup'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial group value for the variable at runtime.  If the {@link ArchValueGroup} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET group at runtime.
@@ -18538,12 +18530,12 @@ declare class ArchVariableGroup extends ArchBaseVariableSingleton {
  * ArchVariableGroupCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableGroupCollection extends ArchBaseVariableCollection {
+export class ArchVariableGroupCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableGroupCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial group collection value for the variable at runtime.  If the {@link ArchValueGroupCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty group collection at runtime.
@@ -18559,12 +18551,12 @@ declare class ArchVariableGroupCollection extends ArchBaseVariableCollection {
  * ArchVariableImage
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableImage extends ArchBaseVariableSingleton {
+export class ArchVariableImage extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableImage'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial image value for the variable at runtime.  If the {@link ArchValueImage} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET image at runtime.
@@ -18580,12 +18572,12 @@ declare class ArchVariableImage extends ArchBaseVariableSingleton {
  * ArchVariableImageCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableImageCollection extends ArchBaseVariableCollection {
+export class ArchVariableImageCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableImageCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial image collection value for the variable at runtime.  If the {@link ArchValueImageCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty image collection at runtime.
@@ -18601,12 +18593,12 @@ declare class ArchVariableImageCollection extends ArchBaseVariableCollection {
  * ArchVariableInteger
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableInteger extends ArchBaseVariableSingleton {
+export class ArchVariableInteger extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableInteger'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial integer value for the variable at runtime.  If the {@link ArchValueInteger} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET integer at runtime.
@@ -18622,12 +18614,12 @@ declare class ArchVariableInteger extends ArchBaseVariableSingleton {
  * ArchVariableIntegerCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableIntegerCollection extends ArchBaseVariableCollection {
+export class ArchVariableIntegerCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableIntegerCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial integer collection value for the variable at runtime.  If the {@link ArchValueIntegerCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty integer collection at runtime.
@@ -18647,7 +18639,7 @@ declare class ArchVariableIntegerCollection extends ArchBaseVariableCollection {
  * Scripting as needed.
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableJourneyOutcome extends ArchBaseVariableSingleton {
+export class ArchVariableJourneyOutcome extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * The initial JourneyOutcome value for the variable at runtime.  If the {@link ArchValueJourneyOutcome} is set to [no value]{@link ArchBaseValue#isNoValue}, this will be a NOT_SET JourneyOutcome at runtime.
@@ -18656,11 +18648,11 @@ declare class ArchVariableJourneyOutcome extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableJourneyOutcome'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchVariableJourneyOutcome instance.
      */
-    static readonly isArchVariableJourneyOutcome: boolean;
+    readonly isArchVariableJourneyOutcome: boolean;
 }
 
 /**
@@ -18671,7 +18663,7 @@ declare class ArchVariableJourneyOutcome extends ArchBaseVariableSingleton {
  * Scripting as needed.
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableJourneyOutcomeCollection extends ArchBaseVariableCollection {
+export class ArchVariableJourneyOutcomeCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * The initial JourneyOutcome collection value for the variable at runtime.  If the {@link ArchValueJourneyOutcome} is set to [no value]{@link ArchBaseValue#isNoValue}, this will be an empty JourneyOutcome collection at runtime.
@@ -18680,11 +18672,11 @@ declare class ArchVariableJourneyOutcomeCollection extends ArchBaseVariableColle
     /**
      * Returns the display type name string 'ArchVariableJourneyOutcomeCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchVariableJourneyOutcomeCollection instance.
      */
-    static readonly isArchVariableJourneyOutcomeCollection: boolean;
+    readonly isArchVariableJourneyOutcomeCollection: boolean;
 }
 
 /**
@@ -18695,7 +18687,7 @@ declare class ArchVariableJourneyOutcomeCollection extends ArchBaseVariableColle
  * Scripting as needed.
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableJourneyOutcomeScore extends ArchBaseVariableSingleton {
+export class ArchVariableJourneyOutcomeScore extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * The initial JourneyOutcomeScore value for the variable at runtime.  If the {@link ArchValueJourneyOutcomeScore} is set to [no value]{@link ArchBaseValue#isNoValue}, this will be a NOT_SET JourneyOutcomeScore at runtime.
@@ -18704,11 +18696,11 @@ declare class ArchVariableJourneyOutcomeScore extends ArchBaseVariableSingleton 
     /**
      * Returns the display type name string 'ArchVariableJourneyOutcomeScore'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchVariableJourneyOutcomeScore instance.
      */
-    static readonly isArchVariableJourneyOutcomeScore: boolean;
+    readonly isArchVariableJourneyOutcomeScore: boolean;
 }
 
 /**
@@ -18719,7 +18711,7 @@ declare class ArchVariableJourneyOutcomeScore extends ArchBaseVariableSingleton 
  * Scripting as needed.
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableJourneyOutcomeScoreCollection extends ArchBaseVariableCollection {
+export class ArchVariableJourneyOutcomeScoreCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * The initial JourneyOutcomeScore collection value for the variable at runtime.  If the {@link ArchValueJourneyOutcomeScore} is set to [no value]{@link ArchBaseValue#isNoValue}, this will be an empty JourneyOutcomeScore collection at runtime.
@@ -18728,11 +18720,11 @@ declare class ArchVariableJourneyOutcomeScoreCollection extends ArchBaseVariable
     /**
      * Returns the display type name string 'ArchVariableJourneyOutcomeScoreCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchVariableJourneyOutcomeScoreCollection instance.
      */
-    static readonly isArchVariableJourneyOutcomeScoreCollection: boolean;
+    readonly isArchVariableJourneyOutcomeScoreCollection: boolean;
 }
 
 /**
@@ -18743,7 +18735,7 @@ declare class ArchVariableJourneyOutcomeScoreCollection extends ArchBaseVariable
  * Scripting as needed.
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableJourneySegment extends ArchBaseVariableSingleton {
+export class ArchVariableJourneySegment extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * The initial JourneySegment value for the variable at runtime.  If the {@link ArchValueJourneySegment} is set to [no value]{@link ArchBaseValue#isNoValue}, this will be a NOT_SET JourneySegment at runtime.
@@ -18752,11 +18744,11 @@ declare class ArchVariableJourneySegment extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableJourneySegment'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchVariableJourneySegment instance.
      */
-    static readonly isArchVariableJourneySegment: boolean;
+    readonly isArchVariableJourneySegment: boolean;
 }
 
 /**
@@ -18767,7 +18759,7 @@ declare class ArchVariableJourneySegment extends ArchBaseVariableSingleton {
  * Scripting as needed.
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableJourneySegmentCollection extends ArchBaseVariableCollection {
+export class ArchVariableJourneySegmentCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * The initial JourneySegment collection value for the variable at runtime.  If the {@link ArchValueJourneySegment} is set to [no value]{@link ArchBaseValue#isNoValue}, this will be an empty JourneySegment collection at runtime.
@@ -18776,11 +18768,11 @@ declare class ArchVariableJourneySegmentCollection extends ArchBaseVariableColle
     /**
      * Returns the display type name string 'ArchVariableJourneySegmentCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchVariableJourneySegmentCollection instance.
      */
-    static readonly isArchVariableJourneySegmentCollection: boolean;
+    readonly isArchVariableJourneySegmentCollection: boolean;
 }
 
 /**
@@ -18791,7 +18783,7 @@ declare class ArchVariableJourneySegmentCollection extends ArchBaseVariableColle
  * Scripting as needed.
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableJourneySession extends ArchBaseVariableSingleton {
+export class ArchVariableJourneySession extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * The initial JourneySession value for the variable at runtime.  If the {@link ArchValueJourneySession} is set to [no value]{@link ArchBaseValue#isNoValue}, this will be a NOT_SET JourneySession at runtime.
@@ -18800,11 +18792,11 @@ declare class ArchVariableJourneySession extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableJourneySession'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchVariableJourneySession instance.
      */
-    static readonly isArchVariableJourneySession: boolean;
+    readonly isArchVariableJourneySession: boolean;
 }
 
 /**
@@ -18815,7 +18807,7 @@ declare class ArchVariableJourneySession extends ArchBaseVariableSingleton {
  * Scripting as needed.
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableJourneySessionCollection extends ArchBaseVariableCollection {
+export class ArchVariableJourneySessionCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * The initial JourneySession collection value for the variable at runtime.  If the {@link ArchValueJourneySession} is set to [no value]{@link ArchBaseValue#isNoValue}, this will be an empty JourneySession collection at runtime.
@@ -18824,23 +18816,23 @@ declare class ArchVariableJourneySessionCollection extends ArchBaseVariableColle
     /**
      * Returns the display type name string 'ArchVariableJourneySessionCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchVariableJourneySessionCollection instance.
      */
-    static readonly isArchVariableJourneySessionCollection: boolean;
+    readonly isArchVariableJourneySessionCollection: boolean;
 }
 
 /**
  * ArchVariableKnowledgeBaseDocument
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableKnowledgeBaseDocument extends ArchBaseVariableSingleton {
+export class ArchVariableKnowledgeBaseDocument extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableKnowledgeBaseDocument'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial knowledge base document value for the variable at runtime.  If the {@link ArchValueKnowledgeBaseDocument} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET queue at runtime.
@@ -18853,12 +18845,12 @@ declare class ArchVariableKnowledgeBaseDocument extends ArchBaseVariableSingleto
  * ArchVariableQueueCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableKnowledgeBaseDocumentCollection extends ArchBaseVariableCollection {
+export class ArchVariableKnowledgeBaseDocumentCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableKnowledgeBaseDocumentCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial knowledge base document collection value for the variable at runtime.  If the {@link ArchValueKnowledgeBaseDocumentCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty queue collection at runtime.
@@ -18874,12 +18866,12 @@ declare class ArchVariableKnowledgeBaseDocumentCollection extends ArchBaseVariab
  * ArchVariableLanguageSkill
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableLanguageSkill extends ArchBaseVariableSingleton {
+export class ArchVariableLanguageSkill extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableLanguageSkill'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial language skill value for the variable at runtime.  If the {@link ArchValueLanguageSkill} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET language skill at runtime.
@@ -18895,12 +18887,12 @@ declare class ArchVariableLanguageSkill extends ArchBaseVariableSingleton {
  * ArchVariableLanguageSkillCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableLanguageSkillCollection extends ArchBaseVariableCollection {
+export class ArchVariableLanguageSkillCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableLanguageSkillCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial LanguageSkill collection value for the variable at runtime.  If the {@link ArchValueLanguageSkillCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty LanguageSkill collection at runtime.
@@ -18916,12 +18908,12 @@ declare class ArchVariableLanguageSkillCollection extends ArchBaseVariableCollec
  * ArchVariablePhoneNumber
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariablePhoneNumber extends ArchBaseVariableSingleton {
+export class ArchVariablePhoneNumber extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariablePhoneNumber'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial PhoneNumber value for the variable at runtime.  If the {@link ArchValuePhoneNumber} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET PhoneNumber at runtime.
@@ -18937,13 +18929,13 @@ declare class ArchVariablePhoneNumber extends ArchBaseVariableSingleton {
  * ArchVariablePhoneNumberCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariablePhoneNumberCollection extends ArchBaseVariableCollection {
+export class ArchVariablePhoneNumberCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial PhoneNumber collection value for the variable at runtime.  If the {@link ArchValuePhoneNumberCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty PhoneNumber collection at runtime.
@@ -18959,12 +18951,12 @@ declare class ArchVariablePhoneNumberCollection extends ArchBaseVariableCollecti
  * ArchVariablePrompt
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariablePrompt extends ArchBaseVariableSingleton {
+export class ArchVariablePrompt extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariablePrompt'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial prompt value for the variable at runtime.  If the {@link ArchValuePrompt} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET prompt at runtime.
@@ -18980,12 +18972,12 @@ declare class ArchVariablePrompt extends ArchBaseVariableSingleton {
  * ArchVariablePromptCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariablePromptCollection extends ArchBaseVariableCollection {
+export class ArchVariablePromptCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariablePromptCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial prompt collection value for the variable at runtime.  If the {@link ArchValuePromptCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty prompt collection at runtime.
@@ -19001,12 +18993,12 @@ declare class ArchVariablePromptCollection extends ArchBaseVariableCollection {
  * ArchVariableQueue
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableQueue extends ArchBaseVariableSingleton {
+export class ArchVariableQueue extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableQueue'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial queue value for the variable at runtime.  If the {@link ArchValueQueue} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET queue at runtime.
@@ -19019,12 +19011,12 @@ declare class ArchVariableQueue extends ArchBaseVariableSingleton {
  * ArchVariableQueueCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableQueueCollection extends ArchBaseVariableCollection {
+export class ArchVariableQueueCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableQueueCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial queue collection value for the variable at runtime.  If the {@link ArchValueQueueCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty queue collection at runtime.
@@ -19040,12 +19032,12 @@ declare class ArchVariableQueueCollection extends ArchBaseVariableCollection {
  * ArchVariableSchedule
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableSchedule extends ArchBaseVariableSingleton {
+export class ArchVariableSchedule extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableSchedule'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial schedule value for the variable at runtime.  If the {@link ArchValueSchedule} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET schedule at runtime.
@@ -19058,12 +19050,12 @@ declare class ArchVariableSchedule extends ArchBaseVariableSingleton {
  * ArchVariableScheduleCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableScheduleCollection extends ArchBaseVariableCollection {
+export class ArchVariableScheduleCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableScheduleCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial schedule collection value for the variable at runtime.  If the {@link ArchValueScheduleCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty schedule collection at runtime.
@@ -19079,12 +19071,12 @@ declare class ArchVariableScheduleCollection extends ArchBaseVariableCollection 
  * ArchVariableScheduleGroup
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableScheduleGroup extends ArchBaseVariableSingleton {
+export class ArchVariableScheduleGroup extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableScheduleGroup'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial scheduleGroup value for the variable at runtime.  If the {@link ArchValueScheduleGroup} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET scheduleGroup at runtime.
@@ -19097,12 +19089,12 @@ declare class ArchVariableScheduleGroup extends ArchBaseVariableSingleton {
  * ArchVariableScheduleGroupCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableScheduleGroupCollection extends ArchBaseVariableCollection {
+export class ArchVariableScheduleGroupCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableScheduleGroupCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial scheduleGroup collection value for the variable at runtime.  If the {@link ArchValueScheduleGroupCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty scheduleGroup collection at runtime.
@@ -19123,7 +19115,7 @@ declare class ArchVariableScheduleGroupCollection extends ArchBaseVariableCollec
  * automatically as needed by Architect Scripting.
  * @param archBaseVariable - An Architect base variable instance.
  */
-declare class ArchVariableSettings extends ArchBaseObject {
+export class ArchVariableSettings extends ArchBaseObject {
     // constructor(archBaseVariable: ArchBaseVariable);
     /**
      * Returns whether or not you can set a boolean value on the {@link ArchBaseVariable#isInput} property
@@ -19138,7 +19130,7 @@ declare class ArchVariableSettings extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchVariableSettings'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * A string suitable for logging that contains information about this value settings object.
      */
@@ -19149,12 +19141,12 @@ declare class ArchVariableSettings extends ArchBaseObject {
  * ArchVariableSkill
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableSkill extends ArchBaseVariableSingleton {
+export class ArchVariableSkill extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableSkill'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial skill value for the variable at runtime.  If the {@link ArchValueSkill} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET skill at runtime.
@@ -19170,12 +19162,12 @@ declare class ArchVariableSkill extends ArchBaseVariableSingleton {
  * ArchVariableSkillCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableSkillCollection extends ArchBaseVariableCollection {
+export class ArchVariableSkillCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableSkillCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial skill collection value for the variable at runtime.  If the {@link ArchValueSkillCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty skill collection at runtime.
@@ -19188,12 +19180,12 @@ declare class ArchVariableSkillCollection extends ArchBaseVariableCollection {
  * ArchVariableString
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableString extends ArchBaseVariableSingleton {
+export class ArchVariableString extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableString'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial string value for the variable at runtime.  If the {@link ArchValueString} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET string at runtime.
@@ -19209,12 +19201,12 @@ declare class ArchVariableString extends ArchBaseVariableSingleton {
  * ArchVariableStringCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableStringCollection extends ArchBaseVariableCollection {
+export class ArchVariableStringCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableStringCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial string collection value for the variable at runtime.  If the {@link ArchValueStringCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty string collection at runtime.
@@ -19230,12 +19222,12 @@ declare class ArchVariableStringCollection extends ArchBaseVariableCollection {
  * ArchVariableTime
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableTime extends ArchBaseVariableSingleton {
+export class ArchVariableTime extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableTime'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial Time value for the variable at runtime.  If the {@link ArchValueTime} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET Time at runtime.
@@ -19251,12 +19243,12 @@ declare class ArchVariableTime extends ArchBaseVariableSingleton {
  * ArchVariableTimeCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableTimeCollection extends ArchBaseVariableCollection {
+export class ArchVariableTimeCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableTimeCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial Time collection value for the variable at runtime.  If the {@link ArchValueTimeCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty Time collection at runtime.
@@ -19272,12 +19264,12 @@ declare class ArchVariableTimeCollection extends ArchBaseVariableCollection {
  * ArchVariableUser
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableUser extends ArchBaseVariableSingleton {
+export class ArchVariableUser extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableUser'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial user value for the variable at runtime.  If the {@link ArchValueUser} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET user at runtime.
@@ -19290,12 +19282,12 @@ declare class ArchVariableUser extends ArchBaseVariableSingleton {
  * ArchVariableUserCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableUserCollection extends ArchBaseVariableCollection {
+export class ArchVariableUserCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableUserCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial user collection value for the variable at runtime.  If the {@link ArchValueUserCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty user collection at runtime.
@@ -19315,7 +19307,7 @@ declare class ArchVariableUserCollection extends ArchBaseVariableCollection {
  * Scripting as needed.
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableVoiceSnippet extends ArchBaseVariableSingleton {
+export class ArchVariableVoiceSnippet extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * The initial VoiceSnippet value for the variable at runtime.  If the {@link ArchValueVoiceSnippet} is set to [no value]{@link ArchBaseValue#isNoValue}, this will be a NOT_SET VoiceSnippet at runtime.
@@ -19324,23 +19316,23 @@ declare class ArchVariableVoiceSnippet extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableVoiceSnippet'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchVariableVoiceSnippet instance.
      */
-    static readonly isArchVariableVoiceSnippet: boolean;
+    readonly isArchVariableVoiceSnippet: boolean;
 }
 
 /**
  * ArchVariableWrapupCode
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableWrapupCode extends ArchBaseVariableSingleton {
+export class ArchVariableWrapupCode extends ArchBaseVariableSingleton {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableWrapupCode'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial wrapup code value for the variable at runtime.  If the {@link ArchValueWrapupCode} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET wrapup code at runtime.
@@ -19356,12 +19348,12 @@ declare class ArchVariableWrapupCode extends ArchBaseVariableSingleton {
  * ArchVariableWrapupCodeCollection
  * @param coreVariableViewModel - ( *Internal* ) an Architect core variable view model.
  */
-declare class ArchVariableWrapupCodeCollection extends ArchBaseVariableCollection {
+export class ArchVariableWrapupCodeCollection extends ArchBaseVariableCollection {
     // constructor(coreVariableViewModel: any);
     /**
      * Returns the display type name string 'ArchVariableWrapupCodeCollection'.
      */
-    static readonly displayTypeName: string;
+    readonly displayTypeName: string;
     /**
      * The initial wraupup code collection value for the variable at runtime.  If the {@link ArchValueWrapupCodeCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty wraupup code collection at runtime.
