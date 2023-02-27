@@ -688,6 +688,18 @@ export class ArchOrganizationInfo extends ArchBaseObject {
      */
     getAllDivisions(): ArchDivision[];
     /**
+     * The organization's identifier.
+     * If the session is not connected or Scripting is unable to load organization information, this
+     * property will return nothing.
+     */
+    readonly id: string;
+    /**
+     * The organization name for the currently connected session.  If the session is not connected
+     * or Scripting is unable to load organization information, this property will return
+     * nothing.
+     */
+    readonly name: string;
+    /**
      * Returns true indicating that this is an ArchOrganizationInfo instance.
      */
     readonly isArchOrganizationInfo: boolean;
@@ -756,18 +768,6 @@ declare type callbackSessionEnd = (archSession: ArchSession) => void;
  */
 export class ArchSession extends ArchBaseObject {
     // constructor();
-    /**
-     * The organization's identifier.
-     * If the session is not connected or Scripting is unable to load organization information, this
-     * property will return nothing.
-     */
-    readonly id: string;
-    /**
-     * The organization name for the currently connected session.  If the session is not connected
-     * or Scripting is unable to load organization information, this property will return
-     * nothing.
-     */
-    readonly name: string;
     /**
      * ID that represents the current script execution session. This ID is sent in all trace messages and can be used
      * by Genesys Cloud Support to investigate specific log traces.
@@ -2102,7 +2102,7 @@ export class ArchFactoryFlows extends ArchBaseFactory {
      * property to see if the flow is created within Genesys Cloud.
      * @param flowName - the name for the new flow.
      * @param [flowDescription] - the description for the new flow.
-     * @param [defaultSupportedLanguage = {@link ArchLanguages#englishUnitedStates}] - the default language to use for the flow.
+     * @param [defaultSupportedLanguage] - the default language to use for the flow.
      * @param [callbackFunction] - A callback function to call if the inbound call flow is successfully
      *                                                            created.  The first parameter passed to the callback function will
      *                                                            be the created in-memory flow.
