@@ -426,7 +426,7 @@ export class ArchEnums {
      * Remember some actions like {@link ArchActionSwitch} will have dynamic outputs and dynamically
      * added outputs will have identifiers that are not in the enum above.
      */
-    readonly OUTPUT_IDS: {"active":"active","closed":"closed","default":"default","disconnect":"disconnect","emergency":"emergency","error":"error","event":"event","failure":"failure","found":"found","holiday":"holiday","inactive":"inactive","knowledge":"knowledge","loop":"loop","loopNext":"loopNext","loopsMax":"loopsMax","matchExact":"matchExact","matchMultiple":"matchMultiple","no":"no","noInput":"noInput","noIntent":"noIntent","notFound":"notFound","open":"open","partiallyFound":"partiallyFound","success":"success","timeout":"timeout","voicemail":"voicemail","yes":"yes"};
+    readonly OUTPUT_IDS: {"active":"active","closed":"closed","default":"default","disconnect":"disconnect","emergency":"emergency","error":"error","event":"event","failure":"failure","found":"found","holiday":"holiday","inactive":"inactive","knowledge":"knowledge","loop":"loop","loopNext":"loopNext","loopsMax":"loopsMax","matchExact":"matchExact","matchMultiple":"matchMultiple","maxNoInputs":"maxNoInputs","no":"no","noInput":"noInput","noIntent":"noIntent","notFound":"notFound","open":"open","partiallyFound":"partiallyFound","success":"success","timeout":"timeout","voicemail":"voicemail","yes":"yes"};
     /**
      * Returns a string array that contains all valid output identifier strings.
      */
@@ -8783,7 +8783,7 @@ export class ArchBaseActionNoInputNoMatch extends ArchBaseActionWithOutputs {
     /**
      * The NoInput text for the action.
      */
-    static noInput: ArchValueString;
+    noInput: ArchValueString;
     /**
      * The NoMatch text for the action.
      */
@@ -20381,12 +20381,12 @@ declare module 'purecloud-flow-scripting-api-sdk-javascript' {
             let ArchSettingsEventErrorFlowBot: ArchSettingsEventErrorFlowBot;
             let ArchSettingsInboundEmailFlow: ArchSettingsOutboundCallFlow;
             let ArchSettingsInQueueCallFlow: ArchSettingsInQueueCallFlow;
+            let ArchSettingsMenu: ArchSettingsMenu;
+            let ArchSettingsMenuFlow: ArchSettingsMenuFlow;
             let ArchSettingsNluIntents: ArchSettingsNluIntents;
             let ArchSettingsNluDynamicSlotType: ArchSettingsNluDynamicSlotType;
             let ArchSettingsNluIntent: ArchSettingsNluIntent;
             let ArchSettingsNluKnowledge: ArchSettingsNluKnowledge;
-            let ArchSettingsMenu: ArchSettingsMenu;
-            let ArchSettingsMenuFlow: ArchSettingsMenuFlow;
             let ArchSettingsOutboundCallFlow: ArchSettingsOutboundCallFlow;
             let ArchSettingsPromptsFlow: ArchSettingsPromptsFlow;
             let ArchSettingsSpeechRec: ArchSettingsSpeechRec;
