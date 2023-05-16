@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: ArchActionTranscription | Architect Scripting</title>
+    <title>Class: ArchActionSetConversationData | Architect Scripting</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -50,7 +50,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ArchActionTranscription<span class="signature">(coreTranscriptionViewModel)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ArchActionSetConversationData<span class="signature">(coreSetConversationDataActionViewModel)</span><span class="type-signature"></span></h2>
         
     
 </header>
@@ -63,9 +63,9 @@
 
 <dt>
     
-        <h4 class="name" id="ArchActionTranscription">
+        <h4 class="name" id="ArchActionSetConversationData">
             
-                new <span class="type-signature"></span>ArchActionTranscription<span class="signature">(coreTranscriptionViewModel)</span><span class="type-signature"></span>
+                new <span class="type-signature"></span>ArchActionSetConversationData<span class="signature">(coreSetConversationDataActionViewModel)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -77,8 +77,8 @@
 
     
     <div class="description">
-        <p>The Architect Scripting class that represents the Transcription action
-Instances of this action should be created by calling <a href="ArchFactoryActions.html#addActionTranscription"><code>ArchFactoryActions#addActionTranscription</code></a></p>
+        <p>The Architect Scripting class for the Set Conversation Data action.
+Instances of this action should be created by calling <a href="ArchFactoryActions.html#addActionSetConversationData"><code>ArchFactoryActions#addActionSetConversationData</code></a></p>
     </div>
     
 
@@ -114,13 +114,13 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 
         <tr>
             
-                <td class="name"><code>coreTranscriptionViewModel</code></td>
+                <td class="name"><code>coreSetConversationDataActionViewModel</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">AbortSurveyInviteAction</span>
+<span class="param-type">Object</span>
 
 
             
@@ -130,7 +130,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 
             
 
-            <td class="description last"><p>( <em>Internal</em> ) an Architect core Transcription action view model.</p></td>
+            <td class="description last"><p>( <em>Internal</em> ) an Architect core set conversation data action view model.</p></td>
         </tr>
 
     
@@ -187,7 +187,9 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="ArchFactoryActions.html#addActionTranscription">ArchFactoryActions#addActionTranscription</a></li>
+            <li><a href="ArchFactoryActions.html#addActionSetConversationData">ArchFactoryActions#addActionSetConversationData</a></li>
+        
+            <li><p><a href="ArchActionGetConversationData.html"><code>Architect Get Conversation Data Action</code></a></p></li>
         </ul>
     </dd>
     
@@ -211,7 +213,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 
 
     <ul>
-        <li><a href="ArchBaseAction.html">ArchBaseAction</a></li>
+        <li><a href="ArchBaseActionWithOutputsSuccessFailure.html">ArchBaseActionWithOutputsSuccessFailure</a></li>
     </ul>
 
 
@@ -244,7 +246,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 <dd>
     
     <div class="description">
-        <p>Returns the display type name string 'ArchActionTranscription'.</p>
+        <p>Returns the display type name string 'ArchActionSetConversationData'.</p>
     </div>
     
 
@@ -308,8 +310,8 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
             
 
 <dt>
-<h4 class="name" id="displayTypeNameArchitect">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>displayTypeNameArchitect<span class="type-signature"> :string</span>
+<h4 class="name" id="conversationId">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>conversationId<span class="type-signature"> :<a href="ArchValueString.html">ArchValueString</a></span>
     
 </h4>
 
@@ -318,7 +320,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 <dd>
     
     <div class="description">
-        <p>The Architect action type label</p>
+        <p>The conversation id to set data on</p>
     </div>
     
 
@@ -328,90 +330,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
         <ul>
             <li>
                 
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseAction.html#displayTypeNameArchitect">ArchBaseAction#displayTypeNameArchitect</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="enableTranscription">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>enableTranscription<span class="type-signature"> :<a href="ArchValueBoolean.html">ArchValueBoolean</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Turns transcription on or off for the current flow. Setting the value to true
-turns transcription on. Setting the value to false or a NOT_SET will turn
-transcription off. Remember that not all languages support transcription so
-when you turn transcription on, that means to transcribe when possible based
-on the current language of the flow.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchValueBoolean.html">ArchValueBoolean</a></span>
+<span class="param-type"><a href="ArchValueString.html">ArchValueString</a></span>
 
 
             </li>
@@ -465,8 +384,8 @@ on the current language of the flow.</p>
             
 
 <dt>
-<h4 class="name" id="id">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>id<span class="type-signature"> :string</span>
+<h4 class="name" id="isArchActionSetConversationData">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isArchActionSetConversationData<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -475,174 +394,7 @@ on the current language of the flow.</p>
 <dd>
     
     <div class="description">
-        <p>The identifier string for this object.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseCoreObjectWithId.html#id">ArchBaseCoreObjectWithId#id</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="idMayBeBlank">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>idMayBeBlank<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not the id property may be blank or undefined for this object.  For example, the returned settings from <a href="ArchMenu.html#settingsMenu"><code>ArchMenu#settingsMenu</code></a>
-will have a blank identifier along with the settings returned from <a href="ArchMenu.html#settingsSpeechRec"><code>ArchMenu#settingsSpeechRec</code></a>.  Note that this is
-an extremely rare case.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseCoreObjectWithId.html#idMayBeBlank">ArchBaseCoreObjectWithId#idMayBeBlank</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="ArchBaseCoreObjectWithId.html#id">ArchBaseCoreObjectWithId#id</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isArchActionTranscription">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isArchActionTranscription<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns true indicating that this is an ArchActionTranscription instance.</p>
+        <p>Returns true indicating that this is an ArchActionSetConversationData instance.</p>
     </div>
     
 
@@ -706,8 +458,8 @@ an extremely rare case.</p>
             
 
 <dt>
-<h4 class="name" id="isArchBaseCoreObject">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isArchBaseCoreObject<span class="type-signature"> :boolean</span>
+<h4 class="name" id="outputFailure">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>outputFailure<span class="type-signature"> :<a href="ArchActionOutput.html">ArchActionOutput</a></span>
     
 </h4>
 
@@ -716,7 +468,7 @@ an extremely rare case.</p>
 <dd>
     
     <div class="description">
-        <p>Returns true indicating that this is an ArchBaseCoreObject instance.</p>
+        <p>The failure output for this action</p>
     </div>
     
 
@@ -726,7 +478,7 @@ an extremely rare case.</p>
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
 
 
             </li>
@@ -746,7 +498,7 @@ an extremely rare case.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseCoreObject.html#isArchBaseCoreObject">ArchBaseCoreObject#isArchBaseCoreObject</a>
+        <a href="ArchBaseActionWithOutputFailure.html#outputFailure">ArchBaseActionWithOutputFailure#outputFailure</a>
     </li></ul></dd>
     
 
@@ -785,8 +537,8 @@ an extremely rare case.</p>
             
 
 <dt>
-<h4 class="name" id="isMenuChoiceAction">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isMenuChoiceAction<span class="type-signature"> :boolean</span>
+<h4 class="name" id="outputSuccess">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>outputSuccess<span class="type-signature"> :<a href="ArchActionOutput.html">ArchActionOutput</a></span>
     
 </h4>
 
@@ -795,9 +547,7 @@ an extremely rare case.</p>
 <dd>
     
     <div class="description">
-        <p>Returns whether or not this action is the action property for a <a href="ArchBaseMenuChoice.html"><code>menu choice</code></a>.
-For example, the <a href="ArchMenuDisconnect.html#actionDisconnect"><code>ArchMenuDisconnect#actionDisconnect</code></a> property on an <a href="ArchMenuDisconnect.html"><code>ArchMenuDisconnect</code></a>
-instance.</p>
+        <p>The success output for this action</p>
     </div>
     
 
@@ -807,7 +557,7 @@ instance.</p>
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
 
 
             </li>
@@ -827,7 +577,7 @@ instance.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseAction.html#isMenuChoiceAction">ArchBaseAction#isMenuChoiceAction</a>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#outputSuccess">ArchBaseActionWithOutputsSuccessFailure#outputSuccess</a>
     </li></ul></dd>
     
 
@@ -866,8 +616,8 @@ instance.</p>
             
 
 <dt>
-<h4 class="name" id="isReachable">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isReachable<span class="type-signature"> :boolean</span>
+<h4 class="name" id="participantId">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>participantId<span class="type-signature"> :<a href="ArchValueString.html">ArchValueString</a></span>
     
 </h4>
 
@@ -876,7 +626,7 @@ instance.</p>
 <dd>
     
     <div class="description">
-        <p>Returns whether or not this action is reachable at runtime.</p>
+        <p>The participant id to set data on</p>
     </div>
     
 
@@ -886,7 +636,7 @@ instance.</p>
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type"><a href="ArchValueString.html">ArchValueString</a></span>
 
 
             </li>
@@ -903,811 +653,6 @@ instance.</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseAction.html#isReachable">ArchBaseAction#isReachable</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isSecure">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isSecure<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this action is secure which means either the action by its very nature
-is secure or it consumes secure data.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseAction.html#isSecure">ArchBaseAction#isSecure</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isUnreachable">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isUnreachable<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this action is unreachable at runtime.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseAction.html#isUnreachable">ArchBaseAction#isUnreachable</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="logStr">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>logStr<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>A string suitable for logging that contains information about this action.  This will contain the action
-tracking id, name and scripting type name.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseAction.html#logStr">ArchBaseAction#logStr</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="logStrTypeOnly">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>logStrTypeOnly<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>This is a string suitable for logging information about this object where it's just the object's type.  This is normally used
-when logging errors that occur in constructor parameter checking because the scripting object isn't set up and the normal
-logging str contents wouldn't be set up.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logStrTypeOnly">ArchBaseObject#logStrTypeOnly</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="name">
-    <span class="type-signature"></span>name<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The name of the action</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseAction.html#name">ArchBaseAction#name</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="parentFlow">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>parentFlow<span class="type-signature"> :<a href="ArchBaseFlow.html">ArchBaseFlow</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns the parent flow for this action.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchBaseFlow.html">ArchBaseFlow</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseAction.html#parentFlow">ArchBaseAction#parentFlow</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="parentMenuChoice">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>parentMenuChoice<span class="type-signature"> :<a href="ArchBaseMenuChoice.html">ArchBaseMenuChoice</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns the parent menu choice if this action is the action for a <a href="ArchBaseMenuChoice.html"><code>menu choice</code></a>.
-Otherwise, nothing is returned.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchBaseMenuChoice.html">ArchBaseMenuChoice</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseAction.html#parentMenuChoice">ArchBaseAction#parentMenuChoice</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="parentState">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>parentState<span class="type-signature"> :<a href="ArchState.html">ArchState</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns the parent state that contains this action if this action is in a <a href="ArchState.html"><code>state</code></a>.
-Otherwise, nothing is returned.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchState.html">ArchState</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseAction.html#parentState">ArchBaseAction#parentState</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="parentTask">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>parentTask<span class="type-signature"> :<a href="ArchTask.html">ArchTask</a>|<a href="ArchTaskLoop.html">ArchTaskLoop</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns the parent task that contains this action if this action is in a <a href="ArchTask.html"><code>task</code></a> or <a href="ArchTaskLoop.html"><code>looping task</code></a>.
-Otherwise, nothing is returned.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchTask.html">ArchTask</a></span>
-|
-
-<span class="param-type"><a href="ArchTaskLoop.html">ArchTaskLoop</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseAction.html#parentTask">ArchBaseAction#parentTask</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="trackingId">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>trackingId<span class="type-signature"> :number</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The integer tracking identifier for this action.  This is the numeric identifier is displayed in the Architect user interface.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">number</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseAction.html#trackingId">ArchBaseAction#trackingId</a>
-    </li></ul></dd>
     
 
     
@@ -1752,9 +697,9 @@ Otherwise, nothing is returned.</p>
 
 <dt>
     
-        <h4 class="name" id="isFilterMatch">
+        <h4 class="name" id="addAttributeNameValuePair">
             
-                <span class="type-signature"></span>isFilterMatch<span class="signature">(archFilterObject)</span><span class="type-signature"> &rarr; {boolean}</span>
+                <span class="type-signature"></span>addAttributeNameValuePair<span class="signature">(nameExpression<span class="signature-attributes">opt</span>, valueExpression<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="ArchBaseNameValuePair.html">ArchBaseNameValuePair</a>}</span>
                 
             
         </h4>
@@ -1766,940 +711,13 @@ Otherwise, nothing is returned.</p>
 
     
     <div class="description">
-        <p>Returns whether or not this Architect Scripting object is a match
-for the supplied ArchFilterObject instance.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>archFilterObject</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="ArchFilterObject.html">ArchFilterObject</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>the object filter to use to determine if it's a match.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">boolean</span>
-
-
-
-
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#isFilterMatch">ArchBaseObject#isFilterMatch</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="logError">
-            
-                <span class="type-signature"></span>logError<span class="signature">(errorStr)</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Logs an error to the logging service with a log header from this object's <a href="ArchBaseObject.html#logStr"><code>logStr</code></a> property value when <a href="ArchLogging.html#logErrors"><code>ArchLogging#logErrors</code></a> is true.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>errorStr</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>the error string to log.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logError">ArchBaseObject#logError</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="logErrorAndThrow">
-            
-                <span class="type-signature"></span>logErrorAndThrow<span class="signature">(errorStr)</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Logs an error to the logging service with a log header from this object's <a href="ArchBaseObject.html#logStr"><code>logStr</code></a> property value when <a href="ArchLogging.html#logErrors"><code>ArchLogging#logErrors</code></a> is true and then throws
-the string in the errorStr parameter.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>errorStr</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>the error string to log.  This should be a non-blank string.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Throws:</h5>
-    
-            
-
-    <div class="param-desc">
-    
-        <ul>
-<li>Throws the submitted error string.</li>
+        <p>This adds an attribute name value pair to the Set Conversation Data action that can be used to specify
+the attribute name and corresponding value that should be assigned to it.  On the returned <a href="ArchBaseNameValuePair.html"><code>ArchBaseNameValuePair</code></a>
+pair:</p>
+<ul>
+<li>the <a href="ArchBaseNameValuePair.html#name"><code>name</code></a> property specifies the name of the attribute whose value you want to set</li>
+<li>the <a href="ArchBaseNameValuePair.html#value"><code>value</code></a> property is the value to set on the attribute at runtime.</li>
 </ul>
-    
-    </div>
-
-
-        
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logErrorAndThrow">ArchBaseObject#logErrorAndThrow</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="logNote">
-            
-                <span class="type-signature"></span>logNote<span class="signature">(noteStr)</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Logs a note to the logging service with a log header from this object's <a href="ArchBaseObject.html#logStr"><code>logStr</code></a> property value when <a href="ArchLogging.html#logNotes"><code>ArchLogging#logNotes</code></a> is true.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>noteStr</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>the note string to log.  This should be a non-blank string.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logNote">ArchBaseObject#logNote</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="logNoteVerbose">
-            
-                <span class="type-signature"></span>logNoteVerbose<span class="signature">(noteStr)</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Logs a note to the logging service with a log header from this object's <a href="ArchBaseObject.html#logStr"><code>logStr</code></a> property value when <a href="ArchLogging.html#logNotesVerbose"><code>ArchLogging#logNotesVerbose</code></a> is true.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>noteStr</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>the note string to log.  This should be a non-blank string.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logNoteVerbose">ArchBaseObject#logNoteVerbose</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="logWarning">
-            
-                <span class="type-signature"></span>logWarning<span class="signature">(warningStr)</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Logs a warning to the logging service with a log header from this object's <a href="ArchBaseObject.html#logStr"><code>logStr</code></a> property value when <a href="ArchLogging.html#logWarnings"><code>ArchLogging#logWarnings</code></a> is true.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>warningStr</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>the warning string to log.  This should be a non-blank string.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logWarning">ArchBaseObject#logWarning</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="traverse">
-            
-                <span class="type-signature"></span>traverse<span class="signature">(callbackFunction, traverseFilter<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {number}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>This method iterates over this object and ArchBaseCoreObject instances
-within it.  For each object it will call the <a href="ArchBaseObject.html#isFilterMatch"><code>ArchBaseObject#isFilterMatch</code></a> method
-with a filter and call the supplied callback function if isMatch returns true.
-The callback will be passed an <a href="ArchTraverseInfo.html"><code>ArchTraverseInfo</code></a> with details
-about the match such as the match object itself along with current contextual
-information such as the object hierarchy for the match object relative to
-the object on which this traverse call is being made.</p>
-<p>The traverse <a href="ArchFilterObject.html"><code>filter</code></a> is one which you can create
-by calling <a href="ArchFactoryFilters.html#createFilterObject"><code>ArchFactoryFilters#createFilterObject</code></a> and then add desired clauses
-or clause containers to it.  If not specified, this function will use a
-<a href="ArchFactoryFilters.html#createFilterTraverseDefault"><code>default filter</code></a>.</p>
-<p>Here is an example that does a simple flow traversal using the default
-filter and logs information about objects in the callback from the
-traverse object that's passed back:</p>
-<pre class="prettyprint source"><code>archInboundCallFlow.traverse(function(traverseInfo) {
-   archLogging.logNote('  Object     : ' + traverseInfo.matchObject.logStr);
-   archLogging.logNote('    Hierarchy: ' + traverseInfo.context.hierarchyStr);
-});
-</code></pre>
-<p>This might be enough for most uses and you can check various aspects
-about the object in the callback such as &quot;is this an Architect action?&quot; by
-seeing if traverseInfo.matchObject.isArchBaseAction is true.  You can specify
-a filter for the traversal code to use as well and only have it call your
-callback when the object's <a href="ArchBaseCoreObject.html#isFilterMatch"><code>ArchBaseCoreObject#isFilterMatch</code></a> method returns true for
-the filter.  Here's an example that creates a filter for callbacks on
-<a href="ArchBaseActionTransfer.html"><code>any type of transfer action</code></a>, any
-<a href="ArchActionDecision.html"><code>decision action</code></a> or objects whose name
-property case insensitively matches the word 'foo'.  While this could all be done
-with one property callback clause the example will use multiple clauses for
-the sake of simplicity:</p>
-<pre class="prettyprint source"><code>const myTraverseFilter = filterFactory.createFilterObject(archEnums.FILTER_CONTAINER_OPERATORS.or);
-myTraverseFilter.addClausePropertyValueEquals('isArchBaseActionTransfer', true);
-myTraverseFilter.addClausePropertyValueEquals('isArchActionDecision',     true);
-myTraverseFilter.addClausePropertyCallback('name', function(propValue, archContainingObject, propName) {
-      // We fully spelled out the function signature above but archContainingObject and propName are
-      // not needed in this case.  The archContainingObject is the object that contains the
-      // property and propName is the property name itself.  We pass in propName because the same
-      // function could be used for multiple property callback clauses.
-      // Remember to return a boolean true, false or undefined from ths callback.  :)
-      return propValue && propValue.toLowerCase() === 'foo';
-});
-archTask.traverse(function(traverseContext) {
-   // You will only be called back here for ArchBaseCoreObject instances that
-   // have the isArchBaseActionTransfer or isArchActionDecision property values equal to true.
-}, myTraverseFilter);
-</code></pre>
-<p>If you supply a filter with no clauses, this tells the traverse method to
-call the supplied callback function for every <a href="ArchBaseCoreObject.html"><code>ArchBaseCoreObject</code></a> it traverses.</p>
-<p>If you want traversal itself to stop after a callback, simply return boolean
-false from the callback function you supply to the traverse call.</p>
-<p>The traverse method does not process deprecated property names such as <a href="ArchSession.html#orgId"><code>orgId</code></a>,
-<a href="ArchSession.html#orgName"><code>orgName</code></a> or <a href="ArchBaseFlow.html#languageSettings"><code>languageSettings</code></a>.  Additionally
-it does not traverse in to properties that would &quot;jump out&quot; of the current traversal.  An example of this
-would be if the code was traversing an <a href="ArchActionJumpToMenu.html"><code>ArchActionJumpToMenu</code></a> action that it would not start traversing
-in to the menu that it jumps to.  Another example would be a <a href="ArchActionChangeState.html"><code>ArchActionChangeState</code></a> action where
-it would not traverse in to the target state of the action.  This also means traversal does not traverse
-in to the <a href="ArchBaseValue.html#flowLevelDefault"><code>ArchBaseValue#flowLevelDefault</code></a> property.</p>
-<p>And lastly, as Scripting evolves over time with new versions, you can expect to get callbacks for new object
-types such as new actions or new properties on objects.  As such, it's important not to assume any particular
-order in callbacks to keep code most compatible with traversal callbacks.  Or if you use inequality checks in filter
-clauses remember that new &quot;stuff&quot; may satisfy an inequality check which may or may not be anticipated in your logic.</p>
-<p>Note:  This traverse method is a helper method and is very handy for iterating over Architect Scripting
-objects and their properties in a generic fashion with filtering capabilities.  Obviously you can write
-your own custom traversal code if this implementation doesn't cut it for some reason. :)</p>
-<p>This function returns the number of times it called the callback function.</p>
     </div>
     
 
@@ -2727,8 +745,6 @@ your own custom traversal code if this implementation doesn't cut it for some re
         
 
         
-        <th>Default</th>
-        
 
         <th class="last">Description</th>
     </tr>
@@ -2739,48 +755,13 @@ your own custom traversal code if this implementation doesn't cut it for some re
 
         <tr>
             
-                <td class="name"><code>callbackFunction</code></td>
+                <td class="name"><code>nameExpression</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#callbackTraverseInfo">callbackTraverseInfo</a></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>the callback function to call for objects that match the traverse filter.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>traverseFilter</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="ArchFilterObject.html">ArchFilterObject</a></span>
+<span class="param-type">string</span>
 
 
             
@@ -2799,17 +780,41 @@ your own custom traversal code if this implementation doesn't cut it for some re
             
 
             
-                <td class="default">
+
+            <td class="description last"><p>a string expression that specifies the name of the attribute to set.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>valueExpression</code></td>
+            
+
+            <td class="type">
+            
                 
-                    <a href="ArchFactoryFilters.html#createFilterTraverseDefault"><code>ArchFactoryFilters#createFilterTraverseDefault</code></a>
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
                 
                 </td>
             
 
-            <td class="description last"><p>the filter to use when performing the traversal to determine which
-<a href="ArchBaseCoreObject.html"><code>ArchBaseCoreObject</code></a> instances you wish to be called back for.  If no
-filter is specified, this function will call <a href="ArchFactoryFilters.html#createFilterTraverseDefault"><code>ArchFactoryFilters#createFilterTraverseDefault</code></a> and
-use that traversal default filter.  The wantArchBaseValues parameter on that call is set to true.</p></td>
+            
+
+            <td class="description last"><p>a string expression that specifies the value to set on the attribute.</p></td>
         </tr>
 
     
@@ -2837,7 +842,7 @@ use that traversal default filter.  The wantArchBaseValues parameter on that cal
 
 
 
-<span class="param-type">number</span>
+<span class="param-type"><a href="ArchBaseNameValuePair.html">ArchBaseNameValuePair</a></span>
 
 
 
@@ -2859,11 +864,6 @@ use that traversal default filter.  The wantArchBaseValues parameter on that cal
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseCoreObject.html#traverse">ArchBaseCoreObject#traverse</a>
-    </li></ul></dd>
     
 
     
@@ -2921,7 +921,7 @@ use that traversal default filter.  The wantArchBaseValues parameter on that cal
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'ArchActionTranscription_sub'.replace(/"/g, '_');
+        var id = 'ArchActionSetConversationData_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
