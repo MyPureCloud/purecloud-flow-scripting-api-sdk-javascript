@@ -11937,6 +11937,10 @@ export class ArchDefinitionFlow extends ArchBaseDefinition {
      */
     readonly supportsStates: boolean;
     /**
+     * Returns whether or not this flow type supports multilingual knowledge.
+     */
+    readonly supportsMultilingualKnowledge: boolean;
+    /**
      * Returns whether or not this flow type supports multiple states.
      */
     readonly supportsMultipleStates: boolean;
@@ -15179,6 +15183,32 @@ export class ArchSettingsSupportedLanguage extends ArchBaseCoreObject {
      * passed to the callback function will be this supported language instance.
      */
     setSpeechToTextEngineByIdAsync(engineId: string, callbackFunction?: callbackArchSettingsSupportedLanguage): Promise<ArchSettingsSupportedLanguage>;
+    /**
+     * Returns the knowledge base name for this supported language setting. If this is the default language,
+     * we return the knowledge base name of the flow's default knowledge base.
+     */
+    readonly knowledgeBaseName: string;
+    /**
+     * Returns the knowledge base id for this supported language setting. If this supported language setting's language
+     * is the default language, we return the knowledge base id of the flow's default knowledge base.
+     */
+    readonly knowledgeBaseId: string;
+    /**
+     * This sets the knowledge base for this supported language setting by the knowledge base id.
+     * @param knowledgeBaseId - the id of the  Knowledge Base to set.
+     * @param [callbackFunction] - a callback function to call if the Knowledge Base is successfully
+     * looked up and configured on this action. The first parameter passed to the
+     * callback function will be this supported language instance.
+     */
+    setKnowledgeBaseByIdAsync(knowledgeBaseId: string, callbackFunction?: callbackArchSettingsSupportedLanguage): Promise<ArchSettingsSupportedLanguage>;
+    /**
+     * This sets the knowledge base for this supported language setting by the knowledge base name.
+     * @param knowledgeBaseName - the name of the  Knowledge Base to set.
+     * @param [callbackFunction] - a callback function to call if the Knowledge Base is successfully
+     * looked up and configured on this action. The first parameter passed to the
+     * callback function will be this supported language instance.
+     */
+    setKnowledgeBaseByNameAsync(knowledgeBaseName: string, callbackFunction?: callbackArchSettingsSupportedLanguage): Promise<ArchSettingsSupportedLanguage>;
 }
 
 /**
@@ -16680,6 +16710,15 @@ export class ArchChoice extends ArchBaseCoreObject {
      * Returns true indicating that this is an ArchChoice instance.
      */
     readonly isArchChoice: boolean;
+    /**
+     * If specified, the label supplies the text to use for the menu
+     * choice at flow runtime.  For flows that support more than one
+     * language, the label setting should be used to supply localized
+     * text for the choice.  If not specified or the calculated String
+     * value for the label setting is a NOT_SET or blank string, the
+     * button text will be used.
+     */
+    readonly label: any;
 }
 
 /**
