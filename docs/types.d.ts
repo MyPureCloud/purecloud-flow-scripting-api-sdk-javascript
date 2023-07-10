@@ -21833,7 +21833,6 @@ declare module 'purecloud-flow-scripting-api-sdk-javascript' {
             let ArchValuePromptCollection: ArchValuePromptCollection;
             let ArchValueQueue: ArchValueQueue;
             let ArchValueQueueCollection: ArchValueQueueCollection;
-            let ArchValueQuickReplies: ArchValueQuickReplies;
             let ArchValueSchedule: ArchValueSchedule;
             let ArchValueScheduleCollection: ArchValueScheduleCollection;
             let ArchValueScheduleGroup: ArchValueScheduleGroup;
@@ -21858,13 +21857,6 @@ declare module 'purecloud-flow-scripting-api-sdk-javascript' {
             let ArchVariableAgentScorePairCollection: ArchVariableAgentScorePairCollection;
             let ArchVariableBoolean: ArchVariableBoolean;
             let ArchVariableBooleanCollection: ArchVariableBooleanCollection;
-            let ArchVariableCard: ArchVariableCard;
-            let ArchVariableCardCollection: ArchVariableCardCollection;
-            let ArchVariableCarousel: ArchVariableCarousel;
-            let ArchVariableChoice: ArchVariableChoice;
-            let ArchVariableChoiceCollection: ArchVariableChoiceCollection;
-            let ArchVariableChooser: ArchVariableChooser;
-            let ArchVariableChooserCollection: ArchVariableChooserCollection;
             let ArchVariableCommunication: ArchVariableCommunication;
             let ArchVariableCurrency: ArchVariableCurrency;
             let ArchVariableCurrencyCollection: ArchVariableCurrencyCollection;
@@ -21906,7 +21898,6 @@ declare module 'purecloud-flow-scripting-api-sdk-javascript' {
             let ArchVariablePromptCollection: ArchVariablePromptCollection;
             let ArchVariableQueue: ArchVariableQueue;
             let ArchVariableQueueCollection: ArchVariableQueueCollection;
-            let ArchVariableQuickReplies: ArchVariableQuickReplies;
             let ArchVariableSchedule: ArchVariableSchedule;
             let ArchVariableScheduleCollection: ArchVariableScheduleCollection;
             let ArchVariableScheduleGroup: ArchVariableScheduleGroup;
