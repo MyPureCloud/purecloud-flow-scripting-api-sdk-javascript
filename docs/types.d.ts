@@ -11834,6 +11834,10 @@ export class ArchDefinitionFlow extends ArchBaseDefinition {
      */
     readonly canCreateFromDefinition: boolean;
     /**
+     * Returns whether the flow can suppress voice recording or not
+     */
+    readonly canSuppressRecording: boolean;
+    /**
      * Returns the display type name string 'ArchDefinitionFlow'.
      */
     readonly displayTypeName: string;
@@ -15085,6 +15089,10 @@ export class ArchSettingsSpeechRecFlow extends ArchSettingsSpeechRec {
      * Returns true indicating that this is an ArchSettingsSpeechRecFlow instance.
      */
     readonly isArchSettingsSpeechRecFlow: boolean;
+    /**
+     * Whether speech recording is suppressed for the flow or not
+     */
+    readonly suppressRecording: ArchValueBoolean;
 }
 
 /**
