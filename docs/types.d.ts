@@ -16846,7 +16846,7 @@ export class ArchValueAny extends ArchBaseValueSingleton {
     /**
      * Returns true indicating that this is an ArchValueAny instance.
      */
-    static isArchValueAny: any;
+    static isArchValueAny: boolean;
 }
 
 /**
@@ -16866,7 +16866,7 @@ export class ArchValueAnyCollection extends ArchBaseValueCollection {
     /**
      * Returns true indicating that this is an ArchValueAnyCollection instance.
      */
-    readonly isArchValueAnyCollection: any;
+    readonly isArchValueAnyCollection: boolean;
 }
 
 /**
