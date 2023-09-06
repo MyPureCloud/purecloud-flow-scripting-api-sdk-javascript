@@ -7840,7 +7840,7 @@ export class ArchActionTransferToAcd extends ArchBaseActionTransfer {
      */
     readonly appendSkills: ArchValueBoolean;
     /**
-     * The skills collection for this transfer to acd action.
+     * The language skill for this transfer to acd action.
      */
     readonly languageSkill: ArchValueLanguageSkill;
     /**
