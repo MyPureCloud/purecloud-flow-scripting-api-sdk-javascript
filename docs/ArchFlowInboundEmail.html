@@ -5781,6 +5781,8 @@ longer be considered valid after loading new configuration.</p>
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -5816,9 +5818,16 @@ longer be considered valid after loading new configuration.</p>
             
 
             
+                <td class="default">
+                
+                    "latest"
+                
+                </td>
+            
 
-            <td class="description last"><p>the version of the flow to get.  Valid values are &quot;latest&quot; to get the latest saved configuration of a flow or
-a version value such as &quot;2.0&quot; or &quot;2&quot;.  If you do not specify a version, then the latest saved configuration will be loaded.</p></td>
+            <td class="description last"><p>the version of the flow to get.  Valid values are &quot;latest&quot; to get the latest saved configuration of a flow,
+a version value such as &quot;2.0&quot; or &quot;2&quot;, &quot;debug&quot; to get the currently published debug version configuration of a flow,
+or &quot;published&quot; to get the currently published version configuration of a flow.  If you do not specify a version, then the latest saved configuration will be loaded.</p></td>
         </tr>
 
     
@@ -5849,6 +5858,10 @@ a version value such as &quot;2.0&quot; or &quot;2&quot;.  If you do not specify
                 </td>
             
 
+            
+                <td class="default">
+                
+                </td>
             
 
             <td class="description last"><p>a callback function to call if the flow was loaded.</p></td>

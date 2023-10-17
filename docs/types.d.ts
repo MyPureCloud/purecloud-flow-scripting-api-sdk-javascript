@@ -309,11 +309,12 @@ export class ArchEnums {
      * ```
      * {
      * &nbsp;&nbsp;debug: 'debug'
-     * &nbsp;&nbsp;latest: 'latest'
+     * &nbsp;&nbsp;latest: 'latest',
+     * &nbsp;&nbsp;published: 'published'
      * }
      * ```
      */
-    readonly FLOW_VERSIONS: {"debug":"debug","latest":"latest"};
+    readonly FLOW_VERSIONS: {"debug":"debug","latest":"latest","published":"published"};
     /**
      * Returns a string array that contains all valid versions for flows.
      */
@@ -382,7 +383,7 @@ export class ArchEnums {
      * }
      * ```
      */
-    readonly LOCATIONS: {"dev":"dev","test":"test","prod_ap_northeast_1":"prod_ap_northeast_1","prod_ap_northeast_2":"prod_ap_northeast_2","prod_ap_southeast_2":"prod_ap_southeast_2","prod_ap_south_1":"prod_ap_south_1","prod_ca_central_1":"prod_ca_central_1","prod_eu_central_1":"prod_eu_central_1","prod_eu_west_1":"prod_eu_west_1","prod_eu_west_2":"prod_eu_west_2","prod_sa_east_1":"prod_sa_east_1","prod_us_east_1":"prod_us_east_1","prod_us_east_2":"prod_us_east_2","prod_us_west_2":"prod_us_west_2"};
+    readonly LOCATIONS: {"dev":"dev","prod_ap_northeast_1":"prod_ap_northeast_1","prod_ap_northeast_2":"prod_ap_northeast_2","prod_ap_northeast_3":"prod_ap_northeast_3","prod_ap_south_1":"prod_ap_south_1","prod_ap_southeast_2":"prod_ap_southeast_2","prod_ca_central_1":"prod_ca_central_1","prod_eu_central_1":"prod_eu_central_1","prod_eu_central_2":"prod_eu_central_2","prod_eu_west_1":"prod_eu_west_1","prod_eu_west_2":"prod_eu_west_2","prod_me_central_1":"prod_me_central_1","prod_sa_east_1":"prod_sa_east_1","prod_us_east_1":"prod_us_east_1","prod_us_east_2":"prod_us_east_2","prod_us_west_2":"prod_us_west_2","test":"test"};
     /**
      * Returns a string array that contains all valid location strings.
      */
@@ -2457,8 +2458,9 @@ export class ArchFactoryFlows extends ArchBaseFactory {
      * Loads a flow with a given name and if found returns an ArchBaseFlow instance for it to the supplied callback function.
      * @param flowName - name of the flow.
      * @param flowType - the flow type.  The string values in {@link ArchEnums#FLOW_TYPES} list valid values.
-     * @param [flowVersion = "latest"] - the version of the flow to get.  Valid values are "latest" to get the latest saved configuration of a flow or
-     * a version value such as "2.0" or "2".  If you do not specify a version, then the latest saved configuration will be loaded.
+     * @param [flowVersion = "latest"] - the version of the flow to get.  Valid values are "latest" to get the latest saved configuration of a flow,
+     * a version value such as "2.0" or "2", "debug" to get the currently published debug version configuration of a flow,
+     * or "published" to get the currently published version configuration of a flow.  If you do not specify a version, then the latest saved configuration will be loaded.
      * @param [callbackFunction] - a callback function to call if the flow can be found on the server by name and type.
      *                                                     The first parameter passed to the callback function will be the Architect Scripting
      *                                                     flow instance.
@@ -2469,8 +2471,9 @@ export class ArchFactoryFlows extends ArchBaseFactory {
      * Loads a flow with a given id and if found returns an ArchBaseFlow instance for it to the supplied callback function.
      * @param flowId - the flow identifier.
      * @param flowType - the flow type.  The string values in {@link ArchEnums#FLOW_TYPES} list valid values.
-     * @param [flowVersion = "latest"] - the version of the flow to get.  Valid values are "latest" to get the latest saved configuration of a flow or
-     * a version value such as "2.0" or "2".  If you do not specify a version, then the latest saved configuration will be loaded.
+     * @param [flowVersion = "latest"] - the version of the flow to get.  Valid values are "latest" to get the latest saved configuration of a flow,
+     * a version value such as "2.0" or "2", "debug" to get the currently published debug version configuration of a flow,
+     * or "published" to get the currently published version configuration of a flow.  If you do not specify a version, then the latest saved configuration will be loaded.
      * @param [callbackFunction] - a callback function to call if the flow can be found on the server by id and type.
      *                                                     The first parameter passed to the callback function will be the Architect Scripting
      *                                                     flow instance.
@@ -2479,8 +2482,9 @@ export class ArchFactoryFlows extends ArchBaseFactory {
     loadFlowByFlowIdAsync(flowId: string, flowType: string, flowVersion?: string, callbackFunction?: callbackArchBaseFlow): Promise<any>;
     /**
      * Loads the default in-queue call flow and if successful returns an ArchFlowInQueueCall instance for it to the supplied callback function.
-     * @param [flowVersion = "latest"] - the version of the default in-queue flow to get.  Valid values are "latest" to get the latest saved configuration of a flow or
-     * a version value such as "2.0" or "2".  If you do not specify a version, then the latest saved configuration will be loaded.
+     * @param [flowVersion = "latest"] - the version of the default in-queue flow to get.  Valid values are "latest" to get the latest saved configuration of a flow,
+     * a version value such as "2.0" or "2", "debug" to get the currently published debug version configuration of a flow,
+     * or "published" to get the currently published version configuration of a flow.  If you do not specify a version, then the latest saved configuration will be loaded.
      * @param [callbackFunction] - a callback function to call if the flow can be loaded.
      *                                                     The first parameter passed to the callback function will be the Architect Scripting
      *                                                     flow instance.
@@ -2489,8 +2493,9 @@ export class ArchFactoryFlows extends ArchBaseFactory {
     loadFlowDefaultInQueueCallAsync(flowVersion?: string, callbackFunction?: callbackArchFlowInQueueCall): Promise<any>;
     /**
      * Loads the default voicemail flow and if successful returns an ArchFlowVoicemail instance for it to the supplied callback function.
-     * @param [flowVersion = "latest"] - the version of the flow to get.  Valid values are "latest" to get the latest saved configuration of a flow or
-     * a version value such as "2.0" or "2".  If you do not specify a version, then the latest saved configuration will be loaded.
+     * @param [flowVersion = "latest"] - the version of the flow to get.  Valid values are "latest" to get the latest saved configuration of a flow,
+     * a version value such as "2.0" or "2", "debug" to get the currently published debug version configuration of a flow,
+     * or "published" to get the currently published version configuration of a flow.  If you do not specify a version, then the latest saved configuration will be loaded.
      * @param [callbackFunction] - a callback function to call if the flow can be found on the server by id and type.
      *                                                     The first parameter passed to the callback function will be the Architect Scripting
      *                                                     flow instance.
@@ -2500,8 +2505,9 @@ export class ArchFactoryFlows extends ArchBaseFactory {
     /**
      * Loads a flow given an ArchFlowInfo and returns an ArchBaseFlow instance for it to the supplied callback function.
      * @param archFlowInfo - flow information for the flow which you wish to load.
-     * @param [flowVersion = "latest"] - the version of the flow to get.  Valid values are "latest" to get the latest saved configuration of a flow or
-     * a version value such as "2.0" or "2".  If you do not specify a version, then the latest saved configuration will be loaded.
+     * @param [flowVersion = "latest"] - the version of the flow to get.  Valid values are "latest" to get the latest saved configuration of a flow,
+     * a version value such as "2.0" or "2", "debug" to get the currently published debug version configuration of a flow,
+     * or "published" to get the currently published version configuration of a flow.  If you do not specify a version, then the latest saved configuration will be loaded.
      * @param [callbackFunction] - a callback function to call if the flow can be found on the server by flow info.
      *                                                     The first parameter passed to the callback function will be the Architect Scripting
      *                                                     flow instance.
@@ -2580,8 +2586,9 @@ export class ArchFactoryFlows extends ArchBaseFactory {
      * @param flowName - name of the flow.
      * @param flowType - the flow type.  The string values in {@link ArchEnums#FLOW_TYPES} list valid values.
      * @param [forceUnlock = false] - whether to force an unlock of the flow.  Remember, the architect:flow:unlock permission is needed to unlock a flow locked to another user.
-     * @param [flowVersion = "latest"] - the version of the flow to get.  Valid values are "latest" to get the latest saved configuration of a flow or
-     * a version value such as "2.0" or "2".  If you do not specify a version, then the latest saved configuration will be loaded.
+     * @param [flowVersion = "latest"] - the version of the flow to get.  Valid values are "latest" to get the latest saved configuration of a flow,
+     * a version value such as "2.0" or "2", "debug" to get the currently published debug version configuration of a flow,
+     * or "published" to get the currently published version configuration of a flow.  If you do not specify a version, then the latest saved configuration will be loaded.
      * @param [callbackFunction] - a callback function to call if the flow can be found on the server by name.
      *                                                     The first parameter passed to the callback function will be the Architect Scripting
      *                                                     flow instance.
@@ -2593,8 +2600,9 @@ export class ArchFactoryFlows extends ArchBaseFactory {
      * @param flowId - the flow identifier.
      * @param flowType - the flow type.  The string values in {@link ArchEnums#FLOW_TYPES} list valid values.
      * @param [forceUnlock = false] - whether to force an unlock of the flow.  Remember, the architect:flow:unlock permission is needed to unlock a flow locked to another user.
-     * @param [flowVersion = "latest"] - the version of the flow to get.  Valid values are "latest" to get the latest saved configuration of a flow or
-     * a version value such as "2.0" or "2".  If you do not specify a version, then the latest saved configuration will be loaded.
+     * @param [flowVersion = "latest"] - the version of the flow to get.  Valid values are "latest" to get the latest saved configuration of a flow,
+     * a version value such as "2.0" or "2", "debug" to get the currently published debug version configuration of a flow,
+     * or "published" to get the currently published version configuration of a flow.  If you do not specify a version, then the latest saved configuration will be loaded.
      * @param [callbackFunction] - a callback function to call if the flow can be found on the server by id and type.
      *                                                     The first parameter passed to the callback function will be the Architect Scripting
      *                                                     flow instance.
@@ -2605,8 +2613,9 @@ export class ArchFactoryFlows extends ArchBaseFactory {
      * Check out and load the flow for a given [flow info]{@link ArchFlowInfo} object to the current user.
      * @param archFlowInfo - flow information for the flow which you wish to load and edit.
      * @param [forceUnlock = false] - whether to force an unlock of the flow.  Remember, the architect:flow:unlock permission is needed to unlock a flow locked to another user.
-     * @param [flowVersion = "latest"] - the version of the flow to get.  Valid values are "latest" to get the latest saved configuration of a flow or
-     * a version value such as "2.0" or "2".  If you do not specify a version, then the latest saved configuration will be loaded.
+     * @param [flowVersion = "latest"] - the version of the flow to get.  Valid values are "latest" to get the latest saved configuration of a flow,
+     * a version value such as "2.0" or "2", "debug" to get the currently published debug version configuration of a flow,
+     * or "published" to get the currently published version configuration of a flow.  If you do not specify a version, then the latest saved configuration will be loaded.
      * @param [callbackFunction] - a callback function to call if the flow can be found on the server by name.
      *                                                     The first parameter passed to the callback function will be the Architect Scripting
      *                                                     flow instance.
@@ -7348,7 +7357,7 @@ export class ArchActionSendNotification extends ArchBaseActionWithOutputsSuccess
      * The contents of this named value list come from the Failure Outputs schema. It will contain two values: errorType and errorMessage.
      * These values will be returned by the server if the action takes the Failure path.
      */
-    sendNotificationFailureOutputs: ArchNamedValueList;
+    readonly sendNotificationFailureOutputs: ArchNamedValueList;
     /**
      * The success output for this action
      */
@@ -10594,8 +10603,9 @@ export class ArchBaseFlow extends ArchBaseCoreObjectWithId {
     /**
      * Loads a specific version of the flow.  Any previously returned Architect Scripting objects associated with this flow should no
      * longer be considered valid after loading new configuration.
-     * @param [flowVersion] - the version of the flow to get.  Valid values are "latest" to get the latest saved configuration of a flow or
-     * a version value such as "2.0" or "2".  If you do not specify a version, then the latest saved configuration will be loaded.
+     * @param [flowVersion = "latest"] - the version of the flow to get.  Valid values are "latest" to get the latest saved configuration of a flow,
+     * a version value such as "2.0" or "2", "debug" to get the currently published debug version configuration of a flow,
+     * or "published" to get the currently published version configuration of a flow.  If you do not specify a version, then the latest saved configuration will be loaded.
      * @param [callbackFunction] - a callback function to call if the flow was loaded.
      * @returns - while this method returns a promise, you should use the callback function to perform any processing when the flow is loaded.
      */
@@ -13103,8 +13113,9 @@ export class ArchFlowCommonModule extends ArchBaseFlow {
     /**
      * Loads a specific version of the flow.  Any previously returned Architect Scripting objects associated with this flow should no
      * longer be considered valid after loading new configuration.
-     * @param [flowVersion] - the version of the flow to get.  Valid values are "latest" to get the latest saved configuration of a flow or
-     * a version value such as "2.0" or "2".  If you do not specify a version, then the latest saved configuration will be loaded.
+     * @param [flowVersion = "latest"] - the version of the flow to get.  Valid values are "latest" to get the latest saved configuration of a flow,
+     * a version value such as "2.0" or "2", "debug" to get the currently published debug version configuration of a flow,
+     * or "published" to get the currently published version configuration of a flow.  If you do not specify a version, then the latest saved configuration will be loaded.
      * @param [callbackFunction] - a callback function to call if the flow was loaded.
      * @returns - while this method returns a promise, you should use the callback function to perform any processing when the flow is loaded.
      */

@@ -60,6 +60,15 @@
 
     <section>
         <article class="readme"><h2>Change Log</h2>
+<h1>0.42.1</h1>
+<h4>Improvements</h4>
+<ul>
+<li>We added the ability to additionally specify <code>published</code> or <code>debug</code> for functions such as <a href="ArchFactoryFlows.html#loadFlowByFlowIdAsync"><code>ArchFactoryFlows#loadFlowByFlowIdAsync</code></a> for the <code>flowVersion</code> parameter.</li>
+</ul>
+<h4>Bug Fixes</h4>
+<ul>
+<li>We fixed an issue where loading an <a href="ArchFlowCommonModule.html"><code>ArchFlowCommonModule</code></a> using a function such as <a href="ArchFactoryFlows.html#loadFlowByFlowIdAsync"><code>ArchFactoryFlows#loadFlowByFlowIdAsync</code></a> and specifying a version other than <code>latest</code> would cause the <a href="ArchSettingsCommonModuleFlow.html#compatibleFlowTypes"><code>ArchSettingsCommonModuleFlow#compatibleFlowTypes</code></a> to be an empty array even if there were compatible flow types in that version of the flow.</li>
+</ul>
 <h1>0.42.0</h1>
 <h4>New Features</h4>
 <ul>
