@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: ArchChoice | Architect Scripting</title>
+    <title>Class: ArchActionGetRawSIPHeaders | Architect Scripting</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -50,7 +50,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"><span class="icon green">abstract</span> </span></span>ArchChoice<span class="signature">(coreChoiceViewModel)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ArchActionGetRawSIPHeaders<span class="signature">(coreGetRawSIPHeadersActionViewModel)</span><span class="type-signature"></span></h2>
         
     
 </header>
@@ -63,9 +63,9 @@
 
 <dt>
     
-        <h4 class="name" id="ArchChoice">
+        <h4 class="name" id="ArchActionGetRawSIPHeaders">
             
-                new <span class="type-signature"><span class="icon green">abstract</span> </span>ArchChoice<span class="signature">(coreChoiceViewModel)</span><span class="type-signature"></span>
+                new <span class="type-signature"></span>ArchActionGetRawSIPHeaders<span class="signature">(coreGetRawSIPHeadersActionViewModel)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -75,10 +75,6 @@
 </dt>
 <dd>
 
-    
-    <div class="description">
-        <p>Creates a new ArchChoice instance.</p>
-    </div>
     
 
     
@@ -113,7 +109,7 @@
 
         <tr>
             
-                <td class="name"><code>coreChoiceViewModel</code></td>
+                <td class="name"><code>coreGetRawSIPHeadersActionViewModel</code></td>
             
 
             <td class="type">
@@ -129,7 +125,7 @@
 
             
 
-            <td class="description last"><p>( <em>Internal</em> ) an Architect core choice instance.</p></td>
+            <td class="description last"><p>( <em>Internal</em> ) an Architect core get raw sip headers action view model.</p></td>
         </tr>
 
     
@@ -183,6 +179,13 @@
     
 
     
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="ArchFactoryActions.html#addActionGetRawSIPHeaders">ArchFactoryActions#addActionGetRawSIPHeaders</a></li>
+        </ul>
+    </dd>
+    
 
     
 </dl>
@@ -203,7 +206,7 @@
 
 
     <ul>
-        <li><a href="ArchBaseCoreObject.html">ArchBaseCoreObject</a></li>
+        <li><a href="ArchBaseActionWithOutputsSuccessFailure.html">ArchBaseActionWithOutputsSuccessFailure</a></li>
     </ul>
 
 
@@ -236,7 +239,7 @@
 <dd>
     
     <div class="description">
-        <p>Returns the display type name string 'ArchChoice'.</p>
+        <p>Returns the display type name string 'ArchActionGetRawSIPHeaders'.</p>
     </div>
     
 
@@ -300,8 +303,8 @@
             
 
 <dt>
-<h4 class="name" id="enabled">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>enabled<span class="type-signature"> :boolean</span>
+<h4 class="name" id="_actionTypeId">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>_actionTypeId<span class="type-signature"> :string</span>
     
 </h4>
 
@@ -310,8 +313,7 @@
 <dd>
     
     <div class="description">
-        <p>Returns whether this choice (and by extension, its output path on the action) is enabled. Setting this property
-to false will disable the choice and its output path on the action.</p>
+        <p>Returns the action type identifier string from actionTypes.js</p>
     </div>
     
 
@@ -321,7 +323,7 @@ to false will disable the choice and its output path on the action.</p>
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type">string</span>
 
 
             </li>
@@ -360,6 +362,327 @@ to false will disable the choice and its output path on the action.</p>
 
     
 
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="displayTypeNameArchitect">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>displayTypeNameArchitect<span class="type-signature"> :string</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The Architect action type label</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#displayTypeNameArchitect">ArchBaseActionWithOutputsSuccessFailure#displayTypeNameArchitect</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="getRawSipHeadersFailureOutputs">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>getRawSipHeadersFailureOutputs<span class="type-signature"> :<a href="ArchNamedValueList.html">ArchNamedValueList</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The contents of this named value list come from the Failure Outputs schema. It will contain two values: errorType and errorMessage.
+These values will be returned by the server if the action takes the Failure path.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchNamedValueList.html">ArchNamedValueList</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="id">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>id<span class="type-signature"> :string</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The identifier string for this object.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#id">ArchBaseActionWithOutputsSuccessFailure#id</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="idMayBeBlank">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>idMayBeBlank<span class="type-signature"> :string</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns whether or not the id property may be blank or undefined for this object.  For example, the returned settings from <a href="ArchMenu.html#settingsMenu"><code>ArchMenu#settingsMenu</code></a>
+will have a blank identifier along with the settings returned from <a href="ArchMenu.html#settingsSpeechRec"><code>ArchMenu#settingsSpeechRec</code></a>.  Note that this is
+an extremely rare case.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#idMayBeBlank">ArchBaseActionWithOutputsSuccessFailure#idMayBeBlank</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="ArchBaseCoreObjectWithId.html#id">ArchBaseCoreObjectWithId#id</a></li>
+        </ul>
+    </dd>
     
 
     
@@ -413,12 +736,12 @@ to false will disable the choice and its output path on the action.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseCoreObject.html#isArchBaseCoreObject">ArchBaseCoreObject#isArchBaseCoreObject</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#isArchBaseCoreObject">ArchBaseActionWithOutputsSuccessFailure#isArchBaseCoreObject</a>
+    </li></ul></dd>
     
 
     
@@ -454,8 +777,8 @@ to false will disable the choice and its output path on the action.</p>
             
 
 <dt>
-<h4 class="name" id="isArchChoice">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isArchChoice<span class="type-signature"> :boolean</span>
+<h4 class="name" id="isMenuChoiceAction">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isMenuChoiceAction<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -464,7 +787,9 @@ to false will disable the choice and its output path on the action.</p>
 <dd>
     
     <div class="description">
-        <p>Returns true indicating that this is an ArchChoice instance.</p>
+        <p>Returns whether or not this action is the action property for a <a href="ArchBaseMenuChoice.html"><code>menu choice</code></a>.
+For example, the <a href="ArchMenuDisconnect.html#actionDisconnect"><code>ArchMenuDisconnect#actionDisconnect</code></a> property on an <a href="ArchMenuDisconnect.html"><code>ArchMenuDisconnect</code></a>
+instance.</p>
     </div>
     
 
@@ -494,6 +819,11 @@ to false will disable the choice and its output path on the action.</p>
     
 
     
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#isMenuChoiceAction">ArchBaseActionWithOutputsSuccessFailure#isMenuChoiceAction</a>
+    </li></ul></dd>
+    
 
     
 
@@ -528,8 +858,8 @@ to false will disable the choice and its output path on the action.</p>
             
 
 <dt>
-<h4 class="name" id="label">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>label<span class="type-signature"></span>
+<h4 class="name" id="isReachable">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isReachable<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -538,16 +868,21 @@ to false will disable the choice and its output path on the action.</p>
 <dd>
     
     <div class="description">
-        <p>If specified, the label supplies the text to use for the menu
-choice at flow runtime.  For flows that support more than one
-language, the label setting should be used to supply localized
-text for the choice.  If not specified or the calculated String
-value for the label setting is a NOT_SET or blank string, the
-button text will be used.</p>
+        <p>Returns whether or not this action is reachable at runtime.</p>
     </div>
     
 
     <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+            </li>
+        </ul>
     
     -->
 
@@ -562,6 +897,170 @@ button text will be used.</p>
 
     
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#isReachable">ArchBaseActionWithOutputsSuccessFailure#isReachable</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="isSecure">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isSecure<span class="type-signature"> :boolean</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns whether or not this action is secure which means either the action by its very nature
+is secure or it consumes secure data.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#isSecure">ArchBaseActionWithOutputsSuccessFailure#isSecure</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="isUnreachable">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isUnreachable<span class="type-signature"> :boolean</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns whether or not this action is unreachable at runtime.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#isUnreachable">ArchBaseActionWithOutputsSuccessFailure#isUnreachable</a>
+    </li></ul></dd>
     
 
     
@@ -607,7 +1106,8 @@ button text will be used.</p>
 <dd>
     
     <div class="description">
-        <p>A string suitable for logging that contains information about this ArchChoice.</p>
+        <p>A string suitable for logging that contains information about this action.  This will contain the action
+tracking id, name and scripting type name.</p>
     </div>
     
 
@@ -639,7 +1139,7 @@ button text will be used.</p>
     
     <dt class="tag-overrides">Overrides:</dt>
     <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="ArchBaseCoreObject.html#logStr">ArchBaseCoreObject#logStr</a>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#logStr">ArchBaseActionWithOutputsSuccessFailure#logStr</a>
     </li></ul></dd>
     
 
@@ -716,12 +1216,12 @@ logging str contents wouldn't be set up.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logStrTypeOnly">ArchBaseObject#logStrTypeOnly</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#logStrTypeOnly">ArchBaseActionWithOutputsSuccessFailure#logStrTypeOnly</a>
+    </li></ul></dd>
     
 
     
@@ -758,7 +1258,7 @@ logging str contents wouldn't be set up.</p>
 
 <dt>
 <h4 class="name" id="name">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>name<span class="type-signature"> :string</span>
+    <span class="type-signature"></span>name<span class="type-signature"> :string</span>
     
 </h4>
 
@@ -767,7 +1267,730 @@ logging str contents wouldn't be set up.</p>
 <dd>
     
     <div class="description">
-        <p>Returns the name for this choice instance.</p>
+        <p>The name of the action</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#name">ArchBaseActionWithOutputsSuccessFailure#name</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="outputCount">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>outputCount<span class="type-signature"> :number</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns the number of outputs on this action.  For actions that have a fake success output like what you
+see on the various transfer actions, that will be included in the count to be consistent with the Architect UI.
+Attempting to get the output count on a menu choice's action such as such as the <a href="ArchMenuTransferToAcd.html#actionTransferToAcd"><code>ArchMenuTransferToAcd#actionTransferToAcd</code></a>
+action on an <a href="ArchMenuTransferToAcd.html"><code>ArchMenuTransferToAcd</code></a> menu will return 0.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#outputCount">ArchBaseActionWithOutputsSuccessFailure#outputCount</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="outputFailure">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>outputFailure<span class="type-signature"> :<a href="ArchActionOutput.html">ArchActionOutput</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The failure output for this action</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#outputFailure">ArchBaseActionWithOutputsSuccessFailure#outputFailure</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="outputs">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>outputs<span class="type-signature"> :Array.&lt;<a href="ArchActionOutput.html">ArchActionOutput</a>></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns an array of action outputs for this action.  Remember that it is possible to have an
+undefined item in the returned ArchActionOutput array.  This is true when the output is &quot;fake&quot;.
+Accessing the outputs on a menu choice's action such as <a href="ArchMenuTransferToAcd.html#actionTransferToAcd"><code>ArchMenuTransferToAcd#actionTransferToAcd</code></a>
+will return an empty array.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Array.&lt;<a href="ArchActionOutput.html">ArchActionOutput</a>></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#outputs">ArchBaseActionWithOutputsSuccessFailure#outputs</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="outputSuccess">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>outputSuccess<span class="type-signature"> :<a href="ArchActionOutput.html">ArchActionOutput</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The success output for this action</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#outputSuccess">ArchBaseActionWithOutputsSuccessFailure#outputSuccess</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="parentFlow">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>parentFlow<span class="type-signature"> :<a href="ArchBaseFlow.html">ArchBaseFlow</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns the parent flow for this action.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchBaseFlow.html">ArchBaseFlow</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#parentFlow">ArchBaseActionWithOutputsSuccessFailure#parentFlow</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="parentMenuChoice">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>parentMenuChoice<span class="type-signature"> :<a href="ArchBaseMenuChoice.html">ArchBaseMenuChoice</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns the parent menu choice if this action is the action for a <a href="ArchBaseMenuChoice.html"><code>menu choice</code></a>.
+Otherwise, nothing is returned.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchBaseMenuChoice.html">ArchBaseMenuChoice</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#parentMenuChoice">ArchBaseActionWithOutputsSuccessFailure#parentMenuChoice</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="parentState">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>parentState<span class="type-signature"> :<a href="ArchState.html">ArchState</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns the parent state that contains this action if this action is in a <a href="ArchState.html"><code>state</code></a>.
+Otherwise, nothing is returned.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchState.html">ArchState</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#parentState">ArchBaseActionWithOutputsSuccessFailure#parentState</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="parentTask">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>parentTask<span class="type-signature"> :<a href="ArchTask.html">ArchTask</a>|<a href="ArchTaskLoop.html">ArchTaskLoop</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns the parent task that contains this action if this action is in a <a href="ArchTask.html"><code>task</code></a> or <a href="ArchTaskLoop.html"><code>looping task</code></a>.
+Otherwise, nothing is returned.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchTask.html">ArchTask</a></span>
+|
+
+<span class="param-type"><a href="ArchTaskLoop.html">ArchTaskLoop</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#parentTask">ArchBaseActionWithOutputsSuccessFailure#parentTask</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="rawSIPHeadersResult">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>rawSIPHeadersResult<span class="type-signature"> :string</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>A string to retrieve a Raw SIP Header value</p>
     </div>
     
 
@@ -827,6 +2050,85 @@ logging str contents wouldn't be set up.</p>
     
 </dd>
 
+        
+            
+
+<dt>
+<h4 class="name" id="trackingId">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>trackingId<span class="type-signature"> :number</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The integer tracking identifier for this action.  This is the numeric identifier is displayed in the Architect user interface.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#trackingId">ArchBaseActionWithOutputsSuccessFailure#trackingId</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
         </dl>
     
 
@@ -834,6 +2136,567 @@ logging str contents wouldn't be set up.</p>
         <h3 class="subsection-title">Methods</h3>
 
         <dl>
+                
+
+<dt>
+    
+        <h4 class="name" id="getOutputById">
+            
+                <span class="type-signature"></span>getOutputById<span class="signature">(output)</span><span class="type-signature"> &rarr; {<a href="ArchActionOutput.html">ArchActionOutput</a>}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Gets an output by its identifier.  If it cannot be found, this method will throw.
+Normally you won't need to use this method and will use the helper methods available on inheriting classes
+when accessing pre-defined outputs like success, failure, timeout, etc. etc.  Attempting to
+get an output by id on a menu choice's action such as the <a href="ArchMenuTransferToAcd.html#actionTransferToAcd"><code>ArchMenuTransferToAcd#actionTransferToAcd</code></a>
+action on an <a href="ArchMenuTransferToAcd.html"><code>ArchMenuTransferToAcd</code></a> menu will return nothing.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>output</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type"><a href="ArchBranch.html">ArchBranch</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>identifies output you want to obtain.  If output is an ArchBranch instance,
+the <a href="ArchBranch.html#outputId"><code>ArchBranch#outputId</code></a> value will be used.  Otherwise valid string
+identifier values can be found in <a href="ArchEnums.html#OUTPUT_IDS"><code>ArchEnums#OUTPUT_IDS</code></a> or can be a guid.
+Remember that requesting the 'success' output on an action with a
+<a href="ArchBaseActionWithOutputsFakeSuccessFailure.html#hasFakeSuccessOutput"><code>fake success output</code></a> will return nothing.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
+
+
+
+
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#getOutputById">ArchBaseActionWithOutputsSuccessFailure#getOutputById</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="getOutputByIndex">
+            
+                <span class="type-signature"></span>getOutputByIndex<span class="signature">(index)</span><span class="type-signature"> &rarr; {<a href="ArchActionOutput.html">ArchActionOutput</a>}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns the output at the given index.  It's important to note that on actions that have a fake success
+output if you request the output at the index for the fake success, you will get nothing returned because
+the fake success output isn't something that you should do anything with.  Attempting to
+access an output by index on a menu choice's action such as <a href="ArchMenuTransferToAcd.html#actionTransferToAcd"><code>ArchMenuTransferToAcd#actionTransferToAcd</code></a>
+will return nothing.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the index of the output to retrieve.  This value should be a non-negative integer.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
+
+
+
+
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#getOutputByIndex">ArchBaseActionWithOutputsSuccessFailure#getOutputByIndex</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="getOutputByName">
+            
+                <span class="type-signature"></span>getOutputByName<span class="signature">(output, wantDynamicOutput<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="ArchActionOutput.html">ArchActionOutput</a>}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Gets an output by its identifier.  If it cannot be found, this method will throw.
+Normally you won't need to use this method and will use the helper methods available on inheriting classes
+when accessing pre-defined outputs like success, failure, timeout, etc. etc.  Attempting to
+get an output by id on a menu choice's action such as the <a href="ArchMenuTransferToAcd.html#actionTransferToAcd"><code>ArchMenuTransferToAcd#actionTransferToAcd</code></a>
+action on an <a href="ArchMenuTransferToAcd.html"><code>ArchMenuTransferToAcd</code></a> menu will return nothing.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>output</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type"><a href="ArchBranch.html">ArchBranch</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>identifies output you want to obtain by name.  If output is an ArchBranch instance,
+the <a href="ArchBranch.html#name"><code>ArchBranch#name</code></a> value will be used.
+Remember that requesting the 'Success' output on an action with a
+<a href="ArchBaseActionWithOutputsFakeSuccessFailure.html#hasFakeSuccessOutput"><code>fake success output</code></a> will return nothing.
+For non-dynamic outputs, the name should be specified in English.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>wantDynamicOutput</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>because it is possible for some actions to have both a non-dynamic output
+and a dynamic output with the same name, this boolean will let you specify
+which output you want.  An example of this would be the built in Failure
+output on a call bot action but that bot also has an intent named Failure
+so the action has two outputs with the same name of 'Failure'.  Only one
+of those would be a dynamic output and that's the output for the Failure
+intent, not the built-in Failure action output.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
+
+
+
+
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#getOutputByName">ArchBaseActionWithOutputsSuccessFailure#getOutputByName</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
                 
 
 <dt>
@@ -956,12 +2819,12 @@ for the supplied ArchFilterObject instance.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#isFilterMatch">ArchBaseObject#isFilterMatch</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#isFilterMatch">ArchBaseActionWithOutputsSuccessFailure#isFilterMatch</a>
+    </li></ul></dd>
     
 
     
@@ -1095,12 +2958,12 @@ for the supplied ArchFilterObject instance.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logError">ArchBaseObject#logError</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#logError">ArchBaseActionWithOutputsSuccessFailure#logError</a>
+    </li></ul></dd>
     
 
     
@@ -1249,12 +3112,12 @@ the string in the errorStr parameter.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logErrorAndThrow">ArchBaseObject#logErrorAndThrow</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#logErrorAndThrow">ArchBaseActionWithOutputsSuccessFailure#logErrorAndThrow</a>
+    </li></ul></dd>
     
 
     
@@ -1388,12 +3251,12 @@ the string in the errorStr parameter.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logNote">ArchBaseObject#logNote</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#logNote">ArchBaseActionWithOutputsSuccessFailure#logNote</a>
+    </li></ul></dd>
     
 
     
@@ -1527,12 +3390,12 @@ the string in the errorStr parameter.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logNoteVerbose">ArchBaseObject#logNoteVerbose</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#logNoteVerbose">ArchBaseActionWithOutputsSuccessFailure#logNoteVerbose</a>
+    </li></ul></dd>
     
 
     
@@ -1666,12 +3529,12 @@ the string in the errorStr parameter.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logWarning">ArchBaseObject#logWarning</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#logWarning">ArchBaseActionWithOutputsSuccessFailure#logWarning</a>
+    </li></ul></dd>
     
 
     
@@ -1946,12 +3809,12 @@ use that traversal default filter.  The wantArchBaseValues parameter on that cal
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseCoreObject.html#traverse">ArchBaseCoreObject#traverse</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#traverse">ArchBaseActionWithOutputsSuccessFailure#traverse</a>
+    </li></ul></dd>
     
 
     
@@ -2007,7 +3870,7 @@ use that traversal default filter.  The wantArchBaseValues parameter on that cal
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'ArchChoice_sub'.replace(/"/g, '_');
+        var id = 'ArchActionGetRawSIPHeaders_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
