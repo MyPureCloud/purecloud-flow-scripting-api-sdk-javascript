@@ -3831,11 +3831,6 @@ export class ArchActionAskForSlot extends ArchBaseActionNoInputNoMatch {
  */
 declare type callbackArchActionCallBotConnector = (ArchActionCallBotConnector: ArchActionCallBotConnector) => void;
 
-/**
- * The Architect Scripting class that represents the Call Bot Connector action.
- * Instances of this action should be created by calling {@link ArchFactoryActions#addActionCallBotConnector}
- * @param coreBotConnectorActionViewModel - ( *Internal* ) an Architect core Call Bot Connector action view model.
- */
 export class ArchActionCallBotConnector extends ArchBaseActionBot {
     // constructor(coreBotConnectorActionViewModel: any);
     /**
@@ -3860,42 +3855,302 @@ export class ArchActionCallBotConnector extends ArchBaseActionBot {
      */
     readonly botConnectorOutputsFailure: ArchNamedValueList;
     /**
-     * Returns true indicating that this is an ArchActionCallBotConnector instance.
+     * This adds a session parameter name value pair to the Call Dialogflow CX Bot action that is used to specify
+     * the session parameter'\'s name and corresponding value that should be assigned to it.
+     * This function functions the same as {@link ArchBaseActionBot#addSessionVariableNameValuePair} and exists because Session Variables are called Session Parameters in
+     * Dialogflow CX.
+     * On the returned {@link ArchBaseNameValuePair}:
+     * * the [name]{@link ArchBaseNameValuePair#name} property specifies the name of the session parameter whose value you want to set
+     * * the [value]{@link ArchBaseNameValuePair#value} property is the value to set on the session parameter at runtime.
+     * @param [nameLiteral] - a string that specifies the name of the session parameter to set.
+     * @param [valueExpression] - a string expression that specifies the value to set on the session parameter.
      */
-    readonly isArchActionCallBotConnector: boolean;
+    addSessionParameterNameValuePair(nameLiteral?: string, valueExpression?: string): ArchBaseNameValuePair;
     /**
-     * The collection of intents and their slots into which variables can be assigned. To access an intent, you can use
-     * the getNamedValueByName function on this property and pass in the name of the intent you want to access.
-     * That intent will contain its slots, which you can access also via getNamedValueByName.
+     * Returns a unique array of names of intents that are configured for the selected bot. This array contains intent
+     * names for the bot that will be executed at flow runtime. As such, for some bots like Lex bots, this requires selecting
+     * the Lex bot alias since intents are defined on the alias prior to this array being populated.
      */
-    readonly intentSlots: ArchNamedValueList;
+    readonly intentNames: string[];
     /**
-     * Returns the output Session Variables configured on the action.  If you are looking for
-     * the input Session Variables, see {@link ArchBaseActionBot#sessionVariables}.
+     * This gets an action output for this action that matches an intent name. It will not return the built-in Failure output.
+     * @param intentName - the name of the intent whose matching output to find
      */
-    readonly sessionVariableOutputs: ArchBaseNameValuePairs;
+    getOutputByIntentName(intentName: string): ArchActionOutput;
     /**
-     * This sets the Bot Connector version to call at runtime using the Bot Connector integration ID, bot ID, and version ID.
-     * @param botConnectorIntegrationId - the identifier of the Bot Connector integration.
-     * @param botConnectorBotId - the identifier of the Bot Connector bot.
-     * @param botConnectorVersionId - the identifier of the Bot Connector version.
-     * @param [callbackFunction] - a callback function to call if the Bot Connector version
-     *                                                            is successfully looked up and configured on this action.
-     *                                                            The first parameter passed to the callback function will be this
-     *                                                            Architect Call Bot Connector action instance.
+     * Specifies the amount of time to wait for a user's response to a bot prompt.
+     * A negative or NOT_SET duration will be treated as immediate.
      */
-    setBotByIdAsync(botConnectorIntegrationId: string, botConnectorBotId: string, botConnectorVersionId: string, callbackFunction?: (...params: any[]) => any): Promise<ArchActionCallBotConnector>;
+    readonly followupResponseTimeout: ArchValueDuration;
     /**
-     * This sets the Bot Connector version to call at runtime using the Bot Connector integration name, bot name, and version ID.
-     * @param botConnectorIntegrationName - the name of the Bot Connector integration.
-     * @param botConnectorBotName - the name of the Bot Connector bot.
-     * @param botConnectorBotVersionId - the identifier of the Bot Connector version.
-     * @param [callbackFunction] - a callback function to call if the Bot Connector version
-     *                                                            is successfully looked up and configured on this action.
-     *                                                            The first parameter passed to the callback function will be this
-     *                                                            Architect Call Bot Connector action instance.
+     * The input text for the bot.  This is usually only set in flows when chaining
+     * bot actions together.
      */
-    setBotByNameAsync(botConnectorIntegrationName: string, botConnectorBotName: string, botConnectorBotVersionId: string, callbackFunction?: (...params: any[]) => any): Promise<ArchActionCallBotConnector>;
+    readonly inputText: ArchValueString;
+    /**
+     * This adds a session variable name value pair to the Base Bot action that can be used to specify
+     * the session variable's name and corresponding value that should be assigned to it.  On the returned
+     * {@link ArchBaseNameValuePair} pair:
+     * * the [name]{@link ArchBaseNameValuePair#name} property specifies the name of the session variable whose value you want to set
+     * * the [value]{@link ArchBaseNameValuePair#value} property is the value to set on the session variable at runtime.
+     * @param [nameLiteral] - a string that specifies the name of the session variable to set.
+     * @param [valueExpression] - a string expression that specifies the value to set on the session variable.
+     */
+    addSessionVariableNameValuePair(nameLiteral?: string, valueExpression?: string): ArchBaseNameValuePair;
+    /**
+     * Returns the input Session Variables configured on the action.
+     */
+    readonly sessionVariables: ArchBaseNameValuePairs;
+    /**
+     * The failure output for this action
+     */
+    readonly outputFailure: ArchActionOutput;
+    /**
+     * Gets an output by its identifier.  If it cannot be found, this method will throw.
+     * Normally you won't need to use this method and will use the helper methods available on inheriting classes
+     * when accessing pre-defined outputs like success, failure, timeout, etc. etc.  Attempting to
+     * get an output by id on a menu choice's action such as the {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * action on an {@link ArchMenuTransferToAcd} menu will return nothing.
+     * @param output - identifies output you want to obtain.  If output is an ArchBranch instance,
+     *                                         the {@link ArchBranch#outputId} value will be used.  Otherwise valid string
+     *                                         identifier values can be found in {@link ArchEnums#OUTPUT_IDS} or can be a guid.
+     *                                         Remember that requesting the 'success' output on an action with a
+     *                                         [fake success output]{@link ArchBaseActionWithOutputsFakeSuccessFailure#hasFakeSuccessOutput} will return nothing.
+     */
+    getOutputById(output: string | ArchBranch): ArchActionOutput;
+    /**
+     * Gets an output by its identifier.  If it cannot be found, this method will throw.
+     * Normally you won't need to use this method and will use the helper methods available on inheriting classes
+     * when accessing pre-defined outputs like success, failure, timeout, etc. etc.  Attempting to
+     * get an output by id on a menu choice's action such as the {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * action on an {@link ArchMenuTransferToAcd} menu will return nothing.
+     * @param output - identifies output you want to obtain by name.  If output is an ArchBranch instance,
+     *                                         the {@link ArchBranch#name} value will be used.
+     *                                         Remember that requesting the 'Success' output on an action with a
+     *                                         [fake success output]{@link ArchBaseActionWithOutputsFakeSuccessFailure#hasFakeSuccessOutput} will return nothing.
+     *                                         For non-dynamic outputs, the name should be specified in English.
+     * @param [wantDynamicOutput = false] - because it is possible for some actions to have both a non-dynamic output
+     *                                        and a dynamic output with the same name, this boolean will let you specify
+     *                                        which output you want.  An example of this would be the built in Failure
+     *                                        output on a call bot action but that bot also has an intent named Failure
+     *                                        so the action has two outputs with the same name of 'Failure'.  Only one
+     *                                        of those would be a dynamic output and that's the output for the Failure
+     *                                        intent, not the built-in Failure action output.
+     */
+    getOutputByName(output: string | ArchBranch, wantDynamicOutput?: boolean): ArchActionOutput;
+    /**
+     * Returns the output at the given index.  It's important to note that on actions that have a fake success
+     * output if you request the output at the index for the fake success, you will get nothing returned because
+     * the fake success output isn't something that you should do anything with.  Attempting to
+     * access an output by index on a menu choice's action such as {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * will return nothing.
+     * @param index - the index of the output to retrieve.  This value should be a non-negative integer.
+     */
+    getOutputByIndex(index: number): ArchActionOutput;
+    /**
+     * Returns the number of outputs on this action.  For actions that have a fake success output like what you
+     * see on the various transfer actions, that will be included in the count to be consistent with the Architect UI.
+     * Attempting to get the output count on a menu choice's action such as such as the {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * action on an {@link ArchMenuTransferToAcd} menu will return 0.
+     */
+    readonly outputCount: number;
+    /**
+     * Returns an array of action outputs for this action.  Remember that it is possible to have an
+     * undefined item in the returned ArchActionOutput array.  This is true when the output is "fake".
+     * Accessing the outputs on a menu choice's action such as {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * will return an empty array.
+     */
+    readonly outputs: ArchActionOutput[];
+    /**
+     * A string suitable for logging that contains information about this action.  This will contain the action
+     * tracking id, name and scripting type name.
+     */
+    readonly logStr: string;
+    /**
+     * The Architect action type label
+     */
+    readonly displayTypeNameArchitect: string;
+    /**
+     * Returns whether or not this action is the action property for a [menu choice]{@link ArchBaseMenuChoice}.
+     * For example, the {@link ArchMenuDisconnect#actionDisconnect} property on an {@link ArchMenuDisconnect}
+     * instance.
+     */
+    readonly isMenuChoiceAction: boolean;
+    /**
+     * Returns whether or not this action is reachable at runtime.
+     */
+    readonly isReachable: boolean;
+    /**
+     * Returns whether or not this action is secure which means either the action by its very nature
+     * is secure or it consumes secure data.
+     */
+    readonly isSecure: boolean;
+    /**
+     * Returns whether or not this action is unreachable at runtime.
+     */
+    readonly isUnreachable: boolean;
+    /**
+     * The name of the action
+     */
+    name: string;
+    /**
+     * Returns the parent flow for this action.
+     */
+    readonly parentFlow: ArchBaseFlow;
+    /**
+     * Returns the parent menu choice if this action is the action for a [menu choice]{@link ArchBaseMenuChoice}.
+     * Otherwise, nothing is returned.
+     */
+    readonly parentMenuChoice: ArchBaseMenuChoice;
+    /**
+     * Returns the parent task that contains this action if this action is in a [task]{@link ArchTask} or [looping task]{@link ArchTaskLoop}.
+     * Otherwise, nothing is returned.
+     */
+    readonly parentTask: ArchTask | ArchTaskLoop;
+    /**
+     * Returns the parent state that contains this action if this action is in a [state]{@link ArchState}.
+     * Otherwise, nothing is returned.
+     */
+    readonly parentState: ArchState;
+    /**
+     * The integer tracking identifier for this action.  This is the numeric identifier is displayed in the Architect user interface.
+     */
+    readonly trackingId: number;
+    /**
+     * The identifier string for this object.
+     */
+    readonly id: string;
+    /**
+     * Returns whether or not the id property may be blank or undefined for this object.  For example, the returned settings from {@link ArchMenu#settingsMenu}
+     * will have a blank identifier along with the settings returned from {@link ArchMenu#settingsSpeechRec}.  Note that this is
+     * an extremely rare case.
+     */
+    readonly idMayBeBlank: string;
+    /**
+     * Returns true indicating that this is an ArchBaseCoreObject instance.
+     */
+    readonly isArchBaseCoreObject: boolean;
+    /**
+     * This method iterates over this object and ArchBaseCoreObject instances
+     * within it.  For each object it will call the {@link ArchBaseObject#isFilterMatch} method
+     * with a filter and call the supplied callback function if isMatch returns true.
+     * The callback will be passed an {@link ArchTraverseInfo} with details
+     * about the match such as the match object itself along with current contextual
+     * information such as the object hierarchy for the match object relative to
+     * the object on which this traverse call is being made.
+     *
+     * The traverse [filter]{@link ArchFilterObject} is one which you can create
+     * by calling {@link ArchFactoryFilters#createFilterObject} and then add desired clauses
+     * or clause containers to it.  If not specified, this function will use a
+     * [default filter]{@link ArchFactoryFilters#createFilterTraverseDefault}.
+     *
+     * Here is an example that does a simple flow traversal using the default
+     * filter and logs information about objects in the callback from the
+     * traverse object that's passed back:
+     *
+     * ```
+     * archInboundCallFlow.traverse(function(traverseInfo) {
+     *    archLogging.logNote('  Object     : ' + traverseInfo.matchObject.logStr);
+     *    archLogging.logNote('    Hierarchy: ' + traverseInfo.context.hierarchyStr);
+     * });
+     * ```
+     * This might be enough for most uses and you can check various aspects
+     * about the object in the callback such as "is this an Architect action?" by
+     * seeing if traverseInfo.matchObject.isArchBaseAction is true.  You can specify
+     * a filter for the traversal code to use as well and only have it call your
+     * callback when the object's {@link ArchBaseCoreObject#isFilterMatch} method returns true for
+     * the filter.  Here's an example that creates a filter for callbacks on
+     * [any type of transfer action]{@link ArchBaseActionTransfer}, any
+     * [decision action]{@link ArchActionDecision} or objects whose name
+     * property case insensitively matches the word 'foo'.  While this could all be done
+     * with one property callback clause the example will use multiple clauses for
+     * the sake of simplicity:
+     * ```
+     * const myTraverseFilter = filterFactory.createFilterObject(archEnums.FILTER_CONTAINER_OPERATORS.or);
+     * myTraverseFilter.addClausePropertyValueEquals('isArchBaseActionTransfer', true);
+     * myTraverseFilter.addClausePropertyValueEquals('isArchActionDecision',     true);
+     * myTraverseFilter.addClausePropertyCallback('name', function(propValue, archContainingObject, propName) {
+     *       // We fully spelled out the function signature above but archContainingObject and propName are
+     *       // not needed in this case.  The archContainingObject is the object that contains the
+     *       // property and propName is the property name itself.  We pass in propName because the same
+     *       // function could be used for multiple property callback clauses.
+     *       // Remember to return a boolean true, false or undefined from ths callback.  :)
+     *       return propValue && propValue.toLowerCase() === 'foo';
+     * });
+     * archTask.traverse(function(traverseContext) {
+     *    // You will only be called back here for ArchBaseCoreObject instances that
+     *    // have the isArchBaseActionTransfer or isArchActionDecision property values equal to true.
+     * }, myTraverseFilter);
+     * ```
+     * If you supply a filter with no clauses, this tells the traverse method to
+     * call the supplied callback function for every {@link ArchBaseCoreObject} it traverses.
+     *
+     * If you want traversal itself to stop after a callback, simply return boolean
+     * false from the callback function you supply to the traverse call.
+     *
+     * The traverse method does not process deprecated property names such as [orgId]{@link ArchSession#orgId},
+     * [orgName]{@link ArchSession#orgName} or [languageSettings]{@link ArchBaseFlow#languageSettings}.  Additionally
+     * it does not traverse in to properties that would "jump out" of the current traversal.  An example of this
+     * would be if the code was traversing an {@link ArchActionJumpToMenu} action that it would not start traversing
+     * in to the menu that it jumps to.  Another example would be a {@link ArchActionChangeState} action where
+     * it would not traverse in to the target state of the action.  This also means traversal does not traverse
+     * in to the {@link ArchBaseValue#flowLevelDefault} property.
+     *
+     * And lastly, as Scripting evolves over time with new versions, you can expect to get callbacks for new object
+     * types such as new actions or new properties on objects.  As such, it's important not to assume any particular
+     * order in callbacks to keep code most compatible with traversal callbacks.  Or if you use inequality checks in filter
+     * clauses remember that new "stuff" may satisfy an inequality check which may or may not be anticipated in your logic.
+     *
+     * Note:  This traverse method is a helper method and is very handy for iterating over Architect Scripting
+     * objects and their properties in a generic fashion with filtering capabilities.  Obviously you can write
+     * your own custom traversal code if this implementation doesn't cut it for some reason. :)
+     *
+     * This function returns the number of times it called the callback function.
+     * @param callbackFunction - the callback function to call for objects that match the traverse filter.
+     * @param [traverseFilter = {@link ArchFactoryFilters#createFilterTraverseDefault}] - the filter to use when performing the traversal to determine which
+     *                                              {@link ArchBaseCoreObject} instances you wish to be called back for.  If no
+     *                                              filter is specified, this function will call {@link ArchFactoryFilters#createFilterTraverseDefault} and
+     *                                              use that traversal default filter.  The wantArchBaseValues parameter on that call is set to true.
+     */
+    traverse(callbackFunction: callbackTraverseInfo, traverseFilter?: ArchFilterObject): number;
+    /**
+     * This is a string suitable for logging information about this object where it's just the object's type.  This is normally used
+     * when logging errors that occur in constructor parameter checking because the scripting object isn't set up and the normal
+     * logging str contents wouldn't be set up.
+     */
+    readonly logStrTypeOnly: string;
+    /**
+     * Logs an error to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logErrors} is true.
+     * @param errorStr - the error string to log.
+     */
+    logError(errorStr: string): void;
+    /**
+     * Logs an error to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logErrors} is true and then throws
+     * the string in the errorStr parameter.
+     * @param errorStr - the error string to log.  This should be a non-blank string.
+     */
+    logErrorAndThrow(errorStr: string): void;
+    /**
+     * Logs a note to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logNotes} is true.
+     * @param noteStr - the note string to log.  This should be a non-blank string.
+     */
+    logNote(noteStr: string): void;
+    /**
+     * Logs a note to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logNotesVerbose} is true.
+     * @param noteStr - the note string to log.  This should be a non-blank string.
+     */
+    logNoteVerbose(noteStr: string): void;
+    /**
+     * Logs a warning to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logWarnings} is true.
+     * @param warningStr - the warning string to log.  This should be a non-blank string.
+     */
+    logWarning(warningStr: string): void;
+    /**
+     * Returns whether or not this Architect Scripting object is a match
+     * for the supplied ArchFilterObject instance.
+     * @param archFilterObject - the object filter to use to determine if it's a match.
+     */
+    isFilterMatch(archFilterObject: ArchFilterObject): boolean;
 }
 
 /**
@@ -4064,10 +4319,12 @@ export class ArchActionCallDataSecure extends ArchBaseActionDataAction {
 }
 
 /**
- * The Architect Scripting class that represents the Call Dialog Engine Bot action.
- * Instances of this action should be created by calling {@link ArchFactoryActions#addActionCallDialogEngineBot}
- * @param coreDialogEngineActionViewModel - ( *Internal* ) an Architect core Call Dialog Engine action view model.
+ * This callback function type is invoked by Architect Scripting where the callback function is passed an Architect
+ * Call Dialog Engine Bot action instance such as {@link ArchActionCallDialogEngineBot#setDialogEngineBotByIdAsync}
+ * @param ArchActionCallDialogEngineBot - the Architect Call Dialog Engine Bot action instance.
  */
+declare type callbackArchActionCallDialogEngineBot = (ArchActionCallDialogEngineBot: ArchActionCallDialogEngineBot) => any;
+
 export class ArchActionCallDialogEngineBot extends ArchBaseActionBot {
     // constructor(coreDialogEngineActionViewModel: any);
     /**
@@ -4078,10 +4335,6 @@ export class ArchActionCallDialogEngineBot extends ArchBaseActionBot {
      * Returns the display type name string 'ArchActionCallDialogEngineBot'.
      */
     readonly displayTypeName: string;
-    /**
-     * Returns true indicating that this is an ArchActionCallDialogEngineBot instance.
-     */
-    readonly isArchActionCallDialogEngineBot: boolean;
     /**
      * The collection of intents and their parameters into which variables can be assigned. To access an intent, you can use
      * the getNamedValueByName function on this property and pass in the name of the intent you want to access.
@@ -4094,21 +4347,332 @@ export class ArchActionCallDialogEngineBot extends ArchBaseActionBot {
      */
     readonly dialogEngineOutputsFailure: ArchNamedValueList;
     /**
+     * The Knowledge output for this action. This output will be available if the currently
+     * selected Dialog Engine bot has Knowledge enabled on it.
+     */
+    readonly outputKnowledge: ArchActionOutput;
+    /**
+     * The No Intent output for this action.
+     */
+    readonly outputNoIntent: ArchActionOutput;
+    /**
      * This sets the Dialog Engine bot to call at runtime by its identifier.
      * @param dialogEngineBotId - the identifier of the Dialog Engine bot
      * @param [callbackFunction] - a callback function to call if the Dialog Engine bot is successfully
-     *                                        looked up and configured on this action. The first parameter passed to the
-     *                                        callback function will be this Architect Call Dialog Engine Bot action instance.
+     *                                                                  looked up and configured on this action. The first parameter passed to the
+     *                                                                  callback function will be this Architect Call Dialog Engine Bot action instance.
      */
-    setDialogEngineBotByIdAsync(dialogEngineBotId: string, callbackFunction?: (...params: any[]) => any): Promise<ArchActionCallDialogEngineBot>;
+    setDialogEngineBotByIdAsync(dialogEngineBotId: string, callbackFunction?: callbackArchActionCallDialogEngineBot): Promise<ArchActionCallDialogEngineBot>;
     /**
      * This sets the Dialog Engine bot to call at runtime by its name.
      * @param botName - the name of the Dialog Engine bot to set.
      * @param [callbackFunction] - a callback function to call if the Dialog Engine bot is successfully
-     *                                        looked up and configured on this action. The first parameter passed to the
-     *                                        callback function will be this Architect Call Dialog Engine Bot action instance.
+     *                                                                  looked up and configured on this action. The first parameter passed to the
+     *                                                                  callback function will be this Architect Call Dialog Engine Bot action instance.
      */
-    setDialogEngineBotByNameAsync(botName: string, callbackFunction?: (...params: any[]) => any): Promise<ArchActionCallDialogEngineBot>;
+    setDialogEngineBotByNameAsync(botName: string, callbackFunction?: callbackArchActionCallDialogEngineBot): Promise<ArchActionCallDialogEngineBot>;
+    /**
+     * The termination state for the Dialog Engine bot runtime invocation.  Possible runtime output
+     * string values are 'AgentEscalation', 'Error', 'Expired', 'Failure' or 'GoalReached'.
+     */
+    readonly terminationState: ArchValueString;
+    /**
+     * This adds a session parameter name value pair to the Call Dialogflow CX Bot action that is used to specify
+     * the session parameter'\'s name and corresponding value that should be assigned to it.
+     * This function functions the same as {@link ArchBaseActionBot#addSessionVariableNameValuePair} and exists because Session Variables are called Session Parameters in
+     * Dialogflow CX.
+     * On the returned {@link ArchBaseNameValuePair}:
+     * * the [name]{@link ArchBaseNameValuePair#name} property specifies the name of the session parameter whose value you want to set
+     * * the [value]{@link ArchBaseNameValuePair#value} property is the value to set on the session parameter at runtime.
+     * @param [nameLiteral] - a string that specifies the name of the session parameter to set.
+     * @param [valueExpression] - a string expression that specifies the value to set on the session parameter.
+     */
+    addSessionParameterNameValuePair(nameLiteral?: string, valueExpression?: string): ArchBaseNameValuePair;
+    /**
+     * Returns a unique array of names of intents that are configured for the selected bot. This array contains intent
+     * names for the bot that will be executed at flow runtime. As such, for some bots like Lex bots, this requires selecting
+     * the Lex bot alias since intents are defined on the alias prior to this array being populated.
+     */
+    readonly intentNames: string[];
+    /**
+     * This gets an action output for this action that matches an intent name. It will not return the built-in Failure output.
+     * @param intentName - the name of the intent whose matching output to find
+     */
+    getOutputByIntentName(intentName: string): ArchActionOutput;
+    /**
+     * Specifies the amount of time to wait for a user's response to a bot prompt.
+     * A negative or NOT_SET duration will be treated as immediate.
+     */
+    readonly followupResponseTimeout: ArchValueDuration;
+    /**
+     * The input text for the bot.  This is usually only set in flows when chaining
+     * bot actions together.
+     */
+    readonly inputText: ArchValueString;
+    /**
+     * This adds a session variable name value pair to the Base Bot action that can be used to specify
+     * the session variable's name and corresponding value that should be assigned to it.  On the returned
+     * {@link ArchBaseNameValuePair} pair:
+     * * the [name]{@link ArchBaseNameValuePair#name} property specifies the name of the session variable whose value you want to set
+     * * the [value]{@link ArchBaseNameValuePair#value} property is the value to set on the session variable at runtime.
+     * @param [nameLiteral] - a string that specifies the name of the session variable to set.
+     * @param [valueExpression] - a string expression that specifies the value to set on the session variable.
+     */
+    addSessionVariableNameValuePair(nameLiteral?: string, valueExpression?: string): ArchBaseNameValuePair;
+    /**
+     * Returns the input Session Variables configured on the action.
+     */
+    readonly sessionVariables: ArchBaseNameValuePairs;
+    /**
+     * The failure output for this action
+     */
+    readonly outputFailure: ArchActionOutput;
+    /**
+     * Gets an output by its identifier.  If it cannot be found, this method will throw.
+     * Normally you won't need to use this method and will use the helper methods available on inheriting classes
+     * when accessing pre-defined outputs like success, failure, timeout, etc. etc.  Attempting to
+     * get an output by id on a menu choice's action such as the {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * action on an {@link ArchMenuTransferToAcd} menu will return nothing.
+     * @param output - identifies output you want to obtain.  If output is an ArchBranch instance,
+     *                                         the {@link ArchBranch#outputId} value will be used.  Otherwise valid string
+     *                                         identifier values can be found in {@link ArchEnums#OUTPUT_IDS} or can be a guid.
+     *                                         Remember that requesting the 'success' output on an action with a
+     *                                         [fake success output]{@link ArchBaseActionWithOutputsFakeSuccessFailure#hasFakeSuccessOutput} will return nothing.
+     */
+    getOutputById(output: string | ArchBranch): ArchActionOutput;
+    /**
+     * Gets an output by its identifier.  If it cannot be found, this method will throw.
+     * Normally you won't need to use this method and will use the helper methods available on inheriting classes
+     * when accessing pre-defined outputs like success, failure, timeout, etc. etc.  Attempting to
+     * get an output by id on a menu choice's action such as the {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * action on an {@link ArchMenuTransferToAcd} menu will return nothing.
+     * @param output - identifies output you want to obtain by name.  If output is an ArchBranch instance,
+     *                                         the {@link ArchBranch#name} value will be used.
+     *                                         Remember that requesting the 'Success' output on an action with a
+     *                                         [fake success output]{@link ArchBaseActionWithOutputsFakeSuccessFailure#hasFakeSuccessOutput} will return nothing.
+     *                                         For non-dynamic outputs, the name should be specified in English.
+     * @param [wantDynamicOutput = false] - because it is possible for some actions to have both a non-dynamic output
+     *                                        and a dynamic output with the same name, this boolean will let you specify
+     *                                        which output you want.  An example of this would be the built in Failure
+     *                                        output on a call bot action but that bot also has an intent named Failure
+     *                                        so the action has two outputs with the same name of 'Failure'.  Only one
+     *                                        of those would be a dynamic output and that's the output for the Failure
+     *                                        intent, not the built-in Failure action output.
+     */
+    getOutputByName(output: string | ArchBranch, wantDynamicOutput?: boolean): ArchActionOutput;
+    /**
+     * Returns the output at the given index.  It's important to note that on actions that have a fake success
+     * output if you request the output at the index for the fake success, you will get nothing returned because
+     * the fake success output isn't something that you should do anything with.  Attempting to
+     * access an output by index on a menu choice's action such as {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * will return nothing.
+     * @param index - the index of the output to retrieve.  This value should be a non-negative integer.
+     */
+    getOutputByIndex(index: number): ArchActionOutput;
+    /**
+     * Returns the number of outputs on this action.  For actions that have a fake success output like what you
+     * see on the various transfer actions, that will be included in the count to be consistent with the Architect UI.
+     * Attempting to get the output count on a menu choice's action such as such as the {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * action on an {@link ArchMenuTransferToAcd} menu will return 0.
+     */
+    readonly outputCount: number;
+    /**
+     * Returns an array of action outputs for this action.  Remember that it is possible to have an
+     * undefined item in the returned ArchActionOutput array.  This is true when the output is "fake".
+     * Accessing the outputs on a menu choice's action such as {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * will return an empty array.
+     */
+    readonly outputs: ArchActionOutput[];
+    /**
+     * A string suitable for logging that contains information about this action.  This will contain the action
+     * tracking id, name and scripting type name.
+     */
+    readonly logStr: string;
+    /**
+     * The Architect action type label
+     */
+    readonly displayTypeNameArchitect: string;
+    /**
+     * Returns whether or not this action is the action property for a [menu choice]{@link ArchBaseMenuChoice}.
+     * For example, the {@link ArchMenuDisconnect#actionDisconnect} property on an {@link ArchMenuDisconnect}
+     * instance.
+     */
+    readonly isMenuChoiceAction: boolean;
+    /**
+     * Returns whether or not this action is reachable at runtime.
+     */
+    readonly isReachable: boolean;
+    /**
+     * Returns whether or not this action is secure which means either the action by its very nature
+     * is secure or it consumes secure data.
+     */
+    readonly isSecure: boolean;
+    /**
+     * Returns whether or not this action is unreachable at runtime.
+     */
+    readonly isUnreachable: boolean;
+    /**
+     * The name of the action
+     */
+    name: string;
+    /**
+     * Returns the parent flow for this action.
+     */
+    readonly parentFlow: ArchBaseFlow;
+    /**
+     * Returns the parent menu choice if this action is the action for a [menu choice]{@link ArchBaseMenuChoice}.
+     * Otherwise, nothing is returned.
+     */
+    readonly parentMenuChoice: ArchBaseMenuChoice;
+    /**
+     * Returns the parent task that contains this action if this action is in a [task]{@link ArchTask} or [looping task]{@link ArchTaskLoop}.
+     * Otherwise, nothing is returned.
+     */
+    readonly parentTask: ArchTask | ArchTaskLoop;
+    /**
+     * Returns the parent state that contains this action if this action is in a [state]{@link ArchState}.
+     * Otherwise, nothing is returned.
+     */
+    readonly parentState: ArchState;
+    /**
+     * The integer tracking identifier for this action.  This is the numeric identifier is displayed in the Architect user interface.
+     */
+    readonly trackingId: number;
+    /**
+     * The identifier string for this object.
+     */
+    readonly id: string;
+    /**
+     * Returns whether or not the id property may be blank or undefined for this object.  For example, the returned settings from {@link ArchMenu#settingsMenu}
+     * will have a blank identifier along with the settings returned from {@link ArchMenu#settingsSpeechRec}.  Note that this is
+     * an extremely rare case.
+     */
+    readonly idMayBeBlank: string;
+    /**
+     * Returns true indicating that this is an ArchBaseCoreObject instance.
+     */
+    readonly isArchBaseCoreObject: boolean;
+    /**
+     * This method iterates over this object and ArchBaseCoreObject instances
+     * within it.  For each object it will call the {@link ArchBaseObject#isFilterMatch} method
+     * with a filter and call the supplied callback function if isMatch returns true.
+     * The callback will be passed an {@link ArchTraverseInfo} with details
+     * about the match such as the match object itself along with current contextual
+     * information such as the object hierarchy for the match object relative to
+     * the object on which this traverse call is being made.
+     *
+     * The traverse [filter]{@link ArchFilterObject} is one which you can create
+     * by calling {@link ArchFactoryFilters#createFilterObject} and then add desired clauses
+     * or clause containers to it.  If not specified, this function will use a
+     * [default filter]{@link ArchFactoryFilters#createFilterTraverseDefault}.
+     *
+     * Here is an example that does a simple flow traversal using the default
+     * filter and logs information about objects in the callback from the
+     * traverse object that's passed back:
+     *
+     * ```
+     * archInboundCallFlow.traverse(function(traverseInfo) {
+     *    archLogging.logNote('  Object     : ' + traverseInfo.matchObject.logStr);
+     *    archLogging.logNote('    Hierarchy: ' + traverseInfo.context.hierarchyStr);
+     * });
+     * ```
+     * This might be enough for most uses and you can check various aspects
+     * about the object in the callback such as "is this an Architect action?" by
+     * seeing if traverseInfo.matchObject.isArchBaseAction is true.  You can specify
+     * a filter for the traversal code to use as well and only have it call your
+     * callback when the object's {@link ArchBaseCoreObject#isFilterMatch} method returns true for
+     * the filter.  Here's an example that creates a filter for callbacks on
+     * [any type of transfer action]{@link ArchBaseActionTransfer}, any
+     * [decision action]{@link ArchActionDecision} or objects whose name
+     * property case insensitively matches the word 'foo'.  While this could all be done
+     * with one property callback clause the example will use multiple clauses for
+     * the sake of simplicity:
+     * ```
+     * const myTraverseFilter = filterFactory.createFilterObject(archEnums.FILTER_CONTAINER_OPERATORS.or);
+     * myTraverseFilter.addClausePropertyValueEquals('isArchBaseActionTransfer', true);
+     * myTraverseFilter.addClausePropertyValueEquals('isArchActionDecision',     true);
+     * myTraverseFilter.addClausePropertyCallback('name', function(propValue, archContainingObject, propName) {
+     *       // We fully spelled out the function signature above but archContainingObject and propName are
+     *       // not needed in this case.  The archContainingObject is the object that contains the
+     *       // property and propName is the property name itself.  We pass in propName because the same
+     *       // function could be used for multiple property callback clauses.
+     *       // Remember to return a boolean true, false or undefined from ths callback.  :)
+     *       return propValue && propValue.toLowerCase() === 'foo';
+     * });
+     * archTask.traverse(function(traverseContext) {
+     *    // You will only be called back here for ArchBaseCoreObject instances that
+     *    // have the isArchBaseActionTransfer or isArchActionDecision property values equal to true.
+     * }, myTraverseFilter);
+     * ```
+     * If you supply a filter with no clauses, this tells the traverse method to
+     * call the supplied callback function for every {@link ArchBaseCoreObject} it traverses.
+     *
+     * If you want traversal itself to stop after a callback, simply return boolean
+     * false from the callback function you supply to the traverse call.
+     *
+     * The traverse method does not process deprecated property names such as [orgId]{@link ArchSession#orgId},
+     * [orgName]{@link ArchSession#orgName} or [languageSettings]{@link ArchBaseFlow#languageSettings}.  Additionally
+     * it does not traverse in to properties that would "jump out" of the current traversal.  An example of this
+     * would be if the code was traversing an {@link ArchActionJumpToMenu} action that it would not start traversing
+     * in to the menu that it jumps to.  Another example would be a {@link ArchActionChangeState} action where
+     * it would not traverse in to the target state of the action.  This also means traversal does not traverse
+     * in to the {@link ArchBaseValue#flowLevelDefault} property.
+     *
+     * And lastly, as Scripting evolves over time with new versions, you can expect to get callbacks for new object
+     * types such as new actions or new properties on objects.  As such, it's important not to assume any particular
+     * order in callbacks to keep code most compatible with traversal callbacks.  Or if you use inequality checks in filter
+     * clauses remember that new "stuff" may satisfy an inequality check which may or may not be anticipated in your logic.
+     *
+     * Note:  This traverse method is a helper method and is very handy for iterating over Architect Scripting
+     * objects and their properties in a generic fashion with filtering capabilities.  Obviously you can write
+     * your own custom traversal code if this implementation doesn't cut it for some reason. :)
+     *
+     * This function returns the number of times it called the callback function.
+     * @param callbackFunction - the callback function to call for objects that match the traverse filter.
+     * @param [traverseFilter = {@link ArchFactoryFilters#createFilterTraverseDefault}] - the filter to use when performing the traversal to determine which
+     *                                              {@link ArchBaseCoreObject} instances you wish to be called back for.  If no
+     *                                              filter is specified, this function will call {@link ArchFactoryFilters#createFilterTraverseDefault} and
+     *                                              use that traversal default filter.  The wantArchBaseValues parameter on that call is set to true.
+     */
+    traverse(callbackFunction: callbackTraverseInfo, traverseFilter?: ArchFilterObject): number;
+    /**
+     * This is a string suitable for logging information about this object where it's just the object's type.  This is normally used
+     * when logging errors that occur in constructor parameter checking because the scripting object isn't set up and the normal
+     * logging str contents wouldn't be set up.
+     */
+    readonly logStrTypeOnly: string;
+    /**
+     * Logs an error to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logErrors} is true.
+     * @param errorStr - the error string to log.
+     */
+    logError(errorStr: string): void;
+    /**
+     * Logs an error to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logErrors} is true and then throws
+     * the string in the errorStr parameter.
+     * @param errorStr - the error string to log.  This should be a non-blank string.
+     */
+    logErrorAndThrow(errorStr: string): void;
+    /**
+     * Logs a note to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logNotes} is true.
+     * @param noteStr - the note string to log.  This should be a non-blank string.
+     */
+    logNote(noteStr: string): void;
+    /**
+     * Logs a note to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logNotesVerbose} is true.
+     * @param noteStr - the note string to log.  This should be a non-blank string.
+     */
+    logNoteVerbose(noteStr: string): void;
+    /**
+     * Logs a warning to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logWarnings} is true.
+     * @param warningStr - the warning string to log.  This should be a non-blank string.
+     */
+    logWarning(warningStr: string): void;
+    /**
+     * Returns whether or not this Architect Scripting object is a match
+     * for the supplied ArchFilterObject instance.
+     * @param archFilterObject - the object filter to use to determine if it's a match.
+     */
+    isFilterMatch(archFilterObject: ArchFilterObject): boolean;
 }
 
 export class ArchActionCallDialogflowBot extends ArchBaseActionDialogflow {
@@ -4204,7 +4768,7 @@ export class ArchActionCallDialogflowBot extends ArchBaseActionDialogflow {
      *                                        looked up and configured on this action. The first parameter passed to the
      *                                        callback function will be this Architect Call Dialogflow Bot action instance.
      */
-    setDialogflowAgentByIdAsync(dialogflowAgentId: string, callbackFunction?: (...params: any[]) => any): Promise<ArchBaseActionDialogflow>;
+    setDialogflowAgentByIdAsync(dialogflowAgentId: string, callbackFunction?: callbackArchBaseActionDialogflow): Promise<ArchBaseActionDialogflow>;
     /**
      * This sets the Dialogflow agent to call at runtime by its name. The Draft environment will be selected when calling this function.
      * @param agentName - the name of the Dialogflow agent to set.
@@ -4213,7 +4777,7 @@ export class ArchActionCallDialogflowBot extends ArchBaseActionDialogflow {
      *                                        looked up and configured on this action. The first parameter passed to the
      *                                        callback function will be this Architect Call Dialogflow Bot action instance.
      */
-    setDialogflowAgentByNameAsync(agentName: string, projectId?: string, callbackFunction?: (...params: any[]) => any): Promise<ArchBaseActionDialogflow>;
+    setDialogflowAgentByNameAsync(agentName: string, projectId?: string, callbackFunction?: callbackArchBaseActionDialogflow): Promise<ArchBaseActionDialogflow>;
     /**
      * This sets the Dialogflow agent to call at runtime by its identifier and sets the environment to use by its name.
      * @param dialogflowAgentId - the identifier of the Dialogflow agent
@@ -4222,7 +4786,7 @@ export class ArchActionCallDialogflowBot extends ArchBaseActionDialogflow {
      *                                        looked up and configured on this action. The first parameter passed to the
      *                                        callback function will be this Architect Call Dialogflow Bot action instance.
      */
-    setDialogflowAgentByIdWithEnvironmentAsync(dialogflowAgentId: string, environmentName: string, callbackFunction?: (...params: any[]) => any): Promise<ArchBaseActionDialogflow>;
+    setDialogflowAgentByIdWithEnvironmentAsync(dialogflowAgentId: string, environmentName: string, callbackFunction?: callbackArchBaseActionDialogflow): Promise<ArchBaseActionDialogflow>;
     /**
      * This sets the Dialogflow agent to call at runtime by its name and sets the environment to use by its name.
      * @param agentName - the name of the Dialogflow agent to set.
@@ -4232,7 +4796,7 @@ export class ArchActionCallDialogflowBot extends ArchBaseActionDialogflow {
      *                                        looked up and configured on this action. The first parameter passed to the
      *                                        callback function will be this Architect Call Dialogflow Bot action instance.
      */
-    setDialogflowAgentByNameWithEnvironmentAsync(agentName: string, environmentName: string, projectId?: string, callbackFunction?: (...params: any[]) => any): Promise<ArchBaseActionDialogflow>;
+    setDialogflowAgentByNameWithEnvironmentAsync(agentName: string, environmentName: string, projectId?: string, callbackFunction?: callbackArchBaseActionDialogflow): Promise<ArchBaseActionDialogflow>;
     /**
      * This adds a session parameter name value pair to the Call Dialogflow CX Bot action that is used to specify
      * the session parameter'\'s name and corresponding value that should be assigned to it.
@@ -4602,6 +5166,13 @@ export class ArchActionCallDigitalBotFlow extends ArchBaseActionCallBotFlow {
 }
 
 /**
+ * This callback function type is invoked by Architect Scripting where the callback function is passed an Architect Call
+ * Lex Bot action instance such as {@link ArchActionCallLexBot#setLexBotAliasByIdAsync}
+ * @param ArchActionCallLexBot - the Architect Call Lex Bot action instance.
+ */
+declare type callbackArchActionCallLexBot = (ArchActionCallLexBot: ArchActionCallLexBot) => any;
+
+/**
  * The Architect Scripting class that represents the Call Lex Bot action.
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionCallLexBot}
  * @param coreLexActionViewModel - ( *Internal* ) an Architect core Call Lex Bot action view model.
@@ -4624,7 +5195,7 @@ export class ArchActionCallLexBot extends ArchBaseActionLex {
      *                                                            The first parameter passed to the callback function will be this
      *                                                            Architect Call Lex Bot action instance.
      */
-    setLexBotAliasByIdAsync(lexBotAliasId: string, callbackFunction?: (...params: any[]) => any): Promise<ArchActionCallLexBot>;
+    setLexBotAliasByIdAsync(lexBotAliasId: string, callbackFunction?: callbackArchActionCallLexBot): Promise<ArchActionCallLexBot>;
     /**
      * This sets the Lex Bot Alias to call at runtime by its name.
      * @param aliasName - the name of the Lex Alias to set. The name is not case sensitive on the lookup.
@@ -4635,16 +5206,23 @@ export class ArchActionCallLexBot extends ArchBaseActionLex {
      *                                            treated as a bot name so a name lookup is performed to find the Lex Bot.  False
      *                                            indicates that botNameOrId should be treated as an identifier so the Lex Bot
      *                                            is looked up by the identifier value specified in the botNameOrId parameter.
-     * @param [callbackFunction] - a callback function to call if the Lex Bot and Lex Alias is successfully
+     * @param [callbackFunction] - a callback function to call if the Lex Bot and Lex Alias are successfully
      *                                        looked up and configured on this action. The first parameter passed to the
      *                                        callback function will be this Architect Call Lex Bot action instance.
      */
-    setLexBotAliasByNameAsync(aliasName: string, botNameOrId: string, searchByBotName?: boolean, callbackFunction?: (...params: any[]) => any): Promise<ArchActionCallLexBot>;
+    setLexBotAliasByNameAsync(aliasName: string, botNameOrId: string, searchByBotName?: boolean, callbackFunction?: callbackArchActionCallLexBot): Promise<ArchActionCallLexBot>;
     /**
      * The audio that plays before invoking the bot
      */
     readonly startAudio: ArchAudio;
 }
+
+/**
+ * This callback function type is invoked by Architect Scripting where the callback function is passed an Architect Call
+ * LexV2 Bot action instance such as {@link ArchActionCallLexV2Bot#setLexBotAliasByIdAsync}
+ * @param ArchActionCallLexV2Bot - the Architect Call Lex Bot action instance.
+ */
+declare type callbackArchActionCallLexV2Bot = (ArchActionCallLexV2Bot: ArchActionCallLexV2Bot) => any;
 
 /**
  * The Architect Scripting class that represents the Call Lex V2 Bot action.
@@ -4693,7 +5271,7 @@ export class ArchActionCallLexV2Bot extends ArchBaseActionLex {
      *                                                            The first parameter passed to the callback function will be this
      *                                                            Architect Call Lex Bot action instance.
      */
-    setLexBotAliasByIdAsync(lexBotAliasId: string, botName: string, botRegion: string, callbackFunction?: (...params: any[]) => any): Promise<ArchActionCallLexV2Bot>;
+    setLexBotAliasByIdAsync(lexBotAliasId: string, botName: string, botRegion: string, callbackFunction?: callbackArchActionCallLexV2Bot): Promise<ArchActionCallLexV2Bot>;
     /**
      * This sets the Lex V2 bot alias to call at runtime by its name. Note that a region and locale for the alias must be
      * supplied, as multiple bots and aliases with the same name could exist across different regions and with different locales.
@@ -4708,11 +5286,11 @@ export class ArchActionCallLexV2Bot extends ArchBaseActionLex {
      *                                            treated as a bot name so a name lookup is performed to find the Lex Bot.  False
      *                                            indicates that botNameOrId should be treated as an identifier so the Lex Bot
      *                                            is looked up by the identifier value specified in the botNameOrId parameter.
-     * @param [callbackFunction] - a callback function to call if the Lex Bot and Lex Alias is successfully
+     * @param [callbackFunction] - a callback function to call if the Lex Bot and Lex Alias are successfully
      *                                        looked up and configured on this action. The first parameter passed to the
      *                                        callback function will be this Architect Call Lex Bot action instance.
      */
-    setLexBotAliasByNameAsync(aliasName: string, botNameOrId: string, botRegion: string, aliasLanguageTag: string, searchByBotName?: boolean, callbackFunction?: (...params: any[]) => any): Promise<ArchActionCallLexV2Bot>;
+    setLexBotAliasByNameAsync(aliasName: string, botNameOrId: string, botRegion: string, aliasLanguageTag: string, searchByBotName?: boolean, callbackFunction?: callbackArchActionCallLexV2Bot): Promise<ArchActionCallLexV2Bot>;
 }
 
 /**
@@ -4720,13 +5298,8 @@ export class ArchActionCallLexV2Bot extends ArchBaseActionLex {
  * NuanceMixBot action instance such as {@link ArchActionCallNuanceMixBot#setBotByIdAsync}
  * @param ArchActionCallNuanceMixBot - the Architect Call NuanceMixBot action instance.
  */
-declare type callbackArchActionCallNuanceMixBot = (ArchActionCallNuanceMixBot: ArchActionCallNuanceMixBot) => void;
+declare type callbackArchActionCallNuanceMixBot = (ArchActionCallNuanceMixBot: ArchActionCallNuanceMixBot) => any;
 
-/**
- * The Architect Scripting class that represents the Call NuanceMixBot action.
- * Instances of this action should be created by calling {@link ArchFactoryActions#addActionCallNuanceMixBot}
- * @param coreNuanceMixBotActionViewModel - ( *Internal* ) an Architect core Call NuanceMixBot action view model.
- */
 export class ArchActionCallNuanceMixBot extends ArchBaseActionBot {
     // constructor(coreNuanceMixBotActionViewModel: any);
     /**
@@ -4772,7 +5345,7 @@ export class ArchActionCallNuanceMixBot extends ArchBaseActionBot {
      *                                                            The first parameter passed to the callback function will be this
      *                                                            Architect Call NuanceMixBot action instance.
      */
-    setBotByIdAsync(nuanceMixIntegrationId: string, nuanceMixBotId: string, callbackFunction?: (...params: any[]) => any): Promise<ArchActionCallNuanceMixBot>;
+    setBotByIdAsync(nuanceMixIntegrationId: string, nuanceMixBotId: string, callbackFunction?: callbackArchActionCallNuanceMixBot): Promise<ArchActionCallNuanceMixBot>;
     /**
      * This sets the NuanceMixBot to call at runtime using the NuanceMixBot integration name, and bot name.
      * @param nuanceMixIntegrationName - the name of the NuanceMixBot integration.
@@ -4783,7 +5356,304 @@ export class ArchActionCallNuanceMixBot extends ArchBaseActionBot {
      *                                                            Architect Call NuanceMixBot action instance.
      * @param [applicationName] - the application name of the Nuance Mix Bot. If supplied, the application name is compared case sensitively.
      */
-    setBotByNameAsync(nuanceMixIntegrationName: string, nuanceMixBotName: string, callbackFunction?: (...params: any[]) => any, applicationName?: string): Promise<ArchActionCallNuanceMixBot>;
+    setBotByNameAsync(nuanceMixIntegrationName: string, nuanceMixBotName: string, callbackFunction?: callbackArchActionCallNuanceMixBot, applicationName?: string): Promise<ArchActionCallNuanceMixBot>;
+    /**
+     * This adds a session parameter name value pair to the Call Dialogflow CX Bot action that is used to specify
+     * the session parameter'\'s name and corresponding value that should be assigned to it.
+     * This function functions the same as {@link ArchBaseActionBot#addSessionVariableNameValuePair} and exists because Session Variables are called Session Parameters in
+     * Dialogflow CX.
+     * On the returned {@link ArchBaseNameValuePair}:
+     * * the [name]{@link ArchBaseNameValuePair#name} property specifies the name of the session parameter whose value you want to set
+     * * the [value]{@link ArchBaseNameValuePair#value} property is the value to set on the session parameter at runtime.
+     * @param [nameLiteral] - a string that specifies the name of the session parameter to set.
+     * @param [valueExpression] - a string expression that specifies the value to set on the session parameter.
+     */
+    addSessionParameterNameValuePair(nameLiteral?: string, valueExpression?: string): ArchBaseNameValuePair;
+    /**
+     * Returns a unique array of names of intents that are configured for the selected bot. This array contains intent
+     * names for the bot that will be executed at flow runtime. As such, for some bots like Lex bots, this requires selecting
+     * the Lex bot alias since intents are defined on the alias prior to this array being populated.
+     */
+    readonly intentNames: string[];
+    /**
+     * This gets an action output for this action that matches an intent name. It will not return the built-in Failure output.
+     * @param intentName - the name of the intent whose matching output to find
+     */
+    getOutputByIntentName(intentName: string): ArchActionOutput;
+    /**
+     * Specifies the amount of time to wait for a user's response to a bot prompt.
+     * A negative or NOT_SET duration will be treated as immediate.
+     */
+    readonly followupResponseTimeout: ArchValueDuration;
+    /**
+     * The input text for the bot.  This is usually only set in flows when chaining
+     * bot actions together.
+     */
+    readonly inputText: ArchValueString;
+    /**
+     * This adds a session variable name value pair to the Base Bot action that can be used to specify
+     * the session variable's name and corresponding value that should be assigned to it.  On the returned
+     * {@link ArchBaseNameValuePair} pair:
+     * * the [name]{@link ArchBaseNameValuePair#name} property specifies the name of the session variable whose value you want to set
+     * * the [value]{@link ArchBaseNameValuePair#value} property is the value to set on the session variable at runtime.
+     * @param [nameLiteral] - a string that specifies the name of the session variable to set.
+     * @param [valueExpression] - a string expression that specifies the value to set on the session variable.
+     */
+    addSessionVariableNameValuePair(nameLiteral?: string, valueExpression?: string): ArchBaseNameValuePair;
+    /**
+     * Returns the input Session Variables configured on the action.
+     */
+    readonly sessionVariables: ArchBaseNameValuePairs;
+    /**
+     * The failure output for this action
+     */
+    readonly outputFailure: ArchActionOutput;
+    /**
+     * Gets an output by its identifier.  If it cannot be found, this method will throw.
+     * Normally you won't need to use this method and will use the helper methods available on inheriting classes
+     * when accessing pre-defined outputs like success, failure, timeout, etc. etc.  Attempting to
+     * get an output by id on a menu choice's action such as the {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * action on an {@link ArchMenuTransferToAcd} menu will return nothing.
+     * @param output - identifies output you want to obtain.  If output is an ArchBranch instance,
+     *                                         the {@link ArchBranch#outputId} value will be used.  Otherwise valid string
+     *                                         identifier values can be found in {@link ArchEnums#OUTPUT_IDS} or can be a guid.
+     *                                         Remember that requesting the 'success' output on an action with a
+     *                                         [fake success output]{@link ArchBaseActionWithOutputsFakeSuccessFailure#hasFakeSuccessOutput} will return nothing.
+     */
+    getOutputById(output: string | ArchBranch): ArchActionOutput;
+    /**
+     * Gets an output by its identifier.  If it cannot be found, this method will throw.
+     * Normally you won't need to use this method and will use the helper methods available on inheriting classes
+     * when accessing pre-defined outputs like success, failure, timeout, etc. etc.  Attempting to
+     * get an output by id on a menu choice's action such as the {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * action on an {@link ArchMenuTransferToAcd} menu will return nothing.
+     * @param output - identifies output you want to obtain by name.  If output is an ArchBranch instance,
+     *                                         the {@link ArchBranch#name} value will be used.
+     *                                         Remember that requesting the 'Success' output on an action with a
+     *                                         [fake success output]{@link ArchBaseActionWithOutputsFakeSuccessFailure#hasFakeSuccessOutput} will return nothing.
+     *                                         For non-dynamic outputs, the name should be specified in English.
+     * @param [wantDynamicOutput = false] - because it is possible for some actions to have both a non-dynamic output
+     *                                        and a dynamic output with the same name, this boolean will let you specify
+     *                                        which output you want.  An example of this would be the built in Failure
+     *                                        output on a call bot action but that bot also has an intent named Failure
+     *                                        so the action has two outputs with the same name of 'Failure'.  Only one
+     *                                        of those would be a dynamic output and that's the output for the Failure
+     *                                        intent, not the built-in Failure action output.
+     */
+    getOutputByName(output: string | ArchBranch, wantDynamicOutput?: boolean): ArchActionOutput;
+    /**
+     * Returns the output at the given index.  It's important to note that on actions that have a fake success
+     * output if you request the output at the index for the fake success, you will get nothing returned because
+     * the fake success output isn't something that you should do anything with.  Attempting to
+     * access an output by index on a menu choice's action such as {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * will return nothing.
+     * @param index - the index of the output to retrieve.  This value should be a non-negative integer.
+     */
+    getOutputByIndex(index: number): ArchActionOutput;
+    /**
+     * Returns the number of outputs on this action.  For actions that have a fake success output like what you
+     * see on the various transfer actions, that will be included in the count to be consistent with the Architect UI.
+     * Attempting to get the output count on a menu choice's action such as such as the {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * action on an {@link ArchMenuTransferToAcd} menu will return 0.
+     */
+    readonly outputCount: number;
+    /**
+     * Returns an array of action outputs for this action.  Remember that it is possible to have an
+     * undefined item in the returned ArchActionOutput array.  This is true when the output is "fake".
+     * Accessing the outputs on a menu choice's action such as {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * will return an empty array.
+     */
+    readonly outputs: ArchActionOutput[];
+    /**
+     * A string suitable for logging that contains information about this action.  This will contain the action
+     * tracking id, name and scripting type name.
+     */
+    readonly logStr: string;
+    /**
+     * The Architect action type label
+     */
+    readonly displayTypeNameArchitect: string;
+    /**
+     * Returns whether or not this action is the action property for a [menu choice]{@link ArchBaseMenuChoice}.
+     * For example, the {@link ArchMenuDisconnect#actionDisconnect} property on an {@link ArchMenuDisconnect}
+     * instance.
+     */
+    readonly isMenuChoiceAction: boolean;
+    /**
+     * Returns whether or not this action is reachable at runtime.
+     */
+    readonly isReachable: boolean;
+    /**
+     * Returns whether or not this action is secure which means either the action by its very nature
+     * is secure or it consumes secure data.
+     */
+    readonly isSecure: boolean;
+    /**
+     * Returns whether or not this action is unreachable at runtime.
+     */
+    readonly isUnreachable: boolean;
+    /**
+     * The name of the action
+     */
+    name: string;
+    /**
+     * Returns the parent flow for this action.
+     */
+    readonly parentFlow: ArchBaseFlow;
+    /**
+     * Returns the parent menu choice if this action is the action for a [menu choice]{@link ArchBaseMenuChoice}.
+     * Otherwise, nothing is returned.
+     */
+    readonly parentMenuChoice: ArchBaseMenuChoice;
+    /**
+     * Returns the parent task that contains this action if this action is in a [task]{@link ArchTask} or [looping task]{@link ArchTaskLoop}.
+     * Otherwise, nothing is returned.
+     */
+    readonly parentTask: ArchTask | ArchTaskLoop;
+    /**
+     * Returns the parent state that contains this action if this action is in a [state]{@link ArchState}.
+     * Otherwise, nothing is returned.
+     */
+    readonly parentState: ArchState;
+    /**
+     * The integer tracking identifier for this action.  This is the numeric identifier is displayed in the Architect user interface.
+     */
+    readonly trackingId: number;
+    /**
+     * The identifier string for this object.
+     */
+    readonly id: string;
+    /**
+     * Returns whether or not the id property may be blank or undefined for this object.  For example, the returned settings from {@link ArchMenu#settingsMenu}
+     * will have a blank identifier along with the settings returned from {@link ArchMenu#settingsSpeechRec}.  Note that this is
+     * an extremely rare case.
+     */
+    readonly idMayBeBlank: string;
+    /**
+     * Returns true indicating that this is an ArchBaseCoreObject instance.
+     */
+    readonly isArchBaseCoreObject: boolean;
+    /**
+     * This method iterates over this object and ArchBaseCoreObject instances
+     * within it.  For each object it will call the {@link ArchBaseObject#isFilterMatch} method
+     * with a filter and call the supplied callback function if isMatch returns true.
+     * The callback will be passed an {@link ArchTraverseInfo} with details
+     * about the match such as the match object itself along with current contextual
+     * information such as the object hierarchy for the match object relative to
+     * the object on which this traverse call is being made.
+     *
+     * The traverse [filter]{@link ArchFilterObject} is one which you can create
+     * by calling {@link ArchFactoryFilters#createFilterObject} and then add desired clauses
+     * or clause containers to it.  If not specified, this function will use a
+     * [default filter]{@link ArchFactoryFilters#createFilterTraverseDefault}.
+     *
+     * Here is an example that does a simple flow traversal using the default
+     * filter and logs information about objects in the callback from the
+     * traverse object that's passed back:
+     *
+     * ```
+     * archInboundCallFlow.traverse(function(traverseInfo) {
+     *    archLogging.logNote('  Object     : ' + traverseInfo.matchObject.logStr);
+     *    archLogging.logNote('    Hierarchy: ' + traverseInfo.context.hierarchyStr);
+     * });
+     * ```
+     * This might be enough for most uses and you can check various aspects
+     * about the object in the callback such as "is this an Architect action?" by
+     * seeing if traverseInfo.matchObject.isArchBaseAction is true.  You can specify
+     * a filter for the traversal code to use as well and only have it call your
+     * callback when the object's {@link ArchBaseCoreObject#isFilterMatch} method returns true for
+     * the filter.  Here's an example that creates a filter for callbacks on
+     * [any type of transfer action]{@link ArchBaseActionTransfer}, any
+     * [decision action]{@link ArchActionDecision} or objects whose name
+     * property case insensitively matches the word 'foo'.  While this could all be done
+     * with one property callback clause the example will use multiple clauses for
+     * the sake of simplicity:
+     * ```
+     * const myTraverseFilter = filterFactory.createFilterObject(archEnums.FILTER_CONTAINER_OPERATORS.or);
+     * myTraverseFilter.addClausePropertyValueEquals('isArchBaseActionTransfer', true);
+     * myTraverseFilter.addClausePropertyValueEquals('isArchActionDecision',     true);
+     * myTraverseFilter.addClausePropertyCallback('name', function(propValue, archContainingObject, propName) {
+     *       // We fully spelled out the function signature above but archContainingObject and propName are
+     *       // not needed in this case.  The archContainingObject is the object that contains the
+     *       // property and propName is the property name itself.  We pass in propName because the same
+     *       // function could be used for multiple property callback clauses.
+     *       // Remember to return a boolean true, false or undefined from ths callback.  :)
+     *       return propValue && propValue.toLowerCase() === 'foo';
+     * });
+     * archTask.traverse(function(traverseContext) {
+     *    // You will only be called back here for ArchBaseCoreObject instances that
+     *    // have the isArchBaseActionTransfer or isArchActionDecision property values equal to true.
+     * }, myTraverseFilter);
+     * ```
+     * If you supply a filter with no clauses, this tells the traverse method to
+     * call the supplied callback function for every {@link ArchBaseCoreObject} it traverses.
+     *
+     * If you want traversal itself to stop after a callback, simply return boolean
+     * false from the callback function you supply to the traverse call.
+     *
+     * The traverse method does not process deprecated property names such as [orgId]{@link ArchSession#orgId},
+     * [orgName]{@link ArchSession#orgName} or [languageSettings]{@link ArchBaseFlow#languageSettings}.  Additionally
+     * it does not traverse in to properties that would "jump out" of the current traversal.  An example of this
+     * would be if the code was traversing an {@link ArchActionJumpToMenu} action that it would not start traversing
+     * in to the menu that it jumps to.  Another example would be a {@link ArchActionChangeState} action where
+     * it would not traverse in to the target state of the action.  This also means traversal does not traverse
+     * in to the {@link ArchBaseValue#flowLevelDefault} property.
+     *
+     * And lastly, as Scripting evolves over time with new versions, you can expect to get callbacks for new object
+     * types such as new actions or new properties on objects.  As such, it's important not to assume any particular
+     * order in callbacks to keep code most compatible with traversal callbacks.  Or if you use inequality checks in filter
+     * clauses remember that new "stuff" may satisfy an inequality check which may or may not be anticipated in your logic.
+     *
+     * Note:  This traverse method is a helper method and is very handy for iterating over Architect Scripting
+     * objects and their properties in a generic fashion with filtering capabilities.  Obviously you can write
+     * your own custom traversal code if this implementation doesn't cut it for some reason. :)
+     *
+     * This function returns the number of times it called the callback function.
+     * @param callbackFunction - the callback function to call for objects that match the traverse filter.
+     * @param [traverseFilter = {@link ArchFactoryFilters#createFilterTraverseDefault}] - the filter to use when performing the traversal to determine which
+     *                                              {@link ArchBaseCoreObject} instances you wish to be called back for.  If no
+     *                                              filter is specified, this function will call {@link ArchFactoryFilters#createFilterTraverseDefault} and
+     *                                              use that traversal default filter.  The wantArchBaseValues parameter on that call is set to true.
+     */
+    traverse(callbackFunction: callbackTraverseInfo, traverseFilter?: ArchFilterObject): number;
+    /**
+     * This is a string suitable for logging information about this object where it's just the object's type.  This is normally used
+     * when logging errors that occur in constructor parameter checking because the scripting object isn't set up and the normal
+     * logging str contents wouldn't be set up.
+     */
+    readonly logStrTypeOnly: string;
+    /**
+     * Logs an error to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logErrors} is true.
+     * @param errorStr - the error string to log.
+     */
+    logError(errorStr: string): void;
+    /**
+     * Logs an error to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logErrors} is true and then throws
+     * the string in the errorStr parameter.
+     * @param errorStr - the error string to log.  This should be a non-blank string.
+     */
+    logErrorAndThrow(errorStr: string): void;
+    /**
+     * Logs a note to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logNotes} is true.
+     * @param noteStr - the note string to log.  This should be a non-blank string.
+     */
+    logNote(noteStr: string): void;
+    /**
+     * Logs a note to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logNotesVerbose} is true.
+     * @param noteStr - the note string to log.  This should be a non-blank string.
+     */
+    logNoteVerbose(noteStr: string): void;
+    /**
+     * Logs a warning to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logWarnings} is true.
+     * @param warningStr - the warning string to log.  This should be a non-blank string.
+     */
+    logWarning(warningStr: string): void;
+    /**
+     * Returns whether or not this Architect Scripting object is a match
+     * for the supplied ArchFilterObject instance.
+     * @param archFilterObject - the object filter to use to determine if it's a match.
+     */
+    isFilterMatch(archFilterObject: ArchFilterObject): boolean;
 }
 
 /**
@@ -9678,12 +10548,7 @@ export class ArchBaseActionAsk extends ArchBaseAction {
     readonly question: ArchValueCommunication;
 }
 
-/**
- * The Architect Scripting class for the Base Bot Action instance.
- * Instances of this class will be created automatically by Architect Scripting as needed.
- * @param coreBaseBotActionViewModel - ( *Internal* ) an Architect core bot action view model.
- */
-export class ArchBaseActionBot extends ArchBaseActionWithOutputFailure {
+export class ArchBaseActionBot extends ArchBaseActionBotWithSessionVariables {
     // constructor(coreBaseBotActionViewModel: any);
     /**
      * This adds a session parameter name value pair to the Call Dialogflow CX Bot action that is used to specify
@@ -9740,6 +10605,532 @@ export class ArchBaseActionBot extends ArchBaseActionWithOutputFailure {
      * Returns the input Session Variables configured on the action.
      */
     readonly sessionVariables: ArchBaseNameValuePairs;
+    /**
+     * The failure output for this action
+     */
+    readonly outputFailure: ArchActionOutput;
+    /**
+     * Gets an output by its identifier.  If it cannot be found, this method will throw.
+     * Normally you won't need to use this method and will use the helper methods available on inheriting classes
+     * when accessing pre-defined outputs like success, failure, timeout, etc. etc.  Attempting to
+     * get an output by id on a menu choice's action such as the {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * action on an {@link ArchMenuTransferToAcd} menu will return nothing.
+     * @param output - identifies output you want to obtain.  If output is an ArchBranch instance,
+     *                                         the {@link ArchBranch#outputId} value will be used.  Otherwise valid string
+     *                                         identifier values can be found in {@link ArchEnums#OUTPUT_IDS} or can be a guid.
+     *                                         Remember that requesting the 'success' output on an action with a
+     *                                         [fake success output]{@link ArchBaseActionWithOutputsFakeSuccessFailure#hasFakeSuccessOutput} will return nothing.
+     */
+    getOutputById(output: string | ArchBranch): ArchActionOutput;
+    /**
+     * Gets an output by its identifier.  If it cannot be found, this method will throw.
+     * Normally you won't need to use this method and will use the helper methods available on inheriting classes
+     * when accessing pre-defined outputs like success, failure, timeout, etc. etc.  Attempting to
+     * get an output by id on a menu choice's action such as the {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * action on an {@link ArchMenuTransferToAcd} menu will return nothing.
+     * @param output - identifies output you want to obtain by name.  If output is an ArchBranch instance,
+     *                                         the {@link ArchBranch#name} value will be used.
+     *                                         Remember that requesting the 'Success' output on an action with a
+     *                                         [fake success output]{@link ArchBaseActionWithOutputsFakeSuccessFailure#hasFakeSuccessOutput} will return nothing.
+     *                                         For non-dynamic outputs, the name should be specified in English.
+     * @param [wantDynamicOutput = false] - because it is possible for some actions to have both a non-dynamic output
+     *                                        and a dynamic output with the same name, this boolean will let you specify
+     *                                        which output you want.  An example of this would be the built in Failure
+     *                                        output on a call bot action but that bot also has an intent named Failure
+     *                                        so the action has two outputs with the same name of 'Failure'.  Only one
+     *                                        of those would be a dynamic output and that's the output for the Failure
+     *                                        intent, not the built-in Failure action output.
+     */
+    getOutputByName(output: string | ArchBranch, wantDynamicOutput?: boolean): ArchActionOutput;
+    /**
+     * Returns the output at the given index.  It's important to note that on actions that have a fake success
+     * output if you request the output at the index for the fake success, you will get nothing returned because
+     * the fake success output isn't something that you should do anything with.  Attempting to
+     * access an output by index on a menu choice's action such as {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * will return nothing.
+     * @param index - the index of the output to retrieve.  This value should be a non-negative integer.
+     */
+    getOutputByIndex(index: number): ArchActionOutput;
+    /**
+     * Returns the number of outputs on this action.  For actions that have a fake success output like what you
+     * see on the various transfer actions, that will be included in the count to be consistent with the Architect UI.
+     * Attempting to get the output count on a menu choice's action such as such as the {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * action on an {@link ArchMenuTransferToAcd} menu will return 0.
+     */
+    readonly outputCount: number;
+    /**
+     * Returns an array of action outputs for this action.  Remember that it is possible to have an
+     * undefined item in the returned ArchActionOutput array.  This is true when the output is "fake".
+     * Accessing the outputs on a menu choice's action such as {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * will return an empty array.
+     */
+    readonly outputs: ArchActionOutput[];
+    /**
+     * A string suitable for logging that contains information about this action.  This will contain the action
+     * tracking id, name and scripting type name.
+     */
+    readonly logStr: string;
+    /**
+     * The Architect action type label
+     */
+    readonly displayTypeNameArchitect: string;
+    /**
+     * Returns whether or not this action is the action property for a [menu choice]{@link ArchBaseMenuChoice}.
+     * For example, the {@link ArchMenuDisconnect#actionDisconnect} property on an {@link ArchMenuDisconnect}
+     * instance.
+     */
+    readonly isMenuChoiceAction: boolean;
+    /**
+     * Returns whether or not this action is reachable at runtime.
+     */
+    readonly isReachable: boolean;
+    /**
+     * Returns whether or not this action is secure which means either the action by its very nature
+     * is secure or it consumes secure data.
+     */
+    readonly isSecure: boolean;
+    /**
+     * Returns whether or not this action is unreachable at runtime.
+     */
+    readonly isUnreachable: boolean;
+    /**
+     * The name of the action
+     */
+    name: string;
+    /**
+     * Returns the parent flow for this action.
+     */
+    readonly parentFlow: ArchBaseFlow;
+    /**
+     * Returns the parent menu choice if this action is the action for a [menu choice]{@link ArchBaseMenuChoice}.
+     * Otherwise, nothing is returned.
+     */
+    readonly parentMenuChoice: ArchBaseMenuChoice;
+    /**
+     * Returns the parent task that contains this action if this action is in a [task]{@link ArchTask} or [looping task]{@link ArchTaskLoop}.
+     * Otherwise, nothing is returned.
+     */
+    readonly parentTask: ArchTask | ArchTaskLoop;
+    /**
+     * Returns the parent state that contains this action if this action is in a [state]{@link ArchState}.
+     * Otherwise, nothing is returned.
+     */
+    readonly parentState: ArchState;
+    /**
+     * The integer tracking identifier for this action.  This is the numeric identifier is displayed in the Architect user interface.
+     */
+    readonly trackingId: number;
+    /**
+     * The identifier string for this object.
+     */
+    readonly id: string;
+    /**
+     * Returns whether or not the id property may be blank or undefined for this object.  For example, the returned settings from {@link ArchMenu#settingsMenu}
+     * will have a blank identifier along with the settings returned from {@link ArchMenu#settingsSpeechRec}.  Note that this is
+     * an extremely rare case.
+     */
+    readonly idMayBeBlank: string;
+    /**
+     * Returns true indicating that this is an ArchBaseCoreObject instance.
+     */
+    readonly isArchBaseCoreObject: boolean;
+    /**
+     * This method iterates over this object and ArchBaseCoreObject instances
+     * within it.  For each object it will call the {@link ArchBaseObject#isFilterMatch} method
+     * with a filter and call the supplied callback function if isMatch returns true.
+     * The callback will be passed an {@link ArchTraverseInfo} with details
+     * about the match such as the match object itself along with current contextual
+     * information such as the object hierarchy for the match object relative to
+     * the object on which this traverse call is being made.
+     *
+     * The traverse [filter]{@link ArchFilterObject} is one which you can create
+     * by calling {@link ArchFactoryFilters#createFilterObject} and then add desired clauses
+     * or clause containers to it.  If not specified, this function will use a
+     * [default filter]{@link ArchFactoryFilters#createFilterTraverseDefault}.
+     *
+     * Here is an example that does a simple flow traversal using the default
+     * filter and logs information about objects in the callback from the
+     * traverse object that's passed back:
+     *
+     * ```
+     * archInboundCallFlow.traverse(function(traverseInfo) {
+     *    archLogging.logNote('  Object     : ' + traverseInfo.matchObject.logStr);
+     *    archLogging.logNote('    Hierarchy: ' + traverseInfo.context.hierarchyStr);
+     * });
+     * ```
+     * This might be enough for most uses and you can check various aspects
+     * about the object in the callback such as "is this an Architect action?" by
+     * seeing if traverseInfo.matchObject.isArchBaseAction is true.  You can specify
+     * a filter for the traversal code to use as well and only have it call your
+     * callback when the object's {@link ArchBaseCoreObject#isFilterMatch} method returns true for
+     * the filter.  Here's an example that creates a filter for callbacks on
+     * [any type of transfer action]{@link ArchBaseActionTransfer}, any
+     * [decision action]{@link ArchActionDecision} or objects whose name
+     * property case insensitively matches the word 'foo'.  While this could all be done
+     * with one property callback clause the example will use multiple clauses for
+     * the sake of simplicity:
+     * ```
+     * const myTraverseFilter = filterFactory.createFilterObject(archEnums.FILTER_CONTAINER_OPERATORS.or);
+     * myTraverseFilter.addClausePropertyValueEquals('isArchBaseActionTransfer', true);
+     * myTraverseFilter.addClausePropertyValueEquals('isArchActionDecision',     true);
+     * myTraverseFilter.addClausePropertyCallback('name', function(propValue, archContainingObject, propName) {
+     *       // We fully spelled out the function signature above but archContainingObject and propName are
+     *       // not needed in this case.  The archContainingObject is the object that contains the
+     *       // property and propName is the property name itself.  We pass in propName because the same
+     *       // function could be used for multiple property callback clauses.
+     *       // Remember to return a boolean true, false or undefined from ths callback.  :)
+     *       return propValue && propValue.toLowerCase() === 'foo';
+     * });
+     * archTask.traverse(function(traverseContext) {
+     *    // You will only be called back here for ArchBaseCoreObject instances that
+     *    // have the isArchBaseActionTransfer or isArchActionDecision property values equal to true.
+     * }, myTraverseFilter);
+     * ```
+     * If you supply a filter with no clauses, this tells the traverse method to
+     * call the supplied callback function for every {@link ArchBaseCoreObject} it traverses.
+     *
+     * If you want traversal itself to stop after a callback, simply return boolean
+     * false from the callback function you supply to the traverse call.
+     *
+     * The traverse method does not process deprecated property names such as [orgId]{@link ArchSession#orgId},
+     * [orgName]{@link ArchSession#orgName} or [languageSettings]{@link ArchBaseFlow#languageSettings}.  Additionally
+     * it does not traverse in to properties that would "jump out" of the current traversal.  An example of this
+     * would be if the code was traversing an {@link ArchActionJumpToMenu} action that it would not start traversing
+     * in to the menu that it jumps to.  Another example would be a {@link ArchActionChangeState} action where
+     * it would not traverse in to the target state of the action.  This also means traversal does not traverse
+     * in to the {@link ArchBaseValue#flowLevelDefault} property.
+     *
+     * And lastly, as Scripting evolves over time with new versions, you can expect to get callbacks for new object
+     * types such as new actions or new properties on objects.  As such, it's important not to assume any particular
+     * order in callbacks to keep code most compatible with traversal callbacks.  Or if you use inequality checks in filter
+     * clauses remember that new "stuff" may satisfy an inequality check which may or may not be anticipated in your logic.
+     *
+     * Note:  This traverse method is a helper method and is very handy for iterating over Architect Scripting
+     * objects and their properties in a generic fashion with filtering capabilities.  Obviously you can write
+     * your own custom traversal code if this implementation doesn't cut it for some reason. :)
+     *
+     * This function returns the number of times it called the callback function.
+     * @param callbackFunction - the callback function to call for objects that match the traverse filter.
+     * @param [traverseFilter = {@link ArchFactoryFilters#createFilterTraverseDefault}] - the filter to use when performing the traversal to determine which
+     *                                              {@link ArchBaseCoreObject} instances you wish to be called back for.  If no
+     *                                              filter is specified, this function will call {@link ArchFactoryFilters#createFilterTraverseDefault} and
+     *                                              use that traversal default filter.  The wantArchBaseValues parameter on that call is set to true.
+     */
+    traverse(callbackFunction: callbackTraverseInfo, traverseFilter?: ArchFilterObject): number;
+    /**
+     * This is a string suitable for logging information about this object where it's just the object's type.  This is normally used
+     * when logging errors that occur in constructor parameter checking because the scripting object isn't set up and the normal
+     * logging str contents wouldn't be set up.
+     */
+    readonly logStrTypeOnly: string;
+    /**
+     * Logs an error to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logErrors} is true.
+     * @param errorStr - the error string to log.
+     */
+    logError(errorStr: string): void;
+    /**
+     * Logs an error to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logErrors} is true and then throws
+     * the string in the errorStr parameter.
+     * @param errorStr - the error string to log.  This should be a non-blank string.
+     */
+    logErrorAndThrow(errorStr: string): void;
+    /**
+     * Logs a note to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logNotes} is true.
+     * @param noteStr - the note string to log.  This should be a non-blank string.
+     */
+    logNote(noteStr: string): void;
+    /**
+     * Logs a note to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logNotesVerbose} is true.
+     * @param noteStr - the note string to log.  This should be a non-blank string.
+     */
+    logNoteVerbose(noteStr: string): void;
+    /**
+     * Logs a warning to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logWarnings} is true.
+     * @param warningStr - the warning string to log.  This should be a non-blank string.
+     */
+    logWarning(warningStr: string): void;
+    /**
+     * Returns whether or not this Architect Scripting object is a match
+     * for the supplied ArchFilterObject instance.
+     * @param archFilterObject - the object filter to use to determine if it's a match.
+     */
+    isFilterMatch(archFilterObject: ArchFilterObject): boolean;
+}
+
+export class ArchBaseActionBotWithSessionVariables extends ArchBaseActionWithOutputFailure {
+    // constructor(coreBaseBotActionViewModel: any);
+    /**
+     * Returns the display type name string 'ArchBaseActionBot'.
+     */
+    readonly displayTypeName: string;
+    /**
+     * Returns true indicating that this is an ArchBaseActionBot instance.
+     */
+    readonly isArchBaseActionBotWithSessionVariables: boolean;
+    /**
+     * This adds a session variable name value pair to the Base Bot action that can be used to specify
+     * the session variable's name and corresponding value that should be assigned to it.  On the returned
+     * {@link ArchBaseNameValuePair} pair:
+     * * the [name]{@link ArchBaseNameValuePair#name} property specifies the name of the session variable whose value you want to set
+     * * the [value]{@link ArchBaseNameValuePair#value} property is the value to set on the session variable at runtime.
+     * @param [nameLiteral] - a string that specifies the name of the session variable to set.
+     * @param [valueExpression] - a string expression that specifies the value to set on the session variable.
+     */
+    addSessionVariableNameValuePair(nameLiteral?: string, valueExpression?: string): ArchBaseNameValuePair;
+    /**
+     * Returns the input Session Variables configured on the action.
+     */
+    readonly sessionVariables: ArchBaseNameValuePairs;
+    /**
+     * The failure output for this action
+     */
+    readonly outputFailure: ArchActionOutput;
+    /**
+     * Gets an output by its identifier.  If it cannot be found, this method will throw.
+     * Normally you won't need to use this method and will use the helper methods available on inheriting classes
+     * when accessing pre-defined outputs like success, failure, timeout, etc. etc.  Attempting to
+     * get an output by id on a menu choice's action such as the {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * action on an {@link ArchMenuTransferToAcd} menu will return nothing.
+     * @param output - identifies output you want to obtain.  If output is an ArchBranch instance,
+     *                                         the {@link ArchBranch#outputId} value will be used.  Otherwise valid string
+     *                                         identifier values can be found in {@link ArchEnums#OUTPUT_IDS} or can be a guid.
+     *                                         Remember that requesting the 'success' output on an action with a
+     *                                         [fake success output]{@link ArchBaseActionWithOutputsFakeSuccessFailure#hasFakeSuccessOutput} will return nothing.
+     */
+    getOutputById(output: string | ArchBranch): ArchActionOutput;
+    /**
+     * Gets an output by its identifier.  If it cannot be found, this method will throw.
+     * Normally you won't need to use this method and will use the helper methods available on inheriting classes
+     * when accessing pre-defined outputs like success, failure, timeout, etc. etc.  Attempting to
+     * get an output by id on a menu choice's action such as the {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * action on an {@link ArchMenuTransferToAcd} menu will return nothing.
+     * @param output - identifies output you want to obtain by name.  If output is an ArchBranch instance,
+     *                                         the {@link ArchBranch#name} value will be used.
+     *                                         Remember that requesting the 'Success' output on an action with a
+     *                                         [fake success output]{@link ArchBaseActionWithOutputsFakeSuccessFailure#hasFakeSuccessOutput} will return nothing.
+     *                                         For non-dynamic outputs, the name should be specified in English.
+     * @param [wantDynamicOutput = false] - because it is possible for some actions to have both a non-dynamic output
+     *                                        and a dynamic output with the same name, this boolean will let you specify
+     *                                        which output you want.  An example of this would be the built in Failure
+     *                                        output on a call bot action but that bot also has an intent named Failure
+     *                                        so the action has two outputs with the same name of 'Failure'.  Only one
+     *                                        of those would be a dynamic output and that's the output for the Failure
+     *                                        intent, not the built-in Failure action output.
+     */
+    getOutputByName(output: string | ArchBranch, wantDynamicOutput?: boolean): ArchActionOutput;
+    /**
+     * Returns the output at the given index.  It's important to note that on actions that have a fake success
+     * output if you request the output at the index for the fake success, you will get nothing returned because
+     * the fake success output isn't something that you should do anything with.  Attempting to
+     * access an output by index on a menu choice's action such as {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * will return nothing.
+     * @param index - the index of the output to retrieve.  This value should be a non-negative integer.
+     */
+    getOutputByIndex(index: number): ArchActionOutput;
+    /**
+     * Returns the number of outputs on this action.  For actions that have a fake success output like what you
+     * see on the various transfer actions, that will be included in the count to be consistent with the Architect UI.
+     * Attempting to get the output count on a menu choice's action such as such as the {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * action on an {@link ArchMenuTransferToAcd} menu will return 0.
+     */
+    readonly outputCount: number;
+    /**
+     * Returns an array of action outputs for this action.  Remember that it is possible to have an
+     * undefined item in the returned ArchActionOutput array.  This is true when the output is "fake".
+     * Accessing the outputs on a menu choice's action such as {@link ArchMenuTransferToAcd#actionTransferToAcd}
+     * will return an empty array.
+     */
+    readonly outputs: ArchActionOutput[];
+    /**
+     * A string suitable for logging that contains information about this action.  This will contain the action
+     * tracking id, name and scripting type name.
+     */
+    readonly logStr: string;
+    /**
+     * The Architect action type label
+     */
+    readonly displayTypeNameArchitect: string;
+    /**
+     * Returns whether or not this action is the action property for a [menu choice]{@link ArchBaseMenuChoice}.
+     * For example, the {@link ArchMenuDisconnect#actionDisconnect} property on an {@link ArchMenuDisconnect}
+     * instance.
+     */
+    readonly isMenuChoiceAction: boolean;
+    /**
+     * Returns whether or not this action is reachable at runtime.
+     */
+    readonly isReachable: boolean;
+    /**
+     * Returns whether or not this action is secure which means either the action by its very nature
+     * is secure or it consumes secure data.
+     */
+    readonly isSecure: boolean;
+    /**
+     * Returns whether or not this action is unreachable at runtime.
+     */
+    readonly isUnreachable: boolean;
+    /**
+     * The name of the action
+     */
+    name: string;
+    /**
+     * Returns the parent flow for this action.
+     */
+    readonly parentFlow: ArchBaseFlow;
+    /**
+     * Returns the parent menu choice if this action is the action for a [menu choice]{@link ArchBaseMenuChoice}.
+     * Otherwise, nothing is returned.
+     */
+    readonly parentMenuChoice: ArchBaseMenuChoice;
+    /**
+     * Returns the parent task that contains this action if this action is in a [task]{@link ArchTask} or [looping task]{@link ArchTaskLoop}.
+     * Otherwise, nothing is returned.
+     */
+    readonly parentTask: ArchTask | ArchTaskLoop;
+    /**
+     * Returns the parent state that contains this action if this action is in a [state]{@link ArchState}.
+     * Otherwise, nothing is returned.
+     */
+    readonly parentState: ArchState;
+    /**
+     * The integer tracking identifier for this action.  This is the numeric identifier is displayed in the Architect user interface.
+     */
+    readonly trackingId: number;
+    /**
+     * The identifier string for this object.
+     */
+    readonly id: string;
+    /**
+     * Returns whether or not the id property may be blank or undefined for this object.  For example, the returned settings from {@link ArchMenu#settingsMenu}
+     * will have a blank identifier along with the settings returned from {@link ArchMenu#settingsSpeechRec}.  Note that this is
+     * an extremely rare case.
+     */
+    readonly idMayBeBlank: string;
+    /**
+     * Returns true indicating that this is an ArchBaseCoreObject instance.
+     */
+    readonly isArchBaseCoreObject: boolean;
+    /**
+     * This method iterates over this object and ArchBaseCoreObject instances
+     * within it.  For each object it will call the {@link ArchBaseObject#isFilterMatch} method
+     * with a filter and call the supplied callback function if isMatch returns true.
+     * The callback will be passed an {@link ArchTraverseInfo} with details
+     * about the match such as the match object itself along with current contextual
+     * information such as the object hierarchy for the match object relative to
+     * the object on which this traverse call is being made.
+     *
+     * The traverse [filter]{@link ArchFilterObject} is one which you can create
+     * by calling {@link ArchFactoryFilters#createFilterObject} and then add desired clauses
+     * or clause containers to it.  If not specified, this function will use a
+     * [default filter]{@link ArchFactoryFilters#createFilterTraverseDefault}.
+     *
+     * Here is an example that does a simple flow traversal using the default
+     * filter and logs information about objects in the callback from the
+     * traverse object that's passed back:
+     *
+     * ```
+     * archInboundCallFlow.traverse(function(traverseInfo) {
+     *    archLogging.logNote('  Object     : ' + traverseInfo.matchObject.logStr);
+     *    archLogging.logNote('    Hierarchy: ' + traverseInfo.context.hierarchyStr);
+     * });
+     * ```
+     * This might be enough for most uses and you can check various aspects
+     * about the object in the callback such as "is this an Architect action?" by
+     * seeing if traverseInfo.matchObject.isArchBaseAction is true.  You can specify
+     * a filter for the traversal code to use as well and only have it call your
+     * callback when the object's {@link ArchBaseCoreObject#isFilterMatch} method returns true for
+     * the filter.  Here's an example that creates a filter for callbacks on
+     * [any type of transfer action]{@link ArchBaseActionTransfer}, any
+     * [decision action]{@link ArchActionDecision} or objects whose name
+     * property case insensitively matches the word 'foo'.  While this could all be done
+     * with one property callback clause the example will use multiple clauses for
+     * the sake of simplicity:
+     * ```
+     * const myTraverseFilter = filterFactory.createFilterObject(archEnums.FILTER_CONTAINER_OPERATORS.or);
+     * myTraverseFilter.addClausePropertyValueEquals('isArchBaseActionTransfer', true);
+     * myTraverseFilter.addClausePropertyValueEquals('isArchActionDecision',     true);
+     * myTraverseFilter.addClausePropertyCallback('name', function(propValue, archContainingObject, propName) {
+     *       // We fully spelled out the function signature above but archContainingObject and propName are
+     *       // not needed in this case.  The archContainingObject is the object that contains the
+     *       // property and propName is the property name itself.  We pass in propName because the same
+     *       // function could be used for multiple property callback clauses.
+     *       // Remember to return a boolean true, false or undefined from ths callback.  :)
+     *       return propValue && propValue.toLowerCase() === 'foo';
+     * });
+     * archTask.traverse(function(traverseContext) {
+     *    // You will only be called back here for ArchBaseCoreObject instances that
+     *    // have the isArchBaseActionTransfer or isArchActionDecision property values equal to true.
+     * }, myTraverseFilter);
+     * ```
+     * If you supply a filter with no clauses, this tells the traverse method to
+     * call the supplied callback function for every {@link ArchBaseCoreObject} it traverses.
+     *
+     * If you want traversal itself to stop after a callback, simply return boolean
+     * false from the callback function you supply to the traverse call.
+     *
+     * The traverse method does not process deprecated property names such as [orgId]{@link ArchSession#orgId},
+     * [orgName]{@link ArchSession#orgName} or [languageSettings]{@link ArchBaseFlow#languageSettings}.  Additionally
+     * it does not traverse in to properties that would "jump out" of the current traversal.  An example of this
+     * would be if the code was traversing an {@link ArchActionJumpToMenu} action that it would not start traversing
+     * in to the menu that it jumps to.  Another example would be a {@link ArchActionChangeState} action where
+     * it would not traverse in to the target state of the action.  This also means traversal does not traverse
+     * in to the {@link ArchBaseValue#flowLevelDefault} property.
+     *
+     * And lastly, as Scripting evolves over time with new versions, you can expect to get callbacks for new object
+     * types such as new actions or new properties on objects.  As such, it's important not to assume any particular
+     * order in callbacks to keep code most compatible with traversal callbacks.  Or if you use inequality checks in filter
+     * clauses remember that new "stuff" may satisfy an inequality check which may or may not be anticipated in your logic.
+     *
+     * Note:  This traverse method is a helper method and is very handy for iterating over Architect Scripting
+     * objects and their properties in a generic fashion with filtering capabilities.  Obviously you can write
+     * your own custom traversal code if this implementation doesn't cut it for some reason. :)
+     *
+     * This function returns the number of times it called the callback function.
+     * @param callbackFunction - the callback function to call for objects that match the traverse filter.
+     * @param [traverseFilter = {@link ArchFactoryFilters#createFilterTraverseDefault}] - the filter to use when performing the traversal to determine which
+     *                                              {@link ArchBaseCoreObject} instances you wish to be called back for.  If no
+     *                                              filter is specified, this function will call {@link ArchFactoryFilters#createFilterTraverseDefault} and
+     *                                              use that traversal default filter.  The wantArchBaseValues parameter on that call is set to true.
+     */
+    traverse(callbackFunction: callbackTraverseInfo, traverseFilter?: ArchFilterObject): number;
+    /**
+     * This is a string suitable for logging information about this object where it's just the object's type.  This is normally used
+     * when logging errors that occur in constructor parameter checking because the scripting object isn't set up and the normal
+     * logging str contents wouldn't be set up.
+     */
+    readonly logStrTypeOnly: string;
+    /**
+     * Logs an error to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logErrors} is true.
+     * @param errorStr - the error string to log.
+     */
+    logError(errorStr: string): void;
+    /**
+     * Logs an error to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logErrors} is true and then throws
+     * the string in the errorStr parameter.
+     * @param errorStr - the error string to log.  This should be a non-blank string.
+     */
+    logErrorAndThrow(errorStr: string): void;
+    /**
+     * Logs a note to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logNotes} is true.
+     * @param noteStr - the note string to log.  This should be a non-blank string.
+     */
+    logNote(noteStr: string): void;
+    /**
+     * Logs a note to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logNotesVerbose} is true.
+     * @param noteStr - the note string to log.  This should be a non-blank string.
+     */
+    logNoteVerbose(noteStr: string): void;
+    /**
+     * Logs a warning to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logWarnings} is true.
+     * @param warningStr - the warning string to log.  This should be a non-blank string.
+     */
+    logWarning(warningStr: string): void;
+    /**
+     * Returns whether or not this Architect Scripting object is a match
+     * for the supplied ArchFilterObject instance.
+     * @param archFilterObject - the object filter to use to determine if it's a match.
+     */
+    isFilterMatch(archFilterObject: ArchFilterObject): boolean;
 }
 
 /**
@@ -9860,6 +11251,13 @@ export class ArchBaseActionDataAction extends ArchBaseActionWithOutputsSuccessFa
 }
 
 /**
+ * This callback function type is invoked by Architect Scripting where the callback function is passed an Architect
+ * Base Dialogflow action instance such as {@link ArchActionCallDialogflow#setDialogflowAgentByNameAsync}
+ * @param ArchBaseActionDialogflow - the Architect Base Dialogflow action instance.
+ */
+declare type callbackArchBaseActionDialogflow = (ArchBaseActionDialogflow: ArchBaseActionDialogflow) => any;
+
+/**
  * The Architect Scripting class for the base Dialogflow Action instance.
  * Instances of this class will be created automatically by Architect Scripting as needed.
  * @param coreDialogflowActionViewModel - ( *Internal* ) an Architect core Dialogflow action view model.
@@ -9894,7 +11292,7 @@ export class ArchBaseActionDialogflow extends ArchBaseActionBot {
      *                                        looked up and configured on this action. The first parameter passed to the
      *                                        callback function will be this Architect Call Dialogflow Bot action instance.
      */
-    setDialogflowAgentByIdAsync(dialogflowAgentId: string, callbackFunction?: (...params: any[]) => any): Promise<ArchBaseActionDialogflow>;
+    setDialogflowAgentByIdAsync(dialogflowAgentId: string, callbackFunction?: callbackArchBaseActionDialogflow): Promise<ArchBaseActionDialogflow>;
     /**
      * This sets the Dialogflow agent to call at runtime by its name. The Draft environment will be selected when calling this function.
      * @param agentName - the name of the Dialogflow agent to set.
@@ -9903,7 +11301,7 @@ export class ArchBaseActionDialogflow extends ArchBaseActionBot {
      *                                        looked up and configured on this action. The first parameter passed to the
      *                                        callback function will be this Architect Call Dialogflow Bot action instance.
      */
-    setDialogflowAgentByNameAsync(agentName: string, projectId?: string, callbackFunction?: (...params: any[]) => any): Promise<ArchBaseActionDialogflow>;
+    setDialogflowAgentByNameAsync(agentName: string, projectId?: string, callbackFunction?: callbackArchBaseActionDialogflow): Promise<ArchBaseActionDialogflow>;
     /**
      * This sets the Dialogflow agent to call at runtime by its identifier and sets the environment to use by its name.
      * @param dialogflowAgentId - the identifier of the Dialogflow agent
@@ -9912,7 +11310,7 @@ export class ArchBaseActionDialogflow extends ArchBaseActionBot {
      *                                        looked up and configured on this action. The first parameter passed to the
      *                                        callback function will be this Architect Call Dialogflow Bot action instance.
      */
-    setDialogflowAgentByIdWithEnvironmentAsync(dialogflowAgentId: string, environmentName: string, callbackFunction?: (...params: any[]) => any): Promise<ArchBaseActionDialogflow>;
+    setDialogflowAgentByIdWithEnvironmentAsync(dialogflowAgentId: string, environmentName: string, callbackFunction?: callbackArchBaseActionDialogflow): Promise<ArchBaseActionDialogflow>;
     /**
      * This sets the Dialogflow agent to call at runtime by its name and sets the environment to use by its name.
      * @param agentName - the name of the Dialogflow agent to set.
@@ -9922,7 +11320,7 @@ export class ArchBaseActionDialogflow extends ArchBaseActionBot {
      *                                        looked up and configured on this action. The first parameter passed to the
      *                                        callback function will be this Architect Call Dialogflow Bot action instance.
      */
-    setDialogflowAgentByNameWithEnvironmentAsync(agentName: string, environmentName: string, projectId?: string, callbackFunction?: (...params: any[]) => any): Promise<ArchBaseActionDialogflow>;
+    setDialogflowAgentByNameWithEnvironmentAsync(agentName: string, environmentName: string, projectId?: string, callbackFunction?: callbackArchBaseActionDialogflow): Promise<ArchBaseActionDialogflow>;
 }
 
 /**
@@ -25181,6 +26579,7 @@ declare module 'purecloud-flow-scripting-api-sdk-javascript' {
             let ArchBaseAction: ArchBaseAction;
             let ArchBaseActionAsk: ArchBaseActionAsk;
             let ArchBaseActionBot: ArchBaseActionBot;
+            let ArchBaseActionBotWithSessionVariables: ArchBaseActionBotWithSessionVariables;
             let ArchBaseActionDataAction: ArchBaseActionDataAction;
             let ArchBaseDefinition: ArchBaseDefinition;
             let ArchBaseActionFindSystemObject: ArchBaseActionFindSystemObject;

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: ArchValueEmergencyGroupCollection | Architect Scripting</title>
+    <title>Class: ArchBaseActionBotWithSessionVariables | Architect Scripting</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -50,7 +50,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ArchValueEmergencyGroupCollection<span class="signature">(coreExpressionViewModel)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"><span class="icon green">abstract</span> </span></span>ArchBaseActionBotWithSessionVariables<span class="signature">(coreBaseBotActionViewModel)</span><span class="type-signature"></span></h2>
         
     
 </header>
@@ -63,9 +63,9 @@
 
 <dt>
     
-        <h4 class="name" id="ArchValueEmergencyGroupCollection">
+        <h4 class="name" id="ArchBaseActionBotWithSessionVariables">
             
-                new <span class="type-signature"></span>ArchValueEmergencyGroupCollection<span class="signature">(coreExpressionViewModel)</span><span class="type-signature"></span>
+                new <span class="type-signature"><span class="icon green">abstract</span> </span>ArchBaseActionBotWithSessionVariables<span class="signature">(coreBaseBotActionViewModel)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -75,13 +75,6 @@
 </dt>
 <dd>
 
-    
-    <div class="description">
-        <p>This class holds a value in Architect Scripting.
-Data Type:  EmergencyGroup Collection
-Note:  Do not attempt to create instances of this class directly.  They will be created
-automatically as needed by Architect Scripting.</p>
-    </div>
     
 
     
@@ -116,13 +109,13 @@ automatically as needed by Architect Scripting.</p>
 
         <tr>
             
-                <td class="name"><code>coreExpressionViewModel</code></td>
+                <td class="name"><code>coreBaseBotActionViewModel</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">Object</span>
 
 
             
@@ -132,7 +125,7 @@ automatically as needed by Architect Scripting.</p>
 
             
 
-            <td class="description last"><p>( <em>Internal</em> ) an Architect core expression view model.</p></td>
+            <td class="description last"><p>( <em>Internal</em> ) an Architect core bot action view model.</p></td>
         </tr>
 
     
@@ -206,7 +199,7 @@ automatically as needed by Architect Scripting.</p>
 
 
     <ul>
-        <li><a href="ArchBaseNetworkValueCollection.html">ArchBaseNetworkValueCollection</a></li>
+        <li><a href="ArchBaseActionWithOutputFailure.html">ArchBaseActionWithOutputFailure</a></li>
     </ul>
 
 
@@ -229,8 +222,8 @@ automatically as needed by Architect Scripting.</p>
             
 
 <dt>
-<h4 class="name" id=".isArchValueEmergencyGroupCollection">
-    <span class="type-signature"><span class="icon green">static</span> </span>isArchValueEmergencyGroupCollection<span class="type-signature"> :boolean</span>
+<h4 class="name" id=".displayTypeName">
+    <span class="type-signature"><span class="icon green">static</span>, <span class="icon green">readonly</span> </span>displayTypeName<span class="type-signature"> :string</span>
     
 </h4>
 
@@ -239,81 +232,7 @@ automatically as needed by Architect Scripting.</p>
 <dd>
     
     <div class="description">
-        <p>Returns true indicating that this is an ArchValueEmergencyGroupCollection instance.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="_globalTypeName">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>_globalTypeName<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns the core expression type name</p>
+        <p>Returns the display type name string 'ArchBaseActionBot'.</p>
     </div>
     
 
@@ -377,8 +296,8 @@ automatically as needed by Architect Scripting.</p>
             
 
 <dt>
-<h4 class="name" id="consumesSecureData">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>consumesSecureData<span class="type-signature"> :boolean</span>
+<h4 class="name" id=".isArchBaseActionBotWithSessionVariables">
+    <span class="type-signature"><span class="icon green">static</span>, <span class="icon green">readonly</span> </span>isArchBaseActionBotWithSessionVariables<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -387,8 +306,7 @@ automatically as needed by Architect Scripting.</p>
 <dd>
     
     <div class="description">
-        <p>Returns whether or not this value uses secure data.  For this to be the case, the
-value must use a secure variable either in an expression or as the configured variable.</p>
+        <p>Returns true indicating that this is an ArchBaseActionBot instance.</p>
     </div>
     
 
@@ -416,11 +334,6 @@ value must use a secure variable either in an expression or as the configured va
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#consumesSecureData">ArchBaseValue#consumesSecureData</a>
-    </li></ul></dd>
-    
 
     
 
@@ -457,8 +370,8 @@ value must use a secure variable either in an expression or as the configured va
             
 
 <dt>
-<h4 class="name" id="dataType">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>dataType<span class="type-signature"> :<a href="ArchDataType.html">ArchDataType</a></span>
+<h4 class="name" id="displayTypeNameArchitect">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>displayTypeNameArchitect<span class="type-signature"> :string</span>
     
 </h4>
 
@@ -467,7 +380,7 @@ value must use a secure variable either in an expression or as the configured va
 <dd>
     
     <div class="description">
-        <p>The Architect data type associated with this value.</p>
+        <p>The Architect action type label</p>
     </div>
     
 
@@ -477,7 +390,7 @@ value must use a secure variable either in an expression or as the configured va
         <ul>
             <li>
                 
-<span class="param-type"><a href="ArchDataType.html">ArchDataType</a></span>
+<span class="param-type">string</span>
 
 
             </li>
@@ -495,12 +408,12 @@ value must use a secure variable either in an expression or as the configured va
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#dataType">ArchBaseValue#dataType</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#displayTypeNameArchitect">ArchBaseActionWithOutputFailure#displayTypeNameArchitect</a>
+    </li></ul></dd>
     
 
     
@@ -536,8 +449,8 @@ value must use a secure variable either in an expression or as the configured va
             
 
 <dt>
-<h4 class="name" id="flowLevelDefault">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>flowLevelDefault<span class="type-signature"> :<a href="ArchBaseValue.html">ArchBaseValue</a></span>
+<h4 class="name" id="id">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>id<span class="type-signature"> :string</span>
     
 </h4>
 
@@ -546,9 +459,7 @@ value must use a secure variable either in an expression or as the configured va
 <dd>
     
     <div class="description">
-        <p>If this value has a flow-level default setting value available, this method will return the value
-for that setting.  Otherwise, null will be returned.  To see if a value has a flow level default,
-you can check the <a href="ArchValueSettings.html#hasFlowLevelDefault"><code>ArchValueSettings#hasFlowLevelDefault</code></a> property.</p>
+        <p>The identifier string for this object.</p>
     </div>
     
 
@@ -558,7 +469,7 @@ you can check the <a href="ArchValueSettings.html#hasFlowLevelDefault"><code>Arc
         <ul>
             <li>
                 
-<span class="param-type"><a href="ArchBaseValue.html">ArchBaseValue</a></span>
+<span class="param-type">string</span>
 
 
             </li>
@@ -576,12 +487,12 @@ you can check the <a href="ArchValueSettings.html#hasFlowLevelDefault"><code>Arc
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#flowLevelDefault">ArchBaseValue#flowLevelDefault</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#id">ArchBaseActionWithOutputFailure#id</a>
+    </li></ul></dd>
     
 
     
@@ -617,8 +528,8 @@ you can check the <a href="ArchValueSettings.html#hasFlowLevelDefault"><code>Arc
             
 
 <dt>
-<h4 class="name" id="hasError">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>hasError<span class="type-signature"> :boolean</span>
+<h4 class="name" id="idMayBeBlank">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>idMayBeBlank<span class="type-signature"> :string</span>
     
 </h4>
 
@@ -627,17 +538,9 @@ you can check the <a href="ArchValueSettings.html#hasFlowLevelDefault"><code>Arc
 <dd>
     
     <div class="description">
-        <p>Returns whether or not this value currently has an error.  While this is certainly useful,
-please note the following:</p>
-<ul>
-<li>Any asynchronous methods that have been called on this value that are still pending will not update
-the error state until the asynchronous method completes.</li>
-<li>This property will reflect the value's view of itself and lots of times you'll want to look at
-validation results themselves in that the errors or warnings there will have informational strings that specify
-more information on what's wrong within the context of a containing object.  This object can also identify
-issues between the relationship of multiple values within the object which an individual value cannot.
-An example of an &quot;object&quot; would be an action within a flow.</li>
-</ul>
+        <p>Returns whether or not the id property may be blank or undefined for this object.  For example, the returned settings from <a href="ArchMenu.html#settingsMenu"><code>ArchMenu#settingsMenu</code></a>
+will have a blank identifier along with the settings returned from <a href="ArchMenu.html#settingsSpeechRec"><code>ArchMenu#settingsSpeechRec</code></a>.  Note that this is
+an extremely rare case.</p>
     </div>
     
 
@@ -647,7 +550,7 @@ An example of an &quot;object&quot; would be an action within a flow.</li>
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type">string</span>
 
 
             </li>
@@ -665,9 +568,11 @@ An example of an &quot;object&quot; would be an action within a flow.</li>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#hasError">ArchBaseValue#hasError</a>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#idMayBeBlank">ArchBaseActionWithOutputFailure#idMayBeBlank</a>
     </li></ul></dd>
     
 
@@ -690,185 +595,12 @@ An example of an &quot;object&quot; would be an action within a flow.</li>
     
 
     
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="hasErrorOrWarning">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>hasErrorOrWarning<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this value currently has an error or warning.  While this is certainly useful,
-please note the following:</p>
-<ul>
-<li>Any asynchronous methods that have been called on this value that are still pending will not update
-the error or warning state until the asynchronous method completes.</li>
-<li>This property will reflect the value's view of itself and lots of times you'll want to look at
-validation results themselves in that the errors or warnings there will have informational strings that specify
-more information on what's wrong within the context of a containing object.  This object can also identify
-issues between the relationship of multiple values within the object which an individual value cannot.
-An example of an &quot;object&quot; would be an action within a flow.</li>
-</ul>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
         <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
+            <li><a href="ArchBaseCoreObjectWithId.html#id">ArchBaseCoreObjectWithId#id</a></li>
         </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#hasErrorOrWarning">ArchBaseValue#hasErrorOrWarning</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="hasWarning">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>hasWarning<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this value currently has a warning.  While this is certainly useful,
-please note the following:</p>
-<ul>
-<li>Any asynchronous methods that have been called on this value that are still pending will not update
-the warning state until the asynchronous method completes.</li>
-<li>This property will reflect the value's view of itself and lots of times you'll want to look at
-validation results themselves in that the warnings there will have informational strings that specify
-more information on what's wrong within the context of a containing object.  This object can also identify
-issues between the relationship of multiple values within the object which an individual value cannot.
-An example of an &quot;object&quot; would be an action within a flow.</li>
-</ul>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#hasWarning">ArchBaseValue#hasWarning</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
+    </dd>
     
 
     
@@ -922,12 +654,12 @@ An example of an &quot;object&quot; would be an action within a flow.</li>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseCoreObject.html#isArchBaseCoreObject">ArchBaseCoreObject#isArchBaseCoreObject</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#isArchBaseCoreObject">ArchBaseActionWithOutputFailure#isArchBaseCoreObject</a>
+    </li></ul></dd>
     
 
     
@@ -963,8 +695,8 @@ An example of an &quot;object&quot; would be an action within a flow.</li>
             
 
 <dt>
-<h4 class="name" id="isBuilder">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isBuilder<span class="type-signature"> :boolean</span>
+<h4 class="name" id="isMenuChoiceAction">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isMenuChoiceAction<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -973,12 +705,9 @@ An example of an &quot;object&quot; would be an action within a flow.</li>
 <dd>
     
     <div class="description">
-        <p>Returns whether or not this value is set to a builder value. While builders end up generating
-expression text that specifies how the value should be calculated, they cannot be changed
-in Architect Scripting. You can call different methods on an <a href="ArchBaseValue.html"><code>ArchBaseValue</code></a> instance
-such as <a href="ArchBaseValue.html#setExpression"><code>ArchBaseValue#setExpression</code></a> to set this to an expression or value type specific
-literal setter such as <a href="ArchValueString.html#setLiteralString"><code>ArchValueString#setLiteralString</code></a> on a <a href="ArchValueString.html"><code>ArchValueString</code></a> instance
-to set this to a literal.</p>
+        <p>Returns whether or not this action is the action property for a <a href="ArchBaseMenuChoice.html"><code>menu choice</code></a>.
+For example, the <a href="ArchMenuDisconnect.html#actionDisconnect"><code>ArchMenuDisconnect#actionDisconnect</code></a> property on an <a href="ArchMenuDisconnect.html"><code>ArchMenuDisconnect</code></a>
+instance.</p>
     </div>
     
 
@@ -1006,12 +735,12 @@ to set this to a literal.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#isBuilder">ArchBaseValue#isBuilder</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#isMenuChoiceAction">ArchBaseActionWithOutputFailure#isMenuChoiceAction</a>
+    </li></ul></dd>
     
 
     
@@ -1047,8 +776,8 @@ to set this to a literal.</p>
             
 
 <dt>
-<h4 class="name" id="isCollection">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isCollection<span class="type-signature"> :boolean</span>
+<h4 class="name" id="isReachable">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isReachable<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -1057,7 +786,7 @@ to set this to a literal.</p>
 <dd>
     
     <div class="description">
-        <p>Returns true indicating that this is a collection.</p>
+        <p>Returns whether or not this action is reachable at runtime.</p>
     </div>
     
 
@@ -1085,12 +814,12 @@ to set this to a literal.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseNetworkValueCollection.html#isCollection">ArchBaseNetworkValueCollection#isCollection</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#isReachable">ArchBaseActionWithOutputFailure#isReachable</a>
+    </li></ul></dd>
     
 
     
@@ -1126,8 +855,8 @@ to set this to a literal.</p>
             
 
 <dt>
-<h4 class="name" id="isExpression">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isExpression<span class="type-signature"> :boolean</span>
+<h4 class="name" id="isSecure">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isSecure<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -1136,7 +865,8 @@ to set this to a literal.</p>
 <dd>
     
     <div class="description">
-        <p>Returns whether or not this value is set to a expression value.</p>
+        <p>Returns whether or not this action is secure which means either the action by its very nature
+is secure or it consumes secure data.</p>
     </div>
     
 
@@ -1164,12 +894,12 @@ to set this to a literal.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#isExpression">ArchBaseValue#isExpression</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#isSecure">ArchBaseActionWithOutputFailure#isSecure</a>
+    </li></ul></dd>
     
 
     
@@ -1205,8 +935,8 @@ to set this to a literal.</p>
             
 
 <dt>
-<h4 class="name" id="isLiteral">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isLiteral<span class="type-signature"> :boolean</span>
+<h4 class="name" id="isUnreachable">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isUnreachable<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -1215,7 +945,7 @@ to set this to a literal.</p>
 <dd>
     
     <div class="description">
-        <p>Returns whether or not this value is set to a literal value.</p>
+        <p>Returns whether or not this action is unreachable at runtime.</p>
     </div>
     
 
@@ -1243,334 +973,12 @@ to set this to a literal.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#isLiteral">ArchBaseValue#isLiteral</a>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#isUnreachable">ArchBaseActionWithOutputFailure#isUnreachable</a>
     </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isNoValue">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isNoValue<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this value is set to <a href="ArchBaseValue.html#setNoValue"><code>no value</code></a>.
-Note that this does not mean the value is NOT_SET.  It means there is no value specified
-for this value.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#isNoValue">ArchBaseValue#isNoValue</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isVariable">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isVariable<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this value is set to a variable value.  Note that this is true when the value is
-set by calling <a href="ArchBaseValue.html#setVariable"><code>ArchBaseValue#setVariable</code></a>.  If you set the value with an expression, the return
-value will be false even if the expression is only a variable reference.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#isVariable">ArchBaseValue#isVariable</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isVariableInitialValue">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isVariableInitialValue<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this value is the initial value for a variable.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#isVariableInitialValue">ArchBaseValue#isVariableInitialValue</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="length">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>length<span class="type-signature"> :number</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns the number of Architect value items in this collection if this value <a href="ArchBaseValue.html#isLiteral"><code>is a literal</code></a>.
-Remember that asynchronous calls to add items to literal collection values will not add the item to the collection
-until the asynchronous processing successfully completes.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">number</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseNetworkValueCollection.html#length">ArchBaseNetworkValueCollection#length</a>
-    </li></ul></dd>
-    
-
     
 
     
@@ -1616,7 +1024,8 @@ until the asynchronous processing successfully completes.</p>
 <dd>
     
     <div class="description">
-        <p>Returns a logging string that describes this Architect value.</p>
+        <p>A string suitable for logging that contains information about this action.  This will contain the action
+tracking id, name and scripting type name.</p>
     </div>
     
 
@@ -1644,12 +1053,12 @@ until the asynchronous processing successfully completes.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#logStr">ArchBaseValue#logStr</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#logStr">ArchBaseActionWithOutputFailure#logStr</a>
+    </li></ul></dd>
     
 
     
@@ -1725,12 +1134,12 @@ logging str contents wouldn't be set up.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logStrTypeOnly">ArchBaseObject#logStrTypeOnly</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#logStrTypeOnly">ArchBaseActionWithOutputFailure#logStrTypeOnly</a>
+    </li></ul></dd>
     
 
     
@@ -1766,8 +1175,8 @@ logging str contents wouldn't be set up.</p>
             
 
 <dt>
-<h4 class="name" id="overridesDefaultValue">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>overridesDefaultValue<span class="type-signature"> :boolean</span>
+<h4 class="name" id="name">
+    <span class="type-signature"></span>name<span class="type-signature"> :string</span>
     
 </h4>
 
@@ -1776,8 +1185,7 @@ logging str contents wouldn't be set up.</p>
 <dd>
     
     <div class="description">
-        <p>Returns whether or not this value is overriding another default value.  For example, this is true when this
-a value overrides a flow level setting value.</p>
+        <p>The name of the action</p>
     </div>
     
 
@@ -1787,7 +1195,7 @@ a value overrides a flow level setting value.</p>
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type">string</span>
 
 
             </li>
@@ -1805,12 +1213,12 @@ a value overrides a flow level setting value.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#overridesDefaultValue">ArchBaseValue#overridesDefaultValue</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#name">ArchBaseActionWithOutputFailure#name</a>
+    </li></ul></dd>
     
 
     
@@ -1846,8 +1254,8 @@ a value overrides a flow level setting value.</p>
             
 
 <dt>
-<h4 class="name" id="parent">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>parent<span class="type-signature"> :<a href="ArchBaseObject.html">ArchBaseObject</a></span>
+<h4 class="name" id="outputCount">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>outputCount<span class="type-signature"> :number</span>
     
 </h4>
 
@@ -1856,7 +1264,10 @@ a value overrides a flow level setting value.</p>
 <dd>
     
     <div class="description">
-        <p>The parent Architect Scripting object associated with this value.</p>
+        <p>Returns the number of outputs on this action.  For actions that have a fake success output like what you
+see on the various transfer actions, that will be included in the count to be consistent with the Architect UI.
+Attempting to get the output count on a menu choice's action such as such as the <a href="ArchMenuTransferToAcd.html#actionTransferToAcd"><code>ArchMenuTransferToAcd#actionTransferToAcd</code></a>
+action on an <a href="ArchMenuTransferToAcd.html"><code>ArchMenuTransferToAcd</code></a> menu will return 0.</p>
     </div>
     
 
@@ -1866,7 +1277,7 @@ a value overrides a flow level setting value.</p>
         <ul>
             <li>
                 
-<span class="param-type"><a href="ArchBaseObject.html">ArchBaseObject</a></span>
+<span class="param-type">number</span>
 
 
             </li>
@@ -1884,12 +1295,173 @@ a value overrides a flow level setting value.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#parent">ArchBaseValue#parent</a>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#outputCount">ArchBaseActionWithOutputFailure#outputCount</a>
     </li></ul></dd>
     
 
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="outputFailure">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>outputFailure<span class="type-signature"> :<a href="ArchActionOutput.html">ArchActionOutput</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The failure output for this action</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#outputFailure">ArchBaseActionWithOutputFailure#outputFailure</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="outputs">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>outputs<span class="type-signature"> :Array.&lt;<a href="ArchActionOutput.html">ArchActionOutput</a>></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns an array of action outputs for this action.  Remember that it is possible to have an
+undefined item in the returned ArchActionOutput array.  This is true when the output is &quot;fake&quot;.
+Accessing the outputs on a menu choice's action such as <a href="ArchMenuTransferToAcd.html#actionTransferToAcd"><code>ArchMenuTransferToAcd#actionTransferToAcd</code></a>
+will return an empty array.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Array.&lt;<a href="ArchActionOutput.html">ArchActionOutput</a>></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#outputs">ArchBaseActionWithOutputFailure#outputs</a>
+    </li></ul></dd>
     
 
     
@@ -1935,7 +1507,7 @@ a value overrides a flow level setting value.</p>
 <dd>
     
     <div class="description">
-        <p>Returns the parent flow for this value.</p>
+        <p>Returns the parent flow for this action.</p>
     </div>
     
 
@@ -1963,12 +1535,12 @@ a value overrides a flow level setting value.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#parentFlow">ArchBaseValue#parentFlow</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#parentFlow">ArchBaseActionWithOutputFailure#parentFlow</a>
+    </li></ul></dd>
     
 
     
@@ -2004,8 +1576,8 @@ a value overrides a flow level setting value.</p>
             
 
 <dt>
-<h4 class="name" id="settings">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>settings<span class="type-signature"> :<a href="ArchValueSettings.html">ArchValueSettings</a></span>
+<h4 class="name" id="parentMenuChoice">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>parentMenuChoice<span class="type-signature"> :<a href="ArchBaseMenuChoice.html">ArchBaseMenuChoice</a></span>
     
 </h4>
 
@@ -2014,8 +1586,8 @@ a value overrides a flow level setting value.</p>
 <dd>
     
     <div class="description">
-        <p>Returns the settings associated with this value which provides meta data about this value like
-whether it is an output, can be set to a literal, can be set to an expression, etc. etc.</p>
+        <p>Returns the parent menu choice if this action is the action for a <a href="ArchBaseMenuChoice.html"><code>menu choice</code></a>.
+Otherwise, nothing is returned.</p>
     </div>
     
 
@@ -2025,7 +1597,7 @@ whether it is an output, can be set to a literal, can be set to an expression, e
         <ul>
             <li>
                 
-<span class="param-type"><a href="ArchValueSettings.html">ArchValueSettings</a></span>
+<span class="param-type"><a href="ArchBaseMenuChoice.html">ArchBaseMenuChoice</a></span>
 
 
             </li>
@@ -2043,12 +1615,12 @@ whether it is an output, can be set to a literal, can be set to an expression, e
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#settings">ArchBaseValue#settings</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#parentMenuChoice">ArchBaseActionWithOutputFailure#parentMenuChoice</a>
+    </li></ul></dd>
     
 
     
@@ -2084,8 +1656,8 @@ whether it is an output, can be set to a literal, can be set to an expression, e
             
 
 <dt>
-<h4 class="name" id="valueText">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>valueText<span class="type-signature"> :string|Array.&lt;string></span>
+<h4 class="name" id="parentState">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>parentState<span class="type-signature"> :<a href="ArchState.html">ArchState</a></span>
     
 </h4>
 
@@ -2094,15 +1666,8 @@ whether it is an output, can be set to a literal, can be set to an expression, e
 <dd>
     
     <div class="description">
-        <p>Returns a JavaScript string or string array for this collection value.
-If this value is an expression, it returns the expression text.  If this value is a variable, it
-returns the variable text.  If this value is a literal, the return value will be a JavaScript
-string array where each item's value in the array will be generated by accessing the
-<code>valueText</code> property for it.  Please be sure to
-see <code>ArchBaseNetworkValue#valueText</code> for more information on the string formatting.
-Overall this property is meant to be a quick and easy way to look at a &quot;value&quot; string
-for a collection value but it is not meant to be some kind of fully inclusive description of
-this ArchBaseValueBasicCollection instance overall.</p>
+        <p>Returns the parent state that contains this action if this action is in a <a href="ArchState.html"><code>state</code></a>.
+Otherwise, nothing is returned.</p>
     </div>
     
 
@@ -2112,10 +1677,90 @@ this ArchBaseValueBasicCollection instance overall.</p>
         <ul>
             <li>
                 
-<span class="param-type">string</span>
+<span class="param-type"><a href="ArchState.html">ArchState</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#parentState">ArchBaseActionWithOutputFailure#parentState</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="parentTask">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>parentTask<span class="type-signature"> :<a href="ArchTask.html">ArchTask</a>|<a href="ArchTaskLoop.html">ArchTaskLoop</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns the parent task that contains this action if this action is in a <a href="ArchTask.html"><code>task</code></a> or <a href="ArchTaskLoop.html"><code>looping task</code></a>.
+Otherwise, nothing is returned.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchTask.html">ArchTask</a></span>
 |
 
-<span class="param-type">Array.&lt;string></span>
+<span class="param-type"><a href="ArchTaskLoop.html">ArchTaskLoop</a></span>
 
 
             </li>
@@ -2133,12 +1778,165 @@ this ArchBaseValueBasicCollection instance overall.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseNetworkValueCollection.html#valueText">ArchBaseNetworkValueCollection#valueText</a>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#parentTask">ArchBaseActionWithOutputFailure#parentTask</a>
     </li></ul></dd>
     
 
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="sessionVariables">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>sessionVariables<span class="type-signature"> :<a href="ArchBaseNameValuePairs.html">ArchBaseNameValuePairs</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns the input Session Variables configured on the action.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchBaseNameValuePairs.html">ArchBaseNameValuePairs</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="trackingId">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>trackingId<span class="type-signature"> :number</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The integer tracking identifier for this action.  This is the numeric identifier is displayed in the Architect user interface.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#trackingId">ArchBaseActionWithOutputFailure#trackingId</a>
+    </li></ul></dd>
     
 
     
@@ -2181,9 +1979,9 @@ this ArchBaseValueBasicCollection instance overall.</p>
 
 <dt>
     
-        <h4 class="name" id="addItemToCollection">
+        <h4 class="name" id="addSessionVariableNameValuePair">
             
-                <span class="type-signature"></span>addItemToCollection<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="ArchBaseValue.html">ArchBaseValue</a>}</span>
+                <span class="type-signature"></span>addSessionVariableNameValuePair<span class="signature">(nameLiteral<span class="signature-attributes">opt</span>, valueExpression<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="ArchBaseNameValuePair.html">ArchBaseNameValuePair</a>}</span>
                 
             
         </h4>
@@ -2195,122 +1993,13 @@ this ArchBaseValueBasicCollection instance overall.</p>
 
     
     <div class="description">
-        <p>This changes the value to a literal, creates a new <a href="ArchBaseValue.html"><code>ArchBaseValue</code></a> instance, adds it to the end of the collection
-and returns it.  The returned value will be the appropriate type for items contained in the collection.  As such,
-if you added an item to an <a href="ArchValueQueueCollection.html"><code>ArchValueQueueCollection</code></a>, the returned item would be an
-<a href="ArchValueQueue.html"><code>ArchValueQueue</code></a> value.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type"><a href="ArchBaseValue.html">ArchBaseValue</a></span>
-
-
-
-
-
-- <ul>
-<li>the newly created ArchBaseValue that was added.</li>
+        <p>This adds a session variable name value pair to the Base Bot action that can be used to specify
+the session variable's name and corresponding value that should be assigned to it.  On the returned
+<a href="ArchBaseNameValuePair.html"><code>ArchBaseNameValuePair</code></a> pair:</p>
+<ul>
+<li>the <a href="ArchBaseNameValuePair.html#name"><code>name</code></a> property specifies the name of the session variable whose value you want to set</li>
+<li>the <a href="ArchBaseNameValuePair.html#value"><code>value</code></a> property is the value to set on the session variable at runtime.</li>
 </ul>
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseNetworkValueCollection.html#addItemToCollection">ArchBaseNetworkValueCollection#addItemToCollection</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="addLiteralByEmergencyGroupIdAsync">
-            
-                <span class="type-signature"></span>addLiteralByEmergencyGroupIdAsync<span class="signature">(emergencyGroupId, callbackFunction<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ArchValueEmergencyGroupCollection.html">ArchValueEmergencyGroupCollection</a>>}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Adds an emergency group to this collection looking up the emergencyGroup to add by the emergencyGroup by id</p>
     </div>
     
 
@@ -2348,44 +2037,13 @@ if you added an item to an <a href="ArchValueQueueCollection.html"><code>ArchVal
 
         <tr>
             
-                <td class="name"><code>emergencyGroupId</code></td>
+                <td class="name"><code>nameLiteral</code></td>
             
 
             <td class="type">
             
                 
 <span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>the identifier of the emergencyGroup.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>callbackFunction</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#callbackArchValueEmergencyGroupCollection">callbackArchValueEmergencyGroupCollection</a></span>
 
 
             
@@ -2405,9 +2063,40 @@ if you added an item to an <a href="ArchValueQueueCollection.html"><code>ArchVal
 
             
 
-            <td class="description last"><p>a callback function to call if the emergencyGroup is successfully
-looked up and added to this emergencyGroup collection value.  The first parameter passed
-to the callback function will be this emergencyGroup collection value instance.</p></td>
+            <td class="description last"><p>a string that specifies the name of the session variable to set.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>valueExpression</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>a string expression that specifies the value to set on the session variable.</p></td>
         </tr>
 
     
@@ -2435,7 +2124,7 @@ to the callback function will be this emergencyGroup collection value instance.<
 
 
 
-<span class="param-type">Promise.&lt;<a href="ArchValueEmergencyGroupCollection.html">ArchValueEmergencyGroupCollection</a>></span>
+<span class="param-type"><a href="ArchBaseNameValuePair.html">ArchBaseNameValuePair</a></span>
 
 
 
@@ -2494,9 +2183,9 @@ to the callback function will be this emergencyGroup collection value instance.<
 
 <dt>
     
-        <h4 class="name" id="addLiteralByEmergencyGroupNameAsync">
+        <h4 class="name" id="getOutputById">
             
-                <span class="type-signature"></span>addLiteralByEmergencyGroupNameAsync<span class="signature">(emergencyGroupName, callbackFunction<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ArchValueEmergencyGroupCollection.html">ArchValueEmergencyGroupCollection</a>>}</span>
+                <span class="type-signature"></span>getOutputById<span class="signature">(output)</span><span class="type-signature"> &rarr; {<a href="ArchActionOutput.html">ArchActionOutput</a>}</span>
                 
             
         </h4>
@@ -2508,7 +2197,11 @@ to the callback function will be this emergencyGroup collection value instance.<
 
     
     <div class="description">
-        <p>Adds an emergency group to this collection looking up the emergencyGroup to add by the emergencyGroup name</p>
+        <p>Gets an output by its identifier.  If it cannot be found, this method will throw.
+Normally you won't need to use this method and will use the helper methods available on inheriting classes
+when accessing pre-defined outputs like success, failure, timeout, etc. etc.  Attempting to
+get an output by id on a menu choice's action such as the <a href="ArchMenuTransferToAcd.html#actionTransferToAcd"><code>ArchMenuTransferToAcd#actionTransferToAcd</code></a>
+action on an <a href="ArchMenuTransferToAcd.html"><code>ArchMenuTransferToAcd</code></a> menu will return nothing.</p>
     </div>
     
 
@@ -2532,8 +2225,6 @@ to the callback function will be this emergencyGroup collection value instance.<
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
         
 
@@ -2546,66 +2237,30 @@ to the callback function will be this emergencyGroup collection value instance.<
 
         <tr>
             
-                <td class="name"><code>emergencyGroupName</code></td>
+                <td class="name"><code>output</code></td>
             
 
             <td class="type">
             
                 
 <span class="param-type">string</span>
+|
+
+<span class="param-type"><a href="ArchBranch.html">ArchBranch</a></span>
 
 
             
             </td>
 
             
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
 
             
 
-            <td class="description last"><p>the name of the emergencyGroup.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>callbackFunction</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#callbackArchValueEmergencyGroupCollection">callbackArchValueEmergencyGroupCollection</a></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>a callback function to call if the emergencyGroup is successfully
-looked up and added to this emergencyGroup collection value.  The first parameter passed
-to the callback function will be this emergencyGroup collection value instance.</p></td>
+            <td class="description last"><p>identifies output you want to obtain.  If output is an ArchBranch instance,
+the <a href="ArchBranch.html#outputId"><code>ArchBranch#outputId</code></a> value will be used.  Otherwise valid string
+identifier values can be found in <a href="ArchEnums.html#OUTPUT_IDS"><code>ArchEnums#OUTPUT_IDS</code></a> or can be a guid.
+Remember that requesting the 'success' output on an action with a
+<a href="ArchBaseActionWithOutputsFakeSuccessFailure.html#hasFakeSuccessOutput"><code>fake success output</code></a> will return nothing.</p></td>
         </tr>
 
     
@@ -2633,7 +2288,7 @@ to the callback function will be this emergencyGroup collection value instance.<
 
 
 
-<span class="param-type">Promise.&lt;<a href="ArchValueEmergencyGroupCollection.html">ArchValueEmergencyGroupCollection</a>></span>
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
 
 
 
@@ -2658,91 +2313,9 @@ to the callback function will be this emergencyGroup collection value instance.<
     
 
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="clearCollection">
-            
-                <span class="type-signature"></span>clearCollection<span class="signature">()</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Clears all values from this collection.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseNetworkValueCollection.html#clearCollection">ArchBaseNetworkValueCollection#clearCollection</a>
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#getOutputById">ArchBaseActionWithOutputFailure#getOutputById</a>
     </li></ul></dd>
     
 
@@ -2767,8 +2340,6 @@ to the callback function will be this emergencyGroup collection value instance.<
     
 
     
-
-    
 </dl>
 
 
@@ -2781,9 +2352,9 @@ to the callback function will be this emergencyGroup collection value instance.<
 
 <dt>
     
-        <h4 class="name" id="getExpressionText">
+        <h4 class="name" id="getOutputByIndex">
             
-                <span class="type-signature"></span>getExpressionText<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span>
+                <span class="type-signature"></span>getOutputByIndex<span class="signature">(index)</span><span class="type-signature"> &rarr; {<a href="ArchActionOutput.html">ArchActionOutput</a>}</span>
                 
             
         </h4>
@@ -2795,115 +2366,11 @@ to the callback function will be this emergencyGroup collection value instance.<
 
     
     <div class="description">
-        <p>If this value is an expression, this method will return the expression text.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">string</span>
-
-
-
-
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#getExpressionText">ArchBaseValue#getExpressionText</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="getItemByIndex">
-            
-                <span class="type-signature"></span>getItemByIndex<span class="signature">(index)</span><span class="type-signature"> &rarr; {<a href="ArchBaseValue.html">ArchBaseValue</a>}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Returns the Architect value associated with the collection at the specified index if this value <a href="ArchBaseValue.html#isLiteral"><code>is a literal</code></a>.</p>
+        <p>Returns the output at the given index.  It's important to note that on actions that have a fake success
+output if you request the output at the index for the fake success, you will get nothing returned because
+the fake success output isn't something that you should do anything with.  Attempting to
+access an output by index on a menu choice's action such as <a href="ArchMenuTransferToAcd.html#actionTransferToAcd"><code>ArchMenuTransferToAcd#actionTransferToAcd</code></a>
+will return nothing.</p>
     </div>
     
 
@@ -2955,7 +2422,7 @@ to the callback function will be this emergencyGroup collection value instance.<
 
             
 
-            <td class="description last"><p>the index of the collection item to retrieve.  This value should be a non-negative integer.</p></td>
+            <td class="description last"><p>the index of the output to retrieve.  This value should be a non-negative integer.</p></td>
         </tr>
 
     
@@ -2983,7 +2450,7 @@ to the callback function will be this emergencyGroup collection value instance.<
 
 
 
-<span class="param-type"><a href="ArchBaseValue.html">ArchBaseValue</a></span>
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
 
 
 
@@ -3006,12 +2473,12 @@ to the callback function will be this emergencyGroup collection value instance.<
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseNetworkValueCollection.html#getItemByIndex">ArchBaseNetworkValueCollection#getItemByIndex</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#getOutputByIndex">ArchBaseActionWithOutputFailure#getOutputByIndex</a>
+    </li></ul></dd>
     
 
     
@@ -3047,9 +2514,9 @@ to the callback function will be this emergencyGroup collection value instance.<
 
 <dt>
     
-        <h4 class="name" id="getVariable">
+        <h4 class="name" id="getOutputByName">
             
-                <span class="type-signature"></span>getVariable<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="ArchBaseVariable.html">ArchBaseVariable</a>}</span>
+                <span class="type-signature"></span>getOutputByName<span class="signature">(output, wantDynamicOutput<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="ArchActionOutput.html">ArchActionOutput</a>}</span>
                 
             
         </h4>
@@ -3061,7 +2528,11 @@ to the callback function will be this emergencyGroup collection value instance.<
 
     
     <div class="description">
-        <p>If this value is a variable reference, this method will return the variable that is being referenced.</p>
+        <p>Gets an output by its identifier.  If it cannot be found, this method will throw.
+Normally you won't need to use this method and will use the helper methods available on inheriting classes
+when accessing pre-defined outputs like success, failure, timeout, etc. etc.  Attempting to
+get an output by id on a menu choice's action such as the <a href="ArchMenuTransferToAcd.html#actionTransferToAcd"><code>ArchMenuTransferToAcd#actionTransferToAcd</code></a>
+action on an <a href="ArchMenuTransferToAcd.html"><code>ArchMenuTransferToAcd</code></a> menu will return nothing.</p>
     </div>
     
 
@@ -3071,6 +2542,124 @@ to the callback function will be this emergencyGroup collection value instance.<
 
     
 
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>output</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type"><a href="ArchBranch.html">ArchBranch</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>identifies output you want to obtain by name.  If output is an ArchBranch instance,
+the <a href="ArchBranch.html#name"><code>ArchBranch#name</code></a> value will be used.
+Remember that requesting the 'Success' output on an action with a
+<a href="ArchBaseActionWithOutputsFakeSuccessFailure.html#hasFakeSuccessOutput"><code>fake success output</code></a> will return nothing.
+For non-dynamic outputs, the name should be specified in English.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>wantDynamicOutput</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>because it is possible for some actions to have both a non-dynamic output
+and a dynamic output with the same name, this boolean will let you specify
+which output you want.  An example of this would be the built in Failure
+output on a call bot action but that bot also has an intent named Failure
+so the action has two outputs with the same name of 'Failure'.  Only one
+of those would be a dynamic output and that's the output for the Failure
+intent, not the built-in Failure action output.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
     
 
     
@@ -3091,7 +2680,7 @@ to the callback function will be this emergencyGroup collection value instance.<
 
 
 
-<span class="param-type"><a href="ArchBaseVariable.html">ArchBaseVariable</a></span>
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
 
 
 
@@ -3114,12 +2703,12 @@ to the callback function will be this emergencyGroup collection value instance.<
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#getVariable">ArchBaseValue#getVariable</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#getOutputByName">ArchBaseActionWithOutputFailure#getOutputByName</a>
+    </li></ul></dd>
     
 
     
@@ -3273,12 +2862,12 @@ for the supplied ArchFilterObject instance.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#isFilterMatch">ArchBaseObject#isFilterMatch</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#isFilterMatch">ArchBaseActionWithOutputFailure#isFilterMatch</a>
+    </li></ul></dd>
     
 
     
@@ -3412,12 +3001,12 @@ for the supplied ArchFilterObject instance.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logError">ArchBaseObject#logError</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#logError">ArchBaseActionWithOutputFailure#logError</a>
+    </li></ul></dd>
     
 
     
@@ -3566,12 +3155,12 @@ the string in the errorStr parameter.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logErrorAndThrow">ArchBaseObject#logErrorAndThrow</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#logErrorAndThrow">ArchBaseActionWithOutputFailure#logErrorAndThrow</a>
+    </li></ul></dd>
     
 
     
@@ -3705,12 +3294,12 @@ the string in the errorStr parameter.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logNote">ArchBaseObject#logNote</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#logNote">ArchBaseActionWithOutputFailure#logNote</a>
+    </li></ul></dd>
     
 
     
@@ -3844,12 +3433,12 @@ the string in the errorStr parameter.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logNoteVerbose">ArchBaseObject#logNoteVerbose</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#logNoteVerbose">ArchBaseActionWithOutputFailure#logNoteVerbose</a>
+    </li></ul></dd>
     
 
     
@@ -3983,658 +3572,12 @@ the string in the errorStr parameter.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logWarning">ArchBaseObject#logWarning</a>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#logWarning">ArchBaseActionWithOutputFailure#logWarning</a>
     </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="setExpression">
-            
-                <span class="type-signature"></span>setExpression<span class="signature">(expressionText)</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>This sets the expression text on this value.  If the expression cannot be set because the expression
-text is invalid, you're trying to set an expression on an output, etc. etc. the call will fail.
-If you wish to have the ability to set syntactically invalid expression text on an <a href="ArchBaseValue.html"><code>ArchBaseValue</code></a> object
-and not have this method throw, you can set the <a href="ArchValueSettings.html#.allowInvalidExpressionText"><code>ArchValueSettings.allowInvalidExpressionText</code></a> property
-to true prior to calling the setExpression function and Scripting will not throw an error if the expression
-text is invalid.
-Remember, output values are required to be variables so you should use setVariable on those calls
-instead of passing in expression text that references a variable.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>expressionText</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>the expression to set on this value.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Throws:</h5>
-    
-            
-
-    <div class="param-desc">
-    
-        <ul>
-<li>This method will throw if it is unable to set the supplied expression text with an error describing why.</li>
-</ul>
-    
-    </div>
-
-
-        
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#setExpression">ArchBaseValue#setExpression</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="setExpressionFromVariable">
-            
-                <span class="type-signature"></span>setExpressionFromVariable<span class="signature">(variableToAssign)</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>This method sets the value to an expression and assigns the variable's name as the expression text.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>variableToAssign</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-|
-
-<span class="param-type"><a href="ArchBaseVariable.html">ArchBaseVariable</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>the variable to assign passed in either by a string
-like 'Flow.myInteger' or an Architect variable.  If the value
-is a string, this function will attempt to look up the variable
-and if it doesn't exist then create it.  Next it will assign the
-variable name as the expression text.  If you pass in an <a href="ArchBaseVariable.html"><code>ArchBaseVariable</code></a>
-reference, it needs to be in scope for this value.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#setExpressionFromVariable">ArchBaseValue#setExpressionFromVariable</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="setNoValue">
-            
-                <span class="type-signature"></span>setNoValue<span class="signature">()</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>This method sets the value to no value.  Note that this is different from setting NOT_SET or something like a
-blank string.  Setting a value to contain no value is something which is rather internal to Architect but we're
-exposing it in scripting.  In a nutshell, setting no value means to take advantage of default runtime handling.
-The default runtime handling can change based on where this is used.  For example, setting no value for a variable
-initial value means that the runtime will set a non-collection variable to NOT_SET or a collection variable to
-an empty collection.  On a value that has a flow level default, setting it to no value means that the runtime
-should pick up the value to use from the flow level default.  And if a flow level default allows no value,
-that means that the runtime will pick up the value from somewhere else normally defined in Admin.  An example
-of this is that the connect timeout specified for a Transfer to Number action that it would use the Edge trunk
-connect timeout.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#setNoValue">ArchBaseValue#setNoValue</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="setNoValueNoFallback">
-            
-                <span class="type-signature"></span>setNoValueNoFallback<span class="signature">()</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>This method sets the value to no value but with no fallback. This is different that setNoValue in that you are
-explicitly setting the expression to no value and you do not want to use the flows default value for this setting.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#setNoValueNoFallback">ArchBaseValue#setNoValueNoFallback</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="setVariable">
-            
-                <span class="type-signature"></span>setVariable<span class="signature">(variableToAssign)</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>This method sets the value to a variable and assigns the supplied variable to it.  One thing to be aware of
-is when a value reports that it is an <a href="ArchValueSettings.html#isInput"><code>input</code></a>, the value may not allow you to call this
-method to configure a variable if the value's <a href="ArchValueSettings.html#canBeVariable"><code>can be variable</code></a> setting reports false.
-Assuming that the value reports it <a href="ArchValueSettings.html#canBeExpression"><code>can be an expression</code></a>, please look at using
-the <a href="ArchBaseValue.html#setExpressionFromVariable"><code>ArchBaseValue#setExpressionFromVariable</code></a> method instead.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>variableToAssign</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-|
-
-<span class="param-type"><a href="ArchBaseVariable.html">ArchBaseVariable</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>the variable to assign passed in either by a string
-like 'Flow.myInteger' or an Architect variable.  If the value
-is a string, this function will attempt to look up the variable
-and if it doesn't exist then create it.  Next it will assign the
-variable name as the expression text.  If you pass in an <a href="ArchBaseVariable.html"><code>ArchBaseVariable</code></a>
-reference, it needs to be in scope for this value.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValue.html#setVariable">ArchBaseValue#setVariable</a>
-    </li></ul></dd>
-    
-
     
 
     
@@ -4909,12 +3852,12 @@ use that traversal default filter.  The wantArchBaseValues parameter on that cal
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseCoreObject.html#traverse">ArchBaseCoreObject#traverse</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputFailure.html#traverse">ArchBaseActionWithOutputFailure#traverse</a>
+    </li></ul></dd>
     
 
     
@@ -4970,7 +3913,7 @@ use that traversal default filter.  The wantArchBaseValues parameter on that cal
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'ArchValueEmergencyGroupCollection_sub'.replace(/"/g, '_');
+        var id = 'ArchBaseActionBotWithSessionVariables_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
