@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: ArchActionEvaluateSchedule | Architect Scripting</title>
+    <title>Class: ArchActionFindKnowledgeBaseDocumentById | Architect Scripting</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -50,7 +50,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ArchActionEvaluateSchedule<span class="signature">(coreEvaluateScheduleViewModel)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ArchActionFindKnowledgeBaseDocumentById<span class="signature">(coreFindKnowledgeBaseDocumentByIdActionViewModel)</span><span class="type-signature"></span></h2>
         
     
 </header>
@@ -63,9 +63,9 @@
 
 <dt>
     
-        <h4 class="name" id="ArchActionEvaluateSchedule">
+        <h4 class="name" id="ArchActionFindKnowledgeBaseDocumentById">
             
-                new <span class="type-signature"></span>ArchActionEvaluateSchedule<span class="signature">(coreEvaluateScheduleViewModel)</span><span class="type-signature"></span>
+                new <span class="type-signature"></span>ArchActionFindKnowledgeBaseDocumentById<span class="signature">(coreFindKnowledgeBaseDocumentByIdActionViewModel)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -77,8 +77,8 @@
 
     
     <div class="description">
-        <p>The Architect Scripting class that represents the Evaluate Schedule action.
-Instances of this action should be created by calling <a href="ArchFactoryActions.html#addActionEvaluateSchedule"><code>ArchFactoryActions#addActionEvaluateSchedule</code></a></p>
+        <p>The Architect Scripting class that represents the Find KnowledgeBaseDocument By ID action.
+Instances of this action should be created by calling <a href="ArchFactoryActions.html#addActionFindKnowledgeBaseDocumentById"><code>ArchFactoryActions#addActionFindKnowledgeBaseDocumentById</code></a></p>
     </div>
     
 
@@ -114,7 +114,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 
         <tr>
             
-                <td class="name"><code>coreEvaluateScheduleViewModel</code></td>
+                <td class="name"><code>coreFindKnowledgeBaseDocumentByIdActionViewModel</code></td>
             
 
             <td class="type">
@@ -130,7 +130,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 
             
 
-            <td class="description last"><p>( <em>Internal</em> ) an Architect core schedule view model.</p></td>
+            <td class="description last"><p>( <em>Internal</em> ) an Architect core Find KnowledgeBaseDocument By ID action view model.</p></td>
         </tr>
 
     
@@ -187,7 +187,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="ArchFactoryActions.html#addActionEvaluateSchedule">ArchFactoryActions#addActionEvaluateSchedule</a></li>
+            <li><a href="ArchFactoryActions.html#addActionFindKnowledgeBaseDocumentById">ArchFactoryActions#addActionFindKnowledgeBaseDocumentById</a></li>
         </ul>
     </dd>
     
@@ -211,7 +211,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 
 
     <ul>
-        <li><a href="ArchBaseActionSchedule.html">ArchBaseActionSchedule</a></li>
+        <li><a href="ArchBaseActionFindSystemObjectById.html">ArchBaseActionFindSystemObjectById</a></li>
     </ul>
 
 
@@ -244,7 +244,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 <dd>
     
     <div class="description">
-        <p>Returns the display type name string 'ArchActionEvaluateSchedule'.</p>
+        <p>Returns the display type name string 'ArchActionFindKnowledgeBaseDocumentById'.</p>
     </div>
     
 
@@ -387,8 +387,8 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
             
 
 <dt>
-<h4 class="name" id="emergencyGroup">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>emergencyGroup<span class="type-signature"> :<a href="ArchValueEmergencyGroup.html">ArchValueEmergencyGroup</a></span>
+<h4 class="name" id="findId">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>findId<span class="type-signature"> :<a href="ArchValueString.html">ArchValueString</a></span>
     
 </h4>
 
@@ -397,7 +397,9 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 <dd>
     
     <div class="description">
-        <p>The emergency group to use</p>
+        <p>The identifier of the object to look up.  While it is always a string, inheriting Find action
+classes will provide the context of the identifier.  For example, in the <a href="ArchActionFindUserById.html"><code>ArchActionFindUserById</code></a> action
+this would be the identifier of the user that you wish to look up at runtime.</p>
     </div>
     
 
@@ -407,7 +409,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
         <ul>
             <li>
                 
-<span class="param-type"><a href="ArchValueEmergencyGroup.html">ArchValueEmergencyGroup</a></span>
+<span class="param-type"><a href="ArchValueString.html">ArchValueString</a></span>
 
 
             </li>
@@ -427,7 +429,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseActionSchedule.html#emergencyGroup">ArchBaseActionSchedule#emergencyGroup</a>
+        <a href="ArchBaseActionFindSystemObjectById.html#findId">ArchBaseActionFindSystemObjectById#findId</a>
     </li></ul></dd>
     
 
@@ -466,8 +468,8 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
             
 
 <dt>
-<h4 class="name" id="evaluateEmergencyGroup">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>evaluateEmergencyGroup<span class="type-signature"> :boolean</span>
+<h4 class="name" id="findResult">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>findResult<span class="type-signature"> :<a href="ArchValueKnowledgeBaseDocument.html">ArchValueKnowledgeBaseDocument</a></span>
     
 </h4>
 
@@ -476,7 +478,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
 <dd>
     
     <div class="description">
-        <p>The evaluate emergency group boolean to determine if the action should evaluate a schedule or an emergencyGroup.</p>
+        <p>The value that holds the result of the find knowledge base document by identifier lookup at runtime.</p>
     </div>
     
 
@@ -486,7 +488,7 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type"><a href="ArchValueKnowledgeBaseDocument.html">ArchValueKnowledgeBaseDocument</a></span>
 
 
             </li>
@@ -506,163 +508,10 @@ Instances of this action should be created by calling <a href="ArchFactoryAction
     
 
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="evaluateNow">
-    <span class="type-signature"></span>evaluateNow<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The evaluate now boolean to determine if the base schedule should be evaluated at execution time or a specified datetime.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseActionSchedule.html#evaluateNow">ArchBaseActionSchedule#evaluateNow</a>
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseActionFindSystemObjectById.html#findResult">ArchBaseActionFindSystemObjectById#findResult</a>
     </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="evaluationDateTime">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>evaluationDateTime<span class="type-signature"> :<a href="ArchValueDateTime.html">ArchValueDateTime</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The specific date time to use when evaluating the base schedule</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchValueDateTime.html">ArchValueDateTime</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseActionSchedule.html#evaluationDateTime">ArchBaseActionSchedule#evaluationDateTime</a>
-    </li></ul></dd>
-    
-
     
 
     
@@ -865,8 +714,8 @@ an extremely rare case.</p>
             
 
 <dt>
-<h4 class="name" id="isArchActionEvaluateSchedule">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isArchActionEvaluateSchedule<span class="type-signature"> :boolean</span>
+<h4 class="name" id="isArchActionFindKnowledgeBaseDocumentById">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isArchActionFindKnowledgeBaseDocumentById<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -875,7 +724,7 @@ an extremely rare case.</p>
 <dd>
     
     <div class="description">
-        <p>Returns true indicating that this is an ArchActionEvaluateSchedule instance.</p>
+        <p>Returns true indicating that this is an ArchActionFindKnowledgeBaseDocumentById instance.</p>
     </div>
     
 
@@ -1577,80 +1426,6 @@ logging str contents wouldn't be set up.</p>
             
 
 <dt>
-<h4 class="name" id="outputActive">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>outputActive<span class="type-signature"> :<a href="ArchActionOutput.html">ArchActionOutput</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The active output for this action</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
 <h4 class="name" id="outputCount">
     <span class="type-signature"><span class="icon green">readonly</span> </span>outputCount<span class="type-signature"> :number</span>
     
@@ -1733,8 +1508,8 @@ action on an <a href="ArchMenuTransferToAcd.html"><code>ArchMenuTransferToAcd</c
             
 
 <dt>
-<h4 class="name" id="outputInactive">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>outputInactive<span class="type-signature"> :<a href="ArchActionOutput.html">ArchActionOutput</a></span>
+<h4 class="name" id="outputFound">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>outputFound<span class="type-signature"> :<a href="ArchActionOutput.html">ArchActionOutput</a></span>
     
 </h4>
 
@@ -1743,7 +1518,7 @@ action on an <a href="ArchMenuTransferToAcd.html"><code>ArchMenuTransferToAcd</c
 <dd>
     
     <div class="description">
-        <p>The inactive output for this action</p>
+        <p>The found output for this action</p>
     </div>
     
 
@@ -1770,6 +1545,90 @@ action on an <a href="ArchMenuTransferToAcd.html"><code>ArchMenuTransferToAcd</c
 
     
 
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsFoundNotFound.html#outputFound">ArchBaseActionWithOutputsFoundNotFound#outputFound</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="outputNotFound">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>outputNotFound<span class="type-signature"> :<a href="ArchActionOutput.html">ArchActionOutput</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The not found output for this action</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputsFoundNotFound.html#outputNotFound">ArchBaseActionWithOutputsFoundNotFound#outputNotFound</a>
+    </li></ul></dd>
     
 
     
@@ -2174,157 +2033,6 @@ Otherwise, nothing is returned.</p>
     <dd class="inherited-from"><ul class="dummy"><li>
         <a href="ArchBaseAction.html#parentTask">ArchBaseAction#parentTask</a>
     </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="schedule">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>schedule<span class="type-signature"> :<a href="ArchValueSchedule.html">ArchValueSchedule</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The schedule to use</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchValueSchedule.html">ArchValueSchedule</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="scheduleTimeZone">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>scheduleTimeZone<span class="type-signature"> :<a href="ArchValueString.html">ArchValueString</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>This value must be a valid timezone identifier. The best way to get a list of these strings is to look at what is available
-in the Architect UI for this action. When specifying a timezone identifier, please note that this does not include the
-UTC offset. In the Architect UI you can see this when switching from a literal timezone selection to an expression. For example,
-instead of <code>Australia/Sydney (+11:00)</code>, the literal string value you would want to set is <code>Australia/Sydney</code>.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchValueString.html">ArchValueString</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
     
 
     
@@ -3878,947 +3586,6 @@ the string in the errorStr parameter.</p>
 
 <dt>
     
-        <h4 class="name" id="setEmergencyGroupByIdAsync">
-            
-                <span class="type-signature"></span>setEmergencyGroupByIdAsync<span class="signature">(emergencyGroupId, callbackFunction<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ArchBaseActionSchedule.html">ArchBaseActionSchedule</a>>}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Sets the emergency group to use at runtime by its the emergency group id.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>emergencyGroupId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>the identifier of the emergency group.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>callbackFunction</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#callbackArchActionEvaluateScheduleGroup">callbackArchActionEvaluateScheduleGroup</a></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>a callback function to call if the emergency group is successfully
-looked up and configured on this action.
-The first parameter passed to the callback function will be this
-Architect get emergency instance.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Promise.&lt;<a href="ArchBaseActionSchedule.html">ArchBaseActionSchedule</a>></span>
-
-
-
-
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseActionSchedule.html#setEmergencyGroupByIdAsync">ArchBaseActionSchedule#setEmergencyGroupByIdAsync</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="setEmergencyGroupByNameAsync">
-            
-                <span class="type-signature"></span>setEmergencyGroupByNameAsync<span class="signature">(emergencyGroupName, callbackFunction<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ArchBaseActionSchedule.html">ArchBaseActionSchedule</a>>}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Sets the emergency group to use at runtime by the emergency group name.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>emergencyGroupName</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>the name of the emergency group.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>callbackFunction</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#callbackArchActionEvaluateScheduleGroup">callbackArchActionEvaluateScheduleGroup</a></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>a callback function to call if the emergency group is successfully
-looked up and configured on this action.
-The first parameter passed to the callback function will be this
-Architect get emergency instance.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Promise.&lt;<a href="ArchBaseActionSchedule.html">ArchBaseActionSchedule</a>></span>
-
-
-
-
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseActionSchedule.html#setEmergencyGroupByNameAsync">ArchBaseActionSchedule#setEmergencyGroupByNameAsync</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="setEvaluateEmergencyGroup">
-            
-                <span class="type-signature"></span>setEvaluateEmergencyGroup<span class="signature">(newEvaluationType)</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Set the evaluate emergency group evaluation type for the Evaluate Schedule action. The string values in <a href="ArchEnums.html#SCHEDULE_EVALUATION_TYPES"><code>ArchEnums#SCHEDULE_EVALUATION_TYPES</code></a>
-lists valid values.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>newEvaluationType</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>the disposition value to set</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="setScheduleByIdAsync">
-            
-                <span class="type-signature"></span>setScheduleByIdAsync<span class="signature">(scheduleId, callbackFunction<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ArchActionEvaluateSchedule.html">ArchActionEvaluateSchedule</a>>}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>This sets the schedule to get at runtime by its identifier.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>scheduleId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>the identifier of the schedule.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>callbackFunction</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#callbackArchActionEvaluateSchedule">callbackArchActionEvaluateSchedule</a></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>a callback function to call if the schedule is successfully
-looked up and configured on this action.
-The first parameter passed to the callback function will be this
-Architect get schedule instance.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Promise.&lt;<a href="ArchActionEvaluateSchedule.html">ArchActionEvaluateSchedule</a>></span>
-
-
-
-
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="setScheduleByNameAsync">
-            
-                <span class="type-signature"></span>setScheduleByNameAsync<span class="signature">(scheduleName, callbackFunction<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ArchActionEvaluateSchedule.html">ArchActionEvaluateSchedule</a>>}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>This sets the schedule to get at runtime by its name.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>scheduleName</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>the name of the schedule.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>callbackFunction</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#callbackArchActionEvaluateSchedule">callbackArchActionEvaluateSchedule</a></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>a callback function to call if the schedule is successfully
-looked up and configured on this action.
-The first parameter passed to the callback function will be this
-Architect get schedule instance.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Promise.&lt;<a href="ArchActionEvaluateSchedule.html">ArchActionEvaluateSchedule</a>></span>
-
-
-
-
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
         <h4 class="name" id="traverse">
             
                 <span class="type-signature"></span>traverse<span class="signature">(callbackFunction, traverseFilter<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {number}</span>
@@ -5119,7 +3886,7 @@ use that traversal default filter.  The wantArchBaseValues parameter on that cal
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'ArchActionEvaluateSchedule_sub'.replace(/"/g, '_');
+        var id = 'ArchActionFindKnowledgeBaseDocumentById_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
