@@ -13689,6 +13689,12 @@ export class ArchBaseValue extends ArchBaseCoreObject {
      */
     readonly isNoValue: boolean;
     /**
+     * Returns whether or not this value is set to [no value with no fallback]{@link ArchBaseValue#setNoValueNoFallback}.
+     * Note that this does not mean the value is NOT_SET. It means that there is no value specified for this value and
+     * the flow's runtime handling, such as picking up a default value for a setting somewhere else, should not be used.
+     */
+    readonly isNoValueNoFallback: boolean;
+    /**
      * Returns whether or not this value is the initial value for a variable.
      */
     readonly isVariableInitialValue: boolean;
@@ -14068,6 +14074,12 @@ export class ArchBaseValueWithAssignableProperties extends ArchBaseValueSingleto
      * for this value.
      */
     readonly isNoValue: boolean;
+    /**
+     * Returns whether or not this value is set to [no value with no fallback]{@link ArchBaseValue#setNoValueNoFallback}.
+     * Note that this does not mean the value is NOT_SET. It means that there is no value specified for this value and
+     * the flow's runtime handling, such as picking up a default value for a setting somewhere else, should not be used.
+     */
+    readonly isNoValueNoFallback: boolean;
     /**
      * Returns whether or not this value is the initial value for a variable.
      */
@@ -19849,6 +19861,12 @@ export class ArchValueCard extends ArchBaseValueWithAssignableProperties {
      */
     readonly isNoValue: boolean;
     /**
+     * Returns whether or not this value is set to [no value with no fallback]{@link ArchBaseValue#setNoValueNoFallback}.
+     * Note that this does not mean the value is NOT_SET. It means that there is no value specified for this value and
+     * the flow's runtime handling, such as picking up a default value for a setting somewhere else, should not be used.
+     */
+    readonly isNoValueNoFallback: boolean;
+    /**
      * Returns whether or not this value is the initial value for a variable.
      */
     readonly isVariableInitialValue: boolean;
@@ -20180,6 +20198,12 @@ export class ArchValueCardCollection extends ArchBaseValueCollection {
      * for this value.
      */
     readonly isNoValue: boolean;
+    /**
+     * Returns whether or not this value is set to [no value with no fallback]{@link ArchBaseValue#setNoValueNoFallback}.
+     * Note that this does not mean the value is NOT_SET. It means that there is no value specified for this value and
+     * the flow's runtime handling, such as picking up a default value for a setting somewhere else, should not be used.
+     */
+    readonly isNoValueNoFallback: boolean;
     /**
      * Returns whether or not this value is the initial value for a variable.
      */
@@ -20521,6 +20545,12 @@ export class ArchValueCarousel extends ArchBaseValueWithAssignableProperties {
      * for this value.
      */
     readonly isNoValue: boolean;
+    /**
+     * Returns whether or not this value is set to [no value with no fallback]{@link ArchBaseValue#setNoValueNoFallback}.
+     * Note that this does not mean the value is NOT_SET. It means that there is no value specified for this value and
+     * the flow's runtime handling, such as picking up a default value for a setting somewhere else, should not be used.
+     */
+    readonly isNoValueNoFallback: boolean;
     /**
      * Returns whether or not this value is the initial value for a variable.
      */
@@ -20894,6 +20924,12 @@ export class ArchValueChoice extends ArchBaseValueWithAssignableProperties {
      */
     readonly isNoValue: boolean;
     /**
+     * Returns whether or not this value is set to [no value with no fallback]{@link ArchBaseValue#setNoValueNoFallback}.
+     * Note that this does not mean the value is NOT_SET. It means that there is no value specified for this value and
+     * the flow's runtime handling, such as picking up a default value for a setting somewhere else, should not be used.
+     */
+    readonly isNoValueNoFallback: boolean;
+    /**
      * Returns whether or not this value is the initial value for a variable.
      */
     readonly isVariableInitialValue: boolean;
@@ -21225,6 +21261,12 @@ export class ArchValueChoiceCollection extends ArchBaseValueCollection {
      * for this value.
      */
     readonly isNoValue: boolean;
+    /**
+     * Returns whether or not this value is set to [no value with no fallback]{@link ArchBaseValue#setNoValueNoFallback}.
+     * Note that this does not mean the value is NOT_SET. It means that there is no value specified for this value and
+     * the flow's runtime handling, such as picking up a default value for a setting somewhere else, should not be used.
+     */
+    readonly isNoValueNoFallback: boolean;
     /**
      * Returns whether or not this value is the initial value for a variable.
      */
@@ -22248,6 +22290,12 @@ export class ArchValueImage extends ArchBaseNetworkValueSingleton {
      */
     readonly isNoValue: boolean;
     /**
+     * Returns whether or not this value is set to [no value with no fallback]{@link ArchBaseValue#setNoValueNoFallback}.
+     * Note that this does not mean the value is NOT_SET. It means that there is no value specified for this value and
+     * the flow's runtime handling, such as picking up a default value for a setting somewhere else, should not be used.
+     */
+    readonly isNoValueNoFallback: boolean;
+    /**
      * Returns whether or not this value is the initial value for a variable.
      */
     readonly isVariableInitialValue: boolean;
@@ -22592,6 +22640,12 @@ export class ArchValueImageCollection extends ArchBaseValueCollectionBasic {
      * for this value.
      */
     readonly isNoValue: boolean;
+    /**
+     * Returns whether or not this value is set to [no value with no fallback]{@link ArchBaseValue#setNoValueNoFallback}.
+     * Note that this does not mean the value is NOT_SET. It means that there is no value specified for this value and
+     * the flow's runtime handling, such as picking up a default value for a setting somewhere else, should not be used.
+     */
+    readonly isNoValueNoFallback: boolean;
     /**
      * Returns whether or not this value is the initial value for a variable.
      */
@@ -23666,6 +23720,12 @@ export class ArchValueQuickReplies extends ArchBaseValueWithAssignableProperties
      */
     readonly isNoValue: boolean;
     /**
+     * Returns whether or not this value is set to [no value with no fallback]{@link ArchBaseValue#setNoValueNoFallback}.
+     * Note that this does not mean the value is NOT_SET. It means that there is no value specified for this value and
+     * the flow's runtime handling, such as picking up a default value for a setting somewhere else, should not be used.
+     */
+    readonly isNoValueNoFallback: boolean;
+    /**
      * Returns whether or not this value is the initial value for a variable.
      */
     readonly isVariableInitialValue: boolean;
@@ -24342,6 +24402,12 @@ export class ArchValueString extends ArchBaseValueBasic {
      * for this value.
      */
     readonly isNoValue: boolean;
+    /**
+     * Returns whether or not this value is set to [no value with no fallback]{@link ArchBaseValue#setNoValueNoFallback}.
+     * Note that this does not mean the value is NOT_SET. It means that there is no value specified for this value and
+     * the flow's runtime handling, such as picking up a default value for a setting somewhere else, should not be used.
+     */
+    readonly isNoValueNoFallback: boolean;
     /**
      * Returns whether or not this value is the initial value for a variable.
      */
