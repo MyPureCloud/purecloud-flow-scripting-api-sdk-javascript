@@ -299,7 +299,7 @@ export class ArchEnums {
      * }
      * ```
      */
-    readonly FLOW_TYPES: {"bot":"bot","digitalBot":"digitalbot","commonModule":"commonmodule","inboundCall":"inboundcall","inboundChat":"inboundchat","inboundEmail":"inboundemail","inboundShortMessage":"inboundshortmessage","inqueueCall":"inqueuecall","inqueueEmail":"inqueueemail","inqueueShortMessage":"inqueueshortmessage","outboundCall":"outboundcall","secureCall":"securecall","surveyInvite":"surveyinvite","voice":"voice","voicemail":"voicemail","workflow":"workflow","workitem":"workitem"};
+    readonly FLOW_TYPES: {"bot":"bot","digitalBot":"digitalbot","commonModule":"commonmodule","inboundCall":"inboundcall","inboundChat":"inboundchat","inboundEmail":"inboundemail","inboundShortMessage":"inboundshortmessage","inqueueCall":"inqueuecall","inqueueEmail":"inqueueemail","inqueueShortMessage":"inqueueshortmessage","outboundCall":"outboundcall","secureCall":"securecall","surveyInvite":"surveyinvite","voice":"voice","voiceSurvey":"voicesurvey","voicemail":"voicemail","workflow":"workflow","workitem":"workitem"};
     /**
      * Returns a string array that contains all valid flow type strings.
      */
@@ -2732,7 +2732,7 @@ export class ArchFactoryMenus extends ArchBaseFactory {
      * @param [archTargetTask] - the task to transfer to.
      * @param [dtmfIsGlobal = false] - whether or not the dtmf on this menu, if specified, should be treated as global.
      */
-    addMenuJumpToTask(archParentMenuOrSubMenu: ArchMenu | ArchMenuSubMenu, name?: string, dtmf?: string | number, archTargetTask?: ArchTask, dtmfIsGlobal?: boolean): ArchMenuJumpToMenu;
+    addMenuJumpToTask(archParentMenuOrSubMenu: ArchMenu | ArchMenuSubMenu, name?: string, dtmf?: string | number, archTargetTask?: ArchTask, dtmfIsGlobal?: boolean): ArchMenuJumpToTask;
     /**
      * Adds a previous menu choice to a parent menu or sub menu.
      * @param archParentMenuOrSubMenu - the parent menu or submenu where the new menu should be added.
@@ -12872,6 +12872,18 @@ export class ArchBaseFlowBot extends ArchBaseFlowWorkflow {
      * The user input settings for the flow.
      */
     readonly userInputSettings: ArchSettingsUserInput;
+}
+
+export class ArchBaseFlowBotWithKnowledge extends ArchBaseFlowBot {
+    // constructor(coreBotWithKnowledgeViewModel: any);
+    /**
+     * Returns the display type name string 'isArchBaseFlowBotWithKnowledge'.
+     */
+    readonly displayTypeName: string;
+    /**
+     * Returns true indicating that this is an isArchBaseFlowBotWithKnowledge instance.
+     */
+    readonly isArchBaseFlowBotWithKnowledge: boolean;
     /**
      * The natural language understanding knowledge settings for the bot flow.
      * Note that if your organization does not have knowledge base support or the
@@ -12879,6 +12891,443 @@ export class ArchBaseFlowBot extends ArchBaseFlowWorkflow {
      * will return null.
      */
     readonly knowledgeSettings: ArchSettingsNluKnowledge;
+    /**
+     * Returns true indicating that this is an ArchBaseFlowBot instance.
+     */
+    readonly isArchBaseFlowBot: boolean;
+    /**
+     * Bot-specific settings for the flow.
+     */
+    readonly botFlowSettings: ArchSettingsBotFlow;
+    /**
+     * The user input settings for the flow.
+     */
+    readonly userInputSettings: ArchSettingsUserInput;
+    /**
+     * This function deletes the specified state from this flow.
+     * @param stateToDelete - the state to delete.
+     */
+    deleteState(stateToDelete: ArchState): void;
+    /**
+     * Sets the specified state to be the starting state on the flow.
+     * @param archState - An Architect Scripting state object.
+     */
+    setStartingState(archState: ArchState): void;
+    /**
+     * Returns the starting state for this flow.
+     * If there is no startup object configured, accessing this property returns null.
+     */
+    readonly startUpObject: ArchState;
+    /**
+     * The states in the flow.
+     */
+    readonly states: ArchState[];
+    /**
+     * This function deletes the specified reusable task from this flow.
+     * @param taskToDelete - the task to delete.  This must be a reusable task which means the {@link ArchTask#isReusableTask}
+     * property on the specified task instance is true.
+     */
+    deleteTask(taskToDelete: ArchTask): void;
+    /**
+     * Returns an array of the currently defined reusable tasks for this flow.
+     */
+    readonly tasksReusable: ArchTask[];
+    /**
+     * This adds a new variable to the flow.
+     * @param name - the name of the variable to add.  Remember that variable names must
+     *                        start with a letter and can then be followed by one or more letters, numbers
+     *                        or underscore characters to be valid.  Submitting the variable scope on the name
+     *                        is optional.  If specified, it must be 'Flow.' in order to be valid since you're
+     *                        adding the variable to a flow.
+     * @param type - the data type for the new variable.  Remember that type must be supported
+     *                              in the flow type for which you're looking to add the variable.  If you are
+     *                              not sure if a type is creatable, see the {@link ArchDataType#isScriptCreatableForFlowType} or
+     *                              {@link ArchDataType#isScriptCreatableForFlow} method.
+     * @param [description] - the description for the new variable.
+     */
+    addVariable(name: string, type: ArchDataType, description?: string): ArchBaseVariable;
+    /**
+     * Checkout this flow. This function returns an ArchInfo instance for it to the supplied callback function.
+     * @param [forceUnlock] - if true, will force an unlock of the flow.
+     * @param [callbackFunction] - a callback function to call if the flow was checked out.
+     * @returns - while this method returns a promise, you should use the callback function to perform any processing once the flow is checked out.
+     */
+    checkoutAsync(forceUnlock?: boolean, callbackFunction?: callbackVoid): Promise<any>;
+    /**
+     * Returns the division associated with this flow.
+     * This method first calls {@link ArchOrganizationInfo#areDivisionsAvailable} to ensure that divisions are available.
+     * If not available, nothing is returned.
+     */
+    readonly division: ArchDivision;
+    /**
+     * Loads a specific version of the flow.  Any previously returned Architect Scripting objects associated with this flow should no
+     * longer be considered valid after loading new configuration.
+     * @param [flowVersion = "latest"] - the version of the flow to get.  Valid values are "latest" to get the latest saved configuration of a flow,
+     * a version value such as "2.0" or "2", "debug" to get the currently published debug version configuration of a flow,
+     * or "published" to get the currently published version configuration of a flow.  If you do not specify a version, then the latest saved configuration will be loaded.
+     * @param [callbackFunction] - a callback function to call if the flow was loaded.
+     * @returns - while this method returns a promise, you should use the callback function to perform any processing when the flow is loaded.
+     */
+    loadAsync(flowVersion?: string, callbackFunction?: callbackVoid): Promise<any>;
+    /**
+     * Returns a string suitable for logging that describes the flow
+     */
+    readonly logStr: string;
+    /**
+     * Unlocks this flow.
+     * @param [callbackFunction] - a callback function to call if the flow can be unlocked.
+     * @returns - while this method returns a promise, you should use the callback function to perform any processing once this flow is unlocked.
+     */
+    unlockAsync(callbackFunction?: callbackVoid): Promise<any>;
+    /**
+     * Helper method that accesses the flow's [settingsSupportedLanguages]{@link ArchBaseFlow#settingsSupportedLanguages} and then calls
+     * the [addSupportedLanguage]{@link ArchSettingsSupportedLanguagesFlow#addSupportedLanguage} function on the returned {@link ArchSettingsSupportedLanguagesFlow}
+     * value.
+     * @param archLanguage - the language to add to supported languages on the flow.  Note that any language used as a supported
+     * language must have at least one region sub-tag.
+     * @param [setAsDefaultLanguage] - if true, the language will be set as the default language on the flow.
+     */
+    addFlowSupportedLanguage(archLanguage: ArchLanguage, setAsDefaultLanguage?: boolean): ArchSettingsSupportedLanguage;
+    /**
+     * Checks flow to see if a language can be added in its current state. Some flows may have restrictions
+     * if any or more than one can be added.
+     */
+    canAddSupportedLanguage(): boolean;
+    /**
+     * Checks in and unlocks the flow for the current user, does a save first
+     * Assumes the flow has been created, throws if not
+     * @param [ensureSearchable] - whether or not to poll after successful checkin to ensure that the flow is available for flow
+     *                                       search operations such as {@link ArchFactoryFlows#getFlowInfoByFlowNameAsync} or {@link ArchFactoryFlows#getFlowInfoByFlowIdAsync}
+     * @returns - On your promise's then handler, the first parameter passed to the then function will be this
+     * flow instance.
+     */
+    checkInAsync(ensureSearchable?: boolean): Promise<any>;
+    /**
+     * Creates a new flow on the server and saves its configuration
+     * @returns - On your promise's then handler, the first parameter passed to the then function will be this
+     * flow instance.
+     */
+    createAsync(): Promise<any>;
+    /**
+     * Accessing this property returns an object with properties whose keys are data type names and values are
+     * {@link ArchDataType} instances.
+     */
+    readonly dataTypes: any;
+    /**
+     * The description of the flow
+     */
+    description: string;
+    /**
+     * Exports the current flow to a file in the specified directory.  This destination directory *must* exist
+     * for the export to succeed.  Note that this uses the file system and should not be used when running in a
+     * browser.
+     * @param [destinationDir] - the directory where the flow export should be saved.
+     * @param [callbackFunction] - the function to call back and pass in the full path where the
+     *                                                      flow export was saved.
+     * @param [flowFormat = ArchEnums.FLOW_FORMAT_TYPES.architect] - the desired flow format to use for the export. See {@link ArchEnums.FLOW_FORMAT_TYPES} for allowable export formats. If no format is used,
+     *                                                                      it will default to the Architect format.
+     * @param [fileName] - the file name to use for the exported flow. If a file extension is not added to the file name, it will use the default file extension for the desired export type for
+     * the desired export format and flow that you are exporting. If the format is YAML, the extension is always '.yaml' regardless of flow type. However, if it is the Architect format, the extension is unique per flow-type.
+     * To find the correct file extension for the Architect format, you can either export a flow from the Architect UI or look at the [flow definition]{@link ArchBaseFlow#definition}
+     * for a flow type and access the [fileExtension]{@link ArchDefinitionFlow.fileExtension} property to get the value. If an extension is found on the file name other than what is
+     * expected, the correct extension will be appended to the end of the exported file as per the logic described previously.
+     */
+    exportToDirAsync(destinationDir?: string, callbackFunction?: callbackExportFullPath, flowFormat?: string, fileName?: string): Promise<any>;
+    /**
+     * Exports the flow to a JSON object.  The object passed back in the callback function
+     * will be a JSON object with a content and fileName property where the content holds
+     * the flow export contents and the fileName property holds the file name where the
+     * export would be written if {@link ArchBaseFlow#exportToDirAsync} is called.
+     * @param callbackFunction - the function to call back with the export information contained
+     *                                                  in the parameter passed to it.
+     * @param [flowFormat = ArchEnums.FLOW_FORMAT_TYPES.architect] - the desired export format to use on an export. See {@link ArchEnums.FLOW_FORMAT_TYPES} for allowable export formats. If no format is used,
+     *                                                                      it will default to the Architect format.
+     */
+    exportToObjectAsync(callbackFunction: callbackExportObject, flowFormat?: string): Promise<any>;
+    /**
+     * The type of the flow.  The string
+     * values in {@link ArchEnums#FLOW_TYPES} lists valid flow type values.
+     */
+    readonly flowType: string;
+    /**
+     * This function will return the file path where a flow export will be written when calling the {@link ArchBaseFlow#exportToDirAsync}
+     * method for the supplied destination directory and export flow format.  A typical use case for this function would be
+     * to get the export file path prior to calling the {@link ArchBaseFlow#exportToDirAsync} so you could see if the file already exists
+     * and decide if you want to perform an export or not since {@link ArchBaseFlow#exportToDirAsync} will attempt to overwrite
+     * a file if it already exists. Note that this uses the file system and should not be used when running in a
+     * browser.
+     * @param [destinationDir] - the directory where the flow export should be written. If no directory path is given, this method uses the
+     *                                    current working directory.  If a relative path is supplied, it will be resolved relative to the current
+     *                                    working directory.
+     * @param [flowFormat = ArchEnums.FLOW_FORMAT_TYPES.architect] - the desired flow format to use for the export. See {@link ArchEnums.FLOW_FORMAT_TYPES} for allowable export
+     *                                                                      formats. If no format is supplied, it will use the Architect format.
+     * @param [fileName] - the file name to use for the exported flow. If a file extension is not added to the file name, it will use the default file extension for the desired export type for
+     * the desired export format and flow that you are exporting. If the format is YAML, the extension is always '.yaml' regardless of flow type. However, if it is the Architect format, the extension is unique per flow-type.
+     * To find the correct file extension for the Architect format, you can either export a flow from the Architect UI or look at the [flow definition]{@link ArchBaseFlow#definition}
+     * for a flow type and access the [fileExtension]{@link ArchDefinitionFlow.fileExtension} property to get the value. If an extension is found on the file name other than what is
+     * expected, the correct extension will be appended to the end of the exported file as per the logic described previously.
+     */
+    getExportFilePath(destinationDir?: string, flowFormat?: string, fileName?: string): string;
+    /**
+     * Returns the flow scoped variable for the supplied variable identifier ( if it exists ).
+     * If the variable name cannot be found, nothing is returned.
+     * @param variableId - the supllied variable identifier to look up such as __CALL_ANI__.
+     */
+    getVariableById(variableId: string): ArchBaseVariable;
+    /**
+     * Returns the flow scoped variable for the supplied fully scoped variable name ( if it exists ).  Remember, looking
+     * up variables by name is case insensitive.  If the variable name cannot be found, nothing is returned.
+     * @param variableName - the fully scoped variable name to look up such as Flow.MyVar.
+     */
+    getVariableByName(variableName: string): ArchBaseVariable;
+    /**
+     * Imports the flow content from the supplied content string.  This content string should be for a flow of the
+     * same type as the one you're importing in to.  Upon successful import, the callback function passed in
+     * will be called.  Importing flow contents in to a flow is something where you should *not* attempt to
+     * do work with the flow on which this is being called until the callback is called.
+     * @param exportContent - the contents from a flow export.
+     * @param [callbackFunction] - a function to call if the export content successfully loaded and configured
+     *                                                    on this flow.  The first parameter passed to the callback function will be this
+     *                                                    Architect flow instance.
+     */
+    importFromContentAsync(exportContent: string, callbackFunction?: (...params: any[]) => any): Promise<any>;
+    /**
+     * Imports the flow content from the supplied file path.  Upon successful import, the callback function passed in
+     * will be called.  Importing flow contents in to a flow is something where you should *not* attempt to
+     * do work with the flow on which this is being called until the callback is called.
+     * Also note that this method should not be used if running in a browser.
+     * @param exportFilePath - the file path to an Architect flow export file that should be imported.
+     * @param [callbackFunction] - a function to call if the export content successfully loaded and configured
+     *                                        on this flow.  The first parameter passed to the callback function will be this
+     *                                        Architect flow instance.
+     */
+    importFromFileAsync(exportFilePath: string, callbackFunction?: (...params: any[]) => any): Promise<any>;
+    /**
+     * Returns whether or not the flow is created in Genesys Cloud.
+     */
+    readonly isCreated: boolean;
+    /**
+     * Returns whether or not the flow is read-only.  Flows that have been created locally in
+     * scripting but not saved, checked in or published will report that they are not read-only.
+     */
+    readonly isReadOnly: boolean;
+    /**
+     * Returns whether or not the flow is secure.  That means it contains something that is
+     * secure like a secure variable or secure action.
+     */
+    readonly isSecure: boolean;
+    /**
+     * Returns true indicating the flow acts as a variable container which means you can
+     * add variables to it.
+     */
+    readonly isVariableContainer: boolean;
+    /**
+     * The language settings for the flow.  This property is now deprecated.
+     * Please replace calls to this property with {@link ArchBaseFlow#settingsSupportedLanguages} instead.
+     */
+    readonly languageSettings: ArchSettingsSupportedLanguagesFlow;
+    /**
+     * The name of the flow
+     */
+    name: string;
+    /**
+     * Publishes the flow. This will do a validate, save, checkin and then publish last. Any of these
+     * steps can fail and reject the promise. Operations are not atomic.
+     * @param [ensureSearchable] - whether or not to poll after successful publish to ensure that the flow is available for flow
+     *                                       search operations such as {@link ArchFactoryFlows#getFlowInfoByFlowNameAsync} or {@link ArchFactoryFlows#getFlowInfoByFlowIdAsync}
+     * @returns - On your promise's then handler, the first parameter passed to the then function will be this
+     * flow instance.
+     */
+    publishAsync(ensureSearchable?: boolean): Promise<any>;
+    /**
+     * Save the current flow configuration, creating the flow if needed.
+     * @returns - On your promise's then handler, the first parameter passed to the then function will be this
+     * flow instance.
+     */
+    saveAsync(): Promise<any>;
+    /**
+     * Returns the error handling settings for the flow.
+     */
+    readonly settingsErrorHandling: ArchSettingsEventErrorFlow;
+    /**
+     * Returns the action default settings for the flow.
+     */
+    readonly settingsActionDefaults: ArchSettingsActionDefaults;
+    /**
+     * The supported language settings for the flow.
+     * This method will throw if the flow doesn't support languages.  You can check {@link ArchBaseFlow#supportsLanguages} prior
+     * to calling this method to see if a flow supports languages or not.
+     */
+    readonly settingsSupportedLanguages: ArchSettingsSupportedLanguagesFlow;
+    /**
+     * Returns whether or not this flow supports audio channel.
+     */
+    readonly supportsAudio: boolean;
+    /**
+     * Returns whether or not this flow supports error handling.
+     */
+    readonly supportsErrorHandling: boolean;
+    /**
+     * Returns whether or not this flow supports languages.  If false, that means you have to configure the flow
+     * when creating it to use English United States.
+     * Note:  At this time this functionality is available while we're determining the needs of workflow and
+     * inbound email flow types.  This property may go away in a future release of Architect Scripting.
+     */
+    readonly supportsLanguages: boolean;
+    /**
+     * Returns whether or not this flow supports setting a supported language as the default.
+     */
+    readonly supportsDefaultLanguage: boolean;
+    /**
+     * Returns a URL for this flow.  If the flow has not been created or there is no startup object set on the flow,
+     * the returned URL will be blank.
+     */
+    readonly url: string;
+    /**
+     * Validates the flow. Promise returns an {@link ArchValidationResults} instance.
+     * @returns - On your promise's then handler, the first parameter passed to the then function will be the
+     * validation results.
+     */
+    validateAsync(): Promise<any>;
+    /**
+     * Returns an array of variables defined at the flow scope for this flow.
+     */
+    readonly variables: ArchBaseVariable[];
+    /**
+     * The identifier string for this object.
+     */
+    readonly id: string;
+    /**
+     * Returns whether or not the id property may be blank or undefined for this object.  For example, the returned settings from {@link ArchMenu#settingsMenu}
+     * will have a blank identifier along with the settings returned from {@link ArchMenu#settingsSpeechRec}.  Note that this is
+     * an extremely rare case.
+     */
+    readonly idMayBeBlank: string;
+    /**
+     * Returns true indicating that this is an ArchBaseCoreObject instance.
+     */
+    readonly isArchBaseCoreObject: boolean;
+    /**
+     * This method iterates over this object and ArchBaseCoreObject instances
+     * within it.  For each object it will call the {@link ArchBaseObject#isFilterMatch} method
+     * with a filter and call the supplied callback function if isMatch returns true.
+     * The callback will be passed an {@link ArchTraverseInfo} with details
+     * about the match such as the match object itself along with current contextual
+     * information such as the object hierarchy for the match object relative to
+     * the object on which this traverse call is being made.
+     *
+     * The traverse [filter]{@link ArchFilterObject} is one which you can create
+     * by calling {@link ArchFactoryFilters#createFilterObject} and then add desired clauses
+     * or clause containers to it.  If not specified, this function will use a
+     * [default filter]{@link ArchFactoryFilters#createFilterTraverseDefault}.
+     *
+     * Here is an example that does a simple flow traversal using the default
+     * filter and logs information about objects in the callback from the
+     * traverse object that's passed back:
+     *
+     * ```
+     * archInboundCallFlow.traverse(function(traverseInfo) {
+     *    archLogging.logNote('  Object     : ' + traverseInfo.matchObject.logStr);
+     *    archLogging.logNote('    Hierarchy: ' + traverseInfo.context.hierarchyStr);
+     * });
+     * ```
+     * This might be enough for most uses and you can check various aspects
+     * about the object in the callback such as "is this an Architect action?" by
+     * seeing if traverseInfo.matchObject.isArchBaseAction is true.  You can specify
+     * a filter for the traversal code to use as well and only have it call your
+     * callback when the object's {@link ArchBaseCoreObject#isFilterMatch} method returns true for
+     * the filter.  Here's an example that creates a filter for callbacks on
+     * [any type of transfer action]{@link ArchBaseActionTransfer}, any
+     * [decision action]{@link ArchActionDecision} or objects whose name
+     * property case insensitively matches the word 'foo'.  While this could all be done
+     * with one property callback clause the example will use multiple clauses for
+     * the sake of simplicity:
+     * ```
+     * const myTraverseFilter = filterFactory.createFilterObject(archEnums.FILTER_CONTAINER_OPERATORS.or);
+     * myTraverseFilter.addClausePropertyValueEquals('isArchBaseActionTransfer', true);
+     * myTraverseFilter.addClausePropertyValueEquals('isArchActionDecision',     true);
+     * myTraverseFilter.addClausePropertyCallback('name', function(propValue, archContainingObject, propName) {
+     *       // We fully spelled out the function signature above but archContainingObject and propName are
+     *       // not needed in this case.  The archContainingObject is the object that contains the
+     *       // property and propName is the property name itself.  We pass in propName because the same
+     *       // function could be used for multiple property callback clauses.
+     *       // Remember to return a boolean true, false or undefined from ths callback.  :)
+     *       return propValue && propValue.toLowerCase() === 'foo';
+     * });
+     * archTask.traverse(function(traverseContext) {
+     *    // You will only be called back here for ArchBaseCoreObject instances that
+     *    // have the isArchBaseActionTransfer or isArchActionDecision property values equal to true.
+     * }, myTraverseFilter);
+     * ```
+     * If you supply a filter with no clauses, this tells the traverse method to
+     * call the supplied callback function for every {@link ArchBaseCoreObject} it traverses.
+     *
+     * If you want traversal itself to stop after a callback, simply return boolean
+     * false from the callback function you supply to the traverse call.
+     *
+     * The traverse method does not process deprecated property names such as [orgId]{@link ArchSession#orgId},
+     * [orgName]{@link ArchSession#orgName} or [languageSettings]{@link ArchBaseFlow#languageSettings}.  Additionally
+     * it does not traverse in to properties that would "jump out" of the current traversal.  An example of this
+     * would be if the code was traversing an {@link ArchActionJumpToMenu} action that it would not start traversing
+     * in to the menu that it jumps to.  Another example would be a {@link ArchActionChangeState} action where
+     * it would not traverse in to the target state of the action.  This also means traversal does not traverse
+     * in to the {@link ArchBaseValue#flowLevelDefault} property.
+     *
+     * And lastly, as Scripting evolves over time with new versions, you can expect to get callbacks for new object
+     * types such as new actions or new properties on objects.  As such, it's important not to assume any particular
+     * order in callbacks to keep code most compatible with traversal callbacks.  Or if you use inequality checks in filter
+     * clauses remember that new "stuff" may satisfy an inequality check which may or may not be anticipated in your logic.
+     *
+     * Note:  This traverse method is a helper method and is very handy for iterating over Architect Scripting
+     * objects and their properties in a generic fashion with filtering capabilities.  Obviously you can write
+     * your own custom traversal code if this implementation doesn't cut it for some reason. :)
+     *
+     * This function returns the number of times it called the callback function.
+     * @param callbackFunction - the callback function to call for objects that match the traverse filter.
+     * @param [traverseFilter = {@link ArchFactoryFilters#createFilterTraverseDefault}] - the filter to use when performing the traversal to determine which
+     *                                              {@link ArchBaseCoreObject} instances you wish to be called back for.  If no
+     *                                              filter is specified, this function will call {@link ArchFactoryFilters#createFilterTraverseDefault} and
+     *                                              use that traversal default filter.  The wantArchBaseValues parameter on that call is set to true.
+     */
+    traverse(callbackFunction: callbackTraverseInfo, traverseFilter?: ArchFilterObject): number;
+    /**
+     * This is a string suitable for logging information about this object where it's just the object's type.  This is normally used
+     * when logging errors that occur in constructor parameter checking because the scripting object isn't set up and the normal
+     * logging str contents wouldn't be set up.
+     */
+    readonly logStrTypeOnly: string;
+    /**
+     * Logs an error to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logErrors} is true.
+     * @param errorStr - the error string to log.
+     */
+    logError(errorStr: string): void;
+    /**
+     * Logs an error to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logErrors} is true and then throws
+     * the string in the errorStr parameter.
+     * @param errorStr - the error string to log.  This should be a non-blank string.
+     */
+    logErrorAndThrow(errorStr: string): void;
+    /**
+     * Logs a note to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logNotes} is true.
+     * @param noteStr - the note string to log.  This should be a non-blank string.
+     */
+    logNote(noteStr: string): void;
+    /**
+     * Logs a note to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logNotesVerbose} is true.
+     * @param noteStr - the note string to log.  This should be a non-blank string.
+     */
+    logNoteVerbose(noteStr: string): void;
+    /**
+     * Logs a warning to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logWarnings} is true.
+     * @param warningStr - the warning string to log.  This should be a non-blank string.
+     */
+    logWarning(warningStr: string): void;
+    /**
+     * Returns whether or not this Architect Scripting object is a match
+     * for the supplied ArchFilterObject instance.
+     * @param archFilterObject - the object filter to use to determine if it's a match.
+     */
+    isFilterMatch(archFilterObject: ArchFilterObject): boolean;
 }
 
 /**
@@ -14362,6 +14811,12 @@ export class ArchBaseVariable extends ArchBaseCoreObjectWithId {
      */
     readonly isStateVariable: boolean;
     /**
+     * Returns whether or not this variable is a system variable. System variables provide information about things the
+     * system tracks automatically, such as the caller’s phone number, or the contact list associated with an outbound flow.
+     * Examples of a system variable is "Flow.Version" or "System.MaxInt".
+     */
+    readonly isSystemVariable: boolean;
+    /**
      * Returns whether or not this variable is a task variable.
      */
     readonly isTaskVariable: boolean;
@@ -15050,12 +15505,7 @@ export class ArchFilterObject extends ArchFilterClauseContainer {
     operator: string;
 }
 
-/**
- * The Architect Scripting class for the Bot flow class.
- * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows#createFlowBotAsync}
- * @param coreBotViewModel - ( *Internal* ) an Architect core Bot view model.
- */
-export class ArchFlowBot extends ArchBaseFlowBot {
+export class ArchFlowBot extends ArchBaseFlowBotWithKnowledge {
     // constructor(coreBotViewModel: any);
     /**
      * Returns the display type name string 'ArchFlowBot'.
@@ -15069,6 +15519,454 @@ export class ArchFlowBot extends ArchBaseFlowBot {
      * The prompt settings for the flow.
      */
     readonly settingsPrompts: ArchSettingsPromptsFlow;
+    /**
+     * Returns true indicating that this is an isArchBaseFlowBotWithKnowledge instance.
+     */
+    readonly isArchBaseFlowBotWithKnowledge: boolean;
+    /**
+     * The natural language understanding knowledge settings for the bot flow.
+     * Note that if your organization does not have knowledge base support or the
+     * flow's supported language does not support knowledge, accessing this property
+     * will return null.
+     */
+    readonly knowledgeSettings: ArchSettingsNluKnowledge;
+    /**
+     * Returns true indicating that this is an ArchBaseFlowBot instance.
+     */
+    readonly isArchBaseFlowBot: boolean;
+    /**
+     * Bot-specific settings for the flow.
+     */
+    readonly botFlowSettings: ArchSettingsBotFlow;
+    /**
+     * The user input settings for the flow.
+     */
+    readonly userInputSettings: ArchSettingsUserInput;
+    /**
+     * This function deletes the specified state from this flow.
+     * @param stateToDelete - the state to delete.
+     */
+    deleteState(stateToDelete: ArchState): void;
+    /**
+     * Sets the specified state to be the starting state on the flow.
+     * @param archState - An Architect Scripting state object.
+     */
+    setStartingState(archState: ArchState): void;
+    /**
+     * Returns the starting state for this flow.
+     * If there is no startup object configured, accessing this property returns null.
+     */
+    readonly startUpObject: ArchState;
+    /**
+     * The states in the flow.
+     */
+    readonly states: ArchState[];
+    /**
+     * This function deletes the specified reusable task from this flow.
+     * @param taskToDelete - the task to delete.  This must be a reusable task which means the {@link ArchTask#isReusableTask}
+     * property on the specified task instance is true.
+     */
+    deleteTask(taskToDelete: ArchTask): void;
+    /**
+     * Returns an array of the currently defined reusable tasks for this flow.
+     */
+    readonly tasksReusable: ArchTask[];
+    /**
+     * This adds a new variable to the flow.
+     * @param name - the name of the variable to add.  Remember that variable names must
+     *                        start with a letter and can then be followed by one or more letters, numbers
+     *                        or underscore characters to be valid.  Submitting the variable scope on the name
+     *                        is optional.  If specified, it must be 'Flow.' in order to be valid since you're
+     *                        adding the variable to a flow.
+     * @param type - the data type for the new variable.  Remember that type must be supported
+     *                              in the flow type for which you're looking to add the variable.  If you are
+     *                              not sure if a type is creatable, see the {@link ArchDataType#isScriptCreatableForFlowType} or
+     *                              {@link ArchDataType#isScriptCreatableForFlow} method.
+     * @param [description] - the description for the new variable.
+     */
+    addVariable(name: string, type: ArchDataType, description?: string): ArchBaseVariable;
+    /**
+     * Checkout this flow. This function returns an ArchInfo instance for it to the supplied callback function.
+     * @param [forceUnlock] - if true, will force an unlock of the flow.
+     * @param [callbackFunction] - a callback function to call if the flow was checked out.
+     * @returns - while this method returns a promise, you should use the callback function to perform any processing once the flow is checked out.
+     */
+    checkoutAsync(forceUnlock?: boolean, callbackFunction?: callbackVoid): Promise<any>;
+    /**
+     * Returns the division associated with this flow.
+     * This method first calls {@link ArchOrganizationInfo#areDivisionsAvailable} to ensure that divisions are available.
+     * If not available, nothing is returned.
+     */
+    readonly division: ArchDivision;
+    /**
+     * Loads a specific version of the flow.  Any previously returned Architect Scripting objects associated with this flow should no
+     * longer be considered valid after loading new configuration.
+     * @param [flowVersion = "latest"] - the version of the flow to get.  Valid values are "latest" to get the latest saved configuration of a flow,
+     * a version value such as "2.0" or "2", "debug" to get the currently published debug version configuration of a flow,
+     * or "published" to get the currently published version configuration of a flow.  If you do not specify a version, then the latest saved configuration will be loaded.
+     * @param [callbackFunction] - a callback function to call if the flow was loaded.
+     * @returns - while this method returns a promise, you should use the callback function to perform any processing when the flow is loaded.
+     */
+    loadAsync(flowVersion?: string, callbackFunction?: callbackVoid): Promise<any>;
+    /**
+     * Returns a string suitable for logging that describes the flow
+     */
+    readonly logStr: string;
+    /**
+     * Unlocks this flow.
+     * @param [callbackFunction] - a callback function to call if the flow can be unlocked.
+     * @returns - while this method returns a promise, you should use the callback function to perform any processing once this flow is unlocked.
+     */
+    unlockAsync(callbackFunction?: callbackVoid): Promise<any>;
+    /**
+     * Helper method that accesses the flow's [settingsSupportedLanguages]{@link ArchBaseFlow#settingsSupportedLanguages} and then calls
+     * the [addSupportedLanguage]{@link ArchSettingsSupportedLanguagesFlow#addSupportedLanguage} function on the returned {@link ArchSettingsSupportedLanguagesFlow}
+     * value.
+     * @param archLanguage - the language to add to supported languages on the flow.  Note that any language used as a supported
+     * language must have at least one region sub-tag.
+     * @param [setAsDefaultLanguage] - if true, the language will be set as the default language on the flow.
+     */
+    addFlowSupportedLanguage(archLanguage: ArchLanguage, setAsDefaultLanguage?: boolean): ArchSettingsSupportedLanguage;
+    /**
+     * Checks flow to see if a language can be added in its current state. Some flows may have restrictions
+     * if any or more than one can be added.
+     */
+    canAddSupportedLanguage(): boolean;
+    /**
+     * Checks in and unlocks the flow for the current user, does a save first
+     * Assumes the flow has been created, throws if not
+     * @param [ensureSearchable] - whether or not to poll after successful checkin to ensure that the flow is available for flow
+     *                                       search operations such as {@link ArchFactoryFlows#getFlowInfoByFlowNameAsync} or {@link ArchFactoryFlows#getFlowInfoByFlowIdAsync}
+     * @returns - On your promise's then handler, the first parameter passed to the then function will be this
+     * flow instance.
+     */
+    checkInAsync(ensureSearchable?: boolean): Promise<any>;
+    /**
+     * Creates a new flow on the server and saves its configuration
+     * @returns - On your promise's then handler, the first parameter passed to the then function will be this
+     * flow instance.
+     */
+    createAsync(): Promise<any>;
+    /**
+     * Accessing this property returns an object with properties whose keys are data type names and values are
+     * {@link ArchDataType} instances.
+     */
+    readonly dataTypes: any;
+    /**
+     * The description of the flow
+     */
+    description: string;
+    /**
+     * Exports the current flow to a file in the specified directory.  This destination directory *must* exist
+     * for the export to succeed.  Note that this uses the file system and should not be used when running in a
+     * browser.
+     * @param [destinationDir] - the directory where the flow export should be saved.
+     * @param [callbackFunction] - the function to call back and pass in the full path where the
+     *                                                      flow export was saved.
+     * @param [flowFormat = ArchEnums.FLOW_FORMAT_TYPES.architect] - the desired flow format to use for the export. See {@link ArchEnums.FLOW_FORMAT_TYPES} for allowable export formats. If no format is used,
+     *                                                                      it will default to the Architect format.
+     * @param [fileName] - the file name to use for the exported flow. If a file extension is not added to the file name, it will use the default file extension for the desired export type for
+     * the desired export format and flow that you are exporting. If the format is YAML, the extension is always '.yaml' regardless of flow type. However, if it is the Architect format, the extension is unique per flow-type.
+     * To find the correct file extension for the Architect format, you can either export a flow from the Architect UI or look at the [flow definition]{@link ArchBaseFlow#definition}
+     * for a flow type and access the [fileExtension]{@link ArchDefinitionFlow.fileExtension} property to get the value. If an extension is found on the file name other than what is
+     * expected, the correct extension will be appended to the end of the exported file as per the logic described previously.
+     */
+    exportToDirAsync(destinationDir?: string, callbackFunction?: callbackExportFullPath, flowFormat?: string, fileName?: string): Promise<any>;
+    /**
+     * Exports the flow to a JSON object.  The object passed back in the callback function
+     * will be a JSON object with a content and fileName property where the content holds
+     * the flow export contents and the fileName property holds the file name where the
+     * export would be written if {@link ArchBaseFlow#exportToDirAsync} is called.
+     * @param callbackFunction - the function to call back with the export information contained
+     *                                                  in the parameter passed to it.
+     * @param [flowFormat = ArchEnums.FLOW_FORMAT_TYPES.architect] - the desired export format to use on an export. See {@link ArchEnums.FLOW_FORMAT_TYPES} for allowable export formats. If no format is used,
+     *                                                                      it will default to the Architect format.
+     */
+    exportToObjectAsync(callbackFunction: callbackExportObject, flowFormat?: string): Promise<any>;
+    /**
+     * The type of the flow.  The string
+     * values in {@link ArchEnums#FLOW_TYPES} lists valid flow type values.
+     */
+    readonly flowType: string;
+    /**
+     * This function will return the file path where a flow export will be written when calling the {@link ArchBaseFlow#exportToDirAsync}
+     * method for the supplied destination directory and export flow format.  A typical use case for this function would be
+     * to get the export file path prior to calling the {@link ArchBaseFlow#exportToDirAsync} so you could see if the file already exists
+     * and decide if you want to perform an export or not since {@link ArchBaseFlow#exportToDirAsync} will attempt to overwrite
+     * a file if it already exists. Note that this uses the file system and should not be used when running in a
+     * browser.
+     * @param [destinationDir] - the directory where the flow export should be written. If no directory path is given, this method uses the
+     *                                    current working directory.  If a relative path is supplied, it will be resolved relative to the current
+     *                                    working directory.
+     * @param [flowFormat = ArchEnums.FLOW_FORMAT_TYPES.architect] - the desired flow format to use for the export. See {@link ArchEnums.FLOW_FORMAT_TYPES} for allowable export
+     *                                                                      formats. If no format is supplied, it will use the Architect format.
+     * @param [fileName] - the file name to use for the exported flow. If a file extension is not added to the file name, it will use the default file extension for the desired export type for
+     * the desired export format and flow that you are exporting. If the format is YAML, the extension is always '.yaml' regardless of flow type. However, if it is the Architect format, the extension is unique per flow-type.
+     * To find the correct file extension for the Architect format, you can either export a flow from the Architect UI or look at the [flow definition]{@link ArchBaseFlow#definition}
+     * for a flow type and access the [fileExtension]{@link ArchDefinitionFlow.fileExtension} property to get the value. If an extension is found on the file name other than what is
+     * expected, the correct extension will be appended to the end of the exported file as per the logic described previously.
+     */
+    getExportFilePath(destinationDir?: string, flowFormat?: string, fileName?: string): string;
+    /**
+     * Returns the flow scoped variable for the supplied variable identifier ( if it exists ).
+     * If the variable name cannot be found, nothing is returned.
+     * @param variableId - the supllied variable identifier to look up such as __CALL_ANI__.
+     */
+    getVariableById(variableId: string): ArchBaseVariable;
+    /**
+     * Returns the flow scoped variable for the supplied fully scoped variable name ( if it exists ).  Remember, looking
+     * up variables by name is case insensitive.  If the variable name cannot be found, nothing is returned.
+     * @param variableName - the fully scoped variable name to look up such as Flow.MyVar.
+     */
+    getVariableByName(variableName: string): ArchBaseVariable;
+    /**
+     * Imports the flow content from the supplied content string.  This content string should be for a flow of the
+     * same type as the one you're importing in to.  Upon successful import, the callback function passed in
+     * will be called.  Importing flow contents in to a flow is something where you should *not* attempt to
+     * do work with the flow on which this is being called until the callback is called.
+     * @param exportContent - the contents from a flow export.
+     * @param [callbackFunction] - a function to call if the export content successfully loaded and configured
+     *                                                    on this flow.  The first parameter passed to the callback function will be this
+     *                                                    Architect flow instance.
+     */
+    importFromContentAsync(exportContent: string, callbackFunction?: (...params: any[]) => any): Promise<any>;
+    /**
+     * Imports the flow content from the supplied file path.  Upon successful import, the callback function passed in
+     * will be called.  Importing flow contents in to a flow is something where you should *not* attempt to
+     * do work with the flow on which this is being called until the callback is called.
+     * Also note that this method should not be used if running in a browser.
+     * @param exportFilePath - the file path to an Architect flow export file that should be imported.
+     * @param [callbackFunction] - a function to call if the export content successfully loaded and configured
+     *                                        on this flow.  The first parameter passed to the callback function will be this
+     *                                        Architect flow instance.
+     */
+    importFromFileAsync(exportFilePath: string, callbackFunction?: (...params: any[]) => any): Promise<any>;
+    /**
+     * Returns whether or not the flow is created in Genesys Cloud.
+     */
+    readonly isCreated: boolean;
+    /**
+     * Returns whether or not the flow is read-only.  Flows that have been created locally in
+     * scripting but not saved, checked in or published will report that they are not read-only.
+     */
+    readonly isReadOnly: boolean;
+    /**
+     * Returns whether or not the flow is secure.  That means it contains something that is
+     * secure like a secure variable or secure action.
+     */
+    readonly isSecure: boolean;
+    /**
+     * Returns true indicating the flow acts as a variable container which means you can
+     * add variables to it.
+     */
+    readonly isVariableContainer: boolean;
+    /**
+     * The language settings for the flow.  This property is now deprecated.
+     * Please replace calls to this property with {@link ArchBaseFlow#settingsSupportedLanguages} instead.
+     */
+    readonly languageSettings: ArchSettingsSupportedLanguagesFlow;
+    /**
+     * The name of the flow
+     */
+    name: string;
+    /**
+     * Publishes the flow. This will do a validate, save, checkin and then publish last. Any of these
+     * steps can fail and reject the promise. Operations are not atomic.
+     * @param [ensureSearchable] - whether or not to poll after successful publish to ensure that the flow is available for flow
+     *                                       search operations such as {@link ArchFactoryFlows#getFlowInfoByFlowNameAsync} or {@link ArchFactoryFlows#getFlowInfoByFlowIdAsync}
+     * @returns - On your promise's then handler, the first parameter passed to the then function will be this
+     * flow instance.
+     */
+    publishAsync(ensureSearchable?: boolean): Promise<any>;
+    /**
+     * Save the current flow configuration, creating the flow if needed.
+     * @returns - On your promise's then handler, the first parameter passed to the then function will be this
+     * flow instance.
+     */
+    saveAsync(): Promise<any>;
+    /**
+     * Returns the error handling settings for the flow.
+     */
+    readonly settingsErrorHandling: ArchSettingsEventErrorFlow;
+    /**
+     * Returns the action default settings for the flow.
+     */
+    readonly settingsActionDefaults: ArchSettingsActionDefaults;
+    /**
+     * The supported language settings for the flow.
+     * This method will throw if the flow doesn't support languages.  You can check {@link ArchBaseFlow#supportsLanguages} prior
+     * to calling this method to see if a flow supports languages or not.
+     */
+    readonly settingsSupportedLanguages: ArchSettingsSupportedLanguagesFlow;
+    /**
+     * Returns whether or not this flow supports audio channel.
+     */
+    readonly supportsAudio: boolean;
+    /**
+     * Returns whether or not this flow supports error handling.
+     */
+    readonly supportsErrorHandling: boolean;
+    /**
+     * Returns whether or not this flow supports languages.  If false, that means you have to configure the flow
+     * when creating it to use English United States.
+     * Note:  At this time this functionality is available while we're determining the needs of workflow and
+     * inbound email flow types.  This property may go away in a future release of Architect Scripting.
+     */
+    readonly supportsLanguages: boolean;
+    /**
+     * Returns whether or not this flow supports setting a supported language as the default.
+     */
+    readonly supportsDefaultLanguage: boolean;
+    /**
+     * Returns a URL for this flow.  If the flow has not been created or there is no startup object set on the flow,
+     * the returned URL will be blank.
+     */
+    readonly url: string;
+    /**
+     * Validates the flow. Promise returns an {@link ArchValidationResults} instance.
+     * @returns - On your promise's then handler, the first parameter passed to the then function will be the
+     * validation results.
+     */
+    validateAsync(): Promise<any>;
+    /**
+     * Returns an array of variables defined at the flow scope for this flow.
+     */
+    readonly variables: ArchBaseVariable[];
+    /**
+     * The identifier string for this object.
+     */
+    readonly id: string;
+    /**
+     * Returns whether or not the id property may be blank or undefined for this object.  For example, the returned settings from {@link ArchMenu#settingsMenu}
+     * will have a blank identifier along with the settings returned from {@link ArchMenu#settingsSpeechRec}.  Note that this is
+     * an extremely rare case.
+     */
+    readonly idMayBeBlank: string;
+    /**
+     * Returns true indicating that this is an ArchBaseCoreObject instance.
+     */
+    readonly isArchBaseCoreObject: boolean;
+    /**
+     * This method iterates over this object and ArchBaseCoreObject instances
+     * within it.  For each object it will call the {@link ArchBaseObject#isFilterMatch} method
+     * with a filter and call the supplied callback function if isMatch returns true.
+     * The callback will be passed an {@link ArchTraverseInfo} with details
+     * about the match such as the match object itself along with current contextual
+     * information such as the object hierarchy for the match object relative to
+     * the object on which this traverse call is being made.
+     *
+     * The traverse [filter]{@link ArchFilterObject} is one which you can create
+     * by calling {@link ArchFactoryFilters#createFilterObject} and then add desired clauses
+     * or clause containers to it.  If not specified, this function will use a
+     * [default filter]{@link ArchFactoryFilters#createFilterTraverseDefault}.
+     *
+     * Here is an example that does a simple flow traversal using the default
+     * filter and logs information about objects in the callback from the
+     * traverse object that's passed back:
+     *
+     * ```
+     * archInboundCallFlow.traverse(function(traverseInfo) {
+     *    archLogging.logNote('  Object     : ' + traverseInfo.matchObject.logStr);
+     *    archLogging.logNote('    Hierarchy: ' + traverseInfo.context.hierarchyStr);
+     * });
+     * ```
+     * This might be enough for most uses and you can check various aspects
+     * about the object in the callback such as "is this an Architect action?" by
+     * seeing if traverseInfo.matchObject.isArchBaseAction is true.  You can specify
+     * a filter for the traversal code to use as well and only have it call your
+     * callback when the object's {@link ArchBaseCoreObject#isFilterMatch} method returns true for
+     * the filter.  Here's an example that creates a filter for callbacks on
+     * [any type of transfer action]{@link ArchBaseActionTransfer}, any
+     * [decision action]{@link ArchActionDecision} or objects whose name
+     * property case insensitively matches the word 'foo'.  While this could all be done
+     * with one property callback clause the example will use multiple clauses for
+     * the sake of simplicity:
+     * ```
+     * const myTraverseFilter = filterFactory.createFilterObject(archEnums.FILTER_CONTAINER_OPERATORS.or);
+     * myTraverseFilter.addClausePropertyValueEquals('isArchBaseActionTransfer', true);
+     * myTraverseFilter.addClausePropertyValueEquals('isArchActionDecision',     true);
+     * myTraverseFilter.addClausePropertyCallback('name', function(propValue, archContainingObject, propName) {
+     *       // We fully spelled out the function signature above but archContainingObject and propName are
+     *       // not needed in this case.  The archContainingObject is the object that contains the
+     *       // property and propName is the property name itself.  We pass in propName because the same
+     *       // function could be used for multiple property callback clauses.
+     *       // Remember to return a boolean true, false or undefined from ths callback.  :)
+     *       return propValue && propValue.toLowerCase() === 'foo';
+     * });
+     * archTask.traverse(function(traverseContext) {
+     *    // You will only be called back here for ArchBaseCoreObject instances that
+     *    // have the isArchBaseActionTransfer or isArchActionDecision property values equal to true.
+     * }, myTraverseFilter);
+     * ```
+     * If you supply a filter with no clauses, this tells the traverse method to
+     * call the supplied callback function for every {@link ArchBaseCoreObject} it traverses.
+     *
+     * If you want traversal itself to stop after a callback, simply return boolean
+     * false from the callback function you supply to the traverse call.
+     *
+     * The traverse method does not process deprecated property names such as [orgId]{@link ArchSession#orgId},
+     * [orgName]{@link ArchSession#orgName} or [languageSettings]{@link ArchBaseFlow#languageSettings}.  Additionally
+     * it does not traverse in to properties that would "jump out" of the current traversal.  An example of this
+     * would be if the code was traversing an {@link ArchActionJumpToMenu} action that it would not start traversing
+     * in to the menu that it jumps to.  Another example would be a {@link ArchActionChangeState} action where
+     * it would not traverse in to the target state of the action.  This also means traversal does not traverse
+     * in to the {@link ArchBaseValue#flowLevelDefault} property.
+     *
+     * And lastly, as Scripting evolves over time with new versions, you can expect to get callbacks for new object
+     * types such as new actions or new properties on objects.  As such, it's important not to assume any particular
+     * order in callbacks to keep code most compatible with traversal callbacks.  Or if you use inequality checks in filter
+     * clauses remember that new "stuff" may satisfy an inequality check which may or may not be anticipated in your logic.
+     *
+     * Note:  This traverse method is a helper method and is very handy for iterating over Architect Scripting
+     * objects and their properties in a generic fashion with filtering capabilities.  Obviously you can write
+     * your own custom traversal code if this implementation doesn't cut it for some reason. :)
+     *
+     * This function returns the number of times it called the callback function.
+     * @param callbackFunction - the callback function to call for objects that match the traverse filter.
+     * @param [traverseFilter = {@link ArchFactoryFilters#createFilterTraverseDefault}] - the filter to use when performing the traversal to determine which
+     *                                              {@link ArchBaseCoreObject} instances you wish to be called back for.  If no
+     *                                              filter is specified, this function will call {@link ArchFactoryFilters#createFilterTraverseDefault} and
+     *                                              use that traversal default filter.  The wantArchBaseValues parameter on that call is set to true.
+     */
+    traverse(callbackFunction: callbackTraverseInfo, traverseFilter?: ArchFilterObject): number;
+    /**
+     * This is a string suitable for logging information about this object where it's just the object's type.  This is normally used
+     * when logging errors that occur in constructor parameter checking because the scripting object isn't set up and the normal
+     * logging str contents wouldn't be set up.
+     */
+    readonly logStrTypeOnly: string;
+    /**
+     * Logs an error to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logErrors} is true.
+     * @param errorStr - the error string to log.
+     */
+    logError(errorStr: string): void;
+    /**
+     * Logs an error to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logErrors} is true and then throws
+     * the string in the errorStr parameter.
+     * @param errorStr - the error string to log.  This should be a non-blank string.
+     */
+    logErrorAndThrow(errorStr: string): void;
+    /**
+     * Logs a note to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logNotes} is true.
+     * @param noteStr - the note string to log.  This should be a non-blank string.
+     */
+    logNote(noteStr: string): void;
+    /**
+     * Logs a note to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logNotesVerbose} is true.
+     * @param noteStr - the note string to log.  This should be a non-blank string.
+     */
+    logNoteVerbose(noteStr: string): void;
+    /**
+     * Logs a warning to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logWarnings} is true.
+     * @param warningStr - the warning string to log.  This should be a non-blank string.
+     */
+    logWarning(warningStr: string): void;
+    /**
+     * Returns whether or not this Architect Scripting object is a match
+     * for the supplied ArchFilterObject instance.
+     * @param archFilterObject - the object filter to use to determine if it's a match.
+     */
+    isFilterMatch(archFilterObject: ArchFilterObject): boolean;
 }
 
 export class ArchFlowCommonModule extends ArchBaseFlow {
@@ -15492,12 +16390,7 @@ export class ArchFlowCommonModule extends ArchBaseFlow {
     isFilterMatch(archFilterObject: ArchFilterObject): boolean;
 }
 
-/**
- * The Architect Scripting class for the Digital Bot flow class.
- * Instances of this Architect Scripting object should be created by calling {@link ArchFactoryFlows#createFlowDigitalBotAsync}
- * @param coreBotViewModel - ( *Internal* ) an Architect core Bot view model.
- */
-export class ArchFlowDigitalBot extends ArchBaseFlowBot {
+export class ArchFlowDigitalBot extends ArchBaseFlowBotWithKnowledge {
     // constructor(coreBotViewModel: any);
     /**
      * Returns the display type name string 'ArchFlowDigitalBot'.
@@ -15507,6 +16400,454 @@ export class ArchFlowDigitalBot extends ArchBaseFlowBot {
      * Returns true indicating that this is an ArchFlowDigitalBot instance.
      */
     readonly isArchFlowDigitalBot: boolean;
+    /**
+     * Returns true indicating that this is an isArchBaseFlowBotWithKnowledge instance.
+     */
+    readonly isArchBaseFlowBotWithKnowledge: boolean;
+    /**
+     * The natural language understanding knowledge settings for the bot flow.
+     * Note that if your organization does not have knowledge base support or the
+     * flow's supported language does not support knowledge, accessing this property
+     * will return null.
+     */
+    readonly knowledgeSettings: ArchSettingsNluKnowledge;
+    /**
+     * Returns true indicating that this is an ArchBaseFlowBot instance.
+     */
+    readonly isArchBaseFlowBot: boolean;
+    /**
+     * Bot-specific settings for the flow.
+     */
+    readonly botFlowSettings: ArchSettingsBotFlow;
+    /**
+     * The user input settings for the flow.
+     */
+    readonly userInputSettings: ArchSettingsUserInput;
+    /**
+     * This function deletes the specified state from this flow.
+     * @param stateToDelete - the state to delete.
+     */
+    deleteState(stateToDelete: ArchState): void;
+    /**
+     * Sets the specified state to be the starting state on the flow.
+     * @param archState - An Architect Scripting state object.
+     */
+    setStartingState(archState: ArchState): void;
+    /**
+     * Returns the starting state for this flow.
+     * If there is no startup object configured, accessing this property returns null.
+     */
+    readonly startUpObject: ArchState;
+    /**
+     * The states in the flow.
+     */
+    readonly states: ArchState[];
+    /**
+     * This function deletes the specified reusable task from this flow.
+     * @param taskToDelete - the task to delete.  This must be a reusable task which means the {@link ArchTask#isReusableTask}
+     * property on the specified task instance is true.
+     */
+    deleteTask(taskToDelete: ArchTask): void;
+    /**
+     * Returns an array of the currently defined reusable tasks for this flow.
+     */
+    readonly tasksReusable: ArchTask[];
+    /**
+     * This adds a new variable to the flow.
+     * @param name - the name of the variable to add.  Remember that variable names must
+     *                        start with a letter and can then be followed by one or more letters, numbers
+     *                        or underscore characters to be valid.  Submitting the variable scope on the name
+     *                        is optional.  If specified, it must be 'Flow.' in order to be valid since you're
+     *                        adding the variable to a flow.
+     * @param type - the data type for the new variable.  Remember that type must be supported
+     *                              in the flow type for which you're looking to add the variable.  If you are
+     *                              not sure if a type is creatable, see the {@link ArchDataType#isScriptCreatableForFlowType} or
+     *                              {@link ArchDataType#isScriptCreatableForFlow} method.
+     * @param [description] - the description for the new variable.
+     */
+    addVariable(name: string, type: ArchDataType, description?: string): ArchBaseVariable;
+    /**
+     * Checkout this flow. This function returns an ArchInfo instance for it to the supplied callback function.
+     * @param [forceUnlock] - if true, will force an unlock of the flow.
+     * @param [callbackFunction] - a callback function to call if the flow was checked out.
+     * @returns - while this method returns a promise, you should use the callback function to perform any processing once the flow is checked out.
+     */
+    checkoutAsync(forceUnlock?: boolean, callbackFunction?: callbackVoid): Promise<any>;
+    /**
+     * Returns the division associated with this flow.
+     * This method first calls {@link ArchOrganizationInfo#areDivisionsAvailable} to ensure that divisions are available.
+     * If not available, nothing is returned.
+     */
+    readonly division: ArchDivision;
+    /**
+     * Loads a specific version of the flow.  Any previously returned Architect Scripting objects associated with this flow should no
+     * longer be considered valid after loading new configuration.
+     * @param [flowVersion = "latest"] - the version of the flow to get.  Valid values are "latest" to get the latest saved configuration of a flow,
+     * a version value such as "2.0" or "2", "debug" to get the currently published debug version configuration of a flow,
+     * or "published" to get the currently published version configuration of a flow.  If you do not specify a version, then the latest saved configuration will be loaded.
+     * @param [callbackFunction] - a callback function to call if the flow was loaded.
+     * @returns - while this method returns a promise, you should use the callback function to perform any processing when the flow is loaded.
+     */
+    loadAsync(flowVersion?: string, callbackFunction?: callbackVoid): Promise<any>;
+    /**
+     * Returns a string suitable for logging that describes the flow
+     */
+    readonly logStr: string;
+    /**
+     * Unlocks this flow.
+     * @param [callbackFunction] - a callback function to call if the flow can be unlocked.
+     * @returns - while this method returns a promise, you should use the callback function to perform any processing once this flow is unlocked.
+     */
+    unlockAsync(callbackFunction?: callbackVoid): Promise<any>;
+    /**
+     * Helper method that accesses the flow's [settingsSupportedLanguages]{@link ArchBaseFlow#settingsSupportedLanguages} and then calls
+     * the [addSupportedLanguage]{@link ArchSettingsSupportedLanguagesFlow#addSupportedLanguage} function on the returned {@link ArchSettingsSupportedLanguagesFlow}
+     * value.
+     * @param archLanguage - the language to add to supported languages on the flow.  Note that any language used as a supported
+     * language must have at least one region sub-tag.
+     * @param [setAsDefaultLanguage] - if true, the language will be set as the default language on the flow.
+     */
+    addFlowSupportedLanguage(archLanguage: ArchLanguage, setAsDefaultLanguage?: boolean): ArchSettingsSupportedLanguage;
+    /**
+     * Checks flow to see if a language can be added in its current state. Some flows may have restrictions
+     * if any or more than one can be added.
+     */
+    canAddSupportedLanguage(): boolean;
+    /**
+     * Checks in and unlocks the flow for the current user, does a save first
+     * Assumes the flow has been created, throws if not
+     * @param [ensureSearchable] - whether or not to poll after successful checkin to ensure that the flow is available for flow
+     *                                       search operations such as {@link ArchFactoryFlows#getFlowInfoByFlowNameAsync} or {@link ArchFactoryFlows#getFlowInfoByFlowIdAsync}
+     * @returns - On your promise's then handler, the first parameter passed to the then function will be this
+     * flow instance.
+     */
+    checkInAsync(ensureSearchable?: boolean): Promise<any>;
+    /**
+     * Creates a new flow on the server and saves its configuration
+     * @returns - On your promise's then handler, the first parameter passed to the then function will be this
+     * flow instance.
+     */
+    createAsync(): Promise<any>;
+    /**
+     * Accessing this property returns an object with properties whose keys are data type names and values are
+     * {@link ArchDataType} instances.
+     */
+    readonly dataTypes: any;
+    /**
+     * The description of the flow
+     */
+    description: string;
+    /**
+     * Exports the current flow to a file in the specified directory.  This destination directory *must* exist
+     * for the export to succeed.  Note that this uses the file system and should not be used when running in a
+     * browser.
+     * @param [destinationDir] - the directory where the flow export should be saved.
+     * @param [callbackFunction] - the function to call back and pass in the full path where the
+     *                                                      flow export was saved.
+     * @param [flowFormat = ArchEnums.FLOW_FORMAT_TYPES.architect] - the desired flow format to use for the export. See {@link ArchEnums.FLOW_FORMAT_TYPES} for allowable export formats. If no format is used,
+     *                                                                      it will default to the Architect format.
+     * @param [fileName] - the file name to use for the exported flow. If a file extension is not added to the file name, it will use the default file extension for the desired export type for
+     * the desired export format and flow that you are exporting. If the format is YAML, the extension is always '.yaml' regardless of flow type. However, if it is the Architect format, the extension is unique per flow-type.
+     * To find the correct file extension for the Architect format, you can either export a flow from the Architect UI or look at the [flow definition]{@link ArchBaseFlow#definition}
+     * for a flow type and access the [fileExtension]{@link ArchDefinitionFlow.fileExtension} property to get the value. If an extension is found on the file name other than what is
+     * expected, the correct extension will be appended to the end of the exported file as per the logic described previously.
+     */
+    exportToDirAsync(destinationDir?: string, callbackFunction?: callbackExportFullPath, flowFormat?: string, fileName?: string): Promise<any>;
+    /**
+     * Exports the flow to a JSON object.  The object passed back in the callback function
+     * will be a JSON object with a content and fileName property where the content holds
+     * the flow export contents and the fileName property holds the file name where the
+     * export would be written if {@link ArchBaseFlow#exportToDirAsync} is called.
+     * @param callbackFunction - the function to call back with the export information contained
+     *                                                  in the parameter passed to it.
+     * @param [flowFormat = ArchEnums.FLOW_FORMAT_TYPES.architect] - the desired export format to use on an export. See {@link ArchEnums.FLOW_FORMAT_TYPES} for allowable export formats. If no format is used,
+     *                                                                      it will default to the Architect format.
+     */
+    exportToObjectAsync(callbackFunction: callbackExportObject, flowFormat?: string): Promise<any>;
+    /**
+     * The type of the flow.  The string
+     * values in {@link ArchEnums#FLOW_TYPES} lists valid flow type values.
+     */
+    readonly flowType: string;
+    /**
+     * This function will return the file path where a flow export will be written when calling the {@link ArchBaseFlow#exportToDirAsync}
+     * method for the supplied destination directory and export flow format.  A typical use case for this function would be
+     * to get the export file path prior to calling the {@link ArchBaseFlow#exportToDirAsync} so you could see if the file already exists
+     * and decide if you want to perform an export or not since {@link ArchBaseFlow#exportToDirAsync} will attempt to overwrite
+     * a file if it already exists. Note that this uses the file system and should not be used when running in a
+     * browser.
+     * @param [destinationDir] - the directory where the flow export should be written. If no directory path is given, this method uses the
+     *                                    current working directory.  If a relative path is supplied, it will be resolved relative to the current
+     *                                    working directory.
+     * @param [flowFormat = ArchEnums.FLOW_FORMAT_TYPES.architect] - the desired flow format to use for the export. See {@link ArchEnums.FLOW_FORMAT_TYPES} for allowable export
+     *                                                                      formats. If no format is supplied, it will use the Architect format.
+     * @param [fileName] - the file name to use for the exported flow. If a file extension is not added to the file name, it will use the default file extension for the desired export type for
+     * the desired export format and flow that you are exporting. If the format is YAML, the extension is always '.yaml' regardless of flow type. However, if it is the Architect format, the extension is unique per flow-type.
+     * To find the correct file extension for the Architect format, you can either export a flow from the Architect UI or look at the [flow definition]{@link ArchBaseFlow#definition}
+     * for a flow type and access the [fileExtension]{@link ArchDefinitionFlow.fileExtension} property to get the value. If an extension is found on the file name other than what is
+     * expected, the correct extension will be appended to the end of the exported file as per the logic described previously.
+     */
+    getExportFilePath(destinationDir?: string, flowFormat?: string, fileName?: string): string;
+    /**
+     * Returns the flow scoped variable for the supplied variable identifier ( if it exists ).
+     * If the variable name cannot be found, nothing is returned.
+     * @param variableId - the supllied variable identifier to look up such as __CALL_ANI__.
+     */
+    getVariableById(variableId: string): ArchBaseVariable;
+    /**
+     * Returns the flow scoped variable for the supplied fully scoped variable name ( if it exists ).  Remember, looking
+     * up variables by name is case insensitive.  If the variable name cannot be found, nothing is returned.
+     * @param variableName - the fully scoped variable name to look up such as Flow.MyVar.
+     */
+    getVariableByName(variableName: string): ArchBaseVariable;
+    /**
+     * Imports the flow content from the supplied content string.  This content string should be for a flow of the
+     * same type as the one you're importing in to.  Upon successful import, the callback function passed in
+     * will be called.  Importing flow contents in to a flow is something where you should *not* attempt to
+     * do work with the flow on which this is being called until the callback is called.
+     * @param exportContent - the contents from a flow export.
+     * @param [callbackFunction] - a function to call if the export content successfully loaded and configured
+     *                                                    on this flow.  The first parameter passed to the callback function will be this
+     *                                                    Architect flow instance.
+     */
+    importFromContentAsync(exportContent: string, callbackFunction?: (...params: any[]) => any): Promise<any>;
+    /**
+     * Imports the flow content from the supplied file path.  Upon successful import, the callback function passed in
+     * will be called.  Importing flow contents in to a flow is something where you should *not* attempt to
+     * do work with the flow on which this is being called until the callback is called.
+     * Also note that this method should not be used if running in a browser.
+     * @param exportFilePath - the file path to an Architect flow export file that should be imported.
+     * @param [callbackFunction] - a function to call if the export content successfully loaded and configured
+     *                                        on this flow.  The first parameter passed to the callback function will be this
+     *                                        Architect flow instance.
+     */
+    importFromFileAsync(exportFilePath: string, callbackFunction?: (...params: any[]) => any): Promise<any>;
+    /**
+     * Returns whether or not the flow is created in Genesys Cloud.
+     */
+    readonly isCreated: boolean;
+    /**
+     * Returns whether or not the flow is read-only.  Flows that have been created locally in
+     * scripting but not saved, checked in or published will report that they are not read-only.
+     */
+    readonly isReadOnly: boolean;
+    /**
+     * Returns whether or not the flow is secure.  That means it contains something that is
+     * secure like a secure variable or secure action.
+     */
+    readonly isSecure: boolean;
+    /**
+     * Returns true indicating the flow acts as a variable container which means you can
+     * add variables to it.
+     */
+    readonly isVariableContainer: boolean;
+    /**
+     * The language settings for the flow.  This property is now deprecated.
+     * Please replace calls to this property with {@link ArchBaseFlow#settingsSupportedLanguages} instead.
+     */
+    readonly languageSettings: ArchSettingsSupportedLanguagesFlow;
+    /**
+     * The name of the flow
+     */
+    name: string;
+    /**
+     * Publishes the flow. This will do a validate, save, checkin and then publish last. Any of these
+     * steps can fail and reject the promise. Operations are not atomic.
+     * @param [ensureSearchable] - whether or not to poll after successful publish to ensure that the flow is available for flow
+     *                                       search operations such as {@link ArchFactoryFlows#getFlowInfoByFlowNameAsync} or {@link ArchFactoryFlows#getFlowInfoByFlowIdAsync}
+     * @returns - On your promise's then handler, the first parameter passed to the then function will be this
+     * flow instance.
+     */
+    publishAsync(ensureSearchable?: boolean): Promise<any>;
+    /**
+     * Save the current flow configuration, creating the flow if needed.
+     * @returns - On your promise's then handler, the first parameter passed to the then function will be this
+     * flow instance.
+     */
+    saveAsync(): Promise<any>;
+    /**
+     * Returns the error handling settings for the flow.
+     */
+    readonly settingsErrorHandling: ArchSettingsEventErrorFlow;
+    /**
+     * Returns the action default settings for the flow.
+     */
+    readonly settingsActionDefaults: ArchSettingsActionDefaults;
+    /**
+     * The supported language settings for the flow.
+     * This method will throw if the flow doesn't support languages.  You can check {@link ArchBaseFlow#supportsLanguages} prior
+     * to calling this method to see if a flow supports languages or not.
+     */
+    readonly settingsSupportedLanguages: ArchSettingsSupportedLanguagesFlow;
+    /**
+     * Returns whether or not this flow supports audio channel.
+     */
+    readonly supportsAudio: boolean;
+    /**
+     * Returns whether or not this flow supports error handling.
+     */
+    readonly supportsErrorHandling: boolean;
+    /**
+     * Returns whether or not this flow supports languages.  If false, that means you have to configure the flow
+     * when creating it to use English United States.
+     * Note:  At this time this functionality is available while we're determining the needs of workflow and
+     * inbound email flow types.  This property may go away in a future release of Architect Scripting.
+     */
+    readonly supportsLanguages: boolean;
+    /**
+     * Returns whether or not this flow supports setting a supported language as the default.
+     */
+    readonly supportsDefaultLanguage: boolean;
+    /**
+     * Returns a URL for this flow.  If the flow has not been created or there is no startup object set on the flow,
+     * the returned URL will be blank.
+     */
+    readonly url: string;
+    /**
+     * Validates the flow. Promise returns an {@link ArchValidationResults} instance.
+     * @returns - On your promise's then handler, the first parameter passed to the then function will be the
+     * validation results.
+     */
+    validateAsync(): Promise<any>;
+    /**
+     * Returns an array of variables defined at the flow scope for this flow.
+     */
+    readonly variables: ArchBaseVariable[];
+    /**
+     * The identifier string for this object.
+     */
+    readonly id: string;
+    /**
+     * Returns whether or not the id property may be blank or undefined for this object.  For example, the returned settings from {@link ArchMenu#settingsMenu}
+     * will have a blank identifier along with the settings returned from {@link ArchMenu#settingsSpeechRec}.  Note that this is
+     * an extremely rare case.
+     */
+    readonly idMayBeBlank: string;
+    /**
+     * Returns true indicating that this is an ArchBaseCoreObject instance.
+     */
+    readonly isArchBaseCoreObject: boolean;
+    /**
+     * This method iterates over this object and ArchBaseCoreObject instances
+     * within it.  For each object it will call the {@link ArchBaseObject#isFilterMatch} method
+     * with a filter and call the supplied callback function if isMatch returns true.
+     * The callback will be passed an {@link ArchTraverseInfo} with details
+     * about the match such as the match object itself along with current contextual
+     * information such as the object hierarchy for the match object relative to
+     * the object on which this traverse call is being made.
+     *
+     * The traverse [filter]{@link ArchFilterObject} is one which you can create
+     * by calling {@link ArchFactoryFilters#createFilterObject} and then add desired clauses
+     * or clause containers to it.  If not specified, this function will use a
+     * [default filter]{@link ArchFactoryFilters#createFilterTraverseDefault}.
+     *
+     * Here is an example that does a simple flow traversal using the default
+     * filter and logs information about objects in the callback from the
+     * traverse object that's passed back:
+     *
+     * ```
+     * archInboundCallFlow.traverse(function(traverseInfo) {
+     *    archLogging.logNote('  Object     : ' + traverseInfo.matchObject.logStr);
+     *    archLogging.logNote('    Hierarchy: ' + traverseInfo.context.hierarchyStr);
+     * });
+     * ```
+     * This might be enough for most uses and you can check various aspects
+     * about the object in the callback such as "is this an Architect action?" by
+     * seeing if traverseInfo.matchObject.isArchBaseAction is true.  You can specify
+     * a filter for the traversal code to use as well and only have it call your
+     * callback when the object's {@link ArchBaseCoreObject#isFilterMatch} method returns true for
+     * the filter.  Here's an example that creates a filter for callbacks on
+     * [any type of transfer action]{@link ArchBaseActionTransfer}, any
+     * [decision action]{@link ArchActionDecision} or objects whose name
+     * property case insensitively matches the word 'foo'.  While this could all be done
+     * with one property callback clause the example will use multiple clauses for
+     * the sake of simplicity:
+     * ```
+     * const myTraverseFilter = filterFactory.createFilterObject(archEnums.FILTER_CONTAINER_OPERATORS.or);
+     * myTraverseFilter.addClausePropertyValueEquals('isArchBaseActionTransfer', true);
+     * myTraverseFilter.addClausePropertyValueEquals('isArchActionDecision',     true);
+     * myTraverseFilter.addClausePropertyCallback('name', function(propValue, archContainingObject, propName) {
+     *       // We fully spelled out the function signature above but archContainingObject and propName are
+     *       // not needed in this case.  The archContainingObject is the object that contains the
+     *       // property and propName is the property name itself.  We pass in propName because the same
+     *       // function could be used for multiple property callback clauses.
+     *       // Remember to return a boolean true, false or undefined from ths callback.  :)
+     *       return propValue && propValue.toLowerCase() === 'foo';
+     * });
+     * archTask.traverse(function(traverseContext) {
+     *    // You will only be called back here for ArchBaseCoreObject instances that
+     *    // have the isArchBaseActionTransfer or isArchActionDecision property values equal to true.
+     * }, myTraverseFilter);
+     * ```
+     * If you supply a filter with no clauses, this tells the traverse method to
+     * call the supplied callback function for every {@link ArchBaseCoreObject} it traverses.
+     *
+     * If you want traversal itself to stop after a callback, simply return boolean
+     * false from the callback function you supply to the traverse call.
+     *
+     * The traverse method does not process deprecated property names such as [orgId]{@link ArchSession#orgId},
+     * [orgName]{@link ArchSession#orgName} or [languageSettings]{@link ArchBaseFlow#languageSettings}.  Additionally
+     * it does not traverse in to properties that would "jump out" of the current traversal.  An example of this
+     * would be if the code was traversing an {@link ArchActionJumpToMenu} action that it would not start traversing
+     * in to the menu that it jumps to.  Another example would be a {@link ArchActionChangeState} action where
+     * it would not traverse in to the target state of the action.  This also means traversal does not traverse
+     * in to the {@link ArchBaseValue#flowLevelDefault} property.
+     *
+     * And lastly, as Scripting evolves over time with new versions, you can expect to get callbacks for new object
+     * types such as new actions or new properties on objects.  As such, it's important not to assume any particular
+     * order in callbacks to keep code most compatible with traversal callbacks.  Or if you use inequality checks in filter
+     * clauses remember that new "stuff" may satisfy an inequality check which may or may not be anticipated in your logic.
+     *
+     * Note:  This traverse method is a helper method and is very handy for iterating over Architect Scripting
+     * objects and their properties in a generic fashion with filtering capabilities.  Obviously you can write
+     * your own custom traversal code if this implementation doesn't cut it for some reason. :)
+     *
+     * This function returns the number of times it called the callback function.
+     * @param callbackFunction - the callback function to call for objects that match the traverse filter.
+     * @param [traverseFilter = {@link ArchFactoryFilters#createFilterTraverseDefault}] - the filter to use when performing the traversal to determine which
+     *                                              {@link ArchBaseCoreObject} instances you wish to be called back for.  If no
+     *                                              filter is specified, this function will call {@link ArchFactoryFilters#createFilterTraverseDefault} and
+     *                                              use that traversal default filter.  The wantArchBaseValues parameter on that call is set to true.
+     */
+    traverse(callbackFunction: callbackTraverseInfo, traverseFilter?: ArchFilterObject): number;
+    /**
+     * This is a string suitable for logging information about this object where it's just the object's type.  This is normally used
+     * when logging errors that occur in constructor parameter checking because the scripting object isn't set up and the normal
+     * logging str contents wouldn't be set up.
+     */
+    readonly logStrTypeOnly: string;
+    /**
+     * Logs an error to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logErrors} is true.
+     * @param errorStr - the error string to log.
+     */
+    logError(errorStr: string): void;
+    /**
+     * Logs an error to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logErrors} is true and then throws
+     * the string in the errorStr parameter.
+     * @param errorStr - the error string to log.  This should be a non-blank string.
+     */
+    logErrorAndThrow(errorStr: string): void;
+    /**
+     * Logs a note to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logNotes} is true.
+     * @param noteStr - the note string to log.  This should be a non-blank string.
+     */
+    logNote(noteStr: string): void;
+    /**
+     * Logs a note to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logNotesVerbose} is true.
+     * @param noteStr - the note string to log.  This should be a non-blank string.
+     */
+    logNoteVerbose(noteStr: string): void;
+    /**
+     * Logs a warning to the logging service with a log header from this object's [logStr]{@link ArchBaseObject#logStr} property value when {@link ArchLogging#logWarnings} is true.
+     * @param warningStr - the warning string to log.  This should be a non-blank string.
+     */
+    logWarning(warningStr: string): void;
+    /**
+     * Returns whether or not this Architect Scripting object is a match
+     * for the supplied ArchFilterObject instance.
+     * @param archFilterObject - the object filter to use to determine if it's a match.
+     */
+    isFilterMatch(archFilterObject: ArchFilterObject): boolean;
 }
 
 /**
