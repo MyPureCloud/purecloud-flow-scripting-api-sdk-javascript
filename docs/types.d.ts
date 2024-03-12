@@ -507,6 +507,10 @@ export class ArchEnums {
      */
     readonly PLAY_POSITION_STYLES_ALL: string[];
     /**
+     * Returns a string array that contains all valid post flow action type strings.
+     */
+    readonly POST_FLOW_ACTION_TYPES_ALL: string[];
+    /**
      * Returns a JSON object with these properties whose values are valid evaluation types for EvaluateSchedule actions:
      * ```
      * {
@@ -12832,7 +12836,7 @@ export class ArchBaseFlow extends ArchBaseCoreObjectWithId {
      * @returns - On your promise's then handler, the first parameter passed to the then function will be the
      * validation results.
      */
-    validateAsync(): Promise<any>;
+    validateAsync(): Promise<ArchValidationResults>;
     /**
      * Returns an array of variables defined at the flow scope for this flow.
      */
@@ -12865,10 +12869,6 @@ export class ArchBaseFlowBot extends ArchBaseFlowWorkflow {
      */
     readonly isArchBaseFlowBot: boolean;
     /**
-     * Bot-specific settings for the flow.
-     */
-    readonly botFlowSettings: ArchSettingsBotFlow;
-    /**
      * The user input settings for the flow.
      */
     readonly userInputSettings: ArchSettingsUserInput;
@@ -12892,13 +12892,13 @@ export class ArchBaseFlowBotWithKnowledge extends ArchBaseFlowBot {
      */
     readonly knowledgeSettings: ArchSettingsNluKnowledge;
     /**
-     * Returns true indicating that this is an ArchBaseFlowBot instance.
-     */
-    readonly isArchBaseFlowBot: boolean;
-    /**
      * Bot-specific settings for the flow.
      */
     readonly botFlowSettings: ArchSettingsBotFlow;
+    /**
+     * Returns true indicating that this is an ArchBaseFlowBot instance.
+     */
+    readonly isArchBaseFlowBot: boolean;
     /**
      * The user input settings for the flow.
      */
@@ -13188,7 +13188,7 @@ export class ArchBaseFlowBotWithKnowledge extends ArchBaseFlowBot {
      * @returns - On your promise's then handler, the first parameter passed to the then function will be the
      * validation results.
      */
-    validateAsync(): Promise<any>;
+    validateAsync(): Promise<ArchValidationResults>;
     /**
      * Returns an array of variables defined at the flow scope for this flow.
      */
@@ -15531,13 +15531,13 @@ export class ArchFlowBot extends ArchBaseFlowBotWithKnowledge {
      */
     readonly knowledgeSettings: ArchSettingsNluKnowledge;
     /**
-     * Returns true indicating that this is an ArchBaseFlowBot instance.
-     */
-    readonly isArchBaseFlowBot: boolean;
-    /**
      * Bot-specific settings for the flow.
      */
     readonly botFlowSettings: ArchSettingsBotFlow;
+    /**
+     * Returns true indicating that this is an ArchBaseFlowBot instance.
+     */
+    readonly isArchBaseFlowBot: boolean;
     /**
      * The user input settings for the flow.
      */
@@ -15827,7 +15827,7 @@ export class ArchFlowBot extends ArchBaseFlowBotWithKnowledge {
      * @returns - On your promise's then handler, the first parameter passed to the then function will be the
      * validation results.
      */
-    validateAsync(): Promise<any>;
+    validateAsync(): Promise<ArchValidationResults>;
     /**
      * Returns an array of variables defined at the flow scope for this flow.
      */
@@ -16248,7 +16248,7 @@ export class ArchFlowCommonModule extends ArchBaseFlow {
      * @returns - On your promise's then handler, the first parameter passed to the then function will be the
      * validation results.
      */
-    validateAsync(): Promise<any>;
+    validateAsync(): Promise<ArchValidationResults>;
     /**
      * Returns an array of variables defined at the flow scope for this flow.
      */
@@ -16412,13 +16412,13 @@ export class ArchFlowDigitalBot extends ArchBaseFlowBotWithKnowledge {
      */
     readonly knowledgeSettings: ArchSettingsNluKnowledge;
     /**
-     * Returns true indicating that this is an ArchBaseFlowBot instance.
-     */
-    readonly isArchBaseFlowBot: boolean;
-    /**
      * Bot-specific settings for the flow.
      */
     readonly botFlowSettings: ArchSettingsBotFlow;
+    /**
+     * Returns true indicating that this is an ArchBaseFlowBot instance.
+     */
+    readonly isArchBaseFlowBot: boolean;
     /**
      * The user input settings for the flow.
      */
@@ -16708,7 +16708,7 @@ export class ArchFlowDigitalBot extends ArchBaseFlowBotWithKnowledge {
      * @returns - On your promise's then handler, the first parameter passed to the then function will be the
      * validation results.
      */
-    validateAsync(): Promise<any>;
+    validateAsync(): Promise<ArchValidationResults>;
     /**
      * Returns an array of variables defined at the flow scope for this flow.
      */
