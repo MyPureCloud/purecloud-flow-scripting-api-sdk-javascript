@@ -2996,7 +2996,8 @@ export class ArchLanguage extends ArchBaseCoreObject {
     getTtsEnginesForFlowType(flowType: string): ArchTtsEngine[];
     /**
      * Returns the default text to speech engine that is available for this language. If this language does not have a default
-     * text to speech engine, nothing is returned.
+     * text to speech engine, nothing is returned.  Remember that a default TTS engine may not always be available for a given
+     * flow type.
      */
     getDefaultTtsEngine(): ArchTtsEngine;
     /**
