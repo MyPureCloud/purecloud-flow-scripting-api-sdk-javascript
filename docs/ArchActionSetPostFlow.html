@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: ArchBaseFlowInboundOutboundSecureCall | Architect Scripting</title>
+    <title>Class: ArchActionSetPostFlow | Architect Scripting</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -50,7 +50,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"><span class="icon green">abstract</span> </span></span>ArchBaseFlowInboundOutboundSecureCall<span class="signature">(coreInboundOutboundSecureFlowViewModel)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ArchActionSetPostFlow<span class="signature">(coreSetPostFlowActionViewModel)</span><span class="type-signature"></span></h2>
         
     
 </header>
@@ -63,9 +63,9 @@
 
 <dt>
     
-        <h4 class="name" id="ArchBaseFlowInboundOutboundSecureCall">
+        <h4 class="name" id="ArchActionSetPostFlow">
             
-                new <span class="type-signature"><span class="icon green">abstract</span> </span>ArchBaseFlowInboundOutboundSecureCall<span class="signature">(coreInboundOutboundSecureFlowViewModel)</span><span class="type-signature"></span>
+                new <span class="type-signature"></span>ArchActionSetPostFlow<span class="signature">(coreSetPostFlowActionViewModel)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -75,10 +75,6 @@
 </dt>
 <dd>
 
-    
-    <div class="description">
-        <p>Creates an instance of an ArchBaseFlowInboundOutboundSecureCall.  This is the base class for inbound / outbound / secure call flows.</p>
-    </div>
     
 
     
@@ -113,7 +109,7 @@
 
         <tr>
             
-                <td class="name"><code>coreInboundOutboundSecureFlowViewModel</code></td>
+                <td class="name"><code>coreSetPostFlowActionViewModel</code></td>
             
 
             <td class="type">
@@ -129,7 +125,7 @@
 
             
 
-            <td class="description last"><p>( <em>Internal</em> ) an Architect core inbound, outbound or secure call flow view model.</p></td>
+            <td class="description last"><p>( <em>Internal</em> ) an Architect core Set Post Flow action view model.</p></td>
         </tr>
 
     
@@ -186,11 +182,7 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="ArchFlowInboundCall.html">ArchFlowInboundCall</a></li>
-        
-            <li><a href="ArchFlowOutboundCall.html">ArchFlowOutboundCall</a></li>
-        
-            <li><a href="ArchFlowSecureCall.html">ArchFlowSecureCall</a></li>
+            <li><a href="ArchFactoryActions.html#addActionSetPostFlow">ArchFactoryActions#addActionSetPostFlow</a></li>
         </ul>
     </dd>
     
@@ -214,7 +206,7 @@
 
 
     <ul>
-        <li><a href="ArchBaseFlowWithMenus.html">ArchBaseFlowWithMenus</a></li>
+        <li><a href="ArchBaseAction.html">ArchBaseAction</a></li>
     </ul>
 
 
@@ -247,7 +239,7 @@
 <dd>
     
     <div class="description">
-        <p>Returns the display type name string 'ArchBaseFlowInboundOutboundSecureCall'.</p>
+        <p>Returns the display type name string 'ArchActionSetPostFlow'.</p>
     </div>
     
 
@@ -311,8 +303,8 @@
             
 
 <dt>
-<h4 class="name" id=".isArchBaseFlowInboundOutboundSecureCall">
-    <span class="type-signature"><span class="icon green">static</span>, <span class="icon green">readonly</span> </span>isArchBaseFlowInboundOutboundSecureCall<span class="type-signature"> :boolean</span>
+<h4 class="name" id="actionType">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>actionType<span class="type-signature"> :<a href="ArchValueString.html">ArchValueString</a></span>
     
 </h4>
 
@@ -321,7 +313,8 @@
 <dd>
     
     <div class="description">
-        <p>Returns true indicating that this is an ArchBaseFlowInboundOutboundSecureCall object.</p>
+        <p>This specifies the Post-Flow action to invoke. The string values in
+<a href="ArchEnums.html#POST_FLOW_ACTION_TYPES"><code>ArchEnums#POST_FLOW_ACTION_TYPES</code></a> lists valid values.</p>
     </div>
     
 
@@ -331,7 +324,7 @@
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type"><a href="ArchValueString.html">ArchValueString</a></span>
 
 
             </li>
@@ -385,8 +378,8 @@
             
 
 <dt>
-<h4 class="name" id="dataTypes">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>dataTypes<span class="type-signature"> :Object</span>
+<h4 class="name" id="displayTypeNameArchitect">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>displayTypeNameArchitect<span class="type-signature"> :string</span>
     
 </h4>
 
@@ -395,87 +388,7 @@
 <dd>
     
     <div class="description">
-        <p>Accessing this property returns an object with properties whose keys are data type names and values are
-<a href="ArchDataType.html"><code>ArchDataType</code></a> instances.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">Object</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#dataTypes">ArchBaseFlow#dataTypes</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="description">
-    <span class="type-signature"></span>description<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The description of the flow</p>
+        <p>The Architect action type label</p>
     </div>
     
 
@@ -503,12 +416,12 @@
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#description">ArchBaseFlow#description</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#displayTypeNameArchitect">ArchBaseAction#displayTypeNameArchitect</a>
+    </li></ul></dd>
     
 
     
@@ -544,8 +457,8 @@
             
 
 <dt>
-<h4 class="name" id="division">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>division<span class="type-signature"> :<a href="ArchDivision.html">ArchDivision</a></span>
+<h4 class="name" id="getTargetTypeForActionType">
+    <span class="type-signature"></span>getTargetTypeForActionType<span class="type-signature"> :string</span>
     
 </h4>
 
@@ -554,89 +467,7 @@
 <dd>
     
     <div class="description">
-        <p>Returns the division associated with this flow.
-This method first calls <a href="ArchOrganizationInfo.html#areDivisionsAvailable"><code>ArchOrganizationInfo#areDivisionsAvailable</code></a> to ensure that divisions are available.
-If not available, nothing is returned.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchDivision.html">ArchDivision</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#division">ArchBaseFlow#division</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="flowType">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>flowType<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The type of the flow.  The string
-values in <a href="ArchEnums.html#FLOW_TYPES"><code>ArchEnums#FLOW_TYPES</code></a> lists valid flow type values.</p>
+        <p>Returns the target type string for the currently configured <a href="ArchActionSetPostFlow.html#actionType"><code>action type</code></a>.</p>
     </div>
     
 
@@ -663,11 +494,6 @@ values in <a href="ArchEnums.html#FLOW_TYPES"><code>ArchEnums#FLOW_TYPES</code><
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#flowType">ArchBaseFlow#flowType</a>
-    </li></ul></dd>
     
 
     
@@ -743,12 +569,12 @@ values in <a href="ArchEnums.html#FLOW_TYPES"><code>ArchEnums#FLOW_TYPES</code><
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseCoreObjectWithId.html#id">ArchBaseCoreObjectWithId#id</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#id">ArchBaseAction#id</a>
+    </li></ul></dd>
     
 
     
@@ -824,12 +650,12 @@ an extremely rare case.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseCoreObjectWithId.html#idMayBeBlank">ArchBaseCoreObjectWithId#idMayBeBlank</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#idMayBeBlank">ArchBaseAction#idMayBeBlank</a>
+    </li></ul></dd>
     
 
     
@@ -872,8 +698,8 @@ an extremely rare case.</p>
             
 
 <dt>
-<h4 class="name" id="initialAudio">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>initialAudio<span class="type-signature"> :<a href="ArchAudio.html">ArchAudio</a></span>
+<h4 class="name" id="invocationData">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>invocationData<span class="type-signature"> :<a href="ArchValueJson.html">ArchValueJson</a></span>
     
 </h4>
 
@@ -882,7 +708,7 @@ an extremely rare case.</p>
 <dd>
     
     <div class="description">
-        <p>The initial audio set on the flow.</p>
+        <p>This is the invocation data that can be used when launching a flow.</p>
     </div>
     
 
@@ -892,7 +718,81 @@ an extremely rare case.</p>
         <ul>
             <li>
                 
-<span class="param-type"><a href="ArchAudio.html">ArchAudio</a></span>
+<span class="param-type"><a href="ArchValueJson.html">ArchValueJson</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="isArchActionSetPostFlow">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isArchActionSetPostFlow<span class="type-signature"> :boolean</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns true indicating that this is an ArchActionSetPostFlow instance.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
 
 
             </li>
@@ -984,12 +884,12 @@ an extremely rare case.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseCoreObject.html#isArchBaseCoreObject">ArchBaseCoreObject#isArchBaseCoreObject</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#isArchBaseCoreObject">ArchBaseAction#isArchBaseCoreObject</a>
+    </li></ul></dd>
     
 
     
@@ -1025,8 +925,8 @@ an extremely rare case.</p>
             
 
 <dt>
-<h4 class="name" id="isCreated">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isCreated<span class="type-signature"> :boolean</span>
+<h4 class="name" id="isMenuChoiceAction">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isMenuChoiceAction<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -1035,7 +935,9 @@ an extremely rare case.</p>
 <dd>
     
     <div class="description">
-        <p>Returns whether or not the flow is created in Genesys Cloud.</p>
+        <p>Returns whether or not this action is the action property for a <a href="ArchBaseMenuChoice.html"><code>menu choice</code></a>.
+For example, the <a href="ArchMenuDisconnect.html#actionDisconnect"><code>ArchMenuDisconnect#actionDisconnect</code></a> property on an <a href="ArchMenuDisconnect.html"><code>ArchMenuDisconnect</code></a>
+instance.</p>
     </div>
     
 
@@ -1063,12 +965,12 @@ an extremely rare case.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#isCreated">ArchBaseFlow#isCreated</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#isMenuChoiceAction">ArchBaseAction#isMenuChoiceAction</a>
+    </li></ul></dd>
     
 
     
@@ -1104,8 +1006,8 @@ an extremely rare case.</p>
             
 
 <dt>
-<h4 class="name" id="isReadOnly">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isReadOnly<span class="type-signature"> :boolean</span>
+<h4 class="name" id="isReachable">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isReachable<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -1114,8 +1016,7 @@ an extremely rare case.</p>
 <dd>
     
     <div class="description">
-        <p>Returns whether or not the flow is read-only.  Flows that have been created locally in
-scripting but not saved, checked in or published will report that they are not read-only.</p>
+        <p>Returns whether or not this action is reachable at runtime.</p>
     </div>
     
 
@@ -1143,12 +1044,12 @@ scripting but not saved, checked in or published will report that they are not r
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#isReadOnly">ArchBaseFlow#isReadOnly</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#isReachable">ArchBaseAction#isReachable</a>
+    </li></ul></dd>
     
 
     
@@ -1194,8 +1095,8 @@ scripting but not saved, checked in or published will report that they are not r
 <dd>
     
     <div class="description">
-        <p>Returns whether or not the flow is secure.  That means it contains something that is
-secure like a secure variable or secure action.</p>
+        <p>Returns whether or not this action is secure which means either the action by its very nature
+is secure or it consumes secure data.</p>
     </div>
     
 
@@ -1223,12 +1124,12 @@ secure like a secure variable or secure action.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#isSecure">ArchBaseFlow#isSecure</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#isSecure">ArchBaseAction#isSecure</a>
+    </li></ul></dd>
     
 
     
@@ -1264,8 +1165,8 @@ secure like a secure variable or secure action.</p>
             
 
 <dt>
-<h4 class="name" id="isVariableContainer">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isVariableContainer<span class="type-signature"> :boolean</span>
+<h4 class="name" id="isUnreachable">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isUnreachable<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -1274,8 +1175,7 @@ secure like a secure variable or secure action.</p>
 <dd>
     
     <div class="description">
-        <p>Returns true indicating the flow acts as a variable container which means you can
-add variables to it.</p>
+        <p>Returns whether or not this action is unreachable at runtime.</p>
     </div>
     
 
@@ -1303,9 +1203,11 @@ add variables to it.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#isVariableContainer">ArchBaseFlow#isVariableContainer</a>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#isUnreachable">ArchBaseAction#isUnreachable</a>
     </li></ul></dd>
     
 
@@ -1315,90 +1217,6 @@ add variables to it.</p>
 
     
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="languageSettings">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>languageSettings<span class="type-signature"> :<a href="ArchSettingsSupportedLanguagesFlow.html">ArchSettingsSupportedLanguagesFlow</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The language settings for the flow.  This property is now deprecated.
-Please replace calls to this property with <a href="ArchBaseFlow.html#settingsSupportedLanguages"><code>ArchBaseFlow#settingsSupportedLanguages</code></a> instead.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchSettingsSupportedLanguagesFlow.html">ArchSettingsSupportedLanguagesFlow</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#languageSettings">ArchBaseFlow#languageSettings</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <dt class="important tag-deprecated">Deprecated:</dt><dd class="yes-def tag-deprecated"><ul class="dummy"><li>Yes</li></ul></dd>
     
 
     
@@ -1436,7 +1254,8 @@ Please replace calls to this property with <a href="ArchBaseFlow.html#settingsSu
 <dd>
     
     <div class="description">
-        <p>Returns a string suitable for logging that describes the flow</p>
+        <p>A string suitable for logging that contains information about this action.  This will contain the action
+tracking id, name and scripting type name.</p>
     </div>
     
 
@@ -1464,12 +1283,12 @@ Please replace calls to this property with <a href="ArchBaseFlow.html#settingsSu
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#logStr">ArchBaseFlow#logStr</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#logStr">ArchBaseAction#logStr</a>
+    </li></ul></dd>
     
 
     
@@ -1545,91 +1364,12 @@ logging str contents wouldn't be set up.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logStrTypeOnly">ArchBaseObject#logStrTypeOnly</a>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#logStrTypeOnly">ArchBaseAction#logStrTypeOnly</a>
     </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="menusReusable">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>menusReusable<span class="type-signature"> :Array.&lt;<a href="ArchBaseMenu.html">ArchBaseMenu</a>></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns an array of the currently defined reusable menus for this flow.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">Array.&lt;<a href="ArchBaseMenu.html">ArchBaseMenu</a>></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlowWithMenus.html#menusReusable">ArchBaseFlowWithMenus#menusReusable</a>
-    </li></ul></dd>
-    
-
     
 
     
@@ -1675,7 +1415,7 @@ logging str contents wouldn't be set up.</p>
 <dd>
     
     <div class="description">
-        <p>The name of the flow</p>
+        <p>The name of the action</p>
     </div>
     
 
@@ -1703,9 +1443,11 @@ logging str contents wouldn't be set up.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#name">ArchBaseFlow#name</a>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#name">ArchBaseAction#name</a>
     </li></ul></dd>
     
 
@@ -1730,8 +1472,6 @@ logging str contents wouldn't be set up.</p>
     
 
     
-
-    
 </dl>
 
 
@@ -1744,8 +1484,8 @@ logging str contents wouldn't be set up.</p>
             
 
 <dt>
-<h4 class="name" id="settingsActionDefaults">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>settingsActionDefaults<span class="type-signature"> :<a href="ArchSettingsActionDefaults.html">ArchSettingsActionDefaults</a></span>
+<h4 class="name" id="parentFlow">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>parentFlow<span class="type-signature"> :<a href="ArchBaseFlow.html">ArchBaseFlow</a></span>
     
 </h4>
 
@@ -1754,7 +1494,7 @@ logging str contents wouldn't be set up.</p>
 <dd>
     
     <div class="description">
-        <p>Returns the action default settings for the flow.</p>
+        <p>Returns the parent flow for this action.</p>
     </div>
     
 
@@ -1764,7 +1504,7 @@ logging str contents wouldn't be set up.</p>
         <ul>
             <li>
                 
-<span class="param-type"><a href="ArchSettingsActionDefaults.html">ArchSettingsActionDefaults</a></span>
+<span class="param-type"><a href="ArchBaseFlow.html">ArchBaseFlow</a></span>
 
 
             </li>
@@ -1782,9 +1522,11 @@ logging str contents wouldn't be set up.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#settingsActionDefaults">ArchBaseFlow#settingsActionDefaults</a>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#parentFlow">ArchBaseAction#parentFlow</a>
     </li></ul></dd>
     
 
@@ -1809,8 +1551,6 @@ logging str contents wouldn't be set up.</p>
     
 
     
-
-    
 </dl>
 
 
@@ -1823,8 +1563,8 @@ logging str contents wouldn't be set up.</p>
             
 
 <dt>
-<h4 class="name" id="settingsErrorHandling">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>settingsErrorHandling<span class="type-signature"> :<a href="ArchSettingsEventErrorFlow.html">ArchSettingsEventErrorFlow</a></span>
+<h4 class="name" id="parentMenuChoice">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>parentMenuChoice<span class="type-signature"> :<a href="ArchBaseMenuChoice.html">ArchBaseMenuChoice</a></span>
     
 </h4>
 
@@ -1833,7 +1573,8 @@ logging str contents wouldn't be set up.</p>
 <dd>
     
     <div class="description">
-        <p>Returns the error handling settings for the flow.</p>
+        <p>Returns the parent menu choice if this action is the action for a <a href="ArchBaseMenuChoice.html"><code>menu choice</code></a>.
+Otherwise, nothing is returned.</p>
     </div>
     
 
@@ -1843,7 +1584,7 @@ logging str contents wouldn't be set up.</p>
         <ul>
             <li>
                 
-<span class="param-type"><a href="ArchSettingsEventErrorFlow.html">ArchSettingsEventErrorFlow</a></span>
+<span class="param-type"><a href="ArchBaseMenuChoice.html">ArchBaseMenuChoice</a></span>
 
 
             </li>
@@ -1861,9 +1602,11 @@ logging str contents wouldn't be set up.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#settingsErrorHandling">ArchBaseFlow#settingsErrorHandling</a>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#parentMenuChoice">ArchBaseAction#parentMenuChoice</a>
     </li></ul></dd>
     
 
@@ -1888,8 +1631,6 @@ logging str contents wouldn't be set up.</p>
     
 
     
-
-    
 </dl>
 
 
@@ -1902,8 +1643,8 @@ logging str contents wouldn't be set up.</p>
             
 
 <dt>
-<h4 class="name" id="settingsMenu">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>settingsMenu<span class="type-signature"> :<a href="ArchSettingsMenuFlow.html">ArchSettingsMenuFlow</a></span>
+<h4 class="name" id="parentState">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>parentState<span class="type-signature"> :<a href="ArchState.html">ArchState</a></span>
     
 </h4>
 
@@ -1912,7 +1653,8 @@ logging str contents wouldn't be set up.</p>
 <dd>
     
     <div class="description">
-        <p>The menu settings for the flow.</p>
+        <p>Returns the parent state that contains this action if this action is in a <a href="ArchState.html"><code>state</code></a>.
+Otherwise, nothing is returned.</p>
     </div>
     
 
@@ -1922,7 +1664,7 @@ logging str contents wouldn't be set up.</p>
         <ul>
             <li>
                 
-<span class="param-type"><a href="ArchSettingsMenuFlow.html">ArchSettingsMenuFlow</a></span>
+<span class="param-type"><a href="ArchState.html">ArchState</a></span>
 
 
             </li>
@@ -1942,305 +1684,9 @@ logging str contents wouldn't be set up.</p>
     
 
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="settingsOutboundCall">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>settingsOutboundCall<span class="type-signature"> :<a href="ArchSettingsOutboundCallFlow.html">ArchSettingsOutboundCallFlow</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The outbound settings for the flow such as contact list and default wrapup code.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchSettingsOutboundCallFlow.html">ArchSettingsOutboundCallFlow</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="settingsPrompts">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>settingsPrompts<span class="type-signature"> :<a href="ArchSettingsPromptsFlow.html">ArchSettingsPromptsFlow</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The prompt settings for the flow.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchSettingsPromptsFlow.html">ArchSettingsPromptsFlow</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="settingsSpeechRec">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>settingsSpeechRec<span class="type-signature"> :<a href="ArchSettingsSpeechRecFlow.html">ArchSettingsSpeechRecFlow</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The speech rec settings for the flow.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchSettingsSpeechRecFlow.html">ArchSettingsSpeechRecFlow</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="settingsSupportedLanguages">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>settingsSupportedLanguages<span class="type-signature"> :<a href="ArchSettingsSupportedLanguagesFlow.html">ArchSettingsSupportedLanguagesFlow</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The supported language settings for the flow.
-This method will throw if the flow doesn't support languages.  You can check <a href="ArchBaseFlow.html#supportsLanguages"><code>ArchBaseFlow#supportsLanguages</code></a> prior
-to calling this method to see if a flow supports languages or not.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchSettingsSupportedLanguagesFlow.html">ArchSettingsSupportedLanguagesFlow</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#settingsSupportedLanguages">ArchBaseFlow#settingsSupportedLanguages</a>
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#parentState">ArchBaseAction#parentState</a>
     </li></ul></dd>
     
 
@@ -2265,8 +1711,6 @@ to calling this method to see if a flow supports languages or not.</p>
     
 
     
-
-    
 </dl>
 
 
@@ -2279,8 +1723,8 @@ to calling this method to see if a flow supports languages or not.</p>
             
 
 <dt>
-<h4 class="name" id="startUpObject">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>startUpObject<span class="type-signature"> :<a href="ArchTask.html">ArchTask</a>|<a href="ArchMenu.html">ArchMenu</a></span>
+<h4 class="name" id="parentTask">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>parentTask<span class="type-signature"> :<a href="ArchTask.html">ArchTask</a>|<a href="ArchTaskLoop.html">ArchTaskLoop</a></span>
     
 </h4>
 
@@ -2289,8 +1733,8 @@ to calling this method to see if a flow supports languages or not.</p>
 <dd>
     
     <div class="description">
-        <p>Returns the starting task or menu for this call flow.
-If there is no startup object configured, accessing this property returns null.</p>
+        <p>Returns the parent task that contains this action if this action is in a <a href="ArchTask.html"><code>task</code></a> or <a href="ArchTaskLoop.html"><code>looping task</code></a>.
+Otherwise, nothing is returned.</p>
     </div>
     
 
@@ -2303,7 +1747,87 @@ If there is no startup object configured, accessing this property returns null.<
 <span class="param-type"><a href="ArchTask.html">ArchTask</a></span>
 |
 
-<span class="param-type"><a href="ArchMenu.html">ArchMenu</a></span>
+<span class="param-type"><a href="ArchTaskLoop.html">ArchTaskLoop</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#parentTask">ArchBaseAction#parentTask</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="target">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>target<span class="type-signature"> :<a href="ArchValueString.html">ArchValueString</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>This specifies the target for the Post-Flow. The string values in
+<a href="ArchEnums.html#POST_FLOW_TARGET_TYPES"><code>ArchEnums#POST_FLOW_TARGET_TYPES</code></a> lists valid values.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueString.html">ArchValueString</a></span>
 
 
             </li>
@@ -2357,8 +1881,8 @@ If there is no startup object configured, accessing this property returns null.<
             
 
 <dt>
-<h4 class="name" id="supportsAudio">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>supportsAudio<span class="type-signature"> :boolean</span>
+<h4 class="name" id="targetFlowInfo">
+    <span class="type-signature"></span>targetFlowInfo<span class="type-signature"> :<a href="ArchFlowInfoBasic.html">ArchFlowInfoBasic</a></span>
     
 </h4>
 
@@ -2367,7 +1891,7 @@ If there is no startup object configured, accessing this property returns null.<
 <dd>
     
     <div class="description">
-        <p>Returns whether or not this flow supports audio channel.</p>
+        <p>The target flow for this ArchActionSetPostFlow instance that specifies the post flow to execute</p>
     </div>
     
 
@@ -2377,7 +1901,7 @@ If there is no startup object configured, accessing this property returns null.<
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type"><a href="ArchFlowInfoBasic.html">ArchFlowInfoBasic</a></span>
 
 
             </li>
@@ -2394,11 +1918,6 @@ If there is no startup object configured, accessing this property returns null.<
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#supportsAudio">ArchBaseFlow#supportsAudio</a>
-    </li></ul></dd>
     
 
     
@@ -2436,8 +1955,8 @@ If there is no startup object configured, accessing this property returns null.<
             
 
 <dt>
-<h4 class="name" id="supportsDefaultLanguage">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>supportsDefaultLanguage<span class="type-signature"> :boolean</span>
+<h4 class="name" id="trackingId">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>trackingId<span class="type-signature"> :number</span>
     
 </h4>
 
@@ -2446,7 +1965,7 @@ If there is no startup object configured, accessing this property returns null.<
 <dd>
     
     <div class="description">
-        <p>Returns whether or not this flow supports setting a supported language as the default.</p>
+        <p>The integer tracking identifier for this action.  This is the numeric identifier is displayed in the Architect user interface.</p>
     </div>
     
 
@@ -2456,7 +1975,7 @@ If there is no startup object configured, accessing this property returns null.<
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type">number</span>
 
 
             </li>
@@ -2474,418 +1993,12 @@ If there is no startup object configured, accessing this property returns null.<
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#supportsDefaultLanguage">ArchBaseFlow#supportsDefaultLanguage</a>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#trackingId">ArchBaseAction#trackingId</a>
     </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="supportsErrorHandling">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>supportsErrorHandling<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this flow supports error handling.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#supportsErrorHandling">ArchBaseFlow#supportsErrorHandling</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="supportsLanguages">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>supportsLanguages<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this flow supports languages.  If false, that means you have to configure the flow
-when creating it to use English United States.
-Note:  At this time this functionality is available while we're determining the needs of workflow and
-inbound email flow types.  This property may go away in a future release of Architect Scripting.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#supportsLanguages">ArchBaseFlow#supportsLanguages</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="tasksReusable">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>tasksReusable<span class="type-signature"> :Array.&lt;<a href="ArchTask.html">ArchTask</a>></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns an array of the currently defined reusable tasks for this flow.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">Array.&lt;<a href="ArchTask.html">ArchTask</a>></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlowWithTasks.html#tasksReusable">ArchBaseFlowWithTasks#tasksReusable</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="url">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>url<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns a URL for this flow.  If the flow has not been created or there is no startup object set on the flow,
-the returned URL will be blank.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#url">ArchBaseFlow#url</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="ArchBaseFlow.html#isCreated">ArchBaseFlow#isCreated</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="variables">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>variables<span class="type-signature"> :Array.&lt;<a href="ArchBaseVariable.html">ArchBaseVariable</a>></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns an array of variables defined at the flow scope for this flow.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">Array.&lt;<a href="ArchBaseVariable.html">ArchBaseVariable</a>></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#variables">ArchBaseFlow#variables</a>
-    </li></ul></dd>
-    
-
     
 
     
@@ -2924,2881 +2037,6 @@ the returned URL will be blank.</p>
         <h3 class="subsection-title">Methods</h3>
 
         <dl>
-                
-
-<dt>
-    
-        <h4 class="name" id="addFlowSupportedLanguage">
-            
-                <span class="type-signature"></span>addFlowSupportedLanguage<span class="signature">(archLanguage, setAsDefaultLanguage<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="ArchSettingsSupportedLanguage.html">ArchSettingsSupportedLanguage</a>}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Helper method that accesses the flow's <a href="ArchBaseFlow.html#settingsSupportedLanguages"><code>settingsSupportedLanguages</code></a> and then calls
-the <a href="ArchSettingsSupportedLanguagesFlow.html#addSupportedLanguage"><code>addSupportedLanguage</code></a> function on the returned <a href="ArchSettingsSupportedLanguagesFlow.html"><code>ArchSettingsSupportedLanguagesFlow</code></a>
-value.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>archLanguage</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="ArchLanguage.html">ArchLanguage</a></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>the language to add to supported languages on the flow.  Note that any language used as a supported
-language must have at least one region sub-tag.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>setAsDefaultLanguage</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>if true, the language will be set as the default language on the flow.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type"><a href="ArchSettingsSupportedLanguage.html">ArchSettingsSupportedLanguage</a></span>
-
-
-
-
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#addFlowSupportedLanguage">ArchBaseFlow#addFlowSupportedLanguage</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="addVariable">
-            
-                <span class="type-signature"></span>addVariable<span class="signature">(name, type, description<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="ArchBaseVariable.html">ArchBaseVariable</a>}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>This adds a new variable to the flow.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>the name of the variable to add.  Remember that variable names must
-start with a letter and can then be followed by one or more letters, numbers
-or underscore characters to be valid.  Submitting the variable scope on the name
-is optional.  If specified, it must be 'Flow.' in order to be valid since you're
-adding the variable to a flow.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>type</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="ArchDataType.html">ArchDataType</a></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>the data type for the new variable.  Remember that type must be supported
-in the flow type for which you're looking to add the variable.  If you are
-not sure if a type is creatable, see the <a href="ArchDataType.html#isScriptCreatableForFlowType"><code>ArchDataType#isScriptCreatableForFlowType</code></a> or
-<a href="ArchDataType.html#isScriptCreatableForFlow"><code>ArchDataType#isScriptCreatableForFlow</code></a> method.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>description</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>the description for the new variable.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type"><a href="ArchBaseVariable.html">ArchBaseVariable</a></span>
-
-
-
-
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#addVariable">ArchBaseFlow#addVariable</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="canAddSupportedLanguage">
-            
-                <span class="type-signature"></span>canAddSupportedLanguage<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Checks flow to see if a language can be added in its current state. Some flows may have restrictions
-if any or more than one can be added.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">boolean</span>
-
-
-
-
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#canAddSupportedLanguage">ArchBaseFlow#canAddSupportedLanguage</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="checkInAsync">
-            
-                <span class="type-signature"></span>checkInAsync<span class="signature">(ensureSearchable<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Checks in and unlocks the flow for the current user, does a save first
-Assumes the flow has been created, throws if not</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>ensureSearchable</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>whether or not to poll after successful checkin to ensure that the flow is available for flow
-search operations such as <a href="ArchFactoryFlows.html#getFlowInfoByFlowNameAsync"><code>ArchFactoryFlows#getFlowInfoByFlowNameAsync</code></a> or <a href="ArchFactoryFlows.html#getFlowInfoByFlowIdAsync"><code>ArchFactoryFlows#getFlowInfoByFlowIdAsync</code></a></p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Promise</span>
-
-
-
-
-
-- <ul>
-<li>On your promise's then handler, the first parameter passed to the then function will be this
-flow instance.</li>
-</ul>
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#checkInAsync">ArchBaseFlow#checkInAsync</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="checkoutAsync">
-            
-                <span class="type-signature"></span>checkoutAsync<span class="signature">(forceUnlock<span class="signature-attributes">opt</span>, callbackFunction<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Checkout this flow. This function returns an ArchInfo instance for it to the supplied callback function.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>forceUnlock</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>if true, will force an unlock of the flow.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>callbackFunction</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#callbackVoid">callbackVoid</a></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>a callback function to call if the flow was checked out.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Promise</span>
-
-
-
-
-
-- <ul>
-<li>while this method returns a promise, you should use the callback function to perform any processing once the flow is checked out.</li>
-</ul>
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#checkoutAsync">ArchBaseFlow#checkoutAsync</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="createAsync">
-            
-                <span class="type-signature"></span>createAsync<span class="signature">()</span><span class="type-signature"> &rarr; {Promise}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Creates a new flow on the server and saves its configuration</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Promise</span>
-
-
-
-
-
-- <ul>
-<li>On your promise's then handler, the first parameter passed to the then function will be this
-flow instance.</li>
-</ul>
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#createAsync">ArchBaseFlow#createAsync</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="deleteMenu">
-            
-                <span class="type-signature"></span>deleteMenu<span class="signature">(menuToDelete)</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>This function deletes the specified reusable menu from this flow.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>menuToDelete</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="ArchMenu.html">ArchMenu</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>the menu to delete.  This must be a reusable menu which means the <a href="ArchMenu.html#isReusableMenu"><code>ArchMenu#isReusableMenu</code></a>
-property on the specified menu instance is true.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlowWithMenus.html#deleteMenu">ArchBaseFlowWithMenus#deleteMenu</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="deleteTask">
-            
-                <span class="type-signature"></span>deleteTask<span class="signature">(taskToDelete)</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>This function deletes the specified reusable task from this flow.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>taskToDelete</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="ArchTask.html">ArchTask</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>the task to delete.  This must be a reusable task which means the <a href="ArchTask.html#isReusableTask"><code>ArchTask#isReusableTask</code></a>
-property on the specified task instance is true.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlowWithTasks.html#deleteTask">ArchBaseFlowWithTasks#deleteTask</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="exportToDirAsync">
-            
-                <span class="type-signature"></span>exportToDirAsync<span class="signature">(destinationDir<span class="signature-attributes">opt</span>, callbackFunction<span class="signature-attributes">opt</span>, flowFormat<span class="signature-attributes">opt</span>, fileName<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Exports the current flow to a file in the specified directory.  This destination directory <em>must</em> exist
-for the export to succeed.  Note that this uses the file system and should not be used when running in a
-browser.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>destinationDir</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>the directory where the flow export should be saved.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>callbackFunction</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#callbackExportFullPath">callbackExportFullPath</a></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>the function to call back and pass in the full path where the
-flow export was saved.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>flowFormat</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    ArchEnums.FLOW_FORMAT_TYPES.architect
-                
-                </td>
-            
-
-            <td class="description last"><p>the desired flow format to use for the export. See <code>ArchEnums.FLOW_FORMAT_TYPES</code> for allowable export formats. If no format is used,
-it will default to the Architect format.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>fileName</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>the file name to use for the exported flow. If a file extension is not added to the file name, it will use the default file extension for the desired export type for
-the desired export format and flow that you are exporting. If the format is YAML, the extension is always '.yaml' regardless of flow type. However, if it is the Architect format, the extension is unique per flow-type.
-To find the correct file extension for the Architect format, you can either export a flow from the Architect UI or look at the <code>flow definition</code>
-for a flow type and access the <code>fileExtension</code> property to get the value. If an extension is found on the file name other than what is
-expected, the correct extension will be appended to the end of the exported file as per the logic described previously.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Promise</span>
-
-
-
-
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#exportToDirAsync">ArchBaseFlow#exportToDirAsync</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="ArchBaseFlow.html#exportToObjectAsync">ArchBaseFlow#exportToObjectAsync</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="exportToObjectAsync">
-            
-                <span class="type-signature"></span>exportToObjectAsync<span class="signature">(callbackFunction, flowFormat<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Exports the flow to a JSON object.  The object passed back in the callback function
-will be a JSON object with a content and fileName property where the content holds
-the flow export contents and the fileName property holds the file name where the
-export would be written if <a href="ArchBaseFlow.html#exportToDirAsync"><code>ArchBaseFlow#exportToDirAsync</code></a> is called.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>callbackFunction</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#callbackExportObject">callbackExportObject</a></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>the function to call back with the export information contained
-in the parameter passed to it.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>flowFormat</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    ArchEnums.FLOW_FORMAT_TYPES.architect
-                
-                </td>
-            
-
-            <td class="description last"><p>the desired export format to use on an export. See <code>ArchEnums.FLOW_FORMAT_TYPES</code> for allowable export formats. If no format is used,
-it will default to the Architect format.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Promise</span>
-
-
-
-
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#exportToObjectAsync">ArchBaseFlow#exportToObjectAsync</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="ArchBaseFlow.html#exportToDirAsync">ArchBaseFlow#exportToDirAsync</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="getExportFilePath">
-            
-                <span class="type-signature"></span>getExportFilePath<span class="signature">(destinationDir<span class="signature-attributes">opt</span>, flowFormat<span class="signature-attributes">opt</span>, fileName<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>This function will return the file path where a flow export will be written when calling the <a href="ArchBaseFlow.html#exportToDirAsync"><code>ArchBaseFlow#exportToDirAsync</code></a>
-method for the supplied destination directory and export flow format.  A typical use case for this function would be
-to get the export file path prior to calling the <a href="ArchBaseFlow.html#exportToDirAsync"><code>ArchBaseFlow#exportToDirAsync</code></a> so you could see if the file already exists
-and decide if you want to perform an export or not since <a href="ArchBaseFlow.html#exportToDirAsync"><code>ArchBaseFlow#exportToDirAsync</code></a> will attempt to overwrite
-a file if it already exists. Note that this uses the file system and should not be used when running in a
-browser.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>destinationDir</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>the directory where the flow export should be written. If no directory path is given, this method uses the
-current working directory.  If a relative path is supplied, it will be resolved relative to the current
-working directory.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>flowFormat</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    ArchEnums.FLOW_FORMAT_TYPES.architect
-                
-                </td>
-            
-
-            <td class="description last"><p>the desired flow format to use for the export. See <code>ArchEnums.FLOW_FORMAT_TYPES</code> for allowable export
-formats. If no format is supplied, it will use the Architect format.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>fileName</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>the file name to use for the exported flow. If a file extension is not added to the file name, it will use the default file extension for the desired export type for
-the desired export format and flow that you are exporting. If the format is YAML, the extension is always '.yaml' regardless of flow type. However, if it is the Architect format, the extension is unique per flow-type.
-To find the correct file extension for the Architect format, you can either export a flow from the Architect UI or look at the <code>flow definition</code>
-for a flow type and access the <code>fileExtension</code> property to get the value. If an extension is found on the file name other than what is
-expected, the correct extension will be appended to the end of the exported file as per the logic described previously.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">string</span>
-
-
-
-
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#getExportFilePath">ArchBaseFlow#getExportFilePath</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="ArchBaseFlow.html#exportToDirAsync">ArchBaseFlow#exportToDirAsync</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="getVariableById">
-            
-                <span class="type-signature"></span>getVariableById<span class="signature">(variableId)</span><span class="type-signature"> &rarr; {<a href="ArchBaseVariable.html">ArchBaseVariable</a>}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Returns the flow scoped variable for the supplied variable identifier ( if it exists ).
-If the variable name cannot be found, nothing is returned.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>variableId</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>the supllied variable identifier to look up such as <strong>CALL_ANI</strong>.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type"><a href="ArchBaseVariable.html">ArchBaseVariable</a></span>
-
-
-
-
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#getVariableById">ArchBaseFlow#getVariableById</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="getVariableByName">
-            
-                <span class="type-signature"></span>getVariableByName<span class="signature">(variableName)</span><span class="type-signature"> &rarr; {<a href="ArchBaseVariable.html">ArchBaseVariable</a>}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Returns the flow scoped variable for the supplied fully scoped variable name ( if it exists ).  Remember, looking
-up variables by name is case insensitive.  If the variable name cannot be found, nothing is returned.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>variableName</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>the fully scoped variable name to look up such as Flow.MyVar.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type"><a href="ArchBaseVariable.html">ArchBaseVariable</a></span>
-
-
-
-
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#getVariableByName">ArchBaseFlow#getVariableByName</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="importFromContentAsync">
-            
-                <span class="type-signature"></span>importFromContentAsync<span class="signature">(exportContent, callbackFunction<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Imports the flow content from the supplied content string.  This content string should be for a flow of the
-same type as the one you're importing in to.  Upon successful import, the callback function passed in
-will be called.  Importing flow contents in to a flow is something where you should <em>not</em> attempt to
-do work with the flow on which this is being called until the callback is called.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>exportContent</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>the contents from a flow export.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>callbackFunction</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>a function to call if the export content successfully loaded and configured
-on this flow.  The first parameter passed to the callback function will be this
-Architect flow instance.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Promise</span>
-
-
-
-
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#importFromContentAsync">ArchBaseFlow#importFromContentAsync</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="ArchBaseFlow.html#exportToDirAsync">ArchBaseFlow#exportToDirAsync</a></li>
-        
-            <li><a href="ArchBaseFlow.html#exportToObjectAsync">ArchBaseFlow#exportToObjectAsync</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="importFromFileAsync">
-            
-                <span class="type-signature"></span>importFromFileAsync<span class="signature">(exportFilePath, callbackFunction<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Imports the flow content from the supplied file path.  Upon successful import, the callback function passed in
-will be called.  Importing flow contents in to a flow is something where you should <em>not</em> attempt to
-do work with the flow on which this is being called until the callback is called.
-Also note that this method should not be used if running in a browser.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>exportFilePath</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>the file path to an Architect flow export file that should be imported.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>callbackFunction</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">function</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>a function to call if the export content successfully loaded and configured
-on this flow.  The first parameter passed to the callback function will be this
-Architect flow instance.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Promise</span>
-
-
-
-
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#importFromFileAsync">ArchBaseFlow#importFromFileAsync</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="ArchBaseFlow.html#importFromContentAsync">ArchBaseFlow#importFromContentAsync</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
                 
 
 <dt>
@@ -5921,234 +2159,12 @@ for the supplied ArchFilterObject instance.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#isFilterMatch">ArchBaseObject#isFilterMatch</a>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#isFilterMatch">ArchBaseAction#isFilterMatch</a>
     </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="loadAsync">
-            
-                <span class="type-signature"></span>loadAsync<span class="signature">(flowVersion<span class="signature-attributes">opt</span>, callbackFunction<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Loads a specific version of the flow.  Any previously returned Architect Scripting objects associated with this flow should no
-longer be considered valid after loading new configuration.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>flowVersion</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    "latest"
-                
-                </td>
-            
-
-            <td class="description last"><p>the version of the flow to get.  Valid values are &quot;latest&quot; to get the latest saved configuration of a flow,
-a version value such as &quot;2.0&quot; or &quot;2&quot;, &quot;debug&quot; to get the currently published debug version configuration of a flow,
-or &quot;published&quot; to get the currently published version configuration of a flow.  If you do not specify a version, then the latest saved configuration will be loaded.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>callbackFunction</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#callbackVoid">callbackVoid</a></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>a callback function to call if the flow was loaded.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Promise</span>
-
-
-
-
-
-- <ul>
-<li>while this method returns a promise, you should use the callback function to perform any processing when the flow is loaded.</li>
-</ul>
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#loadAsync">ArchBaseFlow#loadAsync</a>
-    </li></ul></dd>
-    
-
     
 
     
@@ -6282,12 +2298,12 @@ or &quot;published&quot; to get the currently published version configuration of
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logError">ArchBaseObject#logError</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#logError">ArchBaseAction#logError</a>
+    </li></ul></dd>
     
 
     
@@ -6436,12 +2452,12 @@ the string in the errorStr parameter.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logErrorAndThrow">ArchBaseObject#logErrorAndThrow</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#logErrorAndThrow">ArchBaseAction#logErrorAndThrow</a>
+    </li></ul></dd>
     
 
     
@@ -6575,12 +2591,12 @@ the string in the errorStr parameter.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logNote">ArchBaseObject#logNote</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#logNote">ArchBaseAction#logNote</a>
+    </li></ul></dd>
     
 
     
@@ -6714,12 +2730,12 @@ the string in the errorStr parameter.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logNoteVerbose">ArchBaseObject#logNoteVerbose</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#logNoteVerbose">ArchBaseAction#logNoteVerbose</a>
+    </li></ul></dd>
     
 
     
@@ -6853,12 +2869,12 @@ the string in the errorStr parameter.</p>
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseObject.html#logWarning">ArchBaseObject#logWarning</a>
-    </li></ul></dd>
-    
 
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#logWarning">ArchBaseAction#logWarning</a>
+    </li></ul></dd>
     
 
     
@@ -6894,9 +2910,9 @@ the string in the errorStr parameter.</p>
 
 <dt>
     
-        <h4 class="name" id="publishAsync">
+        <h4 class="name" id="setTargetFlowInfoAsync">
             
-                <span class="type-signature"></span>publishAsync<span class="signature">(ensureSearchable<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span>
+                <span class="type-signature"></span>setTargetFlowInfoAsync<span class="signature">(targetFlowInfo, callbackFunction<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -6908,8 +2924,9 @@ the string in the errorStr parameter.</p>
 
     
     <div class="description">
-        <p>Publishes the flow. This will do a validate, save, checkin and then publish last. Any of these
-steps can fail and reject the promise. Operations are not atomic.</p>
+        <p>The target flow to call for this ArchActionSetPostFlow instance. Note that this function accepts either an <a href="ArchFlowInfo.html"><code>ArchFlowInfo</code></a> or an <a href="ArchFlowInfoBasic.html"><code>ArchFlowInfoBasic</code></a>
+instance. If the flow information supplied to the setter does not specify a flow, it will throw an exception.
+The type of flow specified must also match the type specified in the action instance's actionType property</p>
     </div>
     
 
@@ -6947,13 +2964,44 @@ steps can fail and reject the promise. Operations are not atomic.</p>
 
         <tr>
             
-                <td class="name"><code>ensureSearchable</code></td>
+                <td class="name"><code>targetFlowInfo</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">boolean</span>
+<span class="param-type"><a href="ArchFlowInfoBasic.html">ArchFlowInfoBasic</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>the <a href="ArchFlowInfoBasic.html"><code>ArchFlowInfoBasic</code></a> that specifies the flow to execute.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callbackFunction</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
 
 
             
@@ -6973,418 +3021,9 @@ steps can fail and reject the promise. Operations are not atomic.</p>
 
             
 
-            <td class="description last"><p>whether or not to poll after successful publish to ensure that the flow is available for flow
-search operations such as <a href="ArchFactoryFlows.html#getFlowInfoByFlowNameAsync"><code>ArchFactoryFlows#getFlowInfoByFlowNameAsync</code></a> or <a href="ArchFactoryFlows.html#getFlowInfoByFlowIdAsync"><code>ArchFactoryFlows#getFlowInfoByFlowIdAsync</code></a></p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Promise</span>
-
-
-
-
-
-- <ul>
-<li>On your promise's then handler, the first parameter passed to the then function will be this
-flow instance.</li>
-</ul>
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#publishAsync">ArchBaseFlow#publishAsync</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="saveAsync">
-            
-                <span class="type-signature"></span>saveAsync<span class="signature">()</span><span class="type-signature"> &rarr; {Promise}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Save the current flow configuration, creating the flow if needed.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Promise</span>
-
-
-
-
-
-- <ul>
-<li>On your promise's then handler, the first parameter passed to the then function will be this
-flow instance.</li>
-</ul>
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#saveAsync">ArchBaseFlow#saveAsync</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="setStartingMenu">
-            
-                <span class="type-signature"></span>setStartingMenu<span class="signature">(archMenu)</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Sets the specified menu to be the starting task on the flow.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>archMenu</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="ArchMenu.html">ArchMenu</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>An Architect Scripting menu object.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="setStartingTask">
-            
-                <span class="type-signature"></span>setStartingTask<span class="signature">(archTask)</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Sets the specified task to be the starting task on the flow.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>archTask</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="ArchTask.html">ArchTask</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>An Architect Scripting task object.</p></td>
+            <td class="description last"><p>a callback function to call if the flow is successfully
+configured on this action. The first parameter passed to the
+callback function will be this Architect Set Post Flow action instance.</p></td>
         </tr>
 
     
@@ -7691,299 +3330,12 @@ use that traversal default filter.  The wantArchBaseValues parameter on that cal
     
 
     
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseCoreObject.html#traverse">ArchBaseCoreObject#traverse</a>
+
+    
+    <dt class="tag-overrides">Overrides:</dt>
+    <dd class="tag-overrides"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#traverse">ArchBaseAction#traverse</a>
     </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="unlockAsync">
-            
-                <span class="type-signature"></span>unlockAsync<span class="signature">(callbackFunction<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Unlocks this flow.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>callbackFunction</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#callbackVoid">callbackVoid</a></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>a callback function to call if the flow can be unlocked.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Promise</span>
-
-
-
-
-
-- <ul>
-<li>while this method returns a promise, you should use the callback function to perform any processing once this flow is unlocked.</li>
-</ul>
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#unlockAsync">ArchBaseFlow#unlockAsync</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="validateAsync">
-            
-                <span class="type-signature"></span>validateAsync<span class="signature">()</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ArchValidationResults.html">ArchValidationResults</a>>}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Validates the flow. Promise returns an <a href="ArchValidationResults.html"><code>ArchValidationResults</code></a> instance.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">Promise.&lt;<a href="ArchValidationResults.html">ArchValidationResults</a>></span>
-
-
-
-
-
-- <ul>
-<li>On your promise's then handler, the first parameter passed to the then function will be the
-validation results.</li>
-</ul>
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseFlow.html#validateAsync">ArchBaseFlow#validateAsync</a>
-    </li></ul></dd>
-    
-
     
 
     
@@ -8039,7 +3391,7 @@ validation results.</li>
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'ArchBaseFlowInboundOutboundSecureCall_sub'.replace(/"/g, '_');
+        var id = 'ArchActionSetPostFlow_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
