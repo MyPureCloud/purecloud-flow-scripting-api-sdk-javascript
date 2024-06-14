@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: ArchValueChooser | Architect Scripting</title>
+    <title>Class: ArchValueCommunicationCollection | Architect Scripting</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -50,7 +50,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ArchValueChooser<span class="signature">(coreExpressionViewModel)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ArchValueCommunicationCollection<span class="signature">(coreExpressionViewModel)</span><span class="type-signature"></span></h2>
+        
+            <div class="class-description"><p>ArchValueCommunicationCollection</p></div>
         
     
 </header>
@@ -63,9 +65,9 @@
 
 <dt>
     
-        <h4 class="name" id="ArchValueChooser">
+        <h4 class="name" id="ArchValueCommunicationCollection">
             
-                new <span class="type-signature"></span>ArchValueChooser<span class="signature">(coreExpressionViewModel)</span><span class="type-signature"></span>
+                new <span class="type-signature"></span>ArchValueCommunicationCollection<span class="signature">(coreExpressionViewModel)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -77,13 +79,10 @@
 
     
     <div class="description">
-        <ul>
-<li>This class holds a value in Architect Scripting.</li>
-<li>Data Type:  Chooser
-Note: Do not attempt to create an instance of this class directly.
-Instances of this class will be created automatically by Architect
-Scripting as needed.</li>
-</ul>
+        <p>This class holds a collection value in Architect Scripting.
+Data Type:  Communication
+Note:  Do not attempt to create instances of this class directly.  They will be created
+automatically as needed by Architect Scripting.</p>
     </div>
     
 
@@ -209,7 +208,7 @@ Scripting as needed.</li>
 
 
     <ul>
-        <li><a href="ArchBaseValueSingleton.html">ArchBaseValueSingleton</a></li>
+        <li><a href="ArchBaseValueCollectionBasic.html">ArchBaseValueCollectionBasic</a></li>
     </ul>
 
 
@@ -242,7 +241,7 @@ Scripting as needed.</li>
 <dd>
     
     <div class="description">
-        <p>Returns the display type name string 'ArchValueChooser'.</p>
+        <p>Returns the display type name string 'ArchValueCommunicationCollection'.</p>
     </div>
     
 
@@ -306,8 +305,8 @@ Scripting as needed.</li>
             
 
 <dt>
-<h4 class="name" id=".isArchValueChooser">
-    <span class="type-signature"><span class="icon green">static</span>, <span class="icon green">readonly</span> </span>isArchValueChooser<span class="type-signature"> :boolean</span>
+<h4 class="name" id=".isArchValueCommunicationCollection">
+    <span class="type-signature"><span class="icon green">static</span>, <span class="icon green">readonly</span> </span>isArchValueCommunicationCollection<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -316,7 +315,7 @@ Scripting as needed.</li>
 <dd>
     
     <div class="description">
-        <p>Returns true indicating that this is an ArchValueChooser instance.</p>
+        <p>Returns true indicating that this is an ArchValueCommunicationCollection instance.</p>
     </div>
     
 
@@ -380,8 +379,8 @@ Scripting as needed.</li>
             
 
 <dt>
-<h4 class="name" id="carousel">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>carousel<span class="type-signature"> :<a href="ArchValueCarousel.html">ArchValueCarousel</a></span>
+<h4 class="name" id="canModifyContents">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>canModifyContents<span class="type-signature"> :boolean</span>
     
 </h4>
 
@@ -390,8 +389,9 @@ Scripting as needed.</li>
 <dd>
     
     <div class="description">
-        <p>The carousel for this chooser.  Remember that the carousel value is valid to configure when the presentation mode
-is set to &quot;carousel&quot;.</p>
+        <p>Returns whether or not you can modify the contents in this collection.  For example, if you try and call <a href="ArchBaseValueCollection.html#addItemToCollection"><code>ArchBaseValueCollection#addItemToCollection</code></a>
+and the collection does not allow modification, the function call will fail.  This does not apply to changing the
+value on an individual <a href="ArchBaseValue.html"><code>ArchBaseValue</code></a> item in the collection but rather the collection contents itself.</p>
     </div>
     
 
@@ -401,7 +401,7 @@ is set to &quot;carousel&quot;.</p>
         <ul>
             <li>
                 
-<span class="param-type"><a href="ArchValueCarousel.html">ArchValueCarousel</a></span>
+<span class="param-type">boolean</span>
 
 
             </li>
@@ -418,6 +418,11 @@ is set to &quot;carousel&quot;.</p>
 
     
 
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseValueCollection.html#canModifyContents">ArchBaseValueCollection#canModifyContents</a>
+    </li></ul></dd>
     
 
     
@@ -1135,7 +1140,7 @@ to set this to a literal.</p>
 <dd>
     
     <div class="description">
-        <p>Returns false indicating that this value is a singleton value and not a collection value.</p>
+        <p>Returns true indicating that this object is a collection.</p>
     </div>
     
 
@@ -1165,7 +1170,7 @@ to set this to a literal.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValueSingleton.html#isCollection">ArchBaseValueSingleton#isCollection</a>
+        <a href="ArchBaseValueCollection.html#isCollection">ArchBaseValueCollection#isCollection</a>
     </li></ul></dd>
     
 
@@ -1684,6 +1689,85 @@ value will be false even if the expression is only a variable reference.</p>
             
 
 <dt>
+<h4 class="name" id="length">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>length<span class="type-signature"> :number</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns the number of Architect value items in this collection if this value <a href="ArchBaseValue.html#isLiteral"><code>is a literal</code></a>.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseValueCollection.html#length">ArchBaseValueCollection#length</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
 <h4 class="name" id="logStr">
     <span class="type-signature"><span class="icon green">readonly</span> </span>logStr<span class="type-signature"> :string</span>
     
@@ -2082,155 +2166,6 @@ a value overrides a flow level setting value.</p>
             
 
 <dt>
-<h4 class="name" id="presentation">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>presentation<span class="type-signature"> :<a href="ArchValueString.html">ArchValueString</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The chooser's presentation mode</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchValueString.html">ArchValueString</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="quickReplies">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>quickReplies<span class="type-signature"> :<a href="ArchValueQuickReplies.html">ArchValueQuickReplies</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The quick replies for this chooser.  Remember that the quick replies value is valid to configure when
-the presentation mode is set to &quot;quickReplies&quot;.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchValueQuickReplies.html">ArchValueQuickReplies</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
 <h4 class="name" id="settings">
     <span class="type-signature"><span class="icon green">readonly</span> </span>settings<span class="type-signature"> :<a href="ArchValueSettings.html">ArchValueSettings</a></span>
     
@@ -2312,7 +2247,7 @@ whether it is an output, can be set to a literal, can be set to an expression, e
 
 <dt>
 <h4 class="name" id="valueText">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>valueText<span class="type-signature"> :string</span>
+    <span class="type-signature"><span class="icon green">readonly</span> </span>valueText<span class="type-signature"> :string|Array.&lt;string></span>
     
 </h4>
 
@@ -2321,21 +2256,15 @@ whether it is an output, can be set to a literal, can be set to an expression, e
 <dd>
     
     <div class="description">
-        <p>Returns a JavaScript string representing the value specified on this ArchBaseValueSingleton instance.
+        <p>Returns a JavaScript string or string array for this collection value.
 If this value is an expression, it returns the expression text.  If this value is a variable, it
-returns the variable text.  If this value is a literal, it will return a string that represents
-the value. Overall this property is meant to be a quick and easy way to look at a &quot;value&quot; string but
-it is not meant to be some kind of fully inclusive description of this ArchBaseValueSingleton instance overall.
-For most values that inherit from this class, it's pretty obvious what to expect as the returned string but there are a couple worth mentioning:</p>
-<pre class="prettyprint source"><code>ArchValueCurrency       - a string formatted with '&lt;amount>|&lt;code>&quot; where code is an ISO 4217 string.
-ArchValueDate           - a string formatted as 'YYYY-MM-DD' where YYYY is 4 digit year, MM is 2 digit month and DD is two digit day.
-ArchValueDateTime       - an ISO 8601 formatted string.
-ArchValueDuration       - an XSD formatted duration string.
-ArchValueTime           - a string formatted as 'hh:mm:ss' where hh is 2 digit hour, mm is 2 digit minute and ss is 2 digit second.
-</code></pre>
-<p>While we don't guarantee it in Scripting because this isn't the same runtime function evaluation
-engine that flows use, when accessing this property on a singleton value will be very similar to
-calling the ToString function in expressions at runtime.</p>
+returns the variable text.  If this value is a literal, the return value will be a JavaScript
+string array where each item's value in the array will be generated by accessing the
+<code>valueText</code> property for it.  Please be sure to
+see <code>ArchBaseValueBasic#valueText</code> for more information on the string formatting.
+Overall this property is meant to be a quick and easy way to look at a &quot;value&quot; string
+for a collection value but it is not meant to be some kind of fully inclusive description of
+this ArchBaseValueBasicCollection instance overall.</p>
     </div>
     
 
@@ -2346,6 +2275,9 @@ calling the ToString function in expressions at runtime.</p>
             <li>
                 
 <span class="param-type">string</span>
+|
+
+<span class="param-type">Array.&lt;string></span>
 
 
             </li>
@@ -2365,7 +2297,7 @@ calling the ToString function in expressions at runtime.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValueSingleton.html#valueText">ArchBaseValueSingleton#valueText</a>
+        <a href="ArchBaseValueCollectionBasic.html#valueText">ArchBaseValueCollectionBasic#valueText</a>
     </li></ul></dd>
     
 
@@ -2407,6 +2339,121 @@ calling the ToString function in expressions at runtime.</p>
         <h3 class="subsection-title">Methods</h3>
 
         <dl>
+                
+
+<dt>
+    
+        <h4 class="name" id="addItemToCollection">
+            
+                <span class="type-signature"></span>addItemToCollection<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="ArchBaseValue.html">ArchBaseValue</a>}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>This changes the value to a literal, creates a new <a href="ArchBaseValue.html"><code>ArchBaseValue</code></a> instance, adds it to the end of the collection
+and returns it.  The returned value will be the appropriate type for items contained in the collection.  As such,
+if you added an item to an <a href="ArchValueIntegerCollection.html"><code>ArchValueIntegerCollection</code></a>, the returned item would be an
+<a href="ArchValueInteger.html"><code>ArchValueInteger</code></a> value.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type"><a href="ArchBaseValue.html">ArchBaseValue</a></span>
+
+
+
+
+
+- <ul>
+<li>the newly created ArchBaseValue that was added.</li>
+</ul>
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseValueCollection.html#addItemToCollection">ArchBaseValueCollection#addItemToCollection</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
                 
 
 <dt>
@@ -2481,6 +2528,164 @@ calling the ToString function in expressions at runtime.</p>
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
         <a href="ArchBaseValue.html#getExpressionText">ArchBaseValue#getExpressionText</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="getItemByIndex">
+            
+                <span class="type-signature"></span>getItemByIndex<span class="signature">(index)</span><span class="type-signature"> &rarr; {<a href="ArchBaseValue.html">ArchBaseValue</a>}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Returns the Architect value associated with the collection at the specified index if this value <a href="ArchBaseValue.html#isLiteral"><code>is a literal</code></a>.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>the index of the collection item to retrieve.  This value should be a non-negative integer.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type"><a href="ArchBaseValue.html">ArchBaseValue</a></span>
+
+
+
+
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseValueCollection.html#getItemByIndex">ArchBaseValueCollection#getItemByIndex</a>
     </li></ul></dd>
     
 
@@ -3803,95 +4008,6 @@ reference, it needs to be in scope for this value.</p></td>
 
 <dt>
     
-        <h4 class="name" id="setExpressionNotSet">
-            
-                <span class="type-signature"></span>setExpressionNotSet<span class="signature">()</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>This method sets the expression of NOT_SET on this value.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseValueSingleton.html#setExpressionNotSet">ArchBaseValueSingleton#setExpressionNotSet</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
         <h4 class="name" id="setNoValue">
             
                 <span class="type-signature"></span>setNoValue<span class="signature">()</span><span class="type-signature"></span>
@@ -4043,152 +4159,6 @@ explicitly setting the expression to no value and you do not want to use the flo
     <dd class="inherited-from"><ul class="dummy"><li>
         <a href="ArchBaseValue.html#setNoValueNoFallback">ArchBaseValue#setNoValueNoFallback</a>
     </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="setPresentationMode">
-            
-                <span class="type-signature"></span>setPresentationMode<span class="signature">(presentationMode)</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>This helper function sets the presentation mode of the chooser to the specified presentation mode.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>presentationMode</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>the presentation mode to set on the chooser.  The string values in <a href="ArchEnums.html#CHOOSER_PRESENTATION_MODES"><code>ArchEnums#CHOOSER_PRESENTATION_MODES</code></a> list valid values.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Throws:</h5>
-    
-            
-
-    <div class="param-desc">
-    
-        <p>Attempting call this function with a non-supported chooser presentation mode will throw.</p>
-    
-    </div>
-
-
-        
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
     
 
     
@@ -4677,7 +4647,7 @@ use that traversal default filter.  The wantArchBaseValues parameter on that cal
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'ArchValueChooser_sub'.replace(/"/g, '_');
+        var id = 'ArchValueCommunicationCollection_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
