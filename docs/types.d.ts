@@ -20275,12 +20275,6 @@ export class ArchSettingsUserInput extends ArchBaseCoreObject {
      */
     readonly noInputsMax: ArchValueInteger;
     /**
-     * The no inputs maximum count exceeded count handling configured for the flow.
-     *
-     * Specifies the bots behavior when no input is received after the count configured in {@link ArchSettingsUserInput#noInputsMax}
-     */
-    readonly noInputsMaxExceededHandling: string;
-    /**
      * Once the current Communication has finished playing, this is the maximum length of time to wait for the
      * participant to start speaking.  If no speech is detected within this time then a No Input will be triggered.
      */
