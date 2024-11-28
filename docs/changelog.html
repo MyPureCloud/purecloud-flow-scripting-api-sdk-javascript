@@ -60,6 +60,20 @@
 
     <section>
         <article class="readme"><h2>Change Log</h2>
+<h1>0.53.2</h1>
+<h4>Improvements</h4>
+<ul>
+<li>Added a <a href="ArchDefinitionFlow.html#supportsVirtualAgent"><code>ArchDefinitionFlow#supportsVirtualAgent</code></a> property to determine if a flow's definition supports Virtual Agent.</li>
+</ul>
+<h4>Bug Fixes</h4>
+<ul>
+<li>
+<p>We fixed an issue where creating an <a href="ArchBaseFlowBot.html"><code>ArchBaseFlowBot</code></a> in memory, <a href="ArchBaseFlow.html#exportToObjectAsync"><code>exporting the flow</code></a>, then <a href="ArchBaseFlow.html#importFromContentAsync"><code>importing the flow</code></a> onto an already existing flow, and finally publishing the flow would not create any new slots that were defined in the flow export.</p>
+</li>
+<li>
+<p>We fixed an issue where performing lookups of network entities that did not exist would cause an &quot;UnhandledPromiseRejection&quot; error.</p>
+</li>
+</ul>
 <h1>0.53.1</h1>
 <h4>Improvements</h4>
 <ul>
