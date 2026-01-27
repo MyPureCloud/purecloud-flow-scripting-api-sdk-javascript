@@ -8,10 +8,6 @@ article > h2 {
     padding-bottom: 10px!important;
 }
 
-.glyphicon {
-    z-index: 1;
-}
-
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
