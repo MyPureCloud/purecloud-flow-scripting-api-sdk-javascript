@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: ArchBaseActionTransfer | Architect Scripting</title>
+    <title>Class: ArchActionSendDigitalCarousel | Architect Scripting</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -50,7 +50,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"><span class="icon green">abstract</span> </span></span>ArchBaseActionTransfer<span class="signature">(coreTransferActionViewModel)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ArchActionSendDigitalCarousel<span class="signature">(coreActionViewModel)</span><span class="type-signature"></span></h2>
         
     
 </header>
@@ -63,9 +63,9 @@
 
 <dt>
     
-        <h4 class="name" id="ArchBaseActionTransfer">
+        <h4 class="name" id="ArchActionSendDigitalCarousel">
             
-                new <span class="type-signature"><span class="icon green">abstract</span> </span>ArchBaseActionTransfer<span class="signature">(coreTransferActionViewModel)</span><span class="type-signature"></span>
+                new <span class="type-signature"></span>ArchActionSendDigitalCarousel<span class="signature">(coreActionViewModel)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -77,8 +77,7 @@
 
     
     <div class="description">
-        <p>The base Architect Scripting class to support transfer actions.
-Instances of this class will be created automatically by Architect Scripting as needed.</p>
+        <p>Creates an instance of ArchActionSendDigitalCarousel.</p>
     </div>
     
 
@@ -114,15 +113,10 @@ Instances of this class will be created automatically by Architect Scripting as 
 
         <tr>
             
-                <td class="name"><code>coreTransferActionViewModel</code></td>
+                <td class="name"><code>coreActionViewModel</code></td>
             
 
             <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
             
             </td>
 
@@ -130,7 +124,7 @@ Instances of this class will be created automatically by Architect Scripting as 
 
             
 
-            <td class="description last"><p>( <em>Internal</em> ) an Architect core transfer action view model.</p></td>
+            <td class="description last"><p>the core Send Digital Carousel action view model.</p></td>
         </tr>
 
     
@@ -184,17 +178,6 @@ Instances of this class will be created automatically by Architect Scripting as 
     
 
     
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="ArchFactoryActions.html#addActionTransferToAcd">ArchFactoryActions#addActionTransferToAcd</a></li>
-        
-            <li><a href="ArchFactoryActions.html#addActionTransferToGroup">ArchFactoryActions#addActionTransferToGroup</a></li>
-        
-            <li><a href="ArchFactoryActions.html#addActionTransferToUser">ArchFactoryActions#addActionTransferToUser</a></li>
-        </ul>
-    </dd>
-    
 
     
 </dl>
@@ -207,17 +190,6 @@ Instances of this class will be created automatically by Architect Scripting as 
         
         </div>
     
-
-    
-        <h3 class="subsection-title">Extends</h3>
-
-        
-
-
-    <ul>
-        <li><a href="ArchBaseActionWithOutputsFakeSuccessFailure.html">ArchBaseActionWithOutputsFakeSuccessFailure</a></li>
-    </ul>
-
 
     
 
@@ -238,8 +210,8 @@ Instances of this class will be created automatically by Architect Scripting as 
             
 
 <dt>
-<h4 class="name" id=".displayTypeName">
-    <span class="type-signature"><span class="icon green">static</span>, <span class="icon green">readonly</span> </span>displayTypeName<span class="type-signature"> :string</span>
+<h4 class="name" id="customizeNoInput">
+    <span class="type-signature"></span>customizeNoInput<span class="type-signature"> :<a href="ArchValueBoolean.html">ArchValueBoolean</a></span>
     
 </h4>
 
@@ -248,7 +220,9 @@ Instances of this class will be created automatically by Architect Scripting as 
 <dd>
     
     <div class="description">
-        <p>Returns the display type name string 'ArchBaseActionTransfer'.</p>
+        <p>If this property is set to true, the <a href="ArchBaseActionNoInputNoMatch.html#noInputReprompts"><code>ArchBaseActionNoInputNoMatch#noInputReprompts</code></a> communication collection will be used for No Input prompts.
+Otherwise, the <a href="ArchBaseActionNoInputNoMatch.html#noInput"><code>ArchBaseActionNoInputNoMatch#noInput</code></a> communication will be used. This property is only
+available within <a href="ArchFlowBot.html"><code>ArchFlowBot</code></a> flows.</p>
     </div>
     
 
@@ -258,7 +232,7 @@ Instances of this class will be created automatically by Architect Scripting as 
         <ul>
             <li>
                 
-<span class="param-type">string</span>
+<span class="param-type"><a href="ArchValueBoolean.html">ArchValueBoolean</a></span>
 
 
             </li>
@@ -275,6 +249,11 @@ Instances of this class will be created automatically by Architect Scripting as 
 
     
 
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionNoInputNoMatch.html#customizeNoInput">ArchBaseActionNoInputNoMatch#customizeNoInput</a>
+    </li></ul></dd>
     
 
     
@@ -312,8 +291,8 @@ Instances of this class will be created automatically by Architect Scripting as 
             
 
 <dt>
-<h4 class="name" id=".isArchBaseActionTransfer">
-    <span class="type-signature"><span class="icon green">static</span>, <span class="icon green">readonly</span> </span>isArchBaseActionTransfer<span class="type-signature"> :boolean</span>
+<h4 class="name" id="customizeNoMatch">
+    <span class="type-signature"></span>customizeNoMatch<span class="type-signature"> :<a href="ArchValueBoolean.html">ArchValueBoolean</a></span>
     
 </h4>
 
@@ -322,7 +301,8 @@ Instances of this class will be created automatically by Architect Scripting as 
 <dd>
     
     <div class="description">
-        <p>Returns true indicating that this is an ArchBaseActionTransfer instance.</p>
+        <p>If this property is set to true, the <a href="ArchBaseActionNoInputNoMatch.html#noMatchReprompts"><code>ArchBaseActionNoInputNoMatch#noMatchReprompts</code></a> communication collection will be used for No Match prompts.
+Otherwise, the <a href="ArchBaseActionNoInputNoMatch.html#noMatch"><code>ArchBaseActionNoInputNoMatch#noMatch</code></a> communication will be used.</p>
     </div>
     
 
@@ -332,7 +312,7 @@ Instances of this class will be created automatically by Architect Scripting as 
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type"><a href="ArchValueBoolean.html">ArchValueBoolean</a></span>
 
 
             </li>
@@ -349,6 +329,11 @@ Instances of this class will be created automatically by Architect Scripting as 
 
     
 
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionNoInputNoMatch.html#customizeNoMatch">ArchBaseActionNoInputNoMatch#customizeNoMatch</a>
+    </li></ul></dd>
     
 
     
@@ -427,238 +412,6 @@ Instances of this class will be created automatically by Architect Scripting as 
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
         <a href="ArchBaseAction.html#displayTypeNameArchitect">ArchBaseAction#displayTypeNameArchitect</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="failureOutputs">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>failureOutputs<span class="type-signature"> :<a href="ArchNamedValueList.html">ArchNamedValueList</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>List of properties with error information about failed transfers</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchNamedValueList.html">ArchNamedValueList</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="ArchBaseActionWithOutputsFakeSuccessFailure.html#failureOutputs">ArchBaseActionWithOutputsFakeSuccessFailure#failureOutputs</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="failureTransferAudio">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>failureTransferAudio<span class="type-signature"> :<a href="ArchAudio.html">ArchAudio</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The failure transfer audio to play on the call in the even the transfer fails at runtime.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchAudio.html">ArchAudio</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="hasFakeSuccessOutput">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>hasFakeSuccessOutput<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns true indicating that this action has a fake success output.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseActionWithOutputsFakeSuccessFailure.html#hasFakeSuccessOutput">ArchBaseActionWithOutputsFakeSuccessFailure#hasFakeSuccessOutput</a>
     </li></ul></dd>
     
 
@@ -1502,6 +1255,325 @@ logging str contents wouldn't be set up.</p>
             
 
 <dt>
+<h4 class="name" id="noInput">
+    <span class="type-signature"></span>noInput<span class="type-signature"> :<a href="ArchValueString.html">ArchValueString</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The NoInput text for the action.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueString.html">ArchValueString</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionNoInputNoMatch.html#noInput">ArchBaseActionNoInputNoMatch#noInput</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="noInputReprompts">
+    <span class="type-signature"></span>noInputReprompts<span class="type-signature"> :<a href="ArchValueCommunicationCollection.html">ArchValueCommunicationCollection</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The No Input Reprompts collection of communications for the action. In order to use this property, <a href="ArchBaseActionNoInputNoMatch.html#customizeNoInput"><code>ArchBaseActionNoInputNoMatch#customizeNoInput</code></a>
+must be set to true. To have no, No Input re-prompting, set this to an empty collection. This property is only
+available within <a href="ArchFlowBot.html"><code>ArchFlowBot</code></a> flows.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueCommunicationCollection.html">ArchValueCommunicationCollection</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionNoInputNoMatch.html#noInputReprompts">ArchBaseActionNoInputNoMatch#noInputReprompts</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="noMatch">
+    <span class="type-signature"></span>noMatch<span class="type-signature"> :<a href="ArchValueString.html">ArchValueString</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The NoMatch text for the action.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueString.html">ArchValueString</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionNoInputNoMatch.html#noMatch">ArchBaseActionNoInputNoMatch#noMatch</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="noMatchReprompts">
+    <span class="type-signature"></span>noMatchReprompts<span class="type-signature"> :<a href="ArchValueCommunicationCollection.html">ArchValueCommunicationCollection</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The No Match Reprompts collection of communications for the action. In order to use this property, <a href="ArchBaseActionNoInputNoMatch.html#customizeNoMatch"><code>ArchBaseActionNoInputNoMatch#customizeNoMatch</code></a>
+must be set to true. To have no, No Match re-prompting, set this to an empty collection.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueCommunicationCollection.html">ArchValueCommunicationCollection</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionNoInputNoMatch.html#noMatchReprompts">ArchBaseActionNoInputNoMatch#noMatchReprompts</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
 <h4 class="name" id="outputCount">
     <span class="type-signature"><span class="icon green">readonly</span> </span>outputCount<span class="type-signature"> :number</span>
     
@@ -1546,85 +1618,6 @@ action on an <a href="ArchMenuTransferToAcd.html"><code>ArchMenuTransferToAcd</c
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
         <a href="ArchBaseActionWithOutputs.html#outputCount">ArchBaseActionWithOutputs#outputCount</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="outputFailure">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>outputFailure<span class="type-signature"> :<a href="ArchActionOutput.html">ArchActionOutput</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The failure output for this action</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseActionWithOutputFailure.html#outputFailure">ArchBaseActionWithOutputFailure#outputFailure</a>
     </li></ul></dd>
     
 
@@ -2067,80 +2060,6 @@ Otherwise, nothing is returned.</p>
             
 
 <dt>
-<h4 class="name" id="preTransferAudio">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>preTransferAudio<span class="type-signature"> :<a href="ArchAudio.html">ArchAudio</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The pre transfer audio to play on the call.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchAudio.html">ArchAudio</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
 <h4 class="name" id="trackingId">
     <span class="type-signature"><span class="icon green">readonly</span> </span>trackingId<span class="type-signature"> :number</span>
     
@@ -2182,6 +2101,85 @@ Otherwise, nothing is returned.</p>
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
         <a href="ArchBaseAction.html#trackingId">ArchBaseAction#trackingId</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="voiceEndOfInputTimeout">
+    <span class="type-signature"></span>voiceEndOfInputTimeout<span class="type-signature"> :<a href="ArchValueDuration.html">ArchValueDuration</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The end of input timeout specific to voice input for this action.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueDuration.html">ArchValueDuration</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionNoInputNoMatch.html#voiceEndOfInputTimeout">ArchBaseActionNoInputNoMatch#voiceEndOfInputTimeout</a>
     </li></ul></dd>
     
 
@@ -3957,7 +3955,7 @@ use that traversal default filter.  The wantArchBaseValues parameter on that cal
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'ArchBaseActionTransfer_sub'.replace(/"/g, '_');
+        var id = 'ArchActionSendDigitalCarousel_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
