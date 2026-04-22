@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: ArchMenuTransferToVoicemail | Architect Scripting</title>
+    <title>Class: ArchActionSendDigitalContent | Architect Scripting</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -50,7 +50,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ArchMenuTransferToVoicemail<span class="signature">(coreMenuChoiceViewModel)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ArchActionSendDigitalContent<span class="signature">(coreActionViewModel)</span><span class="type-signature"></span></h2>
         
     
 </header>
@@ -63,9 +63,9 @@
 
 <dt>
     
-        <h4 class="name" id="ArchMenuTransferToVoicemail">
+        <h4 class="name" id="ArchActionSendDigitalContent">
             
-                new <span class="type-signature"></span>ArchMenuTransferToVoicemail<span class="signature">(coreMenuChoiceViewModel)</span><span class="type-signature"></span>
+                new <span class="type-signature"></span>ArchActionSendDigitalContent<span class="signature">(coreActionViewModel)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -77,8 +77,7 @@
 
     
     <div class="description">
-        <p>The Architect Scripting class that represents the Transfer To Voicemail menu.
-Instances of this action should be created by calling <a href="ArchFactoryMenus.html#addMenuTransferToVoicemail"><code>ArchFactoryMenus#addMenuTransferToVoicemail</code></a></p>
+        <p>Creates an instance of ArchActionSendDigitalContent.</p>
     </div>
     
 
@@ -114,15 +113,10 @@ Instances of this action should be created by calling <a href="ArchFactoryMenus.
 
         <tr>
             
-                <td class="name"><code>coreMenuChoiceViewModel</code></td>
+                <td class="name"><code>coreActionViewModel</code></td>
             
 
             <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
             
             </td>
 
@@ -130,7 +124,7 @@ Instances of this action should be created by calling <a href="ArchFactoryMenus.
 
             
 
-            <td class="description last"><p>( <em>Internal</em> ) an Architect core menu choice associated with this menu.</p></td>
+            <td class="description last"><p>the core Send Digital Content action view model.</p></td>
         </tr>
 
     
@@ -184,13 +178,6 @@ Instances of this action should be created by calling <a href="ArchFactoryMenus.
     
 
     
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="ArchFactoryMenus.html#addMenuTransferToVoicemail">ArchFactoryMenus#addMenuTransferToVoicemail</a></li>
-        </ul>
-    </dd>
-    
 
     
 </dl>
@@ -203,17 +190,6 @@ Instances of this action should be created by calling <a href="ArchFactoryMenus.
         
         </div>
     
-
-    
-        <h3 class="subsection-title">Extends</h3>
-
-        
-
-
-    <ul>
-        <li><a href="ArchBaseMenuChoice.html">ArchBaseMenuChoice</a></li>
-    </ul>
-
 
     
 
@@ -234,8 +210,8 @@ Instances of this action should be created by calling <a href="ArchFactoryMenus.
             
 
 <dt>
-<h4 class="name" id=".displayTypeName">
-    <span class="type-signature"><span class="icon green">static</span>, <span class="icon green">readonly</span> </span>displayTypeName<span class="type-signature"> :string</span>
+<h4 class="name" id="customizeNoInput">
+    <span class="type-signature"></span>customizeNoInput<span class="type-signature"> :<a href="ArchValueBoolean.html">ArchValueBoolean</a></span>
     
 </h4>
 
@@ -244,7 +220,9 @@ Instances of this action should be created by calling <a href="ArchFactoryMenus.
 <dd>
     
     <div class="description">
-        <p>Returns the display type name string 'ArchMenuTransferToVoicemail'.</p>
+        <p>If this property is set to true, the <a href="ArchBaseActionNoInputNoMatch.html#noInputReprompts"><code>ArchBaseActionNoInputNoMatch#noInputReprompts</code></a> communication collection will be used for No Input prompts.
+Otherwise, the <a href="ArchBaseActionNoInputNoMatch.html#noInput"><code>ArchBaseActionNoInputNoMatch#noInput</code></a> communication will be used. This property is only
+available within <a href="ArchFlowBot.html"><code>ArchFlowBot</code></a> flows.</p>
     </div>
     
 
@@ -254,231 +232,7 @@ Instances of this action should be created by calling <a href="ArchFactoryMenus.
         <ul>
             <li>
                 
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id=".isArchMenuTransferToVoicemail">
-    <span class="type-signature"><span class="icon green">static</span>, <span class="icon green">readonly</span> </span>isArchMenuTransferToVoicemail<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns true indicating that this is an ArchMenuTransferToVoicemail instance.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="actionTransferToVoicemail">
-    <span class="type-signature"></span>actionTransferToVoicemail<span class="type-signature"> :<a href="ArchActionTransferToVoicemail.html">ArchActionTransferToVoicemail</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The Architect Transfer to Voicemail action associated with this menu.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchActionTransferToVoicemail.html">ArchActionTransferToVoicemail</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="dtmf">
-    <span class="type-signature"></span>dtmf<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The dual tone multi frequency (dtmf) property on the menu choice.
-When setting, valid values are integers 0 through 9, strings '0' through '9', '*' or '#'.
-The getter will return the string value.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
+<span class="param-type"><a href="ArchValueBoolean.html">ArchValueBoolean</a></span>
 
 
             </li>
@@ -498,7 +252,7 @@ The getter will return the string value.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseMenuChoice.html#dtmf">ArchBaseMenuChoice#dtmf</a>
+        <a href="ArchBaseActionNoInputNoMatch.html#customizeNoInput">ArchBaseActionNoInputNoMatch#customizeNoInput</a>
     </li></ul></dd>
     
 
@@ -537,8 +291,8 @@ The getter will return the string value.</p>
             
 
 <dt>
-<h4 class="name" id="dtmfIsGlobal">
-    <span class="type-signature"></span>dtmfIsGlobal<span class="type-signature"> :boolean</span>
+<h4 class="name" id="customizeNoMatch">
+    <span class="type-signature"></span>customizeNoMatch<span class="type-signature"> :<a href="ArchValueBoolean.html">ArchValueBoolean</a></span>
     
 </h4>
 
@@ -547,7 +301,8 @@ The getter will return the string value.</p>
 <dd>
     
     <div class="description">
-        <p>Whether or not the specified dtmf on this menu choice is global to the flow.</p>
+        <p>If this property is set to true, the <a href="ArchBaseActionNoInputNoMatch.html#noMatchReprompts"><code>ArchBaseActionNoInputNoMatch#noMatchReprompts</code></a> communication collection will be used for No Match prompts.
+Otherwise, the <a href="ArchBaseActionNoInputNoMatch.html#noMatch"><code>ArchBaseActionNoInputNoMatch#noMatch</code></a> communication will be used.</p>
     </div>
     
 
@@ -557,7 +312,7 @@ The getter will return the string value.</p>
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type"><a href="ArchValueBoolean.html">ArchValueBoolean</a></span>
 
 
             </li>
@@ -577,7 +332,86 @@ The getter will return the string value.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseMenuChoice.html#dtmfIsGlobal">ArchBaseMenuChoice#dtmfIsGlobal</a>
+        <a href="ArchBaseActionNoInputNoMatch.html#customizeNoMatch">ArchBaseActionNoInputNoMatch#customizeNoMatch</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="displayTypeNameArchitect">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>displayTypeNameArchitect<span class="type-signature"> :string</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The Architect action type label</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">string</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#displayTypeNameArchitect">ArchBaseAction#displayTypeNameArchitect</a>
     </li></ul></dd>
     
 
@@ -862,6 +696,325 @@ an extremely rare case.</p>
             
 
 <dt>
+<h4 class="name" id="isMenuChoiceAction">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isMenuChoiceAction<span class="type-signature"> :boolean</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns whether or not this action is the action property for a <a href="ArchBaseMenuChoice.html"><code>menu choice</code></a>.
+For example, the <a href="ArchMenuDisconnect.html#actionDisconnect"><code>ArchMenuDisconnect#actionDisconnect</code></a> property on an <a href="ArchMenuDisconnect.html"><code>ArchMenuDisconnect</code></a>
+instance.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#isMenuChoiceAction">ArchBaseAction#isMenuChoiceAction</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="isReachable">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isReachable<span class="type-signature"> :boolean</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns whether or not this action is reachable at runtime.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#isReachable">ArchBaseAction#isReachable</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="isSecure">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isSecure<span class="type-signature"> :boolean</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns whether or not this action is secure which means either the action by its very nature
+is secure or it consumes secure data.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#isSecure">ArchBaseAction#isSecure</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="isUnreachable">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isUnreachable<span class="type-signature"> :boolean</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns whether or not this action is unreachable at runtime.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">boolean</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#isUnreachable">ArchBaseAction#isUnreachable</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
 <h4 class="name" id="logStr">
     <span class="type-signature"><span class="icon green">readonly</span> </span>logStr<span class="type-signature"> :string</span>
     
@@ -872,7 +1025,8 @@ an extremely rare case.</p>
 <dd>
     
     <div class="description">
-        <p>Returns a string suitable for logging that describes the menu choice</p>
+        <p>A string suitable for logging that contains information about this action.  This will contain the action
+tracking id, name and scripting type name.</p>
     </div>
     
 
@@ -902,7 +1056,7 @@ an extremely rare case.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseMenuChoice.html#logStr">ArchBaseMenuChoice#logStr</a>
+        <a href="ArchBaseAction.html#logStr">ArchBaseAction#logStr</a>
     </li></ul></dd>
     
 
@@ -1032,7 +1186,7 @@ logging str contents wouldn't be set up.</p>
 <dd>
     
     <div class="description">
-        <p>The name of the menu choice</p>
+        <p>The name of the action</p>
     </div>
     
 
@@ -1062,7 +1216,490 @@ logging str contents wouldn't be set up.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseMenuChoice.html#name">ArchBaseMenuChoice#name</a>
+        <a href="ArchBaseAction.html#name">ArchBaseAction#name</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="noInput">
+    <span class="type-signature"></span>noInput<span class="type-signature"> :<a href="ArchValueString.html">ArchValueString</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The NoInput text for the action.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueString.html">ArchValueString</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionNoInputNoMatch.html#noInput">ArchBaseActionNoInputNoMatch#noInput</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="noInputReprompts">
+    <span class="type-signature"></span>noInputReprompts<span class="type-signature"> :<a href="ArchValueCommunicationCollection.html">ArchValueCommunicationCollection</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The No Input Reprompts collection of communications for the action. In order to use this property, <a href="ArchBaseActionNoInputNoMatch.html#customizeNoInput"><code>ArchBaseActionNoInputNoMatch#customizeNoInput</code></a>
+must be set to true. To have no, No Input re-prompting, set this to an empty collection. This property is only
+available within <a href="ArchFlowBot.html"><code>ArchFlowBot</code></a> flows.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueCommunicationCollection.html">ArchValueCommunicationCollection</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionNoInputNoMatch.html#noInputReprompts">ArchBaseActionNoInputNoMatch#noInputReprompts</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="noMatch">
+    <span class="type-signature"></span>noMatch<span class="type-signature"> :<a href="ArchValueString.html">ArchValueString</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The NoMatch text for the action.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueString.html">ArchValueString</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionNoInputNoMatch.html#noMatch">ArchBaseActionNoInputNoMatch#noMatch</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="noMatchReprompts">
+    <span class="type-signature"></span>noMatchReprompts<span class="type-signature"> :<a href="ArchValueCommunicationCollection.html">ArchValueCommunicationCollection</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The No Match Reprompts collection of communications for the action. In order to use this property, <a href="ArchBaseActionNoInputNoMatch.html#customizeNoMatch"><code>ArchBaseActionNoInputNoMatch#customizeNoMatch</code></a>
+must be set to true. To have no, No Match re-prompting, set this to an empty collection.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueCommunicationCollection.html">ArchValueCommunicationCollection</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionNoInputNoMatch.html#noMatchReprompts">ArchBaseActionNoInputNoMatch#noMatchReprompts</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="outputCount">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>outputCount<span class="type-signature"> :number</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns the number of outputs on this action.  For actions that have a fake success output like what you
+see on the various transfer actions, that will be included in the count to be consistent with the Architect UI.
+Attempting to get the output count on a menu choice's action such as such as the <a href="ArchMenuTransferToAcd.html#actionTransferToAcd"><code>ArchMenuTransferToAcd#actionTransferToAcd</code></a>
+action on an <a href="ArchMenuTransferToAcd.html"><code>ArchMenuTransferToAcd</code></a> menu will return 0.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">number</span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputs.html#outputCount">ArchBaseActionWithOutputs#outputCount</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="outputs">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>outputs<span class="type-signature"> :Array.&lt;<a href="ArchActionOutput.html">ArchActionOutput</a>></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns an array of action outputs for this action.  Remember that it is possible to have an
+undefined item in the returned ArchActionOutput array.  This is true when the output is &quot;fake&quot;.
+Accessing the outputs on a menu choice's action such as <a href="ArchMenuTransferToAcd.html#actionTransferToAcd"><code>ArchMenuTransferToAcd#actionTransferToAcd</code></a>
+will return an empty array.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Array.&lt;<a href="ArchActionOutput.html">ArchActionOutput</a>></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputs.html#outputs">ArchBaseActionWithOutputs#outputs</a>
     </li></ul></dd>
     
 
@@ -1111,7 +1748,7 @@ logging str contents wouldn't be set up.</p>
 <dd>
     
     <div class="description">
-        <p>Returns the parent flow for this ArchBaseMenu instance.</p>
+        <p>Returns the parent flow for this action.</p>
     </div>
     
 
@@ -1141,7 +1778,7 @@ logging str contents wouldn't be set up.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseMenu.html#parentFlow">ArchBaseMenu#parentFlow</a>
+        <a href="ArchBaseAction.html#parentFlow">ArchBaseAction#parentFlow</a>
     </li></ul></dd>
     
 
@@ -1180,8 +1817,8 @@ logging str contents wouldn't be set up.</p>
             
 
 <dt>
-<h4 class="name" id="speechRecTermContainers">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>speechRecTermContainers<span class="type-signature"> :<a href="ArchSpeechRecTermContainers.html">ArchSpeechRecTermContainers</a></span>
+<h4 class="name" id="parentMenuChoice">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>parentMenuChoice<span class="type-signature"> :<a href="ArchBaseMenuChoice.html">ArchBaseMenuChoice</a></span>
     
 </h4>
 
@@ -1190,8 +1827,8 @@ logging str contents wouldn't be set up.</p>
 <dd>
     
     <div class="description">
-        <p>The speech rec term containers object that contains individual speech rec term container
-instances on a per language basis.</p>
+        <p>Returns the parent menu choice if this action is the action for a <a href="ArchBaseMenuChoice.html"><code>menu choice</code></a>.
+Otherwise, nothing is returned.</p>
     </div>
     
 
@@ -1201,7 +1838,7 @@ instances on a per language basis.</p>
         <ul>
             <li>
                 
-<span class="param-type"><a href="ArchSpeechRecTermContainers.html">ArchSpeechRecTermContainers</a></span>
+<span class="param-type"><a href="ArchBaseMenuChoice.html">ArchBaseMenuChoice</a></span>
 
 
             </li>
@@ -1221,7 +1858,7 @@ instances on a per language basis.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseMenuChoice.html#speechRecTermContainers">ArchBaseMenuChoice#speechRecTermContainers</a>
+        <a href="ArchBaseAction.html#parentMenuChoice">ArchBaseAction#parentMenuChoice</a>
     </li></ul></dd>
     
 
@@ -1260,8 +1897,8 @@ instances on a per language basis.</p>
             
 
 <dt>
-<h4 class="name" id="speechRecTermsAreGlobal">
-    <span class="type-signature"></span>speechRecTermsAreGlobal<span class="type-signature"> :boolean</span>
+<h4 class="name" id="parentState">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>parentState<span class="type-signature"> :<a href="ArchState.html">ArchState</a></span>
     
 </h4>
 
@@ -1270,7 +1907,8 @@ instances on a per language basis.</p>
 <dd>
     
     <div class="description">
-        <p>Whether or not the speech rec terms in the speech rec containers for this menu choice are global to the flow.</p>
+        <p>Returns the parent state that contains this action if this action is in a <a href="ArchState.html"><code>state</code></a>.
+Otherwise, nothing is returned.</p>
     </div>
     
 
@@ -1280,7 +1918,7 @@ instances on a per language basis.</p>
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type"><a href="ArchState.html">ArchState</a></span>
 
 
             </li>
@@ -1300,7 +1938,90 @@ instances on a per language basis.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseMenuChoice.html#speechRecTermsAreGlobal">ArchBaseMenuChoice#speechRecTermsAreGlobal</a>
+        <a href="ArchBaseAction.html#parentState">ArchBaseAction#parentState</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="parentTask">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>parentTask<span class="type-signature"> :<a href="ArchTask.html">ArchTask</a>|<a href="ArchTaskLoop.html">ArchTaskLoop</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns the parent task that contains this action if this action is in a <a href="ArchTask.html"><code>task</code></a> or <a href="ArchTaskLoop.html"><code>looping task</code></a>.
+Otherwise, nothing is returned.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchTask.html">ArchTask</a></span>
+|
+
+<span class="param-type"><a href="ArchTaskLoop.html">ArchTaskLoop</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseAction.html#parentTask">ArchBaseAction#parentTask</a>
     </li></ul></dd>
     
 
@@ -1349,7 +2070,7 @@ instances on a per language basis.</p>
 <dd>
     
     <div class="description">
-        <p>The integer tracking identifier for this menu choice.  This is the numeric identifier is displayed in the Architect user interface.</p>
+        <p>The integer tracking identifier for this action.  This is the numeric identifier is displayed in the Architect user interface.</p>
     </div>
     
 
@@ -1379,7 +2100,86 @@ instances on a per language basis.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseMenuChoice.html#trackingId">ArchBaseMenuChoice#trackingId</a>
+        <a href="ArchBaseAction.html#trackingId">ArchBaseAction#trackingId</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="voiceEndOfInputTimeout">
+    <span class="type-signature"></span>voiceEndOfInputTimeout<span class="type-signature"> :<a href="ArchValueDuration.html">ArchValueDuration</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The end of input timeout specific to voice input for this action.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueDuration.html">ArchValueDuration</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionNoInputNoMatch.html#voiceEndOfInputTimeout">ArchBaseActionNoInputNoMatch#voiceEndOfInputTimeout</a>
     </li></ul></dd>
     
 
@@ -1425,9 +2225,9 @@ instances on a per language basis.</p>
 
 <dt>
     
-        <h4 class="name" id="addSpeechRecTerm">
+        <h4 class="name" id="getOutputById">
             
-                <span class="type-signature"></span>addSpeechRecTerm<span class="signature">(archLanguage, newTerm)</span><span class="type-signature"> &rarr; {boolean}</span>
+                <span class="type-signature"></span>getOutputById<span class="signature">(output)</span><span class="type-signature"> &rarr; {<a href="ArchActionOutput.html">ArchActionOutput</a>}</span>
                 
             
         </h4>
@@ -1439,10 +2239,11 @@ instances on a per language basis.</p>
 
     
     <div class="description">
-        <p>Adds a new speech rec term to a container for a specified language.  This is a helper method that calls
-<a href="ArchBaseMenuChoice.html#getSpeechRecTermContainer"><code>getSpeechRecTermContainer</code></a> and then on the returned
-container it then calls <a href="ArchSpeechRecTermContainer.html#addTerm"><code>addTerm</code></a> and returns the boolean
-result from that add call.</p>
+        <p>Gets an output by its identifier.  If it cannot be found, this method will throw.
+Normally you won't need to use this method and will use the helper methods available on inheriting classes
+when accessing pre-defined outputs like success, failure, timeout, etc. etc.  Attempting to
+get an output by id on a menu choice's action such as the <a href="ArchMenuTransferToAcd.html#actionTransferToAcd"><code>ArchMenuTransferToAcd#actionTransferToAcd</code></a>
+action on an <a href="ArchMenuTransferToAcd.html"><code>ArchMenuTransferToAcd</code></a> menu will return nothing.</p>
     </div>
     
 
@@ -1478,37 +2279,16 @@ result from that add call.</p>
 
         <tr>
             
-                <td class="name"><code>archLanguage</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="ArchLanguage.html">ArchLanguage</a></span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>the language of the speech rec term container you wish to get.  This
-must be a supported language on the flow.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>newTerm</code></td>
+                <td class="name"><code>output</code></td>
             
 
             <td class="type">
             
                 
 <span class="param-type">string</span>
+|
+
+<span class="param-type"><a href="ArchBranch.html">ArchBranch</a></span>
 
 
             
@@ -1518,7 +2298,11 @@ must be a supported language on the flow.</p></td>
 
             
 
-            <td class="description last"><p>the new speech rec term to add to the language specific speech rec term container.</p></td>
+            <td class="description last"><p>identifies output you want to obtain.  If output is an ArchBranch instance,
+the <a href="ArchBranch.html#outputId"><code>ArchBranch#outputId</code></a> value will be used.  Otherwise valid string
+identifier values can be found in <a href="ArchEnums.html#OUTPUT_IDS"><code>ArchEnums#OUTPUT_IDS</code></a> or can be a guid.
+Remember that requesting the 'success' output on an action with a
+<a href="ArchBaseActionWithOutputsFakeSuccessFailure.html#hasFakeSuccessOutput"><code>fake success output</code></a> will return nothing.</p></td>
         </tr>
 
     
@@ -1546,15 +2330,11 @@ must be a supported language on the flow.</p></td>
 
 
 
-<span class="param-type">boolean</span>
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
 
 
 
 
-
-- <ul>
-<li>returns true if the term was added, otherwise false.</li>
-</ul>
 
 
 
@@ -1575,7 +2355,7 @@ must be a supported language on the flow.</p></td>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseMenuChoice.html#addSpeechRecTerm">ArchBaseMenuChoice#addSpeechRecTerm</a>
+        <a href="ArchBaseActionWithOutputs.html#getOutputById">ArchBaseActionWithOutputs#getOutputById</a>
     </li></ul></dd>
     
 
@@ -1614,9 +2394,9 @@ must be a supported language on the flow.</p></td>
 
 <dt>
     
-        <h4 class="name" id="getSpeechRecTermContainer">
+        <h4 class="name" id="getOutputByIndex">
             
-                <span class="type-signature"></span>getSpeechRecTermContainer<span class="signature">(archLanguage)</span><span class="type-signature"> &rarr; {<a href="ArchSpeechRecTermContainer.html">ArchSpeechRecTermContainer</a>}</span>
+                <span class="type-signature"></span>getOutputByIndex<span class="signature">(index)</span><span class="type-signature"> &rarr; {<a href="ArchActionOutput.html">ArchActionOutput</a>}</span>
                 
             
         </h4>
@@ -1628,8 +2408,11 @@ must be a supported language on the flow.</p></td>
 
     
     <div class="description">
-        <p>Gets the speech rec term container for the specified language.  This is a helper method that
-calls this.speechRecTermContainers.getContainer with the specified language.</p>
+        <p>Returns the output at the given index.  It's important to note that on actions that have a fake success
+output if you request the output at the index for the fake success, you will get nothing returned because
+the fake success output isn't something that you should do anything with.  Attempting to
+access an output by index on a menu choice's action such as <a href="ArchMenuTransferToAcd.html#actionTransferToAcd"><code>ArchMenuTransferToAcd#actionTransferToAcd</code></a>
+will return nothing.</p>
     </div>
     
 
@@ -1665,13 +2448,13 @@ calls this.speechRecTermContainers.getContainer with the specified language.</p>
 
         <tr>
             
-                <td class="name"><code>archLanguage</code></td>
+                <td class="name"><code>index</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="ArchLanguage.html">ArchLanguage</a></span>
+<span class="param-type">number</span>
 
 
             
@@ -1681,8 +2464,7 @@ calls this.speechRecTermContainers.getContainer with the specified language.</p>
 
             
 
-            <td class="description last"><p>the language of the speech rec term container you wish to get.  This
-must be a supported language on the flow.</p></td>
+            <td class="description last"><p>the index of the output to retrieve.  This value should be a non-negative integer.</p></td>
         </tr>
 
     
@@ -1710,7 +2492,7 @@ must be a supported language on the flow.</p></td>
 
 
 
-<span class="param-type"><a href="ArchSpeechRecTermContainer.html">ArchSpeechRecTermContainer</a></span>
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
 
 
 
@@ -1735,7 +2517,237 @@ must be a supported language on the flow.</p></td>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseMenuChoice.html#getSpeechRecTermContainer">ArchBaseMenuChoice#getSpeechRecTermContainer</a>
+        <a href="ArchBaseActionWithOutputs.html#getOutputByIndex">ArchBaseActionWithOutputs#getOutputByIndex</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="getOutputByName">
+            
+                <span class="type-signature"></span>getOutputByName<span class="signature">(output, wantDynamicOutput<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="ArchActionOutput.html">ArchActionOutput</a>}</span>
+                
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Gets an output by its identifier.  If it cannot be found, this method will throw.
+Normally you won't need to use this method and will use the helper methods available on inheriting classes
+when accessing pre-defined outputs like success, failure, timeout, etc. etc.  Attempting to
+get an output by id on a menu choice's action such as the <a href="ArchMenuTransferToAcd.html#actionTransferToAcd"><code>ArchMenuTransferToAcd#actionTransferToAcd</code></a>
+action on an <a href="ArchMenuTransferToAcd.html"><code>ArchMenuTransferToAcd</code></a> menu will return nothing.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>output</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type"><a href="ArchBranch.html">ArchBranch</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>identifies output you want to obtain by name.  If output is an ArchBranch instance,
+the <a href="ArchBranch.html#name"><code>ArchBranch#name</code></a> value will be used.
+Remember that requesting the 'Success' output on an action with a
+<a href="ArchBaseActionWithOutputsFakeSuccessFailure.html#hasFakeSuccessOutput"><code>fake success output</code></a> will return nothing.
+For non-dynamic outputs, the name should be specified in English.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>wantDynamicOutput</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last"><p>because it is possible for some actions to have both a non-dynamic output
+and a dynamic output with the same name, this boolean will let you specify
+which output you want.  An example of this would be the built in Failure
+output on a call bot action but that bot also has an intent named Failure
+so the action has two outputs with the same name of 'Failure'.  Only one
+of those would be a dynamic output and that's the output for the Failure
+intent, not the built-in Failure action output.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-returns">
+        <h5>Returns:</h5>
+        
+                
+
+
+
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
+
+
+
+
+
+
+
+
+            
+    </div>
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="ArchBaseActionWithOutputs.html#getOutputByName">ArchBaseActionWithOutputs#getOutputByName</a>
     </li></ul></dd>
     
 
@@ -2943,7 +3955,7 @@ use that traversal default filter.  The wantArchBaseValues parameter on that cal
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'ArchMenuTransferToVoicemail_sub'.replace(/"/g, '_');
+        var id = 'ArchActionSendDigitalContent_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
