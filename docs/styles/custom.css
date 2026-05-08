@@ -178,15 +178,15 @@ pre .atv, code .atv { color: #7ec699; } /* html/xml attribute value */
 pre .dec, code .dec { color: #6196cc; } /* decimal - blue */
 
 pre.prettyprint, code.prettyprint {
-	background-color: #2d2d2d;
-	border-radius: 8px;
+    background-color: #2d2d2d;
+    border-radius: 8px;
 }
 
 pre.prettyprint {
-	width: 95%;
-	margin: 1em auto;
-	padding: 1em;
-	white-space: pre-wrap;
+    width: 95%;
+    margin: 1em auto;
+    padding: 1em;
+    white-space: pre-wrap;
 }
 
 .signature-attributes {
