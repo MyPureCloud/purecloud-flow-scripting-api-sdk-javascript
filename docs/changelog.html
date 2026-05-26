@@ -60,6 +60,16 @@
 
     <section>
         <article class="readme"><h2>Change Log</h2>
+<h1>0.66.2</h1>
+<h4>Bug Fixes</h4>
+<ul>
+<li>
+<p>We fixed an issue where the <a href="ArchBaseFlow.html#saveAsync"><code>ArchBaseFlow#saveAsync</code></a> function would log a generic failure message without including the underlying error details. This function now include the exception message and context ID (when available) in the error output to aid in troubleshooting.</p>
+</li>
+<li>
+<p>We fixed an issue where creating a <a href="ArchFlowCommonModule.html"><code>ArchFlowCommonModule</code></a> with compatible flow types that included a flow type not available in the organization would result in a confusing data type validation error instead of a clear message indicating the flow type is unavailable. Architect Scripting now validates that each compatible flow type is available in the organization when creating a common module flow.</p>
+</li>
+</ul>
 <h1>0.66.1</h1>
 <h4>Improvements</h4>
 <ul>
