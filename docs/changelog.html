@@ -60,6 +60,11 @@
 
     <section>
         <article class="readme"><h2>Change Log</h2>
+<h1>0.66.3</h1>
+<h4>Bug Fixes</h4>
+<ul>
+<li>We fixed an issue where the <a href="ArchBaseValue.html#setExpression"><code>ArchBaseValue#setExpression</code></a> method could allow flow save or validation to complete before prompt lookups referenced in the expression finished resolving. Those lookups are now tracked on the async tracker so operations that wait for pending scripting work complete only after they finish.</li>
+</ul>
 <h1>0.66.2</h1>
 <h4>Bug Fixes</h4>
 <ul>
