@@ -12540,6 +12540,23 @@ export class ArchBaseActionWithSilenceDetection extends ArchBaseActionWithOutput
 }
 
 /**
+ * Produces a key safe to use on plain objects used as string-keyed maps during scripting traversal.
+ *
+ * **Security purpose:** Dynamic property names from flow/scripting objects are sometimes used as keys on
+ * bookkeeping maps (`propNamesProcessed`, `traversePropNameValMap`, hierarchy buckets). Without guarding,
+ * keys such as `__proto__`, `constructor`, or `prototype` can alter prototype chain behavior (prototype
+ * pollution) when assigned with bracket notation. This helper maps those dangerous names to an equivalent
+ * string that is not a prototype-polluting key (zero-width space prefix), preserving uniqueness for traversal
+ * bookkeeping while avoiding accidental prototype mutation.
+ *
+ * **Note:** Real property access on scripting objects still uses the original `propName`; only map keys are
+ * transformed so internal dedupe/visited sets remain safe.
+ * @param key - Property or hierarchy string intended for use as an object map key.
+ * @returns A string safe to use as a map key; dangerous names receive a `\u200B` prefix.
+ */
+declare function safeTraversalMapKey(key: any): any;
+
+/**
  * This callback function type is invoked by Architect Scripting where the callback function is passed a
  * [traverse info]{@link ArchTraverseInfo} object.
  * @param archCallbackTraverseContext - an {@link ArchTraverseContext} object that contains
@@ -13046,6 +13063,26 @@ export class ArchBaseFlow extends ArchBaseCoreObjectWithId {
      * values in {@link ArchEnums#FLOW_TYPES} lists valid flow type values.
      */
     readonly flowType: string;
+    /**
+     * Resolves a filesystem path supplied by the Architect **scripting** API (Node) after the usual
+     * `_checkItemIsValidLiteralString` checks on the caller side.
+     *
+     * **Security purpose:** Static analysis flags raw `path.resolve` / `path.join` with scripting parameters
+     * as possible path traversal. This method centralizes defense-in-depth:
+     * - Strips NUL (`\\0`) bytes so paths cannot embed embedded-truncation tricks.
+     * - Applies `path.normalize` before resolving.
+     * - Resolves once via `path.resolve(cwd, normalized)` (Node: absolute `normalized` replaces the cwd prefix).
+     * - For **relative** input only, rejects results that sit **above** `process.cwd()` using `path.relative`
+     *   (blocks `..` segments that escape the working directory). **Absolute** paths are allowed as-is after
+     *   resolve (same behavior as typical CLI tools exporting outside the project tree).
+     *
+     * **Not a substitute for OS ACLs:** authors can still pass absolute paths to writable locations; this
+     * blocks a class of relative-path traversal from the scripting surface.
+     * @param inputPath - Directory or file path string from scripting (already validated as a literal string by callers).
+     * @param callerLabel - Label for error messages (e.g. method name + parameter).
+     * @returns Canonical resolved path string.
+     */
+    _resolveValidatedScriptFileSystemPath(inputPath: any, callerLabel: any): any;
     /**
      * This function will return the file path where a flow export will be written when calling the {@link ArchBaseFlow#exportToDirAsync}
      * method for the supplied destination directory and export flow format.  A typical use case for this function would be
