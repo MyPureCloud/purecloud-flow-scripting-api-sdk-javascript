@@ -13008,6 +13008,11 @@ export class ArchBaseFlow extends ArchBaseCoreObjectWithId {
      */
     canAddSupportedLanguage(): boolean;
     /**
+     * This helper method returns whether the [flow type]{@link ArchBaseFlow#flowType} of this flow is deprecated by calling [this.definition.isDeprecated]{@link ArchDefinitionFlow#isDeprecated}.
+     * A flow whose [flow type]{@link ArchBaseFlow#flowType} is deprecated can no longer be published.
+     */
+    readonly isFlowTypeDeprecated: boolean;
+    /**
      * Checks in and unlocks the flow for the current user, does a save first
      * Assumes the flow has been created, throws if not
      * @param [ensureSearchable] - whether or not to poll after successful checkin to ensure that the flow is available for flow
@@ -15776,6 +15781,11 @@ export class ArchDefinitionFlow extends ArchBaseDefinition {
      * Accessing this property.
      */
     readonly isCreatable: boolean;
+    /**
+     * Returns whether the [flow type]{@link ArchDefinitionFlow#flowType} is deprecated.
+     * Flows whose flow type is deprecated cannot be published.
+     */
+    readonly isDeprecated: boolean;
     /**
      * Returns the display label for this flow type such as 'Inbound Call Flow'.
      */
