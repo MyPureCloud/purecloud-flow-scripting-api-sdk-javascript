@@ -13619,7 +13619,7 @@ export class ArchBaseMenuChoice extends ArchBaseMenu {
      */
     speechRecTermsAreGlobal: boolean;
     /**
-     * The integer tracking identifier for this menu choice.  This is the numeric identifier is displayed in the Architect user interface.
+     * The integer tracking identifier for this menu choice. This is the numeric identifier that is displayed in the Architect user interface.
      */
     readonly trackingId: number;
     /**
