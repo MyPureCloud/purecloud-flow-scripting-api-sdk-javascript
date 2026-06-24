@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Class: ArchVariableChooser | Architect Scripting</title>
+    <title>Class: ArchActionSendRichLink | Architect Scripting</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -50,7 +50,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ArchVariableChooser<span class="signature">(coreVariableViewModel)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ArchActionSendRichLink<span class="signature">(coreSendRichLinkActionViewModel)</span><span class="type-signature"></span></h2>
         
     
 </header>
@@ -63,9 +63,9 @@
 
 <dt>
     
-        <h4 class="name" id="ArchVariableChooser">
+        <h4 class="name" id="ArchActionSendRichLink">
             
-                new <span class="type-signature"></span>ArchVariableChooser<span class="signature">(coreVariableViewModel)</span><span class="type-signature"></span>
+                new <span class="type-signature"></span>ArchActionSendRichLink<span class="signature">(coreSendRichLinkActionViewModel)</span><span class="type-signature"></span>
                 
             
         </h4>
@@ -77,13 +77,8 @@
 
     
     <div class="description">
-        <ul>
-<li>This class represents a variable in Architect Scripting.</li>
-<li>Data Type:  Chooser
-Note: Do not attempt to create an instance of this class directly.
-Instances of this class will be created automatically by Architect
-Scripting as needed.</li>
-</ul>
+        <p>The Architect Scripting class for the Send Rich Link action.
+Instances of this action should be created by calling <a href="ArchFactoryActions.html#addActionSendRichLink"><code>ArchFactoryActions#addActionSendRichLink</code></a></p>
     </div>
     
 
@@ -119,13 +114,13 @@ Scripting as needed.</li>
 
         <tr>
             
-                <td class="name"><code>coreVariableViewModel</code></td>
+                <td class="name"><code>coreSendRichLinkActionViewModel</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">Object</span>
 
 
             
@@ -135,7 +130,7 @@ Scripting as needed.</li>
 
             
 
-            <td class="description last"><p>( <em>Internal</em> ) an Architect core variable view model.</p></td>
+            <td class="description last"><p>( <em>Internal</em> ) an Architect core send rich link action.</p></td>
         </tr>
 
     
@@ -189,6 +184,13 @@ Scripting as needed.</li>
     
 
     
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="ArchFactoryActions.html#addActionSendRichLink">ArchFactoryActions#addActionSendRichLink</a></li>
+        </ul>
+    </dd>
+    
 
     
 </dl>
@@ -209,7 +211,7 @@ Scripting as needed.</li>
 
 
     <ul>
-        <li><a href="ArchBaseVariableSingleton.html">ArchBaseVariableSingleton</a></li>
+        <li><a href="ArchBaseActionWithOutputsSuccessFailure.html">ArchBaseActionWithOutputsSuccessFailure</a></li>
     </ul>
 
 
@@ -242,7 +244,7 @@ Scripting as needed.</li>
 <dd>
     
     <div class="description">
-        <p>Returns the display type name string 'ArchVariableChooser'.</p>
+        <p>Returns the display type name string 'ArchActionSendRichLink'.</p>
     </div>
     
 
@@ -306,8 +308,8 @@ Scripting as needed.</li>
             
 
 <dt>
-<h4 class="name" id=".isArchVariableChooser">
-    <span class="type-signature"><span class="icon green">static</span>, <span class="icon green">readonly</span> </span>isArchVariableChooser<span class="type-signature"> :boolean</span>
+<h4 class="name" id="body">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>body<span class="type-signature"> :<a href="ArchValueString.html">ArchValueString</a></span>
     
 </h4>
 
@@ -316,7 +318,378 @@ Scripting as needed.</li>
 <dd>
     
     <div class="description">
-        <p>Returns true indicating that this is an ArchVariableChooser instance.</p>
+        <p>The body text for the rich link message.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueString.html">ArchValueString</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="footer">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>footer<span class="type-signature"> :<a href="ArchValueString.html">ArchValueString</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The footer text for the rich link message.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueString.html">ArchValueString</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="headerImage">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>headerImage<span class="type-signature"> :<a href="ArchValueImage.html">ArchValueImage</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The header image for the rich link message.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueImage.html">ArchValueImage</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="headerText">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>headerText<span class="type-signature"> :<a href="ArchValueString.html">ArchValueString</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The header text for the rich link message.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueString.html">ArchValueString</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="headerType">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>headerType<span class="type-signature"> :<a href="ArchValueString.html">ArchValueString</a></span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The header type for the rich link message. The string values in <a href="ArchEnums.html#RICH_LINK_HEADER_TYPES"><code>ArchEnums#RICH_LINK_HEADER_TYPES</code></a> lists
+valid header type values.</p>
+    </div>
+    
+
+    <!--
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="ArchValueString.html">ArchValueString</a></span>
+
+
+            </li>
+        </ul>
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="isArchActionSendRichLink">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>isArchActionSendRichLink<span class="type-signature"> :boolean</span>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Returns true indicating that this is an ArchActionSendRichLink instance.</p>
     </div>
     
 
@@ -380,8 +753,8 @@ Scripting as needed.</li>
             
 
 <dt>
-<h4 class="name" id="canAssignInitialValue">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>canAssignInitialValue<span class="type-signature"> :boolean</span>
+<h4 class="name" id="outputSuccess">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>outputSuccess<span class="type-signature"> :<a href="ArchActionOutput.html">ArchActionOutput</a></span>
     
 </h4>
 
@@ -390,8 +763,7 @@ Scripting as needed.</li>
 <dd>
     
     <div class="description">
-        <p>Returns whether or not this variable can have an initial value configured for it
-in the flow.</p>
+        <p>The success output for this action</p>
     </div>
     
 
@@ -401,7 +773,7 @@ in the flow.</p>
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type"><a href="ArchActionOutput.html">ArchActionOutput</a></span>
 
 
             </li>
@@ -421,7 +793,7 @@ in the flow.</p>
     
     <dt class="inherited-from">Inherited From:</dt>
     <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#canAssignInitialValue">ArchBaseVariable#canAssignInitialValue</a>
+        <a href="ArchBaseActionWithOutputsSuccessFailure.html#outputSuccess">ArchBaseActionWithOutputsSuccessFailure#outputSuccess</a>
     </li></ul></dd>
     
 
@@ -460,8 +832,8 @@ in the flow.</p>
             
 
 <dt>
-<h4 class="name" id="canDelete">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>canDelete<span class="type-signature"> :boolean</span>
+<h4 class="name" id="sendRichLinkOutputsFailure">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>sendRichLinkOutputsFailure<span class="type-signature"> :<a href="ArchNamedValueList.html">ArchNamedValueList</a></span>
     
 </h4>
 
@@ -470,7 +842,8 @@ in the flow.</p>
 <dd>
     
     <div class="description">
-        <p>This returns whether this variable can be deleted.</p>
+        <p>The contents of this named value list come from the Failure Outputs schema. It will contain two values: errorType and errorMessage.
+These values will be returned by the server if the action takes the Failure path.</p>
     </div>
     
 
@@ -480,651 +853,7 @@ in the flow.</p>
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#canDelete">ArchBaseVariable#canDelete</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="cannotDeleteReason">
-    <span class="type-signature"></span>cannotDeleteReason<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>This property returns a reason string indicating why this variable cannot be deleted if the
-variable cannot be deleted.  If it can be deleted, accessing this property returns nothing.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#cannotDeleteReason">ArchBaseVariable#cannotDeleteReason</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="dataType">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>dataType<span class="type-signature"> :<a href="ArchDataType.html">ArchDataType</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns the Architect Scripting data type for this variable.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchDataType.html">ArchDataType</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#dataType">ArchBaseVariable#dataType</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="description">
-    <span class="type-signature"></span>description<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The description of the variable. Calling the description setter with &quot;&quot;, null or undefined
-are all treated as if you are setting the description string to undefined so if you were
-to call the description getter in that case, nothing is returned.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#description">ArchBaseVariable#description</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="displayTypeName">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>displayTypeName<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns the display type name string 'ArchBaseVariableSingleton'.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-overrides">Overrides:</dt>
-    <dd class="tag-overrides"><ul class="dummy"><li>
-        <a href="ArchBaseVariableSingleton.html#displayTypeName">ArchBaseVariableSingleton#displayTypeName</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="hasUsages">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>hasUsages<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not the variable consumed by the flow.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#hasUsages">ArchBaseVariable#hasUsages</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="id">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>id<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The identifier string for this object.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseCoreObjectWithId.html#id">ArchBaseCoreObjectWithId#id</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="idMayBeBlank">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>idMayBeBlank<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not the id property may be blank or undefined for this object.  For example, the returned settings from <a href="ArchMenu.html#settingsMenu"><code>ArchMenu#settingsMenu</code></a>
-will have a blank identifier along with the settings returned from <a href="ArchMenu.html#settingsSpeechRec"><code>ArchMenu#settingsSpeechRec</code></a>.  Note that this is
-an extremely rare case.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseCoreObjectWithId.html#idMayBeBlank">ArchBaseCoreObjectWithId#idMayBeBlank</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="ArchBaseCoreObjectWithId.html#id">ArchBaseCoreObjectWithId#id</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="initialValue">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>initialValue<span class="type-signature"> :<a href="ArchValueChooser.html">ArchValueChooser</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The initial Chooser value for the variable at runtime.  If the <a href="ArchValueChooser.html"><code>ArchValueChooser</code></a> is set to <a href="ArchBaseValue.html#isNoValue"><code>no value</code></a>, this will be a NOT_SET Chooser at runtime.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchValueChooser.html">ArchValueChooser</a></span>
+<span class="param-type"><a href="ArchNamedValueList.html">ArchNamedValueList</a></span>
 
 
             </li>
@@ -1178,8 +907,8 @@ an extremely rare case.</p>
             
 
 <dt>
-<h4 class="name" id="isArchBaseCoreObject">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isArchBaseCoreObject<span class="type-signature"> :boolean</span>
+<h4 class="name" id="urlLabel">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>urlLabel<span class="type-signature"> :<a href="ArchValueString.html">ArchValueString</a></span>
     
 </h4>
 
@@ -1188,7 +917,7 @@ an extremely rare case.</p>
 <dd>
     
     <div class="description">
-        <p>Returns true indicating that this is an ArchBaseCoreObject instance.</p>
+        <p>The URL label for the rich link message.</p>
     </div>
     
 
@@ -1198,7 +927,7 @@ an extremely rare case.</p>
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type"><a href="ArchValueString.html">ArchValueString</a></span>
 
 
             </li>
@@ -1215,11 +944,6 @@ an extremely rare case.</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseCoreObject.html#isArchBaseCoreObject">ArchBaseCoreObject#isArchBaseCoreObject</a>
-    </li></ul></dd>
     
 
     
@@ -1257,8 +981,8 @@ an extremely rare case.</p>
             
 
 <dt>
-<h4 class="name" id="isArchBaseVariable">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isArchBaseVariable<span class="type-signature"> :boolean</span>
+<h4 class="name" id="urlValue">
+    <span class="type-signature"><span class="icon green">readonly</span> </span>urlValue<span class="type-signature"> :<a href="ArchValueString.html">ArchValueString</a></span>
     
 </h4>
 
@@ -1267,7 +991,7 @@ an extremely rare case.</p>
 <dd>
     
     <div class="description">
-        <p>Returns true indicating that this is an ArchBaseVariable instance.</p>
+        <p>The URL value for the rich link message.</p>
     </div>
     
 
@@ -1277,7 +1001,7 @@ an extremely rare case.</p>
         <ul>
             <li>
                 
-<span class="param-type">boolean</span>
+<span class="param-type"><a href="ArchValueString.html">ArchValueString</a></span>
 
 
             </li>
@@ -1294,1303 +1018,6 @@ an extremely rare case.</p>
 
     
 
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#isArchBaseVariable">ArchBaseVariable#isArchBaseVariable</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isFlowManagedVariable">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isFlowManagedVariable<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this variable is managed by the flow, i.e., not directly user creatable.
-These are automatically created based on other flow configuration.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#isFlowManagedVariable">ArchBaseVariable#isFlowManagedVariable</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isFlowVariable">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isFlowVariable<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this variable is a flow variable.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#isFlowVariable">ArchBaseVariable#isFlowVariable</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isInput">
-    <span class="type-signature"></span>isInput<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Whether or not this variable is an input variable.  Remember that the ability to be an input
-variable depends on whether the variable is a flow, state or task variable and what type of
-flow it is in.  You can use the <a href="ArchBaseVariable.html#settings"><code>ArchBaseVariable#settings</code></a> property to get at a settings
-object and access the <a href="ArchVariableSettings.html#canSetIsInput"><code>ArchVariableSettings#canSetIsInput</code></a> to know whether or not it is valid
-to configure this property.
-Remember that if a variable is secure that it cannot be used as a flow input.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#isInput">ArchBaseVariable#isInput</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isOutput">
-    <span class="type-signature"></span>isOutput<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Whether or not this variable is an output variable.  Remember that the ability to be an output
-variable depends on whether the variable is a flow, state or task variable and what type of
-flow it is in.  You can use the <a href="ArchBaseVariable.html#settings"><code>ArchBaseVariable#settings</code></a> property to get at a settings
-object and access the <a href="ArchVariableSettings.html#canSetIsOutput"><code>ArchVariableSettings#canSetIsOutput</code></a> to know whether or not it is valid
-to configure this property.
-Remember that if a variable is secure that it cannot be used as a flow output.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#isOutput">ArchBaseVariable#isOutput</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isReadOnly">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isReadOnly<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this variable is read only at flow runtime.  Read only in this context
-means that thevariable cannot have a value assigned to it by the flow at runtime.  Examples
-include assigning a value to it using an Update Data action or binding the variable to an output
-of a Call DataAction.  Please note that some variables that return true for this property do
-allow for assignment of an initial value at flow startup which can be checked by accessing the
-<a href="ArchBaseVariable.html#canAssignInitialValue"><code>canAssignInitialValue</code></a> property.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#isReadOnly">ArchBaseVariable#isReadOnly</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="ArchBaseVariable.html#canAssignInitialValue">ArchBaseVariable#canAssignInitialValue</a></li>
-        </ul>
-    </dd>
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isSecure">
-    <span class="type-signature"></span>isSecure<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Whether or not this variable is secure.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#isSecure">ArchBaseVariable#isSecure</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isStateVariable">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isStateVariable<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this variable is a state variable.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#isStateVariable">ArchBaseVariable#isStateVariable</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isSystemVariable">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isSystemVariable<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this variable is a system variable. System variables provide information about things the
-system tracks automatically, such as the caller's phone number, or the contact list associated with an outbound flow.
-Examples of a system variable is &quot;Flow.Version&quot; or &quot;System.MaxInt&quot;.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#isSystemVariable">ArchBaseVariable#isSystemVariable</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isTaskVariable">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isTaskVariable<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not this variable is a task variable.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#isTaskVariable">ArchBaseVariable#isTaskVariable</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="isUnavailable">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>isUnavailable<span class="type-signature"> :boolean</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns whether or not the variable is available for use.  Sometimes variables are feature toggled
-off and are not available for use in a flow.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">boolean</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#isUnavailable">ArchBaseVariable#isUnavailable</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="logStr">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>logStr<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>A string suitable for logging that contains information about this variable.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#logStr">ArchBaseVariable#logStr</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="name">
-    <span class="type-signature"></span>name<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The name of the variable</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#name">ArchBaseVariable#name</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="parentFlow">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>parentFlow<span class="type-signature"> :<a href="ArchBaseFlow.html">ArchBaseFlow</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns the parent flow for this variable.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchBaseFlow.html">ArchBaseFlow</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#parentFlow">ArchBaseVariable#parentFlow</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="scope">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>scope<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns the scope of the variable.  The string values in <a href="ArchEnums.html#VARIABLE_SCOPES"><code>ArchEnums#VARIABLE_SCOPES</code></a>
-lists valid values.  The scope is the prefix you will see on variable names.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#scope">ArchBaseVariable#scope</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="settings">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>settings<span class="type-signature"> :<a href="ArchVariableSettings.html">ArchVariableSettings</a></span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>Returns the settings associated with this variable which provides meta data about this variable like
-whether it can be configured as an input or output.</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="ArchVariableSettings.html">ArchVariableSettings</a></span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#settings">ArchBaseVariable#settings</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-    
-</dd>
-
-        
-            
-
-<dt>
-<h4 class="name" id="type">
-    <span class="type-signature"><span class="icon green">readonly</span> </span>type<span class="type-signature"> :string</span>
-    
-</h4>
-
-
-</dt>
-<dd>
-    
-    <div class="description">
-        <p>The core type for this variable</p>
-    </div>
-    
-
-    <!--
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">string</span>
-
-
-            </li>
-        </ul>
-    
-    -->
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#type">ArchBaseVariable#type</a>
-    </li></ul></dd>
     
 
     
@@ -2628,523 +1055,6 @@ whether it can be configured as an input or output.</p>
     
 
     
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
-                
-
-<dt>
-    
-        <h4 class="name" id="rename">
-            
-                <span class="type-signature"></span>rename<span class="signature">(newName)</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Renames the variable to a new name.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>newName</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>the new name to assign to the variable.  This should be just the new variable name
-with no scope prefix like Flow., Task. or State.  Variable names need to be at least
-one character long and start with a letter.  Subsequent characters must either be a
-letter, underscore or digit.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariable.html#rename">ArchBaseVariable#rename</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="setInitialValueNotSet">
-            
-                <span class="type-signature"></span>setInitialValueNotSet<span class="signature">()</span><span class="type-signature"></span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Sets the initial value of the singleton variable to NOT_SET.
-Note:  This is a wrapper around calling accessing the initialValue
-property and calling setNoValue() on it.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseVariableSingleton.html#setInitialValueNotSet">ArchBaseVariableSingleton#setInitialValueNotSet</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            
-                
-
-<dt>
-    
-        <h4 class="name" id="traverse">
-            
-                <span class="type-signature"></span>traverse<span class="signature">(callbackFunction, traverseFilter<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {number}</span>
-                
-            
-        </h4>
-
-        
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>This method iterates over this object and ArchBaseCoreObject instances
-within it.  For each object it will call the <a href="ArchBaseObject.html#isFilterMatch"><code>ArchBaseObject#isFilterMatch</code></a> method
-with a filter and call the supplied callback function if isMatch returns true.
-The callback will be passed an <a href="ArchTraverseInfo.html"><code>ArchTraverseInfo</code></a> with details
-about the match such as the match object itself along with current contextual
-information such as the object hierarchy for the match object relative to
-the object on which this traverse call is being made.</p>
-<p>The traverse <a href="ArchFilterObject.html"><code>filter</code></a> is one which you can create
-by calling <a href="ArchFactoryFilters.html#createFilterObject"><code>ArchFactoryFilters#createFilterObject</code></a> and then add desired clauses
-or clause containers to it.  If not specified, this function will use a
-<a href="ArchFactoryFilters.html#createFilterTraverseDefault"><code>default filter</code></a>.</p>
-<p>Here is an example that does a simple flow traversal using the default
-filter and logs information about objects in the callback from the
-traverse object that's passed back:</p>
-<pre class="prettyprint source"><code>archInboundCallFlow.traverse(function(traverseInfo) {
-   archLogging.logNote('  Object     : ' + traverseInfo.matchObject.logStr);
-   archLogging.logNote('    Hierarchy: ' + traverseInfo.context.hierarchyStr);
-});
-</code></pre>
-<p>This might be enough for most uses and you can check various aspects
-about the object in the callback such as &quot;is this an Architect action?&quot; by
-seeing if traverseInfo.matchObject.isArchBaseAction is true.  You can specify
-a filter for the traversal code to use as well and only have it call your
-callback when the object's <a href="ArchBaseCoreObject.html#isFilterMatch"><code>ArchBaseCoreObject#isFilterMatch</code></a> method returns true for
-the filter.  Here's an example that creates a filter for callbacks on
-<a href="ArchBaseActionTransfer.html"><code>any type of transfer action</code></a>, any
-<a href="ArchActionDecision.html"><code>decision action</code></a> or objects whose name
-property case insensitively matches the word 'foo'.  While this could all be done
-with one property callback clause the example will use multiple clauses for
-the sake of simplicity:</p>
-<pre class="prettyprint source"><code>const myTraverseFilter = filterFactory.createFilterObject(archEnums.FILTER_CONTAINER_OPERATORS.or);
-myTraverseFilter.addClausePropertyValueEquals('isArchBaseActionTransfer', true);
-myTraverseFilter.addClausePropertyValueEquals('isArchActionDecision',     true);
-myTraverseFilter.addClausePropertyCallback('name', function(propValue, archContainingObject, propName) {
-      // We fully spelled out the function signature above but archContainingObject and propName are
-      // not needed in this case.  The archContainingObject is the object that contains the
-      // property and propName is the property name itself.  We pass in propName because the same
-      // function could be used for multiple property callback clauses.
-      // Remember to return a boolean true, false or undefined from ths callback.  :)
-      return propValue && propValue.toLowerCase() === 'foo';
-});
-archTask.traverse(function(traverseContext) {
-   // You will only be called back here for ArchBaseCoreObject instances that
-   // have the isArchBaseActionTransfer or isArchActionDecision property values equal to true.
-}, myTraverseFilter);
-</code></pre>
-<p>If you supply a filter with no clauses, this tells the traverse method to
-call the supplied callback function for every <a href="ArchBaseCoreObject.html"><code>ArchBaseCoreObject</code></a> it traverses.</p>
-<p>If you want traversal itself to stop after a callback, simply return boolean
-false from the callback function you supply to the traverse call.</p>
-<p>The traverse method does not process deprecated property names such as <a href="ArchSession.html#orgId"><code>orgId</code></a>,
-<a href="ArchSession.html#orgName"><code>orgName</code></a> or <a href="ArchBaseFlow.html#languageSettings"><code>languageSettings</code></a>.  Additionally
-it does not traverse in to properties that would &quot;jump out&quot; of the current traversal.  An example of this
-would be if the code was traversing an <a href="ArchActionJumpToMenu.html"><code>ArchActionJumpToMenu</code></a> action that it would not start traversing
-in to the menu that it jumps to.  Another example would be a <a href="ArchActionChangeState.html"><code>ArchActionChangeState</code></a> action where
-it would not traverse in to the target state of the action.  This also means traversal does not traverse
-in to the <a href="ArchBaseValue.html#flowLevelDefault"><code>ArchBaseValue#flowLevelDefault</code></a> property.</p>
-<p>And lastly, as Scripting evolves over time with new versions, you can expect to get callbacks for new object
-types such as new actions or new properties on objects.  As such, it's important not to assume any particular
-order in callbacks to keep code most compatible with traversal callbacks.  Or if you use inequality checks in filter
-clauses remember that new &quot;stuff&quot; may satisfy an inequality check which may or may not be anticipated in your logic.</p>
-<p>Note:  This traverse method is a helper method and is very handy for iterating over Architect Scripting
-objects and their properties in a generic fashion with filtering capabilities.  Obviously you can write
-your own custom traversal code if this implementation doesn't cut it for some reason. :)</p>
-<p>This function returns the number of times it called the callback function.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-params">
-        <h5>Parameters:</h5>
-        
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>callbackFunction</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="global.html#callbackTraverseInfo">callbackTraverseInfo</a></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                </td>
-            
-
-            <td class="description last"><p>the callback function to call for objects that match the traverse filter.</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>traverseFilter</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type"><a href="ArchFilterObject.html">ArchFilterObject</a></span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    <a href="ArchFactoryFilters.html#createFilterTraverseDefault"><code>ArchFactoryFilters#createFilterTraverseDefault</code></a>
-                
-                </td>
-            
-
-            <td class="description last"><p>the filter to use when performing the traversal to determine which
-<a href="ArchBaseCoreObject.html"><code>ArchBaseCoreObject</code></a> instances you wish to be called back for.  If no
-filter is specified, this function will call <a href="ArchFactoryFilters.html#createFilterTraverseDefault"><code>ArchFactoryFilters#createFilterTraverseDefault</code></a> and
-use that traversal default filter.  The wantArchBaseValues parameter on that call is set to true.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    </div>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <div class="container-returns">
-        <h5>Returns:</h5>
-        
-                
-
-
-
-<span class="param-type">number</span>
-
-
-
-
-
-
-
-
-            
-    </div>
-    
-
-    
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-    <dt class="inherited-from">Inherited From:</dt>
-    <dd class="inherited-from"><ul class="dummy"><li>
-        <a href="ArchBaseCoreObject.html#traverse">ArchBaseCoreObject#traverse</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-    
-
-</dd>
-
-            </dl>
-    
 
     
 
@@ -3168,7 +1078,7 @@ use that traversal default filter.  The wantArchBaseValues parameter on that cal
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'ArchVariableChooser_sub'.replace(/"/g, '_');
+        var id = 'ArchActionSendRichLink_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 
