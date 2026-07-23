@@ -756,6 +756,7 @@ export class ArchEnums {
      * ```
      * {
      * &nbsp;&nbsp;email:    'email'
+     * &nbsp;&nbsp;chat:     'chat'
      * }
      * ```
      */
@@ -1049,6 +1050,11 @@ export class ArchOrganizationInfo extends ArchBaseObject {
      */
     readonly botFlowsVirtualAgentGuide: boolean;
     /**
+     * Returns whether the [Send Notification]{@link ArchActionSendNotification} action supports sending notifications to a
+     * chat group in this organization.
+     */
+    readonly supportsSendNotificationChatGroup: boolean;
+    /**
      * Returns whether the Default Speech To Text Engine selection is available in digital bot flows for this organization.
      */
     readonly defaultSttEngineSelection: boolean;
@@ -1094,10 +1100,18 @@ export class ArchScriptingInfo extends ArchBaseObject {
  *                                  but may also increase Architect Scripting's memory usage.
  * @property [showCacheDiagnostics = false] - if caching is enabled, this specifies whether to show cache usage diagnostics
  *                                                 when the session ends.
+ * @property [captureNetworkDiagnosticsOnFailure = false] - when true, Architect Scripting captures
+ *                                  request and response details in memory when a network object lookup fails.
+ * @property [logNetworkDiagnosticsOnFailure] - when true, writes captured network diagnostics to the
+ *                                  console on lookup failure. Defaults to true when capture is enabled.
+ *                                  Set this to false to keep diagnostics out of console output while still
+ *                                  capturing them for later use.
  */
 declare type SessionStartOptions = {
     cacheEnabled?: boolean;
     showCacheDiagnostics?: boolean;
+    captureNetworkDiagnosticsOnFailure?: boolean;
+    logNetworkDiagnosticsOnFailure?: boolean;
 };
 
 /**
@@ -4036,7 +4050,10 @@ export class ArchAsyncTracker extends ArchBaseObject {
      */
     addPromise(promise: Promise<any>, promiseName: string): Promise<any>;
     /**
-     * Returns a promise for all asynchronous operations currently being tracked.
+     * Returns a promise that resolves when every currently tracked async operation has settled
+     * (fulfilled or rejected). This is a drain barrier for save/publish/export — it does not
+     * reject when a tracked promise fails. Callers that care about a specific operation's
+     * outcome must handle rejection on that operation's own promise.
      */
     allSettled(): Promise<any>;
 }
@@ -8286,6 +8303,14 @@ export class ArchActionSendNotification extends ArchBaseActionWithOutputsSuccess
      * These values will be returned by the server if the action takes the Failure path.
      */
     readonly sendNotificationFailureOutputs: ArchNamedValueList;
+    /**
+     * The group to send a chat message to.
+     */
+    readonly sendToGroup: ArchValueGroup;
+    /**
+     * The chat message to send to a group.
+     */
+    readonly chatMessage: ArchValueString;
 }
 
 /**
@@ -13149,8 +13174,10 @@ export class ArchBaseFlow extends ArchBaseCoreObjectWithId {
      * @param [callbackFunction] - a function to call if the export content successfully loaded and configured
      *                                                    on this flow.  The first parameter passed to the callback function will be this
      *                                                    Architect flow instance.
+     * @param [flowFormat] - the format of the content being imported. See {@link ArchEnums#FLOW_FORMAT_TYPES} for allowable formats.
+     *                                If not provided, the format will be auto-detected from the content.
      */
-    importFromContentAsync<T extends ArchBaseFlow = ArchBaseFlow>(exportContent: string, callbackFunction?: (...params: any[]) => any): Promise<T>;
+    importFromContentAsync<T extends ArchBaseFlow = ArchBaseFlow>(exportContent: string, callbackFunction?: (...params: any[]) => any, flowFormat?: string): Promise<T>;
     /**
      * Imports the flow content from the supplied file path.  Upon successful import, the callback function passed in
      * will be called.  Importing flow contents in to a flow is something where you should *not* attempt to
@@ -13160,8 +13187,10 @@ export class ArchBaseFlow extends ArchBaseCoreObjectWithId {
      * @param [callbackFunction] - a function to call if the export content successfully loaded and configured
      *                                        on this flow.  The first parameter passed to the callback function will be this
      *                                        Architect flow instance.
+     * @param [flowFormat] - the format of the file being imported. See {@link ArchEnums#FLOW_FORMAT_TYPES} for allowable formats.
+     *                                If not provided, the format will be auto-detected from the file extension (.yaml/.yml → YAML, otherwise Architect format).
      */
-    importFromFileAsync<T extends ArchBaseFlow = ArchBaseFlow>(exportFilePath: string, callbackFunction?: (...params: any[]) => any): Promise<T>;
+    importFromFileAsync<T extends ArchBaseFlow = ArchBaseFlow>(exportFilePath: string, callbackFunction?: (...params: any[]) => any, flowFormat?: string): Promise<T>;
     /**
      * Returns whether or not the flow is created in Genesys Cloud.
      */
@@ -22232,54 +22261,6 @@ export class ArchValueCustomerIntentCollection extends ArchBaseValueCollection {
      * Returns true indicating this is an ArchValueCustomerIntentCollection instance.
      */
     readonly isArchValueCustomerIntentCollection: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-}
-
-/**
- * Creates a new ArchValueCustomerSegment instance.
- * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
- */
-export class ArchValueCustomerSegment extends ArchBaseValueSingleton {
-    // constructor(coreExpressionViewModel: any);
-    /**
-     * Returns the display type name string 'ArchValueCustomerSegment'.
-     */
-    readonly displayTypeName: string;
-    /**
-     * Returns the display name of this customer segment (native property {@code name} on CustomerSegment).
-     */
-    readonly name: ArchValueString;
-    /**
-     * Returns true indicating that this is an ArchValueCustomerSegment instance.
-     */
-    readonly isArchValueCustomerSegment: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-}
-
-/**
- * This class holds a value in Architect Scripting.
- * Data Type:  CustomerSegment Collection
- * Note:  Do not attempt to create instances of this class directly.  They will be created
- * automatically as needed by Architect Scripting.
- * @param coreExpressionViewModel - ( *Internal* ) an Architect core expression view model.
- */
-export class ArchValueCustomerSegmentCollection extends ArchBaseValueCollection {
-    // constructor(coreExpressionViewModel: any);
-    /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
-     * Returns true indicating this is an ArchValueCustomerSegmentCollection instance.
-     */
-    readonly isArchValueCustomerSegmentCollection: boolean;
     /**
      * Returns a display string that reflects the type for this Architect Scripting object.
      */
