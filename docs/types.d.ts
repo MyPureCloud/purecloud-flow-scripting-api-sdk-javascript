@@ -223,14 +223,30 @@ export class ArchEnums {
      * {
      * &nbsp;&nbsp;input: 'input'
      * &nbsp;&nbsp;output: 'output'
+     * &nbsp;&nbsp;error: 'error'
+     * &nbsp;&nbsp;record: 'record'
+     * &nbsp;&nbsp;schemaData: 'schemaData'
+     * &nbsp;&nbsp;schemaDataPatch: 'schemaDataPatch'
      * }
      * ```
+     * Allowable values depend on the custom JSON namespace (e.g. decision tables use input/output;
+     * conversation attributes use record/schemaData/schemaDataPatch).
      */
-    readonly CUSTOM_JSON_SCHEMA_TYPES: {"input":"input","output":"output","error":"error"};
+    readonly CUSTOM_JSON_SCHEMA_TYPES: {"input":"input","output":"output","error":"error","record":"record","schemaData":"schemaData","schemaDataPatch":"schemaDataPatch"};
     /**
      * Returns a string array that contains all valid custom JSON schema types.
      */
     readonly CUSTOM_JSON_SCHEMA_TYPES_ALL: string[];
+    /**
+     * Returns schema types allowed for the decisionTable custom JSON namespace (input and output).
+     */
+    readonly CUSTOM_JSON_DECISION_TABLE_SCHEMA_TYPES_ALL: string[];
+    /**
+     * Returns the allowed custom JSON schema types for the given custom JSON namespace.
+     * @param customJsonNamespace - the custom JSON namespace. Allowable values are: {@link ArchEnums#CUSTOM_JSON_TYPE_NAMESPACES}
+     * @returns the allowed schema type values for the namespace
+     */
+    getCustomJsonSchemaTypesForNamespace(customJsonNamespace: string): string[];
     /**
      * Returns a JSON object with these properties for whose values are valid custom JSON type namespaces:
      * ```
@@ -2560,7 +2576,9 @@ export class ArchFactoryDataTypes extends ArchBaseFactory {
      * @param archBaseFlow - the flow where the data type will be created or retrieved.
      * @param customJsonNamespace - the custom JSON namespace to use for creating the data type. Allowable values are: {@link ArchEnums#CUSTOM_JSON_TYPE_NAMESPACES}
      * @param entityName - the name of the entity that is being referenced by the custom JSON namespace.
-     * @param customJsonDataTypeSchemaType - the custom JSON schema types to use for creating the data type. Allowable values are: {@link ArchEnums#CUSTOM_JSON_SCHEMA_TYPES}
+     * @param customJsonDataTypeSchemaType - the custom JSON schema type. Allowable values depend on
+     *   {@link ArchEnums#CUSTOM_JSON_SCHEMA_TYPES} and the namespace (decision tables: input/output;
+     *   conversation attributes: record/schemaData/schemaDataPatch).
      */
     getOrCreateCustomJsonDataTypeAsync(archBaseFlow: ArchBaseFlow, customJsonNamespace: string, entityName: string, customJsonDataTypeSchemaType: string): Promise<ArchDataType>;
 }
@@ -13282,6 +13300,16 @@ export class ArchBaseFlow extends ArchBaseCoreObjectWithId {
      * Returns an array of variables defined at the flow scope for this flow.
      */
     readonly variables: ArchBaseVariable[];
+    /**
+     * Finds an existing custom JSON data type on this flow for the given namespace, entity name, and schema type.
+     * If no matching data type is found, nothing is returned.
+     * @param customJsonNamespace - the custom JSON namespace to use when looking up the data type. Allowable values are: {@link ArchEnums#CUSTOM_JSON_TYPE_NAMESPACES}
+     * @param entityName - the name of the entity that is being referenced by the custom JSON namespace.
+     * @param customJsonDataTypeSchemaType - the custom JSON schema type. Allowable values depend on
+     *   {@link ArchEnums#CUSTOM_JSON_SCHEMA_TYPES} and the namespace (decision tables: input/output;
+     *   conversation attributes: record/schemaData/schemaDataPatch).
+     */
+    findCustomJsonDataType(customJsonNamespace: string, entityName: string, customJsonDataTypeSchemaType: string): ArchDataType;
 }
 
 /**
