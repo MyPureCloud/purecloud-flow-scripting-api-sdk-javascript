@@ -60,6 +60,11 @@
 
     <section>
         <article class="readme"><h2>Change Log</h2>
+<h1>0.68.3</h1>
+<h4>Bug Fixes</h4>
+<ul>
+<li>We fixed an issue where scripts that made many network requests at the same time, such as those working with large flows, could fail with a request error such as EMFILE, or could stop responding when a request never received a reply. Architect Scripting now limits how many network connections it opens at one time, ends requests that stop responding so they can be retried, and no longer retries rate limited requests indefinitely.</li>
+</ul>
 <h1>0.68.2</h1>
 <h4>Bug Fixes</h4>
 <ul>
