@@ -20,7 +20,7 @@ export class ArchDataType extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchDataType'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchDataType';
     /**
      * Returns whether this data type is considered to be an Architect Any type.  You will see Any types
      * listed in Architect's Expression Help like the implementation of the == operator that takes a valueToCompare
@@ -114,11 +114,7 @@ export class ArchDataTypes extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchDataTypes'.
      */
-    readonly displayTypeName: string;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchDataTypes';
 }
 
 /**
@@ -408,7 +404,7 @@ export class ArchEnums {
      * }
      * ```
      */
-    readonly FLOW_TYPES: {"bot":"bot","commonModule":"commonmodule","digitalBot":"digitalbot","emailSend":"emailsend","inboundCall":"inboundcall","inboundChat":"inboundchat","inboundEmail":"inboundemail","inboundShortMessage":"inboundshortmessage","inqueueCall":"inqueuecall","inqueueEmail":"inqueueemail","inqueueShortMessage":"inqueueshortmessage","outboundCall":"outboundcall","secureCall":"securecall","surveyInvite":"surveyinvite","voice":"voice","voiceSurvey":"voicesurvey","voicemail":"voicemail","workflow":"workflow","workitem":"workitem"};
+    readonly FLOW_TYPES: {"bot":"bot","businessProcess":"businessprocess","commonModule":"commonmodule","digitalBot":"digitalbot","emailSend":"emailsend","inboundCall":"inboundcall","inboundChat":"inboundchat","inboundEmail":"inboundemail","inboundShortMessage":"inboundshortmessage","inqueueCall":"inqueuecall","inqueueEmail":"inqueueemail","inqueueShortMessage":"inqueueshortmessage","outboundCall":"outboundcall","secureCall":"securecall","surveyInvite":"surveyinvite","voice":"voice","voiceSurvey":"voicesurvey","voicemail":"voicemail","workflow":"workflow","workitem":"workitem"};
     /**
      * Returns a string array that contains all valid flow type strings.
      */
@@ -982,7 +978,7 @@ export class ArchOrganizationInfo extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchOrganizationInfo'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchOrganizationInfo';
     /**
      * Returns whether or not divisions are available for this organization.
      * If the Architect Scripting session is not [connected]{@link ArchSession#isConnected}, accessing this property will return false.
@@ -1078,10 +1074,6 @@ export class ArchOrganizationInfo extends ArchBaseObject {
      * Returns whether Knowledge Configuration Settings are available in bot and digital bot flows for this organization.
      */
     readonly knowledgeSettingIsAvailable: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -1099,7 +1091,7 @@ export class ArchScriptingInfo extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchScriptingInfo'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchScriptingInfo';
     /**
      * Returns a string suitable for logging information about this architect scripting info instance.
      */
@@ -1182,7 +1174,7 @@ export class ArchSession extends ArchBaseObject {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSession';
     /**
      * This function will end the current scripting session.  It does not attempt to log the currently authenticated user out.
      * If you wish to log the currently authenticated user out, see {@link ArchSession#endWithLogout}.
@@ -1361,10 +1353,6 @@ export class ArchSession extends ArchBaseObject {
      */
     readonly isShowCacheDiagnosticsEnabled: boolean;
     /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * This is a string suitable for logging information about this object where it's just the object's type.  This is normally used
      * when logging errors that occur in constructor parameter checking because the scripting object isn't set up and the normal
      * logging str contents wouldn't be set up.
@@ -1456,10 +1444,6 @@ export class ArchBaseFactory extends ArchBaseObject {
      * Returns true indicating that this is an ArchBaseFactory instance.
      */
     readonly isArchBaseFactory: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -1477,7 +1461,7 @@ export class ArchFactoryActions extends ArchBaseFactory {
     /**
      * Returns the display type name string 'ArchFactoryActions'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFactoryActions';
     /**
      * A logging string for the Architect Factory Actions instance.
      */
@@ -2565,7 +2549,7 @@ export class ArchFactoryDataTypes extends ArchBaseFactory {
     /**
      * Returns the display type name string 'ArchFactoryDataTypes'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFactoryDataTypes';
     /**
      * A logging string for the Architect Factory Data Types instance.
      */
@@ -2594,7 +2578,7 @@ export class ArchFactoryFilters extends ArchBaseFactory {
     /**
      * Returns the display type name string 'ArchFactoryFilters'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFactoryFilters';
     /**
      * A logging string for the Architect Factory Filters instance.
      */
@@ -2814,7 +2798,7 @@ export class ArchFactoryFlows extends ArchBaseFactory {
     /**
      * Returns the display type name string 'ArchFactoryFlows'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFactoryFlows';
     /**
      * A logging string for the Architect Factory Flows instance.
      */
@@ -3448,7 +3432,7 @@ export class ArchFactoryMenus extends ArchBaseFactory {
     /**
      * Returns the display type name string 'ArchFactoryMenus'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFactoryMenus';
     /**
      * A logging string for the Architect Factory Menus instance.
      */
@@ -3635,7 +3619,7 @@ export class ArchFactoryPromise extends ArchBaseFactory {
     /**
      * Returns the display type name string 'ArchFactoryPromise'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFactoryPromise';
     /**
      * Returns true indicating that this is an ArchFactoryPromise instance.
      */
@@ -3664,7 +3648,7 @@ export class ArchFactoryPrompts extends ArchBaseFactory {
     /**
      * Returns the display type name string 'ArchFactoryPrompts'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFactoryPrompts';
     /**
      * A logging string for the Architect Factory Task instance.
      */
@@ -3693,7 +3677,7 @@ export class ArchFactoryStates extends ArchBaseFactory {
     /**
      * Returns the display type name string 'ArchFactoryStates'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFactoryStates';
     /**
      * A logging string for the Architect Factory State instance.
      */
@@ -3721,7 +3705,7 @@ export class ArchFactoryTasks extends ArchBaseFactory {
     /**
      * Returns the display type name string 'ArchFactoryTasks'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFactoryTasks';
     /**
      * A logging string for the Architect Factory Task instance.
      */
@@ -3750,7 +3734,7 @@ export class ArchLanguage extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchLanguage'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchLanguage';
     /**
      * Returns an array of text to speech engines that are valid for this language and the supplied flow type.
      * If the supplied flow type is not available for the organization, an empty array will be returned.
@@ -3878,7 +3862,7 @@ export class ArchLanguages extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchLanguages'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchLanguages';
     /**
      * A string suitable for logging
      */
@@ -3981,10 +3965,6 @@ export class ArchLanguages extends ArchBaseObject {
      * The Thai (Thailand) language. (tag: th-th)
      */
     thaiThailand: ArchLanguage;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -4025,7 +4005,7 @@ export class ArchAsyncPolling extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchAsyncPolling'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchAsyncPolling';
     /**
      * A logging string for this ArchAsyncPolling instance.
      */
@@ -4034,10 +4014,6 @@ export class ArchAsyncPolling extends ArchBaseObject {
      * Returns true indicating that this is an ArchAsyncPolling instance.
      */
     readonly isArchAsyncPolling: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -4051,7 +4027,7 @@ export class ArchAsyncTracker extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchAsyncTracker'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchAsyncTracker';
     /**
      * A logging string for the Async Tracker instance.
      */
@@ -4160,13 +4136,6 @@ export class ArchLogging {
 }
 
 /**
- * Constructor
- */
-export class ArchNetworkValueRetrieval {
-    // constructor();
-}
-
-/**
  * The Architect Scripting class that represents the Abort Survey Invite action.
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionAbortSurveyInvite}
  * @param coreAbortSurveyInviteViewModel - ( *Internal* ) an Architect core AbortSurveyInvite action view model.
@@ -4176,7 +4145,7 @@ export class ArchActionAbortSurveyInvite extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionAbortSurveyInvite'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionAbortSurveyInvite';
     /**
      * Returns true indicating that this is an ArchActionAbortSurveyInvite instance.
      */
@@ -4191,10 +4160,6 @@ export class ArchActionAbortSurveyInvite extends ArchBaseAction {
      * values in {@link ArchEnums#ABORT_SURVEY_INVITE_DISPOSITIONS} lists valid disposition values.
      */
     setLiteralDisposition(newDisposition: string): void;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -4208,7 +4173,7 @@ export class ArchActionAddFlowMilestone extends ArchBaseActionFlowOutcome {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionAddFlowMilestone';
     /**
      * Returns true indicating that this is an ArchActionAddFlowMilestone instance.
      */
@@ -4240,11 +4205,6 @@ export class ArchActionAddFlowMilestone extends ArchBaseActionFlowOutcome {
      *                                        callback function will be this Architect flow milestone action instance.
      */
     setFlowMilestoneByNameAsync(flowMilestoneName: string, callbackFunction?: (...params: any[]) => any): Promise<ArchActionAddFlowMilestone>;
-    /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -4258,7 +4218,7 @@ export class ArchActionAskForAuthentication extends ArchBaseActionWithOutputsSuc
     /**
      * Returns the display type name string 'ArchActionAskForAuthentication'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionAskForAuthentication';
     /**
      * Returns true indicating that this is an ArchActionAskForAuthentication instance.
      */
@@ -4292,7 +4252,7 @@ export class ArchActionAskForBoolean extends ArchBaseActionAsk {
     /**
      * Returns the display type name string 'ArchActionAskForBoolean'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionAskForBoolean';
     /**
      * Returns true indicating that this is an ArchActionAskForBoolean instance.
      */
@@ -4319,7 +4279,7 @@ export class ArchActionAskForIntent extends ArchBaseActionAsk {
     /**
      * Returns the display type name string 'ArchActionAskForIntent'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionAskForIntent';
     /**
      * Returns true indicating that this is an ArchActionAskForIntent instance.
      */
@@ -4361,7 +4321,7 @@ export class ArchActionAskForPayment extends ArchBaseActionNoInputNoMatch {
     /**
      * Returns the display type name string 'ArchActionAskForPayment'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionAskForPayment';
     /**
      * Returns true indicating that this is an ArchActionAskForPayment instance.
      */
@@ -4410,10 +4370,6 @@ export class ArchActionAskForPayment extends ArchBaseActionNoInputNoMatch {
      * The payment completion timeout in seconds
      */
     readonly paymentCompletionTimeout: ArchValueDuration;
-    /**
-     * Returns the display type name string 'ArchBaseActionNoInputNoMatch'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -4438,7 +4394,7 @@ export class ArchActionAskForSlot extends ArchBaseActionAskNoInputNoMatch {
     /**
      * Returns the display type name string 'ArchActionAskForSlot'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionAskForSlot';
     /**
      * Returns true indicating that this is an ArchActionAskForSlot instance.
      */
@@ -4584,7 +4540,7 @@ export class ArchActionAskSurveyQuestion extends ArchBaseActionAsk {
     /**
      * Returns the display type name string 'ArchActionAskSurveyQuestion'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionAskSurveyQuestion';
     /**
      * Returns true indicating that this is an ArchActionAskSurveyQuestion instance.
      */
@@ -4642,7 +4598,7 @@ export class ArchActionAudioMonitoring extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionAudioMonitoring'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionAudioMonitoring';
     /**
      * Returns true indicating that this is an ArchActionAudioMonitoring instance.
      */
@@ -4653,10 +4609,6 @@ export class ArchActionAudioMonitoring extends ArchBaseAction {
      * Audio Monitoring off.
      */
     readonly enableMonitoring: ArchValueBoolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -4669,7 +4621,7 @@ export class ArchActionCallAudioConnector extends ArchBaseActionBotWithSessionVa
     /**
      * Returns the display type name string 'ArchActionCallAudioConnector'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionCallAudioConnector';
     /**
      * The contents of this named value list come from the Failure Outputs schema. It will contain two values: errorType and errorMessage.
      * These values will be returned by the server if the action takes the Failure path.
@@ -4741,7 +4693,7 @@ export class ArchActionCallBotConnector extends ArchBaseActionBot {
     /**
      * Returns the display type name string 'ArchActionCallBotConnector'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionCallBotConnector';
     /**
      * This adds an output session name value pair to the Call Bot Connector action that is used to specify
      * the output session property name to retrieve and the corresponding output variable where the value should be stored at runtime.
@@ -4812,7 +4764,7 @@ export class ArchActionCallBotFlow extends ArchBaseActionCallBotFlow {
     /**
      * Returns the display type name string 'ArchActionCallBotFlow'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionCallBotFlow';
     /**
      * Returns true indicating that this is an ArchActionCallBotFlow instance.
      */
@@ -4836,7 +4788,7 @@ export class ArchActionCallCommonModule extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionCallCommonModule'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionCallCommonModule';
     /**
      * Returns true indicating that this is an ArchActionCallCommonModule instance.
      */
@@ -4879,10 +4831,6 @@ export class ArchActionCallCommonModule extends ArchBaseAction {
      *                                                                  to the callback function will be this Call Common Module action instance
      */
     setCommonModuleFlowByIdAsync(commonModuleFlowId: string, flowVersion?: string, callbackFunction?: callbackArchActionCallCommonModule): Promise<ArchActionCallCommonModule>;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -4902,7 +4850,7 @@ export class ArchActionCallData extends ArchBaseActionDataAction {
     /**
      * Returns the display type name string 'ArchActionCallData'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionCallData';
     /**
      * Returns true indicating that this is an ArchActionCallData instance.
      */
@@ -4930,10 +4878,6 @@ export class ArchActionCallData extends ArchBaseActionDataAction {
      *                                         the category to disambiguate the data action you want.
      */
     setDataActionByNameAsync(dataActionName: string, callbackFunction?: (...params: any[]) => any, categoryName?: string): Promise<ArchActionCallData>;
-    /**
-     * Returns the display type name string 'ArchBaseActionDataAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -4953,7 +4897,7 @@ export class ArchActionCallDataSecure extends ArchBaseActionDataAction {
     /**
      * Returns the display type name string 'ArchActionCallDataSecure'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionCallDataSecure';
     /**
      * Returns true indicating that this is an ArchActionCallDataSecure instance.
      */
@@ -4981,10 +4925,6 @@ export class ArchActionCallDataSecure extends ArchBaseActionDataAction {
      *                                         the category to disambiguate the secure data action you want.
      */
     setDataSecureActionByNameAsync(dataSecureActionName: string, callbackFunction?: (...params: any[]) => any, categoryName?: string): Promise<ArchActionCallDataSecure>;
-    /**
-     * Returns the display type name string 'ArchBaseActionDataAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -5009,7 +4949,7 @@ export class ArchActionCallDecisionTable extends ArchBaseActionWithOutputsSucces
     /**
      * Returns the display type name string 'ArchActionCallDecisionTable'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionCallDecisionTable';
     /**
      * Returns true indicating that this is an ArchActionCallDecisionTable instance.
      */
@@ -5068,7 +5008,7 @@ export class ArchActionCallDialogEngineBot extends ArchBaseActionBot {
     /**
      * Returns the display type name string 'ArchActionCallDialogEngineBot'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionCallDialogEngineBot';
     /**
      * Returns true indicating that this is an ArchActionCallDialogEngineBot instance.
      */
@@ -5142,7 +5082,7 @@ export class ArchActionCallDialogflowBot extends ArchBaseActionDialogflow {
     /**
      * Returns the display type name string 'ArchActionCallDialogflowBot'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionCallDialogflowBot';
     /**
      * The collection of intents and their parameters into which variables can be assigned. To access an intent, you can use
      * the getNamedValueByName function on this property and pass in the name of the intent you want to access.
@@ -5198,7 +5138,7 @@ export class ArchActionCallDialogflowCxBot extends ArchBaseActionDialogflow {
     /**
      * Returns the display type name string 'ArchActionCallDialogflowCxBot'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionCallDialogflowCxBot';
     /**
      * This function will always throw an error. While it is supported on other ArchBaseActionBot subclasses,
      * the Call Dialogflow CX Bot action does not support mapping intents to outputs.
@@ -5244,7 +5184,7 @@ export class ArchActionCallDigitalBotFlow extends ArchBaseActionCallBotFlow {
     /**
      * Returns the display type name string 'ArchActionCallDigitalBotFlow'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionCallDigitalBotFlow';
     /**
      * Returns true indicating that this is an ArchActionCallDigitalBotFlow instance.
      */
@@ -5265,7 +5205,7 @@ export class ArchActionCallGuide extends ArchBaseActionWithOutputsSuccessFailure
     /**
      * Returns the display type name string 'ArchActionCallGuide'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionCallGuide';
     /**
      * The contents of this named value list come from the Failure Outputs schema. It will contain two values: errorType and errorMessage.
      * These values will be returned by the server if the action takes the Failure path.
@@ -5319,7 +5259,7 @@ export class ArchActionCallLexBot extends ArchBaseActionLex {
     /**
      * Returns the display type name string 'ArchActionCallLexBot'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionCallLexBot';
     /**
      * Returns true indicating that this is an ArchActionCallLexBot instance.
      */
@@ -5371,7 +5311,7 @@ export class ArchActionCallLexV2Bot extends ArchBaseActionLex {
     /**
      * Returns the display type name string 'ArchActionCallLexV2Bot'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionCallLexV2Bot';
     /**
      * Returns true indicating that this is an ArchActionCallLexV2Bot instance.
      */
@@ -5447,7 +5387,7 @@ export class ArchActionCallNuanceMixBot extends ArchBaseActionBot {
     /**
      * Returns the display type name string 'ArchActionCallNuanceMixBot'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionCallNuanceMixBot';
     /**
      * Returns the channel ID to be used when calling the bot.
      */
@@ -5511,7 +5451,7 @@ export class ArchActionCallTask extends ArchBaseActionWithOutputsDefault {
     /**
      * Returns the display type name string 'ArchActionCallTask'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionCallTask';
     /**
      * Returns true indicating that this is an ArchActionCallTask instance.
      */
@@ -5545,7 +5485,7 @@ export class ArchActionCallVoiceFlow extends ArchBaseActionCallBotFlow {
     /**
      * Returns the display type name string 'ArchActionCallVoiceFlow'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionCallVoiceFlow';
     /**
      * Returns true indicating that this is an ArchActionCallVoiceFlow instance.
      */
@@ -5562,7 +5502,7 @@ export class ArchActionChangeState extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionChangeState'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionChangeState';
     /**
      * Returns true indicating that this is an ArchActionChangeState instance.
      */
@@ -5572,10 +5512,6 @@ export class ArchActionChangeState extends ArchBaseAction {
      * null or undefined.
      */
     targetState: ArchState;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -5588,15 +5524,11 @@ export class ArchActionClearActiveIntent extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionClearActiveIntent'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionClearActiveIntent';
     /**
      * Returns true indicating that this is an ArchActionClearActiveIntent instance.
      */
     readonly isArchActionClearActiveIntent: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -5609,7 +5541,7 @@ export class ArchActionClearPostFlow extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionClearPostFlow'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionClearPostFlow';
     /**
      * Returns true indicating that this is an ArchActionClearPostFlow instance.
      */
@@ -5619,10 +5551,6 @@ export class ArchActionClearPostFlow extends ArchBaseAction {
      * {@link ArchEnums#POST_FLOW_TARGET_TYPES} lists valid values.
      */
     readonly target: ArchValueString;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -5635,7 +5563,7 @@ export class ArchActionClearSlot extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionClearSlot'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionClearSlot';
     /**
      * Returns true indicating that this is an ArchActionClearSlot instance.
      */
@@ -5654,10 +5582,6 @@ export class ArchActionClearSlot extends ArchBaseAction {
      * Returns the current slot count on the action
      */
     readonly slotCount: number;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -5670,7 +5594,7 @@ export class ArchActionClearUtilizationLabel extends ArchBaseActionWithOutputsSu
     /**
      * Returns the display type name string 'ArchActionClearUtilizationLabel'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionClearUtilizationLabel';
     /**
      * Returns true indicating that this is an ArchActionClearUtilizationLabel instance.
      */
@@ -5692,15 +5616,11 @@ export class ArchActionClearVoicemailSnippet extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionClearVoicemailSnippet'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionClearVoicemailSnippet';
     /**
      * Returns true indicating that this is an ArchActionClearVoicemailSnippet instance.
      */
     readonly isArchActionClearVoicemailSnippet: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -5713,7 +5633,7 @@ export class ArchActionCollectInput extends ArchBaseActionWithOutputsSuccessFail
     /**
      * Returns the display type name string 'ArchActionCollectInput'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionCollectInput';
     /**
      * The input audio for the collect input action.  This is the audio that will be
      * used to prompt the caller for their input.
@@ -5785,7 +5705,7 @@ export class ArchActionCommunicate extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionCommunicate'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionCommunicate';
     /**
      * The boolean condition for the Communicate action.  At runtime if the boolean condition evaluates to true, execution
      * will take the Yes output on this action.  Otherwise the No output will be taken.
@@ -5795,10 +5715,6 @@ export class ArchActionCommunicate extends ArchBaseAction {
      * Returns true indicating that this is an ArchActionCommunicate instance.
      */
     readonly isArchActionCommunicate: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -5831,15 +5747,11 @@ export class ArchActionCompleteSurveyInvite extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionCompleteSurveyInvite'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionCompleteSurveyInvite';
     /**
      * Returns true indicating that this is an ArchActionCompleteSurveyInvite instance.
      */
     readonly isArchActionCompleteSurveyInvite: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -5859,7 +5771,7 @@ export class ArchActionCreateCallback extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionCreateCallback'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionCreateCallback';
     /**
      * Returns the callback number value for this Create Callback instance.
      */
@@ -5898,10 +5810,6 @@ export class ArchActionCreateCallback extends ArchBaseAction {
      *                                        create callback action instance.
      */
     setScriptByIdAsync(scriptId: string, callbackFunction?: callbackArchActionCreateCallback): Promise<ArchActionCreateCallback>;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -5921,7 +5829,7 @@ export class ArchActionDataTableLookup extends ArchBaseActionWithOutputsFoundNot
     /**
      * Returns the display type name string 'ArchActionDataTableLookup'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionDataTableLookup';
     /**
      * This is the value you wish to look up at runtime and will be the key field of the data table inputs schema. Please note
      * that this value cannot be assigned a value until the data table is configured on this action using the
@@ -5973,7 +5881,7 @@ export class ArchActionDecision extends ArchBaseActionWithOutputsYesNo {
     /**
      * Returns the display type name string 'ArchActionDecision'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionDecision';
     /**
      * The boolean condition for the decision action.  At runtime if the boolean condition evaluates to true, execution
      * will take the Yes output on this action.  Otherwise the No output will be taken.
@@ -5995,7 +5903,7 @@ export class ArchActionDecryptData extends ArchBaseActionWithOutputsSuccessFailu
     /**
      * Returns the display type name string 'ArchActionDecryptData'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionDecryptData';
     /**
      * Returns true indicating that this is an ArchActionDecryptData instance.
      */
@@ -6029,7 +5937,7 @@ export class ArchActionDetectIntent extends ArchBaseActionWithOutputsDefault {
     /**
      * Returns the display type name string 'ArchActionDetectIntent'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionDetectIntent';
     /**
      * Returns true indicating that this is an ArchActionDetectIntent instance.
      */
@@ -6050,7 +5958,7 @@ export class ArchActionDetectSilence extends ArchBaseActionWithSilenceDetection 
     /**
      * Returns the display type name string 'ArchActionDetectSilence'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionDetectSilence';
     /**
      * Returns true indicating that this is an ArchActionDetectSilence instance.
      */
@@ -6067,7 +5975,7 @@ export class ArchActionDialByExtension extends ArchBaseActionWithOutputsFakeSucc
     /**
      * Returns the display type name string 'ArchActionDialByExtension'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionDialByExtension';
     /**
      * The value that holds the variable for the caller entered extension.
      */
@@ -6101,7 +6009,7 @@ export class ArchActionDigitalMenu extends ArchBaseActionWithOutputs {
     /**
      * Returns the display type name string 'ArchActionDigitalMenu'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionDigitalMenu';
     /**
      * Returns true indicating that this is an ArchActionDigitalMenu instance.
      */
@@ -6182,15 +6090,11 @@ export class ArchActionDisconnect extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionDisconnect'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionDisconnect';
     /**
      * Returns true indicating that this is an ArchActionDisconnect instance.
      */
     readonly isArchActionDisconnect: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6203,7 +6107,7 @@ export class ArchActionDisconnectWorkitem extends ArchBaseActionWithOutputsSucce
     /**
      * Returns the display type name string 'ArchActionDisconnectWorkitem'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionDisconnectWorkitem';
     /**
      * Returns true indicating that this is an isArchActionDisconnectWorkitem instance.
      */
@@ -6225,15 +6129,11 @@ export class ArchActionEnableParticipantRecord extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionEnableParticipantRecord'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionEnableParticipantRecord';
     /**
      * Returns true indicating that this is an ArchActionEnableParticipantRecord instance.
      */
     readonly isArchActionEnableParticipantRecord: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6246,7 +6146,7 @@ export class ArchActionEncryptData extends ArchBaseActionWithOutputsSuccessFailu
     /**
      * Returns the display type name string 'ArchActionEncryptData'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionEncryptData';
     /**
      * Returns true indicating that this is an ArchActionEncryptData instance.
      */
@@ -6278,15 +6178,11 @@ export class ArchActionEndState extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionEndState'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionEndState';
     /**
      * Returns true indicating that this is an ArchActionEndState instance.
      */
     readonly isArchActionEndState: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6299,7 +6195,7 @@ export class ArchActionEndTask extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionEndTask'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionEndTask';
     /**
      * Returns true indicating that this is an ArchActionEndTask instance.
      */
@@ -6308,10 +6204,6 @@ export class ArchActionEndTask extends ArchBaseAction {
      * The branch that should be taken when this end task action is executed.
      */
     targetBranch: ArchBranch;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6325,7 +6217,7 @@ export class ArchActionEndWorkflow extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionEndWorkflow'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionEndWorkflow';
     /**
      * This property lets you specify an exit reason string for the workflow at runtime.
      */
@@ -6334,10 +6226,6 @@ export class ArchActionEndWorkflow extends ArchBaseAction {
      * Returns true indicating that this is an ArchActionEndWorkflow instance.
      */
     readonly isArchActionEndWorkflow: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6357,7 +6245,7 @@ export class ArchActionEvaluateSchedule extends ArchBaseActionSchedule {
     /**
      * Returns the display type name string 'ArchActionEvaluateSchedule'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionEvaluateSchedule';
     /**
      * Returns true indicating that this is an ArchActionEvaluateSchedule instance.
      */
@@ -6409,10 +6297,6 @@ export class ArchActionEvaluateSchedule extends ArchBaseActionSchedule {
      * The inactive output for this action
      */
     readonly outputInactive: ArchActionOutput;
-    /**
-     * Returns the display type name string 'ArchBaseActionSchedule'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6432,7 +6316,7 @@ export class ArchActionEvaluateScheduleGroup extends ArchBaseActionSchedule {
     /**
      * Returns the display type name string 'ArchActionEvaluateScheduleGroup'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionEvaluateScheduleGroup';
     /**
      * Returns true indicating that this is an ArchActionEvaluateScheduleGroup instance.
      */
@@ -6479,10 +6363,6 @@ export class ArchActionEvaluateScheduleGroup extends ArchBaseActionSchedule {
      * The emergency output for this action
      */
     readonly outputEmergency: ArchActionOutput;
-    /**
-     * Returns the display type name string 'ArchBaseActionSchedule'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6495,15 +6375,11 @@ export class ArchActionExitBotFlow extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionExitBotFlow'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionExitBotFlow';
     /**
      * Returns true indicating that this is an ArchActionExitBotFlow instance.
      */
     readonly isArchActionExitBotFlow: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6516,7 +6392,7 @@ export class ArchActionExitWorkitemFlow extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionExitWorkitemFlow'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionExitWorkitemFlow';
     /**
      * Returns true indicating that this is an ArchActionExitWorkitemFlow instance.
      */
@@ -6545,7 +6421,7 @@ export class ArchActionExtractSecureData extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionExtractSecureData'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionExtractSecureData';
     /**
      * Returns whether or not the secure data extraction warning has been acknowledged for this action.
      */
@@ -6559,10 +6435,6 @@ export class ArchActionExtractSecureData extends ArchBaseAction {
      * update statements configured, an empty array will be returned.
      */
     readonly statements: ArchBaseVariableValuePair[];
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6575,7 +6447,7 @@ export class ArchActionFindEmergencyGroup extends ArchBaseActionFindSystemObject
     /**
      * Returns the display type name string 'ArchActionFindEmergencyGroup'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionFindEmergencyGroup';
     /**
      * Returns true indicating that this is an ArchActionFindEmergencyGroup instance.
      */
@@ -6584,10 +6456,6 @@ export class ArchActionFindEmergencyGroup extends ArchBaseActionFindSystemObject
      * The value that will hold the returned emergency group if found.
      */
     readonly findResult: ArchValueEmergencyGroup;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6600,7 +6468,7 @@ export class ArchActionFindGrammar extends ArchBaseActionFindSystemObjectByName 
     /**
      * Returns the display type name string 'ArchActionFindGrammar'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionFindGrammar';
     /**
      * Returns true indicating that this is an ArchActionFindGrammar instance.
      */
@@ -6609,10 +6477,6 @@ export class ArchActionFindGrammar extends ArchBaseActionFindSystemObjectByName 
      * The value that will hold the returned grammar if found.
      */
     readonly findResult: ArchValueGrammar;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6625,7 +6489,7 @@ export class ArchActionFindGrammarById extends ArchBaseActionFindSystemObjectByI
     /**
      * Returns the display type name string 'ArchActionFindGrammarById'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionFindGrammarById';
     /**
      * Returns true indicating that this is an ArchActionFindGrammarById instance.
      */
@@ -6634,10 +6498,6 @@ export class ArchActionFindGrammarById extends ArchBaseActionFindSystemObjectByI
      * The value that holds the result of the find grammar by identifier lookup at runtime.
      */
     readonly findResult: ArchValueGrammar;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6650,7 +6510,7 @@ export class ArchActionFindGroup extends ArchBaseActionFindSystemObjectByName {
     /**
      * Returns the display type name string 'ArchActionFindGroup'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionFindGroup';
     /**
      * Returns true indicating that this is an ArchActionFindGroup instance.
      */
@@ -6659,10 +6519,6 @@ export class ArchActionFindGroup extends ArchBaseActionFindSystemObjectByName {
      * The value that will hold the returned group if found.
      */
     readonly findResult: ArchValueGroup;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6675,7 +6531,7 @@ export class ArchActionFindKnowledgeBaseDocumentById extends ArchBaseActionFindS
     /**
      * Returns the display type name string 'ArchActionFindKnowledgeBaseDocumentById'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionFindKnowledgeBaseDocumentById';
     /**
      * Returns true indicating that this is an ArchActionFindKnowledgeBaseDocumentById instance.
      */
@@ -6684,10 +6540,6 @@ export class ArchActionFindKnowledgeBaseDocumentById extends ArchBaseActionFindS
      * The value that holds the result of the find knowledge base document by identifier lookup at runtime.
      */
     readonly findResult: ArchValueKnowledgeBaseDocument;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6700,7 +6552,7 @@ export class ArchActionFindLanguageSkill extends ArchBaseActionFindSystemObjectB
     /**
      * Returns the display type name string 'ArchActionFindLanguageSkill'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionFindLanguageSkill';
     /**
      * Returns true indicating that this is an ArchActionFindLanguageSkill instance.
      */
@@ -6709,10 +6561,6 @@ export class ArchActionFindLanguageSkill extends ArchBaseActionFindSystemObjectB
      * The value that will hold the returned languageSkill if found.
      */
     readonly findResult: ArchValueLanguageSkill;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6725,7 +6573,7 @@ export class ArchActionFindQueue extends ArchBaseActionFindSystemObjectByName {
     /**
      * Returns the display type name string 'ArchActionFindQueue'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionFindQueue';
     /**
      * Returns true indicating that this is an ArchActionFindQueue instance.
      */
@@ -6734,10 +6582,6 @@ export class ArchActionFindQueue extends ArchBaseActionFindSystemObjectByName {
      * The value that will hold the returned queue if found.
      */
     readonly findResult: ArchValueQueue;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6750,7 +6594,7 @@ export class ArchActionFindQueueById extends ArchBaseActionFindSystemObjectById 
     /**
      * Returns the display type name string 'ArchActionFindQueueById'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionFindQueueById';
     /**
      * Returns true indicating that this is an ArchActionFindQueueById instance.
      */
@@ -6759,10 +6603,6 @@ export class ArchActionFindQueueById extends ArchBaseActionFindSystemObjectById 
      * The value that holds the result of the find queue by identifier lookup at runtime.
      */
     readonly findResult: ArchValueQueue;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6775,7 +6615,7 @@ export class ArchActionFindSchedule extends ArchBaseActionFindSystemObjectByName
     /**
      * Returns the display type name string 'ArchActionFindSchedule'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionFindSchedule';
     /**
      * Returns true indicating that this is an ArchActionFindSchedule instance.
      */
@@ -6784,10 +6624,6 @@ export class ArchActionFindSchedule extends ArchBaseActionFindSystemObjectByName
      * The value that will hold the returned schedule if found.
      */
     readonly findResult: ArchValueSchedule;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6800,7 +6636,7 @@ export class ArchActionFindScheduleGroup extends ArchBaseActionFindSystemObjectB
     /**
      * Returns the display type name string 'ArchActionFindScheduleGroup'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionFindScheduleGroup';
     /**
      * Returns true indicating that this is an ArchActionFindScheduleGroup instance.
      */
@@ -6809,10 +6645,6 @@ export class ArchActionFindScheduleGroup extends ArchBaseActionFindSystemObjectB
      * The value that will hold the returned schedule group if found.
      */
     readonly findResult: ArchValueScheduleGroup;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6825,7 +6657,7 @@ export class ArchActionFindSkill extends ArchBaseActionFindSystemObjectByName {
     /**
      * Returns the display type name string 'ArchActionFindSkill'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionFindSkill';
     /**
      * Returns true indicating that this is an ArchActionFindSkill instance.
      */
@@ -6834,10 +6666,6 @@ export class ArchActionFindSkill extends ArchBaseActionFindSystemObjectByName {
      * The value that will hold the returned skill if found.
      */
     readonly findResult: ArchValueSkill;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6850,7 +6678,7 @@ export class ArchActionFindSystemPrompt extends ArchBaseActionFindSystemObjectBy
     /**
      * Returns the display type name string 'ArchActionFindSystemPrompt'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionFindSystemPrompt';
     /**
      * Returns true indicating that this is an ArchActionFindSystemPrompt instance.
      */
@@ -6859,10 +6687,6 @@ export class ArchActionFindSystemPrompt extends ArchBaseActionFindSystemObjectBy
      * The value that will hold the returned system prompt if found.
      */
     readonly findResult: ArchValuePrompt;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6875,7 +6699,7 @@ export class ArchActionFindUser extends ArchBaseActionFindSystemObjectByName {
     /**
      * Returns the display type name string 'ArchActionFindUser'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionFindUser';
     /**
      * Returns true indicating that this is an ArchActionFindUser instance.
      */
@@ -6884,10 +6708,6 @@ export class ArchActionFindUser extends ArchBaseActionFindSystemObjectByName {
      * The value that holds the result of the find user by identifier lookup at runtime.
      */
     readonly findResult: ArchValueUser;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6900,7 +6720,7 @@ export class ArchActionFindUserById extends ArchBaseActionFindSystemObjectById {
     /**
      * Returns the display type name string 'ArchActionFindUserById'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionFindUserById';
     /**
      * Returns true indicating that this is an ArchActionFindUserById instance.
      */
@@ -6909,10 +6729,6 @@ export class ArchActionFindUserById extends ArchBaseActionFindSystemObjectById {
      * The value that holds the result of the find user by identifier lookup at runtime.
      */
     readonly findResult: ArchValueUser;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6925,7 +6741,7 @@ export class ArchActionFindUserPrompt extends ArchBaseActionFindSystemObjectByNa
     /**
      * Returns the display type name string 'ArchActionFindUserPrompt'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionFindUserPrompt';
     /**
      * Returns true indicating that this is an ArchActionFindUserPrompt instance.
      */
@@ -6934,10 +6750,6 @@ export class ArchActionFindUserPrompt extends ArchBaseActionFindSystemObjectByNa
      * The value that will hold the returned user prompt if found.
      */
     readonly findResult: ArchValuePrompt;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6950,7 +6762,7 @@ export class ArchActionFindUsersById extends ArchBaseActionFindSystemObjectsById
     /**
      * Returns the display type name string 'ArchActionFindUsersById'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionFindUsersById';
     /**
      * Returns true indicating that this is an ArchActionFindUsersById instance.
      */
@@ -6961,10 +6773,6 @@ export class ArchActionFindUsersById extends ArchBaseActionFindSystemObjectsById
      * for the user identifier strings that are submitted in the {@link ArchBaseActionFindSystemObjectsById#findIds} property.
      */
     readonly findResult: ArchValueUserCollection;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -6977,7 +6785,7 @@ export class ArchActionFindUtilizationLabel extends ArchBaseActionFindSystemObje
     /**
      * Returns the display type name string 'ArchActionFindUtilizationLabel'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionFindUtilizationLabel';
     /**
      * Returns true indicating that this is an ArchActionFindUtilizationLabel instance.
      */
@@ -6986,10 +6794,6 @@ export class ArchActionFindUtilizationLabel extends ArchBaseActionFindSystemObje
      * The value that will hold the returned utilization label if found.
      */
     readonly findResult: ArchValueUtilizationLabel;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -7002,15 +6806,11 @@ export class ArchActionFlushAudio extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionFlushAudio'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionFlushAudio';
     /**
      * Returns true indicating that this is an ArchActionFlushAudio instance.
      */
     readonly isArchActionFlushAudio: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -7023,7 +6823,7 @@ export class ArchActionGetAssignedCustomerIntents extends ArchBaseActionWithOutp
     /**
      * Returns the display type name string 'ArchActionGetAssignedCustomerIntents'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionGetAssignedCustomerIntents';
     /**
      * The contents of this named value list come from the Failure Outputs schema. It will contain two values: errorType and errorMessage.
      * These values will be returned by the server if the action takes the Failure path.
@@ -7053,7 +6853,7 @@ export class ArchActionGetConversationData extends ArchBaseActionWithOutputsFoun
     /**
      * Returns the display type name string 'ArchActionGetConversationData'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionGetConversationData';
     /**
      * This adds an attribute name value pair to the Get Conversation Data action that is used to specify
      * the attribute name to retrieve and the corresponding output variable where the value should be stored at runtime.
@@ -7090,7 +6890,7 @@ export class ArchActionGetExternalContact extends ArchBaseActionWithOutputsFound
     /**
      * Returns the display type name string 'ArchActionGetExternalContact'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionGetExternalContact';
     /**
      * Returns true indicating that this is an ArchActionGetExternalContact instance.
      */
@@ -7115,7 +6915,7 @@ export class ArchActionGetExternalOrganization extends ArchBaseActionWithOutputs
     /**
      * Returns the display type name string 'ArchActionGetExternalOrganization'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionGetExternalOrganization';
     /**
      * Returns true indicating that this is an ArchActionGetExternalOrganization instance.
      */
@@ -7142,7 +6942,7 @@ export class ArchActionGetJourneyOutcome extends ArchBaseActionFindSystemObjectB
     /**
      * Returns the display type name string 'ArchActionGetJourneyOutcome'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionGetJourneyOutcome';
     /**
      * Returns true indicating that this is an ArchActionGetJourneyOutcome instance.
      */
@@ -7151,10 +6951,6 @@ export class ArchActionGetJourneyOutcome extends ArchBaseActionFindSystemObjectB
      * The output value that holds the journey outcome result at runtime.
      */
     readonly findResult: ArchValueJourneyOutcome;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -7169,7 +6965,7 @@ export class ArchActionGetJourneyOutcomeScoresBySession extends ArchBaseActionFi
     /**
      * Returns the display type name string 'ArchActionGetJourneyOutcomeScoresBySession'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionGetJourneyOutcomeScoresBySession';
     /**
      * Returns true indicating that this is an ArchActionGetJourneyOutcomeScoresBySession instance.
      */
@@ -7180,10 +6976,6 @@ export class ArchActionGetJourneyOutcomeScoresBySession extends ArchBaseActionFi
      * value of the variable set here is left untouched.
      */
     readonly findResult: ArchValueJourneyOutcomeScoreCollection;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -7198,7 +6990,7 @@ export class ArchActionGetJourneySegment extends ArchBaseActionFindSystemObjectB
     /**
      * Returns the display type name string 'ArchActionGetJourneySegment'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionGetJourneySegment';
     /**
      * Returns true indicating that this is an ArchActionGetJourneySegment instance.
      */
@@ -7207,10 +6999,6 @@ export class ArchActionGetJourneySegment extends ArchBaseActionFindSystemObjectB
      * The output value that holds the journey segment result at runtime.
      */
     readonly findResult: ArchValueJourneySegment;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -7225,7 +7013,7 @@ export class ArchActionGetJourneySession extends ArchBaseActionFindSystemObjectB
     /**
      * Returns the display type name string 'ArchActionGetJourneySession'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionGetJourneySession';
     /**
      * Returns true indicating that this is an ArchActionGetJourneySession instance.
      */
@@ -7234,10 +7022,6 @@ export class ArchActionGetJourneySession extends ArchBaseActionFindSystemObjectB
      * The value that holds the journey session result.
      */
     readonly findResult: ArchValueJourneySession;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -7252,7 +7036,7 @@ export class ArchActionGetJourneySessionsByExternalContact extends ArchBaseActio
     /**
      * Returns the display type name string 'ArchActionGetJourneySessionsByExternalContact'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionGetJourneySessionsByExternalContact';
     /**
      * Returns true indicating that this is an ArchActionGetJourneySessionsByExternalContact instance.
      */
@@ -7263,10 +7047,6 @@ export class ArchActionGetJourneySessionsByExternalContact extends ArchBaseActio
      * value of the variable set here is left untouched.
      */
     readonly findResult: ArchValueJourneySessionCollection;
-    /**
-     * Returns the display type name string 'ArchBaseActionFindSystemObject'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -7279,7 +7059,7 @@ export class ArchActionGetParticipantData extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionGetParticipantData'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionGetParticipantData';
     /**
      * This adds an attribute name value pair to the Get Participant Data action that is used to specify
      * the attribute name to retrieve and the corresponding output variable where the value should be stored at runtime.
@@ -7300,10 +7080,6 @@ export class ArchActionGetParticipantData extends ArchBaseAction {
      * Returns the name value attribute pairs configured on this Get Participant Data action.
      */
     readonly attributeNameOutputValuePairs: ArchBaseNameValuePairs;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -7320,7 +7096,7 @@ export class ArchActionGetRawSIPHeaders extends ArchBaseActionWithOutputsSuccess
     /**
      * Returns the display type name string 'ArchActionGetRawSIPHeaders'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionGetRawSIPHeaders';
     /**
      * Returns true indicating that this is an ArchActionGetRawSIPHeaders instance.
      */
@@ -7358,7 +7134,7 @@ export class ArchActionGetResponse extends ArchBaseActionWithOutputsSuccessFailu
     /**
      * Returns the display type name string 'ArchActionGetResponse'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionGetResponse';
     /**
      * The contents of this named value list come from the selected response's reported substitution schema.  The
      * name value pair items in this list will let you assign values that will be used as substitutions to the response at runtime.
@@ -7442,7 +7218,7 @@ export class ArchActionGetSIPHeaders extends ArchBaseActionWithOutputsSuccessFai
     /**
      * Returns the display type name string 'ArchActionGetSIPHeader'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionGetSIPHeaders';
     /**
      * Returns true indicating that this is an ArchActionGetSIPHeaders instance.
      */
@@ -7501,7 +7277,7 @@ export class ArchActionHoldMusic extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionHoldMusic'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionHoldMusic';
     /**
      * Returns true indicating that this is an ArchActionHoldMusic instance.
      */
@@ -7520,10 +7296,6 @@ export class ArchActionHoldMusic extends ArchBaseAction {
      * The prompt to play in the hold music action.
      */
     readonly prompt: ArchValuePrompt;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -7537,16 +7309,11 @@ export class ArchActionInitializeFlowOutcome extends ArchBaseActionFlowOutcome {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionInitializeFlowOutcome';
     /**
      * Returns true indicating that this is an ArchActionInitializeFlowOutcome instance.
      */
     readonly isArchActionInitializeFlowOutcome: boolean;
-    /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -7559,7 +7326,7 @@ export class ArchActionJumpToMenu extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionJumpToMenu'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionJumpToMenu';
     /**
      * Returns true indicating that this is an ArchActionJumpToMenu instance.
      */
@@ -7569,10 +7336,6 @@ export class ArchActionJumpToMenu extends ArchBaseAction {
      * null or undefined.
      */
     targetMenu: ArchMenu | ArchMenuSubMenu;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -7585,7 +7348,7 @@ export class ArchActionJumpToTask extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionJumpToTask'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionJumpToTask';
     /**
      * Returns true indicating that this is an ArchActionJumpToTask instance.
      */
@@ -7598,10 +7361,6 @@ export class ArchActionJumpToTask extends ArchBaseAction {
      * Inputs for the jump to task action, only accessible after the targetTask has been set successfully. Otherwise, undefined.
      */
     readonly taskInputs: ArchNamedValueList;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -7614,7 +7373,7 @@ export class ArchActionLoop extends ArchBaseActionWithOutputLoop {
     /**
      * Returns the display type name string 'ArchActionLoop'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionLoop';
     /**
      * A value that contains the variable that holds the current loop index.
      */
@@ -7643,7 +7402,7 @@ export class ArchActionLoopAnythingElse extends ArchBaseActionAsk {
     /**
      * Returns the display type name string 'ArchActionLoopAnythingElse'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionLoopAnythingElse';
     /**
      * Returns true indicating that this is an ArchActionLoopAnythingElse instance.
      */
@@ -7667,15 +7426,11 @@ export class ArchActionLoopExit extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionLoopExit'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionLoopExit';
     /**
      * Returns true indicating that this is an ArchActionLoopExit instance.
      */
     readonly isArchActionLoopExit: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -7688,15 +7443,11 @@ export class ArchActionLoopNext extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionLoopNext'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionLoopNext';
     /**
      * Returns true indicating that this is an ArchActionLoopNext instance.
      */
     readonly isArchActionLoopNext: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -7709,7 +7460,7 @@ export class ArchActionLoopUntil extends ArchBaseActionWithOutputLoop {
     /**
      * Returns the display type name string 'ArchActionLoopUntil'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionLoopUntil';
     /**
      * Adds an Until Case to a Loop Until action.  You need to specify a name
      * for the until case which will be available as an output on the action
@@ -7759,15 +7510,11 @@ export class ArchActionMenu extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionMenu'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionMenu';
     /**
      * Returns true indicating that this is an ArchActionMenu instance.
      */
     readonly isArchActionMenu: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -7780,7 +7527,7 @@ export class ArchActionPlayAudio extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionPlayAudio'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionPlayAudio';
     /**
      * The audio to play
      */
@@ -7789,10 +7536,6 @@ export class ArchActionPlayAudio extends ArchBaseAction {
      * Returns true indicating that this is an ArchActionPlayAudio instance.
      */
     readonly isArchActionPlayAudio: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -7805,7 +7548,7 @@ export class ArchActionPlayAudioOnSilence extends ArchBaseActionWithSilenceDetec
     /**
      * Returns the display type name string 'archActionPlayAudioOnSilence'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionPlayAudioOnSilence';
     /**
      * Returns true indicating that this is an archActionPlayAudioOnSilence instance.
      */
@@ -7834,7 +7577,7 @@ export class ArchActionPlayEstimatedWaitTime extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionPlayEstimatedWaitTime'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionPlayEstimatedWaitTime';
     /**
      * The duration value that specifies the estimated wait time for the caller in the queue.
      */
@@ -7894,10 +7637,6 @@ export class ArchActionPlayEstimatedWaitTime extends ArchBaseAction {
      * Returns whether the play estimated wait time action supports specific rounding intervals based on the playback mode that is set.
      */
     readonly supportsSpecificRoundingIntervals: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -7910,7 +7649,7 @@ export class ArchActionPlayPositionInQueue extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionPlayPositionInQueue'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionPlayPositionInQueue';
     /**
      * The integer value that specifies the position for the caller in the queue that will be read back.
      * Remember, if this value is a NOT_SET integer then no audio will be played back to the caller.
@@ -7931,10 +7670,6 @@ export class ArchActionPlayPositionInQueue extends ArchBaseAction {
      * lists valid play position values.
      */
     playbackMode: string;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -7947,7 +7682,7 @@ export class ArchActionPlayUserGreeting extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionPlayUserGreeting'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionPlayUserGreeting';
     /**
      * Returns true indicating that this is an ArchActionPlayUserGreeting instance.
      */
@@ -7956,10 +7691,6 @@ export class ArchActionPlayUserGreeting extends ArchBaseAction {
      * The user whose greeting you want to play at flow runtime.
      */
     readonly dataToDecrypt: ArchValueUser;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -7972,7 +7703,7 @@ export class ArchActionPlayUserName extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionPlayUserName'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionPlayUserName';
     /**
      * Returns true indicating that this is an ArchActionPlayUserName instance.
      */
@@ -7981,10 +7712,6 @@ export class ArchActionPlayUserName extends ArchBaseAction {
      * The user whose name you want to play at flow runtime.
      */
     readonly dataToDecrypt: ArchValueUser;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -7998,15 +7725,11 @@ export class ArchActionPreviousMenu extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionPreviousMenu'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionPreviousMenu';
     /**
      * Returns true indicating that this is an ArchActionPreviousMenu instance.
      */
     readonly isArchActionPreviousMenu: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -8019,7 +7742,7 @@ export class ArchActionProcessVoicemailInput extends ArchBaseActionWithOutputsFa
     /**
      * Returns the display type name string 'ArchActionProcessVoicemailInput'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionProcessVoicemailInput';
     /**
      * Returns true indicating that this action has a fake fax processed action output.
      */
@@ -8044,7 +7767,7 @@ export class ArchActionPromoteExternalContact extends ArchBaseActionWithOutputsS
     /**
      * Returns the display type name string 'ArchActionPromoteExternalContact'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionPromoteExternalContact';
     /**
      * The contents of this named value list come from the Failure Outputs schema. It will contain two values: errorType and errorMessage.
      * These values will be returned by the server if the action takes the Failure path.
@@ -8075,15 +7798,11 @@ export class ArchActionRepeatMenu extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionRepeatMenu'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionRepeatMenu';
     /**
      * Returns true indicating that this object is an ArchActionRepeatMenu instance.
      */
     readonly isArchActionRepeatMenu: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -8096,15 +7815,11 @@ export class ArchActionReturnToAgent extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionReturnToAgent'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionReturnToAgent';
     /**
      * Returns true indicating that this is an ArchActionReturnToAgent instance.
      */
     readonly isArchActionReturnToAgent: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -8117,7 +7832,7 @@ export class ArchActionSearchExternalContacts extends ArchBaseActionWithOutputsM
     /**
      * Returns the display type name string 'ArchActionSearchExternalContacts'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSearchExternalContacts';
     /**
      * Returns true indicating that this is an ArchActionSearchExternalContacts instance.
      */
@@ -8142,7 +7857,7 @@ export class ArchActionSendAutoReply extends ArchBaseActionWithOutputsSuccessFai
     /**
      * Returns the display type name string 'ArchActionSendAutoReply'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSendAutoReply';
     /**
      * Returns true indicating that this is an ArchActionSendAutoReply instance.
      */
@@ -8180,27 +7895,6 @@ export class ArchActionSendAutoReply extends ArchBaseActionWithOutputsSuccessFai
 }
 
 /**
- * Creates an instance of ArchActionSendDigitalContent.
- * @param coreActionViewModel - the core Send Digital Content action view model.
- */
-export class ArchActionSendDigitalContent {
-    // constructor(coreActionViewModel: any);
-    /**
-     * This sets the canned response library for this action by its name.
-     * @param libraryName - the name of the response library.
-     * @param [callbackFunction] - a callback function to call if the response library is successfully
-     *                                                                    looked up and configured on this action.
-     *                                                                    The first parameter passed to the callback function will be this
-     *                                                                    Architect Send Digital Content action instance.
-     */
-    setResponseLibraryByNameAsync(libraryName: string, callbackFunction?: callbackArchActionSendDigitalContent): Promise<ArchActionSendDigitalContent>;
-    /**
-     * Returns the display type name string 'ArchBaseActionNoInputNoMatch'.
-     */
-    readonly displayTypeName: string;
-}
-
-/**
  * The Architect Scripting class for the Send Interactive Application action
  * Instances of this action should be created by calling {@link ArchFactoryActions#addActionSendInteractiveApplication}
  * @param coreSendInteractiveApplicationActionViewModel - ( *Internal* ) an Architect core send response action.
@@ -8210,7 +7904,7 @@ export class ArchActionSendInteractiveApplication extends ArchBaseActionWithOutp
     /**
      * Returns the display type name string 'ArchActionSendInteractiveApplication'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSendInteractiveApplication';
     /**
      * Returns true indicating that this is an ArchActionSendInteractiveApplication instance.
      */
@@ -8247,7 +7941,7 @@ export class ArchActionSendKnowledgeFeedback extends ArchBaseActionWithOutputsSu
     /**
      * Returns the display type name string 'ArchActionSendKnowledgeFeedback'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSendKnowledgeFeedback';
     /**
      * Returns true indicating that this is an ArchActionSendKnowledgeFeedback instance.
      */
@@ -8277,7 +7971,7 @@ export class ArchActionSendNotification extends ArchBaseActionWithOutputsSuccess
     /**
      * Returns the display type name string 'ArchActionSendNotification'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSendNotification';
     /**
      * Returns true indicating that this is an ArchActionSendNotification instance.
      */
@@ -8341,7 +8035,7 @@ export class ArchActionSendResponse extends ArchBaseActionWithOutputsSuccessFail
     /**
      * Returns the display type name string 'ArchActionSendResponse'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSendResponse';
     /**
      * Returns true indicating that this is an ArchActionSendResponse instance.
      */
@@ -8378,7 +8072,7 @@ export class ArchActionSendRichLink extends ArchBaseActionWithOutputsSuccessFail
     /**
      * Returns the display type name string 'ArchActionSendRichLink'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSendRichLink';
     /**
      * Returns true indicating that this is an ArchActionSendRichLink instance.
      */
@@ -8429,7 +8123,7 @@ export class ArchActionSetConversationData extends ArchBaseActionWithOutputsSucc
     /**
      * Returns the display type name string 'ArchActionSetConversationData'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSetConversationData';
     /**
      * This adds an attribute name value pair to the Set Conversation Data action that can be used to specify
      * the attribute name and corresponding value that should be assigned to it.  On the returned {@link ArchBaseNameValuePair}
@@ -8464,7 +8158,7 @@ export class ArchActionSetExternalTag extends ArchBaseActionWithOutputsFakeSucce
     /**
      * Returns the display type name string 'ArchActionSetExternalTag'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSetExternalTag';
     /**
      * Returns true indicating that this is an ArchActionSetExternalTag instance.
      */
@@ -8487,7 +8181,7 @@ export class ArchActionSetFlowOutcome extends ArchBaseActionFlowOutcome {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSetFlowOutcome';
     /**
      * Returns true indicating that this is an ArchActionSetFlowOutcome instance.
      */
@@ -8503,11 +8197,6 @@ export class ArchActionSetFlowOutcome extends ArchBaseActionFlowOutcome {
      * @param newValue - the outcome value to set
      */
     setFlowOutcomeValue(newValue: string): void;
-    /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -8520,7 +8209,7 @@ export class ArchActionSetIntent extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionSetIntent'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSetIntent';
     /**
      * The active intent for the set active intent action.  This should be an string that case sensitively matches the
      * name of an intent for this bot.
@@ -8530,10 +8219,6 @@ export class ArchActionSetIntent extends ArchBaseAction {
      * Returns true indicating that this is an ArchActionSetIntent instance.
      */
     readonly isArchActionSetIntent: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -8546,7 +8231,7 @@ export class ArchActionSetLanguage extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionSetLanguage'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSetLanguage';
     /**
      * Returns true indicating that this is an ArchActionSetLanguage instance.
      */
@@ -8563,10 +8248,6 @@ export class ArchActionSetLanguage extends ArchBaseAction {
      * with a region sub-tag. If setting a literal string value, be sure to use a lowercase string.
      */
     readonly languageValue: ArchValueString;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -8579,7 +8260,7 @@ export class ArchActionSetParticipantData extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionSetParticipantData'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSetParticipantData';
     /**
      * This adds an attribute name value pair to the Set Participant Data action that can be used to specify
      * the attribute name and corresponding value that should be assigned to it.  On the returned {@link ArchBaseNameValuePair}
@@ -8598,10 +8279,6 @@ export class ArchActionSetParticipantData extends ArchBaseAction {
      * Returns the name value attribute pairs configured on this Set Participant Data action.
      */
     readonly attributeNameValuePairs: ArchBaseNameValuePairs;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -8614,7 +8291,7 @@ export class ArchActionSetPostFlow extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionSetPostFlow'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSetPostFlow';
     /**
      * Returns true indicating that this is an ArchActionSetPostFlow instance.
      */
@@ -8651,10 +8328,6 @@ export class ArchActionSetPostFlow extends ArchBaseAction {
      * Returns the target type string for the currently configured [action type]{@link ArchActionSetPostFlow#actionType}.
      */
     getTargetTypeForActionType(): string;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -8667,7 +8340,7 @@ export class ArchActionSetPriority extends ArchBaseActionWithOutputsSuccessFailu
     /**
      * Returns the display type name string 'ArchActionSetPriority'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSetPriority';
     /**
      * Returns true indicating that this is an ArchActionSetPriority instance.
      */
@@ -8695,7 +8368,7 @@ export class ArchActionSetScreenPop extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionSetScreenPop'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSetScreenPop';
     /**
      * Returns true indicating that this is an ArchActionSetScreenPop instance.
      */
@@ -8722,10 +8395,6 @@ export class ArchActionSetScreenPop extends ArchBaseAction {
      *                                                              to the callback function will be this set screen pop action instance.
      */
     setScriptByIdAsync(scriptId: string, callbackFunction?: callbackArchActionSetScreenPop): Promise<ArchActionSetScreenPop>;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -8758,7 +8427,7 @@ export class ArchActionSetSkills extends ArchBaseActionWithOutputsSuccessFailure
     /**
      * Returns the display type name string 'ArchActionSetSkills'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSetSkills';
     /**
      * Returns true indicating that this is an ArchActionSetSkills instance.
      */
@@ -8783,7 +8452,7 @@ export class ArchActionSetUUIData extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionSetUUIData'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSetUUIData';
     /**
      * Returns true indicating that this is an ArchActionCallData instance.
      */
@@ -8798,10 +8467,6 @@ export class ArchActionSetUUIData extends ArchBaseAction {
      * disconnects.
      */
     mode: string;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -8814,7 +8479,7 @@ export class ArchActionSetUtilizationLabel extends ArchBaseActionWithOutputsSucc
     /**
      * Returns the display type name string 'ArchActionSetUtilizationLabel'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSetUtilizationLabel';
     /**
      * Returns true indicating that this is an ArchActionSetUtilizationLabel instance.
      */
@@ -8840,7 +8505,7 @@ export class ArchActionSetWhisperAudio extends ArchBaseActionWithOutputsSuccessF
     /**
      * Returns the display type name string 'ArchActionSetWhisperAudio'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSetWhisperAudio';
     /**
      * This is a helper function to set no value mode on the {@link ArchActionSetWhisperAudio#whisperAudio} property.
      * If whisper is to be played to an agent, this will use the queue's configured
@@ -8867,7 +8532,7 @@ export class ArchActionSetWrapupCode extends ArchBaseActionWithOutputsSuccessFai
     /**
      * Returns the display type name string 'ArchActionSetWrapupCode'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSetWrapupCode';
     /**
      * Returns true indicating that this object is an ArchActionSetWrapupCode instance.
      */
@@ -8895,7 +8560,7 @@ export class ArchActionShowKnowledgeArticle extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionShowKnowledgeArticle'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionShowKnowledgeArticle';
     /**
      * Returns true indicating that this is an ArchActionShowKnowledgeArticle instance.
      */
@@ -8928,10 +8593,6 @@ export class ArchActionShowKnowledgeArticle extends ArchBaseAction {
      *                                                                      to the callback function will be this show knowledge article action instance.
      */
     setLiteralByKnowledgeBaseDocumentIdAsync(knowledgeBaseDocumentId: string, callbackFunction?: callbackArchActionShowKnowledgeArticle): Promise<ArchActionShowKnowledgeArticle>;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -8967,7 +8628,7 @@ export class ArchActionSwitch extends ArchBaseActionWithOutputsDefault {
     /**
      * Returns the display type name string 'ArchActionSwitch'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionSwitch';
     /**
      * The evaluation style to use on the switch action.  The string values in {@link ArchEnums#SWITCH_EVALUATION_STYLES}
      * lists valid values.
@@ -9024,7 +8685,7 @@ export class ArchActionTask extends ArchBaseAction {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionTask';
     /**
      * Returns true indicating that this is an ArchActionTask instance.
      */
@@ -9033,10 +8694,6 @@ export class ArchActionTask extends ArchBaseAction {
      * Returns the task associated with this action.
      */
     readonly task: ArchTask;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -9049,7 +8706,7 @@ export class ArchActionTerminateWorkitem extends ArchBaseActionWithOutputsSucces
     /**
      * Returns the display type name string 'ArchActionTerminateWorkitem'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionTerminateWorkitem';
     /**
      * Returns true indicating that this is an isArchActionTerminateWorkitem instance.
      */
@@ -9071,7 +8728,7 @@ export class ArchActionTranscription extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionTranscription'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionTranscription';
     /**
      * Returns true indicating that this is an ArchActionTranscription instance.
      */
@@ -9084,10 +8741,6 @@ export class ArchActionTranscription extends ArchBaseAction {
      * on the current language of the flow.
      */
     readonly enableTranscription: ArchValueBoolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -9107,7 +8760,7 @@ export class ArchActionTransferToAcd extends ArchBaseActionTransfer {
     /**
      * Returns the display type name string 'ArchActionTransferToAcd'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionTransferToAcd';
     /**
      * This adds a skill by name to this Transfer to Acd action.
      * @param skillName - the name of the skill to add. Skill name lookups are performed case sensitively.
@@ -9250,7 +8903,7 @@ export class ArchActionTransferToFlowSecure extends ArchActionTransferToFlow {
     /**
      * Returns the display type name string 'ArchActionTransferToFlowSecure'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionTransferToFlowSecure';
     /**
      * This is the invocation string data that can be used when launching a secure call flow.  It is not required
      * that you specify a string value.  If you do, it will be available via. the Flow.InvocationData built in variable
@@ -9277,7 +8930,7 @@ export class ArchActionTransferToGroup extends ArchBaseActionTransferWithConnect
     /**
      * Returns the display type name string 'ArchActionTransferToGroup'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionTransferToGroup';
     /**
      * Returns true indicating that this is an ArchActionTransferToGroup instance.
      */
@@ -9286,10 +8939,6 @@ export class ArchActionTransferToGroup extends ArchBaseActionTransferWithConnect
      * The target group for this transfer action
      */
     readonly targetGroup: ArchValueGroup;
-    /**
-     * Returns the display type name string 'ArchBaseActionTransferWithConnectTimeout'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -9302,7 +8951,7 @@ export class ArchActionTransferToNumber extends ArchBaseActionTransferWithConnec
     /**
      * Returns the display type name string 'ArchActionTransferToNumber'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionTransferToNumber';
     /**
      * Returns true indicating that this object is an ArchActionTransferToNumber instance.
      */
@@ -9321,10 +8970,6 @@ export class ArchActionTransferToNumber extends ArchBaseActionTransferWithConnec
      * The target number for this transfer action
      */
     readonly targetNumber: ArchValueString;
-    /**
-     * Returns the display type name string 'ArchBaseActionTransferWithConnectTimeout'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -9341,7 +8986,7 @@ export class ArchActionTransferToUser extends ArchBaseActionTransferWithConnectT
     /**
      * Returns the display type name string 'ArchActionTransferToUser'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionTransferToUser';
     /**
      * Returns true indicating that this is an ArchActionTransferToUser instance.
      */
@@ -9354,10 +8999,6 @@ export class ArchActionTransferToUser extends ArchBaseActionTransferWithConnectT
      * Whether to have the workitem alert when transferred to a user.
      */
     readonly alertOnTransfer: ArchValueBoolean;
-    /**
-     * Returns the display type name string 'ArchBaseActionTransferWithConnectTimeout'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -9398,7 +9039,7 @@ export class ArchActionTransferToVoicemail extends ArchBaseActionTransfer {
     /**
      * Returns the display type name string 'ArchActionTransferToVoicemail'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionTransferToVoicemail';
     /**
      * Returns true indicating that this is an ArchActionTransferToVoicemail instance.
      */
@@ -9560,7 +9201,7 @@ export class ArchActionUpdateData extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionUpdateData'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionUpdateData';
     /**
      * This adds an update data statement to an update data action.
      * @param archDataType - the data type for this update statement.  The data type must be script creatable.
@@ -9577,10 +9218,6 @@ export class ArchActionUpdateData extends ArchBaseAction {
      * update statements configured, an empty array will be returned.
      */
     readonly statements: ArchBaseVariableValuePair[];
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -9593,7 +9230,7 @@ export class ArchActionUpdateWorkitem extends ArchBaseActionWithOutputsSuccessFa
     /**
      * Returns the display type name string 'ArchActionUpdateWorkitem'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionUpdateWorkitem';
     /**
      * Returns true indicating that this is an ArchActionUpdateWorkitem instance.
      */
@@ -9628,7 +9265,7 @@ export class ArchActionWait extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionWait'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionWait';
     /**
      * Returns true indicating that this is an ArchActionWait instance.
      */
@@ -9643,10 +9280,6 @@ export class ArchActionWait extends ArchBaseAction {
      * trimmed.  Any other value, false or a NOT_SET boolean, will result in the duration not being modified.
      */
     readonly trimDurationNearMaxRunningTime: ArchValueBoolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -9659,7 +9292,7 @@ export class ArchActionWaitForInput extends ArchBaseAction {
     /**
      * Returns the display type name string 'ArchActionWaitForInput'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionWaitForInput';
     /**
      * Returns true indicating that this is an ArchActionWaitForInput instance.
      */
@@ -9688,10 +9321,6 @@ export class ArchActionWaitForInput extends ArchBaseAction {
      * must be set to true. To have no, No Match re-prompting, set this to an empty collection.
      */
     noMatchReprompts: ArchValueCommunicationCollection;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -9707,7 +9336,7 @@ export class ArchAudio extends ArchBaseCoreObject {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchAudio';
     /**
      * A string suitable for logging that contains information about this audio.  This will contain parent
      * information as well as the audio label which normally represents the property on the parent containing
@@ -9780,7 +9409,7 @@ export class ArchAudioCase extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchAudioCase'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchAudioCase';
     /**
      * The audio value for this case.
      */
@@ -10013,10 +9642,6 @@ export class ArchBaseActionAsk extends ArchBaseActionNoInputNoMatch {
      * The question text for the action.
      */
     question: ArchValueString;
-    /**
-     * Returns the display type name string 'ArchBaseActionNoInputNoMatch'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -10038,10 +9663,6 @@ export class ArchBaseActionAskNoInputNoMatch extends ArchBaseActionNoInputNoMatc
      * The question text for the action.
      */
     question: ArchValueString;
-    /**
-     * Returns the display type name string 'ArchBaseActionNoInputNoMatch'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -10102,7 +9723,7 @@ export class ArchBaseActionBot extends ArchBaseActionBotWithSessionVariables {
 export class ArchBaseActionBotWithSessionVariables extends ArchBaseActionWithOutputFailure {
     // constructor(coreBaseBotActionViewModel: any);
     /**
-     * Returns the display type name string 'ArchBaseActionBot'.
+     * Returns the display type name string 'ArchBaseActionBotWithSessionVariables'.
      */
     readonly displayTypeName: string;
     /**
@@ -11841,10 +11462,6 @@ export class ArchBaseActionWithOutputFailure extends ArchBaseActionWithOutputs {
      * Cached on first access. Returns undefined if the action has no errorBindings.
      */
     readonly failureOutputs: ArchNamedValueList;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -11866,10 +11483,6 @@ export class ArchBaseActionWithOutputLoop extends ArchBaseActionWithOutputs {
      * iteration should be added.
      */
     readonly outputLoop: ArchActionOutput;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -11953,10 +11566,6 @@ export class ArchBaseActionWithOutputs extends ArchBaseAction {
      * will return an empty array.
      */
     readonly outputs: ArchActionOutput[];
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -11979,10 +11588,6 @@ export class ArchBaseActionWithOutputsDefault extends ArchBaseActionWithOutputs 
      * The Default output for this action
      */
     readonly outputDefault: ArchActionOutput;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -12004,10 +11609,6 @@ export class ArchBaseActionWithOutputsFailureNoInput extends ArchBaseActionWithO
      * The No Input output for this action
      */
     readonly outputNoInput: ArchActionOutput;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -12021,7 +11622,7 @@ export class ArchBaseActionWithOutputsFakeDisconnect extends ArchBaseActionWithO
     /**
      * Returns the display type name string 'ArchBaseActionWithOutputsFakeDisconnect'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchBaseActionWithOutputsFakeDisconnect';
     /**
      * Returns true indicating that this action has a fake disconnect output.
      */
@@ -12030,10 +11631,6 @@ export class ArchBaseActionWithOutputsFakeDisconnect extends ArchBaseActionWithO
      * Returns true indicating that this object is an ArchBaseActionWithOutputsFakeDisconnect instance.
      */
     readonly isArchBaseActionWithOutputsFakeDisconnect: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -12128,10 +11725,6 @@ export class ArchBaseActionWithOutputsFoundNotFoundFailure extends ArchBaseActio
      * The not found output for this action
      */
     readonly outputNotFound: ArchActionOutput;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -12165,7 +11758,7 @@ export class ArchBaseActionWithOutputLoopMaxLoopsNextLoop extends ArchBaseAction
     /**
      * Returns the display type name string 'ArchBaseActionWithOutputLoopMaxLoopsNextLoop'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchBaseActionWithOutputLoopMaxLoopsNextLoop';
     /**
      * Returns true indicating that this is an ArchBaseActionWithOutputLoopMaxLoopsNextLoop instance.
      */
@@ -12184,10 +11777,6 @@ export class ArchBaseActionWithOutputLoopMaxLoopsNextLoop extends ArchBaseAction
      * be taken.
      */
     readonly outputLoopsMax: ArchActionOutput;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -12217,10 +11806,6 @@ export class ArchBaseActionWithOutputsMatchExactMatchMultipleNotFound extends Ar
      * The not found output for this action
      */
     readonly outputNotFound: ArchActionOutput;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -12254,7 +11839,7 @@ export class ArchBaseActionWithOutputsSuccessFailureCanceled extends ArchBaseAct
     /**
      * Returns the display type name string 'ArchBaseActionWithOutputsSuccessFailureCanceled'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchBaseActionWithOutputsSuccessFailureCanceled';
     /**
      * Returns true indicating that this is an ArchBaseActionWithOutputsSuccessFailureCanceled instance.
      */
@@ -12305,10 +11890,6 @@ export class ArchBaseActionWithOutputsSuccessFailureNoInputNoMatch extends ArchB
      * The failure output for this action
      */
     readonly outputFailure: ArchActionOutput;
-    /**
-     * Returns the display type name string 'ArchBaseActionNoInputNoMatch'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -12355,10 +11936,6 @@ export class ArchBaseActionWithOutputsSuccessTimeout extends ArchBaseActionWithO
      * The timeout output for this action
      */
     readonly outputTimeout: ArchActionOutput;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -12384,10 +11961,6 @@ export class ArchBaseActionWithOutputsYesNo extends ArchBaseActionWithOutputs {
      * The yes output for this action
      */
     readonly outputYes: ArchActionOutput;
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
 }
 
 export class ArchBaseActionWithSilenceDetection extends ArchBaseActionWithOutputsSuccessTimeout {
@@ -12404,6 +11977,10 @@ export class ArchBaseActionWithSilenceDetection extends ArchBaseActionWithOutput
      * The total timeout before the action fails and takes the timeout path.
      */
     readonly timeout: ArchValueDuration;
+    /**
+     * Returns the display type name string 'ArchBaseActionWithOutputsSuccessTimeout'.
+     */
+    readonly displayTypeName: string;
     /**
      * The success output for this action
      */
@@ -12478,10 +12055,6 @@ export class ArchBaseActionWithSilenceDetection extends ArchBaseActionWithOutput
      * will return an empty array.
      */
     readonly outputs: ArchActionOutput[];
-    /**
-     * Returns the display type name string 'ArchBaseAction'.
-     */
-    readonly displayTypeName: string;
     /**
      * A string suitable for logging that contains information about this action.  This will contain the action
      * tracking id, name and scripting type name.
@@ -12742,10 +12315,6 @@ export class ArchBaseCoreObject extends ArchBaseObject {
      */
     traverse(callbackFunction: callbackTraverseInfo, traverseFilter?: ArchFilterObject): number;
     /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * This is a string suitable for logging information about this object which is generated by the Architect Scripting object itself.
      * Usually this contains stuff like the tracking ID, name, type information, etc. etc.  This information will be used as the
      * header for actual logging calls.
@@ -12838,10 +12407,6 @@ export class ArchBaseDefinition extends ArchBaseCoreObject {
      * A string suitable for logging that contains information about this definition.
      */
     readonly logStr: string;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -12888,10 +12453,6 @@ export class ArchBaseDefinitionActionMenu extends ArchBaseDefinition {
      * @param flowType - the flow type to check.  The string values in {@link ArchEnums#FLOW_TYPES} list valid values.
      */
     isAvailableForFlowType(flowType: string): boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -12924,7 +12485,7 @@ export class ArchBaseFilterClauseProperty extends ArchBaseFilterClause {
     /**
      * Returns the display type name string 'ArchBaseFilterClauseProperty'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchBaseFilterClauseProperty';
     /**
      * Returns true indicating that this is an ArchBaseFilterClauseProperty instance.
      */
@@ -13892,7 +13453,7 @@ export class ArchBaseNameValuePair extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchBaseNameValuePair'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchBaseNameValuePair';
     /**
      * Returns true indicating that this is an ArchBaseNameValuePair instance.
      */
@@ -13909,10 +13470,6 @@ export class ArchBaseNameValuePair extends ArchBaseCoreObject {
      * Returns the value Architect value from this name value pair.
      */
     readonly value: ArchBaseValue;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -13924,7 +13481,7 @@ export class ArchBaseNameValuePairs extends ArchBaseValueContainer {
     /**
      * Returns the display type name string 'ArchBaseNameValuePairs'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchBaseNameValuePairs';
     /**
      * Returns true indicating that this is an ArchBaseNameValuePairs instance.
      */
@@ -14164,10 +13721,6 @@ export class ArchBaseObjectFilterCommon extends ArchBaseObject {
      * @param archBaseObjectToCheck - the ArchBaseObject instance you wish to check to see if it's a match.
      */
     isMatch(archBaseObjectToCheck: ArchBaseObject): boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -14215,7 +13768,7 @@ export class ArchBaseSkillValuePair extends ArchBaseNetworkValueSingleton {
     /**
      * Returns the display type name string 'ArchBaseSkillValuePair'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchBaseSkillValuePair';
     /**
      * The ArchValueSkill associated with this skill value pair.
      */
@@ -14243,7 +13796,7 @@ export class ArchBaseSkillValuePairs extends ArchBaseNetworkValueContainer {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchBaseSkillValuePairs';
     /**
      * This adds a skill value pair to this collection of pairs.  At this time all that is supported is specifying a skill
      * on the pair.
@@ -14484,223 +14037,14 @@ export class ArchBaseValue extends ArchBaseCoreObject {
      */
     readonly valueText: string | string[];
     /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
+     * Returns a definition for this value which provides access to information about this action such as {@link ArchDefinitionValue#dataType}.
+     * It is possible to get a null or undefined definition back for certain values.
+     * ```
+     * // Example code - remember, only access this when your Scripting session is connected!
+     * let archValueStringDefinition = scripting.viewModels.values.ArchValueString.definition;
+     * ```
      */
-    readonly displayTypeName: string;
-}
-
-/**
- * This class represents the base Architect value class that contains functionality common to Architect
- * values.  Instances of this class will be automatically created by the scripting framework as necessary.
- * @param coreExpression - ( *Internal* ) an Architect core expression view model.
- */
-export class ArchBaseValue extends ArchBaseCoreObject {
-    // constructor(coreExpression: any);
-    /**
-     * Returns whether or not this value uses secure data.  For this to be the case, the
-     * value must use a secure variable either in an expression or as the configured variable.
-     */
-    readonly consumesSecureData: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseValue'.
-     */
-    readonly displayTypeName: string;
-    /**
-     * Returns a logging string that describes this Architect value.
-     */
-    readonly logStr: string;
-    /**
-     * The Architect data type associated with this value.
-     */
-    readonly dataType: ArchDataType;
-    /**
-     * If this value has a flow-level default setting value available, this method will return the value
-     * for that setting.  Otherwise, null will be returned.  To see if a value has a flow level default,
-     * you can check the {@link ArchValueSettings#hasFlowLevelDefault} property.
-     */
-    readonly flowLevelDefault: ArchBaseValue;
-    /**
-     * If this value is an expression, this method will return the expression text.
-     */
-    getExpressionText(): string;
-    /**
-     * If this value is a variable reference, this method will return the variable that is being referenced.
-     */
-    getVariable(): ArchBaseVariable;
-    /**
-     * Returns whether or not this value currently has an error.  While this is certainly useful,
-     * please note the following:
-     * * Any asynchronous methods that have been called on this value that are still pending will not update
-     * the error state until the asynchronous method completes.
-     * * This property will reflect the value's view of itself and lots of times you'll want to look at
-     * validation results themselves in that the errors or warnings there will have informational strings that specify
-     * more information on what's wrong within the context of a containing object.  This object can also identify
-     * issues between the relationship of multiple values within the object which an individual value cannot.
-     * An example of an "object" would be an action within a flow.
-     */
-    readonly hasError: boolean;
-    /**
-     * Returns whether or not this value currently has an error or warning.  While this is certainly useful,
-     * please note the following:
-     * * Any asynchronous methods that have been called on this value that are still pending will not update
-     * the error or warning state until the asynchronous method completes.
-     * * This property will reflect the value's view of itself and lots of times you'll want to look at
-     * validation results themselves in that the errors or warnings there will have informational strings that specify
-     * more information on what's wrong within the context of a containing object.  This object can also identify
-     * issues between the relationship of multiple values within the object which an individual value cannot.
-     * An example of an "object" would be an action within a flow.
-     */
-    readonly hasErrorOrWarning: boolean;
-    /**
-     * Returns whether or not this value currently has a warning.  While this is certainly useful,
-     * please note the following:
-     * * Any asynchronous methods that have been called on this value that are still pending will not update
-     * the warning state until the asynchronous method completes.
-     * * This property will reflect the value's view of itself and lots of times you'll want to look at
-     * validation results themselves in that the warnings there will have informational strings that specify
-     * more information on what's wrong within the context of a containing object.  This object can also identify
-     * issues between the relationship of multiple values within the object which an individual value cannot.
-     * An example of an "object" would be an action within a flow.
-     */
-    readonly hasWarning: boolean;
-    /**
-     * Returns true indicating that is an ArchBaseValue instance.
-     */
-    readonly isArchBaseValue: boolean;
-    /**
-     * Returns whether or not this value is set to a builder value. While builders end up generating
-     * expression text that specifies how the value should be calculated, they cannot be changed
-     * in Architect Scripting. You can call different methods on an {@link ArchBaseValue} instance
-     * such as {@link ArchBaseValue#setExpression} to set this to an expression or value type specific
-     * literal setter such as {@link ArchValueString#setLiteralString} on a {@link ArchValueString} instance
-     * to set this to a literal.
-     */
-    readonly isBuilder: boolean;
-    /**
-     * Returns whether or not this value is set to a expression value.
-     */
-    readonly isExpression: boolean;
-    /**
-     * Returns whether or not this value is set to [no value]{@link ArchBaseValue#setNoValue}.
-     * Note that this does not mean the value is NOT_SET.  It means there is no value specified
-     * for this value.
-     */
-    readonly isNoValue: boolean;
-    /**
-     * Returns whether or not this value is set to [no value with no fallback]{@link ArchBaseValue#setNoValueNoFallback}.
-     * Note that this does not mean the value is NOT_SET. It means that there is no value specified for this value and
-     * the flow's runtime handling, such as picking up a default value for a setting somewhere else, should not be used.
-     */
-    readonly isNoValueNoFallback: boolean;
-    /**
-     * Returns whether or not this value is the initial value for a variable.
-     */
-    readonly isVariableInitialValue: boolean;
-    /**
-     * Returns whether or not this value is set to a literal value.
-     */
-    readonly isLiteral: boolean;
-    /**
-     * Returns whether or not this value is set to a variable value.  Note that this is true when the value is
-     * set by calling {@link ArchBaseValue#setVariable}.  If you set the value with an expression, the return
-     * value will be false even if the expression is only a variable reference.
-     */
-    readonly isVariable: boolean;
-    /**
-     * Returns whether this value is a literal collection (items + length). Non-collection values return false;
-     * {@link ArchBaseValueCollection} and related types override to true.
-     */
-    readonly isCollection: boolean;
-    /**
-     * Returns whether or not this value is overriding another default value.  For example, this is true when this
-     * a value overrides a flow level setting value.
-     */
-    readonly overridesDefaultValue: boolean;
-    /**
-     * The parent Architect Scripting object associated with this value.
-     */
-    readonly parent: ArchBaseObject;
-    /**
-     * Returns the parent flow for this value.
-     */
-    readonly parentFlow: ArchBaseFlow;
-    /**
-     * Returns the settings associated with this value which provides meta data about this value like
-     * whether it is an output, can be set to a literal, can be set to an expression, etc. etc.
-     */
-    readonly settings: ArchValueSettings;
-    /**
-     * This sets the expression text on this value.  If the expression cannot be set because the expression
-     * text is invalid, you're trying to set an expression on an output, etc. etc. the call will fail.
-     * If you wish to have the ability to set syntactically invalid expression text on an {@link ArchBaseValue} object
-     * and not have this method throw, you can set the {@link ArchValueSettings.allowInvalidExpressionText} property
-     * to true prior to calling the setExpression function and Scripting will not throw an error if the expression
-     * text is invalid.
-     * Remember, output values are required to be variables so you should use setVariable on those calls
-     * instead of passing in expression text that references a variable.
-     * @param expressionText - the expression to set on this value.
-     */
-    setExpression(expressionText: string): void;
-    /**
-     * This method sets the value to an expression and assigns the variable's name as the expression text.
-     * @param variableToAssign - the variable to assign passed in either by a string
-     *                                                     like 'Flow.myInteger' or an Architect variable.  If the value
-     *                                                     is a string, this function will attempt to look up the variable
-     *                                                     and if it doesn't exist then create it.  Next it will assign the
-     *                                                     variable name as the expression text.  If you pass in an {@link ArchBaseVariable}
-     *                                                     reference, it needs to be in scope for this value.
-     */
-    setExpressionFromVariable(variableToAssign: string | ArchBaseVariable): void;
-    /**
-     * Sets this value to match the given source value, copying its mode and configuration exactly.  This is
-     * useful when you want to duplicate the full state of one value onto another, including expression mode,
-     * literal values, variable references, builder configuration, and no-value states.  The source and
-     * destination values must have the same data type.
-     * @param sourceValue - the source value to copy from.
-     */
-    setFromValue(sourceValue: ArchBaseValue): void;
-    /**
-     * This method sets the value to no value.  Note that this is different from setting NOT_SET or something like a
-     * blank string.  Setting a value to contain no value is something which is rather internal to Architect but we're
-     * exposing it in scripting.  In a nutshell, setting no value means to take advantage of default runtime handling.
-     * The default runtime handling can change based on where this is used.  For example, setting no value for a variable
-     * initial value means that the runtime will set a non-collection variable to NOT_SET or a collection variable to
-     * an empty collection.  On a value that has a flow level default, setting it to no value means that the runtime
-     * should pick up the value to use from the flow level default.  And if a flow level default allows no value,
-     * that means that the runtime will pick up the value from somewhere else normally defined in Admin.  An example
-     * of this is that the connect timeout specified for a Transfer to Number action that it would use the Edge trunk
-     * connect timeout.
-     */
-    setNoValue(): void;
-    /**
-     * This method sets the value to no value but with no fallback. This is different that setNoValue in that you are
-     * explicitly setting the expression to no value and you do not want to use the flows default value for this setting.
-     */
-    setNoValueNoFallback(): void;
-    /**
-     * This method sets the value to a variable and assigns the supplied variable to it.  One thing to be aware of
-     * is when a value reports that it is an [input]{@link ArchValueSettings#isInput}, the value may not allow you to call this
-     * method to configure a variable if the value's [can be variable]{@link ArchValueSettings#canBeVariable} setting reports false.
-     * Assuming that the value reports it [can be an expression]{@link ArchValueSettings#canBeExpression}, please look at using
-     * the {@link ArchBaseValue#setExpressionFromVariable} method instead.
-     * @param variableToAssign - the variable to assign passed in either by a string
-     *                                                     like 'Flow.myInteger' or an Architect variable.  If the value
-     *                                                     is a string, this function will attempt to look up the variable
-     *                                                     and if it doesn't exist then create it.  Next it will assign the
-     *                                                     variable name as the expression text.  If you pass in an {@link ArchBaseVariable}
-     *                                                     reference, it needs to be in scope for this value.
-     */
-    setVariable(variableToAssign: string | ArchBaseVariable): void;
-    /**
-     * Returns a JavaScript string representing the value specified on this ArchBaseValue instance.
-     * In order for this to return a value, it needs to be an {@link ArchBaseValueSingleton} or an {@link ArchBaseValueCollectionBasic},
-     * otherwise this property will return nothing.
-     */
-    readonly valueText: string | string[];
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
+    readonly definition: ArchDefinitionValue;
 }
 
 /**
@@ -14767,61 +14111,6 @@ export class ArchBaseValueCollection extends ArchBaseValue {
      * Sets the collection literal mode with no items configured.
      */
     setLiteralEmptyCollection(): void;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-}
-
-/**
- * This class provides support for collection values in Architect Scripting.
- * Note:  Do not attempt to create instances of this class directly.  They will be created
- * automatically as needed by Architect Scripting.
- */
-export class ArchBaseValueCollection extends ArchBaseValue {
-    /**
-     * This changes the value to a literal, creates a new {@link ArchBaseValue} instance, adds it to the end of the collection
-     * and returns it.  The returned value will be the appropriate type for items contained in the collection.  As such,
-     * if you added an item to an {@link ArchValueIntegerCollection}, the returned item would be an
-     * {@link ArchValueInteger} value.
-     * @returns - the newly created ArchBaseValue that was added.
-     */
-    addItemToCollection(): ArchBaseValue;
-    /**
-     * Returns whether or not you can modify the contents in this collection.  For example, if you try and call {@link ArchBaseValueCollection#addItemToCollection}
-     * and the collection does not allow modification, the function call will fail.  This does not apply to changing the
-     * value on an individual {@link ArchBaseValue} item in the collection but rather the collection contents itself.
-     */
-    readonly canModifyContents: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseValueCollection'.
-     */
-    readonly displayTypeName: string;
-    /**
-     * Returns the number of Architect value items in this collection if this value [is a literal]{@link ArchBaseValue#isLiteral}.
-     */
-    readonly length: number | undefined;
-    /**
-     * Returns the Architect value associated with the collection at the specified index if this value [is a literal]{@link ArchBaseValue#isLiteral}.
-     * @param index - the index of the collection item to retrieve.  This value should be a non-negative integer.
-     */
-    getItemByIndex<T extends ArchBaseValue = ArchBaseValue>(index: number): T;
-    /**
-     * Returns true indicating that this object is an ArchBaseValueCollection instance.
-     */
-    readonly isArchBaseValueCollection: boolean;
-    /**
-     * Returns true indicating that this object is a collection.
-     */
-    readonly isCollection: boolean;
-    /**
-     * Sets the collection literal mode with no items configured.
-     */
-    setLiteralEmptyCollection(): void;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -14831,10 +14120,6 @@ export class ArchBaseValueCollection extends ArchBaseValue {
  * automatically as needed by Architect Scripting.
  */
 export class ArchBaseValueCollectionBasic extends ArchBaseValueCollection {
-    /**
-     * Returns the display type name string 'ArchBaseValueCollectionBasic'.
-     */
-    readonly displayTypeName: string;
     /**
      * Returns true indicating that is an ArchBaseValueCollectionBasic instance.
      */
@@ -14852,40 +14137,7 @@ export class ArchBaseValueCollectionBasic extends ArchBaseValueCollection {
      */
     readonly valueText: string | string[];
     /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-}
-
-/**
- * This class provides functionality for basic data types such a boolean, currency, date time,
- * decimal, duration, integer, phone number and string values.
- * Note:  Do not attempt to create instances of this class directly.  They will be created
- * automatically as needed by Architect Scripting.
- */
-export class ArchBaseValueCollectionBasic extends ArchBaseValueCollection {
-    /**
      * Returns the display type name string 'ArchBaseValueCollectionBasic'.
-     */
-    readonly displayTypeName: string;
-    /**
-     * Returns true indicating that is an ArchBaseValueCollectionBasic instance.
-     */
-    readonly isArchBaseValueCollectionBasic: boolean;
-    /**
-     * Returns a JavaScript string or string array for this collection value.
-     * If this value is an expression, it returns the expression text.  If this value is a variable, it
-     * returns the variable text.  If this value is a literal, the return value will be a JavaScript
-     * string array where each item's value in the array will be generated by accessing the
-     * [valueText]{@link ArchBaseValueBasic#valueText} property for it.  Please be sure to
-     * see {@link ArchBaseValueBasic#valueText} for more information on the string formatting.
-     * Overall this property is meant to be a quick and easy way to look at a "value" string
-     * for a collection value but it is not meant to be some kind of fully inclusive description of
-     * this ArchBaseValueBasicCollection instance overall.
-     */
-    readonly valueText: string | string[];
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
      */
     readonly displayTypeName: string;
 }
@@ -14906,10 +14158,6 @@ export class ArchBaseValueContainer extends ArchBaseValue {
      * Returns true indicating that this is an ArchBaseValueContainer instance.
      */
     readonly isArchBaseValueContainer: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -14956,10 +14204,6 @@ export class ArchBaseValueSingleton extends ArchBaseValue {
      * calling the ToString function in expressions at runtime.
      */
     readonly valueText: string;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -14982,10 +14226,6 @@ export class ArchBaseValueWithAssignableProperties extends ArchBaseValueSingleto
      * Sets the value to a literal value.
      */
     setLiteral(): void;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 export class ArchBaseVariable extends ArchBaseCoreObjectWithId {
@@ -15708,7 +14948,7 @@ export class ArchBaseVariableValuePair extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchBaseVariableValuePair'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchBaseVariableValuePair';
     /**
      * Returns true indicating that this is an ArchBaseVariableValuePair instance.
      */
@@ -15730,10 +14970,6 @@ export class ArchBaseVariableValuePair extends ArchBaseCoreObject {
      * The Architect value that contains the value to assign to the variable.
      */
     readonly valueToAssign: ArchBaseValue | ArchBaseValueCollection;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -15747,15 +14983,11 @@ export class ArchBaseVariableValuePairs extends ArchBaseValueContainer {
     /**
      * Returns the display type name string 'ArchBaseVariableValuePairs'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchBaseVariableValuePairs';
     /**
      * Returns true indicating that this is an ArchBaseVariableValuePairs instance.
      */
     readonly isArchBaseVariableValuePairs: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -15770,15 +15002,11 @@ export class ArchDefinitionAction extends ArchBaseDefinitionActionMenu {
     /**
      * Returns the display type name string 'ArchDefinitionAction'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchDefinitionAction';
     /**
      * Returns true indicating that this is an ArchDefinitionAction instance.
      */
     readonly isArchDefinitionAction: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -16021,7 +15249,7 @@ export class ArchDefinitionFlow extends ArchBaseDefinition {
     /**
      * Returns the display type name string 'ArchDefinitionFlow'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchDefinitionFlow';
 }
 
 /**
@@ -16036,15 +15264,11 @@ export class ArchDefinitionMenu extends ArchBaseDefinitionActionMenu {
     /**
      * Returns the display type name string 'ArchDefinitionMenu'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchDefinitionMenu';
     /**
      * Returns true indicating that this is an ArchDefinitionMenu instance.
      */
     readonly isArchDefinitionMenu: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -16062,7 +15286,7 @@ export class ArchDefinitionValue extends ArchBaseDefinition {
     /**
      * Returns the display type name string 'ArchDefinitionValue'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchDefinitionValue';
     /**
      * Returns true indicating that this is an ArchDefinitionValue instance.
      */
@@ -16073,10 +15297,6 @@ export class ArchDefinitionValue extends ArchBaseDefinition {
      * @returns - true if the data type is available for the given flow type, false not.
      */
     isAvailableForFlowType(flowType: string): boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -16094,15 +15314,11 @@ export class ArchDefinitionVariable extends ArchBaseDefinition {
     /**
      * Returns the display type name string 'ArchDefinitionVariable'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchDefinitionVariable';
     /**
      * Returns true indicating that this is an ArchDefinitionVariable instance.
      */
     readonly isArchDefinitionVariable: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -16200,111 +15416,6 @@ export class ArchFilterClauseContainer extends ArchBaseObjectFilterCommon {
      * The string values in {@link ArchEnums#FILTER_CONTAINER_OPERATORS} list valid values.
      */
     operator: string;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-}
-
-/**
- * The Architect Scripting class that represents a filter clause container.  A
- * filter clause container holds either filter clauses or more filter clause
- * containers along with an operator which tells the container to use and'ing
- * or or'ing when evaluating if an object is a match for the criteria specified
- * in the container.  Since {@link ArchFilterObject} filter objects inherit from this
- * class, you can also add containers to filters using the {@link ArchFilterClauseContainer#addFilterClauseContainer}
- * method.
- * Note:  Do not attempt to create instances of this class directly.
- * @param clauseOperator - a string value from {@link ArchEnums#FILTER_CONTAINER_OPERATORS}.
- */
-export class ArchFilterClauseContainer extends ArchBaseObjectFilterCommon {
-    // constructor(clauseOperator: string);
-    /**
-     * This method will add a property value callback filter clause to this
-     * filter component.  Your [callback function]{@link callbackFilterClauseProperty} will
-     * be called with the property value, name and containing object where you can determine
-     * if it should be considered a match.  If propertyMustExist is true and the named property
-     * does not exist on the object, evaluation of this clause will return false.
-     * For example, this is a nice method to use if you wanted to case insensitively check the
-     * name on something to see if its string value should be considered a match.
-     * @param propertyName - the property name to check on the ArchBaseObject instance.    The named property
-     *                                must exist on the object in order for the equals check to be made.
-     * @param callbackFunction - the function to call to determine if there is a match.
-     * @param [propertyMustExist = true] - whether or not the property must exist on the object for
-     *                                               the callback to be made for match processing.  If the
-     *                                               named property does not exist and propertyMustExist is
-     *                                               true then evaluation of this clause will not be a match.
-     */
-    addClausePropertyCallback(propertyName: string, callbackFunction: callbackFilterClauseProperty, propertyMustExist?: boolean): ArchFilterClausePropertyCallback;
-    /**
-     * This method will add a basic property value equality filter clause to this
-     * filter container.  It can be used to check to see if a property value
-     * on an ArchBaseObject instance is equal to the supplied value for matching.
-     * If propertyMustExist is set to true and the named property does not exist on the object,
-     * evaluation of this clause will return false.  Equality checking is done using the JavaScript
-     * === operator with the supplied value.
-     * If you wish to have more control over inequality checking or property checking
-     * in general, please use the {@link ArchFilterClauseContainer#addClausePropertyCallback} method where you
-     * can specify a callback function to perform your own match logic.
-     * @param propertyName - the property name to check on the ArchBaseObject instance.  The named property
-     *                                must exist on the object in order for the equals check to be made.
-     * @param [value] - the value of the property you wish to check.
-     * @param [propertyMustExist = true] - whether or not the property must exist on the object for
-     *                                               the equality check to be made when evaluating this clause.
-     *                                               If the named property does not exist on the object being
-     *                                               and propertyMustExist is true then evaluation of this clause
-     *                                               will not be a match.
-     */
-    addClausePropertyValueEquals(propertyName: string, value?: any, propertyMustExist?: boolean): ArchFilterClausePropertyValueEquals;
-    /**
-     * This method will add a basic property value inequality filter clause to this
-     * filter component.  It can be used to check to see if a property value
-     * on an ArchBaseObject instance is not equal to the supplied value for matching.
-     * If propertyMustExist is true and the named property does not exist on the object, evaluation
-     * of this clause will return false.  Inequality checking is done using the JavaScript
-     * !== operator with the supplied value.
-     * If you wish to have more control over inequality checking or property checking
-     * in general, please use the {@link ArchFilterClauseContainer#addClausePropertyCallback} method where you
-     * can specify a callback function to perform your own match logic.
-     * @param propertyName - the property name to check on the ArchBaseObject instance.    The named property
-     *                                must exist on the object in order for the equals check to be made.
-     * @param [value] - the value of the property you wish to check.
-     * @param [propertyMustExist = true] - whether or not the property must exist on the object for
-     *                                               the inequality check to be made when evaluating this clause.
-     *                                               If the named property does not exist on the object being
-     *                                               and propertyMustExist is true then evaluation of this clause
-     *                                               will not be a match.
-     */
-    addClausePropertyValueNotEquals(propertyName: string, value?: any, propertyMustExist?: boolean): ArchFilterClausePropertyValueNotEquals;
-    /**
-     * This method adds a new filter clause container to this container
-     * and returns the new clause container.  This is normally done when
-     * you want to do nested and'ing and/or or'ing.
-     * @param [operator] - when performing match checks, this specifies whether or not to and or or match
-     *                                results from contained filter clauses or filter clause containers.  If not specified,
-     *                                the default value for this is ArchEnums.FILTER_CONTAINER_OPERATORS.and.  The
-     *                                string values in {@link ArchEnums#FILTER_CONTAINER_OPERATORS} lists valid operator values.
-     */
-    addFilterClauseContainer(operator?: string): ArchFilterClauseContainer;
-    /**
-     * Returns the display type name string 'ArchFilterClauseContainer'.
-     */
-    readonly displayTypeName: string;
-    /**
-     * Returns true indicating that this is an ArchFilterClauseContainer instance.
-     */
-    readonly isArchFilterClauseContainer: boolean;
-    /**
-     * The operator that will be used when {@link ArchBaseObjectFilterCommon#isMatch} is called
-     * on this container and indicates whether or not to use and'ing or or'ing on the contents
-     * of this container for the isMatch processing.
-     * The string values in {@link ArchEnums#FILTER_CONTAINER_OPERATORS} list valid values.
-     */
-    operator: string;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -16335,7 +15446,7 @@ export class ArchFilterClausePropertyCallback extends ArchBaseFilterClauseProper
     /**
      * Returns the display type name string 'ArchFilterClausePropertyCallback'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFilterClausePropertyCallback';
     /**
      * Returns true indicating that this is an ArchFilterClausePropertyCallback instance.
      */
@@ -16364,7 +15475,7 @@ export class ArchFilterClausePropertyValueEquals extends ArchBaseFilterClausePro
     /**
      * Returns the display type name string 'ArchFilterClausePropertyValueEquals'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFilterClausePropertyValueEquals';
     /**
      * Returns true indicating that this is an ArchFilterClausePropertyValueEquals instance.
      */
@@ -16389,7 +15500,7 @@ export class ArchFilterClausePropertyValueNotEquals extends ArchBaseFilterClause
     /**
      * Returns the display type name string 'ArchFilterClausePropertyValueNotEquals'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFilterClausePropertyValueNotEquals';
     /**
      * Returns true indicating that this is an ArchFilterClausePropertyValueNotEquals instance.
      */
@@ -16408,7 +15519,7 @@ export class ArchFilterObject extends ArchFilterClauseContainer {
     /**
      * Returns the display type name string 'ArchFilterObject'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFilterObject';
     /**
      * Returns true indicating that this is an ArchFilterObject instance.
      */
@@ -16420,10 +15531,6 @@ export class ArchFilterObject extends ArchFilterClauseContainer {
      * The string values in {@link ArchEnums#FILTER_CONTAINER_OPERATORS} list valid values.
      */
     operator: string;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -16436,7 +15543,7 @@ export class ArchFlowBot extends ArchBaseFlowBotWithKnowledge {
     /**
      * Returns the display type name string 'ArchFlowBot'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFlowBot';
     /**
      * Returns true indicating that this is an ArchFlowBot instance.
      */
@@ -16461,7 +15568,7 @@ export class ArchFlowCommonModule extends ArchBaseFlow {
     /**
      * Returns the display type name string 'ArchFlowCommonModule'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFlowCommonModule';
     /**
      * Returns true indicating that this is an ArchFlowCommonModule instance.
      */
@@ -16491,7 +15598,7 @@ export class ArchFlowDigitalBot extends ArchBaseFlowBotWithKnowledge {
     /**
      * Returns the display type name string 'ArchFlowDigitalBot'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFlowDigitalBot';
     /**
      * Returns true indicating that this is an ArchFlowDigitalBot instance.
      */
@@ -16512,7 +15619,7 @@ export class ArchFlowInQueueCall extends ArchBaseFlow {
     /**
      * Returns the display type name string 'ArchFlowInQueueCall'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFlowInQueueCall';
     /**
      * Returns true indicating that this is an ArchFlowInQueueCall instance.
      */
@@ -16541,7 +15648,7 @@ export class ArchFlowInQueueEmail extends ArchBaseFlowInQueueWorkflow {
     /**
      * Returns the display type name string 'ArchFlowInQueueEmail'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFlowInQueueEmail';
     /**
      * Returns true indicating that this is an ArchFlowInQueueEmail instance.
      */
@@ -16558,7 +15665,7 @@ export class ArchFlowInQueueShortMessage extends ArchBaseFlowInQueueWorkflow {
     /**
      * Returns the display type name string 'ArchFlowInQueueShortMessage'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFlowInQueueShortMessage';
     /**
      * Returns true indicating that this is an ArchFlowInQueueShortMessage instance.
      */
@@ -16575,7 +15682,7 @@ export class ArchFlowInboundCall extends ArchBaseFlowInboundOutboundSecureCall {
     /**
      * Returns the display type name string 'ArchFlowInboundCall'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFlowInboundCall';
     /**
      * Returns true indicating that this is an ArchFlowInboundCall instance.
      */
@@ -16593,7 +15700,7 @@ export class ArchFlowInboundChat extends ArchBaseFlowWorkflow {
     /**
      * Returns the display type name string 'ArchFlowInboundChat'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFlowInboundChat';
     /**
      * Returns true indicating that this is an ArchFlowInboundChat instance.
      */
@@ -16610,7 +15717,7 @@ export class ArchFlowInboundEmail extends ArchBaseFlowWorkflow {
     /**
      * Returns the display type name string 'ArchFlowInboundEmail'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFlowInboundEmail';
     /**
      * Returns true indicating that this is an ArchFlowInboundEmail instance.
      */
@@ -16636,7 +15743,7 @@ export class ArchFlowInboundShortMessage extends ArchBaseFlowWorkflow {
     /**
      * Returns the display type name string 'ArchFlowInboundShortMessage'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFlowInboundShortMessage';
     /**
      * Returns true indicating that this is an ArchFlowInboundShortMessage instance.
      */
@@ -16654,7 +15761,7 @@ export class ArchFlowInfo extends ArchBaseCoreObjectWithId {
     /**
      * Returns the display type name string 'ArchFlowInfo'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFlowInfo';
     /**
      * A string suitable for logging that contains information about this flow info basic.
      */
@@ -16743,7 +15850,7 @@ export class ArchFlowInfoBasic extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchFlowInfoBasic'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFlowInfoBasic';
     /**
      * A string suitable for logging that contains information about this flow info basic.
      */
@@ -16770,10 +15877,6 @@ export class ArchFlowInfoBasic extends ArchBaseObject {
      * lists valid values.
      */
     readonly type: string;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -16789,7 +15892,7 @@ export class ArchFlowInfoVersion extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchFlowInfoVersion'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFlowInfoVersion';
     /**
      * A string suitable for logging that contains information about this flow info basic.
      */
@@ -16802,10 +15905,6 @@ export class ArchFlowInfoVersion extends ArchBaseObject {
      * Returns the flow version string such as '1.0'.
      */
     readonly versionStr: string;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -16818,7 +15917,7 @@ export class ArchFlowOutboundCall extends ArchBaseFlowInboundOutboundSecureCall 
     /**
      * Returns the display type name string 'ArchFlowOutboundCall'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFlowOutboundCall';
     /**
      * Returns true indicating that this is an ArchFlowOutboundCall instance.
      */
@@ -16839,7 +15938,7 @@ export class ArchFlowSecureCall extends ArchBaseFlowInboundOutboundSecureCall {
     /**
      * Returns the display type name string 'ArchFlowSecureCall'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFlowSecureCall';
     /**
      * Returns true indicating that this is an ArchFlowSecureCall instance.
      */
@@ -16856,7 +15955,7 @@ export class ArchFlowSurveyInvite extends ArchBaseFlowWorkflow {
     /**
      * Returns the display type name string 'ArchFlowSurveyInvite'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFlowSurveyInvite';
     /**
      * Returns true indicating that this is an ArchFlowSurveyInvite instance.
      */
@@ -16873,7 +15972,7 @@ export class ArchFlowVoiceSurvey extends ArchBaseFlowBot {
     /**
      * Returns the display type name string 'ArchFlowVoiceSurvey'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFlowVoiceSurvey';
     /**
      * Returns true indicating that this is an ArchFlowVoiceSurvey instance.
      */
@@ -16904,7 +16003,7 @@ export class ArchFlowVoicemail extends ArchBaseFlowInboundOutboundSecureCall {
     /**
      * Returns the display type name string 'ArchFlowVoicemail'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFlowVoicemail';
     /**
      * Returns true indicating that this is an ArchFlowVoicemail instance.
      */
@@ -16921,7 +16020,7 @@ export class ArchFlowWorkflow extends ArchBaseFlowWorkflow {
     /**
      * Returns the display type name string 'ArchFlowWorkflow'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFlowWorkflow';
     /**
      * Returns true indicating that this is an ArchFlowWorkflow instance.
      */
@@ -16938,7 +16037,7 @@ export class ArchFlowWorkitem extends ArchBaseFlowWorkflow {
     /**
      * Returns the display type name string 'ArchFlowWorkitem'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchFlowWorkitem';
     /**
      * Returns true indicating that this is an ArchFlowWorkitem instance.
      */
@@ -16964,7 +16063,7 @@ export class ArchMenu extends ArchBaseMenu {
     /**
      * Returns the display type name string 'ArchMenu'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchMenu';
     /**
      * A string suitable for logging that contains information about this menu
      */
@@ -17008,10 +16107,6 @@ export class ArchMenu extends ArchBaseMenu {
      * The integer tracking identifier for this menu.  This is the numeric identifier is displayed in the Architect user interface.
      */
     readonly trackingId: number;
-    /**
-     * Returns the display type name string 'ArchBaseMenu'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17025,7 +16120,7 @@ export class ArchMenuDialByExtension extends ArchBaseMenuChoice {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchMenuDialByExtension';
     /**
      * The Architect dial by extension action associated with this menu.
      */
@@ -17034,11 +16129,6 @@ export class ArchMenuDialByExtension extends ArchBaseMenuChoice {
      * Returns true indicating this is an ArchMenuDialByExtension instance.
      */
     static isArchMenuDialByExtension: boolean;
-    /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17051,7 +16141,7 @@ export class ArchMenuDisconnect extends ArchBaseMenuChoice {
     /**
      * Returns the display type name string 'ArchMenuDisconnect'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchMenuDisconnect';
     /**
      * The Architect disconnect action associated with this menu.
      */
@@ -17060,11 +16150,6 @@ export class ArchMenuDisconnect extends ArchBaseMenuChoice {
      * Returns true indicating that this is an ArchMenuDisconnect instance.
      */
     readonly isArchMenuDisconnect: boolean;
-    /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17077,7 +16162,7 @@ export class ArchMenuJumpToMenu extends ArchBaseMenuChoice {
     /**
      * Returns the display type name string 'ArchMenuJumpToMenu'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchMenuJumpToMenu';
     /**
      * The Architect jump to menu action for this menu.
      */
@@ -17086,11 +16171,6 @@ export class ArchMenuJumpToMenu extends ArchBaseMenuChoice {
      * Returns true indicating that this is an ArchMenuJumpToMenu instance.
      */
     static isArchMenuJumpToMenu: boolean;
-    /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17103,7 +16183,7 @@ export class ArchMenuJumpToTask extends ArchBaseMenuChoice {
     /**
      * Returns the display type name string 'ArchMenuJumpToTask'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchMenuJumpToTask';
     /**
      * The Architect jump to task action associated with this menu choice.
      */
@@ -17112,11 +16192,6 @@ export class ArchMenuJumpToTask extends ArchBaseMenuChoice {
      * Returns true indicating that this is an ArchMenuJumpToTask instance.
      */
     readonly isArchMenuJumpToTask: boolean;
-    /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17129,7 +16204,7 @@ export class ArchMenuPreviousMenu extends ArchBaseMenuChoice {
     /**
      * Returns the display type name string 'ArchMenuPreviousMenu'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchMenuPreviousMenu';
     /**
      * The previous menu action associated with this menu choice.
      */
@@ -17138,11 +16213,6 @@ export class ArchMenuPreviousMenu extends ArchBaseMenuChoice {
      * Returns true indicating that this is an ArchMenuPreviousMenu instance.
      */
     static isArchMenuPreviousMenu: boolean;
-    /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17155,7 +16225,7 @@ export class ArchMenuRepeatMenu extends ArchBaseMenuChoice {
     /**
      * Returns the display type name string 'ArchMenuRepeatMenu'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchMenuRepeatMenu';
     /**
      * The Architect repeat menu action for this menu.
      */
@@ -17164,11 +16234,6 @@ export class ArchMenuRepeatMenu extends ArchBaseMenuChoice {
      * Returns true indicating that this is an ArchMenuRepeatMenu instance.
      */
     readonly isArchMenuRepeatMenu: boolean;
-    /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17181,7 +16246,7 @@ export class ArchMenuReturnToAgent extends ArchBaseMenuChoice {
     /**
      * Returns the display type name string 'ArchMenuReturnToAgent'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchMenuReturnToAgent';
     /**
      * The Architect returnToAgent action associated with this menu.
      */
@@ -17190,11 +16255,6 @@ export class ArchMenuReturnToAgent extends ArchBaseMenuChoice {
      * Returns true indicating that this is an ArchMenuReturnToAgent instance.
      */
     readonly isArchMenuReturnToAgent: boolean;
-    /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17218,7 +16278,7 @@ export class ArchMenuSubMenu extends ArchBaseMenuChoice {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchMenuSubMenu';
     /**
      * The ArchActionMenu action associated with this sub menu.
      */
@@ -17239,11 +16299,6 @@ export class ArchMenuSubMenu extends ArchBaseMenuChoice {
      * The speech rec settings for this sub menu.
      */
     readonly settingsSpeechRec: ArchSettingsSpeechRec;
-    /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17257,7 +16312,7 @@ export class ArchMenuTask extends ArchBaseMenuChoice {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchMenuTask';
     /**
      * The task associated with this menu.
      */
@@ -17266,11 +16321,6 @@ export class ArchMenuTask extends ArchBaseMenuChoice {
      * Returns true indicating that this is an ArchMenuTask instance.
      */
     readonly isArchMenuTask: boolean;
-    /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17284,7 +16334,7 @@ export class ArchMenuTransferToAcd extends ArchBaseMenuChoice {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchMenuTransferToAcd';
     /**
      * The Architect transfer to acd action for this menu.
      */
@@ -17293,11 +16343,6 @@ export class ArchMenuTransferToAcd extends ArchBaseMenuChoice {
      * Returns true indicating that this is an ArchMenuTransferToAcd instance.
      */
     readonly isArchMenuTransferToAcd: boolean;
-    /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17320,11 +16365,6 @@ export class ArchMenuTransferToFlow extends ArchBaseMenuChoice {
      * Returns true indicating that this is an ArchMenuTransferToFlow instance.
      */
     readonly isArchMenuTransferToFlow: boolean;
-    /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17337,7 +16377,7 @@ export class ArchMenuTransferToFlowSecure extends ArchMenuTransferToFlow {
     /**
      * Returns the display type name string 'ArchMenuTransferToFlowSecure'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchMenuTransferToFlowSecure';
     /**
      * The Architect transfer to flow action associated with this menu.
      */
@@ -17346,11 +16386,6 @@ export class ArchMenuTransferToFlowSecure extends ArchMenuTransferToFlow {
      * Returns true indicating that this is an ArchMenuTransferToFlowSecure instance.
      */
     readonly isArchMenuTransferToFlowSecure: boolean;
-    /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17363,7 +16398,7 @@ export class ArchMenuTransferToGroup extends ArchBaseMenuChoice {
     /**
      * Returns the display type name string 'ArchMenuTransferToGroup'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchMenuTransferToGroup';
     /**
      * The Architect transfer to group action associated with this menu.
      */
@@ -17372,11 +16407,6 @@ export class ArchMenuTransferToGroup extends ArchBaseMenuChoice {
      * Returns true indicating that this is an ArchMenuTransferToGroup instance.
      */
     readonly isArchMenuTransferToGroup: boolean;
-    /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17390,7 +16420,7 @@ export class ArchMenuTransferToNumber extends ArchBaseMenuChoice {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchMenuTransferToNumber';
     /**
      * The Architect transfer to number action associated with this menu.
      */
@@ -17399,11 +16429,6 @@ export class ArchMenuTransferToNumber extends ArchBaseMenuChoice {
      * Returns true indicating that this is an ArchMenuTransferToNumber instance.
      */
     readonly isArchMenuTransferToNumber: boolean;
-    /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17417,7 +16442,7 @@ export class ArchMenuTransferToUser extends ArchBaseMenuChoice {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchMenuTransferToUser';
     /**
      * The Architect transfer to user action associated with this menu.
      */
@@ -17426,11 +16451,6 @@ export class ArchMenuTransferToUser extends ArchBaseMenuChoice {
      * Returns true indicating that this is an ArchMenuTransferToUser instance.
      */
     readonly isArchMenuTransferToUser: boolean;
-    /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17443,7 +16463,7 @@ export class ArchMenuTransferToVoicemail extends ArchBaseMenuChoice {
     /**
      * Returns the display type name string 'ArchMenuTransferToVoicemail'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchMenuTransferToVoicemail';
     /**
      * The Architect Transfer to Voicemail action associated with this menu.
      */
@@ -17452,11 +16472,6 @@ export class ArchMenuTransferToVoicemail extends ArchBaseMenuChoice {
      * Returns true indicating that this is an ArchMenuTransferToVoicemail instance.
      */
     readonly isArchMenuTransferToVoicemail: boolean;
-    /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17469,7 +16484,7 @@ export class ArchActionOutput extends ArchBaseMultiActionContainer {
     /**
      * Returns the display type name string 'ArchActionOutput'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchActionOutput';
     /**
      * Whether the output is enabled for runtime execution.  An enabled action
      * output will be displayed in the UI.  If it's disabled and there are no actions
@@ -17549,7 +16564,7 @@ export class ArchBranch extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchBranch'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchBranch';
     /**
      * Returns true indicating that this is an ArchBranch instance.
      */
@@ -17566,10 +16581,6 @@ export class ArchBranch extends ArchBaseCoreObject {
      * Returns the output identifier for this branch.
      */
     readonly outputId: string;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17579,7 +16590,7 @@ export class ArchPromptSystem extends ArchBasePrompt {
     /**
      * Returns the display type name string 'ArchPromptSystem'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchPromptSystem';
     /**
      * Returns true indicating that this is an ArchPromptSystem instance which means
      * this is a system prompt instance.
@@ -17594,7 +16605,7 @@ export class ArchPromptUser extends ArchBasePrompt {
     /**
      * Returns the display type name string 'ArchPromptUser'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchPromptUser';
     /**
      * Returns true indicating that this is an ArchPromptUser instance which means
      * this is a user prompt instance.
@@ -17615,7 +16626,7 @@ export class ArchSettingActionPropertyDefault extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchSettingActionPropertyDefault'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingActionPropertyDefault';
     /**
      * Returns true indicating that this is an ArchSettingActionPropertyDefault instance.
      */
@@ -17636,10 +16647,6 @@ export class ArchSettingActionPropertyDefault extends ArchBaseObject {
      * Returns the default value for the property.
      */
     readonly propertyDefaultValue: ArchBaseValue;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17653,7 +16660,7 @@ export class ArchSettingsActionDefaults extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchSettingsActionDefaults'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsActionDefaults';
     /**
      * Returns true indicating that this is an ArchSettingsActionDefaults instance.
      */
@@ -17667,10 +16674,6 @@ export class ArchSettingsActionDefaults extends ArchBaseCoreObject {
      * @param archDefinitionAction - the action whose defaults you wish to retrieve.
      */
     getDefaultSettingsForActionDefinition(archDefinitionAction: ArchDefinitionAction): ArchSettingActionPropertyDefault[];
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17752,7 +16755,7 @@ export class ArchSettingsCommonModuleFlow extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchSettingsCommonModuleFlow'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsCommonModuleFlow';
     /**
      * Returns true indicating that this is an ArchSettingsCommonModuleFlow instance.
      */
@@ -17796,67 +16799,6 @@ export class ArchSettingsCommonModuleFlow extends ArchBaseCoreObject {
      *                            that returns its flow type string value.
      */
     removeCompatibleFlowType(flowType: string): void;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-}
-
-/**
- * Creates an instance of an ArchSettingsCommonModuleFlow.  This is the Scripting class that handles common module flow settings.
- */
-export class ArchSettingsCommonModuleFlow extends ArchBaseCoreObject {
-    /**
-     * Returns the display type name string 'ArchSettingsCommonModuleFlow'.
-     */
-    readonly displayTypeName: string;
-    /**
-     * Returns true indicating that this is an ArchSettingsCommonModuleFlow instance.
-     */
-    readonly isArchSettingsCommonModuleFlow: boolean;
-    /**
-     * A string suitable for logging that contains information about this action.  This will contain the action
-     * tracking id, name and scripting type name.
-     */
-    readonly logStr: string;
-    /**
-     * Returns an array of flow type strings that is a snapshot of the compatible flow types
-     * for this [common module flow]{@link ArchFlowCommonModule}.  To add an additional compatible
-     * flow type to this flow, see the {@link ArchSettingsCommonModuleFlow#addCompatibleFlowType} method.
-     * To remove an existing compatible flow type from this [common module flow]{@link ArchFlowCommonModule}, see the
-     * {@link ArchSettingsCommonModuleFlow#removeCompatibleFlowType} method.
-     */
-    readonly compatibleFlowTypes: string[];
-    /**
-     * Adds a flow type to the list of compatible flow types that are configured on this [common module flow]{@link ArchFlowCommonModule}.
-     * If the supplied flow type string is not a valid flow type string at all or not a valid compatible flow type for a common module
-     * flow, this method will throw.
-     * @param flowType - the flow type to add to the compatible flow types for this common module.
-     *                            The string values in {@link ArchEnums#FLOW_TYPES} list valid flow type values but
-     *                            additionally the flow type must be one that is valid for use as a compatible flow
-     *                            type in a common module flow.  Whether a flow can be used as a compatible flow
-     *                            in a common module can be found [here]{@link ArchDefinitionFlow#isCommonModuleCompatibleFlowType}.
-     *                            Remember too that [flow definitions]{@link ArchDefinitionFlow} have a {@link ArchDefinitionFlow#type} property
-     *                            that returns its flow type string value.
-     */
-    addCompatibleFlowType(flowType: string): void;
-    /**
-     * Removes a flow type from the list of compatible flow types that are configured on this [common module flow]{@link ArchFlowCommonModule}.
-     * If the supplied flow type string is not a valid flow type string at all or not a valid compatible flow type for a common module
-     * flow, this method will throw.
-     * @param flowType - the flow type to remove from the compatible flow types for this common module.
-     *                            The string values in {@link ArchEnums#FLOW_TYPES} list valid flow type values but
-     *                            additionally the flow type must be one that is valid for use as a compatible flow
-     *                            type in a common module flow.  Whether a flow can be used as a compatible flow
-     *                            in a common module can be found [here]{@link ArchDefinitionFlow#isCommonModuleCompatibleFlowType}.
-     *                            Remember too that [flow definitions]{@link ArchDefinitionFlow} have a {@link ArchDefinitionFlow#type} property
-     *                            that returns its flow type string value.
-     */
-    removeCompatibleFlowType(flowType: string): void;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17870,7 +16812,7 @@ export class ArchSettingsDetectionJobIntent extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchSettingsDetectionJobIntent'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsDetectionJobIntent';
     /**
      * Returns true indicating that this is an ArchSettingsDetectionJobIntent instance.
      */
@@ -17887,10 +16829,6 @@ export class ArchSettingsDetectionJobIntent extends ArchBaseObject {
      * The description of the intent.
      */
     readonly description: string;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -17980,7 +16918,7 @@ export class ArchSettingsEventErrorFlowBot extends ArchSettingsEventErrorFlow {
     /**
      * Returns the display type name string 'ArchSettingsEventErrorFlow'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsEventErrorFlowBot';
     /**
      * Returns true indicating that this is an ArchSettingsEventErrorFlowBot instance.
      */
@@ -18057,7 +16995,7 @@ export class ArchSettingsInQueueCallFlow extends ArchBaseCoreObjectWithId {
     /**
      * Returns the display type name string 'ArchSettingsInQueueCallFlow'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsInQueueCallFlow';
     /**
      * Returns the hold music prompt value for the in-queue call flow.
      */
@@ -18081,7 +17019,7 @@ export class ArchSettingsInboundEmailFlow extends ArchBaseCoreObjectWithId {
     /**
      * Returns the display type name string 'ArchSettingsInboundEmailFlow'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsInboundEmailFlow';
     /**
      * Returns a string suitable for logging that describes this inbound email settings instance.
      */
@@ -18150,7 +17088,7 @@ export class ArchSettingsMenuFlow extends ArchSettingsMenu {
     /**
      * Returns the display type name string 'ArchSettingsMenuFlow'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsMenuFlow';
     /**
      * Returns a string suitable for logging that describes this menu settings instance.
      */
@@ -18172,7 +17110,7 @@ export class ArchSettingsNluDynamicSlotType extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchSettingsNluDynamicSlotType'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsDynamicSlotType';
     /**
      * Returns true indicating that this is an ArchSettingsNluDynamicSlotType instance.
      */
@@ -18193,10 +17131,6 @@ export class ArchSettingsNluDynamicSlotType extends ArchBaseCoreObject {
      * separate the individual synonyms with a ',' character.
      */
     readonly synonyms: ArchValueStringCollection;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -18210,7 +17144,7 @@ export class ArchSettingsNluDynamicTimeslotType extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchSettingsNluDynamicTimeslotType'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsNluDynamicTimeslotType';
     /**
      * Returns true indicating that this is an ArchSettingsNluDynamicTimeslotType instance.
      */
@@ -18236,7 +17170,7 @@ export class ArchSettingsNluIntent extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchSettingsNluIntent'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsNluIntent';
     /**
      * Returns true indicating that this is an ArchSettingsNluIntent instance.
      */
@@ -18266,10 +17200,6 @@ export class ArchSettingsNluIntent extends ArchBaseObject {
      * this intent or a task is not found, undefined is returned.
      */
     readonly associatedTask: ArchTask;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -18288,7 +17218,7 @@ export class ArchSettingsNluIntents extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchSettingsNluIntents'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsNluIntents';
     /**
      * Returns true indicating that this is an ArchSettingsNluIntents instance.
      */
@@ -18297,10 +17227,6 @@ export class ArchSettingsNluIntents extends ArchBaseObject {
      * A string suitable for logging that contains information about this ArchSettingsNluIntents instance.
      */
     readonly logStr: string;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -18312,7 +17238,7 @@ export class ArchSettingsNluKnowledge extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchSettingsNluKnowledge'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsNluKnowledge';
     /**
      * Returns true indicating that this is an ArchSettingsNluKnowledge instance.
      */
@@ -18530,243 +17456,6 @@ export class ArchSettingsNluKnowledge extends ArchBaseCoreObject {
      * The target task for custom knowledge settings. The {@link ArchSettingsNluKnowledge#knowledgeSettingsMode} needs to be configured to custom first.
      */
     knowledgeCustomTask: ArchTask;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-}
-
-/**
- * Creates an instance of an ArchSettingsNluKnowledge.  This is the Scripting class that handles the natural
- * language understanding knowledge settings which includes the ability to pick a knowledge base for a bot
- * to use.
- */
-export class ArchSettingsNluKnowledge extends ArchBaseCoreObject {
-    /**
-     * Returns the display type name string 'ArchSettingsNluKnowledge'.
-     */
-    readonly displayTypeName: string;
-    /**
-     * Returns true indicating that this is an ArchSettingsNluKnowledge instance.
-     */
-    readonly isArchSettingsNluKnowledge: boolean;
-    /**
-     * A string suitable for logging that contains information about this action.  This will contain the action
-     * tracking id, name and scripting type name.
-     */
-    readonly logStr: string;
-    /**
-     * The bias the bot should use when interpreting participant input to prefer knowledge base answers, other
-     * natural language understanding settings such as intents, or weight input equally.  The string values in {@link ArchEnums#NLU_RESPONSE_BIAS_MODES}
-     * lists valid values.
-     */
-    readonly responseBias: ArchValueString;
-    /**
-     * Returns the knowledge base name if there is one set on this ArchActionSettingsNluKnowledge instance. If there is not one set,
-     * nothing is returned.
-     */
-    readonly knowledgeBaseName: string;
-    /**
-     * Returns the knowledge base id if there is one set on this ArchActionSettingsNluKnowledge instance. If there is not one set,
-     * nothing is returned.
-     */
-    readonly knowledgeBaseId: string;
-    /**
-     * Returns the knowledge setting name if there is one set on this ArchActionSettingsNluKnowledge instance. If there is not one set,
-     * nothing is returned.
-     */
-    readonly knowledgeSettingName: string;
-    /**
-     * Returns the knowledge setting id if there is one set on this ArchActionSettingsNluKnowledge instance. If there is not one set,
-     * nothing is returned.
-     */
-    readonly knowledgeSettingId: string;
-    /**
-     * Returns the knowledge base welcome article name if there is one set on this ArchActionSettingsNluKnowledge instance. If there is not one set,
-     * nothing is returned.
-     */
-    readonly welcomeArticleName: string;
-    /**
-     * Returns the knowledge base welcome article id if there is one set on this ArchActionSettingsNluKnowledge instance. If there is not one set,
-     * nothing is returned.
-     */
-    readonly welcomeArticleId: string;
-    /**
-     * Wording the bot will use after playing back one or more knowledge base answers.  For example, 'Does this answer your question?'
-     */
-    readonly knowledgeConfirmation: ArchValueCommunication;
-    /**
-     * Follow-up wording the bot will use after presenting a knowledge article.
-     * For example, 'I hope I answered your question.  You can ask anything else you might want to know.'
-     * This property maps to the Answer Follow-up setting you would see in the Knowledge settings
-     * within a Digital Bot Flow.  What you want to do here is have the participant ask their next
-     * question as a result of this wording.
-     */
-    readonly knowledgeInitialResponseFollowup: ArchValueCommunication;
-    /**
-     * The knowledge path mode determines what behavior will occur when a knowledge article is matched in a Digital Bot Flow.
-     * There are two modes: statement and task. Statement mode allows you to configure an Answer Follow-up that communicates
-     * a message when a knowledge article is successfully matched. Task mode allows you to link a reusable task that will
-     * begin when a knowledge article is successfully matched.
-     */
-    readonly knowledgePathMode: ArchValueString;
-    /**
-     * Helper function to set the knowledge path mode to statement.
-     */
-    setKnowledgePathModeStatement(): void;
-    /**
-     * Helper function to set the knowledge path mode to task.
-     */
-    setKnowledgePathModeTask(): void;
-    /**
-     * The knowledge answer content type determines what behavior will occur when a knowledge article is matched in a Digital Bot Flow.
-     * There are three options; standard, highlight, and generative. Standard will return the entire matched answer. Highlight will
-     * highlight the answer in the matched answer. Generative will create an AI-generated response to the question from the answer.
-     * The string values in {@link ArchEnums#KNOWLEDGE_ANSWER_CONTENT_TYPES}
-     */
-    readonly knowledgeAnswerContentType: ArchValueString;
-    /**
-     * Helper function to set the knowledge answer content type to standard.
-     */
-    setKnowledgeAnswerContentTypeStandard(): void;
-    /**
-     * Helper function to set the knowledge answer content type to highlight.
-     */
-    setKnowledgeAnswerContentTypeHighlight(): void;
-    /**
-     * Helper function to set the knowledge answer content type to generative.
-     */
-    setKnowledgeAnswerContentTypeGenerative(): void;
-    /**
-     * Controls how knowledge matches are handled at runtime. The custom setting allows you to choose a reusable task that will
-     * be executed when a knowledge match occurs. The string values in {@link ArchEnums#KNOWLEDGE_SETTINGS_MODES} list valid values.
-     */
-    readonly knowledgeSettingsMode: ArchValueString;
-    /**
-     * Helper function to set the knowledge settings mode to standard.
-     */
-    setKnowledgeSettingsModeStandard(): void;
-    /**
-     * Helper function to set the knowledge settings mode to custom.
-     */
-    setKnowledgeSettingsModeCustom(): void;
-    /**
-     * Wording the bot will use to introduce a numbered list of matching Knowledge answers, in the case
-     * where multiple good matches are found in the Knowledge Base. For example, 'This is what I found'
-     */
-    readonly knowledgeInitialResponseMulti: ArchValueCommunication;
-    /**
-     * Wording the bot will use to re-introduce a numbered list of matching Knowledge answers, in the case
-     * where the user's first attempt to choose a number was unsuccessful.
-     * For example, 'I didn't understand that. Please pick one of the following:'
-     */
-    readonly knowledgeInitialResponseMultiRetry: ArchValueCommunication;
-    /**
-     * Wording the bot will use prior to playing back a single knowledge base answer. For example, 'This is what I found'
-     */
-    readonly knowledgeInitialResponseSingle: ArchValueCommunication;
-    /**
-     * Wording the bot will use to represent the 'no match' option.  For example, 'None of the above'
-     */
-    readonly knowledgeNoMatch: ArchValueCommunication;
-    /**
-     * The maximum number of knowledge base answers to be returned by the bot from the selected knowledge base.
-     */
-    readonly maxNumOfAnswersReturned: ArchValueInteger;
-    /**
-     * A boolean value which, if it evaluates to true, will send knowledge confirmation feedback to the knowledge service
-     * which will be used to improve the performance of your knowledge base.
-     */
-    readonly sendKnowledgeFeedback: ArchValueBoolean;
-    /**
-     * A boolean value which, if it evaluates to true, will enable answer highlight.
-     */
-    readonly knowledgeAnswerHighlight: ArchValueBoolean;
-    /**
-     * A boolean value which, if it evaluates to true, will enable generating answers from multiple kb articles.
-     */
-    readonly knowledgeMultiArticleSource: ArchValueBoolean;
-    /**
-     * A boolean value which, if it evaluates to true, will enable knowledge context search.
-     */
-    readonly knowledgeContextSearch: ArchValueBoolean;
-    /**
-     * The knowledge version
-     */
-    readonly knowledgeVersion: ArchValueString;
-    /**
-     * The text on the label to view the full article
-     */
-    readonly knowledgeAnswerHighlightFullArticle: ArchValueString;
-    /**
-     * The text on the label to progress the flow
-     */
-    readonly knowledgeAnswerHighlightFlowProgression: ArchValueString;
-    /**
-     * This sets the knowledge base that will be used for use at runtime by the knowledge base id.
-     * @param knowledgeBaseId - the id of the  Knowledge Base to set.
-     * @param [callbackFunction] - a callback function to call if the Knowledge Base is successfully
-     *                                        looked up and configured on this action. The first parameter passed to the
-     *                                        callback function will be this Architect NLU Knowledge Settings instance.
-     */
-    setKnowledgeBaseByIdAsync(knowledgeBaseId: string, callbackFunction?: (...params: any[]) => any): Promise<ArchSettingsNluKnowledge>;
-    /**
-     * This sets the knowledge base that will be used for use at runtime by the knowledge base name.
-     * @param knowledgeBaseName - the name of the Knowledge Base to set. Knowledge Base names are looked up case insensitively.
-     * @param [callbackFunction] - a callback function to call if the Knowledge Base is successfully
-     *                                        looked up and configured on this action. The first parameter passed to the
-     *                                        callback function will be this Architect NLU Knowledge Settings instance.
-     */
-    setKnowledgeBaseByNameAsync(knowledgeBaseName: string, callbackFunction?: (...params: any[]) => any): Promise<ArchSettingsNluKnowledge>;
-    /**
-     * This sets the knowledge configuration setting that will be used for use at runtime by the knowledge configuration setting's id.
-     * @param knowledgeSettingId - the id of the  Knowledge Setting to set.
-     * @param [callbackFunction] - a callback function to call if the Knowledge Setting is successfully
-     *                                        looked up and configured on this action. The first parameter passed to the
-     *                                        callback function will be this Architect NLU Knowledge Settings instance.
-     */
-    setKnowledgeSettingByIdAsync(knowledgeSettingId: string, callbackFunction?: (...params: any[]) => any): Promise<ArchSettingsNluKnowledge>;
-    /**
-     * This sets the knowledge configuration setting that will be used at runtime by the knowledge configuration setting's name.
-     * @param knowledgeSettingName - the name of the Knowledge Setting to set. Knowledge Setting names are looked up case insensitively.
-     * @param [callbackFunction] - a callback function to call if the Knowledge Setting is successfully
-     *                                        looked up and configured on this action. The first parameter passed to the
-     *                                        callback function will be this Architect NLU Knowledge Settings instance.
-     */
-    setKnowledgeSettingByNameAsync(knowledgeSettingName: string, callbackFunction?: (...params: any[]) => any): Promise<ArchSettingsNluKnowledge>;
-    /**
-     * This sets the welcome article that will be used by the bot at runtime by the knowledge base document's identifier.
-     * Remember that prior to setting a knowledge base document as the welcome article that the knowledge base must
-     * be configured since this search operation will look up a document by id within that knowledge base.
-     * @param knowledgeBaseDocumentId - the id of the Knowledge Base document to set.
-     * @param [callbackFunction] - a callback function to call if the Knowledge Base Article is successfully
-     *                                        looked up and configured on this action. The first parameter passed to the
-     *                                        callback function will be this Architect NLU Knowledge Settings instance.
-     */
-    setWelcomeArticleByIdAsync(knowledgeBaseDocumentId: string, callbackFunction?: (...params: any[]) => any): Promise<ArchSettingsNluKnowledge>;
-    /**
-     * This sets the welcome article that will be used by the bot at runtime by the knowledge base document's name.
-     * Remember that prior to setting a knowledge base document as the welcome article that the knowledge base must
-     * be configured since this search operation will look up a document by name within that knowledge base.
-     * @param knowledgeBaseDocumentName - the name of the Knowledge Base document to set as the welcome article. Knowledge Base document
-     *                                             names are looked up case insensitively.
-     * @param [callbackFunction] - a callback function to call if the Knowledge Base Article is successfully
-     *                                        looked up and configured on this action. The first parameter passed to the
-     *                                        callback function will be this Architect NLU Knowledge Settings instance.
-     */
-    setWelcomeArticleByNameAsync(knowledgeBaseDocumentName: string, callbackFunction?: (...params: any[]) => any): Promise<any>;
-    /**
-     * The target task for this knowledge settings path. The {@link knowledgePathMode} needs to be configured to task first.
-     */
-    knowledgeTargetTask: ArchTask;
-    /**
-     * The target task for custom knowledge settings. The {@link ArchSettingsNluKnowledge#knowledgeSettingsMode} needs to be configured to custom first.
-     */
-    knowledgeCustomTask: ArchTask;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -18780,7 +17469,7 @@ export class ArchSettingsNluSlot extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchSettingsNluSlot'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsNluSlot';
     /**
      * Returns true indicating that this is an ArchSettingsNluSlot instance.
      */
@@ -18851,10 +17540,6 @@ export class ArchSettingsNluSlot extends ArchBaseObject {
      * this slot or a slot is not found, undefined is returned.
      */
     getAssociatedGrammarSpeechToTextEngineName(): string;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -18869,7 +17554,7 @@ export class ArchSettingsNluVirtualAgent extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchSettingsNluVirtualAgent'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsNluVirtualAgent';
     /**
      * Returns true indicating that this is an ArchSettingsNluVirtualAgent instance.
      */
@@ -18890,18 +17575,7 @@ export class ArchSettingsNluVirtualAgent extends ArchBaseCoreObject {
      * Collection of wrapup codes that can be automatically assigned
      */
     readonly enabledWrapupCodes: ArchValueWrapupCodeCollection;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
-
-/**
- * This callback function type is invoked by Architect Scripting where the callback function is passed an Architect
- * ArchValueContactList such as {@link ArchValueContactList}
- * @param archValueContactList - the Architect ArchValueContactList.
- */
-declare type callbackArchValueContactList = (archValueContactList: ArchValueContactList) => void;
 
 /**
  * The Architect Scripting class that represents the Outbound settings on an [Outbound Call Flow]{@link ArchFlowOutboundCall}.
@@ -18915,7 +17589,7 @@ export class ArchSettingsOutboundCallFlow extends ArchBaseCoreObjectWithId {
     /**
      * Returns the display type name string 'ArchSettingsOutboundCallFlow'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsOutboundCallFlow';
     /**
      * The contact list set for the outbound call flow.
      */
@@ -18960,7 +17634,7 @@ export class ArchSettingsPromptsFlow extends ArchBaseCoreObjectWithId {
     /**
      * Returns the display type name string 'ArchSettingsPromptsFlow'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsPromptsFlow';
     /**
      * Returns true indicating that this is an ArchSettingsPromptsFlow instance.
      */
@@ -19036,7 +17710,7 @@ export class ArchSettingsSpeechRecFlow extends ArchSettingsSpeechRec {
     /**
      * Returns the display type name string 'ArchSettingsSpeechRecFlow'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsSpeechRecFlow';
     /**
      * Whether or not speech rec is enabled on the flow.  If speech rec is turned off for then any other speech rec
      * settings like the company directory support or speech rec terms on menu items will not be used at runtime.
@@ -19093,7 +17767,7 @@ export class ArchSettingsSupportedLanguage extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchSettingsSupportedLanguage'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsSupportedLanguage';
     /**
      * Returns true indicating that this is an ArchSettingsSupportedLanguage instance.
      */
@@ -19221,10 +17895,6 @@ export class ArchSettingsSupportedLanguage extends ArchBaseCoreObject {
      * callback function will be this supported language instance.
      */
     setKnowledgeSettingByNameAsync(knowledgeSettingName: string, callbackFunction?: callbackArchSettingsSupportedLanguage): Promise<ArchSettingsSupportedLanguage>;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -19267,7 +17937,7 @@ export class ArchSettingsSupportedLanguagesFlow extends ArchBaseCoreObjectWithId
     /**
      * Returns the display type name string 'ArchSettingsSupportedLanguagesFlow'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsSupportedLanguagesFlow';
     /**
      * Looks through the supported languages on this flow for the language
      * specified by the language parameter and if found, returns the ArchSettingsSupportedLanguage
@@ -19307,7 +17977,7 @@ export class ArchSettingsUserInput extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchSettingsUserInput'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsUserInput';
     /**
      * Returns true indicating that this is an ArchSettingsUserInput instance.
      */
@@ -19438,10 +18108,6 @@ export class ArchSettingsUserInput extends ArchBaseCoreObject {
      * participant says no while the bot is confirming the participant's last input.
      */
     readonly noToConfirmationApology: ArchValueCommunication;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -19453,7 +18119,7 @@ export class ArchSettingsVoiceSurveyFlow extends ArchSettingsBotFlow {
     /**
      * Returns the display type name string 'ArchSettingsVoiceSurveyFlow'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsVoiceSurveyFlow';
     /**
      * Returns true indicating that this is an ArchSettingsVoiceSurveyFlow instance.
      */
@@ -19489,7 +18155,7 @@ export class ArchSettingsWorkitemFlow extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchSettingsWorkitemFlow'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSettingsWorkitemFlow';
     /**
      * Returns true indicating that this is an ArchSettingsWorkitemFlow instance.
      */
@@ -19502,10 +18168,6 @@ export class ArchSettingsWorkitemFlow extends ArchBaseCoreObject {
      * Returns the id of the workitem that is configured on the workitem flow.
      */
     readonly worktypeId: string;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -19519,7 +18181,7 @@ export class ArchSpeechRecTermContainer extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchSpeechRecTermContainer'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSpeechRecTermContainer';
     /**
      * Returns a string suitable for logging for this speech rec term container.
      */
@@ -19544,10 +18206,6 @@ export class ArchSpeechRecTermContainer extends ArchBaseCoreObject {
      * Returns true indicating that this is an ArchSpeechRecTermContainer instance.
      */
     readonly isArchSpeechRecTermContainer: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -19560,7 +18218,7 @@ export class ArchSpeechRecTermContainers extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchSpeechRecTermContainers'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSpeechRecTermContainers';
     /**
      * Returns a string suitable for logging for this speech rec term containers object.
      */
@@ -19576,10 +18234,6 @@ export class ArchSpeechRecTermContainers extends ArchBaseCoreObject {
      * Returns true indicating that this is an ArchSpeechRecTermContainers instance.
      */
     readonly isArchSpeechRecTermContainers: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -19593,7 +18247,7 @@ export class ArchSpeechToTextEngine extends ArchBaseCoreObjectWithId {
     /**
      * Returns the display type name string 'ArchSpeechToTextEngine'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchSpeechToTextEngine';
     /**
      * Returns true indicating that this is an ArchSpeechToTextEngine instance.
      */
@@ -19677,7 +18331,7 @@ export class ArchStateBot extends ArchState {
     /**
      * Returns the display type name string 'ArchStateBot'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchStateBot';
     /**
      * Returns true indicating that this is an ArchStateBot instance.
      */
@@ -19806,7 +18460,7 @@ export class ArchTaskCommonModule extends ArchTask {
     /**
      * Returns the display type name string 'ArchTaskCommonModule'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchTaskCommonModule';
     /**
      * Returns true indicating that this is an ArchTaskCommonModule instance.
      */
@@ -19827,7 +18481,7 @@ export class ArchTaskLoop extends ArchTask {
     /**
      * Returns the display type name string 'ArchTaskLoop'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchTaskLoop';
     /**
      * Returns true indicating that this is an ArchTaskLoop instance.
      */
@@ -19849,7 +18503,7 @@ export class ArchTtsEngine extends ArchBaseCoreObjectWithId {
     /**
      * Returns the display type name string 'ArchTtsEngine'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchTtsEngine';
     /**
      * Returns true indicating that this is an ArchTtsEngine instance.
      */
@@ -19923,7 +18577,7 @@ export class ArchTtsEngines extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchTtsEngines'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchTtsEngines';
     /**
      * Gets the text to speech engine by its name in a case insensitive manner.
      * @param engineName - the name of the text to speech engine to retrieve.
@@ -19937,10 +18591,6 @@ export class ArchTtsEngines extends ArchBaseObject {
      * see if text to speech engine and voice information is available on an organization.
      */
     ttsEngineGenesys: ArchTtsEngine;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -19954,7 +18604,7 @@ export class ArchTtsVoice extends ArchBaseCoreObjectWithId {
     /**
      * Returns the display type name string 'ArchTtsVoice'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchTtsVoice';
     /**
      * Returns true indicating that this is an ArchTtsVoice instance.
      */
@@ -20017,7 +18667,7 @@ export class ArchTraverseContext extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchTraverseContext'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchTraverseContext';
     /**
      * Returns true indicating that this is an ArchTraverseContext instance.
      */
@@ -20026,10 +18676,6 @@ export class ArchTraverseContext extends ArchBaseObject {
      * A string suitable for logging that contains information about this definition.
      */
     readonly logStr: string;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -20043,7 +18689,7 @@ export class ArchTraverseHierarchyItem extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchTraverseHierarchyItem'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchTraverseHierarchyItem';
     /**
      * Returns the Architect Scripting object associated with this hierarchy item.
      */
@@ -20086,10 +18732,6 @@ export class ArchTraverseHierarchyItem extends ArchBaseObject {
      * hierarchy item.
      */
     readonly propertyName: string;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -20113,7 +18755,7 @@ export class ArchTraverseInfo {
     /**
      * Returns the display type name string 'ArchTraverseInfo'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchTraverseInfo';
     /**
      * Returns true indicating that this is an ArchTraverseInfo instance.
      */
@@ -20154,7 +18796,7 @@ export class ArchTraverseSettings {
     /**
      * Returns the display type name string 'ArchTraverseSettings'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchTraverseSettings';
     /**
      * Returns the filter being used for the traversal operation.
      */
@@ -20188,7 +18830,7 @@ export class ArchValidationIssue extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchValidationIssue'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValidationIssue';
     /**
      * Returns a logging string for this validation result that will show information
      * about the referenced Architect Scripting object and the error / warning count.
@@ -20275,10 +18917,6 @@ export class ArchValidationIssue extends ArchBaseCoreObject {
      * Returns a string array of warnings in this issue.  If there are no warnings, no value is returned.
      */
     readonly warnings: string[];
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -20294,7 +18932,7 @@ export class ArchValidationResults extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchValidationResults'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValidationResults';
     /**
      * Returns a logging string for this validation result that will show information
      * about the referenced Architect Scripting object and the error / warning count.
@@ -20468,10 +19106,6 @@ export class ArchValidationResults extends ArchBaseCoreObject {
      * and adding up the warningCount property for each validation issue.
      */
     readonly warningCountTotal: number;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -20483,7 +19117,7 @@ export class ArchChoice extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchChoice'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchChoice';
     /**
      * A string suitable for logging that contains information about this ArchChoice.
      */
@@ -20510,10 +19144,6 @@ export class ArchChoice extends ArchBaseCoreObject {
      * button text will be used.
      */
     readonly label: ArchValueString;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -20525,7 +19155,7 @@ export class ArchNamedValue extends ArchBaseCoreObject {
     /**
      * Returns the display type name string 'ArchNamedValue'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchNamedValue';
     /**
      * Returns the name for this named value instance.
      */
@@ -20538,10 +19168,6 @@ export class ArchNamedValue extends ArchBaseCoreObject {
      * Returns true indicating that this is an ArchNamedValue instance.
      */
     readonly isArchNamedValue: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -20554,7 +19180,7 @@ export class ArchNamedValueList extends ArchBaseValueContainer {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchNamedValueList';
     /**
      * Returns the number of pairs in this list.
      */
@@ -20576,10 +19202,6 @@ export class ArchNamedValueList extends ArchBaseValueContainer {
      * Returns true indicating that this is an ArchNamedValueList instance.
      */
     readonly isArchNamedValueList: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -20600,7 +19222,7 @@ export class ArchValueAgentScorePair extends ArchBaseValueSingleton {
     /**
      * Returns the display type name string 'ArchValueAgentScorePair'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueAgentScorePair';
 }
 
 /**
@@ -20621,7 +19243,7 @@ export class ArchValueAgentScorePairCollection extends ArchBaseValueCollection {
     /**
      * Returns the display type name string 'ArchValueAgentScorePairCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueAgentScorePairCollection';
 }
 
 /**
@@ -20637,15 +19259,11 @@ export class ArchValueAny extends ArchBaseValueSingleton {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueAny';
     /**
      * Returns true indicating that this is an ArchValueAny instance.
      */
     static isArchValueAny: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -20659,17 +19277,13 @@ export class ArchValueAny extends ArchBaseValueSingleton {
 export class ArchValueAnyCollection extends ArchBaseValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Returns the display type name string 'ArchValueAnyCollection'.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating that this is an ArchValueAnyCollection instance.
      */
     readonly isArchValueAnyCollection: boolean;
     /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
+     * Returns the display type name string 'ArchValueAnyCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueAnyCollection';
 }
 
 /**
@@ -20681,7 +19295,7 @@ export class ArchValueAssignedCustomerIntent extends ArchBaseValueSingleton {
     /**
      * Returns the display type name string 'ArchValueAssignedCustomerIntent'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueAssignedCustomerIntent';
     /**
      * Returns the display name of the nested {@link ArchValueCustomerIntent} (AssignedCustomerIntent has no root-level name).
      */
@@ -20690,10 +19304,6 @@ export class ArchValueAssignedCustomerIntent extends ArchBaseValueSingleton {
      * Returns true indicating that this is an ArchValueAssignedCustomerIntent instance.
      */
     readonly isArchValueAssignedCustomerIntent: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -20706,18 +19316,14 @@ export class ArchValueAssignedCustomerIntent extends ArchBaseValueSingleton {
 export class ArchValueAssignedCustomerIntentCollection extends ArchBaseValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating this is an ArchValueAssignedCustomerIntentCollection instance.
      */
     readonly isArchValueAssignedCustomerIntentCollection: boolean;
     /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
+     * Implements override support for the display type name string for this
+     * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueAssignedCustomerIntentCollection';
 }
 
 /**
@@ -20729,7 +19335,7 @@ export class ArchValueAssignedCustomerSegment extends ArchBaseValueSingleton {
     /**
      * Returns the display type name string 'ArchValueAssignedCustomerSegment'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueAssignedCustomerSegment';
     /**
      * Returns the display name of the nested {@link ArchValueCustomerSegment} (AssignedCustomerSegment has no root-level name).
      */
@@ -20738,10 +19344,6 @@ export class ArchValueAssignedCustomerSegment extends ArchBaseValueSingleton {
      * Returns true indicating that this is an ArchValueAssignedCustomerSegment instance.
      */
     readonly isArchValueAssignedCustomerSegment: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -20754,18 +19356,14 @@ export class ArchValueAssignedCustomerSegment extends ArchBaseValueSingleton {
 export class ArchValueAssignedCustomerSegmentCollection extends ArchBaseValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating this is an ArchValueAssignedCustomerSegmentCollection instance.
      */
     readonly isArchValueAssignedCustomerSegmentCollection: boolean;
     /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
+     * Implements override support for the display type name string for this
+     * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueAssignedCustomerSegmentCollection';
 }
 
 /**
@@ -20780,7 +19378,7 @@ export class ArchValueAudio extends ArchBaseValueSingleton {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueAudio';
     /**
      * Returns true indicating that this is an ArchValueAudio instance.
      */
@@ -20813,10 +19411,6 @@ export class ArchValueAudio extends ArchBaseValueSingleton {
      * inclusive description of this ArchValueAudio.
      */
     readonly valueText: string;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -20832,7 +19426,7 @@ export class ArchValueBoolean extends ArchBaseValueBasic {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueBoolean';
     /**
      * Returns true indicating that this is an ArchValueBoolean instance.
      */
@@ -20870,17 +19464,9 @@ export class ArchValueBoolean extends ArchBaseValueBasic {
 export class ArchValueBooleanCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Returns the display type name string 'ArchValueBooleanCollection'.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating that this is an ArchValueBooleanCollection instance.
      */
     readonly isArchValueBooleanCollection: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 export class ArchValueCard extends ArchBaseValueWithAssignableProperties {
@@ -20896,7 +19482,7 @@ export class ArchValueCard extends ArchBaseValueWithAssignableProperties {
     /**
      * Returns the display type name string 'ArchValueCard'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueCard';
     /**
      * The image to use on the card.
      */
@@ -21211,10 +19797,6 @@ export class ArchValueCard extends ArchBaseValueWithAssignableProperties {
      */
     traverse(callbackFunction: callbackTraverseInfo, traverseFilter?: ArchFilterObject): number;
     /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * This is a string suitable for logging information about this object where it's just the object's type.  This is normally used
      * when logging errors that occur in constructor parameter checking because the scripting object isn't set up and the normal
      * logging str contents wouldn't be set up.
@@ -21256,10 +19838,6 @@ export class ArchValueCard extends ArchBaseValueWithAssignableProperties {
 
 export class ArchValueCardCollection extends ArchBaseValueCollection {
     // constructor(coreExpressionViewModel: any);
-    /**
-     * Returns the display type name string 'ArchValueCardCollection'.
-     */
-    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueCardCollection instance.
      */
@@ -21571,10 +20149,6 @@ export class ArchValueCardCollection extends ArchBaseValueCollection {
      */
     traverse(callbackFunction: callbackTraverseInfo, traverseFilter?: ArchFilterObject): number;
     /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * This is a string suitable for logging information about this object where it's just the object's type.  This is normally used
      * when logging errors that occur in constructor parameter checking because the scripting object isn't set up and the normal
      * logging str contents wouldn't be set up.
@@ -21612,6 +20186,10 @@ export class ArchValueCardCollection extends ArchBaseValueCollection {
      * @param archFilterObject - the object filter to use to determine if it's a match.
      */
     isFilterMatch(archFilterObject: ArchFilterObject): boolean;
+    /**
+     * Returns the display type name string 'ArchValueCardCollection'.
+     */
+    readonly displayTypeName: 'ArchValueCardCollection';
 }
 
 export class ArchValueCarousel extends ArchBaseValueWithAssignableProperties {
@@ -21623,7 +20201,7 @@ export class ArchValueCarousel extends ArchBaseValueWithAssignableProperties {
     /**
      * Returns the display type name string 'ArchValueCarousel'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueCarousel';
     /**
      * Returns true indicating that this is an ArchValueCarousel instance.
      */
@@ -21930,10 +20508,6 @@ export class ArchValueCarousel extends ArchBaseValueWithAssignableProperties {
      */
     traverse(callbackFunction: callbackTraverseInfo, traverseFilter?: ArchFilterObject): number;
     /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * This is a string suitable for logging information about this object where it's just the object's type.  This is normally used
      * when logging errors that occur in constructor parameter checking because the scripting object isn't set up and the normal
      * logging str contents wouldn't be set up.
@@ -21982,7 +20556,7 @@ export class ArchValueChoice extends ArchBaseValueWithAssignableProperties {
     /**
      * Returns the display type name string 'ArchValueChoice'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueChoice';
     /**
      * A string suitable for logging that contains information about this ArchValueChoice.
      */
@@ -22035,10 +20609,6 @@ export class ArchValueChoice extends ArchBaseValueWithAssignableProperties {
      * Returns true indicating that this is an ArchValueChoice instance.
      */
     readonly isArchValueChoice: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -22053,17 +20623,13 @@ export class ArchValueChoice extends ArchBaseValueWithAssignableProperties {
 export class ArchValueChoiceCollection extends ArchBaseValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Returns the display type name string 'ArchValueChoiceCollection'.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating that this is an ArchValueChoiceCollection instance.
      */
     readonly isArchValueChoiceCollection: boolean;
     /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
+     * Returns the display type name string 'ArchValueChoiceCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueChoiceCollection';
 }
 
 /**
@@ -22108,15 +20674,11 @@ export class ArchValueChooser extends ArchBaseValueSingleton {
     /**
      * Returns the display type name string 'ArchValueChooser'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueChooser';
     /**
      * Returns true indicating that this is an ArchValueChooser instance.
      */
     readonly isArchValueChooser: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -22144,25 +20706,17 @@ export class ArchValueCommunication extends ArchBaseValueBasic {
 export class ArchValueCommunicationCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Returns the display type name string 'ArchValueCommunicationCollection'.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating that this is an ArchValueCommunicationCollection instance.
      */
     readonly isArchValueCommunicationCollection: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
  * This callback function type is invoked by Architect Scripting where the callback function is passed an Architect
- * ArchValueContactList such as {@link ArchValueContactList}
- * @param archValueContactList - the Architect ArchValueContactList.
+ * contact list value instance such as {@link ArchValueContactList#setLiteralByContactListIdAsync} or {@link ArchValueContactList#setLiteralByContactListNameAsync}
+ * @param ArchValueContactList - the Architect contact list value instance.
  */
-declare type callbackArchValueContactList = (archValueContactList: ArchValueContactList) => void;
+declare type callbackArchValueContactList = (ArchValueContactList: ArchValueContactList) => void;
 
 /**
  * This class holds a value in Architect Scripting.
@@ -22176,7 +20730,7 @@ export class ArchValueContactList extends ArchBaseNetworkValueSingleton {
     /**
      * Returns the display type name string 'ArchValueContactList'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueContactList';
     /**
      * Returns true indicating that this is an ArchValueContactList instance.
      */
@@ -22212,7 +20766,7 @@ export class ArchValueCurrency extends ArchBaseValueBasic {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueCurrency';
     static isArchValueCurrency: boolean;
     static isCurrencyAmountOnly: boolean;
     /**
@@ -22233,18 +20787,9 @@ export class ArchValueCurrency extends ArchBaseValueBasic {
 export class ArchValueCurrencyCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating this is an ArchValueCurrencyCollection instance.
      */
     static isArchValueCurrencyCollection: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -22256,7 +20801,7 @@ export class ArchValueCustomerIntent extends ArchBaseValueSingleton {
     /**
      * Returns the display type name string 'ArchValueCustomerIntent'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueCustomerIntent';
     /**
      * Returns the display name of this customer intent name.
      */
@@ -22265,10 +20810,6 @@ export class ArchValueCustomerIntent extends ArchBaseValueSingleton {
      * Returns true indicating that this is an ArchValueCustomerIntent instance.
      */
     readonly isArchValueCustomerIntent: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -22281,18 +20822,14 @@ export class ArchValueCustomerIntent extends ArchBaseValueSingleton {
 export class ArchValueCustomerIntentCollection extends ArchBaseValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating this is an ArchValueCustomerIntentCollection instance.
      */
     readonly isArchValueCustomerIntentCollection: boolean;
     /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
+     * Implements override support for the display type name string for this
+     * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueCustomerIntentCollection';
 }
 
 /**
@@ -22310,7 +20847,7 @@ export class ArchValueDate extends ArchBaseValueBasic {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueDate';
     /**
      * This sets the date as a literal.
      * @param date - the string value for the date formatted as 'YYYY-MM-DD' where YYYY is a four digit year, MM is a two digit month, and DD is a two digit day (ex: '2020-12-05').
@@ -22339,18 +20876,9 @@ export class ArchValueDate extends ArchBaseValueBasic {
 export class ArchValueDateCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating this is an ArchValueDateCollection instance.
      */
     readonly isArchValueDateCollection: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -22368,7 +20896,7 @@ export class ArchValueDateTime extends ArchBaseValueBasic {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueDateTime';
     /**
      * Returns true indicating that this is an ArchValueDateTime instance.
      */
@@ -22409,18 +20937,9 @@ export class ArchValueDateTime extends ArchBaseValueBasic {
 export class ArchValueDateTimeCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating this is an ArchValueDateTimeCollection instance.
      */
     readonly isArchValueDateTimeCollection: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -22438,7 +20957,7 @@ export class ArchValueDecimal extends ArchBaseValueBasic {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueDecimal';
     /**
      * Returns true indicating that this is an ArchValueDecimal instance.
      */
@@ -22468,18 +20987,9 @@ export class ArchValueDecimal extends ArchBaseValueBasic {
 export class ArchValueDecimalCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating that this is an ArchValueDecimalCollection instance.
      */
     readonly isArchValueDecimalCollection: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -22497,7 +21007,7 @@ export class ArchValueDuration extends ArchBaseValueBasic {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueDuration';
     /**
      * Returns true indicating that this is an ArchValueDuration instance.
      */
@@ -22536,17 +21046,9 @@ export class ArchValueDuration extends ArchBaseValueBasic {
 export class ArchValueDurationCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Returns the display type name string 'ArchValueDurationCollection'.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating that this is an ArchValueDurationCollection instance.
      */
     readonly isArchValueDurationCollection: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -22567,7 +21069,7 @@ export class ArchValueEmailAddress extends ArchBaseValueSingleton {
     /**
      * Returns the display type name string 'ArchValueEmailAddress'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueEmailAddress';
 }
 
 /**
@@ -22588,7 +21090,7 @@ export class ArchValueEmailAddressCollection extends ArchBaseValueCollection {
     /**
      * Returns the display type name string 'ArchValueEmailAddressCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueEmailAddressCollection';
 }
 
 /**
@@ -22610,7 +21112,7 @@ export class ArchValueEmergencyGroup extends ArchBaseNetworkValueSingleton {
     /**
      * Returns the display type name string 'ArchValueEmergencyGroup'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueEmergencyGroup';
     /**
      * Returns true indicating that this is an ArchValueEmergencyGroup instance.
      */
@@ -22657,7 +21159,7 @@ export class ArchValueEmergencyGroupCollection extends ArchBaseNetworkValueColle
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueEmergencyGroupCollection';
     /**
      * Adds an emergency group to this collection looking up the emergencyGroup to add by the emergencyGroup by id
      * @param emergencyGroupId - the identifier of the emergencyGroup.
@@ -22698,7 +21200,7 @@ export class ArchValueExternalContact extends ArchBaseValueSingleton {
     /**
      * Returns the display type name string 'ArchValueExternalContact'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueExternalContact';
 }
 
 /**
@@ -22719,7 +21221,7 @@ export class ArchValueExternalContactCollection extends ArchBaseValueCollection 
     /**
      * Returns the display type name string 'ArchValueExternalContactCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueExternalContactCollection';
 }
 
 /**
@@ -22740,7 +21242,7 @@ export class ArchValueExternalOrganization extends ArchBaseValueSingleton {
     /**
      * Returns the display type name string 'ArchValueExternalOrganization'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueExternalOrganization';
 }
 
 /**
@@ -22761,7 +21263,7 @@ export class ArchValueExternalOrganizationCollection extends ArchBaseValueCollec
     /**
      * Returns the display type name string 'ArchValueExternalOrganizationCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueExternalOrganizationCollection';
 }
 
 /**
@@ -22788,7 +21290,7 @@ export class ArchValueGrammar extends ArchBaseValueBasic {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueGrammar';
     /**
      * Sets the value of this grammar to the grammar with the specified guid identifier.
      * @param grammarId - the identifier of the grammar.
@@ -22828,7 +21330,7 @@ export class ArchValueGrammarCollection extends ArchBaseNetworkValueCollection {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueGrammarCollection';
     /**
      * Returns true indicating this is an ArchValueGrammarCollection instance.
      */
@@ -22873,7 +21375,7 @@ export class ArchValueGroup extends ArchBaseNetworkValueSingleton {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueGroup';
     /**
      * Returns true indicating that this is an ArchValueGroup instance.
      */
@@ -22916,7 +21418,7 @@ export class ArchValueGroupCollection extends ArchBaseNetworkValueCollection {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueGroupCollection';
     /**
      * Adds a group to this collection looking up the group to add by the group by id
      * @param groupId - the identifier of the group.
@@ -22987,18 +21489,9 @@ export class ArchValueImage extends ArchBaseNetworkValueSingleton {
 export class ArchValueImageCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating this is an ArchValueImageCollection instance.
      */
     isArchValueImageCollection: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -23015,7 +21508,7 @@ export class ArchValueInteger extends ArchBaseValueBasic {
     /**
      * Returns the display type name string 'ArchValueInteger'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueInteger';
     /**
      * Returns true indicating that this is an ArchValueInteger instance.
      */
@@ -23053,18 +21546,9 @@ export class ArchValueInteger extends ArchBaseValueBasic {
 export class ArchValueIntegerCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating this is an ArchValueIntegerCollection instance.
      */
     static isArchValueIntegerCollection: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -23085,7 +21569,7 @@ export class ArchValueJourneyOutcome extends ArchBaseValueSingleton {
     /**
      * Returns the display type name string 'ArchValueJourneyOutcome'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueJourneyOutcome';
 }
 
 /**
@@ -23106,7 +21590,7 @@ export class ArchValueJourneyOutcomeCollection extends ArchBaseValueCollection {
     /**
      * Returns the display type name string 'ArchValueJourneyOutcomeCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueJourneyOutcomeCollection';
 }
 
 /**
@@ -23127,7 +21611,7 @@ export class ArchValueJourneyOutcomeScore extends ArchBaseValueSingleton {
     /**
      * Returns the display type name string 'ArchValueJourneyOutcomeScore'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueJourneyOutcomeScore';
 }
 
 /**
@@ -23148,7 +21632,7 @@ export class ArchValueJourneyOutcomeScoreCollection extends ArchBaseValueCollect
     /**
      * Returns the display type name string 'ArchValueJourneyOutcomeScoreCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueJourneyOutcomeScoreCollection';
 }
 
 /**
@@ -23169,7 +21653,7 @@ export class ArchValueJourneySegment extends ArchBaseValueSingleton {
     /**
      * Returns the display type name string 'ArchValueJourneySegment'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueJourneySegment';
 }
 
 /**
@@ -23190,7 +21674,7 @@ export class ArchValueJourneySegmentCollection extends ArchBaseValueCollection {
     /**
      * Returns the display type name string 'ArchValueJourneySegmentCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueJourneySegmentCollection';
 }
 
 /**
@@ -23211,7 +21695,7 @@ export class ArchValueJourneySession extends ArchBaseValueSingleton {
     /**
      * Returns the display type name string 'ArchValueJourneySession'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueJourneySession';
 }
 
 /**
@@ -23232,7 +21716,7 @@ export class ArchValueJourneySessionCollection extends ArchBaseValueCollection {
     /**
      * Returns the display type name string 'ArchValueJourneySessionCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueJourneySessionCollection';
 }
 
 /**
@@ -23247,7 +21731,7 @@ export class ArchValueJson extends ArchBaseValueBasic {
     /**
      * Returns the display type name string 'ArchValueJson'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueJson';
     /**
      * Returns true indicating that this is an ArchValueJson instance.
      */
@@ -23276,7 +21760,7 @@ export class ArchValueJsonCollection extends ArchBaseValueCollectionBasic {
     /**
      * Returns the display type name string 'ArchValueJsonCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueJsonCollection';
     /**
      * Returns true indicating that this is an ArchValueJsonCollection instance.
      */
@@ -23302,7 +21786,7 @@ export class ArchValueKnowledgeBaseDocument extends ArchBaseNetworkValueSingleto
     /**
      * Returns the display type name string 'ArchValueKnowledgeBaseDocument'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueKnowledgeBaseDocument';
     /**
      * Returns true indicating that this is an ArchValueKnowledgeBaseDocument instance.
      */
@@ -23348,7 +21832,7 @@ export class ArchValueKnowledgeBaseDocumentCollection extends ArchBaseNetworkVal
     /**
      * Returns the display type name string 'ArchValueKnowledgeBaseDocumentCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueKnowledgeBaseDocumentCollection';
     /**
      * Adds an {@link ArchValueKnowledgeBaseDocument} instance to this collection for the knowledge base document if it can be looked up by
      * its guid identifier.  If the knowledge base document cannot be found, nothing is added to the collection.
@@ -23393,7 +21877,7 @@ export class ArchValueLanguageSkill extends ArchBaseNetworkValueSingleton {
     /**
      * Returns the display type name string 'ArchValueLanguageSkill'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueLanguageSkill';
     /**
      * Returns true indicating that this is an ArchValueLanguageSkill instance.
      */
@@ -23436,7 +21920,7 @@ export class ArchValueLanguageSkillCollection extends ArchBaseNetworkValueCollec
     /**
      * Returns the display type name string 'ArchValueLanguageSkillCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueLanguageSkillCollection';
     /**
      * Adds an {@link ArchValueLanguageSkill} instance to this collection for the language skill if it can be looked up by
      * its guid identifier.  If the language skill cannot be found, nothing is added to the collection.
@@ -23473,7 +21957,7 @@ export class ArchValueLineItem extends ArchBaseValueWithAssignableProperties {
     /**
      * Returns the display type name string 'ArchValueLineItem'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueLineItem';
     /**
      * Returns true indicating that this is an ArchValueLineItem instance.
      */
@@ -23493,18 +21977,10 @@ export class ArchValueLineItem extends ArchBaseValueWithAssignableProperties {
      * @param [currencyCode] - the ISO 4217 currency code (e.g., 'USD', 'EUR'). If not provided, defaults to NOT_SET
      */
     setLiteralLineItem(listingName: string, listingPrice: number, currencyCode?: string): void;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 export class ArchValueLineItemCollection extends ArchBaseValueCollection {
     // constructor(coreExpressionViewModel: any);
-    /**
-     * Returns the display type name string 'ArchValueLineItemCollection'.
-     */
-    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueLineItemCollection instance.
      */
@@ -23816,10 +22292,6 @@ export class ArchValueLineItemCollection extends ArchBaseValueCollection {
      */
     traverse(callbackFunction: callbackTraverseInfo, traverseFilter?: ArchFilterObject): number;
     /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * This is a string suitable for logging information about this object where it's just the object's type.  This is normally used
      * when logging errors that occur in constructor parameter checking because the scripting object isn't set up and the normal
      * logging str contents wouldn't be set up.
@@ -23857,6 +22329,10 @@ export class ArchValueLineItemCollection extends ArchBaseValueCollection {
      * @param archFilterObject - the object filter to use to determine if it's a match.
      */
     isFilterMatch(archFilterObject: ArchFilterObject): boolean;
+    /**
+     * Returns the display type name string 'ArchValueLineItemCollection'.
+     */
+    readonly displayTypeName: 'ArchValueLineItemCollection';
 }
 
 /**
@@ -23872,7 +22348,7 @@ export class ArchValueListPicker extends ArchBaseValueWithAssignableProperties {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueListPicker';
     /**
      * Returns true indicating that this is an ArchValueListPicker instance.
      */
@@ -23916,10 +22392,6 @@ export class ArchValueListPicker extends ArchBaseValueWithAssignableProperties {
      * @param receivedMessageButtonText - the receivedMessageButtonText of the listPicker
      */
     setLiteralListPicker(sections: ArchValueListPickerSectionCollection, receivedMessageImage: string, receivedMessageTitle: string, receivedMessageSubtitle: string, replyMessageImage: string, replyMessageSubtitle: string, receivedMessageButtonText: string): void;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -23935,7 +22407,7 @@ export class ArchValueListPickerItem extends ArchBaseValueWithAssignableProperti
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueListPickerItem';
     /**
      * Returns true indicating that this is an ArchValueListPickerItem instance.
      */
@@ -23959,10 +22431,6 @@ export class ArchValueListPickerItem extends ArchBaseValueWithAssignableProperti
      * @param imageName - the name of the image
      */
     setLiteralListPickerItem(title: string, subtitle: string, imageName: string): void;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -23975,18 +22443,9 @@ export class ArchValueListPickerItem extends ArchBaseValueWithAssignableProperti
 export class ArchValueListPickerItemCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating this is an ArchValueListPickerItemCollection instance.
      */
     static isArchValueListPickerItemCollection: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -24002,7 +22461,7 @@ export class ArchValueListPickerSection extends ArchBaseValueWithAssignablePrope
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueListPickerSection';
     /**
      * Returns true indicating that this is an ArchValueListPickerSection instance.
      */
@@ -24026,10 +22485,6 @@ export class ArchValueListPickerSection extends ArchBaseValueWithAssignablePrope
      * @param multiSelectEnabled - if multi select is enabled on the listPickerSection
      */
     setLiteralListPickerSection(listPickerItems: ArchValueListPickerItemCollection, title: string, multiSelectEnabled: boolean): void;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -24042,18 +22497,9 @@ export class ArchValueListPickerSection extends ArchBaseValueWithAssignablePrope
 export class ArchValueListPickerSectionCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating this is an ArchValueListPickerSectionCollection instance.
      */
     static isArchValueListPickerSectionCollection: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -24089,7 +22535,7 @@ export class ArchValuePhoneNumber extends ArchBaseNetworkValueSingleton {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValuePhoneNumber';
     /**
      * Returns true indicating that this is an ArchValuePhoneNumber instance.
      */
@@ -24165,18 +22611,9 @@ export class ArchValuePhoneNumber extends ArchBaseNetworkValueSingleton {
 export class ArchValuePhoneNumberCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating that this is an ArchValuePhoneNumberCollection instance.
      */
     static isArchValuePhoneNumberCollection: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -24198,7 +22635,7 @@ export class ArchValuePrompt extends ArchBaseValueSingleton {
     /**
      * Returns the display type name string 'ArchValuePrompt'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValuePrompt';
     /**
      * Returns true indicating that this is an ArchValuePrompt instance.
      */
@@ -24232,10 +22669,6 @@ export class ArchValuePrompt extends ArchBaseValueSingleton {
      * @param archPrompt - An Architect Scripting prompt such as a {@link ArchPromptUser} or {@link @ArchPromptSystem} instance.
      */
     setLiteralPrompt(archPrompt: ArchBasePrompt): void;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -24254,11 +22687,6 @@ declare type callbackArchValuePromptCollection = (archValuePromptCollection: Arc
  */
 export class ArchValuePromptCollection extends ArchBaseNetworkValueCollection {
     // constructor(coreExpressionViewModel: any);
-    /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
     /**
      * Adds a prompt to this collection looking up the prompt to add by the prompt name
      * @param promptName - the name of the Architect prompt.
@@ -24279,6 +22707,11 @@ export class ArchValuePromptCollection extends ArchBaseNetworkValueCollection {
      * Returns true indicating that this is an ArchValuePromptCollection instance.
      */
     readonly isArchValuePromptCollection: boolean;
+    /**
+     * Implements override support for the display type name string for this
+     * Architect Scripting object.
+     */
+    readonly displayTypeName: 'ArchValuePromptCollection';
 }
 
 /**
@@ -24300,7 +22733,7 @@ export class ArchValueQueue extends ArchBaseNetworkValueSingleton {
     /**
      * Returns the display type name string 'ArchValueQueue'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueQueue';
     /**
      * Returns true indicating that this is an ArchValueQueue instance.
      */
@@ -24343,7 +22776,7 @@ export class ArchValueQueueCollection extends ArchBaseNetworkValueCollection {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueQueueCollection';
     /**
      * Adds a queue to this collection looking up the queue to add by the queue by id
      * @param queueId - the identifier of the queue.
@@ -24388,15 +22821,11 @@ export class ArchValueQuickReplies extends ArchBaseValueWithAssignableProperties
     /**
      * Returns the display type name string 'ArchValueQuickReplies'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueQuickReplies';
     /**
      * Returns true indicating that this is an ArchValueQuickReplies instance.
      */
     readonly isArchValueQuickReplies: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -24418,7 +22847,7 @@ export class ArchValueSchedule extends ArchBaseNetworkValueSingleton {
     /**
      * Returns the display type name string 'ArchValueSchedule'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueSchedule';
     /**
      * Returns true indicating that this is an ArchValueSchedule instance.
      */
@@ -24461,7 +22890,7 @@ export class ArchValueScheduleCollection extends ArchBaseNetworkValueCollection 
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueScheduleCollection';
     /**
      * Adds a schedule to this collection looking up the schedule to add by the schedule by id
      * @param scheduleId - the identifier of the schedule.
@@ -24503,7 +22932,7 @@ export class ArchValueScheduleGroup extends ArchBaseNetworkValueSingleton {
     /**
      * Returns the display type name string 'ArchValueScheduleGroup'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueScheduleGroup';
     /**
      * Returns true indicating that this is an ArchValueScheduleGroup instance.
      */
@@ -24547,7 +22976,7 @@ export class ArchValueScheduleGroupCollection extends ArchBaseNetworkValueCollec
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueScheduleGroupCollection';
     /**
      * Adds a schedule group to this collection looking up the schedule group to add by the scheduleGroup by id
      * @param scheduleGroupId - the identifier of the scheduleGroup.
@@ -24583,7 +23012,7 @@ export class ArchValueSettings extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchValueSettings'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueSettings';
     /**
      * A string suitable for logging that contains information about this value settings object.
      */
@@ -24675,7 +23104,7 @@ export class ArchValueShippingOption extends ArchBaseValueWithAssignableProperti
     /**
      * Returns the display type name string 'ArchValueShippingOption'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueShippingOption';
     /**
      * Returns true indicating that this is an ArchValueShippingOption instance.
      */
@@ -25007,10 +23436,6 @@ export class ArchValueShippingOption extends ArchBaseValueWithAssignableProperti
      */
     traverse(callbackFunction: callbackTraverseInfo, traverseFilter?: ArchFilterObject): number;
     /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * This is a string suitable for logging information about this object where it's just the object's type.  This is normally used
      * when logging errors that occur in constructor parameter checking because the scripting object isn't set up and the normal
      * logging str contents wouldn't be set up.
@@ -25052,10 +23477,6 @@ export class ArchValueShippingOption extends ArchBaseValueWithAssignableProperti
 
 export class ArchValueShippingOptionCollection extends ArchBaseValueCollection {
     // constructor(coreExpressionViewModel: any);
-    /**
-     * Returns the display type name string 'ArchValueShippingOptionCollection'.
-     */
-    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueShippingOptionCollection instance.
      */
@@ -25367,10 +23788,6 @@ export class ArchValueShippingOptionCollection extends ArchBaseValueCollection {
      */
     traverse(callbackFunction: callbackTraverseInfo, traverseFilter?: ArchFilterObject): number;
     /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * This is a string suitable for logging information about this object where it's just the object's type.  This is normally used
      * when logging errors that occur in constructor parameter checking because the scripting object isn't set up and the normal
      * logging str contents wouldn't be set up.
@@ -25408,6 +23825,10 @@ export class ArchValueShippingOptionCollection extends ArchBaseValueCollection {
      * @param archFilterObject - the object filter to use to determine if it's a match.
      */
     isFilterMatch(archFilterObject: ArchFilterObject): boolean;
+    /**
+     * Returns the display type name string 'ArchValueShippingOptionCollection'.
+     */
+    readonly displayTypeName: 'ArchValueShippingOptionCollection';
 }
 
 /**
@@ -25431,7 +23852,7 @@ export class ArchValueSkill extends ArchBaseNetworkValueSingleton {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueSkill';
     /**
      * Returns true indicating that this is an ArchValueSkill instance.
      */
@@ -25475,7 +23896,7 @@ export class ArchValueSkillCollection extends ArchBaseNetworkValueCollection {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueSkillCollection';
     /**
      * Adds an {@link ArchValueSkill} instance to this collection for the skill if it can be looked up by
      * its guid identifier.  If the skill cannot be found, nothing is added to the collection.
@@ -25513,7 +23934,7 @@ export class ArchValueString extends ArchBaseValueBasic {
     /**
      * Returns the display type name string 'ArchValueString'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueString';
     /**
      * Returns true indicating that this is an ArchValueString instance.
      */
@@ -25546,10 +23967,6 @@ export class ArchValueStringCollection extends ArchBaseValueCollectionBasic {
      * Returns true indicating that this is an ArchValueStringCollection instance.
      */
     readonly isArchValueStringCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchValueStringCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -25564,7 +23981,7 @@ export class ArchValueSurveyAnswerOption extends ArchBaseValueBasic {
     /**
      * Returns the display type name string 'ArchValueSurveyAnswerOption'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueSurveyAnswerOption';
     /**
      * Returns true indicating that this is an ArchValueSurveyAnswerOption instance.
      */
@@ -25592,10 +24009,6 @@ export class ArchValueSurveyAnswerOption extends ArchBaseValueBasic {
 export class ArchValueSurveyAnswerOptionCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Returns the display type name string 'ArchValueSurveyAnswerOptionCollection'.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating that this is an ArchValueSurveyAnswerOptionCollection instance.
      */
     readonly isArchValueSurveyAnswerOptionCollection: boolean;
@@ -25606,10 +24019,6 @@ export class ArchValueSurveyAnswerOptionCollection extends ArchBaseValueCollecti
      * @param answerOptionText - the answer text you wish to look up.
      */
     getAnswerOptionForAnswerOptionText(answerOptionText: string): ArchValueSurveyAnswerOption;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -25624,7 +24033,7 @@ export class ArchValueSurveyForm extends ArchBaseValueBasic {
     /**
      * Returns the display type name string 'ArchValueSurveyForm'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueSurveyForm';
     /**
      * Returns true indicating that this is an ArchValueSurveyForm instance.
      */
@@ -25643,7 +24052,7 @@ export class ArchValueSurveyQuestion extends ArchBaseValueBasic {
     /**
      * Returns the display type name string 'ArchValueSurveyQuestion'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueSurveyQuestion';
     /**
      * Returns true indicating that this is an ArchValueSurveyQuestion instance.
      */
@@ -25660,17 +24069,9 @@ export class ArchValueSurveyQuestion extends ArchBaseValueBasic {
 export class ArchValueSurveyQuestionCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Returns the display type name string 'ArchValueSurveyQuestionCollection'.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating that this is an ArchValueSurveyQuestionCollection instance.
      */
     readonly isArchValueSurveyQuestionCollection: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -25685,7 +24086,7 @@ export class ArchValueSurveyQuestionGroup extends ArchBaseValueBasic {
     /**
      * Returns the display type name string 'ArchValueSurveyQuestionGroup'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueSurveyQuestionGroup';
     /**
      * Returns true indicating that this is an ArchValueSurveyQuestionGroup instance.
      */
@@ -25702,17 +24103,9 @@ export class ArchValueSurveyQuestionGroup extends ArchBaseValueBasic {
 export class ArchValueSurveyQuestionGroupCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Returns the display type name string 'ArchValueSurveyQuestionGroupCollection'.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating that this is an ArchValueSurveyQuestionGroupCollection instance.
      */
     readonly isArchValueSurveyQuestionGroupCollection: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -25730,7 +24123,7 @@ export class ArchValueTime extends ArchBaseValueBasic {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueTime';
     /**
      * This sets the time as a literal using a 24 hour time notation.
      * @param time - the string value for the time formatted as 'HH:MM:SS' where HH is a two digit hour, MM is a two digit minute, and SS is a two digit second (ex: '14:33:05').
@@ -25759,18 +24152,9 @@ export class ArchValueTime extends ArchBaseValueBasic {
 export class ArchValueTimeCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating this is an ArchValueTimeCollection instance.
      */
     readonly isArchValueTimeCollection: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -25786,7 +24170,7 @@ export class ArchValueTimePicker extends ArchBaseValueWithAssignableProperties {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueTimePicker';
     /**
      * Returns true indicating that this is an ArchValueTimePicker instance.
      */
@@ -25826,10 +24210,6 @@ export class ArchValueTimePicker extends ArchBaseValueWithAssignableProperties {
      * @param [latitude] - the latitude of the event
      */
     setLiteralTimePicker(title: string, subtitle: string, imageName: string, address?: string, longitude?: number, latitude?: number): void;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -25845,7 +24225,7 @@ export class ArchValueTimeslot extends ArchBaseValueWithAssignableProperties {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueTimeslot';
     /**
      * Returns true indicating that this is an ArchValueTimeslot instance.
      */
@@ -25867,10 +24247,6 @@ export class ArchValueTimeslot extends ArchBaseValueWithAssignableProperties {
      * @param durationMilliseconds - the number of milliseconds for the duration.  This value should be an integer.  If undefined or null, it will be treated as 0.
      */
     setLiteralDateTimeAndDuration(dateTime: Date, durationMilliseconds: number): void;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -25883,18 +24259,9 @@ export class ArchValueTimeslot extends ArchBaseValueWithAssignableProperties {
 export class ArchValueTimeslotCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating this is an ArchValueTimeslotCollection instance.
      */
     static isArchValueTimeslotCollection: boolean;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -25916,7 +24283,7 @@ export class ArchValueUser extends ArchBaseNetworkValueSingleton {
     /**
      * Returns the display type name string 'ArchValueUser'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueUser';
     /**
      * Returns true indicating that this is an ArchValueUser instance.
      */
@@ -25956,11 +24323,6 @@ declare type callbackArchValueUserCollection = (archValueUserCollection: ArchVal
 export class ArchValueUserCollection extends ArchBaseNetworkValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * Adds a user to this collection looking up the user to add by the user by id
      * @param userId - the identifier of the user.
      * @param [callbackFunction] - a callback function to call if the user is successfully
@@ -25980,6 +24342,11 @@ export class ArchValueUserCollection extends ArchBaseNetworkValueCollection {
      * Returns true indicating that this is an ArchValueUserCollection instance.
      */
     static isArchValueUserCollection: boolean;
+    /**
+     * Implements override support for the display type name string for this
+     * Architect Scripting object.
+     */
+    readonly displayTypeName: 'ArchValueUserCollection';
 }
 
 /**
@@ -26008,7 +24375,7 @@ export class ArchValueUtilizationLabel extends ArchBaseNetworkValueSingleton {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueUtilizationLabel';
     /**
      * Sets the value of this utilization label to the utilization label with the specified guid identifier.
      * @param utilizationLabelName - the identifier of the utilization label.
@@ -26044,11 +24411,6 @@ declare type callbackArchValueUtilizationLabelCollection = (archValueUtilization
 export class ArchValueUtilizationLabelCollection extends ArchBaseValueCollectionBasic {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * Returns true indicating this is an ArchValueUtilizationLabelCollection instance.
      */
     isArchValueUtilizationLabelCollection: boolean;
@@ -26068,10 +24430,6 @@ export class ArchValueUtilizationLabelCollection extends ArchBaseValueCollection
      *                                                      to the callback function will be this utilizationLabel collection value instance.
      */
     addLiteralByUtilizationLabelNameAsync(utilizationLabelName: string, callbackFunction?: callbackArchValueUtilizationLabelCollection): Promise<ArchValueUtilizationLabelCollection>;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -26092,7 +24450,7 @@ export class ArchValueVoiceSnippet extends ArchBaseValueSingleton {
     /**
      * Returns the display type name string 'ArchValueVoiceSnippet'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueVoiceSnippet';
 }
 
 /**
@@ -26113,7 +24471,7 @@ export class ArchValueVoicemailSnippet extends ArchBaseValueSingleton {
     /**
      * Returns the display type name string 'ArchValueVoicemailSnippet'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueVoicemailSnippet';
 }
 
 /**
@@ -26134,7 +24492,7 @@ export class ArchValueWorkbin extends ArchBaseValueSingleton {
     /**
      * Returns the display type name string 'ArchValueWorkbin'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueWorkbin';
 }
 
 /**
@@ -26155,7 +24513,7 @@ export class ArchValueWorkbinCollection extends ArchBaseValueCollection {
     /**
      * Returns the display type name string 'ArchValueWorkbinCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueWorkbinCollection';
 }
 
 /**
@@ -26176,7 +24534,7 @@ export class ArchValueWorkitem extends ArchBaseValueSingleton {
     /**
      * Returns the display type name string 'ArchValueWorkitem'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueWorkitem';
 }
 
 export class ArchValueWorktypeStatus extends ArchBaseValueSingleton {
@@ -26184,7 +24542,7 @@ export class ArchValueWorktypeStatus extends ArchBaseValueSingleton {
     /**
      * Returns the display type name string 'ArchValueWorktypeStatus'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueWorktypeStatus';
     /**
      * Returns true indicating that this is an ArchValueWorktypeStatus instance.
      */
@@ -26498,10 +24856,6 @@ export class ArchValueWorktypeStatus extends ArchBaseValueSingleton {
      */
     traverse(callbackFunction: callbackTraverseInfo, traverseFilter?: ArchFilterObject): number;
     /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * This is a string suitable for logging information about this object where it's just the object's type.  This is normally used
      * when logging errors that occur in constructor parameter checking because the scripting object isn't set up and the normal
      * logging str contents wouldn't be set up.
@@ -26543,10 +24897,6 @@ export class ArchValueWorktypeStatus extends ArchBaseValueSingleton {
 
 export class ArchValueWorktypeStatusCollection extends ArchBaseValueCollection {
     // constructor(coreExpressionViewModel: any);
-    /**
-     * Returns the display type name string 'ArchValueWorktypeStatusCollection'.
-     */
-    readonly displayTypeName: string;
     /**
      * Returns true indicating that this is an ArchValueWorktypeStatusCollection instance.
      */
@@ -26858,10 +25208,6 @@ export class ArchValueWorktypeStatusCollection extends ArchBaseValueCollection {
      */
     traverse(callbackFunction: callbackTraverseInfo, traverseFilter?: ArchFilterObject): number;
     /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * This is a string suitable for logging information about this object where it's just the object's type.  This is normally used
      * when logging errors that occur in constructor parameter checking because the scripting object isn't set up and the normal
      * logging str contents wouldn't be set up.
@@ -26899,6 +25245,10 @@ export class ArchValueWorktypeStatusCollection extends ArchBaseValueCollection {
      * @param archFilterObject - the object filter to use to determine if it's a match.
      */
     isFilterMatch(archFilterObject: ArchFilterObject): boolean;
+    /**
+     * Returns the display type name string 'ArchValueWorktypeStatusCollection'.
+     */
+    readonly displayTypeName: 'ArchValueWorktypeStatusCollection';
 }
 
 /**
@@ -26921,7 +25271,7 @@ export class ArchValueWrapupCode extends ArchBaseNetworkValueSingleton {
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchValueWrapupCode';
     /**
      * Returns true indicating that this is an ArchValueWrapupCode instance.
      */
@@ -26961,11 +25311,6 @@ declare type callbackArchValueWrapupCodeCollection = (archValueWrapupCodeCollect
 export class ArchValueWrapupCodeCollection extends ArchBaseNetworkValueCollection {
     // constructor(coreExpressionViewModel: any);
     /**
-     * Implements override support for the display type name string for this
-     * Architect Scripting object.
-     */
-    readonly displayTypeName: string;
-    /**
      * Adds a wrapupCode to this collection looking up the wrapup code to add by id
      * @param wrapupCodeId - the identifier of the wrapup code.
      * @param [callbackFunction] - a callback function to call if the wrapup code is successfully
@@ -26985,6 +25330,11 @@ export class ArchValueWrapupCodeCollection extends ArchBaseNetworkValueCollectio
      * Returns true indicating that this is an ArchValueWrapupCodeCollection instance.
      */
     readonly isArchValueWrapupCodeCollection: boolean;
+    /**
+     * Implements override support for the display type name string for this
+     * Architect Scripting object.
+     */
+    readonly displayTypeName: 'ArchValueWrapupCodeCollection';
 }
 
 /**
@@ -27008,7 +25358,7 @@ export class ArchVariableAgentScorePair extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableAgentScorePair'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableAgentScorePair';
 }
 
 /**
@@ -27032,7 +25382,7 @@ export class ArchVariableAgentScorePairCollection extends ArchBaseVariableCollec
     /**
      * Returns the display type name string 'ArchVariableAgentScorePairCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableAgentScorePairCollection';
 }
 
 /**
@@ -27043,7 +25393,7 @@ export class ArchVariableAssignedCustomerIntent extends ArchBaseVariableSingleto
     /**
      * Returns the display type name string 'ArchVariableAssignedCustomerIntent'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableAssignedCustomerIntent';
     /**
      * The initial value for the variable at runtime.
      */
@@ -27052,10 +25402,6 @@ export class ArchVariableAssignedCustomerIntent extends ArchBaseVariableSingleto
      * Returns true indicating that this is an ArchVariableAssignedCustomerIntent instance.
      */
     static isArchVariableAssignedCustomerIntent: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27066,7 +25412,7 @@ export class ArchVariableAssignedCustomerIntentCollection extends ArchBaseVariab
     /**
      * Returns the display type name string 'ArchVariableAssignedCustomerIntentCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableAssignedCustomerIntentCollection';
     /**
      * The initial collection value for the variable at runtime.
      */
@@ -27075,10 +25421,6 @@ export class ArchVariableAssignedCustomerIntentCollection extends ArchBaseVariab
      * Returns true indicating that this is an ArchVariableAssignedCustomerIntentCollection instance.
      */
     readonly isArchVariableAssignedCustomerIntentCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27089,7 +25431,7 @@ export class ArchVariableBoolean extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableBoolean'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableBoolean';
     /**
      * The initial boolean value for the variable at runtime.  If the {@link ArchValueBoolean} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET boolean at runtime.
@@ -27099,10 +25441,6 @@ export class ArchVariableBoolean extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableBoolean instance.
      */
     readonly isArchVariableBoolean: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27113,17 +25451,13 @@ export class ArchVariableBooleanCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableBooleanCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableBooleanCollection';
     /**
      * The initial boolean collection value for the variable at runtime.  If the {@link ArchValueBooleanCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty boolean collection at runtime.
      */
     initialValue: ArchValueBooleanCollection;
     static isArchVariableBooleanCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27143,15 +25477,11 @@ export class ArchVariableCard extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableCard'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableCard';
     /**
      * Returns true indicating that this is an ArchVariableCard instance.
      */
     readonly isArchVariableCard: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27171,15 +25501,11 @@ export class ArchVariableCardCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableCardCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableCardCollection';
     /**
      * Returns true indicating that this is an ArchVariableCardCollection instance.
      */
     readonly isArchVariableCardCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27199,15 +25525,11 @@ export class ArchVariableCarousel extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableCarousel'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableCarousel';
     /**
      * Returns true indicating that this is an ArchVariableCarousel instance.
      */
     readonly isArchVariableCarousel: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27227,15 +25549,11 @@ export class ArchVariableChoice extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableChoice'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableChoice';
     /**
      * Returns true indicating that this is an ArchVariableChoice instance.
      */
     readonly isArchVariableChoice: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27255,15 +25573,11 @@ export class ArchVariableChoiceCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableChoiceCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableChoiceCollection';
     /**
      * Returns true indicating that this is an ArchVariableChoiceCollection instance.
      */
     readonly isArchVariableChoiceCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27283,15 +25597,11 @@ export class ArchVariableChooser extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableChooser'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableChooser';
     /**
      * Returns true indicating that this is an ArchVariableChooser instance.
      */
     readonly isArchVariableChooser: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27311,15 +25621,11 @@ export class ArchVariableChooserCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableChooserCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableChooserCollection';
     /**
      * Returns true indicating that this is an ArchVariableChooserCollection instance.
      */
     readonly isArchVariableChooserCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27330,7 +25636,7 @@ export class ArchVariableCommunication extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableCommunication'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableCommunication';
     /**
      * The initial Communication value for the variable at runtime.  If the {@link ArchValueCommunication} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET Communication at runtime.
@@ -27340,10 +25646,6 @@ export class ArchVariableCommunication extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableCommunication instance.
      */
     static isArchVariableCommunication: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27354,7 +25656,7 @@ export class ArchVariableCurrency extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableCurrency'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableCurrency';
     /**
      * The initial currency value for the variable at runtime.  If the {@link ArchValueCurrency} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET currency at runtime.
@@ -27364,10 +25666,6 @@ export class ArchVariableCurrency extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableCurrency instance.
      */
     readonly isArchVariableCurrency: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27378,17 +25676,13 @@ export class ArchVariableCurrencyCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableCurrencyCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableCurrencyCollection';
     /**
      * The initial currency collection value for the variable at runtime.  If the {@link ArchValueCurrencyCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty currency collection at runtime.
      */
     initialValue: ArchValueCurrencyCollection;
     static isArchVariableCurrencyCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27399,7 +25693,7 @@ export class ArchVariableCustomerIntent extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableCustomerIntent'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableCustomerIntent';
     /**
      * The initial value for the variable at runtime.
      */
@@ -27408,10 +25702,6 @@ export class ArchVariableCustomerIntent extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableCustomerIntent instance.
      */
     static isArchVariableCustomerIntent: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27422,7 +25712,7 @@ export class ArchVariableCustomerIntentCollection extends ArchBaseVariableCollec
     /**
      * Returns the display type name string 'ArchVariableCustomerIntentCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableCustomerIntentCollection';
     /**
      * The initial collection value for the variable at runtime.
      */
@@ -27431,10 +25721,6 @@ export class ArchVariableCustomerIntentCollection extends ArchBaseVariableCollec
      * Returns true indicating that this is an ArchVariableCustomerIntentCollection instance.
      */
     readonly isArchVariableCustomerIntentCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27445,7 +25731,7 @@ export class ArchVariableDate extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableDate'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableDate';
     /**
      * The initial Date value for the variable at runtime.  If the {@link ArchValueDate} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET Date at runtime.
@@ -27455,10 +25741,6 @@ export class ArchVariableDate extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableDate instance.
      */
     isArchVariableDate: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27469,7 +25751,7 @@ export class ArchVariableDateCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableDateCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableDateCollection';
     /**
      * The initial Date collection value for the variable at runtime.  If the {@link ArchValueDateCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty Date collection at runtime.
@@ -27479,10 +25761,6 @@ export class ArchVariableDateCollection extends ArchBaseVariableCollection {
      * Returns true indicating that this is an ArchVariableDateCollection instance.
      */
     static isArchVariableDateCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27493,17 +25771,13 @@ export class ArchVariableDateTime extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableDateTime'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableDateTime';
     /**
      * The initial DateTime value for the variable at runtime.  If the {@link ArchValueDateTime} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET DateTime at runtime.
      */
     initialValue: ArchValueDateTime;
     static isArchVariableDateTime: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27514,17 +25788,13 @@ export class ArchVariableDateTimeCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableDateTimeCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableDateTimeCollection';
     /**
      * The initial DateTime collection value for the variable at runtime.  If the {@link ArchValueDateTimeCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty DateTime collection at runtime.
      */
     initialValue: ArchValueDateTimeCollection;
     static isArchVariableDateTimeCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27535,17 +25805,13 @@ export class ArchVariableDecimal extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableDecimal'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableDecimal';
     /**
      * The initial decimal value for the variable at runtime.  If the {@link ArchValueDecimal} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET decimal at runtime.
      */
     initialValue: ArchValueDecimal;
     static isArchVariableDecimal: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27556,17 +25822,13 @@ export class ArchVariableDecimalCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableDecimalCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableDecimalCollection';
     /**
      * The initial decimal collection value for the variable at runtime.  If the {@link ArchValueDecimalCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty decimal collection at runtime.
      */
     initialValue: ArchValueDecimalCollection;
     static isArchVariableDecimalCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27577,17 +25839,13 @@ export class ArchVariableDuration extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableDuration'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableDuration';
     /**
      * The initial duration value for the variable at runtime.  If the {@link ArchValueDuration} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET duration at runtime.
      */
     initialValue: ArchValueDuration;
     static isArchVariableDuration: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27598,7 +25856,7 @@ export class ArchVariableDurationCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableDurationCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableDurationCollection';
     /**
      * The initial duration collection value for the variable at runtime.  If the {@link ArchValueDurationCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty duration collection at runtime.
@@ -27608,10 +25866,6 @@ export class ArchVariableDurationCollection extends ArchBaseVariableCollection {
      * Returns true indicating that this is an ArchVariableDurationCollection instance.
      */
     readonly isArchVariableDurationCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27622,7 +25876,7 @@ export class ArchVariableEmailAddress extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableEmailAddress'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableEmailAddress';
     /**
      * The initial EmailAddress value for the variable at runtime.  If the {@link ArchValueEmailAddress} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET EmailAddress at runtime.
@@ -27632,10 +25886,6 @@ export class ArchVariableEmailAddress extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableEmailAddress instance.
      */
     isArchVariableEmailAddress: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27646,17 +25896,13 @@ export class ArchVariableEmailAddressCollection extends ArchBaseVariableCollecti
     /**
      * Returns the display type name string 'ArchVariableEmailAddressCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableEmailAddressCollection';
     /**
      * The initial EmailAddress collection value for the variable at runtime.  If the {@link ArchValueEmailAddressCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty EmailAddress collection at runtime.
      */
     initialValue: ArchValueUserCollection;
     static isArchVariableEmailAddressCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27667,17 +25913,13 @@ export class ArchVariableEmergencyGroup extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableEmergencyGroup'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableEmergencyGroup';
     /**
      * The initial emergencyGroup value for the variable at runtime.  If the {@link ArchValueEmergencyGroup} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET emergencyGroup at runtime.
      */
     initialValue: ArchValueEmergencyGroup;
     static isArchVariableEmergencyGroup: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27688,7 +25930,7 @@ export class ArchVariableEmergencyGroupCollection extends ArchBaseVariableCollec
     /**
      * Returns the display type name string 'ArchVariableEmergencyGroupCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableEmergencyGroupCollection';
     /**
      * The initial emergencyGroup collection value for the variable at runtime.  If the {@link ArchValueEmergencyGroupCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty emergencyGroup collection at runtime.
@@ -27698,10 +25940,6 @@ export class ArchVariableEmergencyGroupCollection extends ArchBaseVariableCollec
      * Returns true indicating that this is an ArchVariableEmergencyGroupCollection instance.
      */
     readonly isArchVariableEmergencyGroupCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27725,7 +25963,7 @@ export class ArchVariableExternalContact extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableExternalContact'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableExternalContact';
 }
 
 /**
@@ -27749,7 +25987,7 @@ export class ArchVariableExternalContactCollection extends ArchBaseVariableColle
     /**
      * Returns the display type name string 'ArchVariableExternalContactCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableExternalContactCollection';
 }
 
 /**
@@ -27773,7 +26011,7 @@ export class ArchVariableExternalOrganization extends ArchBaseVariableSingleton 
     /**
      * Returns the display type name string 'ArchVariableExternalOrganization'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableExternalOrganization';
 }
 
 /**
@@ -27797,7 +26035,7 @@ export class ArchVariableExternalOrganizationCollection extends ArchBaseVariable
     /**
      * Returns the display type name string 'ArchVariableExternalOrganizationCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableExternalOrganizationCollection';
 }
 
 /**
@@ -27808,7 +26046,7 @@ export class ArchVariableGrammar extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableGrammar'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableGrammar';
     /**
      * The initial grammar value for the variable at runtime.  If the {@link ArchValueGrammar} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET grammar at runtime.
@@ -27818,10 +26056,6 @@ export class ArchVariableGrammar extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableGrammar instance.
      */
     static isArchVariableGrammar: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27832,7 +26066,7 @@ export class ArchVariableGrammarCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableGrammarCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableGrammarCollection';
     /**
      * The initial grammar collection value for the variable at runtime.  If the {@link ArchValueGrammarCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty grammar collection at runtime.
@@ -27842,10 +26076,6 @@ export class ArchVariableGrammarCollection extends ArchBaseVariableCollection {
      * Returns true indicating that this is an ArchVariableGrammarCollection instance.
      */
     readonly isArchVariableGrammarCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27856,17 +26086,13 @@ export class ArchVariableGroup extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableGroup'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableGroup';
     /**
      * The initial group value for the variable at runtime.  If the {@link ArchValueGroup} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET group at runtime.
      */
     initialValue: ArchValueGroup;
     static isArchVariableGroup: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27877,7 +26103,7 @@ export class ArchVariableGroupCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableGroupCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableGroupCollection';
     /**
      * The initial group collection value for the variable at runtime.  If the {@link ArchValueGroupCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty group collection at runtime.
@@ -27887,10 +26113,6 @@ export class ArchVariableGroupCollection extends ArchBaseVariableCollection {
      * Returns true indicating that this is an ArchVariableGroupCollection instance.
      */
     readonly isArchVariableGroupCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27901,7 +26123,7 @@ export class ArchVariableImage extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableImage'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableImage';
     /**
      * The initial image value for the variable at runtime.  If the {@link ArchValueImage} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET image at runtime.
@@ -27911,10 +26133,6 @@ export class ArchVariableImage extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableImage instance.
      */
     static isArchVariableImage: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27925,7 +26143,7 @@ export class ArchVariableImageCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableImageCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableImageCollection';
     /**
      * The initial image collection value for the variable at runtime.  If the {@link ArchValueImageCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty image collection at runtime.
@@ -27935,10 +26153,6 @@ export class ArchVariableImageCollection extends ArchBaseVariableCollection {
      * Returns true indicating that this is an ArchVariableImageCollection instance.
      */
     readonly isArchVariableImageCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27949,7 +26163,7 @@ export class ArchVariableInteger extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableInteger'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableInteger';
     /**
      * The initial integer value for the variable at runtime.  If the {@link ArchValueInteger} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET integer at runtime.
@@ -27959,10 +26173,6 @@ export class ArchVariableInteger extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableInteger instance.
      */
     static isArchVariableInteger: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -27973,7 +26183,7 @@ export class ArchVariableIntegerCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableIntegerCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableIntegerCollection';
     /**
      * The initial integer collection value for the variable at runtime.  If the {@link ArchValueIntegerCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty integer collection at runtime.
@@ -27983,10 +26193,6 @@ export class ArchVariableIntegerCollection extends ArchBaseVariableCollection {
      * Returns true indicating that this is an ArchVariableIntegerCollection instance.
      */
     readonly isArchVariableIntegerCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28010,7 +26216,7 @@ export class ArchVariableJourneyOutcome extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableJourneyOutcome'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableJourneyOutcome';
 }
 
 /**
@@ -28034,7 +26240,7 @@ export class ArchVariableJourneyOutcomeCollection extends ArchBaseVariableCollec
     /**
      * Returns the display type name string 'ArchVariableJourneyOutcomeCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableJourneyOutcomeCollection';
 }
 
 /**
@@ -28058,7 +26264,7 @@ export class ArchVariableJourneyOutcomeScore extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableJourneyOutcomeScore'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableJourneyOutcomeScore';
 }
 
 /**
@@ -28082,7 +26288,7 @@ export class ArchVariableJourneyOutcomeScoreCollection extends ArchBaseVariableC
     /**
      * Returns the display type name string 'ArchVariableJourneyOutcomeScoreCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableJourneyOutcomeScoreCollection';
 }
 
 /**
@@ -28106,7 +26312,7 @@ export class ArchVariableJourneySegment extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableJourneySegment'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableJourneySegment';
 }
 
 /**
@@ -28130,7 +26336,7 @@ export class ArchVariableJourneySegmentCollection extends ArchBaseVariableCollec
     /**
      * Returns the display type name string 'ArchVariableJourneySegmentCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableJourneySegmentCollection';
 }
 
 /**
@@ -28154,7 +26360,7 @@ export class ArchVariableJourneySession extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableJourneySession'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableJourneySession';
 }
 
 /**
@@ -28178,7 +26384,7 @@ export class ArchVariableJourneySessionCollection extends ArchBaseVariableCollec
     /**
      * Returns the display type name string 'ArchVariableJourneySessionCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableJourneySessionCollection';
 }
 
 /**
@@ -28189,7 +26395,7 @@ export class ArchVariableJson extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableJson'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableJson';
     /**
      * The initial JSON value for the variable at runtime.  If the {@link ArchValueJson} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET JSON value at runtime.
@@ -28203,10 +26409,6 @@ export class ArchVariableJson extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableJson instance.
      */
     static isArchVariableJson: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28217,7 +26419,7 @@ export class ArchVariableJsonCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableJsonCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableJsonCollection';
     /**
      * The initial json collection value for the variable at runtime.  If the {@link ArchValueJsonCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty JSON collection at runtime.
@@ -28227,10 +26429,6 @@ export class ArchVariableJsonCollection extends ArchBaseVariableCollection {
      * Returns true indicating that this is an ArchVariableJsonCollection instance.
      */
     readonly isArchVariableJsonCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28241,17 +26439,13 @@ export class ArchVariableKnowledgeBaseDocument extends ArchBaseVariableSingleton
     /**
      * Returns the display type name string 'ArchVariableKnowledgeBaseDocument'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableKnowledgeBaseDocument';
     /**
      * The initial knowledge base document value for the variable at runtime.  If the {@link ArchValueKnowledgeBaseDocument} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET queue at runtime.
      */
     initialValue: ArchValueKnowledgeBaseDocument;
     static isArchVariableKnowledgeBaseDocument: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28263,7 +26457,7 @@ export class ArchVariableKnowledgeBaseDocumentCollection extends ArchBaseVariabl
     /**
      * Returns the display type name string 'ArchVariableKnowledgeBaseDocumentCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableKnowledgeBaseDocumentCollection';
     /**
      * The initial knowledge base document collection value for the variable at runtime.  If the {@link ArchValueKnowledgeBaseDocumentCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty queue collection at runtime.
@@ -28273,10 +26467,6 @@ export class ArchVariableKnowledgeBaseDocumentCollection extends ArchBaseVariabl
      * Returns true indicating that this is an ArchVariableKnowledgeBaseDocumentCollection instance.
      */
     readonly isArchVariableKnowledgeBaseDocumentCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28287,7 +26477,7 @@ export class ArchVariableLanguageSkill extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableLanguageSkill'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableLanguageSkill';
     /**
      * The initial language skill value for the variable at runtime.  If the {@link ArchValueLanguageSkill} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET language skill at runtime.
@@ -28297,10 +26487,6 @@ export class ArchVariableLanguageSkill extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableLanguageSkill instance.
      */
     readonly isArchVariableLanguageSkill: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28311,7 +26497,7 @@ export class ArchVariableLanguageSkillCollection extends ArchBaseVariableCollect
     /**
      * Returns the display type name string 'ArchVariableLanguageSkillCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableLanguageSkillCollection';
     /**
      * The initial LanguageSkill collection value for the variable at runtime.  If the {@link ArchValueLanguageSkillCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty LanguageSkill collection at runtime.
@@ -28321,10 +26507,6 @@ export class ArchVariableLanguageSkillCollection extends ArchBaseVariableCollect
      * Returns true indicating that this is an ArchVariableLanguageSkillCollection instance.
      */
     readonly isArchVariableLanguageSkillCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28335,7 +26517,7 @@ export class ArchVariableLineItem extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableLineItem'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableLineItem';
     /**
      * The initial line item value for the variable at runtime. If the {@link ArchValueLineItem} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET line item at runtime.
@@ -28345,10 +26527,6 @@ export class ArchVariableLineItem extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableLineItem instance.
      */
     static isArchVariableLineItem: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28359,7 +26537,7 @@ export class ArchVariableLineItemCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableLineItemCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableLineItemCollection';
     /**
      * The initial line item collection value for the variable at runtime. If the {@link ArchValueLineItemCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty line item collection at runtime.
@@ -28369,10 +26547,6 @@ export class ArchVariableLineItemCollection extends ArchBaseVariableCollection {
      * Returns true indicating that this is an ArchVariableLineItemCollection instance.
      */
     readonly isArchVariableLineItemCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28383,7 +26557,7 @@ export class ArchVariableListPicker extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableListPicker'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableListPicker';
     /**
      * The initial list picker for the variable at runtime.  If the {@link ArchValueListPicker} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET list picker at runtime.
@@ -28393,10 +26567,6 @@ export class ArchVariableListPicker extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableListPicker instance.
      */
     readonly isArchVariableListPicker: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28407,7 +26577,7 @@ export class ArchVariableListPickerItem extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableListPickerItem'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableListPickerItem';
     /**
      * The initial list picker item value for the variable at runtime.  If the {@link ArchValueListPickerItem} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET list picker item at runtime.
@@ -28417,10 +26587,6 @@ export class ArchVariableListPickerItem extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableListPickerItem instance.
      */
     readonly isArchVariableListPickerItem: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28431,7 +26597,7 @@ export class ArchVariableListPickerItemCollection extends ArchBaseVariableCollec
     /**
      * Returns the display type name string 'ArchVariableListPickerItemCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableListPickerItemCollection';
     /**
      * The initial listPickerItem collection value for the variable at runtime.  If the {@link ArchValueListPickerItemCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty listPickerItem collection at runtime.
@@ -28441,10 +26607,6 @@ export class ArchVariableListPickerItemCollection extends ArchBaseVariableCollec
      * Returns true indicating that this is an ArchVariableListPickerItemCollection instance.
      */
     readonly isArchVariableListPickerItemCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28455,7 +26617,7 @@ export class ArchVariableListPickerSection extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableListPickerSection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableListPickerSection';
     /**
      * The initial list picker section value for the variable at runtime.  If the {@link ArchValueListPickerSection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET list picker section at runtime.
@@ -28465,10 +26627,6 @@ export class ArchVariableListPickerSection extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableListPickerSection instance.
      */
     readonly isArchVariableListPickerSection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28479,7 +26637,7 @@ export class ArchVariableListPickerSectionCollection extends ArchBaseVariableCol
     /**
      * Returns the display type name string 'ArchVariableListPickerSectionCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableListPickerSectionCollection';
     /**
      * The initial listPickerSection collection value for the variable at runtime.  If the {@link ArchValueListPickerSectionCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty listPickerSection collection at runtime.
@@ -28489,10 +26647,6 @@ export class ArchVariableListPickerSectionCollection extends ArchBaseVariableCol
      * Returns true indicating that this is an ArchVariableListPickerSectionCollection instance.
      */
     readonly isArchVariableListPickerSectionCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28503,7 +26657,7 @@ export class ArchVariablePhoneNumber extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariablePhoneNumber'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariablePhoneNumber';
     /**
      * The initial PhoneNumber value for the variable at runtime.  If the {@link ArchValuePhoneNumber} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET PhoneNumber at runtime.
@@ -28513,10 +26667,6 @@ export class ArchVariablePhoneNumber extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariablePhoneNumber instance.
      */
     readonly isArchVariablePhoneNumber: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28528,7 +26678,7 @@ export class ArchVariablePhoneNumberCollection extends ArchBaseVariableCollectio
      * Implements override support for the display type name string for this
      * Architect Scripting object.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariablePhoneNumberCollection';
     /**
      * The initial PhoneNumber collection value for the variable at runtime.  If the {@link ArchValuePhoneNumberCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty PhoneNumber collection at runtime.
@@ -28538,10 +26688,6 @@ export class ArchVariablePhoneNumberCollection extends ArchBaseVariableCollectio
      * Returns true indicating that this is an ArchVariablePhoneNumberCollection instance.
      */
     isArchVariablePhoneNumberCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28552,7 +26698,7 @@ export class ArchVariablePrompt extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariablePrompt'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariablePrompt';
     /**
      * The initial prompt value for the variable at runtime.  If the {@link ArchValuePrompt} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET prompt at runtime.
@@ -28562,10 +26708,6 @@ export class ArchVariablePrompt extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariablePrompt instance.
      */
     readonly isArchVariablePrompt: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28576,7 +26718,7 @@ export class ArchVariablePromptCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariablePromptCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariablePromptCollection';
     /**
      * The initial prompt collection value for the variable at runtime.  If the {@link ArchValuePromptCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty prompt collection at runtime.
@@ -28586,10 +26728,6 @@ export class ArchVariablePromptCollection extends ArchBaseVariableCollection {
      * Returns true indicating that this is an ArchVariablePromptCollection instance.
      */
     readonly isArchVariablePromptCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28600,17 +26738,13 @@ export class ArchVariableQueue extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableQueue'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableQueue';
     /**
      * The initial queue value for the variable at runtime.  If the {@link ArchValueQueue} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET queue at runtime.
      */
     initialValue: ArchValueQueue;
     static isArchVariableQueue: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28621,7 +26755,7 @@ export class ArchVariableQueueCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableQueueCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableQueueCollection';
     /**
      * The initial queue collection value for the variable at runtime.  If the {@link ArchValueQueueCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty queue collection at runtime.
@@ -28631,10 +26765,6 @@ export class ArchVariableQueueCollection extends ArchBaseVariableCollection {
      * Returns true indicating that this is an ArchVariableQueueCollection instance.
      */
     readonly isArchVariableQueueCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28654,15 +26784,11 @@ export class ArchVariableQuickReplies extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableQuickReplies'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableQuickReplies';
     /**
      * Returns true indicating that this is an ArchVariableQuickReplies instance.
      */
     readonly isArchVariableQuickReplies: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28673,17 +26799,13 @@ export class ArchVariableSchedule extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableSchedule'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableSchedule';
     /**
      * The initial schedule value for the variable at runtime.  If the {@link ArchValueSchedule} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET schedule at runtime.
      */
     initialValue: ArchValueSchedule;
     static isArchVariableSchedule: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28694,7 +26816,7 @@ export class ArchVariableScheduleCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableScheduleCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableScheduleCollection';
     /**
      * The initial schedule collection value for the variable at runtime.  If the {@link ArchValueScheduleCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty schedule collection at runtime.
@@ -28704,10 +26826,6 @@ export class ArchVariableScheduleCollection extends ArchBaseVariableCollection {
      * Returns true indicating that this is an ArchVariableScheduleCollection instance.
      */
     readonly isArchVariableScheduleCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28718,17 +26836,13 @@ export class ArchVariableScheduleGroup extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableScheduleGroup'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableScheduleGroup';
     /**
      * The initial scheduleGroup value for the variable at runtime.  If the {@link ArchValueScheduleGroup} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET scheduleGroup at runtime.
      */
     initialValue: ArchValueScheduleGroup;
     static isArchVariableScheduleGroup: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28739,7 +26853,7 @@ export class ArchVariableScheduleGroupCollection extends ArchBaseVariableCollect
     /**
      * Returns the display type name string 'ArchVariableScheduleGroupCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableScheduleGroupCollection';
     /**
      * The initial scheduleGroup collection value for the variable at runtime.  If the {@link ArchValueScheduleGroupCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty scheduleGroup collection at runtime.
@@ -28749,10 +26863,6 @@ export class ArchVariableScheduleGroupCollection extends ArchBaseVariableCollect
      * Returns true indicating that this is an ArchVariableScheduleGroupCollection instance.
      */
     readonly isArchVariableScheduleGroupCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28779,15 +26889,11 @@ export class ArchVariableSettings extends ArchBaseObject {
     /**
      * Returns the display type name string 'ArchVariableSettings'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableSettings';
     /**
      * A string suitable for logging that contains information about this value settings object.
      */
     readonly logStr: string;
-    /**
-     * Returns a display string that reflects the type for this Architect Scripting object.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28798,7 +26904,7 @@ export class ArchVariableShippingOption extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableShippingOption'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableShippingOption';
     /**
      * The initial shipping option value for the variable at runtime. If the {@link ArchValueShippingOption} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET shipping option at runtime.
@@ -28808,10 +26914,6 @@ export class ArchVariableShippingOption extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableShippingOption instance.
      */
     static isArchVariableShippingOption: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28822,7 +26924,7 @@ export class ArchVariableShippingOptionCollection extends ArchBaseVariableCollec
     /**
      * Returns the display type name string 'ArchVariableShippingOptionCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableShippingOptionCollection';
     /**
      * The initial shipping option collection value for the variable at runtime. If the {@link ArchValueShippingOptionCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty shipping option collection at runtime.
@@ -28832,10 +26934,6 @@ export class ArchVariableShippingOptionCollection extends ArchBaseVariableCollec
      * Returns true indicating that this is an ArchVariableShippingOptionCollection instance.
      */
     readonly isArchVariableShippingOptionCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28846,7 +26944,7 @@ export class ArchVariableSkill extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableSkill'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableSkill';
     /**
      * The initial skill value for the variable at runtime.  If the {@link ArchValueSkill} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET skill at runtime.
@@ -28856,10 +26954,6 @@ export class ArchVariableSkill extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableSkill instance.
      */
     readonly isArchVariableSkill: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28870,17 +26964,13 @@ export class ArchVariableSkillCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableSkillCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableSkillCollection';
     /**
      * The initial skill collection value for the variable at runtime.  If the {@link ArchValueSkillCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty skill collection at runtime.
      */
     initialValue: ArchValueSkillCollection;
     static isArchVariableSkillCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28891,7 +26981,7 @@ export class ArchVariableString extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableString'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableString';
     /**
      * The initial string value for the variable at runtime.  If the {@link ArchValueString} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET string at runtime.
@@ -28901,10 +26991,6 @@ export class ArchVariableString extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableString instance.
      */
     readonly isArchVariableString: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28915,7 +27001,7 @@ export class ArchVariableStringCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableStringCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableStringCollection';
     /**
      * The initial string collection value for the variable at runtime.  If the {@link ArchValueStringCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty string collection at runtime.
@@ -28925,10 +27011,6 @@ export class ArchVariableStringCollection extends ArchBaseVariableCollection {
      * Returns true indicating that this is an ArchVariableStringCollection instance.
      */
     readonly isArchVariableStringCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28939,7 +27021,7 @@ export class ArchVariableSurveyAnswerOption extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableSurveyAnswerOption'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableSurveyAnswerOption';
     /**
      * The initial survey answer option value for the variable at runtime.  If the {@link ArchValueSurveyAnswerOption} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET survey answer option at runtime.
@@ -28949,10 +27031,6 @@ export class ArchVariableSurveyAnswerOption extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableSurveyAnswerOption instance.
      */
     readonly isArchVariableSurveyAnswerOption: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28963,7 +27041,7 @@ export class ArchVariableSurveyAnswerOptionCollection extends ArchBaseVariableCo
     /**
      * Returns the display type name string 'ArchVariableSurveyAnswerOptionCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableSurveyAnswerOptionCollection';
     /**
      * The initial survey answer option collection value for the variable at runtime.  If the {@link ArchValueSurveyAnswerOptionCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty survey answer option collection at runtime.
@@ -28973,10 +27051,6 @@ export class ArchVariableSurveyAnswerOptionCollection extends ArchBaseVariableCo
      * Returns true indicating that this is an ArchVariableSurveyAnswerOptionCollection instance.
      */
     readonly isArchVariableSurveyAnswerOptionCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -28987,7 +27061,7 @@ export class ArchVariableSurveyForm extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableSurveyForm'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableSurveyForm';
     /**
      * The initial survey form value for the variable at runtime.  If the {@link ArchValueSurveyForm} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET survey form at runtime.
@@ -28997,10 +27071,6 @@ export class ArchVariableSurveyForm extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableSurveyForm instance.
      */
     readonly isArchVariableSurveyForm: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -29011,7 +27081,7 @@ export class ArchVariableSurveyQuestion extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableSurveyQuestion'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableSurveyQuestion';
     /**
      * The initial survey question value for the variable at runtime.  If the {@link ArchValueSurveyQuestion} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET survey question at runtime.
@@ -29021,10 +27091,6 @@ export class ArchVariableSurveyQuestion extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableSurveyQuestion instance.
      */
     readonly isArchVariableSurveyQuestion: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -29035,7 +27101,7 @@ export class ArchVariableSurveyQuestionCollection extends ArchBaseVariableCollec
     /**
      * Returns the display type name string 'ArchVariableSurveyQuestionCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableSurveyQuestionCollection';
     /**
      * The initial survey question collection value for the variable at runtime.  If the {@link ArchValueSurveyQuestionCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty survey question collection at runtime.
@@ -29045,10 +27111,6 @@ export class ArchVariableSurveyQuestionCollection extends ArchBaseVariableCollec
      * Returns true indicating that this is an ArchVariableSurveyQuestionCollection instance.
      */
     readonly isArchVariableSurveyQuestionCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -29059,7 +27121,7 @@ export class ArchVariableSurveyQuestionGroup extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableSurveyQuestionGroup'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableSurveyQuestionGroup';
     /**
      * The initial survey question group value for the variable at runtime.  If the {@link ArchValueSurveyQuestionGroup} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET survey question group at runtime.
@@ -29069,10 +27131,6 @@ export class ArchVariableSurveyQuestionGroup extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableSurveyQuestionGroup instance.
      */
     readonly isArchVariableSurveyQuestionGroup: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -29083,7 +27141,7 @@ export class ArchVariableSurveyQuestionGroupCollection extends ArchBaseVariableC
     /**
      * Returns the display type name string 'ArchVariableSurveyQuestionGroupCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableSurveyQuestionGroupCollection';
     /**
      * The initial survey question group collection value for the variable at runtime.  If the {@link ArchValueSurveyQuestionGroupCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty survey question group collection at runtime.
@@ -29093,10 +27151,6 @@ export class ArchVariableSurveyQuestionGroupCollection extends ArchBaseVariableC
      * Returns true indicating that this is an ArchVariableSurveyQuestionGroupCollection instance.
      */
     readonly isArchVariableSurveyQuestionGroupCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -29107,7 +27161,7 @@ export class ArchVariableTime extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableTime'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableTime';
     /**
      * The initial Time value for the variable at runtime.  If the {@link ArchValueTime} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET Time at runtime.
@@ -29117,10 +27171,6 @@ export class ArchVariableTime extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableTime instance.
      */
     isArchVariableTime: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -29131,7 +27181,7 @@ export class ArchVariableTimeCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableTimeCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableTimeCollection';
     /**
      * The initial Time collection value for the variable at runtime.  If the {@link ArchValueTimeCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty Time collection at runtime.
@@ -29141,10 +27191,6 @@ export class ArchVariableTimeCollection extends ArchBaseVariableCollection {
      * Returns true indicating that this is an ArchVariableTimeCollection instance.
      */
     static isArchVariableTimeCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -29155,7 +27201,7 @@ export class ArchVariableTimePicker extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableTimePicker'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableTimePicker';
     /**
      * The initial time picker value for the variable at runtime.  If the {@link ArchValueTimePicker} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET time picker at runtime.
@@ -29165,10 +27211,6 @@ export class ArchVariableTimePicker extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableTimePicker instance.
      */
     readonly isArchVariableTimePicker: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -29179,7 +27221,7 @@ export class ArchVariableTimeslot extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableTimeslot'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableTimeslot';
     /**
      * The initial timeslot value for the variable at runtime.  If the {@link ArchValueTimeslot} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET timeslot at runtime.
@@ -29189,10 +27231,6 @@ export class ArchVariableTimeslot extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableTimeslot instance.
      */
     readonly isArchVariableTimeslot: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -29203,7 +27241,7 @@ export class ArchVariableTimeslotCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableTimeslotCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableTimeslotCollection';
     /**
      * The initial timeslot collection value for the variable at runtime.  If the {@link ArchValueTimeslotCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty timeslot collection at runtime.
@@ -29213,10 +27251,6 @@ export class ArchVariableTimeslotCollection extends ArchBaseVariableCollection {
      * Returns true indicating that this is an ArchVariableTimeslotCollection instance.
      */
     readonly isArchVariableTimeslotCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -29227,17 +27261,13 @@ export class ArchVariableUser extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableUser'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableUser';
     /**
      * The initial user value for the variable at runtime.  If the {@link ArchValueUser} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET user at runtime.
      */
     initialValue: ArchValueUser;
     static isArchVariableUser: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -29248,7 +27278,7 @@ export class ArchVariableUserCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableUserCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableUserCollection';
     /**
      * The initial user collection value for the variable at runtime.  If the {@link ArchValueUserCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty user collection at runtime.
@@ -29258,10 +27288,6 @@ export class ArchVariableUserCollection extends ArchBaseVariableCollection {
      * Returns true indicating that this is an ArchVariableUserCollection instance.
      */
     readonly isArchVariableUserCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -29272,7 +27298,7 @@ export class ArchVariableUtilizationLabel extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableUtilizationLabel'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableUtilizationLabel';
     /**
      * The initial utilization label value for the variable at runtime.  If the {@link ArchValueUtilizationLabel} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET utilization label at runtime.
@@ -29282,10 +27308,6 @@ export class ArchVariableUtilizationLabel extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableUtilizationLabel instance.
      */
     static isArchVariableUtilizationLabel: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -29296,7 +27318,7 @@ export class ArchVariableUtilizationLabelCollection extends ArchBaseVariableColl
     /**
      * Returns the display type name string 'ArchVariableUtilizationLabelCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableUtilizationLabelCollection';
     /**
      * The initial utilization label collection value for the variable at runtime.  If the {@link ArchValueUtilizationLabelCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty utilization label collection at runtime.
@@ -29306,10 +27328,6 @@ export class ArchVariableUtilizationLabelCollection extends ArchBaseVariableColl
      * Returns true indicating that this is an ArchVariableUtilizationLabelCollection instance.
      */
     readonly isArchVariableUtilizationLabelCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -29333,7 +27351,7 @@ export class ArchVariableVoiceSnippet extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableVoiceSnippet'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableVoiceSnippet';
 }
 
 /**
@@ -29357,7 +27375,7 @@ export class ArchVariableWorkbin extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableWorkbin'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableWorkbin';
 }
 
 /**
@@ -29381,7 +27399,7 @@ export class ArchVariableWorkbinCollection extends ArchBaseVariableCollection {
     /**
      * Returns the display type name string 'ArchVariableWorkbinCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableWorkbinCollection';
 }
 
 /**
@@ -29401,7 +27419,7 @@ export class ArchVariableWorkitem extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableWorkitem'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableWorkitem';
     /**
      * Returns true indicating that this is an ArchVariableWorkitem instance.
      */
@@ -29425,15 +27443,11 @@ export class ArchVariableWorktypeStatus extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableWorktypeStatus'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableWorktypeStatus';
     /**
      * Returns true indicating that this is an ArchVariableWorktypeStatus instance.
      */
     readonly isArchVariableWorktypeStatus: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -29453,15 +27467,11 @@ export class ArchVariableWorktypeStatusCollection extends ArchBaseVariableCollec
     /**
      * Returns the display type name string 'ArchVariableWorktypeStatusCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableWorktypeStatusCollection';
     /**
      * Returns true indicating that this is an ArchVariableWorktypeStatusCollection instance.
      */
     readonly isArchVariableWorktypeStatusCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -29472,7 +27482,7 @@ export class ArchVariableWrapupCode extends ArchBaseVariableSingleton {
     /**
      * Returns the display type name string 'ArchVariableWrapupCode'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableWrapupCode';
     /**
      * The initial wrapup code value for the variable at runtime.  If the {@link ArchValueWrapupCode} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be a NOT_SET wrapup code at runtime.
@@ -29482,10 +27492,6 @@ export class ArchVariableWrapupCode extends ArchBaseVariableSingleton {
      * Returns true indicating that this is an ArchVariableWrapupCode instance.
      */
     readonly isArchVariableWrapupCode: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableSingleton'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
@@ -29496,7 +27502,7 @@ export class ArchVariableWrapupCodeCollection extends ArchBaseVariableCollection
     /**
      * Returns the display type name string 'ArchVariableWrapupCodeCollection'.
      */
-    readonly displayTypeName: string;
+    readonly displayTypeName: 'ArchVariableWrapupCodeCollection';
     /**
      * The initial wraupup code collection value for the variable at runtime.  If the {@link ArchValueWrapupCodeCollection} is set to [no value]{@link ArchBaseValue#isNoValue},
      * this will be an empty wraupup code collection at runtime.
@@ -29506,10 +27512,6 @@ export class ArchVariableWrapupCodeCollection extends ArchBaseVariableCollection
      * Returns true indicating that this is an ArchVariableWrapupCodeCollection instance.
      */
     isArchVariableWrapupCodeCollection: boolean;
-    /**
-     * Returns the display type name string 'ArchBaseVariableCollection'.
-     */
-    readonly displayTypeName: string;
 }
 
 /**
