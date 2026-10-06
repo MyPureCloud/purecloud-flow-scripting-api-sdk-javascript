@@ -12658,6 +12658,16 @@ export class ArchBaseFlow extends ArchBaseCoreObjectWithId {
      */
     readonly isFlowTypeDeprecated: boolean;
     /**
+     * Returns the total number of user-created variables (see {@link ArchBaseVariable#isUserCreatable}) declared in
+     * this flow, including those declared in tasks and states, and in any embedded common modules.
+     */
+    readonly userVariableCount: number;
+    /**
+     * Returns the maximum number of user-created variables (see {@link ArchBaseVariable#isUserCreatable}) allowed
+     * for this flow's flow type, or undefined if this flow type has no such limit. See {@link ArchBaseFlow#userVariableCount}.
+     */
+    readonly maxUserVariableCount: number | undefined;
+    /**
      * Checks in and unlocks the flow for the current user, does a save first
      * Assumes the flow has been created, throws if not
      * @param [ensureSearchable] - whether or not to poll after successful checkin to ensure that the flow is available for flow
@@ -12807,6 +12817,18 @@ export class ArchBaseFlow extends ArchBaseCoreObjectWithId {
      * flow instance.
      */
     publishAsync(ensureSearchable?: boolean): Promise<any>;
+    /**
+     * Debug publishes the flow. This will do a validate and save, then publish the saved configuration as the flow's debug version.
+     * Common module flows are checked in before the debug publish because the checked in version is the one that gets debug published.
+     * Any of these steps can fail and reject the promise. Operations are not atomic.
+     * The flow type must support debug publish, see {@link ArchDefinitionFlow#supportsDebugPublish}. For flow types that play
+     * text to speech, every supported language on the flow must support flow debugging and have a usable text to speech engine selected.
+     * Bot or digital bot flows that have not been published yet and contain a Call Bot Flow or Call Digital Bot Flow action that calls
+     * the flow itself cannot be debug published. Publish the flow with {@link ArchBaseFlow#publishAsync} first.
+     * @returns - On your promise's then handler, the first parameter passed to the then function will be this
+     * flow instance.
+     */
+    debugPublishAsync(): Promise<ArchBaseFlow>;
     /**
      * Save the current flow configuration, creating the flow if needed.
      * @returns - On your promise's then handler, the first parameter passed to the then function will be this
@@ -14321,6 +14343,13 @@ export class ArchBaseVariable extends ArchBaseCoreObjectWithId {
      */
     readonly isFlowManagedVariable: boolean;
     /**
+     * Returns whether or not this is a variable a flow author can create, as opposed to a built-in variable for the
+     * flow type (a system variable) or one that is automatically managed by the flow (a slot or form variable).
+     * Some flow types limit the number of these a flow author can declare - see {@link ArchBaseFlow#userVariableCount}
+     * and {@link ArchBaseFlow#maxUserVariableCount}.
+     */
+    readonly isUserCreatable: boolean;
+    /**
      * Returns whether or not this variable is a task variable.
      */
     readonly isTaskVariable: boolean;
@@ -14557,6 +14586,13 @@ export class ArchBaseVariableCollection extends ArchBaseVariable {
      */
     readonly isFlowManagedVariable: boolean;
     /**
+     * Returns whether or not this is a variable a flow author can create, as opposed to a built-in variable for the
+     * flow type (a system variable) or one that is automatically managed by the flow (a slot or form variable).
+     * Some flow types limit the number of these a flow author can declare - see {@link ArchBaseFlow#userVariableCount}
+     * and {@link ArchBaseFlow#maxUserVariableCount}.
+     */
+    readonly isUserCreatable: boolean;
+    /**
      * Returns whether or not this variable is a task variable.
      */
     readonly isTaskVariable: boolean;
@@ -14792,6 +14828,13 @@ export class ArchBaseVariableSingleton extends ArchBaseVariable {
      * These are automatically created based on other flow configuration.
      */
     readonly isFlowManagedVariable: boolean;
+    /**
+     * Returns whether or not this is a variable a flow author can create, as opposed to a built-in variable for the
+     * flow type (a system variable) or one that is automatically managed by the flow (a slot or form variable).
+     * Some flow types limit the number of these a flow author can declare - see {@link ArchBaseFlow#userVariableCount}
+     * and {@link ArchBaseFlow#maxUserVariableCount}.
+     */
+    readonly isUserCreatable: boolean;
     /**
      * Returns whether or not this variable is a task variable.
      */
@@ -15092,6 +15135,16 @@ export class ArchDefinitionFlow extends ArchBaseDefinition {
      * Flows whose flow type is deprecated cannot be published.
      */
     readonly isDeprecated: boolean;
+    /**
+     * Returns whether or not flows of this [flow type]{@link ArchDefinitionFlow#flowType} can be debug published
+     * with {@link ArchBaseFlow#debugPublishAsync}.
+     * Please note that a true value does not guarantee a specific flow can be debug published.  For flow types that
+     * play text to speech, such as call flows, every supported language on the flow must also support flow debugging
+     * and have a usable text to speech engine selected.  For example, an inbound call flow whose supported languages
+     * include a language without flow debug text to speech support cannot be debug published even though this
+     * property returns true.
+     */
+    readonly supportsDebugPublish: boolean;
     /**
      * Returns the display label for this flow type such as 'Inbound Call Flow'.
      */
