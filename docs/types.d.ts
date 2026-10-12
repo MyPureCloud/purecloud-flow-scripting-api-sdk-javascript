@@ -1123,6 +1123,24 @@ declare type SessionStartOptions = {
 };
 
 /**
+ * The type definition for the auth token failure details returned by {@link ArchSession#authTokenError}.
+ * @property [status] - The HTTP status returned by the token request, if there was a response.
+ * @property [error] - The error value from the login service response body, such as 'invalid_client'.
+ * @property [errorDescription] - The error description from the login service response body.
+ * @property [correlationId] - The correlation ID of the token request, for use with Genesys Cloud Support.
+ * @property isRateLimited - Whether the login service rate limited the token request.
+ * @property description - A single line description of the failure suitable for logging.
+ */
+declare type AuthTokenErrorInfo = {
+    status?: number;
+    error?: string;
+    errorDescription?: string;
+    correlationId?: string;
+    isRateLimited: boolean;
+    description: string;
+};
+
+/**
  * The type definition for the cache statistics returned by {@link ArchSession#cacheStats}.
  * @property idCacheSize - The number of unique IDs currently stored in the cache.
  * @property valueCacheSize - The number of unique values currently stored in the cache.
@@ -1170,6 +1188,13 @@ export class ArchSession extends ArchBaseObject {
      * session start methods succeeds.
      */
     readonly authToken: string;
+    /**
+     * The details of the most recent failure to obtain an auth token when starting a session with
+     * {@link ArchSession#startWithClientIdAndSecret}.  This is undefined when no token request has failed
+     * since the session was started.  It is kept after the session ends so that callers can report why
+     * the session could not start, such as when the login service rate limited the token request.
+     */
+    readonly authTokenError: AuthTokenErrorInfo;
     /**
      * Implements override support for the display type name string for this
      * Architect Scripting object.
