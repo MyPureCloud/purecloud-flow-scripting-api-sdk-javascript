@@ -251,7 +251,7 @@ export class ArchEnums {
      * }
      * ```
      */
-    readonly CUSTOM_JSON_TYPE_NAMESPACES: {"architect":"architect","conversationAttribute":"conversationAttribute","decisionTable":"decisionTable","userDefined":"userDefined","worktype":"worktype"};
+    readonly CUSTOM_JSON_TYPE_NAMESPACES: {"architect":"architect","conversationAttribute":"conversationAttribute","decisionTable":"decisionTable","mcpTool":"mcpTool","userDefined":"userDefined","worktype":"worktype"};
     /**
      * Returns a string array that contains all valid custom JSON type namespaces.
      */
@@ -2588,8 +2588,10 @@ export class ArchFactoryDataTypes extends ArchBaseFactory {
      * @param customJsonDataTypeSchemaType - the custom JSON schema type. Allowable values depend on
      *   {@link ArchEnums#CUSTOM_JSON_SCHEMA_TYPES} and the namespace (decision tables: input/output;
      *   conversation attributes: record/schemaData/schemaDataPatch).
+     * @param [mcpIntegrationName] - for the mcpTool namespace, the name of the MCP integration that provides the tool. A tool name is only unique within its
+     *   integration, so this is needed when more than one integration has a tool with the entity name. If it is not passed, every MCP integration is searched for the tool.
      */
-    getOrCreateCustomJsonDataTypeAsync(archBaseFlow: ArchBaseFlow, customJsonNamespace: string, entityName: string, customJsonDataTypeSchemaType: string): Promise<ArchDataType>;
+    getOrCreateCustomJsonDataTypeAsync(archBaseFlow: ArchBaseFlow, customJsonNamespace: string, entityName: string, customJsonDataTypeSchemaType: string, mcpIntegrationName?: string): Promise<ArchDataType>;
 }
 
 /**
@@ -12916,8 +12918,10 @@ export class ArchBaseFlow extends ArchBaseCoreObjectWithId {
      * @param customJsonDataTypeSchemaType - the custom JSON schema type. Allowable values depend on
      *   {@link ArchEnums#CUSTOM_JSON_SCHEMA_TYPES} and the namespace (decision tables: input/output;
      *   conversation attributes: record/schemaData/schemaDataPatch).
+     * @param [mcpIntegrationName] - for the mcpTool namespace, the name of the MCP integration that provides the tool. A tool name is only unique within its
+     *   integration, so without this the first data type for a tool with the entity name is returned.
      */
-    findCustomJsonDataType(customJsonNamespace: string, entityName: string, customJsonDataTypeSchemaType: string): ArchDataType;
+    findCustomJsonDataType(customJsonNamespace: string, entityName: string, customJsonDataTypeSchemaType: string, mcpIntegrationName?: string): ArchDataType;
 }
 
 /**

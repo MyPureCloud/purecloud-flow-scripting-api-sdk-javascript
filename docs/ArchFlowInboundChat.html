@@ -4739,7 +4739,7 @@ it will default to the Architect format.</p></td>
     
         <h4 class="name" id="findCustomJsonDataType">
             
-                <span class="type-signature"></span>findCustomJsonDataType<span class="signature">(customJsonNamespace, entityName, customJsonDataTypeSchemaType)</span><span class="type-signature"> &rarr; {<a href="ArchDataType.html">ArchDataType</a>}</span>
+                <span class="type-signature"></span>findCustomJsonDataType<span class="signature">(customJsonNamespace, entityName, customJsonDataTypeSchemaType, mcpIntegrationName<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="ArchDataType.html">ArchDataType</a>}</span>
                 
             
         </h4>
@@ -4776,6 +4776,8 @@ If no matching data type is found, nothing is returned.</p>
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -4801,6 +4803,14 @@ If no matching data type is found, nothing is returned.</p>
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -4823,6 +4833,14 @@ If no matching data type is found, nothing is returned.</p>
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -4847,12 +4865,54 @@ If no matching data type is found, nothing is returned.</p>
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
             <td class="description last"><p>the custom JSON schema type. Allowable values depend on
 <a href="ArchEnums.html#CUSTOM_JSON_SCHEMA_TYPES"><code>ArchEnums#CUSTOM_JSON_SCHEMA_TYPES</code></a> and the namespace (decision tables: input/output;
 conversation attributes: record/schemaData/schemaDataPatch).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>mcpIntegrationName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>for the mcpTool namespace, the name of the MCP integration that provides the tool. A tool name is only unique within its
+integration, so without this the first data type for a tool with the entity name is returned.</p></td>
         </tr>
 
     

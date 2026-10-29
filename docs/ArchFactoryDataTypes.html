@@ -426,7 +426,7 @@ logging str contents wouldn't be set up.</p>
     
         <h4 class="name" id="getOrCreateCustomJsonDataTypeAsync">
             
-                <span class="type-signature"></span>getOrCreateCustomJsonDataTypeAsync<span class="signature">(archBaseFlow, customJsonNamespace, entityName, customJsonDataTypeSchemaType)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ArchDataType.html">ArchDataType</a>>}</span>
+                <span class="type-signature"></span>getOrCreateCustomJsonDataTypeAsync<span class="signature">(archBaseFlow, customJsonNamespace, entityName, customJsonDataTypeSchemaType, mcpIntegrationName<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ArchDataType.html">ArchDataType</a>>}</span>
                 
             
         </h4>
@@ -463,6 +463,8 @@ it will be created.</p>
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -488,6 +490,14 @@ it will be created.</p>
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -510,6 +520,14 @@ it will be created.</p>
             
             </td>
 
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -534,6 +552,14 @@ it will be created.</p>
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
@@ -557,12 +583,54 @@ it will be created.</p>
             </td>
 
             
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
 
             
 
             <td class="description last"><p>the custom JSON schema type. Allowable values depend on
 <a href="ArchEnums.html#CUSTOM_JSON_SCHEMA_TYPES"><code>ArchEnums#CUSTOM_JSON_SCHEMA_TYPES</code></a> and the namespace (decision tables: input/output;
 conversation attributes: record/schemaData/schemaDataPatch).</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>mcpIntegrationName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>for the mcpTool namespace, the name of the MCP integration that provides the tool. A tool name is only unique within its
+integration, so this is needed when more than one integration has a tool with the entity name. If it is not passed, every MCP integration is searched for the tool.</p></td>
         </tr>
 
     
